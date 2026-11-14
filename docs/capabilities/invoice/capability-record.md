@@ -31,3 +31,11 @@
 - **Order relationship:** sales or purchase order may supply terms and source evidence, but invoices may be issued for services or other legitimate charges without an Order.
 - **Counterparties:** invoices snapshot needed recipient, supplier/customer and tax/address data at issue time rather than depending entirely on a mutable Business Contact or Profile.
 - **Open:** who owns supplier bill ingestion, credit notes, cross-border requirements, numbering sequences, financial amounts and transfer of authority when switching provider?
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Issuance, document construction and corrections; provider authority may be native or externally connected, independently from Accounting's ledger choice.
+- **Related capability notes:** [order](../order/capability-record.md), [accounting](../accounting/capability-record.md), [billing](../billing/capability-record.md), [integrations](../integrations/capability-record.md), [product](../product/capability-record.md).
+- **Open architectural questions:** Supplier-bill intake, statutory issue/numbering rules, party snapshots and cross-provider reconciliation.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
