@@ -146,6 +146,84 @@ Do not assume every provider implements journals, periods, contacts, accounts, r
 
 The Accounting boundary may offer a common **portable core**, but must not invent equivalent behaviour for a provider that lacks it. An unsupported operation is refused, explicitly routed to an authorised provider-specific workflow, or supported only by a separately justified local *non-authoritative* aid; never silently posted into local books while external authority is active.
 
+### Idealised input/output contract for consumers (conceptual)
+
+This describes **information and obligations across published capability boundaries**, not a transport protocol, TypeScript signature, route, event schema or commitment that every optional provider supports every operation. It refines — rather than replaces — the nine public contract surfaces above. The same business-facing semantics apply whether native Accounting or an approved external provider is authoritative.
+
+#### Inbound source facts and requested actions
+
+| Originating owner / source | Information presented to Accounting | Permitted Accounting interpretation and responsibility |
+|---|---|---|
+| **Order** | Approved sales and purchasing commitments, terms, amendments, cancellations, performance/fulfilment references | Evaluate whether recognition, commitment disclosure or a later financial action is warranted; **an order alone does not automatically create revenue or an expense** |
+| **Invoice / Billing** | Issued invoices, supplier bills, credit notes, charges, adjustments, tax-relevant facts and document revisions | Validate sources and relevant policy; recognise and maintain receivables, payables, tax control entries and adjustments without taking ownership of the issued documents |
+| **Inventory / manufacturing owner** | Purchases, receipts, consumption, production, WIP conversion, quantities, corrections, losses and verifiable cost evidence | Recognise permitted stock values, WIP, finished goods, cost of goods sold and write-downs without becoming the stock-movement ledger |
+| **Asset** | Asset acquisition, commissioning, improvements, transfers, rights/custody, impairment and disposal evidence | Classify capital versus expense treatment; maintain carrying amount, depreciation and disposal postings without owning maintenance/custody |
+| **Warehouse / Logistics** | Handling, storage usage, inbound freight, transport, fulfilment, returns, carrier charges, estimates and actual bills | Evaluate landed cost versus production overhead, distribution/operating expense, accrual, payable or recoverable customer charge as allowed by applicable policy |
+| **Employment / approved Payroll provider** | Authorised payroll results, employment-cost liabilities, contractor costs, paid/unpaid status and qualifying labour-allocation evidence | Recognise wages, employer liabilities, contractor payables and eligible WIP/production costs; never compute employment rights or expose private payroll records through generic accounting feeds |
+| **Payment Gateway / bank feed** | Payment initiation references, settlement/fees/refunds, bank statement and cleared-item evidence | Apply only confirmed financial consequences and reconcile cash, debtor/creditor balances, merchant fees and exceptions; a provider acknowledgement is not necessarily a bank settlement |
+| **Business contacts / counterpart records** | Approved external counterparty references and relevant billing/settlement identifiers | Resolve the correct debtor, creditor or financing account; do not own the person, organisation profile or an Identity membership |
+| **Configuration / Legal Compliance** | Permitted settings, framework selections, applicable legal restrictions, obligations, effective dates and validation outcomes | Resolve the approved accounting context, enforce mandatory constraints and apply versioned financial rules; never infer that a chosen setting proves legal validity |
+| **Integrations / external accounting authority** | Verified external postings, account mappings, statements, provider capabilities, confirmation/read-back, migration and regulatory receipts | Reconcile authoritative financial status and exceptions, retaining provenance; provider connectivity must not create a second authoritative local ledger |
+| **Authorised finance actor** | Journal/adjustment proposal, approval, reversal, account/period management, reconciliation or reporting request | Validate actor and separation-of-duties requirements, evidence and period rules before executing through the approved authority |
+
+**Input distinction:** (1) an immutable or versioned *source fact* reported by an owning domain, (2) an authorised *command* requesting a financial action, and (3) *external evidence* requiring verification are different classes of input. The Accounting boundary decides their financial meaning; source owners do not pre-empt that decision through raw journal/table writes. No consumer may directly post into another capability's private ledger or override the configured accounting authority.
+
+#### Outbound commands, queries, results and notifications
+
+| Contract output or service | Authorised consumers | Ownership and information guarantees |
+|---|---|---|
+| **Financial operation result** | Initiating business capability and approved workflow | Stable operation/source reference, requested versus confirmed state, applied accounting context, journal or remote authoritative reference where confirmed, rejection/variance explanation and retry/reconciliation guidance |
+| **Accounts and period status** | Approved finance staff, Invoice/Billing and other posting clients | Authoritative chart/period availability, legal posting restrictions, approval requirements and cut-over status; never imply that queued work is posted |
+| **Receivables and payables views** | Authorised Invoice, Order, Billing, counterparty-facing services and finance staff | Due/outstanding balance, credits, matching settlement status, ageing or dispute flags at the permitted disclosure level; separate *invoice issued* from *financially settled* |
+| **Cash/bank reconciliation** | Authorised finance administration, payment/banking owners | Authoritative cash ledger status, matched/unmatched references, bank-feed freshness, exceptions and explicit evidence of authorised adjustment |
+| **Inventory carrying value / cost of sales** | Approved Inventory, Product, Warehouse and Reporting consumers | Financial values, cost allocation, book/period/currency/framework and reconciliation status; **not** a replacement for Inventory quantities or operational cost source facts |
+| **Asset carrying value / depreciation** | Approved Asset and Reporting consumers | Capitalisation status, depreciation/impairment and disposal financial outcomes, with the underlying asset reference; not an operational asset state update |
+| **Tax / regulatory outputs** | Approved tax reporting functions, Integrations and finance officers | Validated authoritative tax-control figures, return models, statement snapshot, reconciliation evidence, approval and government filing state; a transmitted request is not a confirmed accepted filing |
+| **Financial statements and management views** | Authorised Reporting, Publisher or analytical consumers | Trial balance, profit and loss, statement of financial position, cash-flow and dimensional views with scope, framework, period, precision, source authority and completeness status |
+| **Authority and provider capability view** | Host composition, authorised financial consumers | Native/external authority, supported operations, provider restrictions, connection/cut-over state, freshness and confirmed reconciliation; avoid leaking provider secrets |
+| **Accounting-owned events** | Authorised subscribers, delivered via Message Queue where available | Facts such as `posting.confirmed`, `posting.reversed`, `period.closed`, `reconciliation.completed`, `authority.changed` or `return.status-changed`; labels are **illustrative**, not an approved event naming convention |
+
+**No generalised balance leakage:** A service permitted to read *its invoice's payment status* does not thereby gain access to the customer's other invoices, bank accounts, entire ledger, unrelated legal entities or payroll. Queries require explicit tenant/entity scope, subject, action and field-level disclosure decision. Financial events should contain minimum necessary references and states, not full invoices, bank details, credentials or payroll personal data.
+
+#### Shared financial context and provenance
+
+A cross-boundary operation resolves the following **conceptual information**, only where applicable; this is **not one mandatory monolithic request object**:
+
+| Dimension | Minimum conceptual requirement |
+|---|---|
+| **Accounting destination** | Tenant/control context, authorised accounting entity, book and authority selection; prevent one entity's data from affecting another |
+| **Origin and actor** | Originating owner/capability, authenticated actor or approved service principal, authorised action, approval/assurance evidence |
+| **Business source** | Stable source type/ID, owning entity, revision, related order/invoice/asset/stock/payment evidence and effective source status |
+| **Temporal context** | Business occurrence/effective date, tax date where distinct, requested posting date, accounting period and relevant time-zone/calendar policy |
+| **Financial measurement** | Money amounts, currency, exchange-rate source and effective date where relevant; quantity/unit/cost basis, tax and rounding provenance as needed |
+| **Policy and compliance** | Applicable framework, tax regime, rule/election versions, legal constraint result and policy effective date with explanation |
+| **Integrity and lifecycle** | Source uniqueness, correlation, idempotency, command/confirmation identifier, expected version, original/reversal references and audit trail |
+| **Read and confirmation quality** | Native versus remote authority, as-of timestamp, read-back/sync state, completeness, reconciliation/exception status and stale-data disclosure |
+
+The contract must separate **occurred**, **requested**, **accepted for processing**, **posted and verified**, **reversed/adjusted**, and **externally accepted or settled** meanings. Times and currencies may differ between business occurrence, invoice date, tax point, ledger period and bank settlement; they must not be conflated. Financial records and outputs retain sufficient provenance for later explanation and authorised historical reproduction.
+
+#### Three interaction models
+
+1. **Commands:** Authorised intent to create/adjust/reverse recognised entries, manage periods, reconcile or submit a validated return. Commands are validated against the selected accounting authority, current version, effective financial policies, authorisation, period status and provider-supported capabilities. Requests may return `accepted/pending`, `confirmed`, `rejected`, `unavailable`, `conflict`, `unsupported` or `requires reconciliation/review`, with stable identifiers and unambiguous meanings.
+2. **Queries:** Read authorised accounting balances, statuses, period rules, statements, tax positions, financial valuations or operation progress. Responses disclose as-of time, entity/book, authority, freshness and whether reconciliation or external read-back remains outstanding. A cached financial read is explicitly marked as a projection, not presented as a confirmed remote balance.
+3. **Events:** Publish **confirmed Accounting-owned changes** for authorised downstream reactions. A transport delivery/consumer acknowledgement does not itself establish a new financial posting or regulator acceptance. At-least-once publication requires deduplication/replay-safe consumers, without promising distributed exactly-once effects.
+
+**Cross-domain lifecycle example:** Invoice owns a legally issued sales invoice and publishes the authoritative issue fact. Accounting validates source/version and applicable recognition rules, records or requests the receivable and returns a posting confirmation or pending state. Invoice queries the receivable's settlement status and may receive an Accounting-owned reconciliation event. Payment Gateway owns payment execution; Accounting records and reconciles the financial settlement when sufficient independent evidence exists. Reissued messages or reconnecting an external provider must not duplicate postings or create a contradictory invoice authority.
+
+#### Conceptual contract acceptance scenarios
+
+- **Order versus revenue:** A quotation or order is accepted without fulfilment: Accounting neither invents a sales invoice nor automatically recognises revenue. A later supported performance event can be evaluated separately.
+- **Invoice versus balance:** A valid issued invoice creates a receivable where the selected framework requires it. A partial payment reduces the amount due without changing the immutable issued invoice. Only authorised callers can read the result.
+- **Stock and landed cost:** Inventory supplies received quantities and procurement references; Logistics supplies qualifying transport evidence. Accounting calculates an approved stock value with explainable allocation and returns a financial value without writing Inventory quantities.
+- **Asset and depreciation:** Asset records acquisition and operational custody. Accounting returns capitalisation/depreciation results and retains its own adjustments even if the equipment changes custodian.
+- **Payroll confidentiality:** An approved payroll result may yield wage expense and liabilities; an Order or Warehouse consumer cannot query employee-level payroll information merely because it consumes allocated labour cost.
+- **External provider uncertainty:** A connector times out after submitting a journal. Accounting reports pending/uncertain, reconciles via provider read-back/idempotent source reference and never claims confirmed posting solely from an HTTP acknowledgement or double-posts locally.
+- **Cross-entity and closed-period isolation:** A request with the wrong entity, stale source revision, insufficient authority or a closed period is rejected or requires governed correction; no implicit fallback to a neighbouring entity/book.
+- **Government submission:** A reconciled return is approved and transmitted; a portal acknowledgement is tracked separately from accepted, rejected and amended filing outcomes, retaining the applicable framework/policy versions.
+- **Reporting consistency:** Authorised financial statements and dimensional reports reconcile to the same confirmed ledger snapshot; incomplete, stale or unallocated values are explicitly disclosed rather than silently presented as final.
+
+**Future implementation gate:** Translate these **idealised surfaces** into a root public `CONTRACT.md` only when the corresponding repository exists and its composition interfaces, security boundaries, failure semantics and independent acceptance evidence can be verified. This section is neither an approved public API nor a mandate to implement all specialised providers at once.
+
 ## Converting and synchronising native and external accounting
 
 **This is a governed change of authority, not merely field-format conversion.** A connector translates provider-specific structures; Accounting interprets financial meaning, decides which ledger is authoritative and validates the transition. Conversion must work in **both directions** wherever the supported provider permits usable export/import, with explicit capability limits.
