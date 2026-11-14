@@ -20,4 +20,28 @@
 
 ## Configuration
 
+## Review notes — contacts, financial providers and ownership (14 November 2026)
 
+**Provisional conceptual notes only; verify root public contract before detailed Integrations specification.**
+
+- Provider connectors (e.g. Xero/QuickBooks, payroll, procurement, banking, CRM) manage connections, provider-specific identity and field mapping, transport, checkpoints, provider limitations and status; they never silently become the owner of Product, Inventory, Asset, Order or Accounting domain facts.
+- Accounting and Invoice independently select an approved authority per tenant/accounting context and supported service. Provider scope and compatibility must be verified; no assumption a connected product implements every accounting or invoicing operation.
+- A connected customer/supplier directory may be externally authoritative under a specific approved mapping, but **Identity** and **Profile** remain authoritative for platform identities and personal-data disclosure.
+- Provider outage does not silently switch authority. Changeover requires approved mapping, reconciled balances and outstanding work, source/remote IDs, versioned checkpoints and explicit cut-over.
+- Imported financial transactions, asset registers, stock costs, supplier records and contacts must be validated and authorised by their owning domain, with provenance and replay/deduplication handling.
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Provider-neutral connection and transport mechanisms; never own commercial, physical-stock or financial domain records.
+- **Related capability notes:** [accounting](../accounting/capability-record.md), [invoice](../invoice/capability-record.md), [order](../order/capability-record.md), [product](../product/capability-record.md), [inventory](../inventory/capability-record.md), [logistics](../logistics/capability-record.md).
+- **Open architectural questions:** Per-tenant authority/connector selection, provider compatibility, external party-directory mappings and reconciled changeover.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+### Government, accounting-framework and financial-provider interface notes
+
+- **Accounting frameworks and tax rules** are not ordinary connector payload transforms. [Accounting](../accounting/capability-record.md) owns financial posting meaning and approved framework/rule application; [Legal Compliance](../legal_compliance/capability-record.md) owns obligation/constraint determination. Integrations owns provider connection, credentials, schema adaptation and transport/checkpoint evidence.
+- **Government portal adapters** may handle authenticated tax/financial submissions, acknowledgements, status checks, amendments and delivery errors for a tenant/accounting entity. Accounting remains owner of the authoritative reconciled return and its business state; a successful HTTP transport does not prove a filing was accepted.
+- **Provider capability discovery** must declare supported operations, geographical/period/API restrictions, scope and permissions, synchronisation semantics, read-back and mapping capabilities. Missing regulated functions or required rules must surface as unsupported/requires-review, not silent local fallback.
+- **Change control:** tax-framework updates, remote schema revisions, connector credential changes and provider migration require versioned mapping, evidenced effective dates, safe retries/idempotency and explicit authorisation. Connector code cannot bypass Accounting's immutable posting/period controls.
+- **Open:** which provider registration/attestation, sandbox certification, government gateway security, legal acceptance evidence and integration-country constraints require Legal Compliance review before enablement?
