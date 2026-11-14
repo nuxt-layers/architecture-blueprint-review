@@ -31,3 +31,11 @@
 - An Order may quote a customer delivery fee, Invoice may charge it, and Payment Gateway may settle it. These are **not** the same as the carrier's actual cost; reconciliation should explain margin or difference without transferring source ownership.
 - Integrations could connect transport carriers and 3PL/warehouse providers. Connectors should record verified remote identifiers, checkpoints and price evidence without becoming the authoritative logistics or financial domain.
 - **Open:** where do warehousing rate cards, billable occupancy, freight procurement, carrier contracts, landed-cost allocation, customs/tax, reverse logistics and third-party warehousing charges belong? Which events are authoritative for accrued versus actual costs?
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Shipment, carrier and transport execution and its verified cost evidence, not accounting postings or physical warehouse stock balances.
+- **Related capability notes:** [warehouse](../warehouse/capability-record.md), [inventory](../inventory/capability-record.md), [order](../order/capability-record.md), [invoice](../invoice/capability-record.md), [billing](../billing/capability-record.md), [accounting](../accounting/capability-record.md).
+- **Open architectural questions:** Ownership of storage tariffs, 3PL services, actual-versus-quoted costs, allocation of inbound freight versus outbound distribution, and returns.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
