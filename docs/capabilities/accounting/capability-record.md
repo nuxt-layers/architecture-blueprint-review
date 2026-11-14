@@ -203,6 +203,117 @@ Do not promise reversible migration, exact preservation of remote IDs, historica
 - External → native transition reconstructs verified journals or approved opening balances, reconciles and activates internal authority **only after** cut-over sign-off.
 - Two accounting entities under one group have different authority modes without cross-book postings or data leakage.
 
+## Financial operations — native accounting scope and boundaries
+
+The native core must account for complete economic lifecycles rather than only expose manually entered journals. **Accounting owns the recognised financial position and balances; originating domains retain their operational documents and business decisions.** These subfunctions are responsibilities **within Accounting**, not automatically separate Nuxt capabilities.
+
+| Subfunction | Native Accounting responsibility | Origin / separation |
+|---|---|---|
+| **Receivables (AR)** | Customer balances, amounts due, due dates, part-payments, unapplied receipts, credit balances, ageing, disputes and approved write-offs/expected-credit-loss adjustments | Invoice owns issued sales invoices and credit notes; Order owns commitments; Business Contacts/Parties, if approved, owns counterpart references; Payment Gateway does not own debt |
+| **Payables (AP)** | Supplier balances, due dates, part-payments, credits, accruals, approved write-offs and payable ageing | Purchase Order, Invoice/Billing and supplier evidence remain authoritative for orders and bills; banking or Payment Gateway executes payment |
+| **Cash and treasury records** | Cash and bank ledger accounts, deposits, withdrawals, transfers, cleared/uncleared distinctions, bank-statement reconciliation and cash position | Financial institutions remain authoritative for bank balances and movements; Integrations supplies approved feeds, not financial meaning |
+| **Equity and ownership** | Initial capital, capital contributions, owner drawings, retained earnings, distributions/dividends and owner/shareholder/director financing balances as applicable | Legal entity and approval facts originate from their authorised domain and legal/accounting context; do not misclassify capital as sales or drawings as wages |
+| **Borrowings and financing** | Principal, interest, fees, repayment schedules, current/non-current classification, interest accruals and recognised financing liabilities | Contracts, lenders, interest statements and bank payments are separate source evidence |
+| **Accruals, deferrals and prepayments** | Recognise income/expenses and obligations in appropriate periods; release and reverse period adjustments | Usage, employment, service delivery, purchase and invoice facts arrive from owner domains; cash timing alone is insufficient for accrual accounting |
+| **Revenue and cost recognition** | Apply effective-dated financial rules to confirmed delivery/performance, discounts, returns, fulfilment, inventory costs and other source evidence | An Order, invoice issue, customer deposit and cash receipt are **not interchangeable** recognition events |
+| **Tax ledger** | Tax control accounts, adjustments, liabilities/receivables, allocations and reconciled return figures | Specialist tax-rule determination and statutory submission are separate functions as defined below |
+| **Period/year-end** | Trial balance, adjusting entries, period locks, financial close evidence, carried balances, retained-earnings transitions and governed re-opening/restatements | The reporting framework and legal entity context govern allowed corrections |
+| **Dimensions and allocation** | Authorised references to projects, departments, product lines, warehouses, customers and cost centres, with cost-allocation provenance | Do not duplicate Project, Identity group, Product or Warehouse records; validity is checked through approved public owner contracts |
+
+**Minimum complete native accounting cycle:** configure an accounting entity and opening balances; track and settle receivables/payables; record cash, owner funding and financing; accrue and adjust; post and reconcile taxes; close a period; produce traceable financial statements. Whether a tenant uses cash basis, accruals or another lawful basis is explicit in the chosen framework and must not cause hidden changes in recognition.
+
+**Out of scope for the Accounting core:** generating sales or supplier invoices, payment execution, bank-credential custody, payroll computation, creating legal entities, tax-law authoring, supplier/customer contact administration and operational inventory movement. Accounting may provide controlled financial subledgers and references without owning those source records.
+
+## Accounting contexts, frameworks and effective-dated policies
+
+An **accounting context** represents a defined set of financial books for an **accounting/reporting entity**. It is **not automatically identical to a platform tenant, Identity group, registered company or physical site**. One tenant may govern multiple accounting entities and books with different authorities, fiscal periods and applicable rules; cross-entity entries and consolidated views require explicit review.
+
+The context conceptually records or resolves:
+
+- Accounting entity identifier and authorised legal/controller references, owner/group context and access decisions.
+- Reporting framework and version (for example an applicable UK GAAP or IFRS framework), recognition and measurement basis, reporting and fiscal calendar, functional and presentation currencies.
+- Chart of accounts, book scope and supported financial dimensions; tax registrations/schemes and financial-treatment elections when legally permitted.
+- Approved **internal or external authoritative ledger** and invoice/tax provider arrangements, provider capability constraints, activation/cut-over epoch and reconciliation state.
+- Financial policies with version, source, jurisdiction/territory, effective-from/effective-to, provenance, approver and applicable transitional treatment.
+- Documented reporting/submission obligations and policy exceptions that require specialist approval; Configuration values cannot override mandatory law or immutable posting invariants.
+
+**A selected framework is not enough to establish legal validity.** Legal Compliance records or supplies applicable obligation constraints and supporting evidence; Accounting owns how approved financial treatment maps transactions to postings. Qualified accountants/legal specialists must validate tenant-specific standards, elections and tax requirements before production claims. Where an external provider is authoritative, the selected framework and required reporting obligations still need an explicit compatibility check.
+
+### Controlled extension surfaces
+
+A framework/tax/reporting extension is a **versioned, declared, provider-neutral ruleset**, not arbitrary executable tenant code and not a new mandatory Nuxt Layer for every jurisdiction. Candidate contract surfaces:
+
+| Extension surface | Inputs / outputs | Boundaries |
+|---|---|---|
+| **Describe/validate framework** | Supported reporting bases, jurisdictions, effective dates, currencies, chart/reporting requirements, policy choices and incompatibilities | Accounting rejects a missing/unsupported mandatory framework; no permissive default pretending compliance |
+| **Recognition and measurement** | Validated transaction facts, entity, date/period, policy version → proposed classification, postings, valuation basis, rationale and required evidence | Core verifies balance, source uniqueness, period and authorisation before posting; rules cannot bypass ledger invariants |
+| **Tax determination** | Tax-relevant facts and location/context, product/service type, dates and verified regime → proposed rates/treatments, exemptions, adjustments and traceable calculation | Tax applicability must be reviewed, including cross-border cases. Domain owners retain invoice/order facts; Accounting owns tax ledger consequences |
+| **Statutory report preparation** | Accounting period, authoritative snapshot, policy versions → specified report/return model, validations, supporting reconciliation and explanation | A report is not an official filing until submission and acknowledgement |
+| **Regulatory transmission** | Approved validated return, destination/account/scope and submission authority → receipt/rejection/correction status | **Integrations** owns authenticated transport, credentials and provider/API adaptation; Accounting owns authoritative return content and financial source references |
+
+Registration must check extension identity, supported semantic contract/version, provenance, declared permissions/capabilities, integrity and compatibility. Rules execute through **constrained, deterministic and resource-bounded** interfaces; extensions cannot access other capabilities' private tables, silently edit posted records, read secrets or call arbitrary external endpoints. No raw user-defined JavaScript as a substitute for governed policy. Extension revocation/unavailability fails closed for operations that require its determinations.
+
+### Historical reproducibility
+
+Every confirmed accounting result needs enough **policy/version and evidence provenance** to explain why it was calculated. Updates to standards, tax rates or provider mappings must be effective-dated; they cannot silently rewrite historic journals. Corrections, retrospective adoption, prior-period adjustments and restatements are explicit, approved operations with original and revised figures linked. A closed period is not reopened simply because a ruleset was upgraded.
+
+## Compliance, regulatory interfaces and policy ownership
+
+The governing Capability Catalogue identifies **Legal Compliance** as owner of legal duties and applicable constraints and explicitly maps the former **policy-map** concept into **legal-compliance**. It does **not** authorise introducing a separate generic Policies domain. Current public `CONTRACT.md` for `legal-compliance` and `integrations` was **not retrievable** in this review; interactions here are **proposed ports** rather than implemented APIs.
+
+| Owner | Proposed responsibility |
+|---|---|
+| **Legal Compliance** | Context-specific jurisdictional/legal obligations, evidence, legal holds, restrictions and the compliance status of required actions; may indicate uncertainty and need for review, but cannot automatically certify every tax election |
+| **Configuration** | Declares validated settings, scopes, permissible values and provenance for tenant/accounting-entity choices; not the legal authority or financial source of truth |
+| **Accounting** | Maintains framework/policy versions actually applied; evaluates recognition, valuation, accounts and tax consequences; prepares reconciled financial statements and return payloads; holds posting and submission evidence |
+| **Integrations** | Government gateway and provider connections, secret/credential lifecycle, API adaptation, delivery retries, rate limits, submission receipts and remote references |
+| **Authorisation / Identity** | Establish actor, group/entity context, authority, segregation of duties and required assurance for policy changes, posting, returns, migrations and corrections |
+| **Workflow / Scheduler** | Optional approvals, preparation/reminder/deadline coordination; neither declares law nor posts accounting entries on its own |
+
+**Conceptual policy interfaces** should answer: what requirement or restriction applies to this accounting entity/activity and effective period, how was it determined, what evidence supports it, whether human review is needed, which approved financial treatment it permits or forbids, and when it must be reconsidered. Accounting must distinguish **applicable mandatory rule**, **permitted election**, **tenant preference** and **unresolved/legal uncertainty**.
+
+**Government submission lifecycle:** determine and verify filing obligation → prepare from an authoritative reconciled period/snapshot → apply jurisdiction-specific validation and required attestations → obtain authorised approval (and step-up/separation of duties where required) → transmit through the verified portal adapter → record received, accepted, rejected, pending, amended and finalised states with remote acknowledgement IDs → reconcile subsequent correction/refund/assessment to the books. A transport acknowledgement is **not** equivalent to regulator acceptance.
+
+Missing legally required context, invalid credentials, uncertain jurisdiction, unsupported filing format, provider outage or unconfirmed submission must result in a clear refusal/pending or requires-review state rather than a fabricated compliant outcome. Do not hold database transactions open during remote calls.
+
+### Legal and technical acceptance scenarios
+
+- Two accounting entities in one tenant select different reporting frameworks and applicable tax regimes without leaking books or using the wrong policy.
+- A rule changes prospectively; prior-period numbers remain reproducible, while an authorised restatement explicitly records its origin and revised outcomes.
+- A tenant attempts to configure a forbidden tax treatment or bypass a legal hold: the operation is rejected even if Configuration contains the value.
+- A government portal accepts an HTTP request but rejects the return: the return is **not** shown as successfully filed, and remediation is traceable.
+- A regulator's submission is amended after acceptance: the platform preserves both receipts, period snapshots, approvals and financial adjustments.
+- An extension is missing or cannot validate a mandatory rule: posting/reporting/filing operations requiring that decision fail closed without blocking unrelated lawful work.
+
+## Financial statements, reporting and controls
+
+**Accounting produces authoritative financial meaning and statement data.** The separate Reporting capability may display, compare, chart, export and distribute *authorised* views, but must not recalculate a different authoritative balance. Publisher or Template Engine may present signed-off statements; none independently posts journals.
+
+| Financial output | Minimum conceptual information |
+|---|---|
+| **General ledger and trial balance** | Period/as-of date, account balances, journal provenance, controls and balancing status |
+| **Profit and loss / income statement** | Recognised income, expenses, comparative periods and accounting framework reference |
+| **Balance sheet / statement of financial position** | Assets, liabilities, equity and reconciliation to the underlying ledger |
+| **Cash-flow information** | Cash movements and classifications appropriate to the reporting basis, with bank reconciliation provenance |
+| **Receivables/payables ageing** | Outstanding counterpart balances, due dates, credits, payments and exceptions |
+| **Tax reports and returns** | Supported period/tax account amounts, adjustments, liability/reclaim, schema/version and submission status |
+| **Management views** | Dimensional cost/revenue allocations and margins with period, currency, allocation-method and completeness indicators |
+
+Every output should identify the accounting entity, authoritative source (native or external), as-of/period, applied framework and policy versions, source data freshness, reconciliation state and whether it is draft, approved or issued.
+
+**Controls to preserve:** balancing by required currency/books, decimal money precision and rounding policy; reference/correlation/idempotency; source and journal uniqueness; approval limits and segregation of duties; authorised reconciliations and adjustments; period lock; immutable reversal lineage; controlled access to potentially sensitive financial and counterparty data; retention/hold, export and recovery; and confirmation-aware external posting. No promise of distributed exactly-once delivery.
+
+**Financial integrity scenarios:**
+
+- A supplier bill is paid in two instalments; AP balances, bank payments and underlying invoice references reconcile without duplicate posting.
+- An owner contributes funds and later makes a drawing; neither entry is silently classified as revenue or payroll.
+- A bank reconciliation finds a missing transaction: evidence and permitted adjustment are explicit, not inferred from a cleared payment flag.
+- A tenant views financial statements filtered by warehouse or project: the allocated figures reconcile to the authoritative whole, with unallocated costs transparent.
+- A qualified framework requires different period-end treatment: the approved rules and report version determine the outcome without duplicating the source Invoice or Inventory state.
+- A restored or reconnected provider returns uncertain posting results: no report is final until those uncertainties are resolved or explicitly disclosed.
+
+**Conceptual sign-off criterion:** native Accounting can complete a defensible basic books-and-period lifecycle; connected authority has comparable core semantics with explicit supported-operation limits; legal/tax requirements can be extended through constrained versioned rules and verified provider connectors; all outstanding jurisdiction-specific decisions remain documented for qualified review. This is conceptual sign-off only, **not** evidence of regulatory certification, implementation readiness or an approved new capability.
+
 ## Version
 
 **Conceptual record:** initial draft. **Implementation/package version:** not applicable / not verified.  
