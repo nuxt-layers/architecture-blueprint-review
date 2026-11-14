@@ -31,3 +31,11 @@
 - **Discovery/invitation:** opt-in discoverable public handle or verified consented identifier; otherwise invitations must not reveal whether the addressee has an existing account. Rate-limit, verify contact possession, allow opt-out and protect against account enumeration. Existing Identity group invitations are **not** proof of a public business-party linking API.
 - **Accounting consequence:** orders may create commitments and later evidence for accruals, costs, revenue or receivables/payables, but do not automatically recognise revenue at order creation; recognition requires actual policy and completed relevant economic events.
 - **Open:** who owns customer/supplier business counterpart records; how do guest transactions, Identity linking/revocation and purchases across multiple tenants reconcile safely?
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Sales/purchase commitments and business-party references; accounts and invoices retain their independent financial/document lifecycles.
+- **Related capability notes:** [product](../product/capability-record.md), [inventory](../inventory/capability-record.md), [invoice](../invoice/capability-record.md), [accounting](../accounting/capability-record.md), [integrations](../integrations/capability-record.md), [billing](../billing/capability-record.md).
+- **Open architectural questions:** Business Contacts / Parties owner; opt-in user discovery and identity linkage versus guest transactions, plus purchase-order/contract boundaries.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
