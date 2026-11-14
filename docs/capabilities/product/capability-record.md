@@ -30,3 +30,11 @@
 - **Serialised or unique goods:** one used car can have a product/model definition and a uniquely identified physical stock item with its own provenance, condition, cost and sale history.
 - **Accounting connection:** define no book value solely from the product description or sales price. Inventory and production facts supply actual cost/movement evidence; Accounting applies financial classification, valuation, cost-of-goods-sold and recognised postings. A product used by the business instead of sold may become an Asset.
 - **Open ownership:** which capability owns BOM/production engineering, versioned assembly change control, commercial bundles and manufactured-unit traceability? Confirm with Inventory, Order, Warehouse, Asset and Pricing in their alphabetical reviews.
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Sellable definitions, component assemblies and commercial bundle structures, not physical stock or financial book value.
+- **Related capability notes:** [inventory](../inventory/capability-record.md), [warehouse](../warehouse/capability-record.md), [order](../order/capability-record.md), [asset](../asset/capability-record.md), [accounting](../accounting/capability-record.md).
+- **Open architectural questions:** Versioned bills of materials, serialised units, kits versus virtual bundles, and production/process ownership.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
