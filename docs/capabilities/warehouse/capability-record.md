@@ -35,3 +35,11 @@
 - Warehouse should record **physical** occupancy, pallet/bin/space use, handling, storage periods and relevant location/custody facts, subject to later contract review. Logistics or Billing may calculate **commercial storage and delivery charges** where it owns the applicable service/rate agreement; separate physical evidence from invoices and tariff rules.
 - Accounting recognises approved inventory holding, warehouse overhead, external storage and transport costs under the applicable reporting rules. **Not all storage is capitalisable inventory cost**; avoid automatically valuing inventory from warehouse rental fees or treating sales-delivery costs as purchase landed cost.
 - Distinguish quoted shipping fees charged to customers from actual freight/3PL costs, with source references so Accounting can reconcile them to Orders and Invoices.
+
+### Cross-capability relationships and evidence status
+
+- **Established evidence:** This record remains an uncompleted pro forma plus discussion notes; its corresponding repository, if any, and root `CONTRACT.md` have **not been independently audited for this capability**. No implementation readiness is asserted. Governing catalogue and accepted ADRs take precedence over these notes.
+- **Proposed responsibility boundary:** Physical storage, occupancy, handling and assembly-work evidence; Logistics may own carrier execution and service tariffs; Accounting recognises costs.
+- **Related capability notes:** [inventory](../inventory/capability-record.md), [logistics](../logistics/capability-record.md), [product](../product/capability-record.md), [asset](../asset/capability-record.md), [accounting](../accounting/capability-record.md).
+- **Open architectural questions:** 3PL contracts, storage rate ownership, WIP/production operations and allocation of storage expenses to inventory versus period cost.
+- **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
