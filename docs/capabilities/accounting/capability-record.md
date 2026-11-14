@@ -268,3 +268,41 @@ No keys, values, APIs, database type, infrastructure provider or user interface 
 ## Next decision gate
 
 Review and approve the **dual-mode accounting authority model** and the scope of authority per accounting context. Then evaluate how Integrations supplies provider connections, how cut-over and outages work, and which accounting behaviours belong to the common business contract. Only then derive interfaces, persistence and operational design. This record does not amend the governing catalogue or any ADR.
+
+## Cross-domain accounting implications — conceptual review notes (14 November 2026)
+
+**Status:** Discussion findings for later owner-by-owner review. These are neither approved mandatory dependencies nor tax/accounting rules. Applicable financial treatment depends on the reporting entity, jurisdiction, reporting basis, contract and transaction.
+
+### Financial consequences of non-financial domains
+
+| Domain / source | Owns the underlying facts | Accounting would recognise, subject to policy |
+|---|---|---|
+| **Product / assembly / bundle** | Product definitions, versioned bills of materials, commercial sellable configurations and bundle composition (ownership of manufacturing lifecycle remains to be reviewed) | Product structure alone creates no journal. Valuation follows actual acquisitions, conversions, stock movement or sale; sales bundles require allocation and component-cost treatment without double counting |
+| **Inventory / Warehouse** | Physical stock quantities, custody, locations, receipts, reservations, consumption, production and adjustments, and source evidence | Inventory carrying values, work-in-progress, finished goods, cost of goods sold, shrinkage and write-downs from verified movements/cost inputs; do **not** treat list prices as asset values |
+| **Asset / equipment / buildings** | Identified assets, acquisition, custodian/location, condition, maintenance, transfer and disposal | Fixed-asset register and financial classification, capitalisation, depreciation, impairment and disposal accounting where applicable; some tools/spares are inventory/expenses rather than fixed assets |
+| **Order / Invoice / Payment Gateway** | Commitments, legally issued bills/credit notes and payment-provider execution respectively | Receivables, payables, recognised revenue/cost, settlement, fees, refunds and reconciliation at appropriate recognition points; an order is not necessarily immediate revenue |
+| **Employment / payroll** | Employment relationships, hours/pay entitlements and payroll calculation/payment obligations (payroll ownership not yet established) | Wage expense, employer charges, accrued liabilities, paid liabilities and allocated production labour; no employee personal profile or payroll computation ownership |
+| **Contractors / utilities / overheads** | Supplier/contract terms, utility usage, purchases, service delivery and bill evidence | Operating expenses, accruals, prepayments, accounts payable; attributable production overhead may feed inventory cost where policy permits |
+| **Business parties** | Tenant-scoped customer/supplier counterpart records optionally linked to Identity | Debtor/creditor account references and exposure, without owning contact records or requiring people to register |
+
+### Required conceptual separations
+
+- **Product ≠ inventory item ≠ saleable bundle ≠ fixed asset.** A car can be one saleable product, a versioned component assembly, a stocked serialised item, or a business-owned fixed asset depending on its role and actual use. The same underlying item must not be capitalised as fixed equipment and simultaneously counted as inventory merely because both domains reference it.
+- **Assembly versus commercial bundle:** assembly/manufacture consumes components and creates output/WIP and conversion cost; a sales bundle might only group separately stocked products and allocate commercial price, without physically manufacturing another unit. If bundles are prepacked, define whether physical conversion and additional stock identity actually occur.
+- **Stock versus valuation:** Inventory remains authoritative for quantity and movement. Accounting owns approved financial valuations and journal consequences. Costs, landed charges, labour, overhead, allocations and write-down policies need versioned provenance and period handling.
+- **Physical asset versus financial asset register:** Asset owns the operating lifecycle (equipment, buildings, maintenance, custody). Accounting owns carrying amount, depreciation and impairment treatment, with stable references and reconciliation. Leasing, owner-versus-custodian differences and capitalisation thresholds require separate review.
+- **Consumable classification is contextual:** stationery used immediately may be an expense; materials awaiting use in production may be inventory; durable equipment may be fixed assets. Classification follows authorised use, business policy and applicable accounting rules, not product naming alone.
+- **Employment and payroll remain distinct:** Identity group membership is neither an employment contract nor payroll enrolment. Staff and contractors require separate terms, status, privacy and legal treatment. Payroll computation, taxes and payslips need a separately justified owner or approved external provider; Accounting records resulting financial facts.
+- **Costs and commitments differ:** purchase orders, purchase invoices, accrued costs, prepayments and cash settlement have distinct dates, evidence and accounting consequences. Utilities may be recorded through recurring bills or usage; they do not require a user account for the supplier.
+- **Authority modes apply consistently:** when Xero/QuickBooks or another provider is the approved accounting authority, all recognised financial postings follow that authority; operational domains remain authoritative for their own facts. No duplicate local authoritative ledger, including for stock valuation or payroll.
+
+### Outstanding design decisions
+
+1. What is the minimal product/assembly/bundle vocabulary and which owner controls versioned bills of materials, manufacturing work orders and actual production consumption?
+2. Which domain produces reliable movement, purchase cost, landed-cost, WIP, overhead and write-down evidence for Accounting? Who sets and versions valuation policy?
+3. How do asset acquisition, fixed-asset classification, disposals and depreciation reconcile across purchasing, Asset and Accounting without duplicated ownership?
+4. Where do payroll calculation, employment contract, contractor billing, time recording and tax submissions belong, and which are external integrations versus independent business owners?
+5. How are customer/supplier party records, legal entities, tenant/group ownership, invoice recipients and debtor/creditor accounts mapped without requiring Identity enrolment?
+6. Which accounting standards and tax jurisdictions apply to each legal/accounting entity? IAS 2 (inventory), IAS 16 (property, plant and equipment) and IAS 19 (employee benefits) are **reference examples**, not universally applicable platform rules; verify local reporting frameworks before implementing policy.
+
+**Technical references for later validation:** [IFRS IAS 2 Inventories](https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/); [IFRS IAS 16 Property, Plant and Equipment](https://www.ifrs.org/issued-standards/list-of-standards/ias-16-property-plant-and-equipment/); [IFRS IAS 19 Employee Benefits](https://www.ifrs.org/issued-standards/list-of-standards/ias-19-employee-benefits/). These are accounting reference materials, not accepted platform ADRs.
