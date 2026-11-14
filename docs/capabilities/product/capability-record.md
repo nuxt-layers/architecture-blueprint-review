@@ -38,3 +38,7 @@
 - **Related capability notes:** [inventory](../inventory/capability-record.md), [warehouse](../warehouse/capability-record.md), [order](../order/capability-record.md), [asset](../asset/capability-record.md), [accounting](../accounting/capability-record.md).
 - **Open architectural questions:** Versioned bills of materials, serialised units, kits versus virtual bundles, and production/process ownership.
 - **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+### Asset conceptual-review cross-reference (14 November 2026)
+
+**Proposed:** [Asset](../asset/capability-record.md) records the identity and operational lifecycle of a particular managed physical unit, including third-party-owned leased or loaned equipment. Product retains saleable item/model/variant definitions and commercial descriptions; neither Product nor Asset alone determines stock balances or financial recognition. A product reference does not imply title or custody. Preserve the pending Product conceptual review.
