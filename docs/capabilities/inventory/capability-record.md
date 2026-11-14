@@ -38,3 +38,7 @@
 - **Related capability notes:** [product](../product/capability-record.md), [warehouse](../warehouse/capability-record.md), [logistics](../logistics/capability-record.md), [asset](../asset/capability-record.md), [accounting](../accounting/capability-record.md).
 - **Open architectural questions:** BOM and production ownership, landed-cost evidence, inventory cost methods, and controlled transfer into or out of fixed assets.
 - **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+### Asset conceptual-review cross-reference (14 November 2026)
+
+**Proposed:** [Asset](../asset/capability-record.md) owns operational stewardship of individually identifiable managed equipment/property, regardless of legal ownership. Inventory remains authoritative for saleable/production stock quantities and movements. Conversion of a serialised item from stock to operational use (and back) needs an authorised cross-owner handover and Accounting reconciliation, without double-counting or duplicated authority. Protocol details remain open for Inventory's own review.
