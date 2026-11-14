@@ -120,6 +120,74 @@ Optional screens should expose operational status and history accessibly, with i
 | Asset ↔ Integrations | Provider credentials, mappings, external observations and confirmations | Provider connector handles transport; Asset's authority policy controls acceptance and reconciliation |
 | Licences, IP registries and contractual sources ↔ Asset | Verified right, licence, territory, seat, renewal or legal claim evidence | Asset owns operational stewardship and expiry/usage implications, never legal validity or the authoritative agreement itself |
 
+## Dependency and information-exchange contract
+
+**Design principle:** Asset must remain useful with its own native register, governed relationships, type-specific obligations, lifecycle and history. A conceptual information exchange is **not** automatically a mandatory package or Nuxt `extends` dependency. Each provider/consumer uses a declared public contract, host-supplied port, validated command or owner-published event. No cross-capability private table access or cyclic dependency is permitted.
+
+### Minimum composition obligations
+
+- **Host-supplied persistence:** Asset defines and owns its durable schema, migrations and repository/transaction semantics; a compatible connection is supplied by the host. Required persistence unavailable means changes fail closed; there is no global Persistence capability.
+- **Trusted caller and tenant context:** caller/tenant/resource scoping, authenticated or explicitly trusted service actors where relevant, and reliable identifiers from the IAM composition. Identity/Authentication own their own assertions; Asset never invents identities or grants privileges from owner/assignee labels.
+- **Server-side Authorisation:** mandatory for protected reads, exports, relationships and mutations, including contractor access, cross-group delegation and transfers. A missing or inconclusive required access decision fails closed.
+- **Applicable compliance and privacy constraints:** legal holds, data-handling restrictions, lawful processing and retention are observed through published policy mechanisms as applicable; Asset does not invent jurisdiction-specific legal outcomes.
+- **Time:** effective/recorded timestamps, expiry/renewal and historical reconstruction are mandatory semantics. Reuse Clock's published functions where composed; choose a documented trusted clock contract/host time source without implying a direct package dependency.
+- **Native absence mode:** absent Product, Accounting, Inventory, purchase/procurement, third-party legal-party directory, external licensing, workflow, notifications or external asset-management software **must not prevent** ordinary registration, evidenced party-reference entry, allocation, inspection/evaluation, asset-specific entitlement control, local renewal recording and retirement. Asset may require specific provider evidence for narrowly defined configured transitions, such as a verified Inventory transfer or external authoritative renewal.
+
+These are conceptual host obligations, **not** a final `capability.json` dependency declaration or approved interface signatures.
+
+### Information Asset receives
+
+| Source / capability | Information or command supplied to Asset | Mode and authority |
+|---|---|---|
+| **Identity / Authentication** | Trusted actor, tenant, group and service-principal references; authentication/assurance context | Essential security context via composition; IAM owns identities, membership, credentials and sessions |
+| **Authorisation** | Operation- and resource-scoped allow/deny decisions | Mandatory for protected operations; Asset enforces decision and its own state invariants |
+| **Configuration** | Validated tenant/group policy values and policy change provenance | Optional settings management; Asset owns asset-domain policy meaning, defaults and enforcement |
+| **Clock** | Canonical time interpretation, calendars, zones and temporal calculations | Shared function where supplied; not authority for lifecycle policy |
+| **Product** | Product family/model, specifications and descriptive reference data | Optional enrichment; Product's published data is authoritative for model definition |
+| **Inventory** | Identified unit, stock release/receipt, stock movement and conversion confirmation | Optional except for a governed stock-to-asset conversion; Inventory owns stock facts |
+| **Order / Invoice / Billing** | Verified acquisition, sale, lease, service and disposal source-document identifiers, commercial consideration and status | Optional evidence; each originating domain remains authoritative |
+| **Accounting** | Accounting entity/book reference, recognised financial record reference, financial reconciliation result or financial-control hold where applicable | Optional cooperation; Accounting exclusively owns recognition, depreciation/amortisation, impairment and postings; Asset never recalculates its books |
+| **Location / organisation-facing party sources** | Place/geospatial references, external legal-party or organisational references, verified address/registration evidence | Optional; Asset stores relevant time-bounded associations, not a competing geospatial/party master |
+| **Legal Compliance / Privacy** | Applicable legal constraints, holds, personal-data disclosure and retention instructions | Enforced when applicable; technical access permission alone cannot waive obligations |
+| **Task / Workflow / Scheduler** | Completed or failed work evidence, approval outcomes, due execution confirmations, with correlation | Optional; these capabilities own their execution/approval processes, not Asset's operational outcome |
+| **Warehouse / Logistics** | Physical handling, collection, delivery, inspection, receipt and release evidence | Optional; Asset verifies and records resulting custody/placement change |
+| **Integrations / specialist sources** | External fleet/telematics readings; licence seats, usage and expiry; IP registrations; insurer, maintenance and provider confirmations | Optional and provenance-labelled; originating source authority and validation required |
+| **Document / Media / Storage** | Stable evidence/file references and authorised retrieval support | Optional; Asset owns its associations, not file bytes or unrelated published documents |
+| **Direct users / authorised imports** | Registration facts, verified claims, assignment, operational observations, rights evidence and lifecycle requests | Native capability input, validated against domain policy and trusted actor/resource authority |
+
+For a given asset type, some fields are inapplicable. A software right has no physical custodian or mileage; a forklift need not have licence-seat limits. No mandatory optional-provider list may make Asset unusable merely because adjacent domain capabilities are absent.
+
+### Information Asset supplies to consumers
+
+| Consumer / capability | Asset-owned output | Permitted use and authority boundary |
+|---|---|---|
+| **Accounting** | Asset ID and type; acquisition/commissioning evidence, improvements, impairment indicators, disposal/transfer, rights/expiry and provenance | Basis for independent financial evaluation and reconciliation, **not** an Asset-generated journal or carrying value |
+| **Inventory** | Identity and confirmed commissioning, decommissioning, retirement or return-to-stock evidence; linked movement correlation | Reconcile physical unit conversion without duplicate stock or unapproved dual writes |
+| **Product / commercial applications** | Managed-unit association, appropriate eligibility/availability and lifecycle flags | Context for reuse or disposal sale; no alteration to Product master or stock balances |
+| **Booking / Order / shared-resource applications** | Authorised operational availability, restrictions, permitted-use windows and allocation status | Validate proposed allocation/use; Asset remains authoritative for its operational restrictions, Booking owns reservations |
+| **Task / Workflow** | Inspection/renewal/repair/approval obligation, due date, target asset, priority and permitted action reference | Initiate assigned work or governed approvals; Asset validates any eventual state change |
+| **Scheduler / Notifications** | Upcoming/overdue servicing, licence renewal/expiry and other events with policy-approved recipients or target references | Technical scheduling and delivery; Asset owns due criteria/outcome, Notifications owns delivery |
+| **Warehouse / Logistics** | Authorised transfer/release request, asset identity, condition/custody requirements and acceptance state | Carry out physical work; external acknowledgement is not accepted custody without business confirmation |
+| **Reporting / Search / Audit** | Tenant-filtered asset views, rights/obligation evidence, current and as-of relationships, change/decision provenance | Indexed/aggregated/evidential projections, not competing asset records |
+| **Legal Compliance / Privacy** | Referenced evidence, rights/retention obligations, personal-data association and governed export/erasure outcomes | Compliance oversight; Asset obeys authoritative holds and access constraints |
+| **Integrations / external systems** | Allowed records, scoped identity mapping, validated change events and reconciliation/export data | Push/synchronise only through explicit permissions and authority assignments |
+| **Authorised application screens and clients** | Asset search/detail, assignment, custody, condition or entitlement, status, lifecycle and evidence views; validated command results | Field- and resource-scoped disclosure; no direct private persistence access |
+
+**Event publication:** publish only confirmed Asset-owned facts (for example `AssetRegistered`, `AssetRelationshipChanged`, `AssetRestricted`, `AssetRenewalRecorded`, `AssetRetired`), with tenant/asset/correlation identifiers, provenance and effective/recorded time where appropriate. These are **illustrative event names**. Durable outbox ownership stays with Asset; Message Queue transports events and does not own them. Consumers must support replay, idempotency, out-of-order arrival and revocation/retention constraints.
+
+### Interaction patterns and dependencies
+
+1. **Query:** a consumer reads a filtered Asset view through Asset's public service; Asset evaluates trusted actor/tenant/resource context and applicable authorisation. Do not imply that accessing Asset authorises the consumer to expose every returned field.
+2. **Command:** a consumer requests an Asset transition (e.g. assign, restrict, renew, record disposal) with idempotency/correlation and expected state; Asset owns validation, acceptance, history and resulting event.
+3. **Event:** Asset publishes a confirmed business fact; consumers separately decide how that fact changes their own records. The event is not an instruction to write another capability's database.
+4. **Governed handover:** Inventory↔Asset transfers require explicit source and destination confirmation with a durable correlation and reconciliation plan; absent coordination must not produce competing authoritative inventory/asset state.
+5. **External authority:** for an explicitly assigned record slice and population, requests remain pending or fail safely when the selected authoritative provider is unavailable; an adapter cannot create authority merely by being installed.
+6. **No cyclic package imports:** an apparent two-way domain relationship is mediated by public contracts, host-supplied ports or event subscriptions, chosen so the final combined contract dependency and Nuxt extension graph stays acyclic. The eventual manifest must declare actual required/optional edges after inspecting the relevant published root contracts.
+
+### Contract safety and response semantics
+
+Public responses distinguish **owned facts**, **referenced external assertions**, **derived operational views**, **unverified/pending evidence**, and **provider failure**. Expose source, confidence/verification and as-of time where needed to avoid mistaking a projected value for authoritative data. Rights or ownership assertions are not legal judgements; the display of an Accounting balance remains Accounting-owned. Protected operations fail closed if required IAM or persistence is unavailable; absent optional providers degrade only their own enrichment or integrations. Business outcomes are never inferred solely from transport receipt.
+
 ## Conceptual acceptance scenarios
 
 1. **Independent operation:** a small club records its equipment, custodians, loan/return dates, inspections and condition with no accounting connector or external asset system.
