@@ -49,29 +49,53 @@ A usable standalone Audit capability should:
 
 **Completeness boundary:** Audit cannot prove that an event was never emitted or that an originator honestly recorded a physical event solely from an internal append-only store. Strong completeness requires a source-side expectation, sequence, reconciliation or an independent witness. The public contract must state the precise scope of each guarantee.
 
-## Proposed conceptual public contract — seven surfaces
+## Proposed conceptual public contract — ten logical surfaces
 
-These are **logical contract groups**, not existing APIs, TypeScript names, packages or a mandatory universal payload.
+These are **idealised public contract responsibilities**, not existing TypeScript exports, HTTP routes, provider SDKs or ten independent packages. An eventual independently usable root `CONTRACT.md` must make the inputs, outputs, permissions, failure codes, configuration and absence modes precise.
 
-| Surface | Inbound intention | Outbound intention and authority |
+| Surface | Input intentions | Output intentions | Ownership and guarantees |
+|---|---|---|---|
+| **1. Evidence Definition** | Register/version owner-declared event types; required fields, permitted sensitivity, assurance tier, mandatory coverage and capture policy | Validated event definition, compatibility result, effective rule version and coverage eligibility | Originator owns business meaning; Audit owns validated evidence catalogue and its governance, not the source's business event schema |
+| **2. Evidence Intake** | Submit event/attempt assertions with trusted producer, actor, tenant, target, outcome, source reference, provenance, timestamps and idempotency | Accepted/pending/rejected/uncertain receipt with Audit identity, time and reason; explicit duplicate association | A receipt attests only to Audit acceptance, never to business success or transport success |
+| **3. Evidence Query** | Authorised caller, purpose, tenant/resource scope, event predicates, time window and disclosure profile | Redacted timeline, metadata, provenance and uncertainty, stable pagination, omitted-result limitations | Every protected read is independently authorised; Audit does not grant access from actor occurrence alone |
+| **4. Integrity and Completeness** | Verification scope and expected source checkpoints/sequence; accepted evidence references and assurance target | Verified/failed/incomplete/unknown, proof references, gap report, checked interval and declared limitation | Integrity does not imply factual truth; completeness cannot be asserted without authoritative expectation evidence |
+| **5. Evidence Review** | Create/open/close review, link evidence, authorised annotations, disputes, corroboration and conclusions | Review history, finding and disposition, attributable notes and case references | Audit owns evidential review, not underlying business remediation or all incident-response processes |
+| **6. Retention and Preservation** | Retention class, effective duties, valid hold, disclosure constraint, subject-rights disposition, approved redaction/disposal | Applied status, eligible/held/restricted/disposed state, operation evidence, unresolved conflicts | Privacy/Legal Compliance supply normative constraints; Audit applies and proves its own evidence disposition |
+| **7. Evidence Portability** | Authorised export/import, classification, scope, redaction, destination and approved transfer of authority | Verifiable package, manifest, provenance, omissions, external receipts, reconciliation and transfer status | Imported evidence remains a classified assertion; exporting is not an automatic authority transfer |
+| **8. Coverage and Reconciliation** | Registered producer/definition inventory, source progress and expected event range, reconciliation/replay requests | Coverage by tenant/source/family/time window, gaps, stalled sources, replay status and unknown/unobservable scope | Completeness statements name the explicit source-side evidence and exclusions |
+| **9. Health and Control Evidence** | Health/readiness and protected control operations; validation of capture/verification/retention policy changes | Intake/verification health, degraded status, backlog, control-change evidence and alerts | Does not own platform Observability or Logging; administrative operations are themselves accountable |
+| **10. Evidence Attestation** | Selected evidence set, permitted assurance profile, integrity check results, witness/checkpoint context | Durable attestation statement, provenance and independently inspectable proof where supported, confidence and limitations | Attestation concerns a particular check and scope; not universal non-repudiation or legal admissibility |
+
+### Shared inbound information and provenance
+
+Not a mandatory all-purpose object: the minimum fields vary by event definition and trusted producer context.
+
+| Field concept | Who supplies or establishes it | Required semantic constraint |
 |---|---|---|
-| **1. Evidence Intake** | Authenticated, scoped producer assertions; validated source event/type/version, public target refs, actor/assurance, attempt and outcome, event/observed times, correlation, retention classification | Receipt identity and accepted/pending/rejected/uncertain status, deduplication and reason; Audit confirms *receipt*, not business success |
-| **2. Evidence Query** | Authorised actor, tenant/resource scope, filters, as-of criteria and disclosure purpose | Redacted chronological evidence, provenance, uncertainty, access limitation and pagination; never cross-tenant unrestricted search |
-| **3. Integrity and Completeness** | Verify stated scope, source progress/watermarks where available, independent checkpoint evidence and configured assurance level | Verified/failed/incomplete/unknown result, gap and tamper signals, checked interval, proof/checkpoint references, verification time and limits |
-| **4. Review and Attestation** | Open authorised review, associate records, state observations, dispute or acknowledge findings, close/reopen with grounds | Review case/reference, reviewer identity, decision history and evidence set; never changes domain business outcomes |
-| **5. Retention and Preservation** | Applicable retention obligations, hold/release decisions, subject-rights requests, approved disposal or redaction requests | Policy-applied disposition, restricted/held/expired/disposed status, proof of permitted handling and unresolved conflicts; Legal Compliance/Privacy own policy constraints |
-| **6. Evidence Portability** | Authorised export or external archive/sink connection, scoped time/range and disclosure profile; import of externally supplied evidence as explicitly classified assertions | Validatable export package with provenance, integrity manifest, omissions and redactions; imported evidence never silently acquires local verified-authoritative status |
-| **7. Health and Control Evidence** | Query intake/verification gaps, suspend/recover channels under controlled authorisation, request reconciliation | Readiness and degraded-state indicators, receipt backlog/unknown coverage, critical audit-policy-change evidence and failure notifications through appropriate consumers |
+| Originating source event identifier, type and version | Originator | Identifies the asserted event and its domain-defined meaning; stable for idempotency |
+| Verified producer identity and contract registration | Server-side trusted composition/intake | Never trust an unverified client-supplied producer name |
+| Tenant and resource ownership scope | Trusted context plus source's public resource references | Client-supplied tenant/group ID alone never establishes authority |
+| Actor, on-behalf-of actor, service executor and delegation | Applicable IAM/producer evidence | Distinguish initiating actor from executing service; preserve anonymous/unknown |
+| Action, attempt, decision and source outcome | Source owner | Attempted, denied, pending, committed, failed, compensated or uncertain must not be conflated |
+| Source event, observation and Audit receipt times | Source and Audit respectively | Preserve precision, origin, ordering uncertainty and clock-confidence as available |
+| Cause, correlation, workflow/approval and source confirmation references | Appropriate source owners | Support traceability without cross-schema access or duplicated authoritative state |
+| Event sensitivity, purpose, category, capture tier and retention classification | Validated event definition and applicable policy | Mandatory controls cannot be weakened by producer-provided labels |
+| Redacted supporting evidence reference, evidence digest and source assurance | Authorised source | Bounded and privacy-minimised; unverified signatures or external data remain unverified |
+| Source sequence/checkpoint, delivery attempt and import provenance | Source/transport as appropriate | Allow deduplication and detection of *supported* completeness gaps; never assume exactly-once transport |
 
-### Input/output expectations
+### Shared outbound information and interaction semantics
 
-**Inbound:** originating capability's identified event or attempted operation, source contract/version, attribution and resource identifiers, tenant/ownership context, source outcome/confirmation evidence, independently sourced or qualified assurance claims, timestamps and correlation, sensitivity/purpose/retention category, policy constraints and authorised review instructions. Event identity and idempotency scope must be explicit; producer permission to submit does not confer permission to query others' records.
+Audit may return its own durable evidence identity, source reference, receipt acceptance time, duplicate association, policy/definition version, redacted query result, integrity/completeness status, specific proof scope, review findings, retention/preservation disposition, export manifest, coverage/backlog and degraded-state notifications.
 
-**Outbound:** durable receipt acknowledgements; audit-owned integrity/coverage status and review findings; authorised evidence timelines and exports; preservation/disposal outcome; audit-originated control alerts or verified integrity exceptions. Domain capabilities may use evidence references without Audit mutating their owned records.
+**Four separate confirmations:** (1) business outcome from the originating capability, (2) message transport acknowledgement, (3) durable Audit intake receipt, and (4) integrity verification/attestation. None implies the others. Commands, authorised queries and confirmed Audit-owned events must be distinguishable. Eventual or duplicate delivery is not exactly-once delivery. Stable error concepts must include invalid/untrusted source, unauthorised scope, unsupported definition/version, policy prohibition, duplicate, unavailable persistence, delivery/capture uncertainty, evidence integrity failure, incomplete coverage, legal hold conflict and unavailable external authority.
 
-**Semantic separation:** (a) *business outcome* is confirmed only by its domain owner; (b) *message delivery* by Message Queue or Integrations is not acceptance; (c) *audit acceptance* proves capture of an assertion, not its factual truth; (d) *integrity verification* proves the configured form of record continuity, not honest human intent, globally complete capture or legal admissibility.
+### Capture contracts and operation continuation
 
-**Failure behaviour:** required event capture for an action must specify whether a durable originator-controlled outbox satisfies the immediate obligation, whether an Audit receipt must precede committing a high-risk action, or whether the operation must fail closed. This is a risk/contract decision, **not** a blanket synchronous Audit dependency on every capability. No producer may silently claim compliance when the chosen guarantee is unavailable. Recovery reconciles expected source events/positions with accepted evidence; duplicate delivery remains distinguishable from duplicate business actions.
+- **Standard capture:** source's durable, attributable emission/outbox permits business continuation; Audit may lag, and successful later receipt must be reconciled.
+- **Controlled capture:** specified durable capture plus deadline, monitoring, escalation and recoverable failure evidence; business continuation only if the approved source guarantee is met.
+- **Critical capture:** the owning operation may complete only upon the independently defined required evidence guarantee (potentially an Audit receipt or external anchor). The originator must fail closed or explicitly preserve its pending/uncertain state if the guarantee is unavailable.
+- The owning domain and applicable policy select the tier for each operation, subject to the non-weakenable platform floor. Audit publishes the status needed to enforce it but does not make business decisions for the originator.
+- Do not create an unconditional synchronous Audit dependency or an Authorisation↔Audit package cycle. Risk-critical paths must be designed with explicit failure modes and public ports before implementation.
 
 ## Cross-capability relationship matrix
 
@@ -125,11 +149,120 @@ Relevant specialist references for later implementation review (informative, not
 11. **Recovery:** restoring an older backup creates an apparent checkpoint rollback; service is degraded until reconciled and verified, with explicit loss/uncertainty disclosed.
 12. **Cross-capability corrections:** Asset corrects a disputed title claim. Audit retains the earlier and subsequent claims, attribution and evidence status, without deciding legal title or rewriting Asset's current state.
 
+13. **Baseline by default:** a new relevant application composition enables required security event definitions and secure native intake without external providers. Missing producer support or mandatory capture configuration appears as an explicit unmet requirement, not a false green coverage claim.
+14. **Standards profile applicability:** an application adopts a documented NIST AU-oriented profile and its configured mapping shows satisfied, incomplete, unsupported and non-applicable controls with evidence, revision and rationale; it never claims certification from configuration alone.
+15. **Tenant extension:** a tenant strengthens financial and sensitive-read coverage, enables additional integrity checks and sets shorter permitted retention without weakening the platform floor; an attempted weaker setting is refused and audited.
+16. **Control conflict:** legal hold and personal-data erasure demands conflict. Applicable authoritative constraints are evaluated, uncertain legal scope is surfaced for qualified decision, and neither automatic perpetual retention nor silent erasure occurs.
+17. **Producer registration and source coverage:** a source declares a versioned event family and valid checkpoints, later stops producing; Audit detects the supported gap, reports true coverage and resumes reconciliation with duplicate-safe replay.
+18. **Event flood and storage exhaustion:** malicious/accidental volume is bounded, critical evidence handling and overload states are visible, no credentials are leaked and the applicable fail-closed requirements for protected operations remain enforceable.
+19. **Self-administration:** an operator attempts to weaken auditing, alter retention or disable integrity checks; the action is denied or governed by approved separation of duties and is itself preserved as protected evidence.
+20. **Attestation limits:** a cryptographic check verifies a selected interval, but a source never emitted a required action. Audit reports verified integrity for the received set while accurately reporting unknown completeness absent independent source expectations.
+
+## AUD-01 — Governed event taxonomy and baseline capture
+
+**Decision direction approved by the project owner:** Audit encompasses significant security, administrative, business, financial, compliance and data-access events selected through a risk-based event catalogue. The review extends this into **fourteen class families**, not fourteen always-on high-volume streams. Originating capabilities define their own concrete event names and source outcomes; Audit governs the evidence classification, constraints, admission and coverage policy.
+
+| Family | Representative auditable events | Default expectation |
+|---|---|---|
+| **01 Authentication and sessions** | Sign-in success/failure, MFA enrolment/recovery, reauthentication, session/token revocation, account recovery and anomalous session handling | Core security baseline for security-relevant outcomes; no raw credential or token |
+| **02 Authorisation and privileges** | Access denial, role/grant creation/revocation, privilege elevation, break-glass invocation, change to access rules, failed privileged action | Core baseline for denied/sensitive operations and privilege policy changes |
+| **03 Identity and organisational governance** | Identity lifecycle, tenant/group/membership changes, delegation, resource ownership transfer and service-identity lifecycle | Baseline for high-impact changes, with individual lifecycle rules defined by IAM |
+| **04 Administration and configuration** | Controlled settings, security policy, feature availability, administrative override, system/service enablement and privileged control changes | Core baseline for security-affecting changes |
+| **05 Business transactions and decisions** | Orders, bookings, approvals, fulfilment obligations, contracts and cancellations | Risk-selected per business capability; owner supplies confirmation |
+| **06 Financial and value movement** | Journal posting/reversal, payment/refund, asset valuation reference, charge, payout, account closure and period close | Strong default proposal for material financial controls; sector-specific obligations conditional |
+| **07 Data access and disclosure** | Sensitive record view, mass lookup, privileged read, sharing, download, export, report disclosure and recipient change | Core for privileged/sensitive disclosure; ordinary read sampling only where justified |
+| **08 Data and information lifecycle** | Material create/change/delete, correction, restoration, migration, classification and destructive bulk action | Baseline for high-risk/destructive operations; not every low-value field edit |
+| **09 Privacy, consent and subject rights** | Consent grant/withdrawal, privacy preference change with legal effect, data-subject request, erasure/export decision and data breach response milestone | Core for privacy-control and rights-related decisions; lawful purpose governs capture |
+| **10 Legal, regulatory and compliance** | Legal hold/release, regulatory declaration/filing, policy exception, mandated review, retention override and disclosure to authority | Baseline where applicable duty exists; not universally mandated legal rules |
+| **11 Security control and threat events** | Input/output validation anomaly, suspected misuse, malware/content security incident, key lifecycle, secrets access, suspicious business-logic bypass and policy-enforcement failure | Baseline for materially security-relevant events, safely minimised; routine runtime errors remain Logging |
+| **12 External integration and authority** | Connection granting/revocation, webhook validation failure, synchronisation conflict, external attestation, authority mode selection and transfer | Baseline for connection/credential/authority changes; routine transport diagnostics remain technical logs |
+| **13 Operational/execution control** | Privileged deployment/release, production data restore, disaster-recovery invocation, critical job cancellation, service security-control startup/shutdown and scheduler override | Risk-based baseline for material control-plane actions, not generic performance telemetry |
+| **14 Audit governance, access and integrity** | Audit configuration/policy change, authorised and denied evidence access/export, hold/disposal, capture pause/failure, integrity check, tamper detection, key change and privileged evidence maintenance | Non-disableable core Audit baseline; bounded anti-recursive self-accountability |
+
+**Cross-cutting event dimensions:** success/failure/attempt/denial/uncertain/compensation, actor/service/delegation, producer trust class, target classification, tenant and group scope, business materiality, privilege, sensitivity, legal applicability, source and Audit times, provenance and time confidence. A single event can be classified across several families without duplicating the same authoritative assertion.
+
+**Deliberate exclusions:** routine debug/trace/metric events, every public-page request, personal browsing surveillance, arbitrary message payloads, complete file bodies and unfiltered infrastructure logs are not default evidential data. Logging and Observability own technical diagnostics; specialist monitoring may consume explicitly authorised Audit findings. Special-category personal data and secrets are not captured merely to meet a generic template.
+
+### Event definition governance
+
+Proposed first-class **Evidence Definition** functionality: register an owner-declared event identity, version, meaning, permitted actor/outcome types, required provenance, sensitivity/purpose, risk class, capture assurance, admission validation, privacy minimisation, retention class and eligible verification/coverage method. Support schema evolution, effective dates, compatibility review, ownership transfer with explicit approval, retirement and historical interpretation. Maintain an effective event catalogue by tenant/application scope with a protected platform security floor. Unknown definitions must be rejected or classified as quarantined/unverified, not silently treated as validated business events.
+
+### Protected out-of-the-box baseline
+
+**Proposed installed defaults** (not claims of implemented controls or complete regulatory compliance):
+
+1. Platform-defined, versioned security floor for relevant sign-in failures/successes, access denial, privilege and IAM policy changes, security-sensitive configuration, recovery/break-glass, protected data export, privacy/consent decisions, Audit control changes and intake/integrity failures.
+2. Safe structured evidence envelopes with bounded payload size; no credentials, tokens, raw session values, unnecessary personal attributes or default full request/response bodies.
+3. Secure server-side producer validation and read/export/review authorisation; tenant, group and resource isolation; administrative separation of duties.
+4. Native durable intake with idempotent acknowledgement, source/event provenance, explicit receipt versus source-outcome distinction, failure and recovery states.
+5. At least one useful native integrity check and verifiable report, with the **threat model honestly stated**; no default claim of independent external anchoring or complete source coverage.
+6. Event-definition validation, severity/risk classification, source coverage inventory, detection of stopped capture where observable, evidence backlog and degraded-state reporting.
+7. Purpose-based retention-class mechanism with policy-derived schedules, lawful preservation, eligible disposal and protected review history; **no universal fixed retention period**. Before a real deployment processes persistent evidence, the host must supply validated lawful retention and region decisions; default absence of such decisions must not quietly imply indefinite retention.
+8. Native authorised timeline, review, safe export/manifest and privileged-operation evidence without a SIEM, MQ, external evidence provider or proprietary application dependency.
+9. Documented operational recovery posture, storage capacity/backpressure behaviour, cross-tenant negative tests and validation of unexpected/malicious producer input.
+10. Mandatory floor cannot be switched off by ordinary tenant settings. An unavailable required security control is a visible blocked/degraded state, not a silent downgrade.
+
+**Important nuance:** A baseline is a **contract obligation on relevant installed producers and compositions**, not proof that Audit automatically intercepts events from packages that have never published them. Installation, composition, registered event support, actual instrumentation, continuity and verified coverage remain distinct statuses.
+
+## Configurable standards profiles and policy precedence
+
+**Proposed goal:** make Audit maximally configurable **above a protected minimum**, allowing an application to select evidence policies mapping closely to selected standards while keeping the source's business authority and privacy obligations intact.
+
+| Layer | Owner and precedence | Examples and constraints |
+|---|---|---|
+| **1. Accepted governing security/privacy/ADR requirements** | Normative platform authority | ASVS 5 L2/relevant L3, trusted access, tenant isolation, provider rules, lawful personal-data handling; immutable to ordinary settings |
+| **2. Validated legal/regulatory duties** | Legal Compliance / Privacy + application legal applicability decision | Jurisdiction, purpose, lawful basis, record-preservation holds, data-region and sector-specific retention; requires reviewed applicability |
+| **3. Protected platform Audit floor** | Audit's versioned built-in policies | Required event categories, integrity/receipt guarantees, no secret capture, audit-of-audit, critical failure visibility |
+| **4. Approved assurance/compliance profiles** | Application-level governance adopting selected mappings | NIST AU-oriented, ISO records management-oriented, PCI DSS or sector-specific; enabled only when relevant and supported |
+| **5. Tenant and organisational policy** | Authorised governing context using Configuration mechanism | Add event families, stricter capture/verification, retention schedules within legal constraints, review intervals and scoped exports |
+| **6. Source-specific event definition** | Originating capability with Audit validation | Business meaning, source truth, idempotency and event-specific allowed fields; cannot reduce floor or legal controls |
+| **7. User presentation preferences** | Appropriate existing preference owner | Locale/time-zone display and accessible evidence presentation; cannot change capture, retention, integrity or permissions |
+
+Profiles are **declarative, versioned and inspectable mappings**, not certificates or vendor plugins. Each profile must declare: standard/revision, control IDs, selected requirements, applicability, evidence types, minimum settings, excluded/not-applicable controls with reasons, limitations, validation criteria, review owner, and an outcome of met/not met/partial/unknown/not applicable based on actual deployment evidence. A template showing how to satisfy a standard does not establish certification or compliance.
+
+**Configuration controls:** event-family selection; tenant and application scope; risk/materiality thresholds; producer registration and strictness; severity; data minimisation and safe enrichment; sampling **only where law and floor permit**; capture/acknowledgement deadlines; retry and reconciliation; integrity and external anchoring profiles; review and escalation; retention, legal hold and disposal; external export/sink/authority policy; alert routing; and report/view definitions. Every security-affecting change is authorised, attributed, effective-dated, reviewed if required, and audited against the previous effective policy. Unsafe downgrade or conflicting rules are refused or remain pending.
+
+**Precedence:** legal limits and approved higher-assurance obligations cannot be waived by subordinate configuration; if two applicable obligations are incompatible, record an explicit conflict and fail safely for affected operations rather than invent a permissive fallback. Optional profiles may be enabled separately for independently scoped workloads; no hard-coded single-country assumption. Configuration stores applicable declared settings, while Audit owns event validation and enforcement; Legal Compliance/Privacy retain their constraint ownership.
+
+### Assurance levels (separate from compliance claims)
+
+- **Capture:** standard durable source-outbox, controlled recoverable capture, critical gated evidence guarantee (see contract).
+- **Integrity:** internal tamper-detection under declared operator threat model; externally witnessed/anchored check where configured; enhanced evidence custody for high assurance. Each profile names what a compromised operator can invalidate.
+- **Coverage:** event-family definitions available; producer registered; events observed; source checkpoint reconciled; missing sequence detected; source capture independently substantiated. Unknown is never silently green.
+- **Attribution:** source assertion, verified producer, authenticated actor/delegation evidence, independently corroborated proof if available. Never label a normal login identifier as absolute non-repudiation.
+
+### Reference standards and controls — informative mapping
+
+| Reference | Controls/quality to map | Status and limitation |
+|---|---|---|
+| **NIST SP 800-53 Rev. 5 AU family**, at a revision documented in each adopted profile | AU-1 policy, AU-2 event selection, AU-3 contents, AU-4 capacity, AU-5 failures, AU-6 review, AU-7 reduction/reporting, AU-8 timing, AU-9 protection, AU-10 non-repudiation, AU-11 retention, AU-12 generation; applicable enhancements | Reference control catalogue; profile cannot assert US federal compliance by itself |
+| **OWASP Logging Cheat Sheet** and governing **OWASP ASVS 5.0** | Risk-based event classes, fail-safe validation, security-event reliability, confidential-data minimisation, authorisation and verification | Governing ASVS is normative already; Cheat Sheet is implementation/design guidance |
+| **ISO 15489-1:2016** | Authenticity, reliability, integrity, usability, context, capture, recordkeeping, provenance, preservation and disposition | Informative records-management principles; 2016 edition current at review, replacement in development; not a blanket certification claim |
+| **ISO/IEC 27001:2022 / 27002:2022** | Audit governance, logging, monitoring, clock synchronisation, responsibilities and assurance | Conditional organisational control mapping, not mandatory certification |
+| **ISO/IEC 27037:2012** and applicable **ISO/IEC 27043** | Digital-evidence identification, collection, preservation and investigation methods | Specialist evidence/forensics guidance; do not claim forensic or courtroom admissibility by default |
+| **NIST SP 800-92** | Log-management process, review and operations | Informative and comparatively old; check current guidance at implementation |
+| **RFC 5848 / RFC 3161** | Signed-message integrity and timestamp attestations | Mechanism examples, **not** required protocols or automatic trusted-time claims |
+| **PCI DSS Requirement 10** (where in scope) | Access monitoring, privileged operations, audit trail protection and review | Conditional cardholder-data environment applicability; validate correct active version and requirement mapping |
+| **UK GDPR / ICO storage-limitation guidance** | Purpose-limited personal-data capture, retention, review, erasure and disclosure | Applicable legal analysis required for actual data and organisation; guidance under review |
+
+**External reference provenance:** OWASP Logging Cheat Sheet `https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html`; NIST SP 800-53 AU controls `https://csrc.nist.gov/projects/risk-management/sp800-53-controls`; ISO 15489-1:2016 `https://www.iso.org/standard/62542.html`; ICO storage-limitation guidance `https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/`. These are **research sources in this non-normative blueprint**, not modifications to governing `RESOURCES.md` or new accepted standards.
+
+## Further non-functional and assurance obligations
+
+- **Producer trust:** validate server provenance and approved namespaces. Accept anonymous attempts with an honestly unknown actor; no client may attest to privileged assurance or submit another tenant's source identity. Treat external evidence as untrusted until provenance and explicit verification establish otherwise.
+- **Input safety and abuse resistance:** safe encoding, schema/version/size limits, duplicate protection, bounded validation failures, rate/volume controls, tenant fairness, high-priority reservation and backpressure, and no sensitive full-payload fallback.
+- **Access and custody:** protected separation between producer, administrator, reviewer, legal-hold approver, export/disclosure officer and infrastructure custodian; scoped, purpose-limited sensitive reads; controlled emergency access; disclose exported copies as irreversible external exposure where appropriate.
+- **Causation:** correlate business request, applicable authorisation, approval, execution, reversal and later review with public identifiers without forcing a universal distributed transaction.
+- **Evidence quality:** record producer claim versus independent corroboration, authenticity class, missing context, dispute, corrected assertion, review confidence and known time uncertainty. A review finding cannot rewrite authoritative domain outcomes.
+- **Continuity:** backup/restore, independently anchored checkpoints where required, rollover, key rotation or loss, migration, source unavailability, delayed/out-of-order events, external authority transfer and re-entry. Restored outdated evidence is degraded until reconciled.
+- **Self-accountability:** intake/capture pause, viewing/exporting protected Audit evidence, changing definitions, verification, keys, legal holds and disposal must itself produce controlled evidence; avoid infinite self-recursion through bounded trusted evidence classes.
+- **Discovery:** applications must distinguish Audit installed, composed, producer instrumented, definition enabled, receipt healthy, capture reconciled, integrity verified and permission granted. No false universal coverage from package installation alone.
+
 ## Design challenge and unresolved decisions
 
 | ID | Architectural question / required sign-off |
 |---|---|
-| AUD-01 | Confirm Audit as independent Platform responsibility and minimum coverage: security governance only, or defined business accountability event classes with risk-based obligations? |
+| AUD-01 | **Direction agreed:** cover fourteen risk-classified families spanning authentication, authorisation, identity governance, administration, business, finance, data access/lifecycle, privacy, legal duties, security threats, integrations, operations and Audit itself. **Open at deployment:** concrete event definitions, obligations, producer readiness and protected baseline/profile applicability. |
 | AUD-02 | Which actions must fail closed pending durable capture, which rely on source-owned transactional outbox, and what acknowledgement/coverage guarantee is mandatory? |
 | AUD-03 | Define precise verification threat model: ordinary operator tampering, privileged infrastructure compromise, out-of-band independent anchors, and evidence of missing source events. |
 | AUD-04 | Define scoped retention/hold/erasure, redaction, subject-access and cryptographic key-loss behaviour without contradicting Privacy, Legal Compliance or accepted ADRs. |
@@ -141,7 +274,7 @@ Relevant specialist references for later implementation review (informative, not
 | AUD-10 | Confirm whether authorised audit reporting belongs in Audit while broader analytics and dashboards remain with Reporting/Search. |
 | AUD-11 | Independently validate applicable legal and industry-specific retention, admissibility, evidentiary handling and data-transfer duties; no blanket compliance claim. |
 
-**Completeness finding:** These questions are principally *assurance-policy and authority decisions*, not missing basic functionality. Native operation and the proposed seven surfaces provide a credible conceptual boundary, but the user has **not yet approved** these choices. The record is suitable for conceptual discussion and sign-off only after the critical assurance/retention/transactional-capture questions are resolved or explicitly deferred with limits.
+**Completeness finding:** AUD-01 and the recommended directions for AUD-02–AUD-11 have been reviewed favourably by the project owner; they remain **proposed blueprint design**, not accepted normative ADRs, approved implementation contracts or evidence of operational compliance. These questions are principally *assurance-policy and authority decisions*, not missing basic functionality. Native operation and the proposed seven surfaces provide a credible conceptual boundary, but the user has **not yet approved** these choices. The record is suitable for conceptual discussion and sign-off only after the critical assurance/retention/transactional-capture questions are resolved or explicitly deferred with limits.
 
 ## Architectural consequences and review status
 
@@ -149,6 +282,6 @@ Relevant specialist references for later implementation review (informative, not
 - **Related capabilities:** brief reciprocal notes are appropriate in Logging, Observability and relevant business/security owners, without claiming their conceptual reviews complete.
 - **Governing architecture:** no accepted ADR contradiction established at this stage. A new normative obligation on all capabilities to depend synchronously on Audit, a universal evidential schema or an altered ADR-0012 outbox shape **would** require explicit architectural approval; none is made here.
 - **Implementation/repository:** not created, inspected or certified; no `CONTRACT.md` or API exists as evidence.
-- **Conceptual review:** **Proposed, not signed off**. Ready for an architectural decision on risk-based capture and integrity guarantees, retention/privacy compatibility and independent-authority scope before implementation design.
+- **Conceptual review:** **Proposed, expanded draft; not formally signed off**. Ready for an architectural decision on risk-based capture and integrity guarantees, retention/privacy compatibility and independent-authority scope before implementation design.
 
 **Related records:** [Accounting](../accounting/capability-record.md), [Asset](../asset/capability-record.md), [Authentication](../authentication/capability-record.md), [Authorisation](../authorisation/capability-record.md), [Identity](../identity/capability-record.md), [Privacy](../privacy/capability-record.md), [Legal Compliance](../legal_compliance/capability-record.md), [Configuration](../configuration/capability-record.md), [Logging](../logging/capability-record.md), [Observability](../observability/capability-record.md), [Message Queue](../message_queue/capability-record.md), [Reporting](../reporting/capability-record.md), [Integrations](../integrations/capability-record.md).
