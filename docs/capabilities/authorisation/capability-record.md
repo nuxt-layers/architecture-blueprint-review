@@ -1,25 +1,156 @@
-# **Capability Record**
+# Capability Record — Authorisation
 
-## Capability Name:
+**Capability:** `authorisation` — **Established Foundation (IAM) architectural responsibility**.  
+**Conceptual review:** Proposed for sign-off; independent implementation readiness unverified.  
+**Reviewed:** 15 November 2026.  
+**Governing baseline:** `nuxt-layers/architecture-rules` `master` `2eea557fa3acbf9412fea065d2a3cdda42a764fc`.  
+**Blueprint baseline:** `nuxt-layers/architecture-blueprint-review` `master` `9845cff48b0f61ed092603203e4279279afdadfa`.  
+**Implementation evidence:** [`nuxt-layers/authorisation`](https://github.com/nuxt-layers/authorisation), public active `master` at `eedfcc6c974f8f15df38b554c394b82164bec4bc`; [root consumer `CONTRACT.md`](https://github.com/nuxt-layers/authorisation/blob/eedfcc6c974f8f15df38b554c394b82164bec4bc/CONTRACT.md), development contract version 4, not a supported formal release. Published interfaces documented; complete independent runtime and acceptance verification **unverified**. Test-template repository `nuxt-layers-test/application-test-template` `master` at `8b7b142b84b5ec2379d4e2e727914fe344187d64` identified, not tested or changed.
 
-## Status: (Available, Installed, Configured, Operational, Enabled, Authorised and Proposed).
+## Architectural authority and evidence
 
-## Purpose
+**Established:** [Platform Charter](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/platform-charter.md), [Architecture](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/architecture.md), [Capability Standard](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/capability-standard.md), [Identity and Access](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/identity.md), [Security](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/security.md), [Privacy](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/privacy.md) and [Catalogue](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/catalogue.md). Accepted ADR-0001–0016 apply as relevant, especially 0003 (group invariants), 0005 (IAM split), 0006 (authorise before store query), 0007 (break-glass), 0009 (headless/presentation), 0012 (composition), 0015 (infrastructure libraries) and 0016 (controlled specialisation). All sixteen current ADR files are marked accepted; amendment dates and the exact current text, not historical proposals, govern.
 
-## Classification
+**Evidence classification:** an accepted ADR or normative rule is **Established**; the existing root contract is **Established published interface evidence** but does not prove compliance; design improvements in this record are **Proposed**; unsettled architectural issues are **Open**; behaviour without independent acceptance evidence is **Unverified**. Blueprint discussions and proposed organisation archetypes cannot override accepted IAM rules. The [decision register](../../../records/decisions.md) retains unresolved generic configuration/organisation questions and ADR-0012 integration gaps. The [Authentication](../authentication/capability-record.md) and [Audit](../audit/capability-record.md) reviews establish relevant reciprocal conceptual boundaries.
 
-## Dependencies
+## Purpose, identity and classification
 
-## Optional integrations
+**Established:** Authorisation is the authoritative **access-decision** capability: given a trustworthy actor, requested action, domain-owned resource and verified context, determine whether the operation is permitted and under which applicable conditions. It owns **permission policy semantics, roles and their definitions, role assignments, explicit access grants, their controlled changes, effective decisions and access-review records**. It does not authenticate the actor, issue sessions, create principals or groups, store personal profiles, own protected domain records, or equate a successful sign-in with permission.
 
-## Version
+**Distinct responsibility:** consistent server-side permission assessment, scope and revocation across every application/domain cannot safely be duplicated in domain UIs, Identity or Authentication. Authorisation warrants a separate Foundation capability, independent of whether it is implemented as a Nuxt Layer, framework-independent core or modular-monolith component. Consumers include protected domain and platform services, IAM Integration, application composition roots, administrators and permitted reviewers. Optional screens are merely views of guarded services.
 
-## Availability
+**Decision function:** `trusted actor + action/permission + authoritative resource descriptor + verified tenant/group context + standing + applicable policy + assurance/recency → allow / deny / unavailable` with a reason category and step-up requirements when appropriate. A decision is **not** a domain business outcome, a consent decision, a legal-compliance verdict or a durable promise that the same permission will remain valid later.
 
-## Capabilities offered
+## Authoritative ownership and exclusions
 
-## Configuration
+| Authorisation owns | Other owner / prohibition |
+|---|---|
+| Permission definitions/registry, meaning, risk and compatibility; domain capabilities declare the permissions governing their own operations | A domain remains authoritative for the action's business semantics and resource existence/attributes |
+| Tenant-scoped role definitions, built-in role policy, scoped/eligible/time-limited assignments and group access defaults | Identity owns group identity, tree, tenant, membership, standing and owner governance; group hierarchy alone conveys no rights |
+| Explicit grants, subject/resource binding, constraints, expiry, delegation limits and revocation | Protected domain owns resource ownership, state and creator provenance; creator identity is not permission |
+| Access decision, visible-scope answer, denial reason and obligations for enforcement by the caller | Authentication owns sign-in, authenticators, assurance evidence and session lifetime; only trusted server assertion qualifies |
+| Governed access changes, approval decision binding, change state and Authorisation-side access review | Identity owns group governance facts/approval settings; IAM Integration coordinates cross-capability workflows |
+| Its own durable records, revisions, retained change provenance and capability-owned outbox events | Audit owns accepted evidential custody and review; Logging technical diagnostics; Message Queue transport |
+| Access-policy enforcement and decision-time evaluation | Configuration owns scoped settings/provenance, Privacy privacy policy, Legal Compliance mandatory obligations, not Authorisation's rules |
 
-## Cross-capability note — Authentication evidence and Authorisation decisions (15 November 2026)
+**Invariants:** deny by default; evaluate on the server; make tenant isolation and resource scope explicit and independent; never infer membership, permission or ownership from hierarchy, creator, email, provider identity, client headers, interface visibility or UI state. An authenticated or personally interested actor has no automatic access. Only trusted, current source facts are eligible. A negative result and an unavailable result are distinct. Permission grants cannot bypass lawful restrictions, domain invariants or obligations enforced by other owners.
 
-**Established:** [Authentication](../authentication/capability-record.md) establishes a principal's verified sign-in, assurance, method and recency; Authorisation alone decides whether that principal may perform an action on a resource, respecting tenant and group membership context. Authentication is not permission or proof of resource ownership. **Proposed:** preserve trustworthy assurance/freshness and fail-closed session or standing constraints through shared caller/access ports. **Open:** revocation consistency and the reconciled ADR-0012 public composition contract. Authorisation's conceptual review remains incomplete.
+## Native services and conceptual model
+
+**Established published behaviour:** the root contract documents `authorise`, `requireAuthorisation`, `authorisationQualifies`, `countAuthorisationQualifying`, `listAuthorisationVisibleGroups`, guarded change administration, role/grant functions, administration queries, self-view, maintenance, export/import, erasure/disposal and a transactional outbox. A request combines a trusted principal assertion, permission and resource descriptor; privileged direct functions are documented as server-only and pre-authorised by the trusted host. It currently supports personal groups, group/ancestor-scoped assignments, explicit grants, eligible activation, risk-dependent authentication requirements and tenant custom roles.
+
+**Proposed minimum independently meaningful service set:**
+
+1. **Permission catalogue:** accept versioned, validated domain permission declarations with documented meaning, risk/effect and backward-compatibility handling; refuse unknown permissions and redefinitions incompatible with the registered meaning.
+2. **Policy and role administration:** define effective tenant role profiles, permitted scope, constrained applicability and access defaults; request, authorise, approve, reject, amend or retire policy through attributable governance. Mandatory security floors cannot be reduced by tenant preference.
+3. **Assignment and grant lifecycle:** issue, activate where eligible, confirm, suspend/restrict where authorised, expire and revoke bounded roles/delegations; prevent self-escalation, unauthorised regrant, cycles or grant widening beyond the delegator's permitted authority.
+4. **Resource decision:** obtain trusted membership/standing, resource ownership and context from their owners; evaluate explicit policy and required authentication assurance; return safe allow/deny/indeterminate categories and obligations. Domain code must enforce the returned decision before accessing its store and recheck where a time-of-check/time-of-use gap matters.
+5. **Scoping and discovery:** supply constrained visible scopes for pre-filtering and data minimisation. A scope query is a query-planning aid, not blanket access to every record returned; per-item checks remain required.
+6. **Governance and access review:** list effective access and its source, stale/unused/eligible privileges, temporary elevation, grant expiry, review deadlines and proposed remediation; approval must bind to the exact reviewed change and be reassessed at application.
+7. **Revocation:** invalidate membership-derived effective rights on Identity departure or suspension, role removal, grant withdrawal or resource transfer. State the maximum tolerated staleness for each risk tier and fail closed when freshness cannot be proven.
+8. **Portability and maintenance:** controlled import/export, migration, reconciliation, retention, legal-hold handling, orphan privilege clean-up and idempotent retries; never overwrite a conflicting authority without explicit reconciliation.
+9. **Evidence and diagnostics:** emit owned changes and significant decision/denial evidence with safe provenance and correlation, without leaking secrets or excessive personal information; distinguish evidence custody, diagnostic logging and delivery acknowledgement.
+10. **Headless administration:** accessible, internationalisable server-enforced actions with optional built-in or host-rendered views for roles, permissions, effective access, grants, requests, approvals, access reviews and denied/step-up outcomes.
+
+**Conceptual objects:** `PermissionDefinition` (owner, stable name, semantics, risk, revision), `RoleDefinition` (scope, permission rules, lifecycle), `RoleAssignment` (principal, group, eligibility, effectivity, expiry, provenance), `Grant` (issuer, grantee, resource, scope, expiry, permitted delegation), `AccessPolicy` (validated scope, version, effective period), `AccessChange` (requester, approvals, digest, status), `AccessReview` (reviewer, results, follow-up), `Decision` (bounded evaluation result, source/policy revision, applicable requirement). These are conceptual information classes, not asserted database tables or exact exported types.
+
+**Lifecycle distinctions:** draft/validated/active/superseded/retired permission or policy; proposed/approved/eligible/active/suspended/expired/revoked role or grant; requested/awaiting-approval/delayed/held/applied/rejected/cancelled/expired change; scheduled/open/completed/overdue/reopened review. Not all states apply to every object. The existing contract specifically publishes `awaiting-approval`, `delayed`, `applied`, `rejected`, `expired`, `cancelled`; additional categories above are proposals, not contract claims. A historical approval never silently reauthorises a subsequently invalid change.
+
+## Conceptual public interfaces — inputs and outputs
+
+These **ten logical surfaces are proposed idealised responsibilities**, not existing API names, exported functions or additional packages. The actual published API remains the root `CONTRACT.md`.
+
+| Surface | Trusted inputs | Outputs / obligations and authoritative boundary |
+|---|---|---|
+| **AUC-A01 Permission definition** | Domain owner's permission identifier, description, action/risk/effect, schema/version and permitted scope | Validated catalogue definition, conflict/compatibility status; domain owns business action meaning, Authorisation owns its registered access meaning |
+| **AUC-A02 Effective policy** | Governed tenant/group/context selections, non-negotiable constraints, effective date, provenance | Versioned effective access policy and configuration explanation; no transfer of Identity or domain ownership |
+| **AUC-A03 Decision** | Trusted authenticated subject and assurance, verified resource owner/attributes, requested permission, tenant and operation context | Allowed/denied/unavailable; non-leaking refusal category, step-up requirement, applicable obligations and decision provenance |
+| **AUC-A04 Visible scope** | Authorised actor, domain permission, tenant and permissible resource class | Bounded group/resource filters plus limitations/freshness; **not** proof of authorisation for all matching items |
+| **AUC-A05 Roles and assignments** | Authorised group/tenant governance, role definitions, principal references, scope, eligibility, time and justifications | Assignment/role status and effective access source; no mutation of Identity memberships |
+| **AUC-A06 Grants and delegation** | Verified grantor rights, grantee reference, domain-owned resource, exact permissions, duration, constraints and approvals | Governed grant/revoke outcome, bounded delegation, idempotency and expiry; cannot mint rights beyond valid authority |
+| **AUC-A07 Access change and approval** | Trusted requester/decider, validated change digest, risk, authenticated freshness, Identity governance and reason | Pending/applied/rejected/held/expired change, evidence references and conflict categories; approval does not by itself confer standing |
+| **AUC-A08 Access review and explanation** | Authorised reviewer, scoped principals/groups/resources, requested as-of/now context | Effective access provenance, review result, proposed remediation and missing-evidence caveats; no disclosure to unauthorised viewers |
+| **AUC-A09 Revocation and lifecycle** | Trustworthy membership/standing, session, resource ownership or policy change; correlation/version | Explicit invalidation, effective revocation state/freshness bounds, reconciliation/fail-closed status |
+| **AUC-A10 Events, evidence and operations** | Owned state transitions, relevant denied attempts, maintenance triggers, export/erasure instructions and lawful hold signals | Durable origin events, appropriately qualified evidence intake status, sanitised diagnostics, portability/recovery outcomes; transport acceptance ≠ business completion |
+
+**Compatibility requirement:** the actual public contract must specify identity and authority of each input, errors, permission checks, mandatory/optional ports, no-provider behaviour, stable semantics, composition, security, event delivery and consumer examples without exposing SDK internals. A `decision` must not be usable as an indefinitely reusable bearer capability. Negative decisions, step-up and dependency failure must be distinguishable internally without enabling resource enumeration externally.
+
+## Governance, policy and configuration
+
+**Established:** Identity owns actual group governance and membership; Authentication provides authentication time, method and assurance; Authorisation's contract defines risk levels, secure policy floors, bounded staleness, and approved change workflows. The current contract exposes `provideAuthorisationPolicy` and multiple `provideAuthorisation*` registration calls, with host-supplied catalogue, directory and governance.
+
+**Proposed:** partition settings into (1) immutable platform security invariants; (2) approved tenant/group policy choices within those floors; (3) operational/availability/retention parameters; (4) presentation and user preferences. Configuration may store governed selections under its own public contract, while Authorisation owns validation and enforcement of their access meaning. Complex role/grant objects must not be assumed to fit generic Configuration storage. Effective policy has provenance, version, activation and rollback; its removal or read failure cannot silently produce an allow decision. A changed policy is a security-relevant event and may require re-evaluation of existing assignments.
+
+**Open:** safe authorisation policy-expression extension (for example controlled attribute-based rules in addition to existing roles), evaluator versioning, resource descriptors that change during a transaction, explicit deny/precedence semantics, safe delegation chain limits, prevention of privilege accumulation across groups/tenants, and whether domain constraints remain callbacks enforced by the domain or a narrowly defined published policy extension. Avoid introducing a universal generic policy engine or standalone `policy-map` authority by assumption.
+
+## Cross-capability relationships
+
+| Capability | Originating authority and exchanged information | Required / optional conceptual relationship |
+|---|---|---|
+| [Identity](../identity/capability-record.md) | Identity provides principal standing, tenant, group lineage, direct membership and ownership/governance facts; Authorisation owns assignments and decisions. Departure invalidates derived access | **Essential trusted information**, not a private repository import |
+| [Authentication](../authentication/capability-record.md) | Authentication supplies validated signed-in principal, assurance, method/freshness and session status; Authorisation provides access decision and step-up requirement | **Essential** for person-session protected operations; service callers require appropriately verified assertions |
+| [Profile](../profile/capability-record.md) | Profile owns personal attributes and disclosure; Authorisation decides permissions to access Profile-owned records; no profile attribute is casually copied into permission state | **Conditional**, when profile data are protected or attribute policies justified |
+| [IAM Integration](../iam_integration/capability-record.md) | Coordinates account lifecycle, membership/owner synchronisation, revocation, step-up and approvals using public ports; owns no roles or decisions | **Essential coordination in IAM suite**, not an Authorisation schema owner |
+| [Configuration](../configuration/capability-record.md) | Governed setting values, scope and provenance; Authorisation validates/enforces access-policy meaning | **Optional settings mechanism** unless a published composition explicitly requires it |
+| [Audit](../audit/capability-record.md) | Authorisation originates role/grant/change and qualifying denial evidence; Audit owns accepted custody/integrity/review and cannot replace the decision | **Important optional transport integration; mandatory evidence obligations where risk policy requires**, with explicit absence/failure mode |
+| [Logging](../logging/capability-record.md) | Authorisation emits sanitised operational errors, latency, denial rates and correlation; Logging owns diagnostic sinks, not permission state or evidential custody | **Optional diagnostics** |
+| [Observability](../observability/capability-record.md) | Decision health, staleness, failure and latency measures without secrets or unauthorised record contents | **Optional operations** |
+| [Message Queue](../message_queue/capability-record.md) | Transports Authorisation-owned outbox events, supports retries/idempotency; does not own event semantics | **Optional transport**, not a replacement for Authorisation outbox |
+| [Scheduler](../scheduler/capability-record.md) | Triggers authorised maintenance, activation expiry, reviews and retry work; does not decide access | **Optional scheduling integration**, with native maintenance operations retained |
+| [Clock](../clock/capability-record.md) | Trusted temporal semantics for expiry, assurance age and delays; time precision and trustworthy clock availability are security-critical | **Published runtime dependency**, conceptually time-service required; not owner of authorisation policy |
+| [Legal Compliance](../legal_compliance/capability-record.md), [Privacy](../privacy/capability-record.md) | Applicable restrictions, data minimisation, retention, rights and legal holds; Authorisation enforces access within its remit, does not determine legal applicability | **Conditional mandatory constraints**, not competing permission engines |
+| [Integrations](../integrations/capability-record.md) | External policy/identity source connectivity and reconciliation only when explicitly selected; Authorisation remains the effective local access-decision authority unless a separately governed authority transfer is approved | **Optional** |
+| Domain capabilities: [Asset](../asset/capability-record.md), [Accounting](../accounting/capability-record.md), [Publisher](../publisher/capability-record.md), others | Domain owns resource type, ownership, status and protected operation; declares permission intent and enforces Authorisation's decision before data access | **Essential for protected operations**, via contracts and composition; no automatic package dependency |
+
+**Dependency discipline:** logical collaboration is not a mandatory compile-time dependency. Host or IAM composition supplies trusted interfaces and avoids cycles. No use of another capability's private database or private implementation. Independent domain-owned business rules (including payment segregation, publication licensing or legal restrictions) remain enforced by their own owner after permission checks.
+
+## External modes, migration and continuity
+
+**Established:** the existing contract is native and server-side, with its own persistence, policy, events and no mandatory third-party policy decision provider. **Proposed:** permit a validated external policy source or specialist rule adapter only behind an explicitly approved, provider-neutral interface. Connection alone does not transfer decision, role or membership authority. For each scope, document source of policy truth, allowed write direction, version/effective time, conflict resolution, outage behaviour, provenance and reversion. A remote decision cannot simply be accepted without verifying caller, scope, resource, freshness and mandatory local constraints. No split-brain authoritative role definitions.
+
+For imports, organisational migration, provider outage, backup restore or policy rollback: compare source and target revisions, quarantine conflicts, avoid silently broadening rights, reconcile memberships and ownership, provide explicit partial/failed/unknown status and fail closed where evidence is insufficient. Maintenance/outbox delivery must tolerate duplicate retries without false business outcomes. Break-glass remains restricted by ADR-0007: passkey-only, own identity, no standing roles, only the two authorised emergency actions, alert/review/rotation; never a general access bypass.
+
+## Security, privacy, accessibility and standards
+
+**Established:** OWASP ASVS 5.0 Level 2 baseline and Level 3 for critical operations; WCAG 2.2 AA where presentation is offered; BCP 47/CLDR/ECMA-402 for localisation; ADR-0003/0005 tenant, standing, group and approval invariants; ADR-0006 server-side pre-query access checks; ADR-0007 emergency controls; ADR-0012 single-call composition. Every data store, derived index and cache must respect tenant isolation, revocation and lawful disposal.
+
+**Proposed:** maintain reason-coded, appropriately minimised accountability for access requests and high-risk denials, assignment/grant mutations, privilege elevations, policy revisions, approvals, emergency events and access reviews; never log bearer secrets, credentials or unnecessary profile data. A technical log is not immutable evidence, and an outbox transport receipt does not prove Audit acceptance. Clarify collection, retention and classification before adopting exhaustive per-request audit: volume, data-subject rights, client privacy and availability risks matter. External guidance worth reviewing at design stage includes NIST SP 800-53 AC and AU control families, NIST SP 800-162 (ABAC), NIST SP 800-63 assurance guidance, OWASP ASVS 5.0 and ISO/IEC 27001 controls. These are reference frameworks, not blanket statutory obligations or automatic certification.
+
+**Presentation needs:** native guarded services plus optional accessible screens for tenant role definitions, group assignments and defaults, effective access and explanations, sharing/delegations, elevation requests, approvals, access review, self-access and safe denial/step-up messages. Every action remains server-authorised; hiding a control never grants/denies permission itself. The detailed page structure belongs to a later design review.
+
+## Conceptual acceptance scenarios
+
+1. **Native:** without external IAM or policy engines, trusted local identity and authentication assertions, native role/grant records and a domain resource yield consistent server-side permit/deny results.
+2. **Isolation:** a valid principal, role or group from another tenant never confers cross-tenant data access; a client-supplied tenant or owning group cannot override trusted domain metadata.
+3. **No hierarchy magic:** parent-child relationships and creator attribution alone confer no permission; explicitly scoped group-and-descendants assignments apply only when all required membership and policy conditions hold.
+4. **Departure:** when membership ends or principal is suspended, derived role, delegated and cached rights terminate within stated bounds; sensitive operations fail closed when authoritative standing is unavailable. Independent valid grants survive only where permitted by the normative rules.
+5. **Step-up:** a role holder lacking required phishing-resistant/fresh authentication is not allowed; a verified step-up enables only the particular otherwise-permitted operation.
+6. **Governed change:** a user cannot self-assign a privileged role, approve their own high-risk request or reuse an approval after a change digest differs; effective rules are rechecked at application.
+7. **Time and review:** eligible elevation ends, grants expire, overdue reviews are visible, and maintenance retries do not regrant removed access or erase review provenance improperly.
+8. **Domain truth:** moving ownership of an Asset or Order does not silently leave old access; a domain-owned prohibition can still refuse a request that Authorisation considers permitted.
+9. **Service and emergency:** service principals are constrained by their own standing and permissions; break-glass cannot browse data, change roles or bypass approvals, and its narrow actions generate mandatory review.
+10. **Audit/Logging:** a permission change emits source-owned durable evidence; transient diagnostic failure cannot fabricate success; denial evidence required by policy has a defined capture and failure/recovery path rather than an optional unnoticed sink.
+11. **Outage/restore:** dependency outage, stale Identity data, failed clock, malformed provider assertion or conflicting imported policy yields deny/unavailable; restore/reconciliation never silently broadens access.
+12. **User interface:** optional screens can be disabled; host-rendered views still use the same server checks and remain accessible and localisable.
+
+## Outstanding decisions and compliance gaps
+
+- **AUTHZ-01 — Composition (Established gap):** the current root contract advertises several `provideAuthorisation*` calls plus host-coordinated role synchronisation and maintenance. Reconcile to ADR-0012's single-call/50-line contract; preserve assurance and high-risk governance. This is an implementation/public-contract alignment task, **not** a proposal to weaken ADR-0012.
+- **AUTHZ-02 — Shared ports (Established gap):** align public caller/access/clock/events shapes with ADR-0012 while retaining trusted Identity directory/governance, resource descriptors and explicit absence modes; verify a minimal host independently.
+- **AUTHZ-03 — Delegated mutators (Open):** tighten trusted internal callers, authorisation of direct server functions, event provenance and replay controls; no host-imported unrestricted route should expose these as public changes.
+- **AUTHZ-04 — Revocation (Open):** specify measurable freshness guarantees for sessions, decisions, derived scope sets, asynchronous projections and Identity event propagation, including fail-closed critical reads.
+- **AUTHZ-05 — Policy expressiveness (Open):** decide whether existing permission patterns/conditional role rules suffice, and if/when governed attribute- or relationship-based policy extensions are needed; prevent a universal parallel policy owner.
+- **AUTHZ-06 — Authoritative domain facts (Open):** define verifiable resource descriptor, as-of consistency and change-of-ownership handling; avoid a general domain data-reading privilege.
+- **AUTHZ-07 — Conflicts and prohibitions (Open):** document precedence for explicit denies, grants, suspensions, domain constraints and mandatory legal restrictions; do not infer automatic grant override.
+- **AUTHZ-08 — Access-evidence capture (Open):** reconcile the optional best-effort denial sink with risk-based mandatory Audit events and operational Logging; choose an appropriate availability/retention approach without generating huge indiscriminate request payloads.
+- **AUTHZ-09 — Policy configuration (Open):** specify version, precedence, scope, approvals, rollback and whether complex definitions belong in Authorisation rather than generic Configuration.
+- **AUTHZ-10 — External authority (Open):** whether to support external policy engines or role federation, and what verified scoped authority transition/reconciliation would entail; none is established by current contract.
+- **AUTHZ-11 — Governance/reviews (Open):** precise separation of Identity group approvals, Authorisation role/change approvals, delegated grant capability, independence constraints and periodic certification.
+- **AUTHZ-12 — Portable history (Open):** describe subject and tenant export/erasure, retention, legal hold, orphan privileges, import safety and non-reversible external disclosures.
+- **AUTHZ-13 — Evidence (Unverified):** published contract documents lifecycle and tests but independently measured integration, threat-model compliance, composition budget and acceptance results have not been verified through the root contract alone.
+
+## Architectural consequences and review disposition
+
+**Proposed:** retain `authorisation` as an **Established Foundation (IAM)** capability; no new generic policy service, registry, role store, permission domain or infrastructure gateway. No classification change is needed to the working Catalogue or Register. Keep its development and runtime status separate from conceptual sign-off. Cross-reference Identity, Authentication, IAM Integration, Audit, Logging, Configuration, Privacy and protected domain capabilities without completing their separate conceptual reviews. Record the ADR-0012 integration gap as a follow-up for the owning implementation repository, **not** a change to governing rules.
+
+**Conceptual review status:** **Proposed for sign-off**, with explicit AUTHZ-03–12 refinements for future design. **Not implementation-ready by this review.** No changes to accepted ADRs, other implementation repositories, test template or governing architecture have been authorised. **Next alphabetically:** [Billing](../billing/capability-record.md).
