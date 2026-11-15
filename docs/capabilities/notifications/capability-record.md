@@ -31,3 +31,7 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Booking conceptual completeness note (15 November 2026; agreed review direction):** [Booking](../booking/capability-record.md#focused-reciprocal-contract-clarifications) sends minimised and tenant-scoped confirmation, change, cancellation, reminder and exception notification intent with booking event/version, authorised recipient reference, locale and delivery purpose. Notifications owns routing, templates and message-delivery lifecycle, returning accepted/pending/failed results without modifying booking state. Optional delivery failure does not cancel a confirmed reservation; contact verification required before confirmation stays an explicit Booking-side dependency. No confirmed Notifications implementation interface is inferred.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Booking supplies tenant-scoped confirmation, change, cancellation and reminder intent with booking event/version, recipient reference and purpose; Notifications owns delivery orchestration/status and does not alter Booking state. Optional delivery failure does not reverse a confirmed booking. Required verification is a separately checked condition. No currently implemented integration contract is implied.
