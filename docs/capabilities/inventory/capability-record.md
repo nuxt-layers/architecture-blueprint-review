@@ -42,3 +42,7 @@
 ### Asset conceptual-review cross-reference (14 November 2026)
 
 **Proposed:** [Asset](../asset/capability-record.md) owns operational stewardship of individually identifiable managed equipment/property, regardless of legal ownership. Inventory remains authoritative for saleable/production stock quantities and movements. Conversion of a serialised item from stock to operational use (and back) needs an authorised cross-owner handover and Accounting reconciliation, without double-counting or duplicated authority. Protocol details remain open for Inventory's own review.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Inventory owns stock quantity and stock-reservation commitments; Booking owns time-based reservation lifecycle and may request checked stock commitments/releases. Compound bookings remain pending/exception until all required owners confirm, with traceable compensation rather than duplicate stock commitments. No currently implemented integration contract is implied.
