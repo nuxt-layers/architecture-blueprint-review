@@ -27,3 +27,11 @@
 ## Cross-capability note — Billing run scheduling and idempotent execution (15 November 2026)
 
 **Proposed reciprocal interface, not an existing Scheduler adapter.** [Billing](../billing/capability-record.md#cross-capability-completeness-review--further-interfaces-and-relationships-15-november-2026) owns billing periods, due-run eligibility, commercial state and duplicate finalisation protection. Scheduler may submit a permitted due-cycle trigger with scope, stable job/idempotency key, scheduled/actual time and retry context, and receive run accepted/held/completed/failed status and next-due hint; Clock owns date/time-zone/period semantics. Overlapping, late or repeated triggers cannot charge a period twice. Scheduled execution never bypasses Billing's own authorisation, rate evidence or audit-capture guarantees; standalone/manual Billing remains possible without Scheduler or a specific backend.
+
+## Cross-capability note — Booking expiration and reminders (15 November 2026)
+
+**Proposed reciprocal relationship; no Scheduler interface is assumed to exist.** [Booking](../booking/capability-record.md) owns hold expiry, eligibility for transition, booking status and idempotent maintenance action. Scheduler may invoke a due handler and report execution attempts, providing scheduled/actual time, tenant scope and stable operation identity; Booking returns accepted/expired/no-op/failed status and next-due hints. Delay or absence of Scheduler does not extend an expired hold: Booking validates time and state on its own commands and reads. Clock supplies temporal semantics. Reminder sending is separate from authoritative expiry.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Scheduler may trigger Booking-owned expiry/reminder/recurrence maintenance; Booking owns series patterns, bounded occurrences, capacity commitments and changes. Late or missing Scheduler triggers cannot extend expired holds or establish an unconfirmed future booking. No currently implemented integration contract is implied.
