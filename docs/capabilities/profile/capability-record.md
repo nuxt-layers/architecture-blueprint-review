@@ -27,3 +27,7 @@
 ## Cross-capability note — Evidence attribution and subject-rights boundary (15 November 2026)
 
 **Status: Proposed reciprocal relationship; not a completed capability design.** Profile owns personal attributes, disclosure rules and rights handling; Audit owns minimised, attributable evidence, custody and independent integrity. **Proposed:** [Audit](../audit/capability-record.md#completeness-review--further-interfaces-and-relationships-15-november-2026) receives qualified subject references and applicable erasure/hold constraints, and returns protected disposition/history without copying full profiles. Account closure must not silently erase lawful evidence or grant retroactive disclosure. Historic identity resolution may be unavailable/restricted. Profile's conceptual review remains incomplete.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Booking participant reference and data-rights interface (15 November 2026):** [Booking](../booking/capability-record.md#focused-reciprocal-contract-clarifications) should consume authorised Profile contact/participant references where available and return minimally necessary booking association and data-rights disposition. Profile remains authoritative for personal attributes; Booking owns reservation party roles and conditional minimal guest contact custody. Booking must not create a parallel personal directory, infer delegated rights from contact matching or expose personal booking history on unrelated screens. Conceptual proposal only.
