@@ -32,6 +32,14 @@ The historical [decisions](records/decisions.md) and [findings](records/findings
 
 **Existing governing requirements remain in force throughout review**, including ADR-0012's single-call composition/50-line host budget and ADR-0016's directional, jointly acyclic contract and Nuxt extension dependencies, unless properly amended.
 
+## Conceptual presentation review (non-normative working method)
+
+Every capability's alphabetical **conceptual review** should describe its likely user interfaces **where applicable**, without prescribing implementation technologies, page source files or a separate UI package. Record: intended audiences and permissions; core headless versus optional separable presentation; likely dashboard, list/detail, create/edit, approval, review, reporting and settings screens; navigation entry and host ownership; conceptual user journeys; disclosure, failure, empty and degraded states; relevant Theme Manager/`ui` vocabulary, accessibility and internationalisation; presentation-off mode; and conceptual acceptance scenarios. Record **not applicable** where a stateless library, infrastructure integration library or genuinely headless service has no standard screens.
+
+The current representative consumer pattern is **`nuxt-layers-test/application-test-template`**: the host-owned responsive sidebar's Capabilities section links to an enabled capability dashboard inside the shared application shell, as the Theme Manager link illustrates. The host may also provide a card on its administration/test dashboard. This is an explicit local testing/navigation pattern, **not** an accepted universal automatic menu-registration API, production authentication boundary or obligation to make every capability a Nuxt Layer. Consult the template beyond its root contract only when the applicable review explicitly authorises broader inspection.
+
+Accepted ADR-0009 continues to govern: core services are independent of presentation; optional capability screens are audience-specific, separable and themed through Theme Manager's semantic vocabulary; navigation, routing, branding and trusted caller/context are host-owned. Access control remains server-side. Keep implementation layout, detailed screen composition and actual UI tests for subsequent design and delivery. A conceptual screen inventory does **not** authorise edits to the application-test-template repository.
+
 ## Documentation maintenance
 
 Prefer small, purposeful changes. Preserve source provenance and historical review evidence, repair relative links on moves, and avoid introducing a new repository, capability, manifest or runtime service just to organise documentation.
