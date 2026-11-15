@@ -31,3 +31,7 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Booking resource discovery interface (15 November 2026):** [Booking](../booking/capability-record.md#focused-reciprocal-contract-clarifications) offers minimised, tenant-scoped, versioned reservable-offering and availability hints for Search indexing. Search may provide candidate discoveries and index freshness/error status, but does not guarantee current capacity, guest disclosure rights or final reservation success. Booking must revalidate authoritative availability and permissions at hold/confirmation; stale/missing index cannot block direct native Booking. Avoid exposing bookings/guest identities in public search indices.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Search indexes minimal, authorised reservable offerings and availability hints; index freshness/coverage must be explicit. Search never confirms slots or grants guest visibility. Booking rechecks live capacity and permissions before committing; Search outage does not block native booking. No currently implemented integration contract is implied.
