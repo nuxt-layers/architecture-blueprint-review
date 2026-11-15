@@ -188,6 +188,80 @@ For a given asset type, some fields are inapplicable. A software right has no ph
 
 Public responses distinguish **owned facts**, **referenced external assertions**, **derived operational views**, **unverified/pending evidence**, and **provider failure**. Expose source, confidence/verification and as-of time where needed to avoid mistaking a projected value for authoritative data. Rights or ownership assertions are not legal judgements; the display of an Accounting balance remains Accounting-owned. Protected operations fail closed if required IAM or persistence is unavailable; absent optional providers degrade only their own enrichment or integrations. Business outcomes are never inferred solely from transport receipt.
 
+## Asset, Audit, Logging and Observability — explicit contract boundary (15 November 2026)
+
+**Status: Proposed conceptual interfaces, not implemented public APIs.** The [Audit review](../audit/capability-record.md) already proposes owner-defined evidence, governed capture tiers (standard, controlled, critical), separate business/transport/Audit-receipt/integrity confirmations and a protected event catalogue. The [Logging review](../logging/capability-record.md) remains incomplete; [Observability](../observability/capability-record.md) owns the proposed metrics, traces and health perspective. Asset must not become an independent audit or log platform.
+
+### Distinct sources of truth
+
+| Responsibility | Authoritative owner | What Asset provides/receives |
+|---|---|---|
+| Asset lifecycle, entitlement, condition, custody and relationship facts | **Asset** | State transitions and durable business history, including attributable rejected attempts where relevant |
+| Evidential capture, verified receipt, integrity, legal preservation and investigator review | **Audit** | Asset submits classified, minimised assertions, verifies risk-selected receipt/status; Audit returns evidence identity, receipt/uncertainty, capture coverage, integrity and review references |
+| Execution diagnostics, failure codes, structured logs, sink status and technical correlation | **Logging** | Asset emits redacted technical categories and correlation references; Logging may report sink failure; log success is never an audit receipt |
+| Metrics/tracing, service readiness and operational alert indicators | **Observability** | Asset exposes aggregate, non-sensitive failure, latency, outbox backlog, reconciliation and dependency-health signals without exposing asset records |
+| Business event transport | **Message Queue** | Asset owns transactional outbox and source event; MQ owns delivery/retry status, never the business outcome or Audit acceptance |
+
+### Proposed Asset audit event catalogue
+
+**Default high-risk candidates** (configuration may strengthen but not weaken an applicable protected platform floor):
+- Asset registration/identity merge or correction where material; asset type or rights classification changed.
+- Legal ownership **claim** creation/change/dispute (never presented as judicial proof); managing-party and beneficial/usage-right changes; lease/licence/IP entitlement changes, assignment/seat-limit override and renewal/expiry corrections.
+- Sensitive custody and cross-organisation/tenant transfer proposals, approvals, acceptance, cancellation or failure; protected administrative override and separation-of-duties decisions.
+- Safety restriction, failed regulated inspection, exceptional release, maintenance record override, lost/stolen/damaged asset and significant availability-control decisions.
+- Material acquisition, valuation-reference changes, impairment indicators, disposal/sale/write-off, decommissioning and retained-obligation decisions; **Accounting** owns any financial recognition/posting.
+- High-risk denied or attempted operations, privileged asset export/bulk disclosure, destructive import/migration/correction, policy/authority-mode change, provider authority cut-over, incident and reconciliation conflict.
+- Evidence retention/hold/erasure decisions and exceptional disclosure, with decisions and minimised references rather than full contract, IP, location or user data.
+
+**Capture tiers:** normal low-risk updates use the owner's durable source outbox and **standard** eventual Audit reconciliation when configured; material changes may use **controlled** capture, bounded deadlines, backlog monitoring and escalation; explicitly classified **critical** operations require the approved independent evidence guarantee **before final business completion** (or remain pending/fail closed). A successful source transaction is not an Audit receipt, and MQ delivery is neither. The exact default event-to-tier classification, unavoidable security floor and external-witness requirements remain open for joint policy approval; Asset must not silently lower capture assurances when Audit is offline. Audit capture is not universally synchronous or required for all routine changes.
+
+**Failure semantics:** on standard capture failure Asset preserves an owner-authored outbox event and exposes capture-pending/degraded status for reconciliation. On controlled failure it follows deadline, monitoring and escalation policy. On critical failure it must not report final success unless the required guarantee exists; it records a recoverable pending or denied outcome and ensures the selected guarantee can be met without a circular transaction dependency. Unauthorised attempts are logged/audited proportionately while protected state remains unchanged; publication of an attempt must not imply successful transition. Backpressure, outbox replay, dead-letter review, out-of-order arrival, duplicate Audit submissions and missing receipt reconciliation need explicit eventual acceptance scenarios. Audit evidence is protected separately from any editable Asset history.
+
+### Structured technical signals to Logging
+
+| Asset technical circumstance | Minimal diagnostic signal | Prohibited inference |
+|---|---|---|
+| Input validation or concurrency conflict | Operation class, safe error code, stage, trace/correlation token | Invalid request content is not automatically an accepted audit event |
+| Persistence transaction/outbox failure | Availability/retry category, backlog or failure stage | A log confirms neither business commit nor evidence capture |
+| External registry/licence/telematics outage | Provider type, safe failure category, bounded retry/circuit status | Technical provider response is not authoritative proof of legal right |
+| Inventory, Booking, Workflow or Accounting handover conflict | Public operation/correlation reference and reconciliation stage | Technical delivery is not a confirmed cross-domain transition |
+| Inspection/renewal execution failure | Schedule reference, safe status, bounded diagnostic metadata | Scheduling failure does not mean an inspection took place |
+| External authority cut-over and synchronisation failure | Mode/phase, non-sensitive mismatch code and recovery marker | Successful sync does not itself transfer business authority |
+
+**Data minimisation:** no full legal agreement, IP body, licence key/secret, sensitive serial/registration details where avoidable, unredacted person names/contact information, precise live-location history, credentials, evidence document or raw arbitrary request/response body in logs. Sanitise structured fields before dispatch, apply tenant-scope and retention rules, protect logging access and avoid leaking actor or third-party details through correlation. Audit stores only purpose-limited and qualified assertions. Log sink failure may degrade diagnostics but may not silently bypass mandatory Audit or Asset controls; fatal application consequences require a separately justified policy rather than an unconditional Logging dependency.
+
+**Shared traceability:** carry opaque stable `operation/correlation`, optional `causation`, source event/outbox and domain resource references through Asset commands and resulting confirmed events; Audit and Logging maintain **their own** record identifiers and independently authorised views. Correlation conveys no access grant, no common storage/schema and no assumption that raw logs are immutable or retained as compliance evidence. Prefer source event identity for idempotency and duplicate recognition; distinguish occurred/effective, observed, committed, Audit-received and log-recorded times.
+
+### Audit/Logging/Observability acceptance
+
+1. Asset business history remains correct and available with optional Logging/Observability absent; routine logs are not consulted to decide state.
+2. Audit unavailable: standard capture eventually reconciles from Asset outbox; critical actions remain safely pending/denied rather than falsely succeeding; recovery does not duplicate Asset state.
+3. A denied unauthorised transfer produces an appropriately minimised attributable attempt record, without transfer or leaking another tenant's data.
+4. Technical sink accepts a redacted provider-outage diagnostic but no secret, licence key, sensitive evidence or raw vehicle movement history.
+5. Correlation links a confirmed Asset transition, source outbox publication, Audit receipt, and separate technical retries while each lookup requires authorisation.
+6. An Audit integrity failure and a Logging outage remain distinct, surfaced via safe status and operational monitoring without converting metrics into compliance proof.
+
+## Further boundary review — overlooked cooperating interfaces (15 November 2026)
+
+The following are **proposed additions and clarifications**, not newly approved capabilities or mandatory dependencies. They augment the preceding provider/consumer tables without changing the six Asset contract surfaces.
+
+| Concern / counterpart | Information Asset needs | Asset provides | Boundary / absence mode |
+|---|---|---|---|
+| **Booking / shared equipment allocation** | Confirmed reservation, cancellation, interval, priority and allocated resource reference | Restricted/available windows, eligibility, current assignment and maintenance hold; governed reservation/usage decision | Booking owns reservations; Asset owns asset restrictions and its assignment lifecycle. Avoid twin reservation ledgers and races using checked allocation/confirmation, expiry and correction; no Booking required for basic Asset use |
+| **Licensing/entitlement enforcement** | Authoritative licence grant, feature/seat/territory use, renewal or revocation attestations from provider or entitled party | Asset-managed allocations, available seats as a qualified operational projection, expiry/usage alerts and entitlement evidence | Asset cannot issue vendor licences, decide IP law or act as the canonical entitlement enforcement server; unavailable provider means unknown/pending rather than fictitious validity |
+| **Contracts / procurement / supplier relationships** | Verified purchase, lease, insurance, warranty, maintenance contract terms or a legally authoritative document/reference | Active rights/obligation references, renewal/return/termination and transfer-triggered facts | The originator remains authoritative for the contract, purchase, supplier and commercial obligation; no automatic new Contract capability |
+| **Cross-organisation and cross-tenant cooperation** | External party reference, identity verification where justified, consent/authority, bilateral acceptance, legal restriction and destination context | Scoped handover request, receipt/return evidence and time-bounded sharing relationship | A transfer is not a silent tenant reassignment or a permission grant. Explicit bilateral attestation, privacy-safe export/import and reconciliation; each tenant's protected records remain isolated |
+| **Insurance / claims / warranties** | Policy/claim reference, cover period, insured-party and assessed damage/settlement facts | Insurable asset description, operational valuation source, inspection/damage evidence, loss/theft history and disposition | Asset does not bind insurance, adjudicate claims or determine financial settlement; third-party integration is optional |
+| **Safety, recalls, regulatory inspections** | Applicable asset-type inspection obligations, validated recall/defect advisory, qualified inspection certificate, restriction/lifting decision | Affected-unit identification, inspection/repair outcome, restricted-use status, proof of remediation and overdue status | Legal Compliance and specialist originators own obligations/recall facts; Asset enforces resulting asset controls subject to verified evidence |
+| **Telemetry / usage / IoT** | Trusted serial/device link, measurement units, calibration/quality, timestamp, provider authenticity and revocation | Derived usage, meter/service thresholds, anomalies and provenance | Sensors own raw observations; Asset decides accepted operational state. Do not automatically ingest all high-volume telemetry, build a device registry or expose sensitive tracking |
+| **Asset systems, parts and component replacement** | Inventory serialised part release/return and work completion; source engineering model/version when applicable | Parent/child membership and effective dates, component traceability, condition/remaining-life change | Product/Inventory/production maintain their distinct sources. Avoid duplicate physical-unit masters and circular updates |
+| **Sustainability and responsible end of life** | Applicable recycling, hazardous disposal, environmental and chain-of-custody certificate from a verified specialist | Asset materials/category references, operating/resource-use summaries where available, decommission/disposal provenance | Asset does not own environmental reporting standards or waste-transfer law; end-of-life records remain evidentially linked |
+| **Reporting / search / business continuity** | Consumer reporting/search constraints, approved export request and optional recovery/import confirmation | Redacted point-in-time views, asset lineage, data-export manifest, provenance and continuity/reconciliation status | Reporting and Search own derivatives; authoritative recovery remains Asset-controlled with version/cut-over checks and retention constraints |
+
+**Additional conceptual safeguards:** asset-specific historical as-of queries must distinguish *known at the time* from later corrected effective facts; licence/lease expiry should not trigger automatic legal termination; safety holds are not removed by Booking cancellation; business approvals and evidence checks must be replay-safe; no assumed global party/legal-entity registry, insurance capability, contract capability, IoT capability or sustainability capability is authorised by this review. A dedicated provider or capability is justified only if its own independent ownership and lifecycle is established later.
+
+**Follow-up acceptance scenarios:** simultaneous Booking and Asset assignment requests; licence revocation during active allocation; provider-reported recall and subsequent restricted-use release; contractor loss claim; cross-tenant custody without title transfer; composite asset replacement with serialised Inventory part; disposal with statutory hold; corrected late telemetry reading; restored Asset state that preserves outbound event idempotency and audit correlation.
+
 ## Conceptual acceptance scenarios
 
 1. **Independent operation:** a small club records its equipment, custodians, loan/return dates, inspections and condition with no accounting connector or external asset system.
