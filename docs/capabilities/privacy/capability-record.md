@@ -27,3 +27,7 @@
 ## Cross-capability note — Authorisation record minimisation (15 November 2026)
 
 **Established:** [Authorisation](../authorisation/capability-record.md) owns access records and changes, not Profile personal details; Privacy defines relevant rights, collection and lawful retention constraints. **Proposed:** minimise principal identifiers, decision and denial metadata; govern security evidence retention, subject export/erasure and legal holds without hiding critical access provenance or making indefinite storage the default. **Open:** precise lawful periods, evidence classifications and necessary restricted disclosures. Privacy's review remains incomplete.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Booking participation and guest-data interface (15 November 2026):** [Booking](../booking/capability-record.md#focused-reciprocal-contract-clarifications) uses only necessary participant references, authorised contact/verification, acting-for proof and policy-constrained guest association; Privacy owns purpose, disclosure, lawful retention, data-subject rights and restrictions. Booking returns attributable correction/erasure/retention disposition without silently voiding lawful reservation history. Account closure, sensitive appointment metadata and guest access tokens require independent scoped handling, not unrestricted profile copies. No Privacy implementation contract is asserted.
