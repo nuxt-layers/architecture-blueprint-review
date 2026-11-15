@@ -162,11 +162,42 @@ Provider enabling, connection health, verified assertion, linked-account confirm
 
 **Industry reference points, not automatic legal obligations:** [OWASP ASVS 5.0](https://owasp.org/www-project-application-security-verification-standard/), [NIST SP 800-63-4](https://csrc.nist.gov/pubs/sp/800/63/4/final), [NIST SP 800-63B-4](https://csrc.nist.gov/pubs/sp/800/63/b/4/final), NIST SP 800-63C-4 for federated assertions, W3C WebAuthn/FIDO2 for passkey ceremonies, OAuth 2.0 security best current practice for bearer/service credentials, and OIDC Core for federation semantics. Map actual controls to exact published versions/requirements in the owning security programme; do not claim compliance or certification without evidence. UK GDPR and other legal duties require qualified applicability assessment.
 
+## Agreed conceptual directions — 15 November 2026
+
+**Review decision:** The platform owner agreed the recommended directions for AUT-01–AUT-10 and AUT-12, and explicitly approved AUT-11 on the five privacy/retention principles below. These are *conceptual directions*, not verified implementation, a published contract revision or amendments to governing ADRs. Detailed acceptance thresholds and qualified legal/assurance validation remain to be specified.
+
+| ID | Agreed conceptual direction |
+|---|---|
+| AUT-01 | Maintain a mandatory platform assurance/security floor; permit stricter scoped tenant, application and operation policies, never weaker mandatory protections. |
+| AUT-02 | Derive achieved authentication assurance from independently verified evidence and trusted methods; do not promote an external provider's unverified MFA assertion. |
+| AUT-03 | Adopt a risk-based credential/session revocation matrix; suspected compromise and high-risk recovery invalidate affected credentials, sessions and remembered-device trust. |
+| AUT-04 | Security-critical operations require immediate authoritative denial after applicable revocation; other consistency intervals must be explicit and measurable, never presumed. |
+| AUT-05 | Adopt an Authentication-owned durable security-event outbox for significant authentication and credential lifecycle events, reconciled through the owning public contract with Audit; event transport does not establish business success. |
+| AUT-06 | Configuration manages scoped setting declarations, values and precedence where its published contract permits; Authentication validates and enforces authentication-specific security meaning and constraints. |
+| AUT-07 | Define service/workload authentication assurance separately from human AAL claims; service tokens cannot impersonate people or claim phishing-resistant human authentication. |
+| AUT-08 | Provide configurable, bounded session concurrency, secure credential/session rotation and reliable local logout; disclose limitations and reconciliation needs for federated logout. |
+| AUT-09 | Account recovery, compromise response and provider migration require independently verifiable, risk-appropriate authorisation, evidence and account-linking safeguards. |
+| AUT-10 | Preserve restricted, phishing-resistant emergency authentication with independent approval/governance, attributable use, post-use rotation and separation from ordinary permissions. |
+| AUT-11 | Apply the five approved privacy and retention principles immediately below. |
+| AUT-12 | Retain ADR-0012 without amendment; separately migrate Authentication to a single documented composition call, shared caller/access shapes, a minimal independent host and verification of the 50-line budget without weakening assurance or fail-closed behaviour. |
+
+### AUT-11 — approved privacy, retention and legal-hold principles
+
+1. **Data minimisation:** Authentication collects and retains only the personal information needed for documented authentication and security purposes.
+2. **Configurable retention:** Different information classes have justified retention periods, configurable within mandatory security and legal constraints, coordinated with Privacy and Legal Compliance.
+3. **Coordinated account closure:** Identity/IAM integration orchestrate closure; each owning capability independently disposes of, anonymises or lawfully retains its own records through published contracts. No direct cross-schema deletion.
+4. **Legal holds:** Preserve only records subject to a valid, applicable restriction, with limited access, review, expiry or release and no blanket indefinite retention.
+5. **External services:** Document disclosures, relevant provider responsibilities and deletion/retention obligations; never claim third-party erasure without confirmed evidence.
+
+**Security invariant:** Routine personal-data exports and Audit submissions must not include password verification material, authentication secrets, private keys, bearer/session tokens or recovery codes. Necessary retained credential-verification material remains protected and is disposed of under the credential lifecycle.
+
+**Outstanding detailed design rather than unresolved ownership:** Agree exact revocation timing/guarantees, which Audit events require durable acknowledgements, assurance evaluation against the applicable NIST release, policy precedence, retention periods and legal applicability, incident recovery proofs, minimal host acceptance and public-contract compatibility in separately authorised implementation work. No universal Audit dependency, invented interface or normative amendment follows automatically.
+
 ## Review disposition and architectural consequences
 
 **Established:** Authentication remains a Foundation (IAM) capability with its own state and contract. Current catalogue/register ownership text remains correct; no classification or governing ADR change is recommended. No implementation repository edits are authorised by this review.
 
-**Proposed for conceptual approval:** adopt the eleven logical surfaces above, native/federated/service modes, ownership and failure invariants, conditional durable Audit integration and explicit policy resolution. Record reciprocal boundary notes in Identity and Authorisation without completing those separate reviews. An approved conceptual record does not certify the existing implementation or modify `Authentication` version `1`.
+**Agreed conceptual directions:** the eleven proposed logical surfaces, native/federated/service modes, ownership and failure invariants, durable Authentication security-event ownership, policy resolution and AUT-01–AUT-12 directions are approved for conceptual purposes; the specific APIs and performance/assurance claims remain unverified. Reciprocal notes preserve related capabilities' separate incomplete-review status. An approved conceptual record does not certify the existing implementation or modify `Authentication` version `1`.
 
 **Next work after conceptual sign-off:** a separate contract reconciliation and independent acceptance review for Authentication/IAM integration, with explicit revocation, assurance mapping, durable security evidence, privacy controls and ADR-0012 composition gates. Security and legal specialists must validate applicable regulatory and assurance claims. 
 
