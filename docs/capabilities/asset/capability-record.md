@@ -232,3 +232,7 @@ External conceptual references (informative, not requirements automatically appl
 Related candidate records: [Accounting](../accounting/capability-record.md), [Inventory](../inventory/capability-record.md), [Product](../product/capability-record.md), [Order](../order/capability-record.md), [Warehouse](../warehouse/capability-record.md), [Location](../location/capability-record.md), [Task](../task/capability-record.md), [Workflow](../workflow/capability-record.md), [Legal Compliance](../legal_compliance/capability-record.md).
 
 **Conceptual sign-off:** ready for review of the proposed boundary; not implementation-ready and not an accepted governing contract.
+
+## Cross-capability note — Asset accountability and Audit (14 November 2026)
+
+**Established:** Asset is the proposed owner of managed asset identity, stewardship, operational lifecycle, rights/claim references and changes; Audit is a separate Platform candidate in the governing catalogue. **Proposed:** [Audit](../audit/capability-record.md) preserves tamper-evident accountable assertions about sensitive asset registration, custody/title-claim changes, restrictions, transfer, dispute and disposal while Asset remains authoritative for those business records and its own source events/outbox. Audit evidence does not establish legal title. **Open:** which transitions require strict evidential receipt, preservation and external verification. This note does not complete or expand the Asset implementation contract.
