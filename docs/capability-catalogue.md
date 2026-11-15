@@ -32,7 +32,7 @@
 | `media` | Platform | Images: web-ready variants, metadata removal, alt text, group ownership and allowances; the files themselves through the Files shape ([ADR-0012](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/decisions/ADR-0012-trivial-composition.md)), which the host fills with `storage` |
 | `storage` | Platform | Files' bytes in an object store behind one provider-agnostic port: keys under tenant and group, signed addresses, lifecycle, backups and usage figures; no records of its own |
 | `ui` | Presentation | Generic, fully styled components on Theme Manager's vocabulary; knows no capability |
-| `content-editor` | Presentation | Editing screens for Publisher's documents, saving through Publisher's functions; no data of its own |
+| `content-editor` | Presentation | Generic editorial workspace for Publisher's registered document types: document lists, create/edit, preview, review and lifecycle controls through Publisher's public contract; no content state of its own |
 | `gallery` | Presentation | Albums and photo of the week as Publisher types over media's images; no data of its own |
 | `privacy` | Foundation | Consent and retention policy, which capabilities receive and apply |
 | `legal-compliance` | Foundation | The legal duties that apply to each site by jurisdiction, such as UK GDPR and the Online Safety Act, and the constraints they impose beside Authorisation's decisions, such as legal holds that block deletion |
@@ -144,7 +144,6 @@ The following are **types and compositions**, not independent capability candida
 | `training` | Verified training participation, competencies and completion records |
 | `gaming` | Game-specific state, rankings and participation; separate from generic Identity accounts |
 | `workshop` | Event/Course specialisation unless distinct rules justify a separate domain |
-| `blog` | Publisher document type and presentation unless separate domain state demonstrably exists |
 | `job` | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
 
 ### Commerce and operations domain candidates
@@ -172,7 +171,7 @@ The following are **types and compositions**, not independent capability candida
 - `integration-adapters`: the general `integrations` responsibility; provider adapters such as `integrations/trustpilot` are optional integrations, not necessarily separate layers.
 - `tenancy`: tenant and group ownership already belongs to Identity; tenant administration UI may be presentation.
 - `document`: no generic document service should duplicate completed Publisher.
-- `blog` and `workshop`: favour Publisher/Event/Course composition unless independent domain ownership is established.
+- `workshop`: favour Event/Course composition unless independent domain ownership is established.
 - `job`: distinguish employment positions from infrastructure background jobs.
 - `accounting`, `billing`, `inventory`, `invoice`, `booking` and `membership` are candidates for classification review, not new Foundation obligations on completed layers.
 - `organisation-model` is a proposed archetype-owning boundary; it does not change the published Identity, Configuration or Authorisation contracts.
@@ -180,7 +179,7 @@ The following are **types and compositions**, not independent capability candida
 ## Consolidations
 
 - No shared `persistence-service` (ADR-0002). Generic `user-service` and `group-service` are Identity; sessions stay in Authentication.
-- `blog-service` remains a Publisher document-type/presentation candidate; `image-service` and `media-library-ui` belong with `media`; `storage-service` is `storage`; `todo-manager` is a potential Task use case.
+- `image-service` and `media-library-ui` belong with `media`; `storage-service` is `storage`; `todo-manager` is a potential Task use case.
 - `iam-integration` is unrelated to the general-purpose `integrations` capability.
 - `integration-adapters` is `integrations`; `policy-map` is `legal-compliance`; `doc-search` is the `search-service` candidate.
 - Infrastructure `scheduling-service` and background `job-service` are Scheduler concerns; an employment `job` would be a different domain. `workflow-service` is `workflow`; `notification-service` is `notifications`; `event-bus-service` and the former `events-queue` are `message-queue`.
