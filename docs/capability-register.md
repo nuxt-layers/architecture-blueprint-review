@@ -154,3 +154,8 @@ This document is the **populated working register**, distinct from its design sp
 5. This register is neither a new runtime capability nor an authority for installing code, storing business data or deciding permissions.
 
 **Next work:** assess each entry's root public contract and acceptance evidence, adding verified provenance without presuming implementation from its catalogue entry.
+
+
+### Blog classification review note — 15 November 2026
+
+**Proposed, not approved or normative:** The existing `blog` register row remains a **Domain candidate** until owner sign-off. The completed [Blog conceptual proposal](capabilities/blog/capability-record.md) recommends retaining Blog as a host-registered Publisher article type and reusable presentation/application composition, **without** independent blog content records, lifecycle, persistence or domain events. This follows the governing catalogue's explicit default classification. Publisher owns documents, approval/publication, versions, addresses and feeds. A distinct Domain classification requires an evidenced additional independently owned business invariant. No independent `nuxt-layers/blog` implementation `CONTRACT.md` was verified; no new package or governing catalogue change is authorised. See open decisions BLOG-04–BLOG-07.
