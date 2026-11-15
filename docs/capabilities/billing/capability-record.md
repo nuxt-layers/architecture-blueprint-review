@@ -248,6 +248,86 @@ This is a **recommended default mapping** to Audit's risk-based catalogue, **not
 
 **Follow-up technical investigations / acceptance (not new owner decisions):** define exact registered event catalogue versions and sector-specific capture tiers; critical-operation pending/finality choreography; policy/retention precedence; source checkpoint and backpressure guarantees; structured diagnostic schema, severity and redaction; secure correlation and permissions; optional Logging fallback health; minimal-host/standalone consumer contract and negative/chaos tests. Neither a new universal event envelope nor a new package dependency is approved by this review.
 
+## Billing–Reporting contract boundary — BIL-S05 elaboration (15 November 2026)
+
+**Status:** Agreed conceptual direction following the owner's approval of extending BIL-S05 and recording reciprocal Reporting interfaces. This section deepens, but does not create a seventh surface or change, approved BIL-01–BIL-06 and BIL-S01–BIL-S06. Reporting's own alphabetical capability review, implementation contract and acceptance evidence remain outstanding. This design is consistent with [Accounting's reporting boundary](../accounting/capability-record.md#financial-statements-reporting-and-controls) and [Reporting's existing Authorisation note](../reporting/capability-record.md#cross-capability-note--authorisation-and-aggregate-disclosure-15-november-2026).
+
+### Authority and report semantics
+
+**Billing owns:** current and historical commercial charge facts, charge assessments/finalisation, period and run state, adjustments, disputes, billing arrangement attribution, reconciliation exceptions and the correct business meanings of these figures. Its own operational summary queries remain available without Reporting.
+
+**Reporting owns:** validated report definitions and execution parameters, cross-source joins/aggregation, presentation, report generation, authorised export/scheduling/distribution and report-result lifecycle. Its derived snapshots, indexes and caches are explicitly non-authoritative and can be invalidated/rebuilt.
+
+**Accounting owns:** ledger posting, settled/reconciled financial balances, receivables/payables, revenue recognition and authoritative financial statement facts. **Invoice owns:** issued and received invoice/credit document lifecycle. Neither Billing's charge totals nor Reporting's aggregation may be presented as invoiced turnover, recognised revenue or settled cash unless the appropriate source supplies independently verified evidence.
+
+**Source classification:** a finalised charge is a Billing fact; a report total is an attributed derived result; a posted amount is Accounting's fact; an invoice issued is Invoice's fact; a payment collected is the Payment Gateway's fact, with settlement/reconciliation separately owned by Accounting. Cross-capability totals must retain their source-specific states and temporal meanings.
+
+### Public input from Billing to Reporting
+
+| Billing-published source (type) | Business meaning and use in Reporting | Authority and provenance | Validation / failure and requirement |
+|---|---|---|---|
+| Authorised charge/line query (query) | Charge assessment/finalisation states, quantities, attributable gross/net/discount/tax components and currency, as permitted; grouping by date, party, tariff or source domain | Billing charge/line IDs, revision, business period/time zone, source tariff and evidence versions, policy/rounding versions | Conditional Reporting integration; verify tenant/entity/party, field-level access, snapshot and version; stale, withheld, uncertain or unsupported components cannot be silently counted |
+| Billing arrangements/periods and run outcome (query) | Approved cycle schedule, processed/held/error counts, due/unbilled periods and run progress | Billing arrangement and run IDs, cutoff, run revision, progress, completeness/exception codes | Pending or partly failed run is not finalised; disclose expected coverage if available, otherwise unknown |
+| Dispute/credit/waiver/adjustment facts (query) | Charge corrections, refunds requested, concession and dispute trends | Original and revised charge references, adjudicated status, applicable period and approval evidence references | Exclude raw disputes, sensitive actor data and full underlying evidence; respect adjustment-effective versus record dates |
+| Billing exception and assurance view (query) | Missing, duplicated or unbilled activity, backlogged handoffs and provider reconciliation mismatches | Billing-owned detection/rule versions and source checkpoints; does not claim Accountings ledger or third-party source completeness | Unknown source coverage, provider outage and unverified late arrivals are marked incomplete, not zero |
+| Billing-owned state changes (event) | Refresh/invalidate authorised Reporting projections for changes and corrections; may initiate scheduled report refresh | Versioned committed Billing-owned event, source outbox, tenant/entity, event ID and causation | Event is a notification, not authorisation to retrieve or distribute. Duplicates/out-of-order delivery tolerated; reconciliation and authorised source read required |
+| Billing provider authority/freshness (query/event) | Indicate native or remote source, selection/cutover, remote confirmation and stale projection limitations | Billing-owned authority scope, source time, observed/read-back time, revision and reconcile status | External ambiguous/pending state remains explicit; never combine competing providers as two authoritative charges |
+
+**Minimum report-safe dimensions:** tenant, accounting/business entity (as appropriate, not assumed synonymous), charge period/cutoff and time zone, customer/contract/product/service reference where permitted, commercial status and original/adjustment relationship, currency and rate basis, source provenance and version, reconciliation and completeness state. Public descriptors for these dimensions must be obtained via the relevant owner's authorised contract, not by reading its database. Reporting may aggregate approved Billing metrics but never modify their business definitions.
+
+### Public outputs from Reporting to Billing
+
+| Reporting output / service | Billing use | Meaning and authority | Permission / failure |
+|---|---|---|---|
+| Discover authorised report definitions and capabilities | Offer relevant predefined/custom operational or commercial report choices on Billing dashboard | Reporting owns definition ID/version, supported inputs/dimensions/metrics/format and eligibility; Billing retains charge semantics | Absence of Reporting removes advanced report catalogue only |
+| Create/report request and execution result | Open scoped report, requested parameters and allowed delivery target | Reporting owns queued/running/completed/failed/rejected/stale report execution identity, revision and generated-at date | A request receipt is not completed report; enforce effective permissions at execution and at consumption |
+| Report reference / view location | Render navigable link or embedded permitted summary without reowning output | Reporting owns saved report/result and presentation; Billing supplies source-scope references | Link opens Reporting's separately authorised resource, not a bearer grant |
+| Freshness, completeness and data lineage | Explain source cutoff, query snapshot, missing periods and source revision | Reporting validates its own processing completeness and preserves Billing/Invoice/Accounting authority labels | If a source is stale/unavailable or a join is partial, declare limited confidence; never imply reconciled totals |
+| Export and distribution outcome | Indicate requested file generation, scheduled execution or permitted distribution status | Reporting owns recipient scope, format and delivery lifecycle; Notifications/other delivery owner separately confirms delivery | Re-check authorisation, retention, audience and revocation; do not infer user received output from file creation |
+| Projection invalidation / refresh status | Show Reporting projection lag or failed refresh after Billing events | Reporting owns derived index age and invalidation/rebuild state | A failed refresh does not alter Billing-owned charges; stale metrics are labelled |
+
+**Dependency and absence:** Billing's BIL-S05 native authorised reads and local operational summaries remain usable when Reporting is absent, degraded or disabled. Reporting may consume Billing's published query/event contracts through host-connected ports. Bilateral data exchange does not require Billing and Reporting to import each other's packages or establish a circular dependency; composition and event references resolve the interaction.
+
+### Report families and calculations
+
+| Family | Representative measures and qualification |
+|---|---|
+| **Billing operations** | Run counts, pending/held/failed charge lines, billing completion and handoff lag, backlog duration; exclude uncertain periods from confirmed completion rates or display them separately |
+| **Commercial activity** | Finalised or assessed charges by tenant/entity/customer/product/contract/subscription, tariff, period and permitted region; distinguish proposed, finalised, adjusted and reversed amounts |
+| **Revenue assurance** | Missing usage, unbilled activity, duplicate prevention, waivers, unusual charge variances, disputes and unresolved external reconciliation; anomaly detection is a derived indicator, not a finding of fraud or a recognised financial loss |
+| **Cross-capability finance comparison** | Billing finalised-charge facts versus Invoice document issuance versus Accounting posting/recognised revenue versus authorised Payment evidence; segregate timing differences, taxes, FX, adjustments, unmatched references and unsupported sources |
+| **Historical and management views** | Effective-period versus recorded-at comparisons, billing trends, cohort analyses where disclosure permits, restatements and definitions with source snapshot references |
+
+**Currency, tax and period rules:** preserve original transaction currency and exact decimal precision. Do not add different currencies without an approved exchange-rate provider, effective date, presentation currency and conversion rule/version; missing conversion gives separate currency totals or unsupported/incomplete outcome. Billing source tax components do not make Reporting a tax authority. Distinguish charge period, invoice issue date, accounting posting period, tax point and payment settlement date. Do not reinterpret them interchangeably.
+
+**Reproducibility and corrections:** historical reports declare *as-was* (source snapshot/definition as at a stated observation point) versus *as-now* (approved later revisions/restatements for historical periods). Store/report definition version, parameters, authorised dataset identifiers/versions, source revision or checkpoint, policy/calculation provenance, execution timestamp, report-generation identity and omission/coverage limits. If historical source versions are unavailable, explicitly report that faithful reproduction cannot be guaranteed. Late charges/credits update derived projections without mutating original authoritative charges or silently rewriting archived report evidence.
+
+### Authorisation, privacy, security and availability
+
+- **Trusted access boundary:** Billing authorises its source query and field disclosure; Reporting independently authorises report creation, filters, raw rows, derived aggregates, export/distribution, retained snapshots and later result reads. An event or link does not confer permission. Authorisation is re-evaluated when jobs run and when results are accessed; expired/revoked audience rights cannot be assumed valid because a report was previously generated.
+- **Aggregation disclosure:** prevent cross-tenant leakage, cross-entity inference and identification from small cohorts, difference-of-totals attacks, permitted filter intersections or saved reports. Enforcement may need suppression/coarsening, row-level source scoping and disclosure rules; a general visible-group filter alone is insufficient. Never presume permission to see an all-tenant total merely because one constituent row is visible.
+- **Retention and provenance:** Reporting controls its derived output lifecycle and approved retention; Billing retains canonical source. Audit captures high-risk report export/distribution/access events under applicable policy; Logging handles technical report execution diagnostics. No report cache or search index may become a privileged disclosure bypass.
+- **Performance and refresh:** use versioned authorised projections/aggregations as appropriate; expose source-to-report latency and consistency windows; heavy analytics cannot be allowed to starve transactional charge finalisation. Backpressure, refresh failure and cancellation remain observable; no implementation technology is mandated.
+- **External authority uncertainty:** if Billing uses a selected remote billing authority, Reporting must distinguish verified authoritative charges from pending/unreconciled local projections; outage never triggers an alternate source of commercial truth. If Accounting or Invoice data are unavailable, comparative sections remain incomplete rather than inventing totals.
+- **Access-controlled presentation:** Billing's optional dashboard may expose a **Reports** menu item, Billing operational summaries from its own public surface, and links to Reporting-owned report catalogue, filtering, visualisations, scheduled reports and export. Host menu placement is presentation configuration, not an access-control decision. Reports open with constrained scope and server reauthorisation. Report errors/freshness and provenance remain visible; WCAG 2.2 AA, i18n and Theme Manager's vocabulary apply.
+
+### Acceptance scenarios for Billing–Reporting collaboration
+
+| Scenario / inputs | Expected behaviour and output | Authoritative boundary |
+|---|---|---|
+| Reporting unavailable with ordinary native billing | Billing calculates/finalises charges and serves permitted BIL-S05 summaries; advanced reports unavailable | Billing owns operational source |
+| Finalised monthly run with one failed batch | Reporting distinguishes finalised amount/count from pending/held and declares incomplete period; no full-cycle success | Billing owns run and line statuses |
+| Credit issued after an earlier report | New report explicitly distinguishes as-was versus as-now results and linked adjustment without overwriting original | Billing correction; Reporting derived snapshot |
+| Same-currency and multi-currency charges | Same-currency amounts aggregate exactly; other currencies separate or use approved FX rate, date and version with disclosure | Billing owns currency facts; Reporting derivation |
+| Tenant A report requests Tenant B charges or leaks a small cohort | Both source query and report output reject/limit disclosure; cached/export views cannot bypass permissions | Authorisation, Billing and Reporting enforce separate controls |
+| Saved report viewed after permission revocation | Reauthorise and deny/redact as applicable; immutable artefact does not confer indefinite read rights | Reporting output access |
+| Provider outage or delayed source event | Report labels stale, unknown, incomplete and source revision; later replay refreshes idempotently | Billing charge authority; Reporting projection |
+| Cross-domain comparison charges/invoices/revenue | Report identifies unmatched and timing differences and keeps each metric's source authority; never calls commercial charges recognised revenue | Billing, Invoice and Accounting independently authoritative |
+| Report generation or scheduled distribution fails | Billing displays explicit pending/failed report link status without changing charge state | Reporting report execution |
+| Reporting projection receives duplicate/out-of-order charge event | Deduplicate by Billing event/source version; invalidate/reconcile against permitted current Billing query, not duplicate amounts | Billing event, Reporting projection |
+
+**Implementation and acceptance deferred:** The eventual root contracts must specify precise query bounds, permissible dimensions/measures, freshness and consistency markers, report IDs and status/permission errors, export safety, retention/erasure and delivery rules, and independent consumer acceptance. No Reporting package dependency, database read, provider SDK, reporting engine or new capability is authorised by this conceptual relationship. Reporting's full alphabetical review remains pending.
+
 ## Conceptual contract acceptance scenarios
 
 | Scenario / input | Expected behaviour and output | Authority |
