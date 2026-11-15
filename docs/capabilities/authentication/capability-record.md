@@ -124,6 +124,78 @@ The following are *logical contract surfaces*. Their proposed naming is **not** 
 
 Provider enabling, connection health, verified assertion, linked-account confirmation, local session issuance and authorised business action are distinct results. Switching providers or returning to native mode requires verified ownership and safe recovery; matching an email address cannot transfer local account authority. Suspended or closed Identity standing continues to constrain all modes.
 
+## Conceptual presentation and application navigation — 15 November 2026
+
+**Status:** Existing pages and components are documented by the published [Authentication root `CONTRACT.md`](https://github.com/nuxt-layers/authentication/blob/ffb92d8c033ebb8bcb5043e3fa5acadac9e1d825/CONTRACT.md); additional dashboard, user journeys and operator surfaces below are **proposed**, not claimed implemented. No routes, component names or authorisation APIs are invented beyond the contract.
+
+### Representative host presentation pattern
+
+**Verified reference:** `nuxt-layers-test/application-test-template` `master` at `8b7b142b84b5ec2379d4e2e727914fe344187d64`. Its `README.md`, `nuxt.config.ts`, `app/app.vue` and relevant public application-shell components demonstrate a separate public home page (`/`), local administration dashboard (`/admin`), shared responsive/collapsible side navigation with a **Capabilities** group and a link to the Theme Manager (`/theme-manager`). The application owns the navigation, branding, appearance control, header, content shell and active-link/mobile behaviour. Its authentication-status indicator explicitly says **Not signed in** and is not a functioning Authentication integration. Its Theme Manager **test** mode is unauthenticated and must never be assumed suitable for production.
+
+**Proposed Authentication integration:** A derived test application (not the shared template itself) explicitly composes Authentication through its published contract and, after sign-in, offers a **Security / Authentication** item in the same host-owned **Capabilities** sidebar leading to a capability overview at a host-chosen path (illustrative `/authentication`). An optional card on `/admin` provides the same entry. This is an application navigation decision, **not** a new automatic registration mechanism, mandatory route or reason for Authentication to depend on the shell. Capability overview and management views should open in the existing shared content area and use the host's trusted viewer/context; a menu item must not imply permission.
+
+**Crucial two-context distinction:** public/anonymous sign-in, sign-up, recovery, second-factor challenge and emergency enrolment screens must be usable **without first entering an authenticated administration shell**. The host may present them in a public/minimal access layout. Once authenticated, personal security settings can be accessed from a user/account menu as well as an optional sidebar entry. Privileged credential/service and policy management must be separately authorised; do not put service secrets, emergency credentials or all-tenant controls on an ordinary account security dashboard.
+
+### Existing published screens and components
+
+The current contract describes **optional, configurable** presentation with `presentation: false` (no capability pages/components) or `pages.enabled: false` (components only), plus host-moveable routes:
+
+| Existing screen key | Current contract default route | Primary audience and purpose |
+|---|---|---|
+| `signIn` | `/sign-in` | Anonymous person: password, passkey, federated sign-in, challenge progression |
+| `signUp` | `/sign-up` | Prospective person: initiate approved sign-up and verification |
+| `forgotPassword` | `/forgot-password` | Anonymous claimant: request non-enumerating recovery |
+| `resetPassword` | `/reset-password` | Holder of valid bounded recovery proof: complete password reset |
+| `mfa` | `/mfa` | Signed-in/partly authenticated person: enrol or complete second factor/step-up |
+| `security` | `/account/security` | Authenticated account holder: manage password, TOTP, backup codes, passkeys, provider links and personal sessions |
+| `breakGlassEnrol` | `/break-glass/enrol` | Specifically designated operator: one-time emergency passkey enrolment using the approved restricted process |
+
+**Established reusable presentation pieces** include `AuthenticationSignInForm`, `AuthenticationSignUpForm`, `AuthenticationForgotPasswordForm`, `AuthenticationResetPasswordForm`, `AuthenticationMfaPanel`, `AuthenticationTotpEnrolment`, `AuthenticationBackupCodes`, `AuthenticationReauthenticate`, `AuthenticationSecuritySettings`, `AuthenticationBreakGlassEnrolment`, `AuthenticationProviderButtons`, `AuthenticationField` and `AuthenticationAlert`. The public `useAuthentication()` client contract includes sign-in/out, passkey/provider/MFA operations, session listing/revocation and provider linking; those functions do not establish any undisclosed administration screen. The contract offers no evidence of a published unified Authentication dashboard, tenant-wide service-credential console, security-policy editor or audit investigator console. **Implementation/rendering and host acceptance remain unverified.**
+
+### Proposed screen inventory and journeys
+
+The following are conceptual screen purposes; names and paths are illustrative and **not implemented** unless expressly listed in the existing screen table above.
+
+| Proposed screen or journey | Audience / permissions | Information and presentation responsibilities | Status |
+|---|---|---|---|
+| **Authentication overview/dashboard** | Authenticated viewer, scoped to their account; optional separately authorised operations overview | Clear personal security posture, enrolled methods, active-session summary, recent important security notices, actionable warnings and links to existing settings; avoid implying that locally authenticated means authorised for every app resource | **Proposed** |
+| **Personal account security** | Account holder, with fresh reauthentication for sensitive mutations | Existing `/account/security` functions: credential management, linked providers, MFA, backup codes and own-session revoke controls; one-time recovery material never appears again after display | **Existing contractual screen**, conceptual presentation refinement |
+| **Sessions and recognised devices** | Account holder | Session list, last activity where available, current-session identification, revoke one/others, expiry and unknown-session response; no cross-tenant leak | **Existing in security page/client surface**; a separate screen is **optional proposal** |
+| **Authenticator and account recovery** | Account holder, or constrained unauthenticated claimant as appropriate | Status of passkeys/TOTP, backup-code regeneration, recovery verification and clearly separated pending/succeeded/expired steps; do not elevate recovered sessions without proof | **Existing functions/screens**, improvements **proposed** |
+| **Federated account links** | Account holder | Trusted providers and linked accounts, explicit link/unlink confirmation and provider errors; email equality does not authorise linking | **Existing functions/security screen**, presentation refinement **proposed** |
+| **Service-identity credential management** | Separately authorised service-identity managers in the owning group; elevated recent authentication required | List/issue/rotate/revoke service credentials, show newly issued secret once, group scope, expiry and revocation status; never offer unrestricted all-tenant views | **Proposed standard operator UI**; existing contract documents server/HTTP services but not a supplied screen |
+| **Authentication policy and provider configuration** | Appropriately privileged tenant/application operators, subject to host governance | Effective required assurance/MFA and session policy, allowed providers and policy provenance, safe status/validation and controlled change workflow; secrets must not be displayed through public config | **Proposed**, may be a Configuration/host-owned management presentation rather than Authentication-owned UI |
+| **Security-event overview and operational health** | Authorised security operators | Sanitised sign-in and revocation trends, throttling/provider outages and event-delivery degradation; link to Audit for evidential review and Logging/Observability for diagnostics, without copying their authoritative records | **Proposed integration view**, not Authentication-owned Audit/Logging UI |
+| **Emergency access enrolment and use** | Individually designated emergency operator and separate authorised approvers | Existing restricted enrolment, explicit warnings, bounded activation, post-use rotation and evidence; keep emergency governance/approval with IAM/Authorisation | **Existing enrolment screen**; wider operator journey **proposed** |
+| **Presentation-disabled / bespoke host UI** | Application designers | Reuse protected public client/server contracts without installing capability screens or duplicated enforcement; support components-only or entirely headless composition | **Existing documented modes** |
+
+**Minimum proposed reusable experience:** retain the seven existing optional routes and account-security components; supply an optional **Authentication overview** as a capability landing screen where useful, reusing existing personal security functionality rather than duplicating it. Separately consider a genuinely authorised **service-credential management** presentation. A generic Authentication dashboard is *not* a prerequisite for sign-in and should not block independent native/headless operation.
+
+### Screen-to-capability responsibility and access boundaries
+
+- **Host application:** selects whether Authentication is composed, whether its optional presentation is enabled, routing/location, sidebar and user-menu placement, capability card, branding, responsive shell, localised navigation text and trusted server caller context. A capability must not modify the application's global sidebar implicitly.
+- **Authentication core:** validates credential and session operations and assurance/freshness requirements on the server; supplies only safe, documented personal/session/credential data and status to presentation. Sign-in success never grants privileged management permission.
+- **Identity and IAM integration:** own principal standing and cross-capability lifecycle choreography. A security page must not expose membership, tenant administration or personal-profile records as Authentication-owned data.
+- **Authorisation:** decides resource-specific permissions for service credentials, privileged policy access, emergency controls and evidence views. Hiding a sidebar item is not enforcement; direct-route/API requests must fail closed independently.
+- **Audit versus Logging/Observability:** Audit owns accountable security evidence; Logging owns operational diagnostics/correlation; Observability owns health/traces/metrics. Authentication may display authorised, minimised summaries through public contracts but cannot become a competing record store or investigation console.
+- **Configuration/Privacy/Legal Compliance:** effective policy, provenance, notices/retention and holds must be obtained from the appropriate owner; a screen may explain them but cannot authoritatively redefine those owners' rules.
+- **Theme/accessibility/internationalisation:** reuse published Theme Manager semantic presentation vocabulary and optional generic `ui` components; do not require Theme Manager for the headless core. Follow WCAG 2.2 AA, keyboard/screen-reader support, responsive mobile presentation, focus management after route/challenge changes, accessible errors independent of colour, reduced motion and host locale/message override behaviour.
+- **Safe disclosure:** consistent masked/non-enumerating recovery outcomes, no credentials/cookies/tokens in screen URLs or telemetry, one-time display for backup codes/new service secrets, fragment-based break-glass enrolment token, reauthentication before sensitive changes, strong confirmation of revocation and safe provider redirects. Empty, loading, partial-assurance, account-restricted, rate-limited, stale, provider-failed and unavailable states must be explicit and recoverable without unverified success.
+
+### Conceptual host acceptance scenarios
+
+1. A test-host sidebar shows an explicitly selected Authentication capability entry and optionally an `/admin` card, and opens a capability landing page inside the existing shell; installation alone adds no navigation.
+2. A signed-out visitor can reach sign-in, sign-up, password recovery and second-factor completion without first being authenticated into `/admin`. The host's previously static authentication-status placeholder is replaced only by consuming the published Authentication interface.
+3. A signed-in person reaches their personal security page from the account menu or permitted sidebar, lists/revokes only their own sessions, manages verified methods, and reauthenticates for protected changes.
+4. A person without service-credential management rights cannot see privileged controls or invoke their underlying endpoints directly; a recently authenticated authorised operator can act only within an appropriate service identity's owning-group scope.
+5. Enabling `presentation: false` preserves full headless capability operation; components-only and relocated-route modes behave as described in the public contract.
+6. Anonymous/partial-assurance, unavailable provider, expired challenge, revoked session, blocked account, unknown recovery identifier and expired break-glass token states fail safely and do not disclose secrets or falsely imply success.
+7. Keyboard-only and screen-reader users can traverse sidebar, public authentication flows, method-management and confirmation dialogs; mobile layouts, focus order, light/dark contrast and localisation meet accepted baseline requirements.
+8. No user, operator or host can obtain cross-tenant account/security, service credential or Audit evidence from client-supplied identifiers, hidden navigation or an unguarded direct URL.
+9. Derive the implementation acceptance app from `nuxt-layers-test/application-test-template` rather than changing that common reference template; verify independently through CI/user acceptance at the later implementation stage, with ADR-0012 single-call/50-line host budget preserved.
+
+**Review disposition:** This presentation addition is a **non-normative concept and existing-contract inventory**. It does not authorise new Authentication APIs, automatic menu registration, an Authentication implementation change, a new generic dashboard capability or a change to the shared application-test-template. Detailed layouts, route choice, component architecture and tests belong to subsequent design/implementation.
+
 ## Conceptual acceptance scenarios
 
 1. **Native person sign-in:** enrol an allowed authenticator, prove control, complete required second factor, receive a bounded local principal assertion, and gain no domain permissions until a separate Authorisation decision.
