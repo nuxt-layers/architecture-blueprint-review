@@ -471,3 +471,7 @@ Profiles are **declarative, versioned and inspectable mappings**, not certificat
 - **Acceptance:** normal standard capture with lag; critical waiver while Audit is down; duplicate delivery; missing checkpoints; corrupted evidence; out-of-order receipts; privileged export denial; authorised linkage between Billing's dashboard and Audit's protected evidence review. Logging's diagnostic outcome is independent.
 
 The exact event schemas, policy thresholds, secure finality protocol and receipts remain technical/acceptance work; the Audit capability's own conceptual review and approvals are not silently changed.
+
+## Cross-capability note — Booking evidential accountability (15 November 2026)
+
+**Proposed, subject to Booking review.** [Booking](../booking/capability-record.md) owns versioned reservation decisions/outcomes, holds, amendments, cancellations, exceptional overrides, cross-tenant access attempts, provider authority cutovers and capacity conflicts. It submits risk-selected, minimised, source-attributed records and outcome revisions to Audit; Audit owns receipt, integrity, custody, coverage, retention and review, **not Booking status**. Booking source-event commit, transport delivery, Audit receipt and integrity verification are separate statuses. Critical evidence failure follows the approved capture tier and must not be concealed. Provider identifiers, attendee details and sensitive service information require stringent minimisation. No mandatory bidirectional imports.
