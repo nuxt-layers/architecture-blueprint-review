@@ -23,3 +23,7 @@
 ## Cross-capability note — Observability versus Audit (14 November 2026)
 
 **Established:** The governing catalogue distinguishes Observability's metrics, traces and operational health from Audit's proposed evidential record. **Proposed:** Observability may show Audit intake backlog, verification outages, coverage gaps and degraded state via [Audit](../audit/capability-record.md)'s owner-provided status; it cannot represent a healthy metric as proof of evidential integrity or ingest evidential content by default. **Open:** authorised diagnostic disclosures and critical alert routing. Observability's conceptual review remains incomplete.
+
+## Cross-capability note — Asset operational signals (15 November 2026)
+
+**Status: Proposed relationship only; Observability's conceptual review remains incomplete.** [Asset](../asset/capability-record.md#asset-audit-logging-and-observability--explicit-contract-boundary-15-november-2026) may expose aggregate latency, outbox backlog, Audit capture-pending count, provider degradation, failed transfer/reconciliation and inspection/renewal scheduler health. Observability owns metrics/traces and alert status, not asset lifecycle, diagnostic log records or evidence integrity. Do not disclose raw licences, people/contract terms or precise live-location telemetry; a healthy dashboard does not prove Audit receipt, inspection compliance or legal entitlement.
