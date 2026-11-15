@@ -29,7 +29,7 @@ This document is the **populated working register**, distinct from its design sp
 | `media` | Platform | Established | Images: web-ready variants, metadata removal, alt text, group ownership and allowances; the files themselves through the Files shape ([ADR-0012](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/decisions/ADR-0012-trivial-composition.md)), which the host fills with `storage` |
 | `storage` | Platform | Established | Files' bytes in an object store behind one provider-agnostic port: keys under tenant and group, signed addresses, lifecycle, backups and usage figures; no records of its own |
 | `ui` | Presentation | Established | Generic, fully styled components on Theme Manager's vocabulary; knows no capability |
-| `content-editor` | Presentation | Established | Editing screens for Publisher's documents, saving through Publisher's functions; no data of its own |
+| `content-editor` | Presentation | Established | Complete generic editorial GUI for Publisher's registered document types through its public contract, without owning content or publication state; implementation not independently verified |
 | `gallery` | Presentation | Established | Albums and photo of the week as Publisher types over media's images; no data of its own |
 | `privacy` | Foundation | Established | Consent and retention policy, which capabilities receive and apply |
 | `legal-compliance` | Foundation | Established | The legal duties that apply to each site by jurisdiction, such as UK GDPR and the Online Safety Act, and the constraints they impose beside Authorisation's decisions, such as legal holds that block deletion |
@@ -107,7 +107,6 @@ This document is the **populated working register**, distinct from its design sp
 | `training` | Domain candidate | Candidate | Verified training participation, competencies and completion records |
 | `gaming` | Domain candidate | Candidate | Game-specific state, rankings and participation; separate from generic Identity accounts |
 | `workshop` | Domain candidate | Candidate | Event/Course specialisation unless distinct rules justify a separate domain |
-| `blog` | Domain candidate | Candidate | Publisher document type and presentation unless separate domain state demonstrably exists |
 | `job` | Domain candidate | Candidate | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
 
 ### Commerce and operations domain candidates
@@ -154,12 +153,3 @@ This document is the **populated working register**, distinct from its design sp
 5. This register is neither a new runtime capability nor an authority for installing code, storing business data or deciding permissions.
 
 **Next work:** assess each entry's root public contract and acceptance evidence, adding verified provenance without presuming implementation from its catalogue entry.
-
-
-### Blog classification review note — 15 November 2026
-
-**Proposed, not approved or normative:** The existing `blog` register row remains a **Domain candidate** until owner sign-off. The completed [Blog conceptual proposal](capabilities/blog/capability-record.md) recommends retaining Blog as a host-registered Publisher article type and reusable presentation/application composition, **without** independent blog content records, lifecycle, persistence or domain events. This follows the governing catalogue's explicit default classification. Publisher owns documents, approval/publication, versions, addresses and feeds. A distinct Domain classification requires an evidenced additional independently owned business invariant. No independent `nuxt-layers/blog` implementation `CONTRACT.md` was verified; no new package or governing catalogue change is authorised. See open decisions BLOG-04–BLOG-07.
-
-### Approved generic editorial presentation allocation — 15 November 2026
-
-**Owner-approved conceptual direction (not implementation evidence):** `content-editor` is responsible for the complete reusable document-management and editorial GUI (authorised lists, dashboard, create/edit, preview, revision/history, review, publication/scheduling and lifecycle-action controls) over Publisher's public contract, **without owning documents or publication business state**. Blog does not own an independent editorial dashboard, editor or management workflow: its candidate scope is a Publisher article type and optional **public reader-facing** Blog presentation or application composition. A host's "Manage articles" navigation can open Content Editor filtered to the article type. [Blog review](capabilities/blog/capability-record.md#approved-cross-capability-allocation--content-editor-workspace-15-november-2026); [Content Editor reciprocal note](capabilities/content_editor/capability-record.md#approved-conceptual-direction--complete-generic-editorial-gui-15-november-2026). The existing Blog classification question, packaging decision and remaining scope questions remain open, and this note does not authorise a new repository or governing catalogue change.
