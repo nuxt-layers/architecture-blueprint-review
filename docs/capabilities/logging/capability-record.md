@@ -66,3 +66,7 @@
 - **Acceptance:** provider timeout; failed billing run; replay/deduplication; Logging down with Audit healthy; Audit down with Logging healthy; both unavailable; protected financial export denied; scoped diagnostic read must not disclose another tenant's data.
 
 No mandatory Logging package dependency, concrete schema, sink provider or implementation change is introduced here.
+
+## Cross-capability note — Booking technical diagnostics (15 November 2026)
+
+**Proposed relationship, not a verified implementation contract.** [Booking](../booking/capability-record.md) may emit sanitised structured diagnostics for capacity contention, stale supply, hold expiry, retry/idempotency collision, provider timeout, reconciliation, projection lag and queue delivery with purpose-limited correlation and source/tenant scope. Logging owns diagnostic processing, sinks and retention; Booking keeps reservation history and outbox; Audit keeps evidential custody. Do not log guest/contact details, provider credentials, authentication secrets or sensitive reasons for attendance. A successful log write proves neither Booking confirmation nor Audit receipt. Sink failure must be visible and must not create a second booking authority.
