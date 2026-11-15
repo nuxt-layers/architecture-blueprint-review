@@ -31,3 +31,7 @@
 ## Cross-capability note — Booking expiration and reminders (15 November 2026)
 
 **Proposed reciprocal relationship; no Scheduler interface is assumed to exist.** [Booking](../booking/capability-record.md) owns hold expiry, eligibility for transition, booking status and idempotent maintenance action. Scheduler may invoke a due handler and report execution attempts, providing scheduled/actual time, tenant scope and stable operation identity; Booking returns accepted/expired/no-op/failed status and next-due hints. Delay or absence of Scheduler does not extend an expired hold: Booking validates time and state on its own commands and reads. Clock supplies temporal semantics. Reminder sending is separate from authoritative expiry.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Scheduler may trigger Booking-owned expiry/reminder/recurrence maintenance; Booking owns series patterns, bounded occurrences, capacity commitments and changes. Late or missing Scheduler triggers cannot extend expired holds or establish an unconfirmed future booking. No currently implemented integration contract is implied.
