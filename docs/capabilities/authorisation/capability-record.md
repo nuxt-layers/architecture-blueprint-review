@@ -1,7 +1,7 @@
 # Capability Record — Authorisation
 
 **Capability:** `authorisation` — **Established Foundation (IAM) architectural responsibility**.  
-**Conceptual review:** Proposed for sign-off; independent implementation readiness unverified.  
+**Conceptual review:** Recommendations AUTHZ-01–13 and four priority concerns approved by the project owner on 15 November 2026; conceptual direction agreed, with technical design/implementation acceptance still outstanding. Independent implementation readiness unverified.  
 **Reviewed:** 15 November 2026.  
 **Governing baseline:** `nuxt-layers/architecture-rules` `master` `2eea557fa3acbf9412fea065d2a3cdda42a764fc`.  
 **Blueprint baseline:** `nuxt-layers/architecture-blueprint-review` `master` `9845cff48b0f61ed092603203e4279279afdadfa`.  
@@ -133,7 +133,7 @@ For imports, organisational migration, provider outage, backup restore or policy
 11. **Outage/restore:** dependency outage, stale Identity data, failed clock, malformed provider assertion or conflicting imported policy yields deny/unavailable; restore/reconciliation never silently broadens access.
 12. **User interface:** optional screens can be disabled; host-rendered views still use the same server checks and remain accessible and localisable.
 
-## Outstanding decisions and compliance gaps
+## Approved recommendations, work classifications and unresolved design details
 
 - **AUTHZ-01 — Composition (Established gap):** the current root contract advertises several `provideAuthorisation*` calls plus host-coordinated role synchronisation and maintenance. Reconcile to ADR-0012's single-call/50-line contract; preserve assurance and high-risk governance. This is an implementation/public-contract alignment task, **not** a proposal to weaken ADR-0012.
 - **AUTHZ-02 — Shared ports (Established gap):** align public caller/access/clock/events shapes with ADR-0012 while retaining trusted Identity directory/governance, resource descriptors and explicit absence modes; verify a minimal host independently.
@@ -149,8 +149,34 @@ For imports, organisational migration, provider outage, backup restore or policy
 - **AUTHZ-12 — Portable history (Open):** describe subject and tenant export/erasure, retention, legal hold, orphan privileges, import safety and non-reversible external disclosures.
 - **AUTHZ-13 — Evidence (Unverified):** published contract documents lifecycle and tests but independently measured integration, threat-model compliance, composition budget and acceptance results have not been verified through the root contract alone.
 
+## Approval and disposition register — 15 November 2026
+
+**Review approval:** The project owner explicitly approved all recommendations and proposed improvements for AUTHZ-01 through AUTHZ-13, including the four priority concerns: revocation consistency, privileged administrative operation security, governed policy flexibility and separation of Audit evidence from Logging diagnostics. This approval settles the **recommended conceptual direction**; it does not assert that the implementation is aligned, that technical details are already resolved, or that independent acceptance tests have passed.
+
+**Disposition by work type:** Preserve the original identifiers for traceability, but do not treat every item as an unanswered architectural question.
+
+| Reference | Approved direction | Work classification | What remains |
+|---|---|---|---|
+| AUTHZ-01 | Preserve ADR-0012 and consolidate composition to one documented operation | **Implementation/public-contract alignment** | Reconcile existing host integration and measure the 50-line budget |
+| AUTHZ-02 | Use shared structural ports with documented specialised IAM/resource semantics | **Implementation/public-contract alignment** | Design exact compatible ports and verify consumer example |
+| AUTHZ-03 | Explicitly trusted, authorised and attributable privileged server operations | **Agreed security requirement** | Specify caller boundary and negative/replay tests |
+| AUTHZ-04 | Risk-tiered revocation guarantees and fail-closed sensitive operations | **Agreed security requirement** | Quantify freshness bounds and propagation mechanics through IAM |
+| AUTHZ-05 | Retain role model; add governed attribute/relationship specialisation only if justified | **Agreed design principle; conditional extension** | Establish evidence and scope before any new evaluator |
+| AUTHZ-06 | Domain authority for verified resource descriptors and change-of-ownership consistency | **Agreed ownership requirement** | Specify read consistency and time-of-check/time-of-use handling |
+| AUTHZ-07 | Mandatory restrictions, isolation and domain invariants are not overridden by grants | **Agreed precedence principle** | Define precise combination/deny semantics and diagnostics |
+| AUTHZ-08 | Risk-based mandatory access evidence, Audit custody separate from Logging | **Agreed evidence requirement** | Decide denial taxonomy, capture reliability, minimisation and outage mode |
+| AUTHZ-09 | Authorisation owns policy meaning/enforcement; Configuration may manage compatible values | **Agreed ownership requirement** | Specify policy schema, revision, activation, precedence and rollback |
+| AUTHZ-10 | Optional, provider-neutral integration with explicitly governed authority selection | **Agreed integration principle; conditional feature** | Decide which external scenarios warrant support and reconciliation |
+| AUTHZ-11 | Identity group governance distinct from Authorisation access governance; IAM coordinates | **Agreed governance boundary** | Detail independence, periodic reviews, delegated approval and emergency exceptions |
+| AUTHZ-12 | Controlled lifecycle portability, evidence retention and fail-closed recovery | **Agreed continuity requirement** | Specify legal-hold/erasure reconciliation and restore safeguards |
+| AUTHZ-13 | Independent contract, security and composition acceptance required before readiness claim | **Verification/acceptance work** | Execute and record independent evidence in the relevant implementation/consumer repos |
+
+**Decision discipline for subsequent reviews (approved method):** First discover and analyse actual issues; then group by responsibility and assign stable identifiers **without target counts or padding**. Separate (a) already established requirements, (b) owner-approved conceptual direction, (c) genuinely unresolved architectural alternatives requiring owner decision, (d) technical questions to be resolved through evidence and professional judgement, (e) implementation alignment, and (f) independent acceptance. Ask for owner approval only where an actual policy, governance, scope or consequential trade-off remains; do not offload routine technical investigation. A conceptual record may legitimately contain zero, three or dozens of numbered issues. Numbering begins at 01 by convention, not because a fixed quantity is expected. Later detailed design outcomes must be traceable to these identifiers without recasting settled concepts as unanswered questions.
+
+**Approval scope:** This is approval of the blueprint's conceptual recommendations, not authorisation to modify `architecture-rules`, the Authorisation implementation or the test template. It neither changes accepted ADRs nor certifies production readiness.
+
 ## Architectural consequences and review disposition
 
-**Proposed:** retain `authorisation` as an **Established Foundation (IAM)** capability; no new generic policy service, registry, role store, permission domain or infrastructure gateway. No classification change is needed to the working Catalogue or Register. Keep its development and runtime status separate from conceptual sign-off. Cross-reference Identity, Authentication, IAM Integration, Audit, Logging, Configuration, Privacy and protected domain capabilities without completing their separate conceptual reviews. Record the ADR-0012 integration gap as a follow-up for the owning implementation repository, **not** a change to governing rules.
+**Agreed conceptual direction:** retain `authorisation` as an **Established Foundation (IAM)** capability; no new generic policy service, registry, role store, permission domain or infrastructure gateway. No classification change is needed to the working Catalogue or Register. Keep its development and runtime status separate from conceptual sign-off. Cross-reference Identity, Authentication, IAM Integration, Audit, Logging, Configuration, Privacy and protected domain capabilities without completing their separate conceptual reviews. Record the ADR-0012 integration gap as a follow-up for the owning implementation repository, **not** a change to governing rules.
 
-**Conceptual review status:** **Proposed for sign-off**, with explicit AUTHZ-03–12 refinements for future design. **Not implementation-ready by this review.** No changes to accepted ADRs, other implementation repositories, test template or governing architecture have been authorised. **Next alphabetically:** [Billing](../billing/capability-record.md).
+**Conceptual review status:** **Conceptual recommendations approved** by the project owner (15 November 2026). The underlying decisions about exact technical semantics, measured guarantees and independently evidenced behaviour are still to be resolved by design and acceptance work; this approval does not assert they have been completed. **Not implementation-ready by this review.** No changes to accepted ADRs, other implementation repositories, test template or governing architecture have been authorised. **Next alphabetically:** [Billing](../billing/capability-record.md).
