@@ -31,3 +31,7 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Booking approval and recurrence interface (15 November 2026):** [Booking](../booking/capability-record.md#focused-reciprocal-contract-clarifications) may require a versioned and expiry-bound approval for reserved capacity. Workflow coordinates approval routes/assigned work and returns attributable approved/rejected/delegated/expired outcomes; Authorisation decides who qualifies; Booking rechecks capacity and eligibility before confirmation. An approval cannot itself reserve capacity or extend a hold indefinitely. Delayed/revoked authority is rechecked. No mandatory Workflow runtime is imposed on bookings without approvals.
+
+## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+
+**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Workflow coordinates requested Booking approvals and returns versioned decision/expiry/delegation evidence; Authorisation decides the approver's authority and Booking revalidates resource capacity before confirming. Approval alone does not confirm or reserve capacity. No currently implemented integration contract is implied.
