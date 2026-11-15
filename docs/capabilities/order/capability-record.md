@@ -39,3 +39,7 @@
 - **Related capability notes:** [product](../product/capability-record.md), [inventory](../inventory/capability-record.md), [invoice](../invoice/capability-record.md), [accounting](../accounting/capability-record.md), [integrations](../integrations/capability-record.md), [billing](../billing/capability-record.md).
 - **Open architectural questions:** Business Contacts / Parties owner; opt-in user discovery and identity linkage versus guest transactions, plus purchase-order/contract boundaries.
 - **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+## Cross-capability note — Orders as Billing evidence (15 November 2026)
+
+**Agreed conceptual relationship: BIL-01 approved on 15 November 2026; implementation remains unverified.** [Billing](../billing/capability-record.md) may consume Order's versioned acceptance, change, cancellation and fulfilment evidence to assess chargeability. Order remains authoritative for ordered goods/services and commercial acceptance; Billing owns resultant charge decisions. An accepted Order is not automatically an invoice, ledger posting or payment, and not all charges require an Order. Billing supplies charge/billing-status references back by public contract/event without Order reading Billing persistence.
