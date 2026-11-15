@@ -25,12 +25,23 @@ The historical [decisions](records/decisions.md) and [findings](records/findings
 
 1. Confirm the current governing revision and the accepted ADRs and normative standards.
 2. Consult other repositories **only through their public root `CONTRACT.md`**, unless wider inspection is expressly authorised.
-3. Record verified evidence in a review; distinguish findings, alternatives, proposals, approval for further review and formally adopted decisions.
-4. Develop working architectural changes under `docs/` and record consequences, dependencies, security/privacy effects, affected consumers and any proposed ADR/standard amendments.
-5. Treat a blueprint PR as **review approval only**. A proposed change becomes normative only through the appropriate independently reviewed and accepted PR in `architecture-rules`.
-6. After governing adoption, reconcile both the working documents and review records against the latest accepted source without silently discarding upstream changes.
+3. **Apply the [classification and ownership gate](reviews/capability-classification-gate.md)** before assuming an entry owns records or needs persistence, screens, a repository or a Nuxt Layer. Record alternatives and the recommended disposition.
+4. Record verified evidence in a review; distinguish findings, alternatives, proposals, approval for further review and formally adopted decisions.
+5. Develop working architectural changes under `docs/` and record consequences, dependencies, security/privacy effects, affected consumers and any proposed ADR/standard amendments.
+6. Treat a blueprint PR as **review approval only**. A proposed change becomes normative only through the appropriate independently reviewed and accepted PR in `architecture-rules`.
+7. After governing adoption, reconcile both the working documents and review records against the latest accepted source without silently discarding upstream changes.
 
 **Existing governing requirements remain in force throughout review**, including ADR-0012's single-call composition/50-line host budget and ADR-0016's directional, jointly acyclic contract and Nuxt extension dependencies, unless properly amended.
+
+## Classification-first capability review (non-normative working method)
+
+**Mandatory first substantive review gate:** Before prescribing a database, business record, independently deployed service, Nuxt Layer or UI screen for a catalogue entry, determine its **actual responsibility and implementation kind**. Follow the reusable [Capability Classification and Ownership Gate](reviews/capability-classification-gate.md); the earlier [Catalogue Rationalisation Review](reviews/catalogue-rationalisation-dependencies.md) remains relevant evidence.
+
+This is a **review method, not a new governing architecture rule**. Existing `architecture-rules` standards already distinguish Foundation/Platform/Domain/**Presentation** responsibility classes from implementation kinds (independent capability, presentation, composition, stateless library, infrastructure integration or connector) and allow stateful capabilities to own their stores **where necessary**. Catalogue presence alone does not prove business-state ownership or the need for a database, repository or Nuxt Layer.
+
+For each alphabetical entry, record: distinct owned decisions/records/lifecycle **or none**; canonical neighbouring owners; presentation, archetype, composition or library alternatives; minimal justified business/operational/derived/preferences persistence **or none**; proposed classification and implementation form; idealised public inbound/outbound interfaces and absence behaviour; suitable GUI/navigation requirements **or explicitly not applicable**; and an explicit **retain, presentation-only, reclassify, consolidate or defer** recommendation. Mark owner approvals and verified root `CONTRACT.md` evidence separately. Do not reclassify accepted governing records or create new packages through a blueprint PR alone.
+
+Presentation-led dashboards may aggregate source capabilities through public contracts and maintain transient view state without acquiring those capabilities' business records. Reporting may own its report definitions/results without becoming the owner of originating transactions; orchestrators may own execution/checkpoint state without owning domain outcomes. The later dedicated presentation review still applies according to the classification result.
 
 ## Conceptual presentation review (non-normative working method)
 
