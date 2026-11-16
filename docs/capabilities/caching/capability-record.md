@@ -4,7 +4,7 @@
 **Status:** **Proposed** Foundation capability; conceptual review for owner approval. Not implemented, accepted as a new governing architecture decision or production-ready.  
 **Evidence checked:** 16 November 2026. Governing `nuxt-layers/architecture-rules` `master` at `eaca8cfd33e292a43e9552ad8e2946295e168472`; blueprint `master` at `ddb0ce6a6fbd2f442a3767636c08dd8fd10ab927`.  
 **Implementation evidence:** No `nuxt-layers/caching` repository or root `CONTRACT.md` was confirmed by repository discovery; do not infer public exports or behaviour.  
-**Conceptual sign-off:** **Pending owner approval** of proposed scope and open choices.
+**Conceptual sign-off:** CACHE-01–03 approved on 16 November 2026; additional provider, monitoring and service-offering follow-up proposals remain under review.
 
 ## Purpose and architectural classification
 
@@ -156,15 +156,15 @@ The **host** owns navigation, routes and branding. If enabled in a representativ
 
 | ID | Type / status | Question or required action | Recommendation |
 |---|---|---|---|
-| CACHE-01 | **Open architectural decision** | Retain independently bounded Foundation capability versus consolidate as stateless library/provider adapter? | **Retain the conceptual capability** for cross-consumer validity/invalidation invariants, but require evidence before creating a separate repository or stateful service |
-| CACHE-02 | **Open architectural decision** | Minimum cross-instance invalidation guarantee and whether shared coordination is mandatory for selected risk classes | Make guarantees **per use case**, fail closed/bypass where provider cannot prove them; quantify revocation/lag with source owners during technical design |
-| CACHE-03 | **Open architectural decision** | Should bounded stale-while-revalidate ever be permitted, and for which classes? | Opt-in only for explicitly source-approved low-risk public/non-sensitive representations; forbid for sensitive authorisation and critical domain mutations |
+| CACHE-01 | **Agreed conceptual direction (approved 16 Nov 2026)** | Retain independently bounded Foundation capability versus consolidate as stateless library/provider adapter? | **Retain the conceptual capability** for cross-consumer validity/invalidation invariants, but require evidence before creating a separate repository or stateful service |
+| CACHE-02 | **Agreed conceptual direction (approved 16 Nov 2026)** | Minimum cross-instance invalidation guarantee and whether shared coordination is mandatory for selected risk classes | Make guarantees **per use case**, fail closed/bypass where provider cannot prove them; quantify revocation/lag with source owners during technical design |
+| CACHE-03 | **Agreed conceptual direction (approved 16 Nov 2026)** | Should bounded stale-while-revalidate ever be permitted, and for which classes? | Opt-in only for explicitly source-approved low-risk public/non-sensitive representations; forbid for sensitive authorisation and critical domain mutations |
 | CACHE-04 | **Technical investigation** | Evaluate library-only, in-process, PostgreSQL-backed and optional shared-store adapters, including cost, concurrency, region and failure semantics | Benchmark later; **no provider choice or database mandated here** |
 | CACHE-05 | **Implementation/contract work** | If implemented, publish independent root `CONTRACT.md`, one composition operation, typed statuses/permissions, capacity and provider requirements | ADR-0012/0016 compliance; verify 50-line Nuxt adapter budget if applicable |
 | CACHE-06 | **Acceptance/verification** | Prove tenant/group isolation, IAM revocation, version barriers, late refresh, erasure, residency, redaction, outages and degraded operation | Negative/chaos scenarios and measurable freshness evidence before production claims |
 | CACHE-07 | **Established requirement** | Respect source authority, §16 cache-key/retention/security floors and documented storage register | No owner approval needed to restate governing rule |
 
-**Approval discipline:** CACHE-01–03 are *recommendations*, not owner-approved decisions. CACHE-04–06 are not questions requiring conceptual owner approval. No accepted ADR is amended by this record.
+**Approval discipline:** CACHE-01–03 are owner-approved conceptual decisions dated 16 November 2026; see approval register below. CACHE-04–06 are not questions requiring conceptual owner approval. No accepted ADR is amended by this record.
 
 ## Architectural consequences and handover
 
