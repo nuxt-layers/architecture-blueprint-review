@@ -48,3 +48,12 @@
 ## Cross-capability note — Booking policy configuration (15 November 2026)
 
 **Proposed reciprocal relationship; Booking has not been implemented.** [Booking](../booking/capability-record.md) will consume approved, scoped and versioned settings for booking windows, duration, holds, cancellation/attendance rules, waitlists, visibility, channel/provider selection and retention. Configuration owns declaration, scope, effective-value resolution and provenance; Booking validates its domain rules, applies effective policies and retains the decision/version reference on each affected booking. An invalid or missing mandatory setting must not allow overselling or bypass legal/authorisation constraints. Changes affecting previously confirmed commitments need explicit Booking transition rules; no second Booking preference store in Configuration.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Store only registered, approved, scoped/versioned values and provenance for permissible organisation/archetype, service selections and bounded governance rules. Do not own legal obligations, business domain decisions, Identity ownership or entitlement decisions. Security floors locked by authoritative owners cannot be weakened by custom policy. Complex governance instruments and domain rule versioning remain open; published Configuration contract is not a universal policy interpreter.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
