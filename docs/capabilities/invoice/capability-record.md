@@ -43,3 +43,12 @@
 ## Cross-capability note — Billing charge-to-document handoff (15 November 2026)
 
 **Agreed conceptual relationship: Billing BIL-01–BIL-06 approved on 15 November 2026; Invoice implementation remains unverified.** [Billing](../billing/capability-record.md#idealised-public-outbound-contract) supplies versioned, finalised charge batches, attributed commercial calculations and approved adjustment/credit requests. Invoice independently validates, constructs, numbers, issues, records and corrects formal invoice documents; it supplies authoritative issue/rejection/credit-document status and references. A charge finalisation or handoff request must never imply a legal invoice has been issued, and replay must not duplicate issuance. Supplier invoice intake is provisionally Invoice-owned; Billing may assess commercial obligations only. See approved BIL-01, BIL-03 and BIL-04. Invoice's alphabetical review is still pending.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Own issued invoice and correction states for host-platform subscriptions and tenant business transactions in separately authorised scopes; never deduce legal bill-to party from tenant parentage alone.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
