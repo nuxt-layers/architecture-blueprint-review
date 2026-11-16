@@ -34,4 +34,7 @@
 
 ## Cross-capability note — Proposed Caching performance and invalidation health (16 November 2026)
 
-**Proposed; no published adapter confirmed.** [Caching](../caching/capability-record.md) offers sanitised per-namespace/tenant-safe aggregate hit/miss/eviction/error rates, source freshness bounds, provider availability and invalidation lag/coverage. Observability owns time-series metrics, traces and alerts, not cache entries, source revisions or access decisions. Instrumentation must avoid keys, values, personal information and cross-tenant inference. An apparently healthy metric never guarantees Authorisation revocation or completed erasure. Degradation must be visible, not silently counted as healthy.
+**Agreed conceptual boundary; adapter unverified.** [Caching](../caching/capability-record.md) offers sanitised per-namespace/tenant-safe aggregate hit/miss/eviction/error rates, source freshness bounds, provider availability and invalidation lag/coverage. Observability owns time-series metrics, traces and alerts, not cache entries, source revisions or access decisions. Instrumentation must avoid keys, values, personal information and cross-tenant inference. An apparently healthy metric never guarantees Authorisation revocation or completed erasure. Degradation must be visible, not silently counted as healthy.
+
+**Approved conceptual boundary (16 November 2026):** Observability consumes backend-independent, bounded measurements of live health, hit/miss ratios, latency, capacity, freshness and invalidation lag, and owns metric histories and alerts. Caching remains owner of contemporaneous operational cache validity; telemetry is not proof of revoked access or successful erasure.
+
