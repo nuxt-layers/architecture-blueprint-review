@@ -59,4 +59,7 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 
 ## Cross-capability note — Proposed Caching operational aggregates (16 November 2026)
 
-**Proposed, not implemented.** [Caching](../caching/capability-record.md) may supply purpose-limited, authorised cache efficiency, capacity, freshness and failure aggregates with reporting period, source scope, completeness and provenance. Reporting owns report definitions and generated results, not cache provider validity, IAM policy or original business records; it must prevent cross-tenant and small-cohort inference. Reporting outage never blocks normal source operation or cache invalidation. No package dependency inferred.
+**Agreed conceptual boundary; implementation unverified.** [Caching](../caching/capability-record.md) may supply purpose-limited, authorised cache efficiency, capacity, freshness and failure aggregates with reporting period, source scope, completeness and provenance. Reporting owns report definitions and generated results, not cache provider validity, IAM policy or original business records; it must prevent cross-tenant and small-cohort inference. Reporting outage never blocks normal source operation or cache invalidation. No package dependency inferred.
+
+**Approved conceptual boundary (16 November 2026):** Reporting can offer historical performance/efficiency analysis using authorised, source-identified and time-qualified aggregates from Caching/Observability, not cached content or cache backend tables. Missing measurements must remain visible; retention and aggregate grain are later policy/technical decisions.
+
