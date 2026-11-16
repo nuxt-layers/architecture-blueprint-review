@@ -54,3 +54,8 @@ Accepted ADR-0009 continues to govern: core services are independent of presenta
 ## Documentation maintenance
 
 Prefer small, purposeful changes. Preserve source provenance and historical review evidence, repair relative links on moves, and avoid introducing a new repository, capability, manifest or runtime service just to organise documentation.
+
+
+## Current cross-capability proposals — tenancy, policies and platform commerce (16 November 2026)
+
+Review the [organisational tenancy and governance proposal](proposals/organisational-tenancy-and-governance.md), [commercial onboarding and entitlements](proposals/commercial-onboarding-and-entitlements.md), [policy and governance boundaries](proposals/policy-and-governance-boundaries.md) and [ownership/recovery review](reviews/organisational-ownership-and-recovery.md). These are blueprint evidence and proposed public contracts, not accepted governing changes or implemented capabilities. ORG-01–ORG-08 have owner conceptual approval; others need explicit governing reconciliation. The `business` archetype remains in the catalogue/register but its redundant capability directory is removed after transferring its sole Billing note.
