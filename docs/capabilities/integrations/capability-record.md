@@ -53,3 +53,12 @@
 ## Cross-capability note — External Booking provider authority (15 November 2026)
 
 **Proposed reciprocal relationship, not verified provider support.** [Booking](../booking/capability-record.md) controls selection of one effective authoritative capacity owner per resource/scope/period, reservation business lifecycle, local mappings and reconciliation state. Integrations owns configured connections/credentials, provider operation discovery, authenticated webhook/transport and technical sync checkpoints. Booking supplies authorised hold/confirm/amend/cancel intent and idempotent identity; Integrations returns authenticated, provenance-rich external operation evidence, capability limitations and failure/uncertainty. Provider timeout or webhook receipt does not prove successful booking. Authority transfer needs reconciled checkpoint/cutover, no dual-writer capacity guarantees and explicit unsupported-operation handling.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Provide verified external company registry, payment and authority evidence transport and provider status, not adjudication of legal authority, commercial settlement or domain ownership. Preserve mapping/provenance, tenant isolation and provider uncertainty.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.

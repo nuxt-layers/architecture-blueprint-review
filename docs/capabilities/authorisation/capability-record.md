@@ -356,3 +356,12 @@ For imports, organisational migration, provider outage, backup restore or policy
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Booking's BK-05 requires distinct server-side decisions for self-service, bookings on behalf, resource management, recurring allocations, privileged overrides, tenant settings, provider cutover and reporting/exports. Tenant membership or visible menu does not grant universal permission; revocations are checked at each protected operation. No currently implemented integration contract is implied.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Maintain per-tenant/group/resource/action decisions for context switching and scoped delegated parent administration; no parent-child tenant or group relationship automatically grants private reads. Contractor permissions must be revocable and cannot silently include ownership transfer. Enforce policy-change separation, independent approvals, legal constraints and mandatory floors in cooperation with source owners. No entitlement alone is an access grant.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.

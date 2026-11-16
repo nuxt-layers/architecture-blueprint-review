@@ -35,3 +35,12 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Booking supplies tenant-scoped confirmation, change, cancellation and reminder intent with booking event/version, recipient reference and purpose; Notifications owns delivery orchestration/status and does not alter Booking state. Optional delivery failure does not reverse a confirmed booking. Required verification is a separately checked condition. No currently implemented integration contract is implied.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Supply scoped notices for invitations, proposed/approved ownership transfer, disputed recovery and appeals, policy changes, provisioning/payment problems, renewals, quota and seat warnings. Never treat successful delivery as authority to change governance or proof payment settled; respect privacy/disclosure and delivery uncertainty.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.

@@ -199,3 +199,10 @@ A repository is created only once these are established:
 8. independent contract, integration and consumer acceptance tests.
 
 The group model is defined in [Identity and Access](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/identity.md) ([ADR-0003](https://github.com/nuxt-layers/architecture-rules/blob/2eea557fa3acbf9412fea065d2a3cdda42a764fc/docs/decisions/ADR-0003-group-model-and-identity-first.md)).
+
+
+### Organisational tenancy, policy and paid onboarding — blueprint review (16 November 2026)
+
+**Non-normative, not an implemented capability or an amendment of governing classifications.** `business` remains a useful **archetype/application composition example**, not an independently owned capability, directory or package. Its sole provisional commercial-counterparty finding has been moved into Billing's reciprocal conceptual record; a legal commercial-party/contract master remains unresolved and must not be assigned to a generic Business store. No business-data authority is transferred to `company-console` or the host.
+
+Cross-cutting proposed reference designs: [organisational tenancy and accountable governance](../proposals/organisational-tenancy-and-governance.md), [commercial onboarding and entitlements](../proposals/commercial-onboarding-and-entitlements.md), [policy/governance taxonomy and lifecycle](../proposals/policy-and-governance-boundaries.md) and [hostile administrator recovery review](../reviews/organisational-ownership-and-recovery.md). ORG-01–ORG-08 are owner-approved conceptual directions; TEN, COM, OWN and policy detail remains proposed pending proper governing adoption. Identity's existing **group** hierarchy is not yet a tenant parent–child API. Do not create `business`, `tenancy` or `policies` as duplicate standalone domains by default.

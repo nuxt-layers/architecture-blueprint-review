@@ -39,3 +39,12 @@
 **Outbound conceptual interfaces:** generic accessible document management views, drafts/previews/forms, source-confirmed statuses, reviewed command requests sent to Publisher with expected version and applicable backlink acknowledgements, safe feedback for rejected/stale/held/unsupported operations, and host-reusable navigation affordances. Content Editor creates **no** content authority or business events; it must not convert a pending command, an external receipt or an event into a claim of published content.
 
 **Availability and acceptance:** without Publisher or trusted authorisation the relevant editorial functions fail closed; optional Media/Metadata/Workflow controls degrade only when their own features are unavailable and legal/policy constraints still hold. Accessibility (WCAG 2.2 AA), i18n, Theme Manager vocabulary, site/tenant negative isolation, generation provenance, safe-tree rendering, unsaved work, stale revisions, permission changes, no-store admin responses and removable/replaceable presentation must be verified in its later dedicated review. Its actual implementation remains unverified.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Provide reusable authored policy document GUI (draft, version, review, publish via Publisher); do not own policy validity or source regulatory duties. Host routes and role-scoped navigation remain host-owned.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.

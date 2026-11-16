@@ -153,3 +153,10 @@ This document is the **populated working register**, distinct from its design sp
 5. This register is neither a new runtime capability nor an authority for installing code, storing business data or deciding permissions.
 
 **Next work:** assess each entry's root public contract and acceptance evidence, adding verified provenance without presuming implementation from its catalogue entry.
+
+
+## Organisational tenancy and commercial onboarding review (16 November 2026)
+
+**Classification:** `business` remains archetype/composition vocabulary only, without a standalone capability record or implementation assertion. The provisional Billing counterparty note is preserved in [Billing's record](capabilities/billing/capability-record.md). Commercial legal-party/contract evidence ownership remains open.
+
+**References:** [tenancy/governance](../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../proposals/commercial-onboarding-and-entitlements.md), [policy boundary](../proposals/policy-and-governance-boundaries.md), [anti-lock-in recovery](../reviews/organisational-ownership-and-recovery.md). ORG-01–ORG-08 owner approved; TEN/COM/OWN and policy proposals are not independently accepted governing decisions or implemented functions. Preserve the separation of tenancy and organisation, real-world authority and digital control, commercial bill-to and service-consumer, mandatory invariants and adjustable policies, document publication and executable enforcement.

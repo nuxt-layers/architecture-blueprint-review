@@ -520,3 +520,12 @@ Review and approve the **dual-mode accounting authority model** and the scope of
 ## Cross-capability note — Billing charge authority (15 November 2026)
 
 **Agreed conceptual relationship: Billing BIL-01–BIL-06 approved by the project owner on 15 November 2026; implementation contracts remain unverified.** [Billing](../billing/capability-record.md#idealised-public-inbound-contract) owns charge assessment, rating, billing periods, finalised commercial charge facts and proposed adjustments. Accounting consumes attributable, versioned charge/invoice facts and independently owns ledger recognition, receivables/payables, accounting periods, settlement and reconciliation. Accounting may supply posting/receivable status under scoped disclosure; a Billing charge event is **not** proof of posting or payment. Failure/replay cannot double post. Supplier obligation assessment does not mean Billing owns Accounting accruals. See approved BIL-01, BIL-03 and BIL-04. Accounting's own conceptual contract remains authoritative within its agreed scope; no implementation change is proposed.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Own host-operator commercial financial postings distinct from tenant's own business books; tenant ancestry and digital owner do not automatically establish payer or ledger scope.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.

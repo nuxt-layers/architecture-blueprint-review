@@ -38,3 +38,12 @@
 **Conceptual outbound public contract:** authoritative document/revision and lifecycle read/command results, published safe content trees, authorised lists, previews, canonical addresses, feeds, redirects and source-owned committed domain events. Content-specific public displays such as chronological article lists, public detail pages, archives, bylines and taxonomy facets are application-owned presentation using Publisher plus the appropriate Profile, Metadata, Media, Search and SEO public contracts; none becomes Publisher's mandatory GUI. Optional external syndication through Integrations preserves a single declared source of authority with explicit uncertainty and reconciliation.
 
 **Editorial presentation:** [Content Editor](../content_editor/capability-record.md) supplies the generic reusable dashboard, document lists, create/edit/preview, approval-status/history and publication/lifecycle controls. Publisher remains headless. The host may expose an **Articles** document-type filter or a **Manage articles** link to that same workspace; no separate article-specific administrative GUI is needed. Check source contract coverage before proposing expansions; this note does not assert that additional client/UI features are implemented.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Own versions, approval, publication and history of policy documents including modern slavery, privacy, cookie and safety notices; publication does not assert legal compliance or activate executable rules. The content-editor supplies generic GUI.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.

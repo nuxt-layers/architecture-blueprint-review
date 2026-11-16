@@ -35,3 +35,12 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Booking consumes lawful data-purpose, disclosure, retention and data-rights constraints for registered and guest participants; Booking retains only necessary party associations and returns attributable retention/correction/erasure disposition without silently rewriting reservation obligations. No currently implemented integration contract is implied.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Define and supply data-purpose/consent, cookie, retention, rights and lawful disclosure constraints to Identity governance and commercial onboarding; keep real-world authority evidence purpose-limited and protect disputed persons. Cookie/notice publication through Publisher is not consent enforcement. Owner recovery and data export must respect third-party personal data and legal holds.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
