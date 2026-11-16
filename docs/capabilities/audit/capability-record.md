@@ -486,3 +486,7 @@ The exact event schemas, policy thresholds, secure finality protocol and receipt
 Retain independently attributable evidence of tenant creation, owner and policy changes, disputes, delegated cross-tenant administration, billing activation and export; source domains retain own facts.
 
 See [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md) and [recovery review](../../reviews/organisational-ownership-and-recovery.md) for conceptual inputs, outputs, authority, failure and acceptance. No package dependency is inferred.
+
+## Cross-capability note — Proposed Caching accountability (16 November 2026)
+
+**Proposed, not implemented.** [Caching](../caching/capability-record.md) supplies attributable, minimised evidence of privileged cache administration, security-relevant purge/disable or policy changes, and material failure of required invalidation/erasure. Audit owns evidential receipt, integrity, coverage, retention and authorised review; Caching owns only derived entries, operational validity and purge status. Ordinary hits/misses are not business audit events. A cache purge acknowledgement is not an Audit receipt, and Audit failure must not be represented as successful capture. Define risk-based failure and recovery without an Audit↔Caching package cycle.
