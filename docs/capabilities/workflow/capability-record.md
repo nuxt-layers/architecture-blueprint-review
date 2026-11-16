@@ -35,3 +35,12 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Workflow coordinates requested Booking approvals and returns versioned decision/expiry/delegation evidence; Authorisation decides the approver's authority and Booking revalidates resource capacity before confirming. Approval alone does not confirm or reserve capacity. No currently implemented integration contract is implied.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Coordinate high-risk approvals, succession/recovery, policy activation, paid onboarding, confirmed payment-to-entitlement-to-provisioning, retries and compensation using owner commands/results. Own execution/checkpoint state only, never Identity tenancy, legal applicability, Order commitment, Payment settlement, Subscription entitlement or domain record truth. Duplicates/out-of-order signals must reconcile, not repeat a charge or tenant creation.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
