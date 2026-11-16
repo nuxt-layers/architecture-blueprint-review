@@ -43,3 +43,12 @@
 ## Cross-capability note — Orders as Billing evidence (15 November 2026)
 
 **Agreed conceptual relationship: BIL-01 approved on 15 November 2026; implementation remains unverified.** [Billing](../billing/capability-record.md) may consume Order's versioned acceptance, change, cancellation and fulfilment evidence to assess chargeability. Order remains authoritative for ordered goods/services and commercial acceptance; Billing owns resultant charge decisions. An accepted Order is not automatically an invoice, ledger posting or payment, and not all charges require an Order. Billing supplies charge/billing-status references back by public contract/event without Order reading Billing persistence.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy refinements proposed, implementation not assumed.
+
+Own purchase acceptance and amendments for paid tenant creation and additional capabilities, seats and storage, consuming verified scoped quote and payer authority; do not assert payment/entitlement/provisioning success.
+
+See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
