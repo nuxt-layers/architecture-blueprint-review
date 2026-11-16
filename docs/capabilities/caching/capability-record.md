@@ -174,3 +174,54 @@ The **host** owns navigation, routes and branding. If enabled in a representativ
 - A consuming capability can opt out entirely and must not silently depend on Caching for its authoritative correctness.
 - Technical design must settle adapter choice, detailed contracts, concurrency/propagation, operational sizing, concrete APIs, tests and whether any UI is justified.
 - **Next alphabetical directory:** verify against the current `docs/capabilities/` tree before proceeding; this review does not assert a successor without directory verification.
+
+
+## Owner approvals — 16 November 2026
+
+**Agreed conceptual directions (owner explicitly approved):**
+- **CACHE-01:** Retain Caching as a bounded **Foundation capability** owning shared cache-validity and invalidation rules, with no presumption that it needs its own repository, database, standalone process or Nuxt Layer. Independently evaluate implementation kind during technical design.
+- **CACHE-02:** Apply source-specific, risk-sensitive freshness and consistency. Where a backend cannot meet a source's cross-instance invalidation/revocation bound, bypass the cache or refuse the unsafe result. Do not promise universal instant invalidation.
+- **CACHE-03:** Allow bounded stale-while-revalidate **only on explicit source-owner opt-in** for low-risk public/non-sensitive representations; reject stale disclosure for security decisions and critical domain mutations.
+
+These approvals settle the architectural direction only; they do not establish implementation compliance, select a provider, or authorise merging a PR. The earlier table's `CACHE-01`–`CACHE-03` “Open” labels describe the *pre-approval proposal* and are superseded by this approval register.
+
+## Follow-up investigation — provider neutrality, PostgreSQL and open-source options (16 November 2026)
+
+**Proposed follow-up requirements, pending owner acceptance:** Caching must expose one backend-independent public service contract; backend selection, provider-specific lifecycle, secrets, connection management and performance remain behind host-composed adapters. Consumers must not embed Redis, SQL, wire-protocol or vendor-specific operations in their conceptual interface.
+
+Evaluate a lightweight in-process adapter, a PostgreSQL-backed adapter and a separately deployed Redis-compatible adapter; select per use case and permitted consistency. **PostgreSQL-first evaluation is preferred but not yet a binding implementation selection**; no extension or independent datastore is mandated. Candidate research:
+- PostgreSQL `UNLOGGED` tables can hold disposable derived values but are truncated after crash and are not replicated. They are unsuitable as the sole home for durable evidence or historical operational metrics: https://www.postgresql.org/docs/18/sql-createtable.html
+- `pg_ivm` incrementally maintains eligible materialised views, not arbitrary cross-capability key-value entries: https://github.com/sraoss/pg_ivm
+- `pg_cron` can schedule maintenance, but must not displace Scheduler's contractual scheduling authority: https://www.enterprisedb.com/docs/pg_extensions/pg_cron/
+- `LISTEN/NOTIFY` is useful for low-latency hints, **not** a durable invalidation journal. Reconcile through committed source versions/outboxes after missed delivery: https://www.postgresql.org/docs/current/sql-notify.html
+- `Valkey` (BSD-3-Clause), `Garnet` (MIT), `KeyDB` (BSD-3-Clause) are permissive Redis-compatible separate services; **none is itself a PostgreSQL extension**. Compare licensing, maintenance, workloads, region support and operational cost: https://github.com/valkey-io/valkey ; https://github.com/microsoft/garnet ; https://github.com/Snapchat/KeyDB
+- `Redis 8` offers AGPLv3 plus source-available alternatives; copyleft/network obligations need deliberate legal review. `Dragonfly` current source-available licensing requires specific restrictions review and must not be classified as permissive open source: https://redis.io/blog/what-is-valkey/ ; https://github.com/dragonflydb/dragonfly/blob/main/LICENSE.md
+- `PgCache` is an interesting PostgreSQL-proxy/extension combination but is pre-1.0 and Elastic-License-2.0 source-available, not a general-purpose cache abstraction or a permissive baseline: https://github.com/PgCache/pgcache
+
+Preserve this provider comparison as **technical investigation**; do not convert it into mandatory infrastructure, a provider dependency or a premature licence compliance assertion.
+
+## Follow-up proposal — operational state, Audit, Logging, Observability and Reporting
+
+**Proposed conceptual direction; owner asked to explore, not yet separately approved:**
+1. **Caching owns its live operational state**: provider health, cache namespaces, entry generation/version, scope, expiry, invalidation progress/coverage, failures and sufficient bounded counters to diagnose operation. Avoid storing every lookup as a durable record; cache entries and real-time counters are disposable except for security-critical coordination barriers whose durability must be analysed against risk.
+2. **Logging** receives sanitised structured *technical diagnostics* (timeouts, cache misses when meaningful, failed refresh, provider errors, evictions, correlation). Logging owns log sinks, retention and technical search. No raw values, sensitive cache keys or subject data.
+3. **Audit** receives attributable *security/material governance actions and outcomes*: privileged configuration changes, purge/disable, attempted unauthorised inspection, mandatory erasure/invalidation failures and recovery. Audit owns evidence integrity, retention and reporting of receipt. Ordinary cache hits are not individually required audit records; distinguish accepted purge, completed purge and acknowledged Audit capture. Define risk-specific behaviour if required evidence cannot be recorded.
+4. **Observability** receives bounded live and historical metrics/traces: hit/miss ratio, value age, lookup/refresh latency, errors, capacity, invalidation lag and provider health. It owns telemetry aggregation, alerting and history; Caching remains authoritative only for its contemporaneous operational state. Protect tenant-scoped cardinality and inference.
+5. **Reporting** consumes authorised, minimised time-window aggregates and provenance from Caching/Observability under their public contracts, producing user-facing historical comparisons, capacity/cost/performance trend reports, and incomplete-data warnings. Reporting owns report definitions and artefacts, not source entries or live cache authority.
+6. **Presentation:** optional host-linked operator dashboard for live health/performance, namespace details, scoped maintenance and historical trend links. The host controls navigation; live metrics are not a substitute for verified security/freshness guarantees. Optional headless mode remains valid.
+
+**Additional acceptance scenarios:** healthy cache with Logging sink down; Audit unavailable during risk-critical purge; provider temporarily inaccessible while Observability continues to show historical health; partial invalidation after interrupted worker; cross-tenant dashboard/aggregate inference attempt; Reporting unavailable while caching continues; recovery from an `UNLOGGED` cache loss without losing mandatory evidence; loss of `LISTEN/NOTIFY` hint followed by source-version reconciliation.
+
+## Follow-up proposal — single public offering and minimum consumer needs
+
+Expose one **provider-neutral headless capability service** through host composition; this is a *conceptual service shape*, not a prescribed TypeScript API:
+- **Describe/register use case:** consumer identity, source owner, namespace, data class, scope and all key-affecting inputs, dependency/revision schema, freshness/stale policy and declared fallback.
+- **Lookup:** validated caller/scope and logical key/context → hit, miss, source-qualified permitted stale or typed denial/unavailable, with source version/time, age, expiry and permitted disclosure; never infer source permission from a cached hit.
+- **Fill/refresh:** trusted source-qualified value/version/context → accepted, superseded, rejected, uncertain with entry generation. A cache fill is not a domain commit.
+- **Invalidate/purge:** trusted source change (prefer durable outbox) or authorised administrative operation → scoped propagation status (accepted/pending/completed/partial/uncertain), version barrier and evidence reference; older in-flight refresh cannot recreate invalid content.
+- **Inspect/status:** effective policy and provider capabilities/health, safe operational statistics and provenance for an authorised tenant/namespace.
+- **Optional subscribe:** cache-specific operational incidents or materially changed state, not duplicative domain events or routine hit/miss traffic.
+
+Consumers depend only on this conceptual port, *not* directly on a Redis client or PostgreSQL schema. A source-capability contract declares cacheability and necessary invalidation facts; Caching consumes them without importing the source's implementation. The composition root connects a backend, source-version provider and any permitted IAM/policy inputs. One documented composition operation and self-contained consumer contract are required if implemented under ADR-0012. No dependency cycles or direct source-table reads.
+
+**Further decisions still open:** the division of live per-instance counters versus durable aggregated history; specific critical invalidation acknowledgement semantics under multiple workers; choice and operational cost of adapters; exact security audit-capture outage policy. These should be resolved during targeted architectural/technical design, without reopening approved CACHE-01–03.
