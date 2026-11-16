@@ -568,3 +568,12 @@ All six decisions below were **explicitly approved by the project owner in this 
 ## Cross-capability note — Booking-originated commercial evidence (15 November 2026)
 
 **Proposed reciprocal boundary; not an implemented integration.** [Booking](../booking/capability-record.md) is the source of confirmed holds/reservations, amendments, cancellations and participation/service status **only where Booking owns that status**. Booking supplies source identity, tenant/resource scope, effective time, amount/party quantity where relevant, revision, policy and verified outcome; Billing independently determines whether a contractual charge, refund/adjustment or cancellation fee is due under the commercial authority. Billing returns charge assessment/finalisation/exception status, not Booking capacity confirmation. Booking confirmation ≠ fulfilled service ≠ billable charge ≠ invoice ≠ payment. Unavailable Billing cannot invalidate a free/manual Booking; required pay-first or charge-policy flows must stay pending/held according to approved rules. Replay and cancellation corrections must not double-charge.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy refinements proposed, implementation not assumed.
+
+Own host-to-tenant charge cycles, member-seat charges, storage fees, proration, adjustments and reconciliation. Differentiate service-consuming tenant from bill-to legal/commercial party. Business archetype does NOT own party master: verified commercial counterparties, effective agreements and permitted invoice snapshots require an explicitly designated legal-party/contract source even for non-members. Ambiguous authority holds invoice handoff.
+
+See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
