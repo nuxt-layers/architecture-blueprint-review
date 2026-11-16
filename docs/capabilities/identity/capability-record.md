@@ -27,3 +27,12 @@
 ## Cross-capability note — Authorisation decision inputs (15 November 2026)
 
 **Established:** [Authorisation](../authorisation/capability-record.md) owns roles, grants and access decisions; Identity owns principal standing, tenant, groups, memberships and governance facts. No group hierarchy or membership grants unrestricted access. **Proposed:** provide trustworthy, freshness-qualified standing and group-context facts, including suspension/departure invalidation, through public contracts and IAM composition. **Open:** effective revocation bounds, owner-role synchronisation and independently verified ADR-0012 composition. Identity's review remains incomplete.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Identity retains tenant, group, membership and digital group-owner source facts. Approved ORG-01–ORG-08 require secure self-service host-mediated provisioning and multi-context membership without exposing privileged tenant/bootstrap functions. Proposed TEN-03–TEN-08/OWN-01–05 add separately governed *tenant* parentage (not the existing single-parent group tree), active human tenant-owner floor, joint digital ownership, protected transfer/succession, evidence-based disputed recovery and creator provenance. Parentage must never automatically grant child-data access. Exact invariants require an accepted governing amendment; current implementation contract does not expose tenant hierarchy.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
