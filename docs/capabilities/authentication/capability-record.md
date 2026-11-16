@@ -274,3 +274,12 @@ The following are conceptual screen purposes; names and paths are illustrative a
 **Next work after conceptual sign-off:** a separate contract reconciliation and independent acceptance review for Authentication/IAM integration, with explicit revocation, assurance mapping, durable security evidence, privacy controls and ADR-0012 composition gates. Security and legal specialists must validate applicable regulatory and assurance claims. 
 
 **Alphabetical sequence:** `authentication` follows `audit`; determine the next capability from the actual directory list rather than inferring that a related IAM capability is next.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved conceptual direction; TEN/COM/OWN and policy refinements proposed pending governing review, not implemented interfaces.
+
+Trusted subject standing, sufficient assurance, recency and phishing-resistant step-up for protected organisation creation, new owners, ownership recovery, policy changes, payer changes and sensitive commercial operations. Credentials and session recovery must not itself confer legal-company authority or transfer Identity ownership. Incomplete/unverified claim fails closed.
+
+**Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
