@@ -47,3 +47,12 @@
 **Proposed reciprocal relationship only.** [Booking](../booking/capability-record.md) supplies authorised, minimised, versioned reservation, occupancy, lead time, cancellations, attendance/no-show **where Booking owns evidence**, provider reconciliation and availability freshness for scoped reporting. Reporting owns report definitions, execution and derived presentation; Billing/Accounting own financial outcomes, Asset owns asset condition, and external resources retain their source facts. A report snapshot cannot create/cancel reservations or infer attended service from confirmation alone. Sensitive attendance/location inference, tenant aggregation and disclosure require explicit server-side policy.
 
 **Booking approval clarification (15 November 2026):** Booking BK-01–BK-05 are approved in principle. [Booking's specialist Reporting interface](../booking/capability-record.md#booking--reporting--scoped-operational-and-historical-analysis) provides protected, revisioned booking and available-capacity source facts with status, effective time/zone, freshness, provenance and coverage for utilisation, demand, cancellation, lead time, no-show (when Booking-owned), booking-channel/provider exceptions and authorised exports. Reporting alone owns analytical definitions, snapshots, execution, derived visualisation and delivery. Tenant enablement is not permission: per-user, group, resource, department and action scoping must be rechecked on source reads and report viewing/export, including revocation after saved report creation and cross-tenant/small-group inference. Reporting absence never blocks native reservations; snapshots cannot be promoted into booking or Billing/Accounting authority. Reporting's own full review remains open.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy details proposed; no implementation assertion.
+
+Provide authorised derived tenancy, provisioning, payments, quota, governance and policy-attestation reporting over published source contracts; never inherit child private data simply via parentage.
+
+References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
