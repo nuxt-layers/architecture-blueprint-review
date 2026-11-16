@@ -84,4 +84,7 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 
 ## Cross-capability note — Proposed Caching diagnostics (16 November 2026)
 
-**Proposed, not an established Logging adapter.** [Caching](../caching/capability-record.md) may supply sanitised cache hit/miss/error, expiry, eviction, provider failure and invalidation-lag diagnostics with opaque correlation and appropriate tenancy. Logging owns structured technical records/sinks; Observability owns metrics/traces, Audit owns accountable evidence, and source capabilities own business outcomes. Never log raw cached values, sensitive keys, credentials, policy predicates or personal data. Logging sink failure does not establish cache failure or audit completion; no mandatory package coupling.
+**Agreed conceptual boundary; adapter unverified.** [Caching](../caching/capability-record.md) may supply sanitised cache hit/miss/error, expiry, eviction, provider failure and invalidation-lag diagnostics with opaque correlation and appropriate tenancy. Logging owns structured technical records/sinks; Observability owns metrics/traces, Audit owns accountable evidence, and source capabilities own business outcomes. Never log raw cached values, sensitive keys, credentials, policy predicates or personal data. Logging sink failure does not establish cache failure or audit completion; no mandatory package coupling.
+
+**Approved conceptual boundary (16 November 2026):** Caching publishes only bounded, sanitised operational diagnostics through a host-composed, provider-independent public port. Logging decides technical record delivery and retention, not cache validity. This approval does not establish a Logging adapter or a mandatory direct package dependency.
+
