@@ -27,3 +27,12 @@
 ## Cross-capability note — Authorisation of protected files (15 November 2026)
 
 **Status:** Proposed relationship; no new Storage access-decision ownership. [Authorisation](../authorisation/capability-record.md#completeness-challenge--further-authorisation-interfaces-and-relationships-15-november-2026) may evaluate owner-supplied verified file/resource context and requested read/write/share/export permission. Storage remains responsible for file bytes and provider-neutral file operations, while the content/domain owner retains business metadata and disclosure rules. Signed links, caches, derivatives and file exports need tenant scoping, bounded lifetime and revocation semantics; a storage success does not itself prove lawful or authorised disclosure. Storage's conceptual review remains incomplete.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy refinements proposed, implementation not assumed.
+
+Own tenant/group scoped bytes and usage, not commercial entitlements. Current root CONTRACT says usage is not a limit. Proposed quota-admission must enforce paid logical GB/object limits including parallel uploads and downgrade, without bucket-per-tenant provisioning. Hetzner S3 reserved for images/files.
+
+See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
