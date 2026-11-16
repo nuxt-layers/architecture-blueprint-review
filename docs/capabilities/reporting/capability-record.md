@@ -56,3 +56,7 @@
 Provide authorised derived tenancy, provisioning, payments, quota, governance and policy-attestation reporting over published source contracts; never inherit child private data simply via parentage.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+## Cross-capability note — Proposed Caching operational aggregates (16 November 2026)
+
+**Proposed, not implemented.** [Caching](../caching/capability-record.md) may supply purpose-limited, authorised cache efficiency, capacity, freshness and failure aggregates with reporting period, source scope, completeness and provenance. Reporting owns report definitions and generated results, not cache provider validity, IAM policy or original business records; it must prevent cross-tenant and small-cohort inference. Reporting outage never blocks normal source operation or cache invalidation. No package dependency inferred.
