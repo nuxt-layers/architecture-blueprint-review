@@ -187,7 +187,7 @@ These approvals settle the architectural direction only; they do not establish i
 
 ## Follow-up investigation — provider neutrality, PostgreSQL and open-source options (16 November 2026)
 
-**Proposed follow-up requirements, pending owner acceptance:** Caching must expose one backend-independent public service contract; backend selection, provider-specific lifecycle, secrets, connection management and performance remain behind host-composed adapters. Consumers must not embed Redis, SQL, wire-protocol or vendor-specific operations in their conceptual interface.
+**Owner-approved conceptual requirements (16 November 2026):** Caching must expose one backend-independent public service contract; backend selection, provider-specific lifecycle, secrets, connection management and performance remain behind host-composed adapters. Consumers must not embed Redis, SQL, wire-protocol or vendor-specific operations in their conceptual interface.
 
 Evaluate a lightweight in-process adapter, a PostgreSQL-backed adapter and a separately deployed Redis-compatible adapter; select per use case and permitted consistency. **PostgreSQL-first evaluation is preferred but not yet a binding implementation selection**; no extension or independent datastore is mandated. Candidate research:
 - PostgreSQL `UNLOGGED` tables can hold disposable derived values but are truncated after crash and are not replicated. They are unsuitable as the sole home for durable evidence or historical operational metrics: https://www.postgresql.org/docs/18/sql-createtable.html
@@ -200,9 +200,9 @@ Evaluate a lightweight in-process adapter, a PostgreSQL-backed adapter and a sep
 
 Preserve this provider comparison as **technical investigation**; do not convert it into mandatory infrastructure, a provider dependency or a premature licence compliance assertion.
 
-## Follow-up proposal — operational state, Audit, Logging, Observability and Reporting
+## Approved conceptual direction — operational state, Audit, Logging, Observability and Reporting
 
-**Proposed conceptual direction; owner asked to explore, not yet separately approved:**
+**Owner-approved conceptual responsibility boundaries (16 November 2026); technical implementation and retention decisions remain open:**
 1. **Caching owns its live operational state**: provider health, cache namespaces, entry generation/version, scope, expiry, invalidation progress/coverage, failures and sufficient bounded counters to diagnose operation. Avoid storing every lookup as a durable record; cache entries and real-time counters are disposable except for security-critical coordination barriers whose durability must be analysed against risk.
 2. **Logging** receives sanitised structured *technical diagnostics* (timeouts, cache misses when meaningful, failed refresh, provider errors, evictions, correlation). Logging owns log sinks, retention and technical search. No raw values, sensitive cache keys or subject data.
 3. **Audit** receives attributable *security/material governance actions and outcomes*: privileged configuration changes, purge/disable, attempted unauthorised inspection, mandatory erasure/invalidation failures and recovery. Audit owns evidence integrity, retention and reporting of receipt. Ordinary cache hits are not individually required audit records; distinguish accepted purge, completed purge and acknowledged Audit capture. Define risk-specific behaviour if required evidence cannot be recorded.
@@ -212,7 +212,7 @@ Preserve this provider comparison as **technical investigation**; do not convert
 
 **Additional acceptance scenarios:** healthy cache with Logging sink down; Audit unavailable during risk-critical purge; provider temporarily inaccessible while Observability continues to show historical health; partial invalidation after interrupted worker; cross-tenant dashboard/aggregate inference attempt; Reporting unavailable while caching continues; recovery from an `UNLOGGED` cache loss without losing mandatory evidence; loss of `LISTEN/NOTIFY` hint followed by source-version reconciliation.
 
-## Follow-up proposal — single public offering and minimum consumer needs
+## Approved conceptual requirement — single public offering and minimum consumer needs
 
 Expose one **provider-neutral headless capability service** through host composition; this is a *conceptual service shape*, not a prescribed TypeScript API:
 - **Describe/register use case:** consumer identity, source owner, namespace, data class, scope and all key-affecting inputs, dependency/revision schema, freshness/stale policy and declared fallback.
@@ -225,3 +225,16 @@ Expose one **provider-neutral headless capability service** through host composi
 Consumers depend only on this conceptual port, *not* directly on a Redis client or PostgreSQL schema. A source-capability contract declares cacheability and necessary invalidation facts; Caching consumes them without importing the source's implementation. The composition root connects a backend, source-version provider and any permitted IAM/policy inputs. One documented composition operation and self-contained consumer contract are required if implemented under ADR-0012. No dependency cycles or direct source-table reads.
 
 **Further decisions still open:** the division of live per-instance counters versus durable aggregated history; specific critical invalidation acknowledgement semantics under multiple workers; choice and operational cost of adapters; exact security audit-capture outage policy. These should be resolved during targeted architectural/technical design, without reopening approved CACHE-01–03.
+
+
+## Follow-up owner approval — 16 November 2026 (backend neutrality, telemetry and consumer contract)
+
+**Agreed conceptual direction:** The project owner explicitly approved the recommendation to make Caching backend-agnostic and to supply its services to consumers through one provider-neutral, host-composed public contract, while separating responsibility for operational state, Logging, Audit, Observability and Reporting. This approval covers the responsibility and interface boundaries described immediately above; it does **not** select PostgreSQL, a PostgreSQL extension, Redis-compatible technology, a database/schema, hosting topology, a metric store or any implementation API.
+
+**Normative compatibility:** The governing security/Privacy constraints, ADR-0012 single-call composition and ADR-0016 acyclic public-contract and Nuxt extension dependencies remain binding. Provider options remain technical research, with PostgreSQL-first **evaluation preference**, not compulsory PostgreSQL use. No source capability may be required to import a Caching implementation or provider library; opting out must preserve source correctness.
+
+**Operational data boundary:** Caching owns the authoritative *present operational status* of its own entry validity, provider state and invalidation work. It supplies structured, privacy-minimised events/measurements; Logging owns diagnostics, Audit owns accountable evidence, Observability owns telemetry time-series/alerts, and Reporting owns authorised analytical reports and historical presentation. Live dashboard information and historical reports may coexist without assigning the same durable record to multiple authorities. Routine cache reads/fills do not automatically create permanent audit records. Explicitly distinguish a requested, applied, propagated and verified purge.
+
+**Pending technical/assurance work (not owner architectural questions):** provider adapter requirements and extension/licence evaluation; risk-specific distributed invalidation confirmation and source-version barriers; instrumentation and metric aggregation granularity; history retention/cost policies; mandatory security evidence capture and outage response; performance benchmarking; contract acceptance through an independent consumer; optional operator UI and server-side authorised operations. Respect the policy authority of Configuration, Privacy, Legal Compliance and source owners in selecting any defaults.
+
+**Reciprocal documentation:** Agreed architectural interaction boundaries are reflected in the [Logging](../logging/capability-record.md), [Audit](../audit/capability-record.md), [Observability](../observability/capability-record.md), [Reporting](../reporting/capability-record.md), [Configuration](../configuration/capability-record.md) and [Privacy](../privacy/capability-record.md) records. The existing [Authorisation](../authorisation/capability-record.md) revocation/cache safety note remains relevant and is not duplicated. None of these notes constitutes that neighbour's complete conceptual review or a verified runtime contract.
