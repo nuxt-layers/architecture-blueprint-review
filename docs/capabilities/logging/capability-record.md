@@ -72,3 +72,12 @@ No mandatory Logging package dependency, concrete schema, sink provider or imple
 **Proposed relationship, not a verified implementation contract.** [Booking](../booking/capability-record.md) may emit sanitised structured diagnostics for capacity contention, stale supply, hold expiry, retry/idempotency collision, provider timeout, reconciliation, projection lag and queue delivery with purpose-limited correlation and source/tenant scope. Logging owns diagnostic processing, sinks and retention; Booking keeps reservation history and outbox; Audit keeps evidential custody. Do not log guest/contact details, provider credentials, authentication secrets or sensitive reasons for attendance. A successful log write proves neither Booking confirmation nor Audit receipt. Sink failure must be visible and must not create a second booking authority.
 
 **Booking approval clarification (15 November 2026):** Booking BK-01–BK-05 are approved in principle. [Booking's specialist Logging interface](../booking/capability-record.md#booking--logging--operational-diagnostics) requires safe structured signals for contention, invalid time/supply, expiry, retries/idempotency, connector/webhook failures, provider timeout, reconciliation delay, outbox lag and sanitised error correlation. Logging owns safe sinks, retention and diagnostic access, not reservation outcomes or Audit evidence. Guest identities, appointment reasons, credentials and payment information must not enter routine logs. Diagnostic outage must not create double bookings, hide critical Audit failure or falsely imply an authoritative confirmation. Logging's future full review is not pre-empted.
+
+
+## Cross-capability note — Tenancy, policy and commercial onboarding (16 November 2026)
+
+**Status:** ORG-01–ORG-08 owner-approved, TEN/COM/OWN and policy refinements proposed, implementation not assumed.
+
+Sanitised operational failures for governance, commercial provisioning and quota activation, with correlation and no credentials/privileged evidence leakage. Source outcomes belong to Identity/commercial owners and evidential custody to Audit.
+
+See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
