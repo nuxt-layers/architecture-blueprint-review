@@ -44,3 +44,10 @@
 Define and supply data-purpose/consent, cookie, retention, rights and lawful disclosure constraints to Identity governance and commercial onboarding; keep real-world authority evidence purpose-limited and protect disputed persons. Cookie/notice publication through Publisher is not consent enforcement. Owner recovery and data export must respect third-party personal data and legal holds.
 
 **Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
+
+## Cross-capability note — Proposed Caching derived-copy lifecycle (16 November 2026)
+
+**Agreed conceptual boundary; implementation unverified.** [Caching](../caching/capability-record.md) consumes applicable classification, purpose, retention/erasure, legal-hold and regional restrictions through published authority boundaries and supplies scoped deletion/eviction/reconciliation status with explicit partial completion. Privacy and Legal Compliance retain policy/obligation ownership; originating capabilities retain source records and disposition facts. Cached copies, restored snapshots and provider-held derivatives must respect privacy lifecycle and residency. Unverifiable provider compliance means refuse storage, not assume consent or compliance.
+
+**Approved conceptual boundary (16 November 2026):** Backend independence never weakens region, purpose, retention or derived-copy deletion obligations. Caching supplies qualified purge/erasure progress and failure evidence through published interfaces; policy and legal authority remain with their owners, and Caching retains ownership only of cache validity and operational state.
+
