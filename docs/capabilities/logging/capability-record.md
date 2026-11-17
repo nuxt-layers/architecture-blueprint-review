@@ -88,3 +88,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 
 **Approved conceptual boundary (16 November 2026):** Caching publishes only bounded, sanitised operational diagnostics through a host-composed, provider-independent public port. Logging decides technical record delivery and retention, not cache validity. This approval does not establish a Logging adapter or a mandatory direct package dependency.
 
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine offers structured diagnostic codes, safety-assessment failures, rate-limit signals, queue/outbox lag, notification/withdrawal reconciliation and opaque correlation. Logging owns technical sinks/retention; Comments Engine owns content/state transitions; Audit owns attributable evidence; Reporting owns aggregates. Do not log raw comment body, private moderator case, reporter identity, URLs containing tokens or unredacted personal data. Sink failures cannot silently become comment clearance or successful Audit custody.

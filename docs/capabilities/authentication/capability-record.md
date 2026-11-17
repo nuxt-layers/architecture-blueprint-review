@@ -308,3 +308,9 @@ Authentication owns authenticator/session proof, session assurance, method and f
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Verification candidate owns proofed attributes and trusted issuer attestation lifecycle; Authentication retains credentials, sessions, authenticator assurance and sign-in recency. Signed external identity/age proof does not automatically authenticate a session or create elevated credential assurance. Provider-neutral status/expiry and replay/holder-binding decisions must remain explicit.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
+
+Comments Engine must consume trusted session/subject assurance and recency where risk requires, never authenticate from client-supplied names or treat successful login as permission, age proof or safety clearance. Guests/pseudonyms require explicit policy and traceable, minimised provenance. Authentication owns credential/session state; Comments Engine owns authored attribution references and comment lifecycle.

@@ -65,3 +65,9 @@ Retain as **candidate** for future alphabetical conceptual review and classifica
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Moderation cases may rely on qualified age/identity/representation evidence for restricted actions, impersonation reports and fraud investigations but do not independently prove civil identity or authorise general access. Keep reporter/witness privacy and evidence provenance; adult/child misclassification and identity claims must admit safeguarded challenge. Separate case determination from proofing provider outcomes.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine remains source-of-truth for comment revisions, thread structure, local visibility, emergency holds and enforced receipts. Moderation candidate owns cross-domain reports, cases, appeals and case decisions. Exchange precise tenant/target/comment/revision and qualified evidence references; treat request acceptance, completed enforcement and remote withdrawal as different facts. Revisions, source policies and unknown/conflict outcomes must be explicit. No duplicate author text or automatic permission from a case decision.

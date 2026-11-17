@@ -80,3 +80,9 @@ Store only registered, approved, scoped/versioned values and provenance for perm
 ## Reciprocal invariant — UTC-source policy versus time-zone preferences (17 November 2026)
 
 **Owner approved:** Configuration's optional privileged host/deployment source policy may select only sources that satisfy approved verification/assurance requirements; it must not reinterpret NTP geographic regions as local time zones. The effective IANA display zone is a separate authorised preference or business-rule context supplied to [Clock](../clock/capability-record.md#approved-invariant--utc-authority-and-local-civil-time-17-november-2026). Changing a tenant's display zone must never change or grant authority over the shared host's UTC synchronisation source. Infrastructure owns source verification and operating-system application.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
+
+Configuration provides versioned scoped discussion settings such as target classes, comment/edit windows, guest policy, pre-moderation, rate limits, retention and federation choices. Comments Engine enforces its own domain constraints under effective policy and statutory/security floors; Configuration does not own comment status or override decisions of Legal Compliance/Authorisation. Unknown mandatory policy version must not silently enable posting.
