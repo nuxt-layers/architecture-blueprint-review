@@ -301,3 +301,10 @@ Authentication owns credentials, sessions, assurance, and phishing-resistant pro
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Authentication owns authenticator/session proof, session assurance, method and freshness; this is distinct from age threshold proof, civil identity proofing and merchant standing. A privacy-preserving age or identity credential requires qualified issuer trust, claim/audience binding, replay resistance, expiry/revocation and accessible fallback. Never treat a cryptographic signature, provider callback or successful authentication as age, legal representation or access permission.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Verification candidate owns proofed attributes and trusted issuer attestation lifecycle; Authentication retains credentials, sessions, authenticator assurance and sign-in recency. Signed external identity/age proof does not automatically authenticate a session or create elevated credential assurance. Provider-neutral status/expiry and replay/holder-binding decisions must remain explicit.
