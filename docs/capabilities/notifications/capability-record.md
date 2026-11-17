@@ -54,3 +54,7 @@ Comments Engine may produce author/reply/mention, moderation decision and appeal
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course emits safe publication/review/withdrawal facts; Notifications owns delivery and retry. Dispatch cannot approve publication, grant enrolment or prove a learner received the message. This note does not complete the separate notifications review.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** Notifications dispatches approved course, session, enrolment, assessment, learner migration or credential status alerts using minimised domain-source facts. Sending does not confer an award, constitute learner admission or demonstrate receipt. This note does not complete the separate notifications review.
