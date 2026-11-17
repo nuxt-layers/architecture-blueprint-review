@@ -80,3 +80,8 @@ Comments Engine supplies authorised comment submissions (including pending/rejec
 ### Comments Engine CE-06 — owner-approved ethical boundary (17 November 2026)
 
 **Status:** Owner-approved conceptual direction in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), not an implemented API or governing ADR. Comments Engine supplies authorised, scope-aware comment/reply counts and chronological/thread status measures, **not** social likes, public reaction popularity, engagement scores or engagement-driven ranking. Reporting may analyse operational quality, safety and response effectiveness with valid purpose and privacy constraints, but must not silently reintroduce a public social-scoring system as a derived report or leaderboard. Separately justified professional evaluation or formal voting remains with the appropriate domain owner and needs ethical/security review.
+
+
+### Comments Engine CE-06 — approved private appreciation exception (17 November 2026)
+
+**Status:** Owner-approved conceptual refinement in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), not implemented. Comments Engine may hold essential individually scoped acknowledgement records to prevent duplicates, permit withdrawal and support privacy and misuse enforcement. It may present a private qualitative appreciation notice to an authorised recipient, but **never an accumulating count**. Reporting must not repurpose these records into popularity metrics, public reaction counts, leaderboards, engagement optimisation or individual reputation scores. Aggregate abuse diagnostics require distinct justified purposes and disclosure restrictions.
