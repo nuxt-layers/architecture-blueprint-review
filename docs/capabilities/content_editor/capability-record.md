@@ -197,4 +197,4 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
-**Owner-approved resolution, 17 November 2026:** `document` is retired as a standalone capability. Content Editor continues to own only the generic editorial presentation of Publisher-registered types and no document domain authority. No separate Document management GUI is proposed. The superseded conditional review is retained at [Document history](../document/capability-record.md).
+**Owner-approved resolution, 17 November 2026:** `document` is retired as a standalone capability. Content Editor continues to own only the generic editorial presentation of Publisher-registered types and no document domain authority. No separate Document management GUI is proposed. The superseded conditional review is retained at [Document history](../../../reviews/document-directory-removal-2026-11-17.md).

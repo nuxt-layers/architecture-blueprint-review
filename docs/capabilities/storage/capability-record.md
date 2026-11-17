@@ -39,4 +39,4 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
-**Owner-approved resolution, 17 November 2026:** no standalone Document capability will duplicate records or custody. Storage continues to own provider-neutral file bytes, not the business meaning or legal retention decisions for files owned by Publisher or domain capabilities. These owners must enforce authorisation and applicable holds before disclosure/disposal. Historical proposed custody design: [Document](../document/capability-record.md).
+**Owner-approved resolution, 17 November 2026:** no standalone Document capability will duplicate records or custody. Storage continues to own provider-neutral file bytes, not the business meaning or legal retention decisions for files owned by Publisher or domain capabilities. These owners must enforce authorisation and applicable holds before disclosure/disposal. Historical proposed custody design: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
