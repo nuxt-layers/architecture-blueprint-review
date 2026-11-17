@@ -44,3 +44,12 @@
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Infrastructure applies and verifies host/backend operational configuration, including NTP/UTC synchroniser. Configuration may offer privileged deployment-level selections only if explicitly approved; tenant/account time preferences never govern shared UTC. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-07 (Option A):** Infrastructure, not Configuration, is authoritative for privileged NTP/NTS provider selection, allowlisting, deployment application, source verification and failure recovery. Require approval/audit evidence in Infrastructure procedures; tenant/account IANA display preferences cannot affect shared UTC. Earlier conditional proposals for Configuration-managed time-source selection are not adopted.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
