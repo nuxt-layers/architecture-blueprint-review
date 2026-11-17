@@ -50,3 +50,8 @@ Supply scoped notices for invitations, proposed/approved ownership transfer, dis
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine may produce author/reply/mention, moderation decision and appeal disposition notice intents containing only authorised recipient references, bounded status/message keys and minimal comment links. Notifications owns channel choice, delivery and provider status; delivery does not prove comment publication, enforcement or receipt by a person. Suppress disclosure of hidden content, reporter identity and child-sensitive evidence.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration supplies minimally scoped change-requested, decided and activated facts; Notifications owns authorised recipient delivery, templates and channel execution. Notification success never proves approval or activation. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.

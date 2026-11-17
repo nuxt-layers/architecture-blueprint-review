@@ -36,6 +36,6 @@
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Search indexes minimal, authorised reservable offerings and availability hints; index freshness/coverage must be explicit. Search never confirms slots or grants guest visibility. Booking rechecks live capacity and permissions before committing; Search outage does not block native booking. No currently implemented integration contract is implied.
 
-## Reciprocal conceptual note — private Document index projections (17 November 2026)
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
-**Status: proposed in [Document draft PR #58](https://github.com/nuxt-layers/architecture-blueprint-review/pull/58), conditional on independent Document approval.** A records-custody source, if accepted, may supply metadata-only, versioned tenant/resource-scoped projections and removal/hold/revocation change signals. Search owns its derived index, not the original custody, legal constraints or disclosure permission. A hit is never authority to open or download an original: always recheck source-current Authorisation, hold and completeness; stale/unknown projections fail closed for protected content. See [Document conditional contract](../document/capability-record.md).
+**Owner-approved resolution, 17 November 2026:** no separate Document record owner will supply another indexing stream. Search consumes authorised projections from Publisher and the applicable domain record owners and rechecks current access before protected retrieval; a search hit does not grant disclosure. Historical conditional review: [Document](../document/capability-record.md).

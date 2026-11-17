@@ -98,3 +98,9 @@ Suggested acceptance scenarios: standalone one-locale Node with capability absen
 ## Disposition
 
 Canonical **candidate name is `localisation`**. The empty `translate` candidate is removed instead of retained as a directory or compatibility alias. Catalogue notes document the replacement for historical traceability; use the new name in all active references. No implementation/repository creation or normative ADR change follows from this working conceptual review alone.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+The editor requires translated message keys, accessible bidirectional forms and locale-sensitive presentation; Localisation owns translation process, source domain retains content authority.

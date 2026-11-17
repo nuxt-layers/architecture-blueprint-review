@@ -113,4 +113,4 @@ Conditional settings: admitted record classes and scope, size/format limits, ret
 - **DOC-A01 — Acceptance:** if authorised later, independently usable root CONTRACT, own storage register/migrations/outbox, provider-neutral composition within ADR-0012 budget, negative tenant/permission cases, retention/holds, recovery, replay and CI/minimal-host evidence.
 - **DOC-A02 — Acceptance:** reconcile later Publisher/Content Editor/Storage/Export and domain reviews; verify actual adoption before changing the governing catalogue.
 
-**Sign-off:** Draft conceptual proposal only. Neither creation of a standalone package nor merger nor implementation is approved. No local tests or builds executed.
+**Final disposition (owner-approved):** The standalone `document` capability candidate is retired; DOC-02/DOC-03 and all conditional independent-service interfaces above are superseded, not implementation work. Publisher and domain owners continue to own their respective records. This historical file remains pending a separate directory cleanup, not as an active catalogue entry. No local tests or builds executed.
