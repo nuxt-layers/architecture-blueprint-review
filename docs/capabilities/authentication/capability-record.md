@@ -314,3 +314,8 @@ Verification candidate owns proofed attributes and trusted issuer attestation li
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
 
 Comments Engine must consume trusted session/subject assurance and recency where risk requires, never authenticate from client-supplied names or treat successful login as permission, age proof or safety clearance. Guests/pseudonyms require explicit policy and traceable, minimised provenance. Authentication owns credential/session state; Comments Engine owns authored attribution references and comment lifecycle.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Authentication owns assurance, recency, MFA and sessions. Configuration may supply approved bounded policy selections, but never weakens mandatory floors or decides how existing sessions are handled; high-risk settings changes require independent effective assurance checks. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
