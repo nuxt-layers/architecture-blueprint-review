@@ -164,6 +164,8 @@ The following are **types and compositions**, not independent capability candida
 |---|---|
 | `membership` | Paid/scheme membership rights, terms, renewals and benefits; NOT Identity's existing group membership |
 | `events` | Planned participant activities and event lifecycle; not background scheduled tasks |
+| `assessment` | Proposed Domain capability: reusable assessment instruments, learner attempts, marking, moderation, appeals and authoritative individual results; Course owns requirements, Training owns verified achievement |
+| `credentials` | Proposed Domain capability: authorised issuance, verification, correction, replacement, expiry, suspension and revocation of credentials; the awarding authority retains formal qualification decisions |
 | `course` | Structured learning offering and outcomes |
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
