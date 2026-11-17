@@ -1,23 +1,158 @@
-# **Capability Record**
+# Enrolment — capability conceptual record
+
+**Review status:** Proposed, non-normative; awaiting owner decisions. **Reviewed:** 17 November 2026. **Review:** [PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60). **Baseline:** governing `architecture-rules@2b5c0628e88b9698c9ad6ad57cc5315c8f879953`, blueprint `architecture-blueprint-review@b0b026931c4b66ec4bfc445489147045497db890`. **Directory:** `enrolment`. No independent implementation, release, runtime evidence or accepted public Enrolment contract verified. Target `nuxt-layers/enrolment/CONTRACT.md` was not retrievable. Governing catalogue lists Enrolment as a *domain candidate* for course/learner participation and allocation, Course for learning offerings and outcomes, Training for verified competencies/completion, and Booking for reservation/capacity. Related conceptual reviews are provisional until merged and approved.
 
 ## Capability Name:
+Enrolment (`enrolment`).
 
 ## Status: (Available, Installed, Configured, Operational, Enabled, Authorised and Proposed).
+**Proposed conceptual domain candidate only.** Installed/configured/operational/enabled/authorised states **unknown, not asserted**. Enrolment is independently justified *if* its participation agreement and allocation lifecycle must span offerings and persist independently of course publication, a seat reservation, training results and commercial orders. This is the proposed boundary, not a package mandate.
 
 ## Purpose
+Manage the **learner's application, acceptance, placement and continuing enrolment status in a course offering or cohort**, with attributable decisions, capacity coordination, eligibility checks, amendments, deferrals, withdrawals and histories. Supply an authoritative answer to **“is this learner enrolled in this offering, and on what terms/status?”** independently of course content, attendance, credential issuance or payment.
 
 ## Classification
+**Domain capability candidate** owning enrolment transaction/lifecycle state and policy decisions within a tenant or delegated programme scope. May be deployed headless with optional presentation. Reject a new capability implementation if review establishes this lifecycle is entirely subsumed by an existing approved owner without a distinct durable authority.
 
 ## Dependencies
+**Required conceptual external authority:** a course/offering authority for course identity, published registration rules, dates, eligible cohorts and offering revisions; trusted Identity/Authentication/Authorisation for protected operations; legal/privacy constraints where applicable; reliable Clock semantics for dates, cut-offs and deadlines. Integration through public ports, not mandatory peer package imports. **Conditional:** Booking or Course-owned seat capacity authority, identity/guardian or verification eligibility evidence, training progression, commercial/entitlement evidence. Do not require Booking merely to enrol in an uncapped course.
 
 ## Optional integrations
+Workflow for approvals; Scheduler for reminder/expiry triggers; Notifications; Integrations for registrar/SIS/LMS providers; Reporting/Search; Audit evidence, Logging and Observability; Federation for expressly approved sharing; payment/commercial owner contracts when applicable. Any critical compliance/security service can become required by the selected policy/risk tier. An event transport is not the authoritative record.
 
 ## Version
+Conceptual contract proposal v0 (no implementation API or semantic release claimed). Explicit version and compatibility policy required before publishing a real contract.
 
 ## Availability
+Not established; installation, provider availability, health and authority mode must be separately reported rather than inferred from catalogue presence.
 
 ## Capabilities offered
+### Authoritative owned records and exclusions
+Enrolment owns an **enrolment identifier**, applicant/learner and offering references, scoped application/registration attempt, accepted terms and applicable policy revision, eligibility decision snapshot *with external evidence references*, placement or waitlist priority/position if delegated, approved enrolment status, effective dates, decision maker, approved accommodations/conditions by reference where lawful, deferral/transfer/withdrawal lineage, and a correction/audit-linked history. It decides enrolment-specific eligibility *from authoritative external inputs* and the conditions for transition.
+
+**Does not own:** learner identity, group/tenant membership or permission (Identity/Authorisation); course catalogue, curriculum, cohort definition or learning outcomes (Course); verified attendance, achievement, competency or credentials (Training); physical/service capacity outside a clearly delegated enrolment seat pool (Booking, Course or another capacity authority); pricing, orders, invoices, payments or refunds (their commercial owners); approval workflow engine (Workflow); communications, legal interpretation, consent or audit evidence custody. **Enrolment is not account registration, group membership, employment onboarding or an event booking.**
+
+### Native behaviour and lifecycle
+A proposed minimal lifecycle: **application initiated → submitted → eligibility/approval pending → offered/awaiting acceptance → confirmed/enrolled → completed or withdrawn**, with alternative **rejected, cancelled, expired, deferred, transferred, waitlisted** states and explicit **uncertain/reconciliation required** for provider/capacity conflicts. No transition may conflate applying, receiving a seat offer, accepting terms, holding capacity, confirming enrolment, payment settlement, commencing tuition or training achievement.
+
+Required native operations: accept self-service or authorised administrative applications; validate mandatory evidence and policy; detect duplicate active enrolments for the defined learner/offering scope; record consent/terms acceptance when required with evidence references; adjudicate eligibility; create, allocate and release a **single authoritative seat commitment**; support waitlist promotion under a declared priority rule; withdraw/transfer/defer with coherent old/new lineage; retain historical states and corrections; expose accessible enrolment status and exceptions; reconcile unknown provider results. Safe native uncapped/free/direct-entry operation must remain possible without a third-party platform, scheduler or payment integration. Formal enrolment cannot be confirmed where a mandatory prerequisite or capacity authority is unavailable/uncertain. An administrative override is an authorised, attributable exception within legal/security floors, not a bypass.
+
+**Allocation invariant:** a limited seat is assigned by **exactly one designated capacity authority** per offering/cohort/interval. If Course or Booking owns the pool, Enrolment requests a checked hold/commit and accepts only its verified result; it must not maintain a second writeable seat counter. If the Enrolment domain is expressly delegated as sole seat allocator, it owns concurrency-safe capacity commitments for that scope and supplies the authoritative allocation ledger to Course/Booking consumers. Reads of apparent vacancy never reserve seats. Confirmations must not over-allocate, even under concurrent requests or retries.
+
+## Idealised public input contract (proposed logical interfaces)
+| Source / classification | Inbound information and reason | Authority / validation / absence behaviour |
+|---|---|---|
+| Learner, guardian or authorised staff — **command** | Apply, supply permitted evidence, accept offer/terms, request cancellation, withdrawal, deferral or transfer; stable operation ID | Identity/Authentication establish acting principal/guardian link; Authorisation decides act; Enrolment validates ownership, eligibility and transition. Essential; invalid, unauthorised, wrong-tenant or ambiguous representation refused without change |
+| Course — **source facts** | Offering/cohort ID, registration status/windows, educational prerequisites, capacity owner/scope, timetable/change revision | Course owns offering and curriculum facts. Essential; missing, withdrawn or stale revision blocks new firm enrolment or triggers explicit review of existing cases |
+| Capacity authority (Course, Booking or expressly delegated Enrolment) — **external commitment evidence** | Seat inventory/limits, hold/commit/release result, lease expiration, revision and provider acknowledgement | Exactly one source authoritative for each pool; conditional on capped offering. Missing, stale or contradictory result cannot establish confirmed allocation |
+| Identity/Profile/Verification — **source facts / eligibility evidence** | Stable learner/guardian/representative reference, age/identity assurance and eligibility attestations where required; minimum demographic data | Other domain owns base facts and attestations; conditional policies. Unknown/expired facts → pending/manual review, not fabricated qualification |
+| Configuration and governing programme operator — **policy context** | Scope-approved application rules, admission priority, waiting list, expiry, cancellations, accessibility process, delegated decisions and privacy settings | Configuration owns effective configured values/provenance; Enrolment validates and enforces domain policy. Invalid or prohibited overrides rejected |
+| Clock — **temporal interpretation** | IANA zone, exact instants, deadlines, unambiguous effective times | Clock owns time semantics; Enrolment owns validity windows. Ambiguous DST or missed deadline is handled explicitly |
+| Workflow / authorised admissions reviewer — **approval outcome** | Signed/verified approval, refusal, appeal/exception outcome tied to case revision | Workflow transports process, reviewer has delegated authority, Enrolment revalidates. Conditional. An event alone grants no admission |
+| Pricing/Order/Billing/Payment Gateway/Subscription/Membership — **commercial or entitlement evidence** | Required commercial acceptance, course entitlement or payment/deposit confirmation | Commercial owner retains contractual/payment authority. Conditional; an unresolved pay-first requirement leaves enrolment pending rather than paid/confirmed |
+| Training / other education authority — **source evidence** | Verified prerequisites, previous qualifications or completion status | Training remains authoritative for results. Conditional; missing proof → review, no automatic achievement |
+| Integrations / external enrolment registrar — **provider evidence** | Verified connection, source record IDs, authority scope, imports, webhooks and acknowledgement checkpoints | External registrar authoritative only within explicitly chosen authority mode; contradictory/timed-out changes → uncertain and reconciled |
+| Legal Compliance/Privacy/Authorisation — **constraints** | Applicable safeguarding, education/child-related, accessibility, retention, disclosure, consent and access rules | Specialist owners supply qualified constraint context; Enrolment enforces its actions, fails safely when mandatory evidence is unknown |
+
+All inputs are scoped to the owning tenant/programme, effective policy/source version and lawful processing purpose. Enrolment must differentiate **source fact**, **proposed command**, **approval**, and **verified external evidence**.
+
+## Idealised public output contract (proposed)
+| Output / authorised consumers | Meaning, authority, status and disclosure |
+|---|---|
+| Application/enrolment operation result — applicant/staff/host | Accepted request vs committed transition; case/enrolment ID, status, reason codes, next permitted action, version, as-of/effective time, relevant evidence references, retry/correlation and source authority. No implied enrolment from HTTP acceptance |
+| Enrolment detail/list and timeline — learner, authorised admissions team, Course | Authoritative enrolment-specific state, offering/learner references, conditions, transitions and approved lineage, with policy/source revision, history and freshness; redacted per purpose |
+| Seat allocation and waitlist position — Course/Booking/capacity authority | Requested/held/committed/released seat claim and priority evidence only within Enrolment's delegated authority; otherwise explicit external-owner confirmation and source version. Position may be provisional and is not a promise of acceptance |
+| Participation entitlement/status — Course, learning delivery, Training | Confirmed and effective participation permissions/periods **as enrolment evidence**, not an Authorisation grant or Training completion; revocation, pause and expiry semantics, including lag |
+| Financial and operational change evidence — Order/Billing/Reporting | Confirmation, withdrawal, deferral and fee-relevant occurrence references, effective times and policy version; no invoice/refund/ledger assertion |
+| Authorised reporting/export — Reporting, regulators where lawfully justified, admin | Admission throughput, conversions, current places, withdrawals, waitlist, source/version/completeness and redacted case-level data. Reporting owns report composition, not underlying enrolment |
+| Enrolment-owned committed events — MQ and authorised subscribers | Versioned `ApplicationSubmitted`, `EnrolmentOffered`, `EnrolmentConfirmed`, `EnrolmentWaitlisted`, `EnrolmentWithdrawn`, `EnrolmentDeferred`, `EnrolmentTransferred`, `EnrolmentReconciliationRequired`, `EnrolmentCorrected` examples. Durable producer-owned outbox and at-least-once/replay-aware consumer semantics |
+| Operational exceptions/authority status — operator/Integrations/Audit | Pending, stale, conflicting source, provider checkpoint, unresolved seat, reconciliation reasons; not success claims for unknown provider outcomes |
+
+**Permitted conclusion:** confirmation states that Enrolment has completed its required authoritative participation and seat checks as of the stated version/effective time. It **does not prove** course completion, attendance, ability, qualification, lawful access to every course resource, charge/payment settlement or present course availability.
+
+### Public interaction surfaces
+1. **ENR-S01 Application and eligibility** — submit, correct, review, withdraw applications; obtain effective policy and verified prerequisite evidence.
+2. **ENR-S02 Offer/acceptance and placement** — offer, accept, reject, expire, waitlist, allocate/commit/release without duplicate capacity authority.
+3. **ENR-S03 Enrolment lifecycle** — confirm, suspend where applicable, defer, transfer, withdraw, correct and link historical records.
+4. **ENR-S04 Authorised enquiries and exports** — scoped enrolment status, learner history, cohort roster, waiting lists, revision/freshness and lawful reporting.
+5. **ENR-S05 Events and provider reconciliation** — durable owned changes, external import/export, verified change reconciliation, exceptions and checkpoints.
+6. **ENR-S06 Policies and optional presentation** — validated admission settings, delegated administration, learner and administrator views.
+
+These six labels describe **business surfaces**, not required endpoint names, code modules or separate repositories.
+
+### Commands, queries, events and shared context
+**Commands** are illustrative: `submitApplication`, `assessEligibility`, `offerPlace`, `acceptOffer`, `confirmEnrolment`, `waitlistApplication`, `withdrawEnrolment`, `deferEnrolment`, `transferEnrolment`, `correctEnrolment`, `reconcileExternalCase`. All are server-authorised, validated against current resource and policy versions, idempotent in a trusted operation scope, and return **accepted/pending/committed/rejected/conflict/unknown** distinctly. Repeated acceptance of an operation key must not allocate twice or generate duplicate billable evidence.
+
+**Queries:** learner's own applications and enrolments, case history, current roster, capacity/priority position with explicit authority, pending approvals, exceptions, approved export and longitudinal counts. Return as-of, completeness, source revision, effective time and permission-limited fields. Queries cannot silently reserve seats or expose learner information through public capacity search.
+
+**Events:** only after the authoritative Enrolment-owned committed mutation and its producer-owned durable outbox, with tenant, IDs, change revision, event identity, effective/recorded time, minimal purpose-bound payload, and correlation. No assumption of exactly-once delivery, global ordering, or subscriber authority from receiving the event. Outbox delivery failure does not roll back an already committed enrolment, but status and recovery must be observable.
+
+**Shared information:** tenant/programme, course/offering/cohort reference, learner/guardian principal and independently checked representative authority, caller assurance, policy and source revision, seat authority and hold token if applicable, provider provenance, idempotency/correlation, Clock-valid time/zone, case/enrolment version and disclosure purpose. No mandatory universal request wrapper.
+
+**Failures and recovery:** mandatory authorisation/eligibility missing → refuse or safely pending; capacity conflict → no confirmation; duplicate application → return existing case or explicit conflict; expired offer → reject late acceptance; external timeout → uncertain/reconciliation; revoked prerequisite → review existing enrolments under approved policy, not silently rewrite history; contradictory provider data → quarantine; partial transfer → neither double-place nor lose original place without explicit compensated/uncertain outcome. Manual override is logged and constrained. Historical correction preserves prior evidence. Retried messages are deduplicated and stale updates rejected.
+
+## Cross-capability relationships and reciprocal contract
+| Other owner | Enrolment receives | Enrolment supplies | Requirement, boundary and failure |
+|---|---|---|---|
+| [Course](../course/capability-record.md) | Published offering, cohort, admission policy/availability, cancellation and revision | Authoritative registration/roster state, counts and enrolment eligibility for course participation | **Essential** offering authority; Course owns offerings and learning outcomes, Enrolment owns accepted participation |
+| [Training](../training/capability-record.md) | Verified prerequisites, competency/completion evidence | Enrolled learner/offering participation and effective status | **Conditional**; Training retains results and credentials; enrolment does not certify achievement |
+| [Booking](../booking/capability-record.md) | Checked seat hold/confirmation/release if nominated capacity owner | Requests, enrolment-linked claims, cancellations and correlation | **Conditional**; a seat commitment must have one owner; course admission != generic reservation |
+| [Identity](../identity/capability-record.md), Profile/Verification | Learner and authorised guardian/representative identity and assurance facts | Enrolment references, no identity duplication | Identity membership is not enrolment; guardian authority is verified, not assumed |
+| [Authentication](../authentication/capability-record.md), [Authorisation](../authorisation/capability-record.md) | Trusted caller identity, recency and scope decision | Resource-action requirements and denial/exception signals | Essential protected action; enforce isolation and server checks; no automatic privilege from enrolment |
+| [Configuration](../configuration/capability-record.md), [Clock](../clock/capability-record.md) | Valid effective settings and time semantics | Validated Enrolment rule meanings, effective timing | Essential policy/time semantics, no second preference or clock authority |
+| Pricing/Order/Billing/Payment Gateway/Subscription/Membership | Conditional entitlement/payment/contract evidence | Admission/withdrawal/deferral commercial trigger facts | Conditional; payment and entitlement remain separate from learner participation |
+| [Workflow](../workflow/capability-record.md), [Scheduler](../scheduler/capability-record.md) | Approval result/trigger and retry | Review requests, expiry due times, idempotent execution results | Optional/conditional; Enrolment revalidates before transition |
+| Notifications, Integrations, Message Queue | Provider verification and delivery/status as appropriate | Minimal notices, registrar operations, producer outbox events | Optional; transport acknowledgment is not admission confirmation |
+| Audit, Logging, Observability, Reporting, Search | Feedback/status or scoped authorised indexing/reporting | Evidence, sanitised diagnostics, operational metrics, authorised facts | Distinct domain authority, audit custody, diagnostic and derived reporting responsibilities |
+| Legal Compliance, Privacy, Content Security | Applicable lawful constraints, data/attachment safety outcomes | Lawful processing and audit-linked activity | Mandatory if applicable; defer sensitive processing where proof/assessment absent |
+| Federation | Verified exchange context/remote authority | Permissioned enrolment participation only with explicit consent/authority | Optional; no uncontrolled learner data replication or foreign record authority |
+
+**Directionality:** the host composes providers as independent ports; sharing an event or documentation requirement does not create reciprocal package imports. No cyclic public contract dependency or shared private tables. See governing ADR-0012/0016 requirements; verify exact accepted status before implementation.
 
 ## Configuration
+Domain settings: application/eligibility rules, seat authority and caps, maximum simultaneous registrations, priority/waitlist fairness, offer deadline, automatic admission thresholds, withdrawal/deferral/transfer, conflict handling, evidence/retention, provider choice and notification templates. Configuration owns approved values and their effective provenance; Enrolment owns their interpretation and security/business invariant enforcement. Immutable security floors, statutory duties and lawful rights cannot be disabled by tenant settings. External registrar modes: **native authoritative**, **external authoritative**, or **explicitly partitioned** by cohort with one owner per enrolment scope. Provider switch requires verified import mapping, cutover checkpoint, outstanding operation resolution, rollback plan and non-duplicated commitments. No unproven two-way master.
 
+## Security, legal, privacy and assurance
+- Apply OWASP ASVS 5 L2 minimum and L3 where critical, secure input validation, cross-tenant isolation, least privilege, server-side authorisation, trustworthy guardian/child representation and step-up/recency for sensitive decisions.
+- Depending on jurisdiction/programme: children's personal data, educational records, special-category information, safeguarding, disability/accommodation data, public-funding rules and equality duties require qualified Legal Compliance/Privacy analysis. Store minimal references rather than copying proof, health or disability detail; purpose-bound role-level disclosure, retention and rights procedures, lawful hold and attributable export/delete outcomes.
+- Authorise roster access by legitimate educational function rather than group-tree position. A teacher, parent, learner, provider or administrator has no blanket access to unrelated students. Counts/positions can infer identity at small sizes; protect aggregates and waiting list information.
+- Audit significant admissions/denials/overrides/representative actions/withdrawals/provider conflict, preserving evidence provenance. Technical logs are sanitised; operational traces are not business evidence.
+- No provider webhook or external record may directly bypass permission, source-revision, consent and admission checks; replay, forged eligibility, mass enrolment, timing and double-allocation attacks require safeguards.
 
+## Presentation, GUI and host integration
+**Optional packaged UI; useful learner and admissions journeys.** The host's sidebar links to an **Enrolment dashboard** for authorised contexts; menu and routes belong to the host/composition, not Enrolment's private data layer.
+- **Learner/guardian:** search eligible offerings via Course, begin application, see required evidence and privacy notice, review/accept terms, track submitted/offered/waitlisted/confirmed/withdrawn state and deadline, request permissible changes. Represent minors and guardians carefully with verified authority.
+- **Admissions staff:** scoped applications queue, decision/evidence checklist, seat availability and waitlist state with source provenance, approvals and reasons, conflicts and transfers, authorised roster, withdrawal and audit/correction timeline; support bulk operations only with individual validation and reversible/idempotent outcomes.
+- **Operator:** provider/reconciliation panel, effective rule/version, exceptions and incomplete events, source freshness, import/cutover status and appropriate operational health.
+- All views consume **public Enrolment and peer contracts**, enforce permissions on server, avoid false-success and stale-capacity badges; responsive, keyboard and screen-reader usable, accessible validation/errors, WCAG 2.2 AA, BCP 47/CLDR localisation, Clock dates/zones and Theme Manager visual tokens. The reference integration pattern is `nuxt-layers-test/application-test-template`, not proof of a working UI.
+
+## Representative conceptual acceptance scenarios
+| Input / circumstance | Expected behaviour and public result | Authority |
+|---|---|---|
+| Authorised learner applies for an open, uncapped/free course with validated prerequisites | Submitted then confirmed via applicable policy, versioned reference and owned event; no external payment/Booking requirement | Enrolment decision on Course facts |
+| Two applicants claim final seat simultaneously | At most one confirmed allocation at the designated seat authority; other is pending/waitlisted/rejected with reason | Booking/Course or expressly delegated Enrolment seat owner |
+| Learner is approved to access course materials | Effective enrolment evidence supplied, but Course host still checks actual resource Authorisation | Enrolment and Authorisation independently |
+| Cross-tenant instructor queries student details | Refused or appropriately redacted without data leakage | Authorisation and Enrolment disclosure |
+| Replayed confirm command / duplicate provider event | No second enrolment, capacity use or charge-trigger event; same result/conflict | Enrolment operation ledger |
+| Missing required guardian evidence or expired qualification | Pending/refused, reason and next step; cannot silently confirm | Verification/Identity fact, Enrolment decision |
+| Provider times out after possible seat commit | Uncertain state, visible reconciliation case; read back before retry | Provider capacity authority and Enrolment |
+| Offer expires or learner withdraws | Effective status, legitimate release and preserved decision history; later notification outage does not restore enrolment | Enrolment / capacity owner |
+| Transfer between cohorts with partial failure | Controlled linked old/new operation; no silent double occupancy or lost authorised record; exception and recovery | Enrolment + seat owners |
+| Training reports completion | Training owns verified achievement; Enrolment may reflect participation closure only according to an explicit policy, never issue credential | Training and Enrolment |
+| Applicant requests raw database rows or bypasses fees | Unsupported/refused, no private schema exposure or fictitious payment state | Enrolment plus relevant owner |
+
+## Open decisions — owner approval required
+- **ENR-01 — Placement authority:** default to Booking/Course-owned capacity where already available, with optional explicitly delegated Enrolment-managed seat pool; or require one universal allocator? **Recommendation:** per-cohort nominated single source, native uncapped support.
+- **ENR-02 — Application versus confirmed record:** should every application have a durable case before admission, including immediate self-service? **Recommendation:** yes, distinct case and confirmed state for audit/retry, with minimal user-facing friction.
+- **ENR-03 — Completion relationship:** should Training completion automatically close an active enrolment? **Recommendation:** no automatic change without offering-specific policy, retaining distinct authorities.
+- **ENR-04 — Cross-provider authority:** may native and external systems be authoritative for different cohorts simultaneously? **Recommendation:** yes, partitioned, never dual-authoritative per cohort.
+- **ENR-05 — Minors and representation:** should independent guardian authorisation be mandatory only for programmes/jurisdictions requiring it? **Recommendation:** conditional legal/programme eligibility plus verified representative authority, never an inferred parent relationship.
+- **ENR-06 — Admission fairness:** do we mandate FIFO waitlists or allow approved, reviewable priority rules? **Recommendation:** configurable, lawful priority with attributable criteria and protected sensitive evidence.
+- **ENR-07 — Transfers:** must an inter-course transfer remain one linked operation even when courses have different capacity owners? **Recommendation:** yes, versioned saga/compensated transitions; not false atomic cross-service guarantees.
+
+These are **proposals**, not owner-approved decisions. Technical implementation choices (tables, HTTP routes, provider SDKs, UI component library, database locks, event schema encoding) remain outside conceptual approval.
+
+## Independent challenge and acceptance evidence
+**Architectural challenges:** confirm Course versus Enrolment lifecycle boundary, Booking seat authority, Training status, guardianship verification, commercial gating, external registrar cutover, concurrency, learner-data disclosure, appeals/fairness, duplicate submissions, correction lineage, stale source revisions, accessibility and asynchronous failure. Avoid universal registration engines, duplicate account records, independent enrolment capacity alongside Booking, or presumed distributed transactions. **Required future evidence:** root public contract, explicit dependency DAG, host composition within accepted budget, security/privacy threat assessment, contract/versioned event tests, acceptance in the representative host, negative tenant/guardian tests, concurrent-seat and provider-timeout simulations, GUI accessibility and recoverability. **No local tests or implementation edits were performed in this review.**
+
+**Reconciliation:** all proposed interfaces remain non-normative and must be compared with concurrently reviewed Course/Training and current accepted governing `master` before merge. A conceptual review does not establish legal compliance, release readiness or production compatibility.
