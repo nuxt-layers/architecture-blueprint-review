@@ -154,6 +154,25 @@ Publisher, Comments Engine, Media and Marketplace screens display a compact cont
 
 **Implementation design still open:** exact initial modality/check matrices, detector thresholds and schedules, user notices, provider/data residency choices, evidence-specific retention periods, operational break-glass roles, retry budgets and consent/legal interpretations. These are refinements within the approved Option C boundaries, not reopening the choice of principle.
 
+## Security scanning execution, admission and accountability — clarified 17 November 2026
+
+**Where execution happens:** An originating application's/Node's **trusted server-side ingress boundary**, through a host-composed Content Security public port. Content Security coordinates and owns scanner selection, provider/dataset/check versions, assessment status and qualified evidence. Actual detectors may run in an independently isolated local worker/process/container or through a vetted external specialist service if legal, privacy, egress, provider availability and data transfer policies allow. **The conceptual contract does not require a separate microservice, a particular container orchestrator or universal third-party forwarding.** Browser-side hints are optional convenience checks and are never authoritative clearance.
+
+**Who is responsible (distinct obligations):**
+
+| Actor | Owns and must enforce |
+|---|---|
+| Application/Node ingress and originating domain (Publisher, Media, Comments Engine, Document where determined, imported/federated content owner) | Authenticate/authorise requests, input validation and parser limits; ensure required scan coverage under effective policy; keep untrusted material away from normal storage, previews, publication, indexes and distribution; admit only the exact revision/digest for which mandatory pre-admission evidence is satisfactory; own hold/reject/publish/remove and restoration |
+| Content Security | Interpret the registered check profile and run/coordinate required supported detection, source/provenance-qualified per-check assessment, scanner capability/health and isolation, no false-clear status, reassessment/invalidation and minimal technical evidence; notify owners of failure, unknown, stale, revoked or superseded checks |
+| Isolated scanner execution / Integration adapter / Infrastructure | Enforce lowest privileges, resource and network isolation, safe temporary handling and allowed third-party egress; Infrastructure supports execution but **does not** become authority for classification or source content state |
+| Moderation | Cross-domain reports/cases, contextual investigations, decisions and appeals; may refer qualified decisions to owners but cannot bypass source gates or make detector evidence a legal finding |
+| Receiving Node/Hub and Federation | Independently evaluate remote claims, enforce local admission/exposure checks, prohibit blind `clear` reuse and propagate/reconcile withdrawal without claiming remote deletion |
+| Privacy / Legal Compliance / Authorisation / Audit | Respectively qualify processing and retention, duties, caller permissions and independent receipts; no blanket content copies in technical logs |
+
+**Admission boundary:** Receipt of an upload into a bounded private inspection buffer/ingress compartment is not acceptance into authoritative application state. The default outcome for dangerous, unsupported, indeterminate or failed mandatory **pre-admission** checks is rejection and disposal of temporary material. Narrow legally mandated evidence preservation, if any, must be segregated under its own qualified authority and strict access/retention. Passing pre-admission checks is **not** permission for public exposure: the source owner may require additional pre-publication checks, authorisation and safety policy. Later intelligence or complaints may cause a *previously admitted* item to be held or removed; that distinct post-admission case should not weaken admission safeguards.
+
+**Lifecycle and trace:** `received_for_inspection -> validated -> assessment_pending -> checked | rejected_or_unavailable -> (owner admits exact digest/revision, if eligible) -> potential publish/hold/revoke`. These are conceptual phases across distinct owners, **not** one Content Security-owned business state machine. Persist accepted-versus-completed assessment receipts separately, with check coverage, actor/source/tenant, policy/check version, expiry, minimal evidence and event/outbox/duplicate semantics as relevant. No server, Hub or application is justified in asserting a universal guarantee that all risks were detected.
+
 ## Additional owner-approved conceptual decisions — 17 November 2026
 
 **Approval scope:** The owner approved CS-13, CS-15 and CS-16 and expressly approved the refined CS-14 *verify-before-admission* boundary in PR #55. These are conceptual choices only; no implementation or merge authorisation.
