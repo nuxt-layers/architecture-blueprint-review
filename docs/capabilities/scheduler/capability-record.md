@@ -35,3 +35,7 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Scheduler may trigger Booking-owned expiry/reminder/recurrence maintenance; Booking owns series patterns, bounded occurrences, capacity commitments and changes. Late or missing Scheduler triggers cannot extend expired holds or establish an unconfirmed future booking. No currently implemented integration contract is implied.
+
+## Cross-capability note — Clock conceptual public contract (17 November 2026)
+
+**Proposed, not yet owner-approved.** [Clock](../clock/capability-record.md#idealised-public-output-interfaces-conceptual-contract) supplies typed canonical instants, zone/DST interpretation, calendar-versus-elapsed arithmetic and deterministic time injection. Scheduler owns registered triggers, due execution and retry/attempt state; business capabilities own underlying due-rule interpretation and outcomes. Clock neither schedules nor sends domain events. If a trusted time source or required zone/rules are unavailable, Scheduler must not fabricate execution authority. No concrete adapter is claimed.
