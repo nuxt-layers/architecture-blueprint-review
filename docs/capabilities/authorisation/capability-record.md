@@ -402,3 +402,7 @@ Comments Engine requires resource-scoped server-side action/read decisions for c
 ## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
 
 **Status: Proposed, pending owner approval; not a completed authorisation review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course operations, preview, catalogue disclosure, revision publication, import/export and withdrawal require server-side, resource-aware decisions bound to trusted tenant/caller and appropriate assurance. Authorisation owns the decision model; Course owns its state transitions and no learner admission/completion. Unknown/denied access fails closed without cross-tenant existence disclosure.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed authorisation review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-10/11 agreed principles:** Authorisation controls platform permissions, assessor/reviewer/publisher access and step-up/separation-of-duties where required; it cannot itself establish statutory accreditation or legal entitlement to award a qualification. Any external awarding delegation also requires independently sourced mandate/scope/status evidence, which domain logic enforces. Protect course version migration and assessment grade/appeal transitions as separately permissioned operations.
