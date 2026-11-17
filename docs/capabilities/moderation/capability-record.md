@@ -71,3 +71,7 @@ Moderation cases may rely on qualified age/identity/representation evidence for 
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine remains source-of-truth for comment revisions, thread structure, local visibility, emergency holds and enforced receipts. Moderation candidate owns cross-domain reports, cases, appeals and case decisions. Exchange precise tenant/target/comment/revision and qualified evidence references; treat request acceptance, completed enforcement and remote withdrawal as different facts. Revisions, source policies and unknown/conflict outcomes must be explicit. No duplicate author text or automatic permission from a case decision.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may submit user-facing learning material reports for moderation. Moderation owns policy enforcement decisions and appeals where applicable; Course owns course withdrawal/access transitions and version history. Neither capability awards learner grades. This does not complete moderation's own review.
