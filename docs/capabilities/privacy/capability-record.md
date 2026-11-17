@@ -67,3 +67,9 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Privacy owns rights/consent and retention constraints. Configuration applies them to its own change history, authorised export/disposal and disclosure; no alternative personal Profile record may emerge. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); no claim of implementation or approval. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Protected previews, unsaved form state, telemetry and temporary buffers require purpose limitation and prevention of unintended disclosure. No durable browser draft store presumed; Privacy determines applicable consent/retention duties.

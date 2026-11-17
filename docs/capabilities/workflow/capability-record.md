@@ -49,3 +49,9 @@ Coordinate high-risk approvals, succession/recovery, policy activation, paid onb
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Workflow may orchestrate approver work and return verified decision evidence; Configuration owns its own request/decision/activation lifecycle, risk evaluation and final revalidation. Workflow failure remains pending, not approved. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed workflow review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Content Editor may show Publisher-bound review/approval states and invoke permitted source requests; Workflow retains review routing and sign-off authority, Publisher validates approval digest/version before publishing. The editor cannot interpret an old approval as current.

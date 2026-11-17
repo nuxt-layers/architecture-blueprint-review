@@ -525,3 +525,9 @@ Comments Engine is authoritative for comment creation/edit/deletion, visibility,
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Audit owns independent accountable security/business evidence; Configuration supplies revision, request/approval/activation facts and correlation stripped of sensitive setting values. Configuration history is not a substitute for Audit. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Content Editor publishes no authoritative document/business audit event. Publisher and other owners supply committed facts; any UI analytics are separate, privacy-minimised diagnostics.
