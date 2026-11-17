@@ -123,6 +123,8 @@ This entry records review-approved conceptual documentation, not adopted governi
 |---|---|---|---|
 | `membership` | Domain candidate | Retained pending classification review | Potential scheme/paid membership rights, terms, renewals and benefits; NOT Identity's existing group membership and not yet a verified independent capability |
 | `events` | Domain candidate | Candidate | Planned participant activities and event lifecycle; not background scheduled tasks |
+| `assessment` | Domain candidate | Candidate — owner-authorised pro-forma, independent review pending | Assessment instruments, individual attempts, marking, moderation, appeals and results; [record](capabilities/assessment/capability-record.md) |
+| `credentials` | Domain candidate | Candidate — owner-authorised pro-forma, independent review pending | Authorised credential issuance, verification, correction, replacement and revocation; award decision remains with awarding authority; [record](capabilities/credentials/capability-record.md) |
 | `course` | Domain candidate | Candidate | Structured learning offering and outcomes |
 | `enrolment` | Domain candidate | Candidate | Course/learner participation and allocation |
 | `training` | Domain candidate | Candidate | Verified training participation, competencies and completion records |
