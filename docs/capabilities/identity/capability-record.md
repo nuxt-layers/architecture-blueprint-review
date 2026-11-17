@@ -77,3 +77,7 @@ Comments Engine uses stable Identity subject/tenant/group references and status-
 **Owner-approved CFG-05/06 (Options B/C):** Identity remains authoritative for account and resource-associated tenant/group identities, membership, group lifecycle and any registered group ancestry; Configuration does not create an alternative user profile or generic resource hierarchy. Resource-specific settings require their *own domain's* stable resource identifier and lifecycle/authority checks.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Cross-capability review note — Enrolment (provisional)
+
+**Enrolment reciprocal interface (proposed; 17 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Identity supplies stable learner/guardian/representative identity references and independently verified authority where supported; Enrolment owns educational admission state, not Identity group membership, tenant hierarchy, guardian relationship or permission. Host-composed scoped authorised lookups must avoid student-data duplication or implied cross-tenant access. Guardian proof and eligibility remain conditional, provenance-bearing. This note is non-normative and cannot claim new Identity published APIs.
