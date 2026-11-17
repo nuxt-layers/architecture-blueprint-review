@@ -63,3 +63,8 @@ Verification is now an owner-approved *candidate* for claims and issuer-status l
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
 
 Comments Engine uses stable Identity subject/tenant/group references and status-change signals but never duplicates identities, personal data, group membership or representation. Source-owned author attribution must honour revocation, erasure and tenant isolation. Guest and remote identities require separately defined trust/provenance, not fabricated local identity records.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Identity owns trusted tenant/group/account IDs, memberships, ancestry and closing state; Configuration consumes those facts to scope its own settings and history. A setting never grants membership or authorisation, and unknown/closing scopes block protected changes. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
