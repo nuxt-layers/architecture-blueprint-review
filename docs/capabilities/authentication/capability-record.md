@@ -294,3 +294,10 @@ Trusted subject standing, sufficient assurance, recency and phishing-resistant s
 **Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 Authentication owns credentials, sessions, assurance, and phishing-resistant protection, not merchant eligibility or moderation. Sensitive moderation and evidence access should require bounded authentication assurance and recency. Proposed privacy-preserving age assurance must verify issuer, credential evidence, freshness and resistance to transfer; no default trust in a ZKP token solely because it is cryptographic.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Authentication owns authenticator/session proof, session assurance, method and freshness; this is distinct from age threshold proof, civil identity proofing and merchant standing. A privacy-preserving age or identity credential requires qualified issuer trust, claim/audience binding, replay resistance, expiry/revocation and accessible fallback. Never treat a cryptographic signature, provider callback or successful authentication as age, legal representation or access permission.
