@@ -27,6 +27,22 @@ Reusable, trustworthy assessment of submitted or changed content and associated 
 
 **Operation without external providers:** Native profile/checks must be explicit, not falsely represented as universal protection. A provider-free installation can accept and perform only genuinely supported local checks, or return `unsupported`/`unknown`. A profile requiring absent checks is not eligible for clearance. Loss of a required persistence/credential/assurance port fails safely. No one universal third-party scanning service is mandatory.
 
+## Comprehensive screening classification — 17 November 2026
+
+**Status:** Proposed detailed screening catalogue; classification and check applicability are *not* a declaration of implemented scanners or blanket owner approval of every detector. Owner-approved CS-09/10/11/12 Option C remain binding conceptual choices. See [comprehensive screening and control catalogue](../../../reviews/content-security-screening-catalogue.md).
+
+- **S1 — Untrusted text, structured input and application security:** all text fields, forms, imported text, rich text, Markdown, HTML, URLs, spreadsheets and prompt/tool inputs receive applicable source-owner schema, injection prevention, safe processing and output-encoding controls. **These controls must not require a Content Security service request for every keystroke/field.** Content Security offers reusable URL, sensitive-information, spam and attack-indicator assessments where needed.
+- **S2 — File/media safety:** images, documents, attachments, archives and any supported audio/video need applicable type/content validation, limits, malware/active-content detection, isolated decoding, metadata privacy, safe variants and controlled delivery. Office documents, templates, PDFs, spreadsheets and exports must address macros, scripts, dangerous embeddings, external fetches and formula injection.
+- **S3 — Harmful-content classification:** qualified checks for CSEA/grooming, NCII, harassment, threats, illegal sexual material, violence, hate/incitement, suicide/self-harm encouragement, fraud, phishing, prohibited trade, doxxing, manipulative/impersonation signals and other scoped categories. **Profanity/offence are separate configurable community-policy categories, not automatic legal findings.** Legal Compliance qualifies duties, Moderation adjudicates cross-domain cases, owners enforce.
+- **S4 — Third-party and federation trust:** validate external feeds/imports, signed claims when available, source/digest/revision provenance, remote check limitations, replay/poisoning and independently authorised Hub exposure. Remote `clear` must not automatically be adopted.
+- **S5 — Ongoing safety:** rescan or invalidate where policy requires after content/variant/URL changes, new intelligence, provider failures, audience changes, source restoration and expiry. Search, CDN and federation withdrawal receipts are distinct from scanning status.
+
+**Requirement tiers:** **B** baseline mandatory control for every relevant untrusted input; **F** format/feature mandatory protection; **R** risk/policy-mandatory check, requiring service/audience/jurisdiction qualification; **O** optional defence in depth; **N/A** inapplicable/unsupported (never cleared). A requirement applies to its relevant operation and trust boundary, **not** every technical check to all fields.
+
+**Contract handoff:** published check IDs and coverage must express executor ownership, eligible modalities, required/optional applicability, revision/digest and policy versions, assessment evidence/provenance, supported status, pending/unknown/stale semantics, sensitive retention, provider and threat-feed constraints, disclosure and proper source-owner action. A scan that passes malware detection does not establish that an image is lawful, and a text toxicity classifier does not replace secure rendering or prove guilt.
+
+**Pending detailed policy/implementation alignment:** first-release enabled formats, required check sets per public/closed/private context, provider qualification and legal scope, retention schedules, false-positive thresholds, cost/latency and fallback. No local tests/builds or implementation changes have been performed.
+
 ## Idealised inbound public contract
 
 These are conceptual contract surfaces, not proposed endpoint signatures.
