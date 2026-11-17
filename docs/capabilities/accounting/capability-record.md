@@ -529,3 +529,8 @@ Review and approve the **dual-mode accounting authority model** and the scope of
 Own host-operator commercial financial postings distinct from tenant's own business books; tenant ancestry and digital owner do not automatically establish payer or ledger scope.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration owns approved schema-registered selections and provenance; Accounting owns financial policy meaning, posting, reporting entity scope and migrations. An accounting entity is not automatically a Configuration scope. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
