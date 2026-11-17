@@ -49,3 +49,7 @@
 **Owner-approved CFG-05 (Option B):** Configuration's account scope is limited to explicitly registered **non-personal operational** settings with one named authority. Profile remains sole owner of personal identity details and individual locale/time-zone preferences; Configuration must not use its general account mechanism to create parallel Profile records. Theme Manager owns effective theme. This decision does not assert an implementation migration.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Employment reciprocal conceptual interface — 17 November 2026
+
+**Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not a completed Profile review.** Profile owns general personal/contact data and individual preference/rights interfaces. Employment owns employer-scoped engagement terms, assessments and confidential personnel evidence; it may consume purpose-approved Profile data by reference and return qualified, restricted data-subject access/correction/erasure dispositions without copying all personnel records into Profile. Employment records may require separately justified retention or legal holds. An employer's membership or administrative role does not grant access to all worker details. See [Employment record](../employment/capability-record.md).
