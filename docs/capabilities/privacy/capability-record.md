@@ -56,3 +56,9 @@ Define and supply data-purpose/consent, cookie, retention, rights and lawful dis
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
 
 Privacy provides purpose/consent/retention and data-rights constraints; Comments Engine applies scoped disclosure, anonymous/pseudonymous participation rules, authorised portable exports, minimised source/provenance, erasure/redaction and legal-hold exceptions. Public comment state, restricted reporter/evidence, personal identifiers and technical logs must remain separate; preserve evidence of partial deletion rather than claiming complete erasure.
+
+### Comments Engine — approved CE-02/CE-05/CE-07 refinement (17 November 2026)
+
+**Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
+
+**17 November 2026 agreed Comments Engine refinement:** Private comment audiences cannot exceed parent resource permissions; no public index, federation, cache or unrestricted notices. Author editing, departure and erasure rights must normally produce actual deletion or lawful anonymisation, with restricted time-limited evidence only where an identified legitimate legal/complaint purpose requires it. Preserve independent rights of other reply authors and acknowledge downstream-copy/back-up erasure limitations without claiming more deletion than verified.
