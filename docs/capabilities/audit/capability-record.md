@@ -514,3 +514,9 @@ Audit preserves minimised provenance of verification claim/issuer/version, subje
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Audit preserves minimised evidence of Verification issuer, proofing method/version, purpose, binding, status freshness and local use/revocation, without retaining full identity documents or private biometric material by default. Original proofing evidence may remain with a lawful provider/holder; record custody and legal disclosure separately.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine is authoritative for comment creation/edit/deletion, visibility, local moderation/hold, policy exception and actual enforcement receipts. Audit receives minimised actor/assurance, tenant, target/comment/revision, policy/version, correlation and outcome evidence; Audit owns independent custody/integrity, not comment text or enforcement decisions. Distinguish accepted, committed, delivered and missing evidence; prevent raw comment content, sensitive reporter information and legal-hold data being copied without explicit lawful purpose.
