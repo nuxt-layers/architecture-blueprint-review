@@ -48,3 +48,10 @@
 Provide reusable authored policy document GUI (draft, version, review, publish via Publisher); do not own policy validity or source regulatory duties. Host routes and role-scoped navigation remain host-owned.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+**Presentation only:** Content Editor shows Publisher and Media eligibility, scan pending/unknown, quarantine, editorial holds, appeals and approved reviewer actions via their public contracts. It may offer reports and case navigation from proposed Moderation but must not persist independent publication, safety verdict or case state. Never let a client-side green indicator substitute for server-side publication gating. Show accessible and internationalised pending/refused/appeal states.
