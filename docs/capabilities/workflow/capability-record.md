@@ -48,3 +48,7 @@ Coordinate high-risk approvals, succession/recovery, policy activation, paid onb
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course requests configured revision review and consumes approval evidence; Workflow owns process choreography, Course alone commits publication after permission and safety checks. An approval task is not learner admission. This note does not complete the separate workflow review.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed workflow review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-11 agreed:** Workflow coordinates configured course review, sign-off, migration and qualification review *processes*, not Course publication state or awards. Course validates approval evidence and commits its own publication transition after Authorisation and required legal/content-safety gates. The approval workflow cannot create external award authority.
