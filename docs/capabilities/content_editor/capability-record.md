@@ -55,3 +55,9 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Presentation only:** Content Editor shows Publisher and Media eligibility, scan pending/unknown, quarantine, editorial holds, appeals and approved reviewer actions via their public contracts. It may offer reports and case navigation from proposed Moderation but must not persist independent publication, safety verdict or case state. Never let a client-side green indicator substitute for server-side publication gating. Show accessible and internationalised pending/refused/appeal states.
+
+## Content Security — reciprocal interface (17 November 2026)
+
+**Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent content_editor draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
+
+Content Editor is a presentation consumer, not an assessment or publication owner. It should display authorised revision-bound Content Security check status and incomplete/stale explanations through Publisher's public workflow, with safe recheck affordances if Publisher permits; no detector tables, final safety adjudication or extra editor-owned state.
