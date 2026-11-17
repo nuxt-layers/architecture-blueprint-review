@@ -75,3 +75,7 @@ The owner-approved [cross-capability conceptual review](reviews/identity-age-eli
 ## Verification candidate and international assurance review (17 November 2026)
 
 The owner approved **VER-01–VER-12** and the **`verification` Platform candidate**. [Verification's conceptual capability record](docs/capabilities/verification/capability-record.md) defines attestation custody, trust, provider-neutral logical contracts, expiry/revocation, cross-Node restrictions and optional UI. [International jurisdiction research](reviews/verification-international-jurisdictions.md) compares China, Russia and Saudi Arabia as service-specific legal/technical examples and links to [Identity, Age and Eligibility Assurance](reviews/identity-age-eligibility-assurance.md). These documents are non-normative: no implementation or government provider has been selected.
+
+## Localisation candidate (17 November 2026)
+
+[Localisation](docs/capabilities/localisation/capability-record.md) is the canonical candidate for language and locale adaptation, translation workflows, terminology, quality review and provider-neutral translation. The empty `translate` directory was removed without an alias; the [catalogue](docs/capability-catalogue.md) and [register](docs/capability-register.md) document the rename. Internationalisation remains cross-cutting; Publisher/domain owners retain authoritative content and publication. This is a conceptual classification change only.

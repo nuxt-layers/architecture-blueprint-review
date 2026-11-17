@@ -44,7 +44,7 @@
 | `notifications` | Platform | Telling people something needs them, through their chosen channels; providers' keys come from the host's secret management |
 | `comments-engine` | Platform | Comments on content and their moderation |
 | `metadata` | Platform | Tags, categories, taxonomies and ontologies attached to content |
-| `translate` | Platform | Translation of content and its workflow |
+| `localisation` | Platform | Language and locale adaptation of content and application text, including translation workflow, terminology, quality review and provider-neutral translation; authoritative source publication and domain formatting remain with owning capabilities |
 | `seo` | Platform | Redirects, sitemaps and search-engine metadata, driven by Publisher's address events |
 | `site-hosting` | Platform | Where each site is served: custom domains, proving their ownership, and finding the site for a request's address; certificates and deployment stay with the host's proxy and provider (ADR-0014) |
 | `integrations` | Platform | Adapters to outside services such as Google Docs, Microsoft 365 and social feeds |
@@ -253,3 +253,7 @@ This is a **cross-capability design topic**, **not a newly catalogued stateful c
 | `verification` | **Platform capability candidate** | Purpose-limited identity/age/representation claim requests and qualified attestations; issuer assurance/trust, expiry, revocation, reverification, status and evidence references. No ownership of local principal/session/permission, merchant eligibility, legal registers or raw document dossier by default |
 
 **Owner approved VER-01–VER-12** as conceptual principles. Verification is not a new IAM suite authority merely by being adjacent to Identity, Authentication and Authorisation. Age verification is a specialised claim type; nationally specific verification systems use optional provider-neutral adapters and separate Legal Compliance applicability. See [record](capabilities/verification/capability-record.md), [cross-capability assurance review](../reviews/identity-age-eligibility-assurance.md) and [international comparison](../reviews/verification-international-jurisdictions.md). No implemented or normatively accepted package asserted.
+
+### Localisation candidate rename (17 November 2026)
+
+**Canonical name:** `localisation`. The former `translate` entry was an empty candidate and its directory is removed, not retained as an alias. All active references should use `localisation`. [Capability record](capabilities/localisation/capability-record.md) documents the conceptual scope and ten proposed public contract surfaces. Internationalisation remains a cross-cutting architecture requirement; translation is a function within Localisation. Publisher, Product/Marketplace, Configuration/Profile, Clock and presentation retain their authoritative boundaries. This is a non-normative working catalogue update; the governing `architecture-rules` catalogue requires its own approved PR.

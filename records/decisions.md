@@ -245,3 +245,11 @@ Following PR #10 approval, evaluate whether any of these shared invariants requi
 |---|---|---|---|
 | VER-01–VER-12 | Owner agrees verification distinct from Identity/Authentication/Authorisation; candidate capability; separate identity/age/representation/eligibility semantics; minimised evidence; explicit issuer method/assurance/status; multiple provider options; standards-based exchange; no portable permissions or transitive Hub trust; locally scoped decisions; bounded expiry/revocation; unlinkable where feasible age claims; efficacy distinct from legal compliance | **Review approved** as a group, not adopted into governing ADRs | [VER-01–VER-12 detailed table](../docs/capabilities/verification/capability-record.md#approved-principles-ver-01-to-ver-12-conceptual) |
 | D-VER-01 | Resolve restricted proofing artefact custody, accepted credential profiles/providers, policy-dependent revocation freshness, corporate mandate source and jurisdiction/deployment requirements | **Open** | [Cross-capability assurance review](../reviews/identity-age-eligibility-assurance.md) and [international research](../reviews/verification-international-jurisdictions.md), then governing approval if necessary |
+
+## Localisation candidate rename and ownership (17 November 2026)
+
+| ID | Direction | Status | Consequence |
+|---|---|---|---|
+| R-LOC-01 | Replace empty `translate` candidate with canonical `localisation`, with **no retained alias or legacy directory** | **Review approved**, non-normative | [New record](../docs/capabilities/localisation/capability-record.md); catalogue/register references replaced; separate governing catalogue PR required |
+| R-LOC-02 | Localisation coordinates translation and locale adaptation but does not acquire Publisher's documents, Product/Marketplace's facts, Profile/Configuration's preference ownership or Clock's time semantics | **Review approved** conceptually | Internationalisation remains a cross-cutting presentation requirement; provider neutrality, qualified review for regulated content and source-version integrity required |
+| D-LOC-01 | Final package classification, terminology memory custody, translation resource ownership, published owner ports and provider profile | **Open** | Full conceptual capability review and public contract assessment before implementation |
