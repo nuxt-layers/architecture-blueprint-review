@@ -50,3 +50,10 @@ Identity retains tenant, group, membership and digital group-owner source facts.
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Identity owns local opaque principals, standing, tenants and memberships, not civil-identity/KYB verification or assurance that a person is adult, a company officer or authorised seller. Proofing and legal representation evidence owners remain open. If links to verified external identities are kept, require scoped issuer, status, retention and verified subject-binding; do not equate email/domain/group with company authority. Consult the cross-capability review before changing any IAM contract.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Verification is now an owner-approved *candidate* for claims and issuer-status lifecycle. Identity continues to own opaque local principals, tenant/group memberships and standing; a civil identity, age or company verification claim does not create, merge or alter these automatically. Verify local subject bindings through public contracts and minimise third-party evidence.
