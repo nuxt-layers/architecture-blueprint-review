@@ -93,3 +93,7 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine offers structured diagnostic codes, safety-assessment failures, rate-limit signals, queue/outbox lag, notification/withdrawal reconciliation and opaque correlation. Logging owns technical sinks/retention; Comments Engine owns content/state transitions; Audit owns attributable evidence; Reporting owns aggregates. Do not log raw comment body, private moderator case, reporter identity, URLs containing tokens or unredacted personal data. Sink failures cannot silently become comment clearance or successful Audit custody.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed logging review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course emits structured, redacted operational diagnostics for validation, provider outages, revision conflicts and publication failures with correlation IDs. Logging owns technical diagnostics/sinks; Course owns domain history and Audit owns evidential custody. Do not record learner rosters, private draft contents or credentials in technical logs.
