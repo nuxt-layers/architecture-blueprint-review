@@ -520,3 +520,9 @@ Audit preserves minimised evidence of Verification issuer, proofing method/versi
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine is authoritative for comment creation/edit/deletion, visibility, local moderation/hold, policy exception and actual enforcement receipts. Audit receives minimised actor/assurance, tenant, target/comment/revision, policy/version, correlation and outcome evidence; Audit owns independent custody/integrity, not comment text or enforcement decisions. Distinguish accepted, committed, delivered and missing evidence; prevent raw comment content, sensitive reporter information and legal-hold data being copied without explicit lawful purpose.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security supplies minimised attributable request, completion, detector/policy version, reassessment/override and evidence disclosure events. Audit independently retains trustworthy receipts/integrity and completeness; technical scan evidence is neither legal guilt nor an Audit custody substitute. Avoid copying raw harmful images/text into routine audit records.
