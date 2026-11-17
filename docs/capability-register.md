@@ -73,6 +73,15 @@ This document is the **populated working register**, distinct from its design sp
 
 **Current decision:** every Hub operates as a Node, while not every Node offers Hub services. A Node may become a Hub by composing the needed capabilities or operate multiple independently scoped Hubs. Record no claim of accepted governing status, package availability, tested protocol or deployed Hub. Implementation and conformance are unverified. The working catalogue has the same provisional entries.
 
+
+### Moderation — new conceptual candidate (17 November 2026)
+
+| Entry | Classification | Evidence/status | Responsibility |
+|---|---|---|---|
+| `moderation` | **Platform capability candidate** | [Pro-forma report](capabilities/moderation/capability-report.md), [conceptual capability record](capabilities/moderation/capability-record.md), [cross-capability review](../reviews/online-safety-content-governance.md); **proposed only**, no verified repository, root contract, deployed service or independent acceptance | User/system reports, cross-domain review cases, adjudication, appeals and authorised enforcement coordination. Originating domains retain their own content and actuation, Content Security owns scanning, Audit owns evidence |
+
+This entry records review-approved conceptual documentation, not adopted governing classification or operational compliance with the UK OSA. Verify service applicability, provider options, source contract boundaries, persistence and tests at its later full capability review.
+
 ### Foundation, platform and library candidates
 
 | Name | Classification | Catalogue status | Responsibility / exclusion |
