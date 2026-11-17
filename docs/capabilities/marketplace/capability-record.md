@@ -37,3 +37,10 @@
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Marketplace owns seller-participation/merchant eligibility, listing permissions, restrictions and reverification outcomes; it consumes purpose-limited proofs of person/company identity and authority, risk evidence, and lawful KYB/KYC requirements from appropriate owners/providers. Identity account existence is not seller legitimacy. Differentiate legal entity, authority to trade, fraud risk, permitted goods and payment evidence; do not mandate universal KYC or blockchain escrow.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Merchant proofing/representation can be provided by Verification's purpose-limited qualified assertions, but Marketplace retains seller eligibility, trade restrictions, reviews and commercial outcomes. Identity-proofed sellers can still be fraudulent, and representation mandates may expire independently. KYB provider status, cost, revocation and local legal scope remain explicit.
