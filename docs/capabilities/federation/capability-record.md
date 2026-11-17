@@ -138,3 +138,9 @@ Federated Node/Hub assurance accepts third-party age, identity or authority asse
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Federation can transport Verification's bounded age/identity/organisation evidence across Nodes or Hubs but must not adopt a global verified status or make local trust transitive. Each receiving Node validates issuer, purpose, subject binding, audience, quality, expiry/status and local authorisation independently; avoid linkable global identifiers and support issuer/key revocation.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine owns origin-Node comment/revision visibility and withdrawal events. Any outbound public discussion/feed or inbound remote reply is opt-in and subject to origin/publication rights, provenance, local trust, eligibility, audience, expiry, replay and conflict protection. Federation owns peer/subscription/transmission receipts; Hub Search owns derived index state. A local comment withdrawal is not proof of remote Hub/cache removal; reconcile acknowledgements without granting remote peers local authorisation.
