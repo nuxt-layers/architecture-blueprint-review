@@ -135,12 +135,36 @@ Server-side authorisation at every protected read/write/activation, tenant isola
 - **Proposed (CFG-02):** typed effective-value response with provenance/version/time and explicit unknown or unavailable, distinguishing approval from activation.
 - **Proposed (CFG-03):** source-owner validated domain constraints and safe handling of staleness/rollback and protected changes.
 - **Proposed (CFG-04):** reciprocal public-port relationships and optional GUI/dashboard surface; no new direct circular imports.
-- **Open decision (CFG-05):** retain current account scope for non-personal user-specific settings versus narrow/remove it after Profile ownership reconciliation.
-- **Open decision (CFG-06):** entity/resource-specific and tenant-parent settings: express by explicitly registered domain-authorised selection contexts, or leave domain-owned; never silently broaden current four scopes.
-- **Open decision (CFG-07):** whether privileged NTP/NTS choice is deployment-only Infrastructure static configuration or a governed host-scoped Configuration setting; never tenant selectable.
-- **Open decision (CFG-08):** governance for evolving declaration schemas, staged activation and conflict/reconciliation during migrations.
+- **Owner-approved (CFG-05, Option B; 17 November 2026):** Retain Configuration's bounded account scope only for explicitly registered, non-personal account-specific operational settings. Profile retains personal information, personal locale/time-zone preferences and other Profile-owned attributes; Theme Manager retains the effective theme. Every key has a declared authoritative owner. Existing published account scope is not permission to duplicate those owners. Missing or inconsistent owner declarations prevent activation.
+- **Owner-approved (CFG-06, Option C; 17 November 2026):** Allow *proposed* explicitly registered resource-specific configuration contexts only through domain-owner-approved public interfaces defining stable opaque resource identifier/type, authority, allowed keys/scopes, lifecycle, validation and effective-time semantics. Configuration owns approved setting values, revisions and provenance; the domain owns resource existence, ownership, deletion/transfer/retirement, policy interpretation and enforcement. No generic resource hierarchy, automatic resource/tenant-parent inheritance or new implemented scope is inferred. Reuse of retired display names never transfers settings.
+- **Owner-approved (CFG-07, Option A; 17 November 2026):** Infrastructure owns server NTP/NTS source selection, deployment changes, allowlisting, operating-system application, verification and failure handling. Configuration must not become the authoritative store or admin surface for time-source policy merely because it is configurable. Infrastructure privileged changes still require appropriate approval, change provenance and Audit evidence. Tenant/group/account display-zone choices cannot influence shared UTC synchronisation. A future narrowly scoped Configuration interface needs a separate explicit architecture decision.
+- **Owner-approved (CFG-08, Option B; 17 November 2026):** Version setting declarations and preserve historical definition/value/provenance and effective periods. Require explicit compatibility/migration plans, validation before activation, controlled staging, re-authorisation for changed semantics and conflict reporting. The domain owner decides how to interpret/convert a value and whether previously committed domain records may change; Configuration manages its own accepted value/revision/activation lifecycle. Rollback is a new evidenced governed transition, not silent history mutation. Unknown or incompatible versions fail safely.
 - **Implementation alignment:** one-call ADR-0012 host, exact shared ports, minimal host, separated headless presentation, acceptance and future public contract changes need separately authorised implementation work.
 - **Conceptual sign-off:** **pending owner review**. Proposal is not a claim of operational readiness or statutory compliance.
+
+---
+
+## Owner decisions — CFG-05 to CFG-08 (17 November 2026)
+
+**Approval:** Project owner expressly selected CFG-05 **B**, CFG-06 **C**, CFG-07 **A**, CFG-08 **B**. This approves the conceptual choices, **not** implementation, governing ADR amendments, conceptual sign-off of CFG-01–04, or merge.
+
+### CFG-05 — B: bounded account settings
+
+Account-specific operational settings remain permissible *only* when the key is registered as non-personal, has a single explicit domain authority, and an authorised account scope. Profile remains authoritative for personal identity data and personal locale/time-zone preferences; Theme Manager for effective theme. No second personal-preference store is created. The current Configuration account-scope API documents a mechanism, not ownership of every account-related preference. A forbidden, ambiguous or duplicate owner is rejected, not chosen by precedence.
+
+### CFG-06 — C: domain-controlled resource-specific settings
+
+Propose an opt-in **domain-registered resource context** public contract (not implemented today), identifying resource type, stable domain-owned opaque ID, declared eligible keys, owning authority, authorised target, lifecycle reference and version. Domain owner validates resource existence, ownership, access, transfer/retirement and business meaning; Configuration validates its own declaration and governs approved values, activation, source/version and history. Resolution never follows an invented universal hierarchy, tenant-parent relationship or display-name match. Closed/transferred/retired resource contexts require explicit revocation/migration decisions and may not be silently reused. No automatic direct package dependency; the host mediates public interfaces.
+
+### CFG-07 — A: Infrastructure controls UTC synchronisation sources
+
+Infrastructure owns privileged NTP/NTS source policy selection **and** application/verification. Domain/tenant/user setting pages do not edit shared server time providers. Trusted Clock instant and per-user display time-zone semantics remain distinct. Require bounded privileged Infrastructure changes, approver segregation where relevant, provenance, observability and Audit, but do not store the authoritative source selection in Configuration. Older provisional Clock/Configuration proposals below are historical alternatives superseded for **Configuration's chosen ownership** by this decision, without rewriting independently approved Clock invariants. Any future Configuration-managed approval interface is a separate proposal.
+
+### CFG-08 — B: versioned declarations and controlled migration
+
+Configuration retains declaration identity/schema version, value revision, approval evidence, effective interval and supersession history. Before adopting changed types/meaning/scopes, a domain-approved converter or explicit new selection is required, with dry-run-style impact assessment at the conceptual level, staged activation, unresolved/conflicting cases held, and attributable replay-safe completion. Historic evaluations use the version effective at that instant; a new revision does **not** retroactively alter an existing booking, invoice or other committed domain record. Domain owners control compatibility meaning and domain data migrations. Rollback creates a new revision; rollback to an invalid/unsafe schema is refused. No promise of an implemented generic migration engine.
+
+**Additional approved invariants deriving from CFG-06/08:** resource identity must be authoritative and stable across rename/retirement; historical setting meaning must remain reconstructable by definition version, effective value and provenance.
 
 ---
 
