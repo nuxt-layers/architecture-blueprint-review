@@ -89,3 +89,7 @@ Comments Engine supplies authorised comment submissions (including pending/rejec
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course supplies authorised versioned course catalogue, curriculum and lifecycle facts; Reporting owns derived analytics. Learner admission and completion measures must come from Enrolment/Training with independent disclosure checks, not from Course. This note does not complete the separate reporting review.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** cohort capacity, attendance and completion reports source authoritative facts from Enrolment/Events/Booking and Training/Assessment, not the Course catalogue. Credentials supplies credential issue/revocation facts, but no report can confer an award. Ensure historical version, small-cohort and safeguarding disclosure constraints. This note does not complete the separate reporting review.
