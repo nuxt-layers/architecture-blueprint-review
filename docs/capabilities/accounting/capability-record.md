@@ -534,3 +534,12 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration owns approved schema-registered selections and provenance; Accounting owns financial policy meaning, posting, reporting entity scope and migrations. An accounting entity is not automatically a Configuration scope. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-06 (Option C):** resource/entity-specific setting contexts may be proposed through registered, domain-approved public contracts. Accounting owns accounting-entity identity, accounting policy meaning, applicability, historical transactions and migration behaviour; Configuration would own approved selection values/version/provenance only. No accounting entity silently becomes a tenant/group or gains inherited policy from tenant parentage.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
