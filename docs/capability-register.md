@@ -60,7 +60,7 @@ This document is the **populated working register**, distinct from its design sp
 | `infrastructure` | Foundation candidate | Under consideration | Host/backend/deployment setup and operational configuration; infrastructure resources and domain data remain with the appropriate hosts/providers |
 | `reviews` | Platform candidate | Under consideration | Customer ratings, testimonials, verified purchase/service evidence, moderation, merchant replies and trustworthy reputation aggregates; transaction and identity facts remain owned by source capabilities |
 | `template-engine` | Library candidate | Under consideration | Secure deterministic template parsing, data binding and content rendering; no template persistence, document lifecycle, arbitrary code execution or business-data lookups |
-| `organisation-model` | Domain / platform boundary to be decided | Under consideration | Versioned, schema-validated organisational archetypes, positions, non-authoritative reporting relationships and capability selection; cannot reown Identity groups/memberships or Authorisation decisions |
+| `organisation-model` | Domain / platform boundary to be decided | Retained pending classification review | Prove independent lifecycle for versioned archetypes/positions/relations/capability selection; otherwise use schemas, Configuration or composition; cannot reown IAM facts or legal authority |
 
 ### Foundation, platform and library candidates
 
@@ -73,7 +73,7 @@ This document is the **populated working register**, distinct from its design sp
 | `uuidv7-generator` | Library candidate | Candidate | UUIDv7 identifier generation; not ownership of entities or credentials, and not automatically a Nuxt Layer |
 | `api-gateway` | Composition / platform to decide | Candidate | External API routing and exposure; not a replacement for capability APIs or server authorisation |
 | `application-compositions` | Composition artefacts | Candidate | Reusable application templates and selected capability wiring; generally not independent stateful services |
-| `company-console` | Presentation | Candidate | Cross-capability management screens; no business records |
+| `company-console` | Presentation composition, not a business capability | Consolidation pending separate removal decision | Generic organisation management screens; requirements transferred to `application-compositions`, no authoritative data; retain old directory during this preservation phase |
 | `user` | Presentation | Candidate | Group-scoped user administration screens via Identity/Profile/Authorisation; no user records |
 | `document` | Platform candidate, unresolved | Candidate | Distinct document-management requirement only if Publisher's document lifecycle is insufficient |
 | `search` | Platform | Candidate | Indexing, query and relevance over authorised source records; no source-of-truth storage |
@@ -95,18 +95,18 @@ This document is the **populated working register**, distinct from its design sp
 | `committee` | Archetype / composition | Example, not standalone candidate | Group type and meeting composition; formal votes, resolutions and minutes may warrant their own independently governed lifecycle |
 | `department` | Archetype / composition | Example, not standalone candidate | Organisational unit type, potentially expressed through Identity's existing single-parent group hierarchy; reporting does not grant access |
 | `office` | Archetype / composition | Example, not standalone candidate | Organisational location/unit type; physical facilities, leases and managed assets belong to independently justified domain owners |
+| `workshop` | Archetype / composition | Classification resolved — not a standalone candidate | Event/Course composition unless independently justified domain rules emerge; retain old directory until separate deletion PR |
 
 ### Activity domain candidates
 
 | Name | Classification | Catalogue status | Responsibility / exclusion |
 |---|---|---|---|
-| `membership` | Domain candidate | Candidate | Paid/scheme membership rights, terms, renewals and benefits; NOT Identity's existing group membership |
+| `membership` | Domain candidate | Retained pending classification review | Potential scheme/paid membership rights, terms, renewals and benefits; NOT Identity's existing group membership and not yet a verified independent capability |
 | `events` | Domain candidate | Candidate | Planned participant activities and event lifecycle; not background scheduled tasks |
 | `course` | Domain candidate | Candidate | Structured learning offering and outcomes |
 | `enrolment` | Domain candidate | Candidate | Course/learner participation and allocation |
 | `training` | Domain candidate | Candidate | Verified training participation, competencies and completion records |
 | `gaming` | Domain candidate | Candidate | Game-specific state, rankings and participation; separate from generic Identity accounts |
-| `workshop` | Domain candidate | Candidate | Event/Course specialisation unless distinct rules justify a separate domain |
 | `job` | Domain candidate | Candidate | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
 
 ### Commerce and operations domain candidates
@@ -160,3 +160,12 @@ This document is the **populated working register**, distinct from its design sp
 **Classification:** `business` remains archetype/composition vocabulary only, without a standalone capability record or implementation assertion. The provisional Billing counterparty note is preserved in [Billing's record](capabilities/billing/capability-record.md). Commercial legal-party/contract evidence ownership remains open.
 
 **References:** [tenancy/governance](../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../proposals/commercial-onboarding-and-entitlements.md), [policy boundary](../proposals/policy-and-governance-boundaries.md), [anti-lock-in recovery](../reviews/organisational-ownership-and-recovery.md). ORG-01–ORG-08 owner approved; TEN/COM/OWN and policy proposals are not independently accepted governing decisions or implemented functions. Preserve the separation of tenancy and organisation, real-world authority and digital control, commercial bill-to and service-consumer, mandatory invariants and adjustable policies, document publication and executable enforcement.
+
+
+## Catalogue rationalisation — preservation before deletion (17 November 2026)
+
+**Stage: preservation and classification only.** The previously proposed standalone entries `club`, `committee`, `company`, `group`, `image`, `tenancy`, `workshop` and `organisation` have **no independently justified capability authority** under the governing catalogue; `club`, `committee`, `company`, `workshop` and `organisation` remain valid archetype/composition terms, `group`/`tenancy` are Identity responsibilities, and `image` is Media's concern. The existing candidate directories deliberately **remain in place**, without being counted as proof of implemented capability. `business` was removed in the earlier approved consolidation.
+
+**Preservation evidence:** legacy Tenancy's legal-entity/Billing note moved into [Identity](capabilities/identity/capability-record.md) and [Billing](capabilities/billing/capability-record.md); Company Console's navigation, governance, subscriptions, quota and policy dashboard requirements into [Application Compositions](capabilities/application_compositions/capability-record.md). [Membership](capabilities/membership/capability-record.md) and [Organisation Model](capabilities/organisation_model/capability-record.md) are retained candidates; neither has been prematurely promoted. [Company Console](capabilities/company_console/capability-record.md) still needs a separate generic-presentation consolidation decision.
+
+**Deferred action:** following review and merge of this preservation PR, create a second focused PR for directory removal only. Reconfirm that content is transferred, current governing references remain consistent, and all relative links have been repaired before deleting any of the eight directories. No governing amendment is needed solely to perform this classification: the current accepted catalogue and ADR-0017 already establish these boundaries.
