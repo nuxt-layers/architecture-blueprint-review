@@ -45,6 +45,6 @@ Its own records would cover clock-in/clock-out observations, break periods, subm
 3. Overlapping intervals, travel, breaks, absence, overnight work, cross-border assignments, daylight saving transitions and correction of previously paid periods.
 4. Time-device trust, offline capture, attestation, fraud and audit, source priority and external provider reconciliation.
 5. Jurisdiction-specific employment/working-time law, worker visibility/disputes, sensitive location/biometric data minimisation and retention.
-6. Whether to create `docs/capabilities/time-attendance/capability-record.md` and eventually a `nuxt-layers/time-attendance` repository **only through its own dedicated review and capability-start gate**.
+6. The [pro-forma capability record](../docs/capabilities/time-attendance/capability-record.md) now exists; complete its full independent review and capability-start gate before considering any `nuxt-layers/time-attendance` implementation repository.
 
-**Acceptance status:** The separation and intended conceptual placement are approved; the detailed contract, GUI, provider/retention choices, dependency architecture and implementation packaging remain unapproved.
+**Acceptance status:** The separate Domain boundary and creation of the blueprint pro-forma are approved; the detailed contract, GUI, provider/retention choices, dependency architecture and implementation packaging remain unapproved.
