@@ -31,3 +31,13 @@
 4. Revalidate immediately before protected squash merge; verify GitHub merged **and** closed. **Do not merge under the present request.**
 
 **Disposition:** Conceptual documentation draft prepared for owner review; current-master comparison performed. **Merge readiness not certified**, due to outstanding owner sign-off, unverified implementation and concurrent draft reconciliation.
+
+## Post-Configuration merge conflict resolution (17 November 2026)
+
+**Cause:** Configuration PR #53 merged into blueprint `master` as commit `45a266533556c3637abf1ae0df6c16fc6a6747f7` after Content Editor branch creation. Its reciprocal notes overlapped with PR #54 in seven capability records: `audit`, `authorisation`, `configuration`, `logging`, `privacy`, `theme_manager`, `workflow`.
+
+**Resolution:** Merged latest `master` into the original Content Editor review branch in merge commit `58bc725784b4239a203f3f6042f422851d8606c4`. For all seven overlapping records, preserved the entire newer Configuration `master` content and appended the bounded Content Editor reciprocal note. The other ten Content Editor review files were carried across unchanged; all remaining Configuration-only changes were inherited from `master`. No approved CED-01–05 direction or Configuration review content was intentionally removed.
+
+**Validation:** GitHub compare reports the Content Editor head **behind 0** relative to current `master`, with 17 PR-changed files. The GitHub pull-request REST endpoint reports `mergeable: true`, `mergeable_state: clean`, `draft: true` after reconciliation. This validates the reported Git merge conflicts are resolved, **not** CI tests or final architectural approval. Earlier pre-reconciliation observations in this document are historical, superseded by this section.
+
+**Remaining controls:** Keep the PR draft pending owner decision and mandatory recheck of current governing/blueprint master, related concurrent Content Security and Document reviews, protected branch checks and architecture before any owner-approved squash merge. No local tests were executed, no implementation repository changed, and no merge was attempted.
