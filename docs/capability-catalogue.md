@@ -108,7 +108,7 @@ These names and descriptions are **design options**, not approved independent re
 | `uuidv7-generator` | Library candidate | UUIDv7 identifier generation; not ownership of entities or credentials, and not automatically a Nuxt Layer |
 | `api-gateway` | Composition / platform to decide | External API routing and exposure; not a replacement for capability APIs or server authorisation |
 | `application-compositions` | Composition artefacts | Reusable application templates and selected capability wiring; generally not independent stateful services |
-| `company-console` | Presentation | Cross-capability management screens; no business records |
+| `company-console` | Presentation composition — consolidation agreed, deletion deferred | Legacy company-specific label for generic organisational administration screens; requirements transferred to `application-compositions` and domain-owned optional presentations; no business records or independent lifecycle |
 | `user` | Presentation | Group-scoped user administration screens via Identity/Profile/Authorisation; no user records |
 | `document` | Platform candidate, unresolved | Distinct document-management requirement only if Publisher's document lifecycle is insufficient |
 | `search` | Platform | Indexing, query and relevance over authorised source records; no source-of-truth storage |
@@ -132,6 +132,7 @@ The following are **types and compositions**, not independent capability candida
 | `committee` | Group type and meeting composition; formal votes, resolutions and minutes may warrant their own independently governed lifecycle |
 | `department` | Organisational unit type, potentially expressed through Identity's existing single-parent group hierarchy; reporting does not grant access |
 | `office` | Organisational location/unit type; physical facilities, leases and managed assets belong to independently justified domain owners |
+| `workshop` | Event/Course composition or archetype using existing activity contracts; not a separate capability absent a justified independent lifecycle |
 
 ### Activity domain candidates
 
@@ -143,7 +144,6 @@ The following are **types and compositions**, not independent capability candida
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
 | `gaming` | Game-specific state, rankings and participation; separate from generic Identity accounts |
-| `workshop` | Event/Course specialisation unless distinct rules justify a separate domain |
 | `job` | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
 
 ### Commerce and operations domain candidates
@@ -206,3 +206,14 @@ The group model is defined in [Identity and Access](https://github.com/nuxt-laye
 **Non-normative, not an implemented capability or an amendment of governing classifications.** `business` remains a useful **archetype/application composition example**, not an independently owned capability, directory or package. Its sole provisional commercial-counterparty finding has been moved into Billing's reciprocal conceptual record; a legal commercial-party/contract master remains unresolved and must not be assigned to a generic Business store. No business-data authority is transferred to `company-console` or the host.
 
 Cross-cutting proposed reference designs: [organisational tenancy and accountable governance](../proposals/organisational-tenancy-and-governance.md), [commercial onboarding and entitlements](../proposals/commercial-onboarding-and-entitlements.md), [policy/governance taxonomy and lifecycle](../proposals/policy-and-governance-boundaries.md) and [hostile administrator recovery review](../reviews/organisational-ownership-and-recovery.md). ORG-01–ORG-08 are owner-approved conceptual directions; TEN, COM, OWN and policy detail remains proposed pending proper governing adoption. Identity's existing **group** hierarchy is not yet a tenant parent–child API. Do not create `business`, `tenancy` or `policies` as duplicate standalone domains by default.
+
+
+### Classification rationalisation — preservation phase (17 November 2026)
+
+**This phase reclassifies and preserves knowledge, but deliberately deletes no capability directories.** Following the governing [catalogue](https://github.com/nuxt-layers/architecture-rules/blob/master/docs/catalogue.md), `club`, `committee`, `company`, `organisation` and `workshop` are archetype/composition examples, not standalone domain owners; `group` and `tenancy` have their authoritative lifecycle in **Identity** (ADR-0003, ADR-0017); `image` belongs with **Media** backed by Storage. `company-console` is a legacy presentation candidate whose useful requirements now appear in [Application Compositions](capabilities/application_compositions/capability-record.md); it has no independently justified company-domain state. Do not treat an existing empty candidate directory as evidence of an implemented capability.
+
+The former `tenancy` note concerning Billing's legal entity, charged party, bill-to and tenant boundary is preserved in both [Identity](capabilities/identity/capability-record.md) and [Billing](capabilities/billing/capability-record.md). Neither Identity nor Billing becomes the authoritative legal-party registry. Generic company-console UI needs have been transferred to [Application Compositions](capabilities/application_compositions/capability-record.md), without assigning it ownership of business data.
+
+**Retained for future classification-first reviews:** [Membership](capabilities/membership/capability-record.md) may own independently governed *paid/scheme* participation rights, distinct from Identity group membership; [Organisation Model](capabilities/organisation_model/capability-record.md) must prove a lifecycle beyond schemas, Configuration values and host archetype descriptions before independent capability status. `company-console` is not confirmed as a separate presentation layer: test a reusable generic organisation administration composition against host and existing capability presentation first.
+
+**Ordered cleanup gate:** after this preservation/classification PR is reviewed, merged and closed, verify that the governing catalogue is consistent and all references resolve. Only then submit a **separate, deletion-focused PR** for `club`, `committee`, `company`, `group`, `image`, `tenancy`, `workshop` and `organisation`. Do not delete `membership` or `organisation_model`; `company_console` remains pending its separate presentation classification, with no automatic deletion in that eight-directory PR. No old entries are called deprecated implemented software merely because their proposed classification is resolved.
