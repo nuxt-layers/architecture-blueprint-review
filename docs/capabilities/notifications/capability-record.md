@@ -50,3 +50,7 @@ Supply scoped notices for invitations, proposed/approved ownership transfer, dis
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine may produce author/reply/mention, moderation decision and appeal disposition notice intents containing only authorised recipient references, bounded status/message keys and minimal comment links. Notifications owns channel choice, delivery and provider status; delivery does not prove comment publication, enforcement or receipt by a person. Suppress disclosure of hidden content, reporter identity and child-sensitive evidence.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course emits safe publication/review/withdrawal facts; Notifications owns delivery and retry. Dispatch cannot approve publication, grant enrolment or prove a learner received the message. This note does not complete the separate notifications review.
