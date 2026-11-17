@@ -69,3 +69,10 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 Provider-neutral external adapters may support specialist image/NCII detection, URL intelligence, KYB/KYC, age assurance, fraud signals and regulatory submission transport where appropriate; respective specialists/domain owners own semantics and use. Record lawful sharing, processing location, provider/version, costs, timeout, idempotency, unknown outcomes and exit. An external acknowledgement does not establish authoritative legal filing truth.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+External proofing, age-assurance and merchant-verification adapters should be provider-neutral where approved by public contracts: trusted callbacks/nonces/audience, lawful provider processing and data minimisation, claim quality, expiration/revocation, errors, billing, retries and outages. Integrations transports qualified assertions, not independent legal identity, merchant permission or content access decisions.
