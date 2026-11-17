@@ -38,3 +38,7 @@
 
 **Approved conceptual boundary (16 November 2026):** Observability consumes backend-independent, bounded measurements of live health, hit/miss ratios, latency, capacity, freshness and invalidation lag, and owns metric histories and alerts. Caching remains owner of contemporaneous operational cache validity; telemetry is not proof of revoked access or successful erasure.
 
+
+## Cross-capability note — Clock and infrastructure time synchronisation (17 November 2026)
+
+**Proposed relationship reflecting owner-approved Clock boundaries; Observability review incomplete.** [Clock](../clock/capability-record.md#owner-approval-and-ntp-governance-clarification-17-november-2026) provides temporal semantics and injected time source. Infrastructure operates the host's time synchroniser; Observability owns authorised live and historical source availability, offset/drift, uncertainty, synchronisation freshness, faults and threshold alerts, without claiming the server time is cryptographically verified from a hostname alone. Infrastructure's optional operator GUI may consume these metrics through an explicitly published read contract; Logging owns diagnostic records and Audit owns accountable administrative changes. Failure/degradation must be represented explicitly and not silently counted as healthy.
