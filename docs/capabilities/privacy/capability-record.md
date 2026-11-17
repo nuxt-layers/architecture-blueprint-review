@@ -51,3 +51,8 @@ Define and supply data-purpose/consent, cookie, retention, rights and lawful dis
 
 **Approved conceptual boundary (16 November 2026):** Backend independence never weakens region, purpose, retention or derived-copy deletion obligations. Caching supplies qualified purge/erasure progress and failure evidence through published interfaces; policy and legal authority remain with their owners, and Caching retains ownership only of cache validity and operational state.
 
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
+
+Privacy provides purpose/consent/retention and data-rights constraints; Comments Engine applies scoped disclosure, anonymous/pseudonymous participation rules, authorised portable exports, minimised source/provenance, erasure/redaction and legal-hold exceptions. Public comment state, restricted reporter/evidence, personal identifiers and technical logs must remain separate; preserve evidence of partial deletion rather than claiming complete erasure.
