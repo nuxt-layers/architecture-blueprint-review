@@ -61,3 +61,9 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Publisher retains document publication eligibility and enforcement; may need a locally validated, threshold-scoped age-assurance decision for regulated content creation/viewing rather than collecting ID documents. An age-provider approval or user-supplied declaration cannot bypass domain publication holds, legal constraints or Authorisation.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Publisher and other registered target owners retain eligibility/visibility, owner revision and publication decisions. Comments Engine owns reply/thread records and comment-local enforcement. A host-wired target eligibility/withdrawal contract should supply trusted tenant/target/revision and change signals; Comments Engine checks them before posting, restricts inaccessible targets and returns withdrawal/reconciliation receipts. No mutual package imports, source database reads or assumption that a deleted document automatically erases lawfully retained comment evidence.
