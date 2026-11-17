@@ -287,3 +287,10 @@ Trusted subject standing, sufficient assurance, recency and phishing-resistant s
 ## Reciprocal note — trusted UTC assurance and expiry after clock adjustments (17 November 2026)
 
 **Approved Clock conceptual boundary; Authentication implementation unchanged.** [Clock's CLK-03/CLK-04 review](../clock/capability-record.md#final-completeness-review--eight-concerns-resolved-17-november-2026) distinguishes an instant from proof that the current server clock is sufficiently assured. Authentication continues to own session/credential validity, expiry, step-up and fail-closed security decisions; the host/Infrastructure must supply approved trusted UTC and independently check relevant assurance state. Stale/unverified health cannot silently authorise access; a backward wall-clock correction must not automatically resurrect expired or revoked sessions. Monotonic elapsed-time measurements may be used for local timeout budgets but are not durable UTC expiry timestamps. This note does not revise Authentication's published root contract or invent a shared runtime package.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+Authentication owns credentials, sessions, assurance, and phishing-resistant protection, not merchant eligibility or moderation. Sensitive moderation and evidence access should require bounded authentication assurance and recency. Proposed privacy-preserving age assurance must verify issuer, credential evidence, freshness and resistance to transfer; no default trust in a ZKP token solely because it is cryptographic.
