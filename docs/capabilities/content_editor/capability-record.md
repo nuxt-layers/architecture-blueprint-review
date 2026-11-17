@@ -55,3 +55,7 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Presentation only:** Content Editor shows Publisher and Media eligibility, scan pending/unknown, quarantine, editorial holds, appeals and approved reviewer actions via their public contracts. It may offer reports and case navigation from proposed Moderation but must not persist independent publication, safety verdict or case state. Never let a client-side green indicator substitute for server-side publication gating. Show accessible and internationalised pending/refused/appeal states.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed content_editor review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course requires a structured curriculum editor (outcome builder, unit/prerequisite graph, revision comparison, publication state and content reference selection) via the Course public conceptual contract. Generic Content Editor may present declared course field/action descriptors, but does not own Course state or infer domain rules from arbitrary rich text. Coordinate with provisional PR #54 without treating that PR as accepted.
