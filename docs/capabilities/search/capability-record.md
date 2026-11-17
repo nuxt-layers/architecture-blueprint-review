@@ -38,4 +38,4 @@
 
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
-**Owner-approved resolution, 17 November 2026:** no separate Document record owner will supply another indexing stream. Search consumes authorised projections from Publisher and the applicable domain record owners and rechecks current access before protected retrieval; a search hit does not grant disclosure. Historical conditional review: [Document](../document/capability-record.md).
+**Owner-approved resolution, 17 November 2026:** no separate Document record owner will supply another indexing stream. Search consumes authorised projections from Publisher and the applicable domain record owners and rechecks current access before protected retrieval; a search hit does not grant disclosure. Historical conditional review: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
