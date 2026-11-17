@@ -209,3 +209,12 @@ Separate Verified/Installed/Configured/Operational/Enabled/Authorised status rem
 ### Localisation replaces the empty Translate candidate (17 November 2026)
 
 The empty `docs/capabilities/translate/` directory has been removed in the working blueprint, not retained as a compatibility alias. The canonical active record is [Localisation](capabilities/localisation/capability-record.md). The old register's `Established` label denoted a catalogue entry, **not** an independently verified implementation; the new candidate has no verified root `CONTRACT.md`, package, installation or tests. The governing catalogue rename is a separate PR. Only the historical rename note uses the old name.
+
+
+### Time & Attendance — proposed distinct Domain responsibility (17 November 2026)
+
+| Entry | Classification | Decision/evidence | Boundary |
+|---|---|---|---|
+| `time-attendance` | **Domain candidate** | **Owner-approved conceptual separation** in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59); detailed capability review and implementation unverified | Actual attendance, timesheets, breaks, approved time evidence and corrections; distinct from Employment contractual hours, planned Workforce Scheduling, Payroll pay calculation and platform Scheduler's timed triggers |
+
+[Conceptual ownership note](../proposals/time-attendance-ownership.md). No implementation/package/operational status is asserted. A dedicated future review must establish independently usable input/output contracts, privacy controls, GUI and package classification before creating a new implementation repository.
