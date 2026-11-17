@@ -127,3 +127,7 @@ Follow the application's host-controlled sidebar/navigation pattern and the Them
 ## Review disposition
 
 Approved **for blueprint documentation and future dedicated review**, not adopted as a new bounded capability, framework, IAM responsibility amendment, selected vendor, regulatory certification, or deployed solution. Record reciprocal notes in current capability reviews and add status/decision references to working registers. Follow the established governing PR/ADR process for normative amendments after the public-contract and security/legal review.
+
+## Follow-on classification: Verification candidate (17 November 2026)
+
+The owner explicitly approved VER-01–VER-12 and creating [Verification's dedicated candidate capability record](../docs/capabilities/verification/capability-record.md). Verification is proposed to own reusable purpose-scoped verification requests, validated issuer/proofing attestations, trust and status/expiry/revocation lifecycle. It does not inherit Identity's principal, Authentication's sessions, Authorisation's permission, Marketplace's merchant eligibility, or external statutory/registry truth. Persistent personal evidence custody still requires a separately justified legal/security design; minimal attestations are preferred. Provider-neutral standards/adapters and local non-transitive Node/Hub trust remain foundational. See also [international jurisdiction comparison](verification-international-jurisdictions.md). This is owner-approved *conceptual* classification, not an accepted governing ADR, repository or API.

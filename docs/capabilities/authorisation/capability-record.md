@@ -379,3 +379,10 @@ Authorisation decides server-side moderator, evidence-viewer, appeal, merchant a
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Authorisation evaluates local resource permissions and delegated scopes from trusted actors, domain owners, verified evidence and mandatory constraints. A qualified age credential or representation attestation may be one input, but is not an access grant. Enforce purpose, proof freshness, local issuer policy and fail-closed/unknown semantics where required; cross-Node assertions and group/tenant membership are not automatically portable authority.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Verification may provide bounded age, identity or representation claims but does not own permissions, user roles or delegated grants. Authorisation evaluates local action/scope using qualified freshness and subject binding; a Hub's or external provider's trust cannot confer an automatic permission. Refuse unsupported/unknown claims according to operation risk.

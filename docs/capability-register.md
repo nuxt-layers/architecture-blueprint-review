@@ -197,3 +197,11 @@ This entry records review-approved conceptual documentation, not adopted governi
 | Identity / age / eligibility assurance | **Cross-capability architectural review**, not an independent registered capability | Owner-approved direction, [dedicated review](../reviews/identity-age-eligibility-assurance.md), no verified new implementation | Identity owns local principals; Authentication sessions; Authorisation access; Marketplace merchant eligibility; Legal Compliance laws; external proofing and age evidence custody **open**, no mandatory additional package |
 
 Do not equate an installed Identity or Authentication package with verified civil identity, adult age, organisation authority or seller trustworthiness. Federated assertions must not create local memberships or grants without independent policy decisions.
+
+## Verification — candidate classification (17 November 2026)
+
+| Candidate | Working class | Availability/evidence | Boundaries |
+|---|---|---|---|
+| `verification` | **Platform candidate; owner-approved conceptual creation** | [Capability record](capabilities/verification/capability-record.md), [cross-capability review](../reviews/identity-age-eligibility-assurance.md), [international comparison](../reviews/verification-international-jurisdictions.md). No verified root `CONTRACT.md`, package, CI, provider contract or deployment | Verified claim requests, purpose-scoped attestations, issuer trust/status, expiry/revocation and qualified evidence references; no civil-document master, IAM session/permission, merchant eligibility or legal applicability ownership |
+
+Separate Verified/Installed/Configured/Operational/Enabled/Authorised status remains **unverified**, regardless of conceptual approval. Any future package needs independent classification, consumer contract, legal/privacy/security review, minimal-host acceptance and storage register.

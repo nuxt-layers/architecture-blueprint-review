@@ -71,3 +71,7 @@ The [cross-capability conceptual review](reviews/online-safety-content-governanc
 ## Identity, Age and Eligibility Assurance (17 November 2026)
 
 The owner-approved [cross-capability conceptual review](reviews/identity-age-eligibility-assurance.md) distinguishes identity proofing, privacy-preserving age assurance, authentication, verified organisational representation and domain-specific eligibility. It documents proposed public interfaces, local/federated trust, evidence ownership, provider integrations and operational safeguards. Reciprocal notes are recorded in Identity, Authentication, Authorisation, Marketplace, Legal Compliance, Integrations, Federation, Moderation, Publisher and Audit. **No new verification capability, provider or normative ADR is approved.**
+
+## Verification candidate and international assurance review (17 November 2026)
+
+The owner approved **VER-01–VER-12** and the **`verification` Platform candidate**. [Verification's conceptual capability record](docs/capabilities/verification/capability-record.md) defines attestation custody, trust, provider-neutral logical contracts, expiry/revocation, cross-Node restrictions and optional UI. [International jurisdiction research](reviews/verification-international-jurisdictions.md) compares China, Russia and Saudi Arabia as service-specific legal/technical examples and links to [Identity, Age and Eligibility Assurance](reviews/identity-age-eligibility-assurance.md). These documents are non-normative: no implementation or government provider has been selected.

@@ -131,3 +131,10 @@ If independently justified, Federation owns the minimum durable state for peer a
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Federated Node/Hub assurance accepts third-party age, identity or authority assertions only through scoped issuer/audience, subject binding, expiry and local trust policy. Trust is not transitive; a Hub endorsement cannot mint a local Identity membership, authority or merchant standing. Support Node exit, peer revocation and privacy-preserving age thresholds without globally linkable tracking tokens.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Federation can transport Verification's bounded age/identity/organisation evidence across Nodes or Hubs but must not adopt a global verified status or make local trust transitive. Each receiving Node validates issuer, purpose, subject binding, audience, quality, expiry/status and local authorisation independently; avoid linkable global identifiers and support issuer/key revocation.
