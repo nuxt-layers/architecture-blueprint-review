@@ -36,3 +36,7 @@
 Own tenant/group scoped bytes and usage, not commercial entitlements. Current root CONTRACT says usage is not a limit. Proposed quota-admission must enforce paid logical GB/object limits including parallel uploads and downgrade, without bucket-per-tenant provisioning. Hetzner S3 reserved for images/files.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** no standalone Document capability will duplicate records or custody. Storage continues to own provider-neutral file bytes, not the business meaning or legal retention decisions for files owned by Publisher or domain capabilities. These owners must enforce authorisation and applicable holds before disclosure/disposal. Historical proposed custody design: [Document](../document/capability-record.md).

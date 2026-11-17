@@ -197,3 +197,9 @@ The **UK Online Safety Act applies by qualified service/feature and risk classif
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration may supply registered versioned discussion settings; Comments Engine validates them against safety floors and owns comments, moderation state and acknowledgements. Missing critical settings never silently allow posting. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+For each submitted/edited comment, Comments Engine supplies a tenant-bound text/link snapshot and exact revision under lawful, purpose-scoped inspection; Content Security supplies technical check results with provider/check-set versions, expiry and explicit unknown/unsupported. Comments Engine owns pending/hold/visible state and must invalidate prior assessments on material edits. A scan outcome never authorises publication.

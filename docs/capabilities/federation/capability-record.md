@@ -149,3 +149,9 @@ Comments Engine owns origin-Node comment/revision visibility and withdrawal even
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration may supply registered, scoped federation selections; Federation owns peer trust, exchange/reconciliation and withdrawal. Source domains and Authorisation govern actual disclosure. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+A Hub/Node may request authorised technical assessment of externally supplied material or links, but remote scan claims are untrusted until provenance and scope validated. Content Security supplies detection evidence only; origin Node controls original publication while receiving Hub controls own listing/index restrictions and withdrawal reconciliation. Do not indiscriminately share private bytes with foreign scanners.
