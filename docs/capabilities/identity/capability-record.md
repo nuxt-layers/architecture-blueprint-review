@@ -43,3 +43,10 @@ Identity retains tenant, group, membership and digital group-owner source facts.
 **Established governing boundary:** Tenant identifiers, tenant isolation/governance, parent–child tenancy (ADR-0017), Identity groups and membership facts belong to Identity; there is no independent `tenancy` capability authority. This preserves the legacy Tenancy reciprocal Billing finding before that redundant candidate directory is eligible for removal.
 
 **Proposed reciprocal input/output boundary:** Billing consumes a trustworthy tenant reference, tenant/entity association and relevant scoped authority where needed, but a tenant or Identity group identifier alone never proves a legal charge issuer, debtor, payer, bill-to party or customer/supplier counterparty. Identity supplies only its authoritative tenant, group and digital-governance references; verified legal-party/contract records require a separately designated owner, not Identity. Billing returns its own charge status and commercial references without modifying tenant or group lifecycle. Cross-tenant commercial queries, charges or exports require independent Authorisation and lawful disclosure checks. Missing or contradictory legal-party evidence holds the affected operation. No direct package dependency or implemented new port is asserted.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Identity owns local opaque principals, standing, tenants and memberships, not civil-identity/KYB verification or assurance that a person is adult, a company officer or authorised seller. Proofing and legal representation evidence owners remain open. If links to verified external identities are kept, require scoped issuer, status, retention and verified subject-binding; do not equate email/domain/group with company authority. Consult the cross-capability review before changing any IAM contract.

@@ -30,3 +30,10 @@
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Commerce safety and merchant controls:** Marketplace retains seller participation, eligibility, listing rules and its own restriction/reinstatement outcomes. Identity verification, verified authority to act for an organisation, merchant standing, payment risk and transaction outcomes are separate facts. KYC/KYB/anti-fraud data should enter by properly owned verification/provider interfaces with privacy/cost controls; universal KYC and smart-contract escrow are **not** presumed OSA mandates. Content Security assesses text/images/links; proposed Moderation owns reports/cases; Marketplace enforces actual listing/seller action with receipts; Hub indexes remain derived.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Marketplace owns seller-participation/merchant eligibility, listing permissions, restrictions and reverification outcomes; it consumes purpose-limited proofs of person/company identity and authority, risk evidence, and lawful KYB/KYC requirements from appropriate owners/providers. Identity account existence is not seller legitimacy. Differentiate legal entity, authority to trade, fraud risk, permitted goods and payment evidence; do not mandate universal KYC or blockchain escrow.

@@ -54,3 +54,10 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Publication safety:** Publisher owns document creation/versioning, approval, publishing, addresses/feeds and actual withdrawal/reinstatement. Risk-based content gates must distinguish pending assessment, unknown/unavailable detection, held, approved and removed states without treating automated flags as guilt. Content Security supplies verdicts; proposed Moderation supplies case conclusions/restriction requests; Publisher independently enforces server-side authorised transitions and returns actual outcome receipts. Its confirmed changes must reconcile Search, Federation Hub indexes and caches; published policy notices are not enforcement proof.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Publisher retains document publication eligibility and enforcement; may need a locally validated, threshold-scoped age-assurance decision for regulated content creation/viewing rather than collecting ID documents. An age-provider approval or user-supplied declaration cannot bypass domain publication holds, legal constraints or Authorisation.

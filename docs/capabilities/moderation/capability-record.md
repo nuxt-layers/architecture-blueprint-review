@@ -58,3 +58,10 @@ Acceptance scenarios, open questions, and more granular responsibility/contract 
 ## Disposition
 
 Retain as **candidate** for future alphabetical conceptual review and classification approval. The owner's approval is approval to document the direction, **not** approval of a standalone implementation, API, normative ADR or legal compliance claim.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Moderation cases may rely on qualified age/identity/representation evidence for restricted actions, impersonation reports and fraud investigations but do not independently prove civil identity or authorise general access. Keep reporter/witness privacy and evidence provenance; adult/child misclassification and identity claims must admit safeguarded challenge. Separate case determination from proofing provider outcomes.
