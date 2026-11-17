@@ -245,3 +245,11 @@ The former `tenancy` note concerning Billing's legal entity, charged party, bill
 ## Identity, Age and Eligibility Assurance — cross-capability review (17 November 2026)
 
 This is a **cross-capability design topic**, **not a newly catalogued stateful capability**. [Review](../reviews/identity-age-eligibility-assurance.md): local Identity principals/memberships, Authentication session assurance, Authorisation decisions, legal representation evidence (owner open), privacy-preserving age claims (custodian open), Marketplace seller eligibility, Legal Compliance applicable duties, Integrations provider transport, Federation external trust and Audit evidence are separate. Avoid a generic global `verified` field or immediate `verification` repository. Classification/evidence custody requires later independent review.
+
+## Verification — conceptual candidate (17 November 2026)
+
+| Entry | Classification | Proposed bounded responsibility |
+|---|---|---|
+| `verification` | **Platform capability candidate** | Purpose-limited identity/age/representation claim requests and qualified attestations; issuer assurance/trust, expiry, revocation, reverification, status and evidence references. No ownership of local principal/session/permission, merchant eligibility, legal registers or raw document dossier by default |
+
+**Owner approved VER-01–VER-12** as conceptual principles. Verification is not a new IAM suite authority merely by being adjacent to Identity, Authentication and Authorisation. Age verification is a specialised claim type; nationally specific verification systems use optional provider-neutral adapters and separate Legal Compliance applicability. See [record](capabilities/verification/capability-record.md), [cross-capability assurance review](../reviews/identity-age-eligibility-assurance.md) and [international comparison](../reviews/verification-international-jurisdictions.md). No implemented or normatively accepted package asserted.
