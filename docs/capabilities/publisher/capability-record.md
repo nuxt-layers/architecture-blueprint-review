@@ -47,3 +47,10 @@
 Own versions, approval, publication and history of policy documents including modern slavery, privacy, cookie and safety notices; publication does not assert legal compliance or activate executable rules. The content-editor supplies generic GUI.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+**Publication safety:** Publisher owns document creation/versioning, approval, publishing, addresses/feeds and actual withdrawal/reinstatement. Risk-based content gates must distinguish pending assessment, unknown/unavailable detection, held, approved and removed states without treating automated flags as guilt. Content Security supplies verdicts; proposed Moderation supplies case conclusions/restriction requests; Publisher independently enforces server-side authorised transitions and returns actual outcome receipts. Its confirmed changes must reconcile Search, Federation Hub indexes and caches; published policy notices are not enforcement proof.
