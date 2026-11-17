@@ -500,3 +500,10 @@ See [tenancy/governance](../../proposals/organisational-tenancy-and-governance.m
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Safety evidence completeness:** Audit receives scoped evidence of risk-policy version, scanner result/provenance, content version/reference, moderator decision/appeal, requested restriction, separately confirmed source enforcement, statutory submission receipt and relevant exceptions. It records independent integrity and completeness without reowning Moderation cases, the original content or regulatory determinations. Avoid unrestricted copies of CSAM/NCII/private-message plaintext; require purpose-specific legally justified restricted evidence custody and lawful retention.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Audit preserves minimised provenance of verification claim/issuer/version, subject-binding category, relying party, purpose, issuance/expiry, revocation, access/eligibility decision and any appeals. Do not duplicate raw passports, facial images, full dates of birth or indefinite federated dossiers; restricted evidence custody and lawful retention are separate qualified concerns.
