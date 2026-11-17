@@ -86,3 +86,7 @@ Store only registered, approved, scoped/versioned values and provenance for perm
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
 
 Configuration provides versioned scoped discussion settings such as target classes, comment/edit windows, guest policy, pre-moderation, rate limits, retention and federation choices. Comments Engine enforces its own domain constraints under effective policy and statutory/security floors; Configuration does not own comment status or override decisions of Legal Compliance/Authorisation. Unknown mandatory policy version must not silently enable posting.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed configuration review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Configuration resolves approved, scoped course authoring, catalogue visibility, review, language, provider and effective-policy selections with provenance. Course owns enforcement and meaning of its own domain rules, and statutory/security minima remain non-overridable. Provisional PR #53 may affect shared presentation and precedence contracts; reconcile before merge.
