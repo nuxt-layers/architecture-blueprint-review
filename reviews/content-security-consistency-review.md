@@ -27,13 +27,13 @@
 6. **Federation:** Receiving Nodes/Hubs evaluate admissible external evidence independently under their local policy; origin source authority, local index visibility and remote withdrawal receipts are distinct.
 7. **Security and governance:** Accepted ADR-0012 and Capability Standard composition, separately owned persistence/outbox, privacy by design, WCAG 2.2 AA GUI and headless mode are retained; ADR-0018 was documented as proposed (not assumed accepted). No implementation repository edits or API invention.
 8. **Contract/acceptance gaps:** The target implementation repository exists but a root `CONTRACT.md` was not verified; no scanner support, deployment, host composition budget, legal compliance, passing CI or independent runtime behaviour is asserted.
-9. **Approved versus proposed:** **CS-09–CS-16** are expressly owner-approved conceptual principles (CS-14 with owner-approved restricted-ingress refinement). **CS-01–CS-08** remain labelled *proposed* pending explicit disposition; cross-capability principles may already support parts of them, but this review does not silently mark each approved.
+9. **Approved versus proposed:** **CS-09–CS-16** are expressly owner-approved conceptual principles (CS-14 with owner-approved restricted-ingress refinement). **CS-01–CS-08** were subsequently explicitly owner-approved on 17 November 2026. Thus **CS-01–CS-16** are all owner-approved conceptual principles; no decision remains pending in this register.
 
 ## Residual sign-off / merge gates
 
 - Review final branch diff against current `master`; recheck if any new master PR lands. Active adjacent work includes Course #56, Department #57, Document #58, Employment #59 and Enrolment #60 and can alter future ownership/reciprocal notes.
 - Check all links/decision statuses, semantic consistency of the Security catalogue and document lifecycle boundary, and final PR mergeability.
 - Verify required CI/checks, signed commits and protected-branch policy through GitHub. The absence of reported checks is not a passing result; CI and the user, not this assistant, run tests/builds.
-- Obtain explicit owner disposition on remaining **CS-01–CS-08** and separate **merge authorisation**. Conceptual completeness does not constitute operational availability or permission to merge.
+- **CS-01–CS-08 owner disposition completed:** all CS-01–CS-16 conceptually approved. Obtain separate **merge authorisation** after final checks. Conceptual completeness does not constitute operational availability or permission to merge.
 
 **Disposition:** Reconciliation completed at documentation/Git level; conceptually coherent. **Draft PR remains unmerged**, pending the gates above.
