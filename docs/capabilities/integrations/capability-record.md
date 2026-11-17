@@ -62,3 +62,10 @@
 Provide verified external company registry, payment and authority evidence transport and provider status, not adjudication of legal authority, commercial settlement or domain ownership. Preserve mapping/provenance, tenant isolation and provider uncertainty.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+Provider-neutral external adapters may support specialist image/NCII detection, URL intelligence, KYB/KYC, age assurance, fraud signals and regulatory submission transport where appropriate; respective specialists/domain owners own semantics and use. Record lawful sharing, processing location, provider/version, costs, timeout, idempotency, unknown outcomes and exit. An external acknowledgement does not establish authoritative legal filing truth.

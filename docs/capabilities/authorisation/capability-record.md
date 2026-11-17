@@ -365,3 +365,10 @@ For imports, organisational migration, provider outage, backup restore or policy
 Maintain per-tenant/group/resource/action decisions for context switching and scoped delegated parent administration; no parent-child tenant or group relationship automatically grants private reads. Contractor permissions must be revocable and cannot silently include ownership transfer. Enforce policy-change separation, independent approvals, legal constraints and mandatory floors in cooperation with source owners. No entitlement alone is an access grant.
 
 **Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+Authorisation decides server-side moderator, evidence-viewer, appeal, merchant and publication operation permissions under trusted context. It does not decide content truth, statutory duties, or independently execute domain removal. Hub subscription or a scanner result never implies rights to private data. High-risk disclosures require bounded purpose, appropriate assurance, reviewer independence and attributable Audit evidence.

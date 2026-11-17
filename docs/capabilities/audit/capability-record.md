@@ -493,3 +493,10 @@ See [tenancy/governance](../../proposals/organisational-tenancy-and-governance.m
 
 **Approved conceptual boundary (16 November 2026):** Cache administration, material security-control changes and required invalidation/erasure failures produce attributable evidence through a published integration boundary, with distinct action, application, propagation and Audit-receipt states. Routine hits and misses do not require business Audit records. Exact risk-tier capture/outage policy is deferred.
 
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+**Safety evidence completeness:** Audit receives scoped evidence of risk-policy version, scanner result/provenance, content version/reference, moderator decision/appeal, requested restriction, separately confirmed source enforcement, statutory submission receipt and relevant exceptions. It records independent integrity and completeness without reowning Moderation cases, the original content or regulatory determinations. Avoid unrestricted copies of CSAM/NCII/private-message plaintext; require purpose-specific legally justified restricted evidence custody and lawful retention.
