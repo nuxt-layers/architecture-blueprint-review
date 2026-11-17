@@ -213,3 +213,11 @@ These conceptual directions refine CR-06 and the candidate dispositions in [`rev
 | MD-08 | Test Publisher and domain public contracts before creating Model, Procedure or Case capabilities | **Open** ownership decision |
 
 Following PR #10 approval, evaluate whether any of these shared invariants require targeted catalogue/ADR amendments rather than individual domain contract provisions.
+
+## Node–Hub federation conceptual direction (17 November 2026)
+
+| ID | Direction | Status | Consequence / evidence |
+|---|---|---|---|
+| R-FED-01 | Distinguish a **Node** (autonomous installation) from **Federation** (candidate platform responsibility) and **Hub** (optional application composition / operator role) | **Review approved** for blueprint documentation; **not adopted** as governing ADR | [Review](../reviews/node-hub-federation-architecture.md) and [Federation record](../docs/capabilities/federation/capability-record.md); no standalone Hub capability or implementation assumed |
+| R-FED-02 | Every Hub operates as a Node; a Node may operate Hub services, publish/query via multiple Hubs or remain standalone | **Review approved** conceptually | Preserve local authority, optional participation, independent Hub governance and non-exclusive indexes |
+| D-FED-01 | Specify network trust/identity, public collection schemas, publication protocol, sync/withdrawal, Search handoff, peer governance and eventual Hub-to-Hub policy | **Open** for dedicated contract/protocol review | Retain ADR-0012/0016, domain ownership and existing IAM/transport boundaries; no implementation until approved |
