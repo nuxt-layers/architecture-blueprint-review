@@ -386,3 +386,9 @@ Authorisation evaluates local resource permissions and delegated scopes from tru
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Verification may provide bounded age, identity or representation claims but does not own permissions, user roles or delegated grants. Authorisation evaluates local action/scope using qualified freshness and subject binding; a Hub's or external provider's trust cannot confer an automatic permission. Refuse unsupported/unknown claims according to operation risk.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine requires resource-scoped server-side action/read decisions for create/reply/edit/delete, local moderation, visibility disclosure and audit/export operations, incorporating target owner, tenant, actor assurance and effective policy. Unknown/failed access checks deny protected operations; signed-in status and role labels do not confer automatic permission. Authorisation owns access decisions, Comments Engine owns command invariants and completed source outcomes.
