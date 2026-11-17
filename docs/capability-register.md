@@ -95,7 +95,7 @@ This entry records review-approved conceptual documentation, not adopted governi
 | `application-compositions` | Composition artefacts | Candidate | Reusable application templates and selected capability wiring; generally not independent stateful services |
 | `organisation-console` | Presentation / application composition, not a business capability | Conceptual name accepted; independent packaging under review | Organisation-neutral dashboards, context selection and management screens consuming authoritative public contracts; no independent business records or grant authority |
 | `user` | Presentation | Candidate | Group-scoped user administration screens via Identity/Profile/Authorisation; no user records |
-| `document` | Platform candidate, unresolved | Candidate | Distinct document-management requirement only if Publisher's document lifecycle is insufficient |
+| `document` | Platform candidate, **unresolved — conditional records custody** | Proposed conceptual review, NOT verified runtime | [Document conditional contract](capabilities/document/capability-record.md): privately controlled originals, custody receipts, holds, scoped disclosure and disposition only if independent authority is approved; Publisher retains published documents, Content Editor their GUI. No repository/package/contract/CI/operational proof verified |
 | `search` | Platform | Candidate | Indexing, query and relevance over authorised source records; no source-of-truth storage |
 | `location` | Platform | Candidate | Coordinates, geospatial and place references; not all postal addresses or site tenancy |
 | `reporting` | Platform | Candidate | Authorised report definitions, aggregation and output; no source transaction records |
