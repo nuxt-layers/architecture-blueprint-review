@@ -62,6 +62,17 @@ This document is the **populated working register**, distinct from its design sp
 | `template-engine` | Library candidate | Under consideration | Secure deterministic template parsing, data binding and content rendering; no template persistence, document lifecycle, arbitrary code execution or business-data lookups |
 | `organisation-model` | Domain / platform boundary to be decided | Retained pending classification review | Prove independent lifecycle for versioned archetypes/positions/relations/capability selection; otherwise use schemas, Configuration or composition; cannot reown IAM facts or legal authority |
 
+
+### Federation and Node–Hub roles (conceptual review, 17 November 2026)
+
+| Entry | Classification | Evidence and status | Scope |
+|---|---|---|---|
+| `node` | Deployment and network participant, **not a capability** | Conceptual role; no special implementation asserted | Independent installation; can be standalone, publisher, discoverer or Hub operator |
+| `federation` | **Platform capability candidate** | [Candidate capability record](capabilities/federation/capability-record.md); no verified `CONTRACT.md`, runtime or repository | Optional peer participation, collection publication/subscription, exchange, synchronisation and withdrawal coordination; no authoritative domain data or search engine |
+| `hub` | **Application composition / operator role** | [Architecture review](../reviews/node-hub-federation-architecture.md); not a standalone capability | Node that composes Federation, Search and applicable governance/safety/presentation to provide discovery/indexing |
+
+**Current decision:** every Hub operates as a Node, while not every Node offers Hub services. A Node may become a Hub by composing the needed capabilities or operate multiple independently scoped Hubs. Record no claim of accepted governing status, package availability, tested protocol or deployed Hub. Implementation and conformance are unverified. The working catalogue has the same provisional entries.
+
 ### Foundation, platform and library candidates
 
 | Name | Classification | Catalogue status | Responsibility / exclusion |

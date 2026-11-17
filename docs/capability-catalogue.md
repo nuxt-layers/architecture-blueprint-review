@@ -97,6 +97,19 @@ These are distinct edges: `requires` is not synonymous with Nuxt `extends`, and 
 
 These names and descriptions are **design options**, not approved independent repositories, mandatory dependencies or delivery commitments. Established capabilities are listed once in the authoritative table above; their existing responsibilities are neither reclassified nor extended by these candidate definitions. Candidate names follow the supplied CSV where meaningful; existing contracts and accepted ADRs take precedence.
 
+
+### Node, Federation and Hub — working conceptual classification (17 November 2026)
+
+| Entry | Working class | Intended responsibility and boundary |
+|---|---|---|
+| `node` | Installation / network participant (not a capability) | Independently governed, autonomous deployment of applications and capabilities; may operate without federation, publish, query or provide Hub services |
+| `federation` | **Platform candidate** | Optional inter-node peer participation, collection subscriptions, public record exchange, delivery/reconciliation, trust coordination and withdrawal; no domain records or Search indexes of its own |
+| `hub` | **Application composition / operating role** | A Node offering independently governed discovery/indexing services by composing Federation, Search and applicable security/moderation/presentation capabilities; not presumptively a standalone stateful capability |
+
+Every Hub operates as a Node; any appropriately configured and authorised Node may operate one or more Hubs, and any Node can remain standalone. A Node may publish to multiple independent Hubs. Hub participation conveys no ownership of originating resources, local memberships or access rights. Domain capabilities remain authoritative; Hub indexes are derived, potentially stale and replaceable. Prefer independent Node-to-Hub subscriptions before considering Hub-to-Hub exchange or replicated shared indexing.
+
+**Evidence:** [Node–Hub architecture review](../reviews/node-hub-federation-architecture.md) and [Federation conceptual record](capabilities/federation/capability-record.md). These are non-normative proposals, not an accepted governing catalogue change, public contract, implemented protocol or instruction to create separate repositories. Apply the classification gate and governing ADR approval before promotion.
+
 ### Foundation, platform and library candidates
 
 | Candidate | Intended class | Potential bounded responsibility / exclusion |
