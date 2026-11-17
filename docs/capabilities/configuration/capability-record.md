@@ -64,3 +64,7 @@ Store only registered, approved, scoped/versioned values and provenance for perm
 
 **Approved conceptual boundary (16 November 2026):** Host-composed backend selection and supported namespace settings are exposed through a provider-neutral caching interface. Configuration retains declared setting provenance and precedence; Caching/source security ceilings cannot be weakened by tenant preference. PostgreSQL is an evaluation preference, not a compulsory provider.
 
+
+## Cross-capability note — Clock conceptual public contract (17 November 2026)
+
+**Proposed, not yet owner-approved.** [Clock](../clock/capability-record.md#idealised-public-input-interfaces-conceptual-contract) validates temporal values, named zones, DST interpretation, formats and the host's effective presentation overrides. Configuration owns declared, approved, scoped/versioned settings and provenance; Profile owns personal locale/zoneinfo; the composition host resolves precedence and passes permitted values. No Clock preferences persistence or direct Configuration dependency is implied; invalid settings are explicitly rejected. The Clock implementation's existing six optional host-declared preferences are not built-in Configuration keys.
