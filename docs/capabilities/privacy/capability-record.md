@@ -62,3 +62,9 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 **Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
 
 **17 November 2026 agreed Comments Engine refinement:** Private comment audiences cannot exceed parent resource permissions; no public index, federation, cache or unrestricted notices. Author editing, departure and erasure rights must normally produce actual deletion or lawful anonymisation, with restricted time-limited evidence only where an identified legitimate legal/complaint purpose requires it. Preserve independent rights of other reply authors and acknowledge downstream-copy/back-up erasure limitations without claiming more deletion than verified.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security's inspection of user-provided content must use a justified purpose, minimised ephemeral references, gated sensitive evidence and controlled retention/transfer; provider use cannot assume consent or lawful access, especially for private/E2EE material. Privacy owns consent/retention/rights constraints and Content Security implements them over its own job/evidence records; source owner handles content erasure.
