@@ -79,3 +79,11 @@ The owner approved **VER-01–VER-12** and the **`verification` Platform candida
 ## Localisation candidate (17 November 2026)
 
 [Localisation](docs/capabilities/localisation/capability-record.md) is the canonical candidate for language and locale adaptation, translation workflows, terminology, quality review and provider-neutral translation. The empty `translate` directory was removed without an alias; the [catalogue](docs/capability-catalogue.md) and [register](docs/capability-register.md) document the rename. Internationalisation remains cross-cutting; Publisher/domain owners retain authoritative content and publication. This is a conceptual classification change only.
+
+## Parallel capability conceptual reviews
+
+The maintained [Parallel Capability Conceptual Review Protocol](docs/review-protocol.md) governs independent capability-review conversations, current governing and blueprint baselines, complete conceptual public input/output contracts, reciprocal findings across other capability records and **mandatory Git and architectural pre-merge checks**. Each conversation creates its dedicated branch and **draft PR at the beginning** after a preliminary identity/baseline check; no PR number is preassigned, and only explicit owner approval permits merge.
+
+Start a new conversation with the short [Capability Review Starter Prompt](docs/capability-review-starter.md). Use the **actual capability directory name** discovered in this repository, which may use underscores rather than hyphens (for example, `docs/capabilities/comments_engine/`). If several conversations update an adjacent capability, preserve both proposals until reconciled rather than overwriting either.
+
+This process is a blueprint working procedure, not a governing ADR. Existing accepted `architecture-rules` documents and public implementation `CONTRACT.md` files retain their proper authority.
