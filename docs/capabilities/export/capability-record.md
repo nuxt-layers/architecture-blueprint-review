@@ -30,4 +30,4 @@
 
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
-**Owner-approved resolution, 17 November 2026:** no independent Document capability or source authority is needed. Export continues to produce authorised artefacts from Publisher's or the relevant domain owner's public data, without re-owning their records, permissions, holds or disclosure decisions. Historical conditional review: [Document](../document/capability-record.md).
+**Owner-approved resolution, 17 November 2026:** no independent Document capability or source authority is needed. Export continues to produce authorised artefacts from Publisher's or the relevant domain owner's public data, without re-owning their records, permissions, holds or disclosure decisions. Historical conditional review: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
