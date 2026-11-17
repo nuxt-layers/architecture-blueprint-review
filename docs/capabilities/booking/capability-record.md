@@ -324,3 +324,17 @@ Customer self-service and operator administration are separate permission/audien
 **Agreed conceptual direction:** retain Booking as an independent Domain responsibility under approved BK-01–BK-05; the governing catalogue's Domain-candidate classification remains unchanged until separate normative adoption. This review **does not amend normative catalogue, ADRs or standards**, create a repository, or approve deployment. Reciprocal conceptual notes in neighbouring records reference this record without completing their own alphabetical reviews. The register should remain candidate until accepted and independently evidenced. Existing template pro forma and the Asset cross-capability note have been incorporated into this fuller record.
 
 **Conceptual sign-off:** **BK-01–BK-05 and the accompanying tenant-specific, Integrations-mediated, Audit/Logging/Reporting interface direction are owner-approved in principle**. This records approval of conceptual scope and boundaries, **not** a completed technical design, implementation, acceptance test, production readiness, provider conformance or legal certification. Specialist policy thresholds and actual public contract alignment remain deferred.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration supplies versioned approved settings; Booking enforces availability, limits, attendance, cancellations and agreed retroactivity. Unknown critical rules cannot allow overselling. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-06/08 (Options C/B):** Booking owns stable resource identity, existence/retirement, availability and the domain meaning of its policy. Configuration may govern approved values only for explicitly registered resource contexts; versioned declarations and effective intervals preserve the rule under which existing bookings were accepted. A room rename/reuse or new cancellation schema never silently changes past commitments.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.

@@ -398,3 +398,14 @@ Comments Engine requires resource-scoped server-side action/read decisions for c
 **Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
 
 **17 November 2026 CE-02 approved refinement:** For private-resource comments, target-owner visibility bounds every comment audience; authorisation separately decides read, post, edit, delete and moderate permissions and must recheck revoked membership/resource access. A direct comment link is not authority. Verification supplies age-assurance evidence only when a qualified resource/audience/service risk policy requires it; successful authentication or verification does not itself grant permission. No public index/export/notification may bypass current audience rules.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Authorisation owns access/grant decisions. Configuration owns revisions and approval history of registered settings, not permission policy enforcement; unresolved decisions fail closed and activation must recheck permission, target scope and approval separation. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed authorisation review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Content Editor shows the source-owner-advertised permitted actions and step-up prompts only. Publisher and other data owners reauthorise every server command against trusted caller/site/resource context; browser state or visible controls never grant permission. Protected hidden resources do not disclose existence.
