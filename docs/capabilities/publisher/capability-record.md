@@ -79,3 +79,7 @@ Content Editor consumes Publisher's published type/schema, authorised admin read
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 Publisher requests revision-bound technical checks for registered documents before the exposure decisions its policy requires; Content Security returns scoped detection evidence, coverage and unknown/stale states. Publisher owns actual publish/hold/unpublish and reconciles address/feed/cache exposure; Content Editor presents status through Publisher/public contracts, not detector tables.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** the separate `document` capability candidate is retired. Publisher remains authoritative for its registered document types, revisions, approvals, publication, addresses, feed and withdrawal lifecycle. Source-specific business records remain with their domain owners; Publisher does not automatically acquire invoice, employment or other domain master records. No second document master, service or event stream is required. Historical analysis: [Document](../document/capability-record.md).

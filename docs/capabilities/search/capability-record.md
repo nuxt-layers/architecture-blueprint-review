@@ -35,3 +35,7 @@
 ## Cross-capability note — Booking final conceptual completeness (15 November 2026)
 
 **Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Search indexes minimal, authorised reservable offerings and availability hints; index freshness/coverage must be explicit. Search never confirms slots or grants guest visibility. Booking rechecks live capacity and permissions before committing; Search outage does not block native booking. No currently implemented integration contract is implied.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** no separate Document record owner will supply another indexing stream. Search consumes authorised projections from Publisher and the applicable domain record owners and rechecks current access before protected retrieval; a search hit does not grant disclosure. Historical conditional review: [Document](../document/capability-record.md).

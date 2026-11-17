@@ -194,3 +194,7 @@ Command requests must support version preconditions, explicit danger confirmatio
 **Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent content_editor draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
 
 Content Editor is a presentation consumer, not an assessment or publication owner. It should display authorised revision-bound Content Security check status and incomplete/stale explanations through Publisher's public workflow, with safe recheck affordances if Publisher permits; no detector tables, final safety adjudication or extra editor-owned state.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** `document` is retired as a standalone capability. Content Editor continues to own only the generic editorial presentation of Publisher-registered types and no document domain authority. No separate Document management GUI is proposed. The superseded conditional review is retained at [Document history](../document/capability-record.md).
