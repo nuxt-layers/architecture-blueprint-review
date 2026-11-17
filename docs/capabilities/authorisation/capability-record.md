@@ -398,3 +398,7 @@ Comments Engine requires resource-scoped server-side action/read decisions for c
 **Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
 
 **17 November 2026 CE-02 approved refinement:** For private-resource comments, target-owner visibility bounds every comment audience; authorisation separately decides read, post, edit, delete and moderate permissions and must recheck revoked membership/resource access. A direct comment link is not authority. Verification supplies age-assurance evidence only when a qualified resource/audience/service risk policy requires it; successful authentication or verification does not itself grant permission. No public index/export/notification may bypass current audience rules.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed authorisation review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course operations, preview, catalogue disclosure, revision publication, import/export and withdrawal require server-side, resource-aware decisions bound to trusted tenant/caller and appropriate assurance. Authorisation owns the decision model; Course owns its state transitions and no learner admission/completion. Unknown/denied access fails closed without cross-tenant existence disclosure.
