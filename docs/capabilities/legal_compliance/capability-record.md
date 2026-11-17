@@ -86,6 +86,11 @@ Legal Compliance qualifies site/service/jurisdiction-specific participation, har
 
 **17 November 2026 CE-02/CE-05/CE-07 agreed refinement:** Comments Engine applies qualified OSA and privacy/retention duties based on actual service, audience and risk, without blanket adult verification. Privately addressed comments are not automatically OSA-exempt; a genuinely internal business service may qualify under Schedule 1 paragraph 7 subject to full conditions. Author erasure is default, with time-limited narrowly justified complaint, legal-hold or claims evidence; Legal Compliance owns the applicability/retention qualifications, not source comment deletion.
 
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Legal Compliance supplies jurisdiction/time-qualified mandatory constraints and holds. Configuration may store bounded approved choices but cannot independently interpret legal requirements or treat unknown obligations as permissive. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
 ## Content Security — reciprocal conceptual interface (17 November 2026)
 
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
