@@ -2,7 +2,7 @@
 
 **Capability:** `content-security`; actual blueprint directory `content_security`.  
 **Classification:** Platform (established catalogue responsibility).  
-**Review status:** Proposed conceptual model for owner review, not an approved operational contract.  
+**Review status:** Owner-approved conceptual decisions CS-01–CS-16; documented idealised architecture remains non-normative and not an implemented operational contract.  
 **Evidence (17 November 2026):** Governing `architecture-rules/master@2b5c0628e88b9698c9ad6ad57cc5315c8f879953`; blueprint opening `master@41ce9f3ffba9063407a6af0d0672dcbbd6a8b299`; draft [PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55). The repository `nuxt-layers/content-security` exists at `master@f27469c66aee3cc13e81a0e0fd0554125ab884cb` (initial commit), but root `CONTRACT.md` is not found; runtime/API/CI/acceptance claims are **unverified**.  
 **Governing rules:** accepted ADR-0012, normative Capability Standard, Security and Privacy; accepted ADR-0001/0002/0009/0011/0016 where applicable. ADR-0018 was marked **proposed** within its file when inspected: do not treat as accepted solely because present on master.
 
@@ -134,18 +134,18 @@ Publisher, Comments Engine, Media and Marketplace screens display a compact cont
 
 **Established:** governing Platform classification and detection-only ownership; public-contract and security/privacy/composition rules. **Approved conceptual direction (prior review):** separate detection (Content Security), adjudication/cases (proposed Moderation), owner enforcement, legal applicability and independent Audit; provider results must remain provenance-qualified and unknown must not be represented as clear. These are not implemented contracts.
 
-**Proposed CS-01:** Define classification/check results as scoped, versioned technical evidence and require explicit unknown/unsupported states.  
-**Proposed CS-02:** Source owner decides risk-based exposure/hold; required unavailable checks cannot silently clear.  
-**Proposed CS-03:** Local/minimal supported checks permitted, but do not promise universal provider-free safety coverage.  
-**Proposed CS-04:** Scoped ephemeral material references over blanket content copying and third-party transfer.  
-**Proposed CS-05:** Preserve historical results with revisions; invalidate on edits and material policy/detector changes.  
-**Proposed CS-06:** Provide headless service plus optional technical operator GUI; Moderation owns cases/reviewer decisions.  
-**Proposed CS-07:** Treat per-modality/provider capabilities and no-provider modes explicitly; qualify cost, lawful transfer, accuracy and deletion.  
-**Proposed CS-08:** Separate scanner assessment lifecycle from source-domain hold, case adjudication, appeals and Audit.
+**Owner-approved CS-01 (17 November 2026):** Define classification/check results as scoped, versioned technical evidence and require explicit unknown/unsupported states.  
+**Owner-approved CS-02 (17 November 2026):** Source owner decides risk-based exposure/hold; required unavailable checks cannot silently clear.  
+**Owner-approved CS-03 (17 November 2026):** Local/minimal supported checks permitted, but do not promise universal provider-free safety coverage.  
+**Owner-approved CS-04 (17 November 2026):** Scoped ephemeral material references over blanket content copying and third-party transfer.  
+**Owner-approved CS-05 (17 November 2026):** Preserve historical results with revisions; invalidate on edits and material policy/detector changes.  
+**Owner-approved CS-06 (17 November 2026):** Provide headless service plus optional technical operator GUI; Moderation owns cases/reviewer decisions.  
+**Owner-approved CS-07 (17 November 2026):** Treat per-modality/provider capabilities and no-provider modes explicitly; qualify cost, lawful transfer, accuracy and deletion.  
+**Owner-approved CS-08 (17 November 2026):** Separate scanner assessment lifecycle from source-domain hold, case adjudication, appeals and Audit.
 
 ### Owner-approved conceptual decisions — 17 November 2026
 
-**Approval scope:** The owner explicitly approved **Option C** for CS-09, CS-10, CS-11 and CS-12 in draft PR #55. This approves the conceptual principles below, **not** specific thresholds, provider choice, implementation, legal compliance, acceptance evidence or merging. CS-01–CS-08 retain their previously recorded proposal status.
+**Approval scope:** The owner explicitly approved **Option C** for CS-09, CS-10, CS-11 and CS-12 in draft PR #55. This approves the conceptual principles below, **not** specific thresholds, provider choice, implementation, legal compliance, acceptance evidence or merging. CS-01–CS-08 were additionally and explicitly owner-approved on 17 November 2026; all CS-01–CS-16 are now conceptually approved.
 
 - **CS-09 — Option C: Risk-based coverage and timing.** Apply baseline security validation to all untrusted submissions and risk-, modality-, exposure-, audience- and jurisdiction-specific assessment profiles. Run mandatory checks before the relevant exposure where required. When a required check is missing, unsupported, stale or unavailable, communicate an incomplete/unknown assessment and have the authoritative content owner apply a protective pending/hold/reject policy; never fabricate clearance. Not every private byte is to be automatically shared with an external classifier.
 - **CS-10 — Option C: Proportionate disclosure.** Give contributors understandable outcomes and safe challenge/review routes without exposing attack-enabling detection methods, confidential threat feeds or other people's data. Release additional technical evidence only to appropriately authorised reviewers/administrators within purpose, privacy and tenant limits. A remote Hub receives only permitted, provenance-qualified information.
@@ -186,7 +186,7 @@ Publisher, Comments Engine, Media and Marketplace screens display a compact cont
 
 **Implementation alignment (not authorised here):** verify/create independently usable root `CONTRACT.md`; compare real entry points, provider adapters, owned stores/outbox, test fakes, storage register and minimal consumer evidence; demonstrate per-modality failure and permission tests, independent source owner scenarios and 50-line Nuxt adapter if used. No implementation was modified or tested in this PR.
 
-**Conceptual sign-off:** Pending explicit owner review. No assertion of implementation availability, verified package compatibility, deployed operations, provider certification, or legal compliance.
+**Conceptual decision disposition:** CS-01–CS-16 are explicitly owner-approved at the conceptual level. This is not approval of implementation, final operational acceptance or merging. No assertion of implementation availability, verified package compatibility, deployed operations, provider certification or legal compliance.
 
 ---
 ## Earlier preserved reciprocal evidence
