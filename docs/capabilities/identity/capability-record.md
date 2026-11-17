@@ -77,3 +77,7 @@ Comments Engine uses stable Identity subject/tenant/group references and status-
 **Owner-approved CFG-05/06 (Options B/C):** Identity remains authoritative for account and resource-associated tenant/group identities, membership, group lifecycle and any registered group ancestry; Configuration does not create an alternative user profile or generic resource hierarchy. Resource-specific settings require their *own domain's* stable resource identifier and lifecycle/authority checks.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Employment reciprocal conceptual interface — 17 November 2026
+
+**Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not an Identity API amendment.** Identity owns principals, tenant/group structures, membership and digital governance, none of which proves employment or legal employer-of-record. Employment consumes scoped standing and identifier facts and provides dated worker-engagement status signals; departures must coordinate revocation and access reviews through published IAM contracts rather than silently deleting memberships or sessions. Tenant/group identifiers do not establish the employing legal entity. Access to remuneration/personnel records requires separate Authorisation and Privacy checks. See [Employment public contract](../employment/capability-record.md).

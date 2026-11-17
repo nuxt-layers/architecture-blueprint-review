@@ -48,3 +48,10 @@
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Scheduler invokes due Configuration tasks; Configuration alone determines eligibility, idempotency, activation, expiry, retention and outbox transitions. Missed jobs remain explicitly pending/overdue. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Employment workforce-time boundary — 17 November 2026
+
+**Status: Proposed reciprocal clarification arising from owner-approved EMP-03 in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59); Scheduler's own review is not complete.** This `scheduler` is an infrastructure/platform timed-work facility for registered background triggers, execution attempts, retries and failure handling. It does **not** own planned staff shifts, rosters, attendance, time cards, legal working-time compliance or payroll hours. Employment owns contractual working patterns and entitlement; the separate, owner-approved conceptual Domain candidate `time-attendance` owns actual clock/timesheet evidence; neither Employment nor Scheduler owns that source. Workforce Scheduling, if independently justified, would own planned shifts; Scheduler may invoke timed reminders or reconciliation only through domain public commands. A scheduled tick is not proof that a person worked. See [Employment conceptual contract](../employment/capability-record.md).
+
+
+**Employment EMP-03 owner-approved refinement:** The previously proposed nested Employment Time & Attendance approach has been superseded by the independently owned conceptual [Time & Attendance Domain candidate](../../../proposals/time-attendance-ownership.md). The existing `scheduler` remains infrastructure timing only. This does not assert that a workforce-rostering or time-attendance implementation exists.

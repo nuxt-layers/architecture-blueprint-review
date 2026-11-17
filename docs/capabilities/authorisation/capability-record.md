@@ -409,3 +409,7 @@ Comments Engine requires resource-scoped server-side action/read decisions for c
 **Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed authorisation review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Content Editor shows the source-owner-advertised permitted actions and step-up prompts only. Publisher and other data owners reauthorise every server command against trusted caller/site/resource context; browser state or visible controls never grant permission. Protected hidden resources do not disclose existence.
+
+## Employment reciprocal conceptual interface — 17 November 2026
+
+**Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not an implemented Authorisation interface.** Employment supplies a time-bounded, source-qualified standing signal for a specific worker engagement; Authorisation decides actions on individual personnel records, terms, rosters and management operations using actor/resource/employer/tenant context, revocation, assurance and field/purpose constraints. Employment status does not itself grant Identity membership, platform access or payroll visibility; stale or ambiguous standing cannot be used to permit sensitive actions. See [Employment conceptual record](../employment/capability-record.md).
