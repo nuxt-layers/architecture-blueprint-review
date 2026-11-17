@@ -76,3 +76,10 @@ Provider-neutral external adapters may support specialist image/NCII detection, 
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 External proofing, age-assurance and merchant-verification adapters should be provider-neutral where approved by public contracts: trusted callbacks/nonces/audience, lawful provider processing and data minimisation, claim quality, expiration/revocation, errors, billing, retries and outages. Integrations transports qualified assertions, not independent legal identity, merchant permission or content access decisions.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Proposed Verification capability consumes national ID, age/KYB, document-proofing or credential issuers through provider-neutral Integrations/host adapters where contract-appropriate. Integrations owns transport and connection lifecycle, never the attested truth or local eligibility; country-specific APIs need lawful provider access, data-residency and usage-right checks.
