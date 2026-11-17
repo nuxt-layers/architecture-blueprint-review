@@ -189,3 +189,11 @@ This entry records review-approved conceptual documentation, not adopted governi
 **Preservation evidence:** legacy Tenancy's legal-entity/Billing note moved into [Identity](capabilities/identity/capability-record.md) and [Billing](capabilities/billing/capability-record.md); Company Console's navigation, governance, subscriptions, quota and policy dashboard requirements into [Application Compositions](capabilities/application_compositions/capability-record.md). [Membership](capabilities/membership/capability-record.md) and [Organisation Model](capabilities/organisation_model/capability-record.md) are retained candidates; neither has been prematurely promoted. [Organisation Console](capabilities/organisation_console/capability-record.md) is the accepted renamed presentation concept; its independently packaged status still requires a separate classification decision.
 
 **Deferred action:** following review and merge of this preservation PR, create a second focused PR for directory removal only. Reconfirm that content is transferred, current governing references remain consistent, and all relative links have been repaired before deleting any of the eight directories. No governing amendment is needed solely to perform this classification: the current accepted catalogue and ADR-0017 already establish these boundaries.
+
+## Identity, Age and Eligibility Assurance — working review index (17 November 2026)
+
+| Topic | Classification | Status and source | Ownership disposition |
+|---|---|---|---|
+| Identity / age / eligibility assurance | **Cross-capability architectural review**, not an independent registered capability | Owner-approved direction, [dedicated review](../reviews/identity-age-eligibility-assurance.md), no verified new implementation | Identity owns local principals; Authentication sessions; Authorisation access; Marketplace merchant eligibility; Legal Compliance laws; external proofing and age evidence custody **open**, no mandatory additional package |
+
+Do not equate an installed Identity or Authentication package with verified civil identity, adult age, organisation authority or seller trustworthiness. Federated assertions must not create local memberships or grants without independent policy decisions.
