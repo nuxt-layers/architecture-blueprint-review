@@ -87,3 +87,7 @@ Proposed Verification capability consumes national ID, age/KYB, document-proofin
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Integrations may adapt remote LMS course catalogues into provenance-marked Course draft imports and controlled exports; Course owns any locally accepted definition. Provider claims do not establish enrolment, completion, course accreditation or publication. This note does not complete the separate integrations review.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed integrations review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-10 agreed principle:** provider-specific accreditor/awarding-body registers, recognition status, issuer/delegate mandates, qualification codes and credential status/award responses are obtained through authenticated, provenance-rich Integrations connectors. They must expose origin, effective dates, verification time, stale/unknown/revoked status and reconciliation; cannot silently transform remote assertions into Course, Assessment or qualification authority. Course can retain safe verified-as-of recognition references; actual award/credential lifecycle belongs to a separately reviewed authority boundary.
