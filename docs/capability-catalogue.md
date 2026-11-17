@@ -257,3 +257,12 @@ This is a **cross-capability design topic**, **not a newly catalogued stateful c
 ### Localisation candidate rename (17 November 2026)
 
 **Canonical name:** `localisation`. The former `translate` entry was an empty candidate and its directory is removed, not retained as an alias. All active references should use `localisation`. [Capability record](capabilities/localisation/capability-record.md) documents the conceptual scope and ten proposed public contract surfaces. Internationalisation remains a cross-cutting architecture requirement; translation is a function within Localisation. Publisher, Product/Marketplace, Configuration/Profile, Clock and presentation retain their authoritative boundaries. This is a non-normative working catalogue update; the governing `architecture-rules` catalogue requires its own approved PR.
+
+
+### Time & Attendance — conceptual Domain candidate (17 November 2026)
+
+| Candidate | Status | Proposed responsibility and exclusions |
+|---|---|---|
+| `time-attendance` | **Owner-approved conceptual boundary** under Employment EMP-03; detailed review pending | Actual time/attendance observations, timesheets, breaks, corrections, evidence and approval states across permitted employment and non-employment participation. Employment owns contracted hours/terms, prospective Workforce Scheduling owns rosters, Payroll calculates remuneration, Project/Task owns activity allocations and platform `scheduler` owns background job triggers. No implementation repository, public contract or accepted governing classification is implied. |
+
+See [Time & Attendance ownership proposal](../proposals/time-attendance-ownership.md) and [Employment record](capabilities/employment/capability-record.md). Proposed candidate identifier and eventual `docs/capabilities/time-attendance/` record should be confirmed through its own dedicated conceptual review. This working catalogue change does not amend `architecture-rules`.
