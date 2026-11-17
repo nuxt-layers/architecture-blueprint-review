@@ -188,3 +188,9 @@ Command requests must support version preconditions, explicit danger confirmatio
 - **Suite intent agreed:** Content Editor is a reusable **presentation suite** for formatted text/documents, spreadsheets and whiteboards. Do not create new capabilities or appropriate Publisher's authority solely because these features are desired. Investigate what authoritative workbook/board lifecycle contracts are needed during implementation design. Permissive licences preferred; commercial/reciprocal components require explicit review rather than assuming eligibility.
 
 **Remaining open technical architecture (not decision re-opening):** workbook/whiteboard owner and format, simultaneous editing transport by format, Publisher integration and autosave revision semantics, open-source versus commercial feature boundaries, storage/recovery/privacy, Office import/export fidelity and host compatibility. These require evidence and design work, not a fresh vote on approved intended use.
+
+## Content Security — reciprocal interface (17 November 2026)
+
+**Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent content_editor draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
+
+Content Editor is a presentation consumer, not an assessment or publication owner. It should display authorised revision-bound Content Security check status and incomplete/stale explanations through Publisher's public workflow, with safe recheck affordances if Publisher permits; no detector tables, final safety adjudication or extra editor-owned state.

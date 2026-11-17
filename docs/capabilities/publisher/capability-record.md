@@ -73,3 +73,9 @@ Publisher and other registered target owners retain eligibility/visibility, owne
 **Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed publisher review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Content Editor consumes Publisher's published type/schema, authorised admin reads, previews, history, backlinks and revision-conditioned commands. Publisher remains fully headless and exclusively owns document/version/approval/publication/retention decisions and committed outbox events; the editor is optional, not a Publisher runtime requirement. Network uncertainty is reconciled against Publisher's authoritative state, not UI optimism.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Publisher requests revision-bound technical checks for registered documents before the exposure decisions its policy requires; Content Security returns scoped detection evidence, coverage and unknown/stale states. Publisher owns actual publish/hold/unpublish and reconciles address/feed/cache exposure; Content Editor presents status through Publisher/public contracts, not detector tables.

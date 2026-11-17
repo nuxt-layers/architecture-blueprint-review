@@ -531,3 +531,9 @@ Comments Engine is authoritative for comment creation/edit/deletion, visibility,
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Content Editor publishes no authoritative document/business audit event. Publisher and other owners supply committed facts; any UI analytics are separate, privacy-minimised diagnostics.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security supplies minimised attributable request, completion, detector/policy version, reassessment/override and evidence disclosure events. Audit independently retains trustworthy receipts/integrity and completeness; technical scan evidence is neither legal guilt nor an Audit custody substitute. Avoid copying raw harmful images/text into routine audit records.

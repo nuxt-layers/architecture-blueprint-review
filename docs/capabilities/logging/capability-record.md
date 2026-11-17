@@ -104,3 +104,9 @@ Comments Engine offers structured diagnostic codes, safety-assessment failures, 
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Only privacy-minimised error codes, timings and correlations belong in technical logs; no raw drafts, secret fields or content. Source owners remain authoritative for business records.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security supplies redacted diagnostic failure, latency, correlation and provider error information without copying risky raw content, secret/hash datasets or private reporter identities. Logging owns operational logs, not independent audit proof or scanning status authority.

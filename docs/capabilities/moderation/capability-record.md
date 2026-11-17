@@ -71,3 +71,9 @@ Moderation cases may rely on qualified age/identity/representation evidence for 
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine remains source-of-truth for comment revisions, thread structure, local visibility, emergency holds and enforced receipts. Moderation candidate owns cross-domain reports, cases, appeals and case decisions. Exchange precise tenant/target/comment/revision and qualified evidence references; treat request acceptance, completed enforcement and remote withdrawal as different facts. Revisions, source policies and unknown/conflict outcomes must be explicit. No duplicate author text or automatic permission from a case decision.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security owns qualified detection evidence, revisions and incomplete/unknown results; Moderation owns cross-domain reports, adjudication, appeal and case decisions. Moderation may request a scoped re-assessment or receive an indicator/evidence reference but cannot rewrite the historical verdict. Source owner alone performs and confirms holds/releases.
