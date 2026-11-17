@@ -39,3 +39,8 @@
 ## Reciprocal note — approved CLK-03/CLK-04 reliability boundaries (17 November 2026)
 
 **Clock conceptual decisions approved; Infrastructure implementation not established.** [Clock's final completeness review](../clock/capability-record.md#final-completeness-review--eight-concerns-resolved-17-november-2026) requires Infrastructure to provide approved verified UTC synchronisation and a clearly evidenced, versioned source-quality status to authorised host consumers: applied versus desired source, authentication result, sync freshness, offset/uncertainty, degraded/holdover/unavailable state, policy version, failure and recovery. An NTP hostname or successful current-time read alone cannot certify trust. Infrastructure owns step/slew corrections, leap-smear compatibility, bounded holdover and recovery mechanics; no tenant source selection. Infrastructure does not own business expiry decisions, monotonic timeout policies or Clock's time-zone conversion. Exact assurance thresholds, synchroniser and host interface remain technical design.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Infrastructure applies and verifies host/backend operational configuration, including NTP/UTC synchroniser. Configuration may offer privileged deployment-level selections only if explicitly approved; tenant/account time preferences never govern shared UTC. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
