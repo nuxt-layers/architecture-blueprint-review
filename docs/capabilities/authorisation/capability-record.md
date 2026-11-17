@@ -398,3 +398,8 @@ Comments Engine requires resource-scoped server-side action/read decisions for c
 **Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
 
 **17 November 2026 CE-02 approved refinement:** For private-resource comments, target-owner visibility bounds every comment audience; authorisation separately decides read, post, edit, delete and moderate permissions and must recheck revoked membership/resource access. A direct comment link is not authority. Verification supplies age-assurance evidence only when a qualified resource/audience/service risk policy requires it; successful authentication or verification does not itself grant permission. No public index/export/notification may bypass current audience rules.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Authorisation owns access/grant decisions. Configuration owns revisions and approval history of registered settings, not permission policy enforcement; unresolved decisions fail closed and activation must recheck permission, target scope and approval separation. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
