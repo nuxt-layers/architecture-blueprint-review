@@ -144,3 +144,7 @@ Federation can transport Verification's bounded age/identity/organisation eviden
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine owns origin-Node comment/revision visibility and withdrawal events. Any outbound public discussion/feed or inbound remote reply is opt-in and subject to origin/publication rights, provenance, local trust, eligibility, audience, expiry, replay and conflict protection. Federation owns peer/subscription/transmission receipts; Hub Search owns derived index state. A local comment withdrawal is not proof of remote Hub/cache removal; reconcile acknowledgements without granting remote peers local authorisation.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may expose authorised, attributed, versioned catalogue descriptors and withdrawal facts for optional federation. Federation owns transport, peer subscriptions and reconciliation, not curriculum source authority or enrolment; remote copies can be stale and must respect disclosure. This does not complete federation's own review.
