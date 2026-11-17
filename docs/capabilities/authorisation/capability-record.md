@@ -372,3 +372,10 @@ Maintain per-tenant/group/resource/action decisions for context switching and sc
 **Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 Authorisation decides server-side moderator, evidence-viewer, appeal, merchant and publication operation permissions under trusted context. It does not decide content truth, statutory duties, or independently execute domain removal. Hub subscription or a scanner result never implies rights to private data. High-risk disclosures require bounded purpose, appropriate assurance, reviewer independence and attributable Audit evidence.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Authorisation evaluates local resource permissions and delegated scopes from trusted actors, domain owners, verified evidence and mandatory constraints. A qualified age credential or representation attestation may be one input, but is not an access grant. Enforce purpose, proof freshness, local issuer policy and fail-closed/unknown semantics where required; cross-Node assertions and group/tenant membership are not automatically portable authority.
