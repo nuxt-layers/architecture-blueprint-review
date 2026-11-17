@@ -117,3 +117,10 @@ If independently justified, Federation owns the minimum durable state for peer a
 - **FED-Q10:** Under what measured need would Hub-to-Hub federation or distributed index replication be justified?
 
 **Disposition:** record `federation` as a candidate, `hub` as composition, and `node` as deployment/participant role. Proceed to independent contract/protocol/security evaluation before proposing a governing ADR, creating an implementation repository, altering IAM or installing new network services.
+
+
+## Online Safety and Content Governance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
+
+**Hub moderation boundary:** An originating Node owns its source publication, and a Hub Node independently owns peering/acceptance and its derived index visibility through Federation and Search. Proposed Moderation may coordinate Hub-local reports, appeals and enforcement requests, but cannot delete source records or make global criminal determinations. Signed external abuse/block feeds are scoped, attributable and appealable evidence, not mandatory global consensus. Propagate source withdrawals with version/checkpoint, report stale/unconfirmed Hub removals, and qualify Hub-specific OSA duties separately.
