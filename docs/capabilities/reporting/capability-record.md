@@ -85,3 +85,7 @@ Comments Engine supplies authorised comment submissions (including pending/rejec
 ### Comments Engine CE-06 — approved private appreciation exception (17 November 2026)
 
 **Status:** Owner-approved conceptual refinement in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), not implemented. Comments Engine may hold essential individually scoped acknowledgement records to prevent duplicates, permit withdrawal and support privacy and misuse enforcement. It may present a private qualitative appreciation notice to an authorised recipient, but **never an accumulating count**. Reporting must not repurpose these records into popularity metrics, public reaction counts, leaderboards, engagement optimisation or individual reputation scores. Aggregate abuse diagnostics require distinct justified purposes and disclosure restrictions.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course supplies authorised versioned course catalogue, curriculum and lifecycle facts; Reporting owns derived analytics. Learner admission and completion measures must come from Enrolment/Training with independent disclosure checks, not from Course. This note does not complete the separate reporting review.
