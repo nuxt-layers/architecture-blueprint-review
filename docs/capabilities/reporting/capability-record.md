@@ -70,3 +70,9 @@ References: [tenancy](../../proposals/organisational-tenancy-and-governance.md),
 **Status:** Review-approved documentation direction, not an implemented interface or governing ADR. See [safety review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 Reporting consumes authorised source, Moderation, Content Security, Audit and Federation outcomes to derive scoped indicators: submission assessment coverage with denominator, exposure and enforcement latency, case backlog, appeals/reversals, provider failures, reporting and Hub/cache withdrawal gaps. It does not own case or domain facts; full scanning coverage does not prove accuracy or compliance.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
+
+Comments Engine supplies authorised comment submissions (including pending/rejected), exposure and visibility transitions, edit/erase/restore outcomes, thread volume and qualified coverage denominators, policy/version, freshness/completeness, tenant and target granularity. Reporting calculates cross-source aggregates and compliance indicators using Moderation, Content Security and Audit evidence, without becoming comment owner. Distinguish hidden from deleted, request from actual enforcement, missing measurements, Hub withdrawals and false-positive reversals.
