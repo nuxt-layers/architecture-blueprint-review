@@ -392,3 +392,9 @@ Verification may provide bounded age, identity or representation claims but does
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine requires resource-scoped server-side action/read decisions for create/reply/edit/delete, local moderation, visibility disclosure and audit/export operations, incorporating target owner, tenant, actor assurance and effective policy. Unknown/failed access checks deny protected operations; signed-in status and role labels do not confer automatic permission. Authorisation owns access decisions, Comments Engine owns command invariants and completed source outcomes.
+
+### Comments Engine — approved CE-02/CE-05/CE-07 refinement (17 November 2026)
+
+**Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
+
+**17 November 2026 CE-02 approved refinement:** For private-resource comments, target-owner visibility bounds every comment audience; authorisation separately decides read, post, edit, delete and moderate permissions and must recheck revoked membership/resource access. A direct comment link is not authority. Verification supplies age-assurance evidence only when a qualified resource/audience/service risk policy requires it; successful authentication or verification does not itself grant permission. No public index/export/notification may bypass current audience rules.
