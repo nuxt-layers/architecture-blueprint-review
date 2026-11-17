@@ -86,3 +86,9 @@ Store only registered, approved, scoped/versioned values and provenance for perm
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
 
 Configuration provides versioned scoped discussion settings such as target classes, comment/edit windows, guest policy, pre-moderation, rate limits, retention and federation choices. Comments Engine enforces its own domain constraints under effective policy and statutory/security floors; Configuration does not own comment status or override decisions of Legal Compliance/Authorisation. Unknown mandatory policy version must not silently enable posting.
+
+## Content Security — reciprocal interface (17 November 2026)
+
+**Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent configuration draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
+
+Configuration owns approved, scoped versioned scanner-profile preferences and provider budget settings within non-overridable security/legal floors; Content Security validates supported checks and executes assessments, while source owners enforce publication holds. Effective values, version, expiry and unavailable/invalid handling must be surfaced; Configuration must not become an arbitrary scanning policy interpreter.
