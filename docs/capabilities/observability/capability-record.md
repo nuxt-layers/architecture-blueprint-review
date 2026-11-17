@@ -38,3 +38,15 @@
 
 **Approved conceptual boundary (16 November 2026):** Observability consumes backend-independent, bounded measurements of live health, hit/miss ratios, latency, capacity, freshness and invalidation lag, and owns metric histories and alerts. Caching remains owner of contemporaneous operational cache validity; telemetry is not proof of revoked access or successful erasure.
 
+
+## Cross-capability note — Clock and infrastructure time synchronisation (17 November 2026)
+
+**Proposed relationship reflecting owner-approved Clock boundaries; Observability review incomplete.** [Clock](../clock/capability-record.md#owner-approval-and-ntp-governance-clarification-17-november-2026) provides temporal semantics and injected time source. Infrastructure operates the host's time synchroniser; Observability owns authorised live and historical source availability, offset/drift, uncertainty, synchronisation freshness, faults and threshold alerts, without claiming the server time is cryptographically verified from a hostname alone. Infrastructure's optional operator GUI may consume these metrics through an explicitly published read contract; Logging owns diagnostic records and Audit owns accountable administrative changes. Failure/degradation must be represented explicitly and not silently counted as healthy.
+
+## Reciprocal note — Approved NTP source classes and operator diagnostics (17 November 2026)
+
+**Clock boundaries approved; no implemented Observability adapter asserted.** [Clock's UTC-source policy](../clock/capability-record.md#approved-utc-source-classification-and-geographic-selection-17-november-2026) distinguishes national UTC laboratories, NTS-authenticated public services, and geographically routed community pools. Observability should expose authorised live and historical source health, applied source identity, authenticated/unverified state, measured offset, drift, uncertainty, synchronisation freshness, recent failures and alarms to Infrastructure's optional operator screen. Configuration governs source choice, Infrastructure operates synchronisation, Logging records technical faults and Audit receives privileged changes; a green status is not itself proof of cryptographically assured or legally certified time.
+
+## Reciprocal note — CLK-03/CLK-04 trusted-time health and clock adjustments (17 November 2026)
+
+**Agreed Clock relationship; no implemented read port asserted.** [Clock's final completeness review](../clock/capability-record.md#final-completeness-review--eight-concerns-resolved-17-november-2026) delegates time-source health, quality-measurement freshness, offset/drift/uncertainty histories, synchronisation loss, degraded/holdover status, restoration and clock-adjustment alerts to Observability using Infrastructure-originated telemetry. Publish only authorised, bounded health data to host/administrative consumers; an observed metric is not a cryptographic proof. Operational alerts cannot substitute for server-side policy checks on each security-sensitive operation. No raw cross-tenant clock data, secrets or private timestamps by default.
