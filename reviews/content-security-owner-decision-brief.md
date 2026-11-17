@@ -1,6 +1,6 @@
 # Content Security — scope clarification and owner decision brief (17 November 2026)
 
-**Status:** Proposed clarification in the existing draft PR #55. This is not owner approval, implementation design, or merge authorisation.
+**Status:** Scope clarification remains proposed in draft PR #55. **CS-09–CS-12 Option C were explicitly owner-approved conceptually on 17 November 2026**; this is not implementation design, acceptance or merge authorisation.
 
 ## Current baseline change
 
@@ -18,7 +18,7 @@ The owner has identified underscores in capability directory names as a typo and
 - **Security everywhere** means every content-producing/importing/transforming/distributing capability must have applicable safe-processing/permission/rendering safeguards, not that every private byte must be shipped to an external classifier. Assessment coverage is risk-, modality-, audience-, purpose- and jurisdiction-specific; file malware screening is distinct from text abuse and legal review. Old scan results do not apply to new content revisions; links may need rescanning; caches, previews and Hubs require independent withdrawal enforcement.
 - **Publisher** must call Content Security through its published interface for required checks, and preserve independent authoritative publication/hold state. Media owns media variant exposure and secure bytes access through Storage. Document lifecycle ownership remains under separate review, and should not be prematurely transferred from Publisher.
 
-## Decision options — not approved yet
+## Decision alternatives — owner selected Option C for CS-09–CS-12
 
 | Proposed ID | A | B | C (recommended) |
 |---|---|---|---|
@@ -27,7 +27,7 @@ The owner has identified underscores in capability directory names as a typo and
 | CS-11: evidence retention | Copy and retain all scanned content | Delete all evidence immediately | Keep minimal provenance/assessment records; strictly scoped sensitive evidence only where justified by purpose, retention and qualified legal duty |
 | CS-12: compromised detector | Continue using it | Disable all checks | Immediately isolate affected detector; use approved replacement where possible; hold affected exposure where mandatory checks unavailable; audited emergency change |
 
-**Owner approval required:** CS-09–CS-12 and earlier CS-01–CS-08 remain proposals unless already supported by an explicitly approved prior cross-capability principle. No owner approval to merge is implied. Decisions must preserve applicable legal/security floors and protect private/E2EE material from indiscriminate scanning.
+**Decision recorded:** Owner approved **CS-09 C**, **CS-10 C**, **CS-11 C** and **CS-12 C** for this conceptual review. Option A/B alternatives are retained as rejected alternatives for traceability. CS-01–CS-08 remain proposals except for independently evidenced previously approved cross-capability principles. Operational matrices, thresholds, provider, qualified legal applicability, retention durations and precise emergency role design remain implementation/policy alignment work. **No implementation or merge approval is implied.** Decisions preserve applicable legal/security floors and protect private/E2EE material from indiscriminate scanning.
 
 ## Revalidation gates
 
