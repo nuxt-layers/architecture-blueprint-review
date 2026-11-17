@@ -36,3 +36,7 @@
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine submits bounded candidate text/link evidence with comment/target revision, classification context and purpose. Content Security returns provenance/version-qualified assessment or explicit unknown; it does not approve publication or adjudicate legality. Comments Engine enforces risk-defined hold/pending/reject, reassesses material edits, and must not expose unscanned text when required checks are unavailable. Prohibit private reporter leakage and unrestricted foreign provider transfer.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course submission and linked learning content must meet required Content Security checks before public exposure; Course owns curriculum publication, Content Security owns scanning verdicts. Failed/unknown required verdicts block exposure; concurrent Content Security PR #55 remains provisional. This does not complete content_security's own review.
