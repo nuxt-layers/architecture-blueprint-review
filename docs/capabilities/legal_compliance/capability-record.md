@@ -59,3 +59,10 @@ Supply qualified applicable duties, restrictions, holds, source/jurisdiction/act
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Online Safety Act applicability:** Qualify UK OSA 2023 duties by actual regulated service category (user-to-user/search/combined as applicable), audience, risk, jurisdiction and effective-date Ofcom requirements; distinguish priority offences, other illegality, lawful harms, child-specific duties and service policies. Supply validated reporting/retention/disclosure constraints, statutory notices and uncertainty with qualified legal provenance. Do not assert installing Content Security/Moderation automatically achieves compliance, and do not equate closed groups with statutory exemption or E2EE with unqualified regulatory immunity. The source owner enforces operational restrictions.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Legal Compliance qualifies applicable UK OSA and other jurisdiction/service-specific age assurance, identity, seller verification, parental/child safeguards and statutory evidential/reporting obligations, with source/effective-date provenance. It must distinguish age threshold from personal identity and establish when highly effective age assurance is actually required. This does not certify any particular provider, ZKP technique or deployment as legally compliant.
