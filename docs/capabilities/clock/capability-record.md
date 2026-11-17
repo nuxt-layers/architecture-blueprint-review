@@ -1,29 +1,153 @@
-# **Capability Record**
+# Capability Record — Clock
 
-## Capability Name:
+## Capability Name
+`clock`
 
-## Status: (Available, Installed, Configured, Operational, Enabled, Authorised and Proposed).
+## Status
+**Established** Foundation responsibility in the governing catalogue. **Verified contract evidence:** existing `nuxt-layers/clock` root `CONTRACT.md` on `master`; development acceptance claimed there, not independently re-run in this conceptual review. Installed/configured/operational/enabled/authorised are host-specific and not inferred. **Conceptual design:** proposed for owner review; no new architectural choice approved here.
 
 ## Purpose
+Clock is the platform's independent, deterministic temporal semantics service. It gives consumers one explicit vocabulary for instants, calendar dates, local times, zoned times, DST and time-zone rules, conversion, arithmetic, comparison, formatting and validated protocol interchange. It prevents each capability from implementing conflicting date and time interpretations. It does **not** determine when a booking is valid, when a legal deadline applies, when a scheduled job executes, or whether an operation is authorised.
 
-## Classification
+## Evidence and governing authority
+- Governing `nuxt-layers/architecture-rules` `master`: `eaca8cfd33e292a43e9552ad8e2946295e168472`; `docs/architecture.md`, `docs/platform-charter.md`, `docs/catalogue.md`, `docs/capability-standard.md`, security, privacy, identity and presentation baselines; accepted ADR-0001, 0002, 0004, 0008, 0009, 0010, 0011, 0012, 0015 and 0016 where applicable. In particular, ADR-0012 gives the shared `now()` clock-port shape and 50-line Nuxt-host budget; ADR-0009 establishes headless-first optional separable presentation; ADR-0016 establishes jointly acyclic declared contract/extension dependencies.
+- Blueprint `nuxt-layers/architecture-blueprint-review` `master`: `ff02a072911439c13151e9e827edaa88b710ba2a`; README, working catalogue/register, classification gate, prior findings and booking/configuration reciprocal notes. Blueprint material is not normative.
+- Implementation `nuxt-layers/clock` `master`: `96e71c08634334527e281bf62ceca18a7b256a36`, published root [CONTRACT.md](https://github.com/nuxt-layers/clock/blob/master/CONTRACT.md). The implementation claims independent consumption, Quality acceptance and 50-line composition verification; not a formal release. No private implementation inspection performed.
+- Existing related root contracts reviewed where available: Configuration and Profile; Booking/Scheduler conceptual records are **not** implementation contracts. The `booking` and `scheduler` implementation root `CONTRACT.md` could not be retrieved and their interfaces are not asserted as implemented.
+- Governing authority prevails over working proposals and implementation evidence. This review changes no governing rule.
+
+## Architectural classification and ownership gate
+- **Current classification:** Foundation capability; **recommended disposition:** retain as independent, largely stateless semantic capability with an existing documented Nuxt adapter and framework-independent consumer surface.
+- **Distinct owner:** temporal type meaning, strict validation, clock-service behaviour, deterministic conversion/formatting and error semantics; it owns **no durable business records, preference records, tenant records, audit trail or business lifecycle**.
+- **Alternatives:** a generic stateless library would suffice for some operations, but the established catalogue ownership, shared trusted clock port, unified consumer contract and existing cross-runtime integration justify retaining the named capability. Classification is already governing; no new repository or service is requested.
+- **Persistence:** none; no domain schema, migrations or outbox. Time-zone rule data may be supplied/bundled as non-business reference data; cache/telemetry belongs to its respective operator.
+- **Dependency:** consumer capabilities use Clock's public contract or structurally equivalent Clock port; Clock must not import those consumers. Mere conceptual relationships do not create package dependencies.
+- **Presentation:** headless by default; no standard Clock dashboard or CRUD. Host-controlled settings and optional developer diagnostics are not authoritative Clock-owned screens.
 
 ## Dependencies
+Runtime temporal/locale/time-zone facilities needed to deliver the published semantics; host-supplied trusted `now()` provider when required for deterministic tests or server authority. Clock has no mandatory dependency on Identity, Configuration, Profile, Scheduler, databases, message queues or third-party network time services. A caller that needs a legally authoritative time source must separately establish and validate the trust properties of its server/host environment.
 
 ## Optional integrations
+- Configuration/Profile via the **host's** approved effective-preference resolution and scoped disclosure; never a Clock-owned preference lookup.
+- Integration adapters may request validated protocol-time conversions, but external providers do not acquire temporal-rule ownership.
+- Host monitoring may observe clock/runtime/tzdb health or drift through approved operational facilities; no background synchroniser, NTP client or clock-governance service is proposed inside Clock.
 
-## Version
+## Version and availability
+Implementation `master` SHA stated above. Existing contract describes Nuxt and framework-independent consumers, supported runtime requirements and a private development package, not a released artefact. Run-time acceptance is a separate verification obligation. Capabilities may use deterministic Clock functions independently of a browser, database, IAM or external provider.
 
-## Availability
+## Capabilities offered — native functionality
+**Established in published implementation contract:** `now`, `today`, strict canonical `parse`, `isValid`, `serialise`, `format`, `parsePattern`, `formatPattern`, `parseInterchange`, `formatInterchange`, `toZone`, `resolveLocal`, `toInstant`, `add`, `compare`, `difference`, `midpoint`, `isValidTimeZone`, `timeZones`; `createClock`, Nuxt `useClock`, server `useServerClock`; typed `ClockError`. The existing contract sets documented precision, valid ranges, pattern grammar, supported interchange formats and failure codes. It provides no database, HTTP endpoint, events, permissions or GUI.
+**Conceptual invariant:** distinguish an instant (absolute point), a date/time without a zone (not an instant), a zoned date/time (zone + offset), elapsed time and calendar time. Never infer a time zone, assume 24 hours in every civil day, accept ambiguous DST resolution without a stated policy, or use localised display strings as storage formats.
+**Proposed investigation:** assess explicit rule-data/version provenance for future-sensitive scheduling, legal deadlines and historical re-evaluation. Do not promise reproducibility of a past calculation after time-zone database updates without capturing the applicable rules/version and original interpretation context.
 
-## Capabilities offered
+## Conceptual information and lifecycle
+- **Input temporal values:** typed canonical instants, calendar dates, times, local datetimes and zoned datetimes; well-defined arithmetic quantities, patterns and interchange format declarations.
+- **Interpreting context:** explicit IANA time zone, disambiguation policy, locale, hour cycle and calendar/elapsed rule. Local-time resolution may yield zero, one or more candidate instants; the caller must decide policy.
+- **Clock source:** trusted server-supplied time for decisions, or injected deterministic time for test; presentation device time is never a trusted security authority.
+- **Lifecycle:** requests are evaluated without Clock-owned durable state. A value is validated/converted/formatted or rejected. There is no Clock-owned business transition, retention or migration of customer records. Changed tzdb/runtime rules can affect future interpretations and require monitoring/recalculation by the owning business capability.
 
-## Configuration
+## Idealised public input interfaces (conceptual contract)
+| Source / class | Information or command | Purpose and owner | Validation, requirement and failure |
+|---|---|---|---|
+| Authorised application or consumer / **command** | Typed canonical temporal values; parse, format, validate, convert, compare, arithmetic requests | Clock owns interpretation; business consumer owns source meaning | **Essential to operation**. Reject malformed, out-of-range or incompatible values; no silent coercion |
+| Business capability / **source facts** | Jurisdiction or event's effective date, named time zone, schedule/expiry/deadline basis and desired DST policy | Caller owns rule and time-zone *selection*; Clock checks semantics | **Conditional**. Missing zone or disambiguation for required resolution: reject or return explicit ambiguity, never guess |
+| Host / **configuration context** | Valid locale/time zone/hour cycle and optional explicit patterns, request-scoped overrides | Configuration/Profile/host own effective values and disclosure | **Optional** for generic service, **conditional** for personalised display. Invalid overrides fail explicitly; safe documented defaults for standalone operation |
+| Trusted host / **time provider** | Current instant via structurally documented `now()` port | Host owns time-source trust; Clock interprets and exposes it | **Conditional** for authoritative security/business actions. Invalid/missing injected value fails; client clock never silently substitutes |
+| External integrations / **external evidence** | Protocol-defined timestamp text/number and declared interchange format | External provider owns emitted evidence, consumer owns acceptance; Clock validates representation only | **Optional**. Reject unknown/ambiguous/unparseable formats; validation does not establish authenticity |
+| Host/runtime / **reference data** | Time-zone and locale rules supported by the running environment | Runtime/provider is rules-data source; Clock guarantees exposed interpretation for its documented version | **Essential to zone operations**. Unsupported/unavailable/inconsistent rules fail; do not fabricate zone offsets |
+| Authorisation/Privacy/Legal Compliance / **policy context** | Caller-specific authority and disclosure constraints applied by consuming server | Those capabilities and domain owner retain policy authority | **Conditional**, enforced **outside** Clock. No Clock acceptance is permission to reveal or act upon protected business data |
 
-## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+## Idealised public output interfaces (conceptual contract)
+| Output / recipients | Meaning and authority | Status, provenance and disclosure |
+|---|---|---|
+| Validated typed value / all consumers | Clock confirms syntax, type/range and temporal semantics, **not business truth** | Valid or rejected; preserve value kind, precision and context; no tenant data implicitly attached |
+| Current instant or date / trusted server consumer | Current reading from specified clock source; business/security authority depends on that source | Successful reading or failure; provenance is caller-provided source/trust context, not a Clock security certification |
+| Zoned conversion / Booking, Scheduler, Billing, Audit and other consumers | Resolved instant/offset for explicitly identified zone and disambiguation | Resolved or ambiguous/nonexistent/rejected; zone/policy supplied by caller; no reservation or job confirmation |
+| Calendar/elapsed arithmetic and comparison / consumers | Deterministic temporal result under specified semantics | Result or typed error; original operands and rule selection retained by domain owner if auditability needed |
+| Human-readable output / host presentation | Display string under explicit locale/zone/pattern; may lose precision | Formatted result, not canonical storage; host handles permission, accessible labels, scope and SSR consistency |
+| Interchange conversion / Integrations, IAM, Notifications and protocol consumers | Conformance to a documented named timestamp representation within supported precision/range | Parsed/formatted result or typed rejection; original source authenticity remains external |
+| Time-zone availability / consumers and authorised settings UI | Valid zone identifiers and supported primary-zone options | Valid/invalid/list; environment/tzdb provenance is an **investigation** for audit-sensitive use |
+| Typed error / every caller | Stable public failure reason, no internal exception leakage | Invalid config/input/zone/pattern, ambiguity, nonexistence, incompatible types or unsupported operation |
+| **Events / none** | Clock owns no durable business-state transitions to announce | **Deliberately omitted**: domain owner emits deadline/reservation/schedule/audit events; no fabricated Clock outbox |
+| **Reporting/audit records / none** | Clock supplies semantics, not business history or telemetry ownership | Callers and platform observability/audit owners record relevant context, with privacy minimisation |
 
-**Booking recurrence and time-zone semantics (15 November 2026):** [Booking](../booking/capability-record.md#recurring-reservations--booking-owns-the-series-not-scheduler) owns optional recurrence patterns, bounded occurrence expansions and conflict-safe confirmed reservations; Clock owns civil-time/instant/time-zone/DST conversion and ambiguity semantics, not reservations or execution. A recurring-series creation does not guarantee future occurrences. Every occurrence reports its own confirmation, effective interval and origin/exception. No Clock contract change is asserted.
+The published root contract is the actual implementation surface; this table is its **conceptual interpretation**, not a declaration of additional APIs.
 
-## Cross-capability note — Booking final conceptual completeness (15 November 2026)
+## Interaction models
+**Commands:** pure service invocations (parse/convert/resolve/format/arithmetic) returning a result or structured error; no business command acceptance, transaction, idempotency key or lifecycle transition inside Clock. Repeated calls with identical inputs and identical temporal rules/source should be deterministic. `now()` and `today()` depend on the selected clock reading.
+**Queries:** current time, zone validation/availability and immutable result calculation; queries never expose business records. Locale output must never be mistaken for a persisted canonical value.
+**Events:** deliberately none in the documented implementation; business owners publish their own material changes and operational systems log/observe health separately. A future reference-data-change signal, if useful, must undergo separate ownership/contract review.
 
-**Approved Booking scope; related capability review not completed.** [Booking's final interface review](../booking/capability-record.md#focused-reciprocal-contract-clarifications): Clock interprets civil time, instants and DST ambiguity; Booking owns optional bounded recurrence rules, series revisions, per-occurrence conflicts and confirmations. Creating a series is not an assurance that all future occurrences are confirmed. No currently implemented integration contract is implied.
+## Shared context, provenance and invariants
+The consumer supplies tenant/subject/resource/correlation **only where its domain operation requires them**; Clock itself need not create or persist these. Preserve, at the authoritative caller: original source representation where evidentially necessary; canonical instant/date; intended zone; governing jurisdiction/policy; chosen ambiguity policy; relevant rule/configuration version; correlation/operation identity and trusted timestamp source. This is not a universal request-object requirement.
+
+1. **Ownership:** time interpretation does not confer business authority. No Clock tenancy database, no preference duplication, no schedule/booking ownership.
+2. **Safety:** server-side access and expiry enforcement; never trust user-controlled browser time for security. Reject unclear type, offset or DST cases by default.
+3. **Precision:** conversion and serialisation must honour declared precision and documented lossy formatting; no hidden day/24-hour equivalence.
+4. **Consistency:** preserve absolute instants through zone conversion; avoid reinterpreting a canonical instant as local time.
+5. **Failure:** stable typed validation errors, no fabricated fallback when authoritative time source or required zone rules unavailable; explicit unsupported operations.
+6. **Availability:** pure core requires no database, identity, network or provider lifecycle; optional integration absence does not disable generic temporal services.
+7. **Security/privacy:** Clock input/output must not bypass domain Authorisation or expose protected information; logging of values requires classification and minimisation.
+8. **Versioning:** changing rules, pattern conventions or precision can alter results; changes require compatibility and regression evidence.
+9. **No distributed-delivery claim:** Clock itself has no durable events or delivery semantics.
+
+## Configuration, security and compliance
+- **Configuration:** declarative approved scoped settings, provenance and overrides; Clock validates semantics. Existing Configuration contract advertises host-declared six `clock.*` presentation keys, **not built-in keys**. The host resolves effective values.
+- **Profile:** canonical personal `locale` and `zoneinfo` are distinct from organisation defaults; avoid competing preference stores. Effective precedence/locked preferences remain a broader proposed integration, not Clock's decision.
+- **Identity / Authentication / Authorisation:** tenant identity, sessions, privileges and access decisions remain outside Clock. Server business owner must enforce them even for a timestamp supplied by Clock.
+- **Legal Compliance / Privacy:** jurisdictions, legal calendars, retention periods, evidential requirements and holds are determined by their authoritative policies and domain owners, not by Clock. Clock can calculate a caller-defined calendar deadline but cannot certify it is lawful; specialist legal assessment where required.
+- **Integrations:** adapters validate external date formats and preserve provenance; they never unilaterally redefine local business deadline policy.
+- **Audit / Logging / Observability / Reporting:** domain owner retains material audit events; Logging records sanitised errors and operational faults; Observability records latency/error rates/time-source health; Reporting consumes authorised derived facts. Clock should not emit sensitive temporal inputs as default telemetry, nor become a second audit store.
+- **Message Queue / Workflow / Scheduler:** each owns transport, workflow or execution respectively. Clock supplies typed time calculations through published functions/ports without queue/workflow dependency.
+
+## Cross-capability relationships and absence behaviour
+| Cooperating owner | Clock receives | Clock supplies | Requirement / unavailable behaviour |
+|---|---|---|---|
+| Configuration / Profile / host | Approved effective viewer values and zone selection | Validation and formatted results | Optional personalised display; default standalone formatting, never reuse another viewer's values |
+| Booking / Events / Asset | Event occurrence, venue/resource zone and caller-owned booking rule | Ambiguity-safe time resolution and elapsed/calendar calculations | Conditional; reject unclear conversion; owner remains responsible for reservation validity |
+| Scheduler / Workflow / Task | Requested schedule time or due-date rule | Canonical instants, calendar arithmetic and DST interpretation | Conditional; consumer must not execute based on untrusted client clocks |
+| Billing / Accounting / Payroll | Domain-defined accounting or settlement periods and jurisdiction | Date boundaries and elapsed/calendar calculations | Conditional; no financial posting or statutory policy authority transferred |
+| Authentication / Authorisation / Identity | Session/credential/grant expiry instant and trusted time source as controlled by their caller | Canonical comparison/interchange | Conditional; absence of authoritative clock must fail closed for security-sensitive action |
+| Integrations / Notification / Publisher | Named protocol time format, date/time source | Strict interchange conversion and human-readable display | Optional; invalid external timestamps rejected and reported to originating adapter |
+| Audit / Logging / Observability / Reporting | No direct sensitive event stream required | Error classes, diagnostics/temporal semantics for owner-supplied evidence | Optional; these owners decide evidence capture, retention and disclosure |
+| Legal Compliance / Privacy | Caller-identified authoritative jurisdiction/rule | Calendar/zone calculation only | Conditional; Clock cannot decide whether rule applies or disclose protected facts |
+
+All edges are conceptual public-contract interactions; host composition or structural ports avoid a bidirectional dependency on Clock's consumers.
+
+## GUI and host presentation (Phase 6A)
+**Headless is the correct default.** The published Clock implementation supplies **no screens, pages, date picker, dashboard or HTTP routes**. Its host integration does not need a Clock sidebar entry. Ordinary users see Clock only as time/date formatting, time-zone-aware forms and accessible contextual information in business screens. Preference editing belongs in the host's Profile/Configuration presentation, where authorised. A developer/operator diagnostics screen (clock-source status, supported zone/rule version, SSR consistency, sample DST resolution) may be added **as an optional host-owned or operational view**, not an independently justified Clock business dashboard; access is server-authorised, information sanitised.
+The representative `nuxt-layers-test/application-test-template` host-owned sidebar/dashboard pattern is relevant for demonstrating consumer screens; it does not imply auto-registration or require modifying that repository. Any optional screen must remain separable, WCAG 2.2 AA, accessible with explicit zone labels, internationalised, themed through Theme Manager vocabulary, SSR/hydration stable, and must never invoke protected domain decisions on the browser alone.
+
+## Conceptual contract acceptance scenarios
+| Scenario / input | Expected behaviour / output | Authority |
+|---|---|---|
+| Native standalone: canonical instant + explicit zone | Valid zoned conversion, reversible instant, no network/database/IAM | Clock semantics; caller owns meaning |
+| Booking recurrence at DST gap/overlap | Reject ambiguity by default; explicit policy resolves when provided; no implied confirmed booking | Clock conversion; Booking confirmation |
+| Cross-capability deadline: seven calendar days in named jurisdiction | Caller supplies calendar rule and zone; Clock calculates DST-aware boundary, not 168 elapsed hours by assumption | Domain/legal owner chooses policy |
+| Tenant/user preferences | Host supplies authorised resolved locale/zone; presentation consistent for SSR/hydration, no cross-tenant preference leakage | Configuration/Profile/host |
+| Invalid zone, impossible date, ambiguous local time | Stable typed error, no guess or silent coercion | Clock |
+| Repeated deterministic request with fixed provider | Identical validated result; no second write, event or idempotency ledger | Clock |
+| Spoofed client time for session expiry | Server does not treat it as authoritative; protected operation denied if reliable time unavailable | Authentication/Authorisation + host |
+| External malformed timestamp | Named protocol parser rejects and adapter retains provenance/error | Clock syntax; Integrations evidence |
+| Historical event after zone-rule changes | Stored instant remains unchanged; reconstruction requiring historical policy/version reports missing evidence rather than guaranteeing same civil outcome | Business owner; version-provenance investigation |
+| Unsupported operation or missing runtime feature | Explicit unsupported/initialisation failure; no fabricated result | Clock/runtime |
+| Presentation unavailable | Core still operates; no mandatory sidebar or screen | Clock core/host |
+| Audit and reporting consumer | Domain owner emits authorised auditable event containing its time evidence; Clock does not claim to deliver it | Audit/Reporting/domain owner |
+
+## Findings and decision discipline
+**Established E-CLK-01:** Clock is a Foundation capability in the governing catalogue. **Established E-CLK-02:** headless implementation contract currently supplies the documented pure/date-time operations and no database, events, UI or HTTP. **Established E-CLK-03:** Profile/Configuration/host own user/scoped preferences; Clock interprets validated overrides. **Established E-CLK-04:** ADR-0012/0016 composition and acyclic dependency requirements apply.
+
+**Proposed P-CLK-01 (retain ownership):** keep Clock as independent stateless semantic Foundation capability, not a scheduler, preference store or time synchronisation platform. **Proposed P-CLK-02 (contract):** treat the published operations as the native baseline and the inbound/outbound tables above as the idealised consumer responsibilities. **Proposed P-CLK-03 (GUI):** no Clock-owned business screens; host-owned preference/diagnostic presentation only when justified. **Proposed P-CLK-04 (observability):** capture time-source/rule-version health via operational capabilities and caller-owned evidence, never default raw per-user input logging. **Proposed P-CLK-05 (security):** fail closed if a trusted time source is required but unavailable.
+
+**Open architectural decision CLK-01 — temporal rule provenance:** should Clock expose an explicit time-zone/rules-data version or resolution provenance for high-assurance replay? **Recommendation:** define an optional, versioned provenance result/metadata contract only if concrete Audit/Booking/legal-replay scenarios establish a requirement; do not expand the existing API until approved.
+
+**Open architectural decision CLK-02 — source of authoritative wall time:** should applications mandate a standard trust/health attestation port for security/financial decisions beyond the current synchronous `now()`? **Recommendation:** keep current Clock port and host responsibility; specify any platform time-source assurance and drift monitoring in infrastructure/operational governance, not Clock, unless a cross-capability contract gap is proven.
+
+**Technical investigations:** tzdb release differences and reproducible historic civil-time resolution; standards-specific leap second handling; runtime clock drift/monotonic elapsed time requirements; literal/locale pattern compatibility; parity across browser/SSR/runtime; long-lived calendar recurrence materialisation and boundary instants. Resolve with evidence rather than manufacturing approval decisions.
+
+**Implementation alignment:** publish any approved extension first as an explicit versioned root `CONTRACT.md` change in a later implementation PR; do not represent CLK-01/02 as implemented. Reconcile only if an actual gap is demonstrated against accepted ADRs. No Clock implementation files changed.
+
+**Acceptance and verification:** independent consumer from root contract; 50-line Nuxt composition; canonical types, precision, DST, cross-zone invariance and deterministic clock injection; server-time security; no private imports, unexpected persistence, events or UI; browser/SSR parity; representative integration scenarios; source-rule version and historical interpretation evidence if CLK-01 is later accepted. This is conceptual analysis only; no CI, builds, end-to-end checks, legal certification or operational audit performed.
+
+## Architectural consequences and sign-off
+Retain established Foundation catalogue/register classification. No reclassification, schema, new capability, new provider, universal request object, new ADR or governing edit is proposed. Add reciprocal Clock-contract links to Configuration and Scheduler records without completing their reviews. Booking already documents the Clock boundary. **Conceptual sign-off status: proposed, owner approval outstanding (P-CLK-01 to P-CLK-05; CLK-01/02 open).** PR review is not implementation authorisation or normative adoption.
