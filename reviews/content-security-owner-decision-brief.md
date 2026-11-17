@@ -32,3 +32,15 @@ The owner has identified underscores in capability directory names as a typo and
 ## Revalidation gates
 
 Once decision text is confirmed, reconcile merged #53/#54 with all affected reciprocal files, review any concurrently merging PRs, compare against latest `master`, inspect real PR mergeability/CI, links, historical notes and decision statuses, and request explicit squash-merge approval. No local tests/builds or implementation changes.
+
+## Additional owner-approved conceptual decisions — 17 November 2026
+
+**CS-13 approved:** Mandatory secure-by-construction baseline controls for every relevant untrusted input, independent of Content Security availability.
+
+**CS-14 approved, refined:** **Verify before admission**. Temporary receipt for narrowly confined inspection is not admission into the application. Use bounded memory or strictly isolated non-public temporary ingress, no normal application reads, distribution, search or user preview. Required pre-admission checks must be satisfied for the exact revision/digest before source-owner admission; pre-exposure assessment and publication remain separate. Reject/dispose of unsafe or indeterminate submissions by default. Exceptional lawful evidence preservation requires its own authority, purpose, protected custody and retention; it does not legitimise storing unsafe content in ordinary application quarantine. Later reports and emerging threats may still require post-admission holds. This refinement was expressly accepted by the owner following the question about quarantine risk.
+
+**CS-15 approved:** Nodes and Hubs independently qualify foreign scanning evidence, provenance, versions, check coverage and expiry and enforce their own exposure controls. Original content authority stays with the origin; withdrawal receipts remain independently reconciled.
+
+**CS-16 approved:** Report uncertainty, omitted checks, freshness, supported languages/modalities, detector/model/dataset provenance and limitations; support qualified challenge, rescan and correction without unjustified content disclosure or false legal certainty.
+
+**Implementation details deferred with approval:** concrete provider/technology choices, exact interfaces/DB layouts, detector thresholds, processing concurrency, precise ingress implementation and risk-qualified retention periods. The decision register in [Content Security's main record](../docs/capabilities/content_security/capability-record.md#additional-owner-approved-conceptual-decisions--17-november-2026) is authoritative for this draft's conceptual status. **No implementation or merge approval.**
