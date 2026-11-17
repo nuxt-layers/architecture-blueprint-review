@@ -67,3 +67,9 @@ Publisher retains document publication eligibility and enforcement; may need a l
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Publisher and other registered target owners retain eligibility/visibility, owner revision and publication decisions. Comments Engine owns reply/thread records and comment-local enforcement. A host-wired target eligibility/withdrawal contract should supply trusted tenant/target/revision and change signals; Comments Engine checks them before posting, restricts inaccessible targets and returns withdrawal/reconciliation receipts. No mutual package imports, source database reads or assumption that a deleted document automatically erases lawfully retained comment evidence.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Publisher requests revision-bound technical checks for registered documents before the exposure decisions its policy requires; Content Security returns scoped detection evidence, coverage and unknown/stale states. Publisher owns actual publish/hold/unpublish and reconciles address/feed/cache exposure; Content Editor presents status through Publisher/public contracts, not detector tables.
