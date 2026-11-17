@@ -62,3 +62,7 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 **Status:** Owner-approved conceptual boundary for [PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); non-normative, not a published implementation contract.
 
 **17 November 2026 agreed Comments Engine refinement:** Private comment audiences cannot exceed parent resource permissions; no public index, federation, cache or unrestricted notices. Author editing, departure and erasure rights must normally produce actual deletion or lawful anonymisation, with restricted time-limited evidence only where an identified legitimate legal/complaint purpose requires it. Preserve independent rights of other reply authors and acknowledge downstream-copy/back-up erasure limitations without claiming more deletion than verified.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed privacy review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course defines learning offerings, not named learner transcripts; enrolment/achievement personal records remain with Enrolment/Training. Privacy supplies effective minimisation, permitted disclosure, retention/erasure and vulnerable-learner policy. Course must protect course-admin authorship/provenance and avoid personal roster disclosure in catalogue, exports, events and logs; legal holds and historical references require explicit coordination.
