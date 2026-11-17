@@ -110,6 +110,17 @@ Every Hub operates as a Node; any appropriately configured and authorised Node m
 
 **Evidence:** [Node–Hub architecture review](../reviews/node-hub-federation-architecture.md) and [Federation conceptual record](capabilities/federation/capability-record.md). These are non-normative proposals, not an accepted governing catalogue change, public contract, implemented protocol or instruction to create separate repositories. Apply the classification gate and governing ADR approval before promotion.
 
+
+### Online Safety and Moderation conceptual candidate (17 November 2026)
+
+| Entry | Working classification | Responsibility and boundary |
+|---|---|---|
+| `moderation` | **Platform candidate**, pending classification and contract review | Reports about content/conduct, cross-domain cases, triage, qualified decisions, appeals, enforcement requests/reconciliation and case-linked statutory reporting coordination; **does not own original content or independently execute domain takedowns** |
+
+**Ownership separation:** Content Security owns detection and verdict provenance; Publisher, Media, Comments Engine, Marketplace and other domains own their content/state and enforce actual restrictions; Moderation would own reports/cases/appeals; Audit owns accepted evidence; Legal Compliance qualifies applicable duties; Federation and Search operate Hub exchange and derived indexes. Content Editor and Gallery are presentation, not safety/data authorities. Distinguish public/semi-public content from private E2EE communications; avoid mandatory universal client scanning. Apply the classification gate and verify current legal standards before governing adoption.
+
+**Review links:** [Online Safety and Content Governance](../reviews/online-safety-content-governance.md) · [Moderation record](capabilities/moderation/capability-record.md) · [Moderation report](capabilities/moderation/capability-report.md).
+
 ### Foundation, platform and library candidates
 
 | Candidate | Intended class | Potential bounded responsibility / exclusion |
