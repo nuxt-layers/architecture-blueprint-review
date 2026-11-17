@@ -255,3 +255,8 @@ The regional classifications offered by the NTP Pool Project are **geographical*
 | Fixed `now()` provider, simulated jump and browser/server first render | Predictable tests and equivalent initial display, with intentional post-hydration preference changes | Clock test host + presentation host |
 
 **Closure:** no further capability, independent persistence owner, UI or universal time object is justified. CLK-03 and CLK-04 are approved conceptual boundaries. Technical questions (trust thresholds, assurance/port shape, leap sources, correction behaviour and rule-data replay) are delegated to detailed implementation/host acceptance without reopening these decisions. The Clock conceptual scope is ready for owner PR review; passing CI and real production time assurance are separate acceptance matters.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Clock owns `now()`, temporal interpretation, zones and formatting; Configuration supplies approved versioned presentation defaults when registered. Privileged NTP source settings versus Infrastructure static config remain open; tenant display zones cannot control UTC synchronisation. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
