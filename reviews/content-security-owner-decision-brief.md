@@ -1,6 +1,6 @@
 # Content Security — scope clarification and owner decision brief (17 November 2026)
 
-**Status:** Scope clarification remains proposed in draft PR #55. **CS-09–CS-12 Option C were explicitly owner-approved conceptually on 17 November 2026**; this is not implementation design, acceptance or merge authorisation.
+**Status:** All sixteen CS-01–CS-16 conceptual decisions have now been explicitly owner-approved in draft PR #55; CS-09–CS-12 use Option C, and CS-14 includes the refined verify-before-admission boundary. This is not implementation design, operational acceptance or merge authorisation.
 
 ## Current baseline change
 
@@ -27,7 +27,7 @@ The owner has identified underscores in capability directory names as a typo and
 | CS-11: evidence retention | Copy and retain all scanned content | Delete all evidence immediately | Keep minimal provenance/assessment records; strictly scoped sensitive evidence only where justified by purpose, retention and qualified legal duty |
 | CS-12: compromised detector | Continue using it | Disable all checks | Immediately isolate affected detector; use approved replacement where possible; hold affected exposure where mandatory checks unavailable; audited emergency change |
 
-**Decision recorded:** Owner approved **CS-09 C**, **CS-10 C**, **CS-11 C** and **CS-12 C** for this conceptual review. Option A/B alternatives are retained as rejected alternatives for traceability. CS-01–CS-08 remain proposals except for independently evidenced previously approved cross-capability principles. Operational matrices, thresholds, provider, qualified legal applicability, retention durations and precise emergency role design remain implementation/policy alignment work. **No implementation or merge approval is implied.** Decisions preserve applicable legal/security floors and protect private/E2EE material from indiscriminate scanning.
+**Decision recorded:** Owner approved **CS-09 C**, **CS-10 C**, **CS-11 C** and **CS-12 C** for this conceptual review. Option A/B alternatives are retained as rejected alternatives for traceability. CS-01–CS-08 were subsequently explicitly approved by the owner on 17 November 2026; all CS-01–CS-16 are now owner-approved conceptually. Operational matrices, thresholds, provider, qualified legal applicability, retention durations and precise emergency role design remain implementation/policy alignment work. **No implementation or merge approval is implied.** Decisions preserve applicable legal/security floors and protect private/E2EE material from indiscriminate scanning.
 
 ## Revalidation gates
 
@@ -44,3 +44,7 @@ Once decision text is confirmed, reconcile merged #53/#54 with all affected reci
 **CS-16 approved:** Report uncertainty, omitted checks, freshness, supported languages/modalities, detector/model/dataset provenance and limitations; support qualified challenge, rescan and correction without unjustified content disclosure or false legal certainty.
 
 **Implementation details deferred with approval:** concrete provider/technology choices, exact interfaces/DB layouts, detector thresholds, processing concurrency, precise ingress implementation and risk-qualified retention periods. The decision register in [Content Security's main record](../docs/capabilities/content_security/capability-record.md#additional-owner-approved-conceptual-decisions--17-november-2026) is authoritative for this draft's conceptual status. **No implementation or merge approval.**
+
+## CS-01–CS-08 — final owner disposition (17 November 2026)
+
+The owner explicitly approved **CS-01, CS-02, CS-03, CS-04, CS-05, CS-06, CS-07 and CS-08** as written in the main capability record. Together with the previously approved CS-09–CS-16, the conceptual decision register is now fully resolved. This is no authorisation for implementation, merging or certification of legal compliance. The technical/architectural merge review and protected checks remain separate gates.
