@@ -124,3 +124,10 @@ If independently justified, Federation owns the minimum durable state for peer a
 **Status:** Owner-approved direction for blueprint documentation only; not a completed capability review, implemented API or governing ADR. See [cross-capability review](../../../reviews/online-safety-content-governance.md) and [Moderation candidate](../moderation/capability-record.md).
 
 **Hub moderation boundary:** An originating Node owns its source publication, and a Hub Node independently owns peering/acceptance and its derived index visibility through Federation and Search. Proposed Moderation may coordinate Hub-local reports, appeals and enforcement requests, but cannot delete source records or make global criminal determinations. Signed external abuse/block feeds are scoped, attributable and appealable evidence, not mandatory global consensus. Propagate source withdrawals with version/checkpoint, report stale/unconfirmed Hub removals, and qualify Hub-specific OSA duties separately.
+
+
+## Identity, Age and Eligibility Assurance — reciprocal conceptual note (17 November 2026)
+
+**Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
+
+Federated Node/Hub assurance accepts third-party age, identity or authority assertions only through scoped issuer/audience, subject binding, expiry and local trust policy. Trust is not transitive; a Hub endorsement cannot mint a local Identity membership, authority or merchant standing. Support Node exit, peer revocation and privacy-preserving age thresholds without globally linkable tracking tokens.
