@@ -44,3 +44,7 @@
 Coordinate high-risk approvals, succession/recovery, policy activation, paid onboarding, confirmed payment-to-entitlement-to-provisioning, retries and compensation using owner commands/results. Own execution/checkpoint state only, never Identity tenancy, legal applicability, Order commitment, Payment settlement, Subscription entitlement or domain record truth. Duplicates/out-of-order signals must reconcile, not repeat a charge or tenant creation.
 
 **Conceptual interfaces and acceptance:** [tenancy/governance](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy boundaries](../../proposals/policy-and-governance-boundaries.md), [hostile-administrator recovery](../../reviews/organisational-ownership-and-recovery.md). Review relevant input owners, authoritative outputs, absence, revocation and evidence here during this capability's full alphabetical review; no package dependency inferred.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course requests configured revision review and consumes approval evidence; Workflow owns process choreography, Course alone commits publication after permission and safety checks. An approval task is not learner admission. This note does not complete the separate workflow review.
