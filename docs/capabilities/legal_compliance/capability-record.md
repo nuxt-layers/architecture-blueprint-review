@@ -73,3 +73,9 @@ Legal Compliance qualifies applicable UK OSA and other jurisdiction/service-spec
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Verification may accept lawful national schemes (China national internet ID, Russian digital IDs, Saudi Nafath/Absher) via provider-neutral adapters, but Legal Compliance alone qualifies service-specific national real-name, age, KYB, localisation and privacy requirements and effective dates. Credential integrity is not legal compliance or proof that a Hetzner-hosted Node can lawfully operate in every country.
+
+## Comments Engine — reciprocal conceptual proposal (17 November 2026)
+
+**Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52); not an accepted public contract. See [conceptual record](../comments_engine/capability-record.md).
+
+Legal Compliance qualifies site/service/jurisdiction-specific participation, harmful-content obligations, age/child safeguards, retention and legal holds with effective dates and provenance. Comments Engine enforces qualified constraints for comment submission, visibility, removal and erasure, returning completion/exception receipts; it cannot claim Online Safety Act compliance merely through scanning, nor independently interpret a statutory reporting duty.
