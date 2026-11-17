@@ -41,7 +41,7 @@ This document is the **populated working register**, distinct from its design sp
 | `notifications` | Platform | Established | Telling people something needs them, through their chosen channels; providers' keys come from the host's secret management |
 | `comments-engine` | Platform | Established | Comments on content and their moderation |
 | `metadata` | Platform | Established | Tags, categories, taxonomies and ontologies attached to content |
-| `translate` | Platform | Established | Translation of content and its workflow |
+| `localisation` | Platform candidate | Proposed conceptual review | Language/locale adaptation, translation workflow, glossary, quality and provider-neutral translation; Publisher/domain owners retain their published data and business rules |
 | `seo` | Platform | Established | Redirects, sitemaps and search-engine metadata, driven by Publisher's address events |
 | `site-hosting` | Platform | Established | Where each site is served: custom domains, proving their ownership, and finding the site for a request's address; certificates and deployment stay with the host's proxy and provider (ADR-0014) |
 | `integrations` | Platform | Established | Adapters to outside services such as Google Docs, Microsoft 365 and social feeds |
@@ -205,3 +205,7 @@ Do not equate an installed Identity or Authentication package with verified civi
 | `verification` | **Platform candidate; owner-approved conceptual creation** | [Capability record](capabilities/verification/capability-record.md), [cross-capability review](../reviews/identity-age-eligibility-assurance.md), [international comparison](../reviews/verification-international-jurisdictions.md). No verified root `CONTRACT.md`, package, CI, provider contract or deployment | Verified claim requests, purpose-scoped attestations, issuer trust/status, expiry/revocation and qualified evidence references; no civil-document master, IAM session/permission, merchant eligibility or legal applicability ownership |
 
 Separate Verified/Installed/Configured/Operational/Enabled/Authorised status remains **unverified**, regardless of conceptual approval. Any future package needs independent classification, consumer contract, legal/privacy/security review, minimal-host acceptance and storage register.
+
+### Localisation replaces the empty Translate candidate (17 November 2026)
+
+The empty `docs/capabilities/translate/` directory has been removed in the working blueprint, not retained as a compatibility alias. The canonical active record is [Localisation](capabilities/localisation/capability-record.md). The old register's `Established` label denoted a catalogue entry, **not** an independently verified implementation; the new candidate has no verified root `CONTRACT.md`, package, installation or tests. The governing catalogue rename is a separate PR. Only the historical rename note uses the old name.
