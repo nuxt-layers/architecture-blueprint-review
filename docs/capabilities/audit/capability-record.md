@@ -507,3 +507,10 @@ See [tenancy/governance](../../proposals/organisational-tenancy-and-governance.m
 **Status:** Owner-approved cross-capability review direction only, not a changed published contract or accepted ADR. See [dedicated assurance review](../../../reviews/identity-age-eligibility-assurance.md).
 
 Audit preserves minimised provenance of verification claim/issuer/version, subject-binding category, relying party, purpose, issuance/expiry, revocation, access/eligibility decision and any appeals. Do not duplicate raw passports, facial images, full dates of birth or indefinite federated dossiers; restricted evidence custody and lawful retention are separate qualified concerns.
+
+
+## Verification candidate — reciprocal boundary (17 November 2026)
+
+**Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
+
+Audit preserves minimised evidence of Verification issuer, proofing method/version, purpose, binding, status freshness and local use/revocation, without retaining full identity documents or private biometric material by default. Original proofing evidence may remain with a lawful provider/holder; record custody and legal disclosure separately.
