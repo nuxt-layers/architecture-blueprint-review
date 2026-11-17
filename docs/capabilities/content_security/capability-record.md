@@ -187,3 +187,9 @@ Publisher, Comments Engine, Media and Marketplace screens display a compact cont
 **Status:** Proposed for owner review in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), **not** an approved contract or implementation change. See [Comments Engine conceptual contract](../comments_engine/capability-record.md).
 
 Comments Engine submits bounded candidate text/link evidence with comment/target revision, classification context and purpose. Content Security returns provenance/version-qualified assessment or explicit unknown; it does not approve publication or adjudicate legality. Comments Engine enforces risk-defined hold/pending/reject, reassesses material edits, and must not expose unscanned text when required checks are unavailable. Prohibit private reporter leakage and unrestricted foreign provider transfer.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Editor displays source-owned pending, unavailable, quarantine and held safety results; no client indicator substitutes for Publisher/Media server gating or Moderation decisions.
