@@ -134,7 +134,6 @@ Every Hub operates as a Node; any appropriately configured and authorised Node m
 | `application-compositions` | Composition artefacts | Reusable application templates and selected capability wiring; generally not independent stateful services |
 | `organisation-console` | Presentation / application composition — independent packaging unproven | Reusable, role-aware organisation-neutral dashboards, context selection and management views composed from authoritative capability contracts; no business records, permissions or independent domain lifecycle |
 | `user` | Presentation | Group-scoped user administration screens via Identity/Profile/Authorisation; no user records |
-| `document` | Platform candidate, **unresolved — conditional records custody** | [Document conceptual review](capabilities/document/capability-record.md): a separate private-original/evidential custody, holds, controlled disclosure and disposition lifecycle requires explicit approval and independent justification; Publisher retains all publishing documents and Content Editor its GUI. No implementation or new package inferred |
 | `search` | Platform | Indexing, query and relevance over authorised source records; no source-of-truth storage |
 | `location` | Platform | Coordinates, geospatial and place references; not all postal addresses or site tenancy |
 | `reporting` | Platform | Authorised report definitions, aggregation and output; no source transaction records |
