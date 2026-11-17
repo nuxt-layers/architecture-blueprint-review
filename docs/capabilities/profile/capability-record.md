@@ -40,3 +40,12 @@
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Profile remains authoritative for personal locale, time zone, theme-related personal preferences and personal identity details. Configuration may provide platform/tenant/group defaults; generic account scope does not license duplicating Profile data. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-05 (Option B):** Configuration's account scope is limited to explicitly registered **non-personal operational** settings with one named authority. Profile remains sole owner of personal identity details and individual locale/time-zone preferences; Configuration must not use its general account mechanism to create parallel Profile records. Theme Manager owns effective theme. This decision does not assert an implementation migration.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
