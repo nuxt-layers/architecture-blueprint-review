@@ -270,3 +270,69 @@ Previously agreed Node–Hub direction is **retained**; FED-Q01–FED-Q10 remain
 - **FED-20 (open owner choice):** Set publication/snapshot retention and maximum stale-data handling policy: recommend configurable stricter bounds subject to mandatory privacy/safety floors and truthful last-confirmed timestamps; cannot promise a universal real-time SLA.
 
 **Deferred evidence/implementation alignment:** verify the current governing ADR-0017/0018 statuses and full standards; verify related root `CONTRACT.md` surfaces in their own repos before implementation; choose protocol through security/interoperability evaluation; write implementation root `CONTRACT.md`, threat model and `STORAGE-REGISTER.md` when implementation exists; independently validate host composition, interoperability, identity/key rotation, signed feed acceptance, source withdrawal, GDPR impact and operational observability through CI/user acceptance. No implementation, test or compliance evidence is claimed here. Final merge requires fresh master and conflict/architecture review and explicit owner approval.
+
+
+## Owner approval and standards/library/GUI follow-up — 18 November 2026
+
+**Owner decision:** FED-11 through FED-18 approved, and recommendations for FED-19 (tenant-scoped operator approval with independent trust proof) and FED-20 (configurable bounded freshness and retention under mandatory safety/privacy floors) approved on 18 November 2026. Their status is now **agreed conceptual**, not verified implemented or governing-ADR accepted. Existing FED-Q01–Q10 still require protocol-specific evidence/choices: approval of this direction does not silently select wire format, crypto scheme, discoverability, private-data federation or universal SLA. No implementation or merge approval given.
+
+### Plain-English contract: what consumers may depend upon
+
+**Incoming requests:** register or verify a Node; invite/accept/suspend/revoke a peer; opt in to a public collection and approve/stop publication; subscribe/unsubscribe; publish a source-authorised change or withdrawal; retrieve an approved record; submit an external record to validation; request snapshots/checkpoints or reconciliation; query statuses and history; manage scoped operator policy. These are conceptual commands and queries, not named HTTP endpoints or fixed TypeScript functions.
+
+**Published outputs:** local peer/subscription and collection status; canonical public collection metadata; signed/provenanced representation when applicable; validated remote envelopes and rejection/quarantine reasons; delivery attempts, confirmed acknowledgements, indeterminate results, revision and cursor; committed change and withdrawal events; sanitised operational statuses; access-scoped evidence and reporting views. Source owns business truth and permission to disclose; Federation owns local coordination; peer approval never grants resource access. Public outputs need stable IDs, scope/audience, policy version, source revision, effective and observed timestamps, provenance, error codes, retryability and freshness/unknown state as relevant. Events represent committed Federation facts from its durable outbox, not transport completion or source transactions.
+
+### Logging, Audit and Reporting: reciprocal contract clarification
+
+| Consumer | Federation publishes | Receiving owner's return or authority | Failure mode |
+|---|---|---|---|
+| Logging | Correlated technical events: peer negotiation, fetch rejection, timeout/retry, schema or signature failure and service health; no secrets/source payloads | Logger provides an operational sink and query tools, not peer/permission truth | If non-mandatory technical logging is unavailable, retain real local state and surface degraded diagnostics; mandatory security evidence still follows Audit requirements |
+| Audit | Actor/peer, tenant, action, changed relationship/collection, policy and revision, reason, proof pointer, commit time and correlation for approvals, publication, disclosure, suspension, withdrawal and security incidents | Audit owns accountable, tamper-evident custody, authorised historical evidence and retention; Federation owns peer/disclosure status | Mandatory evidence capture must fail closed or be durably staged in an accepted capability-owned outbox; never silently lose mandatory accountable actions |
+| Reporting | Authorised, bounded participation/delivery/freshness/withdrawal aggregates and versioned read models with attempted/accepted/unknown distinctions | Reporting owns templates, aggregation, output and its audience decisions; Federation remains authoritative source | Reporting absence cannot block valid exchange; mark incomplete/unknown rather than inventing totals |
+
+### Established standards to evaluate, not prescriptive complete protocol
+
+| Standard | Useful contribution | Important limitation |
+|---|---|---|
+| W3C ActivityPub + ActivityStreams 2.0 | Federated actors, objects, social updates and delivery | Social vocabulary does not independently standardise product prices, booking permissions or cross-tenant business trust |
+| W3C WebSub | Publisher/hub/subscriber change-notification and subscription lifecycle | Delivery notification is not authoritative record synchronisation; snapshot and recovery still need design |
+| RFC 9421 HTTP Message Signatures and RFC 9530 Content-Digest | Integrity and authenticated message binding | Signing key identity, revocation, replay checks, payload policy and legal trust are separate |
+| RFC 7517 (JWK), RFC 7515 (JWS), OAuth 2.0 metadata RFC 8414 and optional mTLS RFC 8705 | Key format, verifiable tokens, published issuer metadata and strong machine authentication profiles | Choose a consistent and minimal trust/authentication profile; do not equate authentication with source disclosure permission |
+| RFC 7033 WebFinger and RFC 8615 well-known URIs | Optional interoperable discovery/address conventions | No compulsory universal registry or implicit reliable identity |
+| JSON Schema 2020-12 + OpenAPI 3.1 | Versioned public envelopes, input validation and documentation | Schemas do not establish permissions or source truth |
+| RFC 9110 HTTP semantics, ETag/If-None-Match and RFC 9457 Problem Details | Cache validation, conditional fetch, statuses and structured errors | Staleness, reprocessing and peer acceptance need explicit business semantics |
+| OWASP ASVS 5.0, SSRF Prevention Cheat Sheet, WCAG 2.2 AA and applicable GDPR/UK GDPR | Security validation, remote URL safety, accessible operator UI, minimisation and lawful transfer | A technical implementation does not itself certify legal compliance |
+
+**Decision:** start with direct Node-to-independent-Hub opt-in public publication and authenticated pull/reconciliation, optionally push notification. Evaluate WebSub for simple feeds and ActivityPub/Fedify only where its social object model actually fits. Avoid inventing a universal federation protocol or assuming AT Protocol's architecture mandates compatible implementations.
+
+### Permissively licensed open-source implementation candidates
+
+These are **candidates for technical assessment**, not mandatory dependencies, acceptance-tested versions or proof of transitive dependency suitability. Review exact release license/SPDX, transitive notices, commercial use rights, maintainer activity, supported Node runtime, vulnerability/advisory posture, supply chain and exit strategy before adoption. All should remain replaceable behind Federation-owned ports.
+
+| Candidate | Licence indicated by upstream | Role / adoption judgement |
+|---|---|---|
+| Fedify (`fedify-dev/fedify`) | MIT | Actively developed TypeScript ActivityPub federation toolkit: discovery, signatures, protocol delivery. **Conditional**: best candidate only for ActivityPub adapter, not mandatory core; avoid protocol/framework coupling |
+| `panva/jose` | MIT | Mature JOSE/JWS/JWK implementation for signed payloads and key handling; cryptographic profile chosen separately |
+| `nodejs/undici` | MIT | Maintained efficient HTTP client; outbound request policy, DNS rebinding/SSRF and resource-limits still owned by Federation |
+| `ajv-validator/ajv` | MIT | Mature JSON Schema validation for public versioned exchange envelopes; prohibit untrusted schema compilation/remote references without controlled policy |
+| `sindresorhus/p-limit` | MIT | Small, maintained concurrency limiter for bounded network/work queues; not a replacement for Message Queue or Scheduler |
+| `digitalbazaar/jsonld.js` | BSD-3-Clause | Conditional JSON-LD parsing for ActivityStreams or linked-data vocabularies; guard remote context fetching and resource consumption |
+| `fastify/fastify` | MIT | Mature HTTP server option only if a standalone server adapter is justified; **not** required within the default Nuxt/Nitro host |
+
+Exclude licenses or commercial terms that impose SaaS revenue gates, source-available restrictions, vendor service dependency or hidden proprietary enterprise features. Specifically, the newer Fedify-associated *Feder* project is AGPL-3.0 and therefore is **not** in this permissive-library shortlist. Even permissive licences do not automatically mean a project is actively maintained or all dependencies are compatible; pin audited release versions and record alternatives.
+
+### Verified reference host navigation and GUI proposal
+
+The `nuxt-layers-test/application-test-template` `master` README documents an independent test area `/admin`, homepage `/`, Theme Manager route `/theme-manager`, a shared themed shell with collapsible desktop sidebar/mobile overlay, and an Appearance control in the top bar. `app/pages/admin.vue` shows dashboard cards including a Theme Manager link; `app/pages/index.vue` leads from the homepage into `/admin`. This test host explicitly warns that Theme Manager's unauthenticated **test mode is local-only and must not be exposed publicly**. Its current `nuxt.config.ts` composes Theme Manager in test mode, without installing Federation. These are observed template facts, not a Federation UI implementation.
+
+**Proposed Federation navigation in a derived test application:** host-controlled sidebar `Federation` → `/federation` overview. The host may also show a Federation card on `/admin`; users with no permission see neither active actions nor private data. Required management views if enabled: `/federation/peers` (invite/verify/suspend/revoke and scope); `/federation/collections` (public source-owned projections, preview and audience); `/federation/subscriptions` (Hub selection, opt-in and withdrawal); `/federation/synchronisation` (revisions/checkpoints, stale/unknown, retry and reconciliation); `/federation/governance` (trust, quarantine, reasons, review/appeals and evidence); `/federation/settings` (roles, budgets, endpoint references and key status, never raw secrets). Contextual drawers may reduce page count, but public contracts and operation boundaries are stable.
+
+**Hub operator composition** adds a separate Search/Discovery management route, index coverage and moderation/reporting screens; those are not owned by Federation. Publishing-only or discovering-only Nodes see role-relevant subsets. Headless deployments expose the same authorised contracts without menu/screens.
+
+**User journeys:** (1) Node admin enables Federation, verifies peer, sees pending/active; (2) Publisher approves a public collection then selects an independent Hub; (3) operator inspects synchronisation and stale/unknown or rejected updates, retries safely; (4) publisher withdraws and sees confirmed versus unknown remote acknowledgement; (5) Hub operator quarantines malicious remote publication through local policy/Moderation, then tracks review without changing origin; (6) tenant switch and unauthorised operators never see other tenants' peers, sources or evidence.
+
+**Presentation controls:** host owns menu/routing and authentication integration; capability optional presentation consumes only public operations/read models. Use server-side authorisation for every action, Theme Manager semantic classes, internationalisation, Clock effective dates, WCAG 2.2 AA keyboard/ARIA and responsive patterns. Show source/last-confirmed version and pending/stale/unknown states, accessible confirmations and safe destructive-action review. Avoid silently fetching arbitrary external URLs and avoid global identity sharing. The test host is representative only; do not inherit test-mode authentication bypasses into production.
+
+### Follow-up status
+
+All findings in this section are agreed conceptual recommendations where expressly approved above, or evidence-backed candidates for subsequent architectural selection. No package installation, implementation repo edit, tests or merge authorised. Existing independent counterpart `CONTRACT.md` availability and exact chosen wire profile remain separate implementation investigations.
