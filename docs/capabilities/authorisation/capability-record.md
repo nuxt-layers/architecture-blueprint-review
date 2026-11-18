@@ -434,3 +434,7 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## Cross-capability note — Gaming conceptual review (18 November 2026)
 
 **Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) requires current server-side resource-scope access decisions for organising, joining, playing, adjudicating, correcting, viewing and exporting, with assurance appropriate to the action. Authorisation decides access, Gaming independently enforces game rules and state transitions. Competition rank, paid admission, tenant parentage and group membership confer no inherent administration grant.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
