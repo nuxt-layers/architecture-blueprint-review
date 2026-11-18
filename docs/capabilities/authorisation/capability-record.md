@@ -430,3 +430,8 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Authorisation supplies server-side tenant/issuer/subject/resource access decisions for issue/view/verify/revoke/replace and step-up where required. Credentials additionally enforces claim-source decision authority, issuer delegation, mandate status, profile and lawful disclosure. No IAM grant makes an award or confers external issuing rights. Denial/unknown fails closed.
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Authorisation remains authoritative for permission definitions, roles/grants, approvals and resource-aware access decisions. IAM Integration supplies verified Authentication caller and Identity directory/governance ports, and consumes decisions, approval qualifications, role-change outcomes and revocation status; never equates membership with permission or silently relaxes assurance. Strong/bounded consistency and recovery from outbox lag need verified integration acceptance. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
