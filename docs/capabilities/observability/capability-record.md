@@ -50,3 +50,8 @@
 ## Reciprocal note — CLK-03/CLK-04 trusted-time health and clock adjustments (17 November 2026)
 
 **Agreed Clock relationship; no implemented read port asserted.** [Clock's final completeness review](../clock/capability-record.md#final-completeness-review--eight-concerns-resolved-17-november-2026) delegates time-source health, quality-measurement freshness, offset/drift/uncertainty histories, synchronisation loss, degraded/holdover status, restoration and clock-adjustment alerts to Observability using Infrastructure-originated telemetry. Publish only authorised, bounded health data to host/administrative consumers; an observed metric is not a cryptographic proof. Operational alerts cannot substitute for server-side policy checks on each security-sensitive operation. No raw cross-tenant clock data, secrets or private timestamps by default.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure's [conceptual host status contract](../../../reviews/infrastructure-conceptual-architecture.md) supplies qualified resource readiness, provider health, UTC synchronisation quality and failure/recovery observations, with evidence age, source and explicit unknown/degraded semantics. Observability owns telemetry, metrics, alerts and historical presentation, not infrastructure control or provider truth. Pending INF-01/03/05; no Observability implementation is asserted.
