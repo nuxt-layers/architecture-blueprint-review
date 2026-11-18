@@ -35,3 +35,7 @@
 ## Cross-capability note — Gaming conceptual review (18 November 2026)
 
 **Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) owns game matches, rules, entrants, rounds and official results; Events retains actual scheduled public/physical event sessions, venue and programme state. Events may supply a versioned session reference, permitted time and availability; Gaming supplies game-specific participation and result references, not bookings or calendar authority. Distinct source revisions and conditional provider absence must be observed; this note does not complete the Events review.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
