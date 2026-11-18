@@ -31,3 +31,7 @@
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Training owns participation, verified competencies and programme completion, with source-effective versions and evidence. Qualification consumes those facts (alongside Assessment, other courses and prior learning) to determine authorised qualification awards; Training completion is not by itself an external qualification. A Qualification award may occur without a course or Training involvement. No change to previously approved training ownership.
+
+## Qualification independent conceptual review — reciprocal interface (18 November 2026)
+
+**Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Training owns actual participation, verified achieved competencies and programme completion. Qualification maps source-attributed Training evidence to a qualification rule revision and makes separate eligibility/formal award decisions only where empowered. Completion is not a qualification; direct assessment or prior learning can qualify without Training where scheme permits. Training may display authoritative Qualification award status but cannot mutate it. This note does not complete this adjacent capability's independent review or assert an implemented contract.
