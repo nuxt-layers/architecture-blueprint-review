@@ -63,3 +63,8 @@ Comments Engine may produce author/reply/mention, moderation decision and appeal
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** Notifications dispatches approved course, session, enrolment, assessment, learner migration or credential status alerts using minimised domain-source facts. Sending does not confer an award, constitute learner admission or demonstrate receipt. This note does not complete the separate notifications review.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Notifications delivers opted/required issuance, expiry, revoked, replaced and status-action notices from committed Credentials events with authorised recipient context and minimised details. Delivery failures retry independently; neither successful email nor failed delivery determines whether credential issuance committed.
