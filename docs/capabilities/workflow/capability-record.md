@@ -67,3 +67,7 @@ Content Editor may show Publisher-bound review/approval states and invoke permit
 ## COURSE-12 — Qualification reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual boundary, not an implemented public contract or a completed workflow review.** [Qualification](../qualification/capability-record.md): Workflow coordinates qualification scheme reviews, delegations, individual award-case approvals, appeals and teach-out steps, but Qualification owns authoritative outcome/award state after validating current rules, issuer powers and permissions. A completed approval task neither issues a credential nor creates external award authority.
+
+## Integrations reciprocal conceptual interface — 18 November 2026
+
+**Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Workflow governs human approval and review routes; Integrations exposes requests for grant activation, high-risk scopes, mapping changes, cutover and reconciliation where applicable, but remains owner of its connection lifecycle and does not infer approval from a successful provider callback. Domain owners determine transaction authority and regulatory specialist determines mandatory sign-off floors. See [Integrations conceptual contract](../integrations/capability-record.md#native-services-and-lifecycle), PR #76; proposed, non-normative.

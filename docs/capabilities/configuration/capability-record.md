@@ -276,3 +276,7 @@ Configuration supplies scoped, versioned enabled-role and operator preference va
 ## Infrastructure INF-05 approval — 18 November 2026
 
 The [Infrastructure owner-approved clarification](../../../reviews/infrastructure-approved-contract-standards-gui.md) confirms previously agreed CFG-07: privileged NTP/NTS source selection, OS application, trust checking and recovery belong to Infrastructure/host, not Configuration tenant/user settings. Infrastructure may use Clock's public temporal operations for timestamp interpretation/presentation; Clock does not select upstream sources. No Configuration-owned NTP policy is created by this conceptual sign-off.
+
+## Integrations reciprocal conceptual interface — 18 November 2026
+
+**Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Configuration retains authority for declared effective provider-selection references, scoped approvals, staged revisions and rollback (CFG-08); Integrations independently validates actual connection, provider scopes, readiness, mapping compatibility and reconciliation. A selected provider is not a verified active connection; provider cutover cannot be activated by settings alone. Read the [Integrations proposed conceptual public contract](../integrations/capability-record.md#idealised-public-inbound-contract); status INT-01–06 proposed in draft PR #76. Preserve existing Configuration approvals and use host-supplied public ports without mutual package imports.

@@ -619,3 +619,11 @@ Conditional Help-owned mapping create/update/withdrawal actions and sensitive pr
 ## Infrastructure reciprocal interface — 18 November 2026
 
 **Proposed reciprocal review — 18 November 2026:** The Infrastructure [conceptual public surfaces](../../../reviews/infrastructure-conceptual-architecture.md) emit attributable, replay-safe sensitive provider/deployment/backup/restore/time-source control transitions and independent evidence references to Audit without owning Audit's accepted evidence or silently equating provider acknowledgements with verified outcomes. Critical capture failure invokes governed refusal/hold; required evidence and interface remain open INF-03/04.
+
+## Integrations reciprocal conceptual interface — 18 November 2026
+
+**Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Integrations supplies minimised, versioned, tenant-attributed connection changes, remote grant/revocation evidence, callback quarantine, authorised external submissions, sync conflict and outcome-unknown facts through documented interfaces and owned outbox. Audit independently owns audit evidence and retention obligations; ordinary Logging is not a substitute. No secrets, raw tokens or unrestricted personal data in events; transport receipt does not establish business completion. See [Integrations conceptual contract](../integrations/capability-record.md#idealised-public-outbound-contract), proposed PR #76.
+
+## Integrations user-scoped discovery/use — 18 November 2026
+
+**Status: approved Integrations conceptual decision, not independent audit implementation acceptance.** **Approved INT-07–09 clarification:** plugin discovery/trust approval, tenant activation, permission changes, high-risk connection use and significant denied attempts are attributable, classified source events where the applicable risk catalogue requires. Audit owns independently accepted evidence; the caller's UI visibility is decided by Authorisation, not Audit. Do not disclose restricted plugins in evidence query/report outputs without explicit permission. See [Integrations per-user contract](../integrations/capability-record.md#int-07-09-approved-governance-and-user-specific-entitlement--18-november-2026), PR #76. No implementation claims.

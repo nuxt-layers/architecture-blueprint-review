@@ -336,3 +336,7 @@ The `nuxt-layers-test/application-test-template` `master` README documents an in
 ### Follow-up status
 
 All findings in this section are agreed conceptual recommendations where expressly approved above, or evidence-backed candidates for subsequent architectural selection. No package installation, implementation repo edit, tests or merge authorised. Existing independent counterpart `CONTRACT.md` availability and exact chosen wire profile remain separate implementation investigations.
+
+## Integrations reciprocal conceptual interface — 18 November 2026
+
+**Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Federation owns peer relationships, protocol/publishing subscriptions, cross-node disclosure and reconciliation decisions; Integrations may supply optional authenticated external adapters, connection-status and qualified exchange receipts. Connector health must not be construed as peer trust, verified domain truth or federation membership; the domain/Federation owner determines consent and authority. Avoid circular compile-time dependencies using public host-composed contracts. See [Integrations conceptual contract](../integrations/capability-record.md#cross-capability-relationships--directional-public-contract-cooperation), proposed PR #76; concurrent Federation PR #69 remains provisional.

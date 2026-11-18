@@ -1,0 +1,50 @@
+# Integrations conceptual review — opening baseline
+
+**Status:** In progress; non-normative; owner approval pending.  
+**Target:** `docs/capabilities/integrations/capability-record.md` (actual directory: `integrations`).  
+**Branch:** `review/integrations-conceptual`.  
+**Opening governing master:** `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017 and ADR-0018 accepted).  
+**Opening blueprint master:** `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
+
+## Review scope
+
+Apply `docs/review-protocol.md`: establish authority and existing evidence; classify external integrations boundary versus domain authority; specify idealised inbound/outbound contract (commands, queries, provider events, uncertainty), native lifecycle, security, tenant isolation, provider governance, reciprocal capability notes, GUI/admin needs and conceptual acceptance. Challenge dependency cycles and concurrent PR proposals. Preserve already approved conceptual decisions.
+
+## Opening concurrency and evidence
+
+Federation draft PR #69 contains provisional reciprocal Integrations implications and is not an accepted baseline. Existing Integrations record includes numerous reciprocal proposals (Course, Qualification, Assessment and Credentials); determine exact statuses independently. No implementation readiness is presumed. Check further active PRs and current master before final technical/architectural validation. No implementation edits, local tests or merge are authorised.
+
+## Current-master technical and architectural review — 18 November 2026
+
+- **Current governing master:** `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (unchanged since opening). Accepted ADR-0012 / ADR-0016 and normative Capability Standard/canonical catalogue checked; provider-neutral boundaries and public-port dependencies retained. ADR-0017/0018 acceptance recorded; their detailed applicability requires continued check at owner review.
+- **Current blueprint master:** `a4e40a5cd82a2f79e8edd872af55c22d472b61cb` (unchanged since opening). The branch is **10 commits ahead, 0 behind**, with **10 changed files** (9 capability records and this baseline). All eight adjacent records receive small additive notes; main target replaces empty pro-forma with substantive definition while preserving its historical reciprocal content. No unintended capability directory deletion or implementation-file change.
+- **Concurrent PR reconciliation:** #69 Federation, #75 Infrastructure, #74 Identity, #73 IAM Integration, #77 Inventory and #78 Invoice are open, as are #66–72. Any overlap is **provisional**, not adopted; proposed boundaries distinguish infrastructure operations, IAM composition, federation peers, and domain owner authority. Recheck their changed documents before merge; do not silently overwrite integrated competing notes.
+- **Git:** compare API confirms ancestry (no divergence at check). PR metadata at opening reported `mergeable=false` immediately after creation; this can indicate pending mergeability computation and is **not a verified passing merge check**. No proof of protected branch checks or CI completion was retrieved. Treat Git mergeability and checks as unresolved; rerun immediately before explicitly approved merge.
+- **Architecture:** no business-domain state centralised in Integrations, secret values remain host/vault-owned, provider authenticity does not establish domain truth, receipts distinguish accepted/completed/unknown, all logical dependencies use public contracts and must remain acyclic. Configuration selection and Integrations readiness remain separate; origin-owning outboxes versus Message Queue transport remain separate. Reciprocal changes are intentionally provisional, not approvals of neighbouring reviews.
+- **Documentation:** target exact path `docs/capabilities/integrations/capability-record.md`; eight reciprocal paths checked through successful GitHub file updates. Relative links in new notes point to target record. Historic linked notes were retained without a full link checker. Catalogue/register remain unchanged because existing established classification and description still match; no governing ADR changed.
+- **Evidence limits:** target repository exists, with only minimal README and no retrievable root CONTRACT.md; no implementation behaviour, vendor integrations, runtime compliance or automated acceptance certified. No local tests/builds executed.
+- **Disposition:** conceptually documented for owner review, **not approved, not merge-ready** until owner decisions INT-07–09, external PR reconciliation and final Git checks. Owner authorisation required before squash merge.
+
+## Owner-approved live-plugin extension — 18 November 2026
+
+INT-10 owner-approved: Integrations must discover, approve and activate independently deployed external connector plugins at runtime, without rebuilding the principal Nuxt host, analogous to Gaming's approved runtime-plugin mechanism but with server-side process/container isolation appropriate for sensitive provider transactions. Discovery never authorises executable code, credentials, processing, tenant binding or a domain decision. See target record's INT-10 section for manifests, public commands/queries/events, lifecycle, upgrade/rollback, security, GUI and acceptance.
+
+**Current baseline caveat:** blueprint `master` advanced to `cf9804f0f44cc52d996f22c273a56df1ab0bdbf6` as observed during this extension; a prior comparison at `02b2302e90e94680928abb9ac5553e81c9e67a53` showed the branch diverged (11 ahead, 6 behind), and further changes have since landed. Review all newer accepted Gaming, Federation, Identity and neighbouring capability decisions and reconcile both Git and architecture before merge; do not interpret this additive documentation commit as that final reconciliation. No implementation edits, local tests or merge.
+
+## INT-07–09 owner sign-off and per-user access clarification — 18 November 2026
+
+Owner approved INT-07 (installation-operator plugin trust plus tenant enablement), INT-08 (one domain-owned native/external authority per business scope with explicit reconciled cutover), and INT-09 (risk-based assurance/approval/certification where required). Additional binding owner clarification: a tenant enabling a provider does not grant every tenant member discovery or use. Authorisation must filter public plugin/connection projections and recheck each action server-side; lower-trust members may see/use Weather without learning that Banking exists, while appropriately authorised owners or delegated financial officers may use Banking. Added bounded reciprocal notes to Authorisation, Identity and Audit; original draft PR #76 retained. This is conceptual sign-off on decisions, not normative adoption or runtime implementation. Current-master Git/architectural reconciliation and CI/mergeability verification remain outstanding. No merge authorised.
+
+## System-wide enforcement mandate — 18 November 2026
+
+Owner explicitly reaffirmed mandatory server-side denial of unauthorised items and operations everywhere on the platform. This is already governing normative architecture (`architecture-rules/docs/architecture.md`: server owns access decisions; client controls are presentation only), not a new ADR. Integrations record now covers protected query/command/exports/plugin RPC/background paths, tenant/resource/action scoping, trusted service principals, revocation, fail-closed absence and conceptual direct-API acceptance. No separate governing repository edit is required to state the existing rule. This PR remains conceptual and unmerged; master reconciliation and check verification outstanding.
+
+## Final pre-merge reconciliation against newer master — 18 November 2026
+
+**Authority:** governing `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2` unchanged; accepted ADR-0012, ADR-0016, ADR-0017, ADR-0018 and normative Capability Standard continue to apply. **Latest checked blueprint master:** `a88f0c9a7c25262a97d220515c5d7031e937d124` (13 new commits since review opening `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`).
+
+**Git reconciliation method:** preserve latest master as tree base; carry all original PR #76 changes into the same PR using an integration merge commit. Twelve reciprocal capability records were additive on both sides; retain full latest-master content plus the original PR's bounded appended notes. The Integrations record replaces the original empty pro forma with its approved conceptual contract, retains the historical notes and additionally incorporates all newer master reciprocal sections concerning Events EVT-08 and Federation. The review baseline retains its original history and adds this reconciliation. No unrelated directory deletion or implementation changes; catalogue/register remain governed by their established Platform classification.
+
+**Architecture:** no ownership transfer to Integrations from Identity, Authentication, Authorisation, Federation, Events, domain owners or provider systems; no direct package imports or joint contract/Nuxt-extension cycles created. INT-01–10 conceptual decisions approved, with server-enforced individual resource/action rights and runtime plugin trust isolation. Events remains authority for event instances; Federation for peer participation; Integrations for connection/adapter transport and technical evidence. Outbox owner and Message Queue transport boundaries respected; Logging, Audit and Reporting distinct. Infrastructure stays hosting/deployment owner. Existing supplemental remote operation uncertainty and tenant/organisation hierarchy boundaries remain.
+
+**Verification required on updated head immediately before squash:** fresh compare ahead/behind, PR mergeable state, current master/GitHub branch rules, checked commit CI/workflow conclusions, and final changed-file documentation/links. No local builds/tests run and no implementation changes authorised. If new master changes land, re-evaluate before merging. Explicit owner authorisation to squash merge supplied in conversation.
