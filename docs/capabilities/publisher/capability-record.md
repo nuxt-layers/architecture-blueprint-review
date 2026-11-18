@@ -91,3 +91,8 @@ Publisher requests revision-bound technical checks for registered documents befo
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10/11 agreed:** a course syllabus or certificate PDF is a Publisher document, not proof that a qualification award was authorised. Course owns curriculum, Assessment owns marks, Training owns achievement, Credentials owns credential status, and the qualified awarding authority owns formal award decisions. Curriculum migration and withdrawal preserve lawful historical references. This note does not complete the separate publisher review.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Publisher may produce versioned certificate documents or presentation using a permitted Credentials public view model, but owns only its own rendered document lifecycle. It cannot issue the underlying credential, award a qualification, revoke a credential or certify live proof status. Corrections/revocations trigger controlled rendering/withdrawal or status updates through explicit public contract and reconciliation; a cached PDF remains an artifact, not a status authority.
