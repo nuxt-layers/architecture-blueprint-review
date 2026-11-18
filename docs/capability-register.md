@@ -219,3 +219,20 @@ The empty `docs/capabilities/translate/` directory has been removed in the worki
 | `time-attendance` | **Domain candidate** | **Owner-approved conceptual separation** in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59); detailed capability review and implementation unverified | Actual attendance, timesheets, breaks, approved time evidence and corrections; distinct from Employment contractual hours, planned Workforce Scheduling, Payroll pay calculation and platform Scheduler's timed triggers |
 
 [Conceptual ownership note](../proposals/time-attendance-ownership.md) · [Capability pro-forma](capabilities/time-attendance/capability-record.md). No implementation/package/operational status is asserted. A dedicated future review must establish independently usable input/output contracts, privacy controls, GUI and package classification before creating a new implementation repository.
+
+## Gaming — conceptual review evidence (18 November 2026; draft PR #71)
+
+| Field | Recorded evidence |
+|---|---|
+| Classification | Proposed Domain candidate; independent gaming authority conditional on justified reusable lifecycle |
+| Working record | [Gaming conceptual record](capabilities/gaming/capability-record.md) |
+| Governing baseline | `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017/0018 accepted) |
+| Blueprint opening baseline | `architecture-blueprint-review/master` `a4e40a5cd82a2f79e8edd872af55c22d472b61cb` |
+| Root implementation contract | Not retrievable; `nuxt-layers/gaming` returned 404 during access check; existence/availability not established |
+| Public interfaces | Proposed commands for rules, instances, play, adjudication; queries for authorised game state and rankings; source-owned result/outbox events, subject to owner approval |
+| Presentation | Proposed optional dashboard/play/organiser/referee interface and headless mode |
+| Operational and acceptance evidence | Not verified; no implementation tests executed |
+| Decision status | GAM-01–08 open owner decisions; GAM-09 technical investigation; GAM-10 implementation alignment; GAM-11 acceptance pending |
+| Merge status | Draft PR only, explicit owner approval required |
+
+This evidence supplement does **not** promote the existing candidate to Established, installed, operational, compliant or authorised status.
