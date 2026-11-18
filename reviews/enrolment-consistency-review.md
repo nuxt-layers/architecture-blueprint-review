@@ -25,3 +25,7 @@
 - Resolve substantive owner decisions ENR-01–ENR-07; reconcile any approved Course/Training/Booking changes or conflicts.
 - Check changed paths, docs links, contract consistency, dependency acyclicity, authorisation and supplier authority. Check CI/review evidence available at merge time; **do not run local tests**.
 - Obtain explicit owner approval **before** protected squash merge. No merge or implementation-repository modification is authorised.
+
+## Owner decisions — update 18 November 2026
+
+ENR-01 through ENR-07 were all expressly approved, with ENR-02 clarifying that application, admissions acceptance and enrolment confirmation are Enrolment-owned but distinct states, and ENR-07 explicitly requiring idempotent business rollback/compensations and reconciliation of irreversible or uncertain external changes. The original open-decision statements above describe the historical review state, not current approval status. Main Enrolment capability record has been updated. This approval **does not authorise merging**. The branch fell nine commits behind blueprint `master` as checked before this update; reconciliation, technical and architectural checks against latest master, and an explicit merge instruction remain outstanding.
