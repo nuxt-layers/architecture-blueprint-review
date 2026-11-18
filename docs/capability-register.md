@@ -90,7 +90,7 @@ This entry records review-approved conceptual documentation, not adopted governi
 | `caching` | Foundation | Candidate | Cache provider ports, expiration and invalidation; source capabilities remain authoritative |
 | `logging` | Foundation | Candidate | Structured technical logs, correlation and sinks; not the authoritative business audit trail |
 | `observability` | Platform | Candidate | Metrics, traces, system health and diagnostics; not logging or business auditing |
-| `uuidv7-generator` | Library candidate | Candidate | UUIDv7 identifier generation; not ownership of entities or credentials, and not automatically a Nuxt Layer |
+| `UUID-generator` | Library candidate | Candidate | Shared UUID generation, including UUIDv7; replaces retired `uuidv7_generator` / `uuidv7-generator` concept without owning entities or credentials, and does not automatically require a Nuxt Layer |
 | `api-gateway` | Composition / platform to decide | Candidate | External API routing and exposure; not a replacement for capability APIs or server authorisation |
 | `application-compositions` | Composition artefacts | Candidate | Reusable application templates and selected capability wiring; generally not independent stateful services |
 | `organisation-console` | Presentation / application composition, not a business capability | Conceptual name accepted; independent packaging under review | Organisation-neutral dashboards, context selection and management screens consuming authoritative public contracts; no independent business records or grant authority |
