@@ -39,3 +39,8 @@
 - **Related capability notes:** [warehouse](../warehouse/capability-record.md), [inventory](../inventory/capability-record.md), [order](../order/capability-record.md), [invoice](../invoice/capability-record.md), [billing](../billing/capability-record.md), [accounting](../accounting/capability-record.md).
 - **Open architectural questions:** Ownership of storage tariffs, 3PL services, actual-versus-quoted costs, allocation of inbound freight versus outbound distribution, and returns.
 - **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+
+## Reciprocal interface — Inventory conceptual review (18 November 2026)
+
+**Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Logistics provides versioned dispatch, carrier handoff, delivery, return and loss evidence; Inventory alone validates and commits stock in-transit, issue, receipt and exception states. Shipment/delivery completion does not itself assert legal title transfer, a stock movement or an accounting entry. A delayed or disputed handoff remains traceable pending reconciliation. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.
