@@ -81,3 +81,7 @@ Content Security owns qualified detection evidence, revisions and incomplete/unk
 ## Reciprocal conceptual note — Course (17 November 2026)
 
 **Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may submit user-facing learning material reports for moderation. Moderation owns policy enforcement decisions and appeals where applicable; Course owns course withdrawal/access transitions and version history. Neither capability awards learner grades. This does not complete moderation's own review.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) supplies game source references, permitted conduct/anti-cheat evidence and own restriction/enforcement receipts. Moderation retains cross-domain reports/cases/adjudication/appeal coordination; Gaming independently validates and executes match restrictions, disqualifications or scoring corrections under game rules and due process. Detection flags are not final guilt findings. No cross-tenant disclosure or verified adapter is implied.
