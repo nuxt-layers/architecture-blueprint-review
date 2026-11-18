@@ -32,3 +32,9 @@
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration owns committed change events and its durable outbox; Message Queue owns transport/retry/replay. Consumers may receive duplicates and must query authorised current values rather than treating events as access grants. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation owns committed peer/subscription/delivery/checkpoint state and its durable outbox facts; Message Queue may carry these and source-owned publication events to selected subscribers. Message Queue does not own remote peer trust, HTTP exchange, source content, federation cursor semantics, reconciliation or origin authorisation. Duplicates/replay are expected; delivery acknowledgment is not business completion. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
