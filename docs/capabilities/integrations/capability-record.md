@@ -1,6 +1,6 @@
 # Integrations — Capability Conceptual Record
 
-**Status:** Proposed independent conceptual review, 18 November 2026; owner sign-off pending; non-normative. **Classification:** established **Platform** responsibility; proposed framework-independent service with provider-specific connector adapters and optional separable Nuxt administration UI. **Opening authority:** `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; **opening blueprint:** `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`. **Review:** [draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76). **Implementation evidence:** [nuxt-layers/integrations](https://github.com/nuxt-layers/integrations) exists on `master`, but its README is only `# integrations` and root `CONTRACT.md` is absent at review; **no public runtime contract, implemented connector, test or operational readiness is verified**.
+**Status:** INT-01–INT-06 owner-approved conceptually on 18 November 2026; INT-07–INT-09 open; non-normative; not implementation-ready. **Classification:** established **Platform** responsibility; proposed framework-independent service with provider-specific connector adapters and optional separable Nuxt administration UI. **Opening authority:** `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; **opening blueprint:** `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`. **Review:** [draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76). **Implementation evidence:** [nuxt-layers/integrations](https://github.com/nuxt-layers/integrations) exists on `master`, but its README is only `# integrations` and root `CONTRACT.md` is absent at review; **no public runtime contract, implemented connector, test or operational readiness is verified**.
 
 ## Purpose and classification gate
 
@@ -138,6 +138,63 @@ When presentation is disabled, all legitimate functions remain available to auth
 **Technical investigations (not owner-choice substitutes):** versioned adapter manifest/schema and signature model, OAuth/token broker versus host vault responsibilities, retry/backoff and replay windows, safe callback identity binding, signed grant evidence, provider API deprecation monitoring, operational SLOs, payload minimisation and cost reporting. Set standards through evidence and accepted policy rather than inventing guarantees.
 
 **Implementation alignment:** root `CONTRACT.md` absent; publish an independently usable consumer contract, explicit port dependencies, error codes, status/versioning and operational limits; test host composition budget through CI/user-owned work, not this review. No currently verified implementation/contract. **No conceptual sign-off, legal certification or runtime acceptance asserted.**
+
+
+## Owner approval and supplementary interface examination — 18 November 2026
+
+**Owner decision:** INT-01–INT-06 approved conceptually on 18 November 2026 in the Integrations review conversation. INT-07–INT-09 remain substantive open decisions; approval of initial recommendations does **not** choose their alternatives or mean a deployable implementation. Root `nuxt-layers/integrations/CONTRACT.md` remains absent at this check. `nuxt-layers-test/application-test-template` has a README describing a local development/test shell; its root `CONTRACT.md` was not retrievable; Theme Manager's published contract is available but explicitly records implementation-composition gaps. No implementation change follows from this conceptual approval.
+
+### Reciprocal Logging, Audit and Reporting public interfaces
+
+| Cooperating capability | Integrations supplies (through deliberately public interfaces) | Integrations receives, if applicable | Authority and operational guarantee |
+|---|---|---|---|
+| **Logging** | Redacted diagnostic events: request/adapter and operation IDs, tenant-safe correlation, permitted severity/error category, latency, retry status, rate limits, timeout, callback verification failures and degraded provider health | Supported log submission/diagnostic sink and sink health/availability, with redaction and routing policy | Logging owns technical record/sinks and retention; logging an operation does not establish execution, remote success or Audit evidence custody. Logs must exclude OAuth tokens, webhook secrets and raw sensitive payloads. Optional Logging outage must not forge or erase transaction outcomes |
+| **Audit** | Classified origin-authenticated source events via Integrations-owned committed outbox/approved submission: connector creation, delegated scope approval/revocation, secret reference rotation, high-risk export/transmission, sensitive administrator changes, quarantined callbacks and failed/reconciled significant remote actions | Accept/reject/quarantine/evidence receipt and required event classifications/retention/disclosure constraints through Audit contract | Audit owns independent immutable/tamper-evident evidential receipt, verification and review, not Integrations operation truth or domain outcomes. Do not assume message delivery equals Audit acceptance; mandatory Audit capture failure must be observable and follow a risk-specific fail-closed/queued obligation |
+| **Reporting** | Authorised, scoped/versioned read models for connector counts and statuses, adapter support, API usage/rates/cost, success/rejection/unknown outcome classification, sync lag/checkpoints, reconciliation backlog, source and effective times, completeness and coverage | Report reference, definition/version, generation/completion status, permitted output/export and failure/refresh status | Reporting owns report definitions, derived measures, saved reports and disclosure; Integrations owns source technical facts. Do not treat external-system reports as canonical domain reports or infer completion from transport acceptance |
+
+**Cross-cutting:** all three cooperation paths need public schema/version, tenant/purpose/authorisation, source/effective/observed time, correlation, sensitivity and permitted recipient. No reads of private stores or circular package imports. Integrations can serve its own minimal health/status screens without Reporting; its security-relevant outbox/evidence obligations must not rely on best-effort Logging. Audit and Reporting can be absent where optional, except when a declared regulated workflow requires Audit evidence, in which case the absence mode must respect policy and fail closed or maintain an explicitly assured durable pending state.
+
+### Design standards and open-source dependencies (researched 18 November 2026)
+
+**Relevant standards:** IETF OAuth 2.0 and security BCP [RFC 9700](https://www.rfc-editor.org/rfc/rfc9700.html) with PKCE/state/issuer checking, OIDC where provider supports it; HTTP semantics/idempotency [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html); HTTP error details [RFC 9457](https://www.rfc-editor.org/rfc/rfc9457.html); [OpenAPI](https://spec.openapis.org/oas/latest.html) for HTTP operation descriptions, [AsyncAPI](https://www.asyncapi.com/docs/reference) and [CloudEvents](https://cloudevents.io/) for event/webhook envelopes where suitable; JSON Schema for versioned provider payload validation; OpenTelemetry semantic conventions and W3C Trace Context for correlation; OWASP ASVS 5 L2 (L3 security-critical), OWASP API Security Top 10 (especially object-level authorisation and SSRF), WCAG 2.2 AA, GDPR/UK GDPR and applicable sector-specific regulatory procedures. **Do not mandate every provider support these standards:** adapter-specific transports/protocols vary; contracts preserve provider-neutral meanings.
+
+**Permissive reusable candidates (not selected dependencies):**
+
+| Library / licence | Appropriate bounded use and lock-in assessment |
+|---|---|
+| [panva/openid-client](https://github.com/panva/openid-client), **MIT** | Mature OAuth 2.0 / OIDC client for supported providers; enforce accepted security profiles and isolate behind credential/grant ports |
+| [panva/oauth4webapi](https://github.com/panva/oauth4webapi), **MIT** | Lower-level standards-based OAuth flows where precise protocol control is needed; select one of it/openid-client when possible |
+| [nodejs/undici](https://github.com/nodejs/undici), **MIT** | HTTP client/connection pooling; Node built-in fetch may make direct dependency unnecessary |
+| [ajv-validator/ajv](https://github.com/ajv-validator/ajv), **MIT** | JSON Schema validation for external provider data and manifest compatibility |
+| [colinhacks/zod](https://github.com/colinhacks/zod), **MIT** | TypeScript-first runtime validation for local command and result boundaries; avoid two competing canonical schema systems |
+| [sindresorhus/p-retry](https://github.com/sindresorhus/p-retry), **MIT** | Bounded exponential retry for safely retryable operations; cannot create side-effect idempotency on its own |
+| [open-telemetry/opentelemetry-js](https://github.com/open-telemetry/opentelemetry-js), **Apache-2.0** | Trace and metric instrumentation via open standards; optional telemetry adapter, not authoritative audit ledger |
+| [pinojs/pino](https://github.com/pinojs/pino), **MIT** | Structured technical logging implementation behind Logging contract; do not invent a second logging owner |
+| [fastify/fastify](https://github.com/fastify/fastify), **MIT** | Optional standalone HTTP/webhook boundary where justified; not required for a Nuxt/Nitro host |
+
+These projects expose source code under commercially permissive licences; **that does not make any SaaS provider, OAuth registration, cloud API, data feed, licence key or downstream integration free/open/replaceable**. Check exact version, transitive dependencies, release cadence, licence notices and supply-chain before implementation. Avoid selecting a monolithic hosted integrations platform, proprietary connector marketplace or vendor-specific workflow engine as the canonical service. Reuse existing PostgreSQL/Message Queue/Scheduler/Temporal composition rather than introducing a new broker.
+
+### GUI and test-host presentation review
+
+The representative [application test template README](https://github.com/nuxt-layers-test/application-test-template/blob/master/README.md) establishes a responsive app shell with homepage `/`, development admin/test dashboard `/admin`, collapsible Capabilities sidebar and existing Theme Manager link to `/theme-manager`. It states derived test apps add capability-specific scenario/navigation entries and consume published contracts. Theme Manager's [public contract](https://github.com/nuxt-layers/theme-manager/blob/master/CONTRACT.md) records semantic theme vocabulary and the existing page patterns; it also warns that its own one-call production composition is incomplete. The template is **local only**, not a production security pattern.
+
+**Proposed host-owned navigation:** in an enabled, appropriately authorised deployment, sidebar **Capabilities → Integrations** points to a capability-dashboard route such as `/integrations`; do not mandate that exact path or assume automatic menu registration. The capability supplies public server operations and optional separately enabled presentation routes/components; host chooses routes, role visibility and shell branding. The Integrations entry and dashboard may remain disabled without affecting headless APIs.
+
+| Screen / journey | Required public contract / state |
+|---|---|
+| **Integrations dashboard** | Available/active/degraded connections, safe counts and outstanding actions from scoped status queries; no connection secrets |
+| **Provider catalogue** | Available and unsupported providers, permissions, legal limitations, version/terms, rate/cost disclosures via adapter discovery |
+| **Add connection wizard** | Tenant/purpose/provider choice, scope notice, approved OAuth redirect/return, remote-account confirmation, test and activation via public commands |
+| **Connection detail** | Masked credential reference, last validation, supported operations, remote-account binding, renewal/suspend/revoke and irreversible-action confirmations |
+| **Mapping and synchronisation** | Versioned mapping preview, import/export scope, checkpoint history, discrepancy resolution and manual reconciliation through domain-owner approval |
+| **Operations and incidents** | Request history, outcomes (submitted/confirmed/rejected/unknown), retry/circuit-breaker and quarantine views with permissions |
+| **Settings and provider governance** | Authorised provider enablement, scope/cost limits, lifecycle and mandatory approvals; host/Configuration owns declarative selection |
+| **Linked reporting and audit** | Permission-scoped links into Reporting's summaries and Audit's evidential views, never duplicate their records |
+
+**Accessibility/interaction:** WCAG 2.2 AA, keyboard-first OAuth/error/retry journeys, labelled status beyond colour alone, accessible confirmations, responsive sidebar/overlay, i18n, locale-aware times via Clock and semantic styling via Theme Manager; all screens consume public contracts and recheck permissions on the server. Use explicit empty/degraded/offline/unauthorised/expiry/revocation-uncertain states. The host might put a capability card on `/admin`, while the main route lives within the same shared shell. No local tests were run and no test template files were modified.
+
+**Further conceptual acceptance:** unconfigured host displays no functional provider account; admin sees permitted provider catalogue, creates connection and returns to its dashboard; unauthorised caller cannot see cross-tenant connections even through guessed route; expired grant shows reconnect rather than reporting active; provider timeout shows an unknown/reconcile action rather than 'done'; without UI the headless contract remains functional; Logging absence does not suppress Audit obligations; Reporting absence does not prevent operational status queries; compliance-required Audit outage yields documented non-silent failure behaviour.
+
 
 ## Historical reciprocal notes (preserved verbatim)
 
