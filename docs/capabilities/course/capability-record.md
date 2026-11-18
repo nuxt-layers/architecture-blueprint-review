@@ -225,3 +225,10 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Qualification independently owns versioned qualification schemes/recognition requirements and multi-pathway eligibility, including evidence from several Courses or none; Course retains individual teaching curricula, delivery modes and learning outcome definitions. Course publication, passing or completion does not itself award a Qualification. Use immutable course versions/references and public interfaces, not shared course records. No change to previously approved course ownership.
+
+
+## COURSE-12 — approved creation of Qualification domain (18 November 2026)
+
+**Owner-approved:** The five essential requirements justify creating [`qualification`](../qualification/capability-record.md) as a distinct Domain candidate: independent qualification specifications, multi-source/multi-pathway eligibility, awarding body/centre/delegation scope and status, authoritative individual award decisions, and qualification withdrawal/teach-out/version transitions/award appeals. Formal awarding is native to Qualification; do **not** create another generic `awarding` domain. The claimant's course, assessment and training records remain with their original owners, as does credential issuance/status with Credentials. The actual accreditor or external awarding organisation retains its own legal source authority. 
+
+**Approval scope:** Approves architectural ownership and a candidate pro-forma, **not** complete Qualification conceptual sign-off, API/package, independent repository, implementation or regulatory compliance. All shared contracts remain conceptual pending dedicated review. This resolves the earlier qualification-domain deferral; COURSE-10's authority provenance and credential separation continue to apply.
