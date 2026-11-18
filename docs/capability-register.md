@@ -112,7 +112,6 @@ This entry records review-approved conceptual documentation, not adopted governi
 | `company` | Archetype / composition | Example, not standalone candidate | Organisation type with legal-entity references; statutory registration, officers or filings may warrant a separately reviewed domain |
 | `club` | Archetype / composition | Example, not standalone candidate | Group type for a club with selected activity capabilities; paid scheme rights and subscriptions are not Identity membership |
 | `committee` | Archetype / composition | Example, not standalone candidate | Group type and meeting composition; formal votes, resolutions and minutes may warrant their own independently governed lifecycle |
-| `department` | Archetype / composition | Example, not standalone candidate | Organisational unit type, potentially expressed through Identity's existing single-parent group hierarchy; reporting does not grant access |
 | `office` | Archetype / composition | Example, not standalone candidate | Organisational location/unit type; physical facilities, leases and managed assets belong to independently justified domain owners |
 | `workshop` | Archetype / composition | Classification resolved — not a standalone candidate | Event/Course composition unless independently justified domain rules emerge; retain old directory until separate deletion PR |
 
