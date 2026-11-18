@@ -6,8 +6,8 @@
 
 - Governing `architecture-rules/master`: `2b5c0628e88b9698c9ad6ad57cc5315c8f879953` (unchanged from opening).
 - Blueprint `architecture-blueprint-review/master`: `ac1125a7ba4ea15d6b963aebf07d83cd8cd701b9` (unchanged from opening).
-- Draft branch `review/qualification-conceptual`, comparison at review: **8 commits ahead, 0 behind**, eight files changed; no recorded status checks for last observed head. This verifies commit ancestry and changed-file scope, **not GitHub PR mergeability or green CI**.
-- Files: Qualification record; additive reciprocal notes in Course, Assessment, Training, Enrolment, Credentials and Integrations; opening baseline. Catalogue and register already list the target, so avoid redundant reclassification.
+- Draft branch `review/qualification-conceptual`, comparison at review: **9 commits ahead, 0 behind**, nine files changed; no recorded status checks for last observed head. This verifies commit ancestry and changed-file scope, **not GitHub PR mergeability or green CI**.
+- Files: Qualification record; additive reciprocal notes in Course, Assessment, Training, Enrolment, Credentials and Integrations; opening baseline and this consistency report. Catalogue and register already list the target, so avoid redundant reclassification.
 - Target exact path: `docs/capabilities/qualification/capability-record.md` (not a hyphenated alias). Proposed reciprocal relative links `../qualification/capability-record.md` and baseline `../../../reviews/qualification-review-baseline.md` resolve by repository structure.
 
 ## Governing status review
