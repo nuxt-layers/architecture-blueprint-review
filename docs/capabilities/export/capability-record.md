@@ -1,6 +1,6 @@
 # Export — capability conceptual record
 
-**Status:** Proposed conceptual review, **not owner-approved or implemented** (18 November 2026). No install/configured/operational/enabled/authorised status is verified. Governing classification remains **Library**; this record does not amend the accepted catalogue. Review: [draft PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68). Baselines: governing `0725f314abc9ad13f1a65247f54a7ff80772f0b2`, blueprint `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
+**Status:** Partially owner-approved conceptual review (EXP-02–EXP-08 direction approved 18 November 2026); **EXP-01 and EXP-09 remain open**. No implementation or complete conceptual sign-off is asserted. No install/configured/operational/enabled/authorised status is verified. Governing classification remains **Library**; this record does not amend the accepted catalogue. Review: [draft PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68). Baselines: governing `0725f314abc9ad13f1a65247f54a7ff80772f0b2`, blueprint `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
 
 ## Capability Name
 `export` (actual directory `docs/capabilities/export`).
@@ -106,20 +106,24 @@ Access-controlled navigation must never imply permissions. Responsive, keyboard-
 ## Decision register and challenge
 
 - **EXP-01 — Open owner decision:** retain governed *renderer Library* and assign durable bulk-export workflow to each owning domain/Reporting, or formally seek governing amendment for a separate justified orchestration boundary. **Recommendation:** retain Library; use domain/Reporting job ownership, and reconsider shared service only on repeated demonstrable needs.
-- **EXP-02 — Proposed:** input restricted to versioned safe tree plus caller-supplied permitted assets; no internal source queries, permissions, uploads or delivery.
-- **EXP-03 — Proposed:** capability/limitation discovery and typed failure are mandatory, no PDF/UA, PDF/A or DOCX standards claims without conformance evidence.
-- **EXP-04 — Proposed:** no standalone GUI; contextual action and owner-controlled jobs/recovery in consuming dashboards.
-- **EXP-05 — Proposed:** rendering succeeds without Storage, Notifications, MQ, Scheduler, external SaaS or Nuxt. Any backend/format adapter is explicitly declared.
-- **EXP-06 — Proposed:** sensitive bulk/saved export requires source-specific and recipient-specific authorisation, privacy/legal constraints, revocation and risk-selected Audit, owned by requesting workflow.
-- **EXP-07 — Technical investigation:** format adapter interface, canonical safe-tree/version compatibility, PDF/A-UA and DOCX validation methodology, asset restrictions, deterministic output, font licensing, remote backend transfer and quotas; resolve by standards and public contract evidence rather than inventing APIs.
-- **EXP-08 — Implementation alignment:** actual `nuxt-layers/export` lacks `CONTRACT.md`, package and accepted independent consumer; no accepted runtime or CI. Later implementation must publish exact imports/signatures, error codes and minimal consumer evidence under ADR-0012.
+- **EXP-02 — Owner-approved conceptual principle (18 November 2026):** input restricted to versioned safe tree plus caller-supplied permitted assets; no internal source queries, permissions, uploads or delivery.
+- **EXP-03 — Owner-approved conceptual principle (18 November 2026):** capability/limitation discovery and typed failure are mandatory, no PDF/UA, PDF/A or DOCX standards claims without conformance evidence.
+- **EXP-04 — Owner-approved conceptual principle (18 November 2026):** no standalone GUI; contextual action and owner-controlled jobs/recovery in consuming dashboards.
+- **EXP-05 — Owner-approved conceptual principle (18 November 2026):** rendering succeeds without Storage, Notifications, MQ, Scheduler, external SaaS or Nuxt. Any backend/format adapter is explicitly declared.
+- **EXP-06 — Owner-approved conceptual principle (18 November 2026):** sensitive bulk/saved export requires source-specific and recipient-specific authorisation, privacy/legal constraints, revocation and risk-selected Audit, owned by requesting workflow.
+- **EXP-07 — Owner-approved investigation scope; technical work outstanding (18 November 2026):** format adapter interface, canonical safe-tree/version compatibility, PDF/A-UA and DOCX validation methodology, asset restrictions, deterministic output, font licensing, remote backend transfer and quotas; resolve by standards and public contract evidence rather than inventing APIs.
+- **EXP-08 — Owner-approved future alignment objective; implementation unverified (18 November 2026):** actual `nuxt-layers/export` lacks `CONTRACT.md`, package and accepted independent consumer; no accepted runtime or CI. Later implementation must publish exact imports/signatures, error codes and minimal consumer evidence under ADR-0012.
 - **EXP-09 — Open architecture reconciliation:** previous Export reciprocal wording explicitly says Export owns generated files/jobs/recipients, in conflict with governing Library scope. Preserve original notes, propose replacement allocation and seek owner decision before final conceptual sign-off.
 
 **Challenge result:** no cyclic service dependencies justified; Export must not become a generic document owner, an Authorisation enforcement shortcut, a duplicate Reporting engine or a Storage service. The missing durable-job owner is a genuine architectural decision, not an excuse to manufacture a new library API. No new ADR or implementation repo changes are authorised by this PR.
 
+## Owner decision recorded — 18 November 2026
+
+The owner agreed to the recommendation following review of EXP-01–EXP-09: **approve EXP-02 through EXP-08 as proposed, subject to their technical details**, while **retaining EXP-01 and EXP-09 as open architectural decisions**. This approval confirms the conceptual constraints in EXP-02–EXP-06, approves the *scope* of EXP-07's technical investigation and the *future objective* of EXP-08's implementation alignment; it does not claim either is finished. The strict renderer-only allocation in EXP-01 and corresponding ownership reconciliation in EXP-09 are **not approved**. Do not silently promote the provisional owner-of-job language in surrounding descriptions to binding architecture. Preserve the one draft PR; **no merge approval has been supplied**.
+
 ## Deferred and sign-off
 
-Public `CONTRACT.md`, implementation/format and accessibility conformance, licence/security testing, acceptance evidence and provider checks are **not done**. The conceptual review remains **proposed and awaiting explicit EXP-01/EXP-09 disposition and owner sign-off**. Before merge, perform technical Git reconciliation, latest accepted governing/blueprint status, pending parallel PR compatibility and full cross-capability review; merge requires separate explicit approval.
+Public `CONTRACT.md`, implementation/format and accessibility conformance, licence/security testing, acceptance evidence and provider checks are **not done**. The conceptual review is **partially owner-approved (EXP-02–EXP-08)** and awaiting explicit EXP-01/EXP-09 disposition and complete conceptual sign-off. Before merge, perform technical Git reconciliation, latest accepted governing/blueprint status, pending parallel PR compatibility and full cross-capability review; merge requires separate explicit approval.
 
 ---
 
