@@ -87,6 +87,32 @@ Existing independently approved decisions are preserved; this note resolves Conf
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Identity supplies stable learner/guardian/representative identity references and independently verified authority where supported; Enrolment owns educational admission state, not Identity group membership, tenant hierarchy, guardian relationship or permission. Host-composed scoped authorised lookups must avoid student-data duplication or implied cross-tenant access. Guardian proof and eligibility remain conditional, provenance-bearing. This note is non-normative and cannot claim new Identity published APIs.
 
 
+## Attendance ATT-09 — optional guest identity and later account linkage (18 November 2026)
+
+**Owner-approved Attendance accountless-access requirement, conceptual reciprocity only:** [Attendance](../attendance/capability-record.md#att-09--owner-approved-secure-accountless-participant-access-18-november-2026) must permit activity-scoped pseudonymous participants without requiring a permanent Identity user, personal group or membership. Identity remains authoritative for **actual** digital principals, account standing and verified principal associations if a guest subsequently registers and explicitly claims earlier activity records. A verified account link is an attributed, revocable referential association with provenance, not a destructive merge or an assertion that shared email addresses identify the same person. No automatic cross-tenant linking/disclosure; no implied implemented Identity guest API. **ATT-10** cross-capability historical link ownership is owner-approved (18 November 2026); source participation remains Attendance-owned.
+
+## Attendance ATT-11 — standards reference for optional identity proof and account linking (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** [NIST SP 800-63A-4](https://csrc.nist.gov/pubs/sp/800/63/A/4/final) when real-world identity proofing is justified; [NIST SP 800-63C-4](https://csrc.nist.gov/pubs/sp/800/63/C/4/final) when federated identity is used. No-account attendance does not automatically require proofing, Identity membership or a personal group. Later linking must use qualified, purpose-limited evidence of both claims, not an email match; Identity owns principal association history, Attendance retains immutable source participation history under ATT-10. Protect cross-tenant privacy and revocation; no universal guest identity master is created.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation may refer to Identity-owned local tenant, group, principal or service identity references for peer administration, but remote network identities are evidence and do not create Identity principals, group memberships or cross-tenant rights. Trust/endpoint status belongs to Federation; request-time permissions belong to Authorisation. Cross-node identity mapping requires separately governed proof and consent. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) consumes Identity-owned principal, tenant/group and membership references through authorised public contracts; Gaming owns only game-specific participant entries and result state. Identity's tenant/group hierarchy is not a gaming bracket, and parent tenants gain no automatic visibility or administrative access to child games (ADR-0017). Game registration must not create or rewrite an Identity membership.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
 ## Reciprocal conceptual note — IAM Integration (18 November 2026)
 
 **Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Identity remains authoritative for opaque identifiers, group/tenant/membership lifecycle, owner governance, pending changes and source outbox. IAM Integration consumes only its public directory, lifecycle, governance and outbox surfaces; it supplies verified Authentication-subject and Authorisation-decision adapters, status/reconciliation and coordinated calls. Revocation and tenant restriction must remain safe under delivery delay; this note does not introduce an Identity dependency on the integration package. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).

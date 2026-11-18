@@ -565,6 +565,46 @@ Content Security supplies minimised attributable request, completion, detector/p
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) owns event publication/cancellation, programme/session changes, privileged operation outcomes and source outbox assertions. Audit owns provenance-checked intake, integrity custody, review and lawful retention of minimised attributable evidence, not Events business status. Outbox/transport acknowledgement is not Audit acceptance. Audit scope depends on approved event-risk classification.
+
+## Events interface reciprocity — 18 November 2026
+
+**Events approval and attendance boundary (18 November 2026):** [Events](../events/capability-record.md) owns event actions, source revisions and its durable outbox; Audit receives minimised producer-verified evidence for publication, change, cancellation, sensitive participant/attendance operations (if EVT-15 approved), security-relevant denial and privileged export. Audit returns evidence receipt and governed integrity/completeness status, not Events action success. Identity/contact details should be minimised and protected; the exact accepted event family awaits public contract. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
+
+## Attendance ATT-09 — guest-access accountability and history (18 November 2026)
+
+**Owner-approved Attendance ATT-09 guest-access requirement and ATT-10 history allocation (18 November 2026).** [Attendance contract](../attendance/capability-record.md#att-09--owner-approved-secure-accountless-participant-access-18-november-2026): Attendance produces attributable, purpose-minimised events for guest invitation/access eligibility changes, participant claim/link and correction, protected export and invalidations through its own committed outbox. Authentication separately produces credential/session issuance, redemption and revocation security evidence; Authorisation supplies appropriately classified access grants/denials and policy/version context. **Audit owns tamper-evident evidence receipt, integrity, completeness, review and lawful retention**, not Attendance domain events, session state or permission grants themselves. No raw tokens, contact payloads, full attendee lists or automatic cross-tenant person correlation in Audit. Separate source-business, session, policy-decision, Audit-custody and Logging-status assertions; missing mandatory evidence follows a risk-based fail-closed or explicitly recoverable pending policy. No implemented cross-capability API is asserted.
+
+## Attendance ATT-11 — standards reference for accountable guest histories (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** [NIST SP 800-53 Rev. 5 AU-2/AU-3/AU-6/AU-9/AU-11](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final) as risk-based audit event selection, content, review, protection and retention references; [ISO 15489-1:2016](https://www.iso.org/standard/62542.html) for authenticity, integrity, usability and historical corrections; [ISO/IEC 27701:2025](https://www.iso.org/standard/27701) where personal-data evidence is managed. Audit owns receipts, integrity, completeness and custody for significant guest invitation/claim, access denial, session revocation, account linkage, correction and export evidence; Attendance, Authentication and Authorisation retain their source truth. Minimise personal detail, exclude secret challenges/tokens and follow lawful differentiated retention; neither total browsing surveillance nor indefinite evidential retention is implied.
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** a sensitive/bulk export's source-owning or Reporting workflow submits risk-based attributed decision, attempted/successful disclosure, recipient, scope and revocation evidence through Audit's published public contract; Audit owns evidence custody, not source facts or rendering. Stateless Export returns technical outcome and sanitised correlation only. Do not conflate a completed render with completed disclosure or proof of lawful transfer. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation emits scoped security and governance evidence for peer verification, policy decisions, subscriptions, publication/disclosure, quarantine, withdrawals, replay/invalid payload incidents and administrative overrides. Audit owns durable accountable records and retention/integrity; Federation owns its factual peer/sync state. Record source, tenant, actor/peer, policy/version, correlation, status and evidence pointer with minimisation; do not copy private payloads into audit indiscriminately. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Conditional Help-owned mapping create/update/withdrawal actions and sensitive privileged administration produce classified, provenance-rich audit submissions with scoped identity, source event/operation ID, mapping revision, actor/tenant, outcome and correlation. Audit alone owns acceptance, custody, integrity and review receipts. Publisher retains its own publication events; a mere Help lookup is not normally audit-worthy. If Help is presentation-only, host and other source owners audit their own actions.
+
+
 
 ## Reciprocal conceptual note — IAM Integration (18 November 2026)
 
