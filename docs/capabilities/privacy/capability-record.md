@@ -73,3 +73,31 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); no claim of implementation or approval. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Protected previews, unsaved form state, telemetry and temporary buffers require purpose limitation and prevention of unintended disclosure. No durable browser draft store presumed; Privacy determines applicable consent/retention duties.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security's inspection of user-provided content must use a justified purpose, minimised ephemeral references, gated sensitive evidence and controlled retention/transfer; provider use cannot assume consent or lawful access, especially for private/E2EE material. Privacy owns consent/retention/rights constraints and Content Security implements them over its own job/evidence records; source owner handles content erasure.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed privacy review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course defines learning offerings, not named learner transcripts; enrolment/achievement personal records remain with Enrolment/Training. Privacy supplies effective minimisation, permitted disclosure, retention/erasure and vulnerable-learner policy. Course must protect course-admin authorship/provenance and avoid personal roster disclosure in catalogue, exports, events and logs; legal holds and historical references require explicit coordination.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed privacy review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-11 agreed:** Course preserves only purpose-appropriate curriculum/version history and limited approval metadata; personal enrolments, assessment submissions/results and achievement records stay with Enrolment, Assessment and Training. Privacy supplies minimisation, child/vulnerable-learner safeguards, effective retention/erasure restrictions and rights handling. Legal holds and necessary proof of historical qualification must be reconciled with applicable lawful basis, not used to retain all learner data indiscriminately.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed privacy review.** [Qualification](../qualification/capability-record.md): Qualification owns minimised applicant award cases and evidence references, not raw Course/Assessment/Training learner data. Privacy supplies lawful collection, disclosure, rights, retention and safeguarding policy; Qualification enforces relevant restrictions and keeps only lawfully necessary history for award provenance.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Privacy supplies policy for lawful basis, purpose, consent where required, minimised verifier disclosure, retention and rights; Credentials enforces policy for holder/issuer/verifier access and records status/proof disclosure without creating a public learner registry. Historical evidence and removal requests must be reconciled with statutory holds; minors and verifier correlation require explicit assessment.
+
+
+## Credentials CRED-17/CRED-18 reciprocal policy and standards note (18 November 2026)
+
+**Status: CRED-18 conceptual policy framework resolved for owner architectural sign-off (18 November 2026, PR #62); no blanket jurisdiction compliance asserted.** Privacy supplies purpose, lawful basis, permission/consent where appropriate, disclosure limits, minimisation, minor/guardian safeguards, rights and record-category retention/disposal or holds, cross-border controls, and explicit decision version/freshness to Credentials. Credentials independently enforces policy for issuance, proof presentation, verifier read, export, erasure/restriction and credential lifecycle, returning safe applied-policy receipts with historical attribution and events. Do not publish discoverable student/employee registries, collect universal consent when another basis applies, or retain immutable personal payloads forever. If mandatory policy is undetermined, hold sensitive operation. See [resolution](../../../reviews/credentials-standards-jurisdiction-resolution.md).

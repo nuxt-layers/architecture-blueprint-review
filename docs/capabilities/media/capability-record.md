@@ -34,3 +34,13 @@
 **Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed media review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 The editor may request Media's authorised picker/asset metadata through public contracts; Media owns asset status, alt/access eligibility and quarantine, with Storage owning bytes. Unavailable or pending assets cannot silently become publishable Publisher references.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Media remains authoritative for uploads, image/file versions, variants and visibility; Content Security evaluates only properly authorised snapshot/byte references, links and applicable risks, returning revision/digest-bound evidence. Incomplete or stale checks never silently authorise derivative/public delivery; Media handles hold and CDN/original exposure, Storage bytes remain separately owned.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course references versioned safe learning assets; Media owns asset metadata, quarantine, derivative lifecycle, Storage owns bytes. Course honours safety and access gates before exposure. This note does not complete the separate media review.

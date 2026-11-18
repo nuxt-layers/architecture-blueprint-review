@@ -531,3 +531,36 @@ Comments Engine is authoritative for comment creation/edit/deletion, visibility,
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Content Editor publishes no authoritative document/business audit event. Publisher and other owners supply committed facts; any UI analytics are separate, privacy-minimised diagnostics.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security supplies minimised attributable request, completion, detector/policy version, reassessment/override and evidence disclosure events. Audit independently retains trustworthy receipts/integrity and completeness; technical scan evidence is neither legal guilt nor an Audit custody substitute. Avoid copying raw harmful images/text into routine audit records.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed audit review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course can supply committed publication, major revision, approval reference, withdrawal, privileged edit and denied-access/security events with tenant/course/revision, authorised actor and safe provenance. Audit owns evidential acceptance/custody, not the curriculum, and its receipt status is not publication success. Keep learner identities and sensitive teaching materials out of generic audit payloads.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10/11 agreed:** capture source-provenanced recognition, issuer/delegate checks, credential issue/correction/revocation, course approval/withdrawal, assessment moderation and curriculum migration with effective and verified-as-of status. Audit owns accepted evidence, not the underlying qualification award. Retention and sensitive learner disclosure are policy-bound. This note does not complete the separate audit review.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed audit review.** [Qualification](../qualification/capability-record.md): Qualification supplies minimised, committed provenance-rich evidence for scheme versions, recognition/delegation checks, award adjudication, appeal, correction, withdrawal/reinstatement and teach-out. Audit owns evidential acceptance and custody, not qualification or awarding authority; retention/disclosure must respect privacy and legal holds.
+
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed audit review.** Training offers minimised attributable evidence of observations, reviewer decisions, completion and later corrections to Audit; Audit accepts/custodies evidence but does not decide learner competence or completion. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
+
+
+## Training reciprocal Audit interface — 18 November 2026
+
+**Status: TRAIN-07/08 owner-approved; detailed Audit intake contract conceptual, no implemented interface asserted.** [Training's Audit/Logging public-contract boundary](../training/capability-record.md#train-0708-approval-and-explicit-auditlogging-public-contract-boundary-18-november-2026): Training supplies versioned and minimised accountable assertions of learning-attendance verification, competency and completion decisions, disputed findings, authorised deterministic/human corrections, privileged evidence access and protected action outcomes. It supplies trusted tenant/subject/resource scope, actor/decision authority, correlation, source-event and revision, source/effective/recorded times, outcome and sensitivity/retention class; source committed events use a Training-owned durable outbox. Audit validates producer/evidence definition and returns distinct accepted/pending/rejected/unknown receipt and evidence reference; authorised integrity/completeness queries may return verified/failed/incomplete/unknown and disclosure scope. An Audit receipt never certifies learner competence, and transport acknowledgements cannot masquerade as Audit custody. High-risk required capture needs an explicit fail-closed/pending recovery policy; no Training private records are reowned by Audit. Technical diagnostics flow separately to Logging. Avoid cyclic package dependencies through host-provided public ports.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.

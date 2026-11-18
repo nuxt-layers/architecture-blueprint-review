@@ -188,3 +188,17 @@ Command requests must support version preconditions, explicit danger confirmatio
 - **Suite intent agreed:** Content Editor is a reusable **presentation suite** for formatted text/documents, spreadsheets and whiteboards. Do not create new capabilities or appropriate Publisher's authority solely because these features are desired. Investigate what authoritative workbook/board lifecycle contracts are needed during implementation design. Permissive licences preferred; commercial/reciprocal components require explicit review rather than assuming eligibility.
 
 **Remaining open technical architecture (not decision re-opening):** workbook/whiteboard owner and format, simultaneous editing transport by format, Publisher integration and autosave revision semantics, open-source versus commercial feature boundaries, storage/recovery/privacy, Office import/export fidelity and host compatibility. These require evidence and design work, not a fresh vote on approved intended use.
+
+## Content Security — reciprocal interface (17 November 2026)
+
+**Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent content_editor draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
+
+Content Editor is a presentation consumer, not an assessment or publication owner. It should display authorised revision-bound Content Security check status and incomplete/stale explanations through Publisher's public workflow, with safe recheck affordances if Publisher permits; no detector tables, final safety adjudication or extra editor-owned state.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** `document` is retired as a standalone capability. Content Editor continues to own only the generic editorial presentation of Publisher-registered types and no document domain authority. No separate Document management GUI is proposed. The superseded conditional review is retained at [Document history](../../../reviews/document-directory-removal-2026-11-17.md).
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed content_editor review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course requires a structured curriculum editor (outcome builder, unit/prerequisite graph, revision comparison, publication state and content reference selection) via the Course public conceptual contract. Generic Content Editor may present declared course field/action descriptors, but does not own Course state or infer domain rules from arbitrary rich text. Coordinate with provisional PR #54 without treating that PR as accepted.

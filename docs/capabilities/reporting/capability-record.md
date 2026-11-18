@@ -85,3 +85,22 @@ Comments Engine supplies authorised comment submissions (including pending/rejec
 ### Comments Engine CE-06 — approved private appreciation exception (17 November 2026)
 
 **Status:** Owner-approved conceptual refinement in [Comments Engine PR #52](https://github.com/nuxt-layers/architecture-blueprint-review/pull/52), not implemented. Comments Engine may hold essential individually scoped acknowledgement records to prevent duplicates, permit withdrawal and support privacy and misuse enforcement. It may present a private qualitative appreciation notice to an authorised recipient, but **never an accumulating count**. Reporting must not repurpose these records into popularity metrics, public reaction counts, leaderboards, engagement optimisation or individual reputation scores. Aggregate abuse diagnostics require distinct justified purposes and disclosure restrictions.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Reporting may consume authorised minimised aggregates of Content Security scan completion, category detection, incompleteness and quality metrics, with uncertainty/provenance. Do not use raw detector scores to rank people or infer popularity; Content Security owns individual verdict evidence and source owners own enforcement.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course supplies authorised versioned course catalogue, curriculum and lifecycle facts; Reporting owns derived analytics. Learner admission and completion measures must come from Enrolment/Training with independent disclosure checks, not from Course. This note does not complete the separate reporting review.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** cohort capacity, attendance and completion reports source authoritative facts from Enrolment/Events/Booking and Training/Assessment, not the Course catalogue. Credentials supplies credential issue/revocation facts, but no report can confer an award. Ensure historical version, small-cohort and safeguarding disclosure constraints. This note does not complete the separate reporting review.
+
+
+## Reciprocal conceptual contract — Credentials (18 November 2026)
+
+**Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials publishes authorised tenant/issuer/time-scoped issued credential, expiry, suspension, revocation, replacement, issuance backlog and verification-outcome source facts via scoped reads plus committed status events, including source revision, effective/as-of times, coverage and staleness. Reporting owns report definitions, aggregations, snapshots, exports, delivery and refresh lifecycle; returns report reference/status, completeness, lineage and disclosure controls. Distinguish qualification awards (Qualification-owned) from issued credentials (Credentials-owned); do not double-count corrections/replacements or convert partial coverage into valid totals. Recheck saved-report disclosure and small-cohort privacy independently. Reporting outage must not block issuance; no private tables or claimed implemented adapter.

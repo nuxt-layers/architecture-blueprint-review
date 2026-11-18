@@ -134,7 +134,6 @@ Every Hub operates as a Node; any appropriately configured and authorised Node m
 | `application-compositions` | Composition artefacts | Reusable application templates and selected capability wiring; generally not independent stateful services |
 | `organisation-console` | Presentation / application composition — independent packaging unproven | Reusable, role-aware organisation-neutral dashboards, context selection and management views composed from authoritative capability contracts; no business records, permissions or independent domain lifecycle |
 | `user` | Presentation | Group-scoped user administration screens via Identity/Profile/Authorisation; no user records |
-| `document` | Platform candidate, unresolved | Distinct document-management requirement only if Publisher's document lifecycle is insufficient |
 | `search` | Platform | Indexing, query and relevance over authorised source records; no source-of-truth storage |
 | `location` | Platform | Coordinates, geospatial and place references; not all postal addresses or site tenancy |
 | `reporting` | Platform | Authorised report definitions, aggregation and output; no source transaction records |
@@ -164,6 +163,9 @@ The following are **types and compositions**, not independent capability candida
 |---|---|
 | `membership` | Paid/scheme membership rights, terms, renewals and benefits; NOT Identity's existing group membership |
 | `events` | Planned participant activities and event lifecycle; not background scheduled tasks |
+| `assessment` | Proposed Domain capability: reusable assessment instruments, learner attempts, marking, moderation, appeals and authoritative individual results; Course owns requirements, Training owns verified achievement |
+| `credentials` | Proposed Domain capability: authorised issuance, verification, correction, replacement, expiry, suspension and revocation of credentials; the awarding authority retains formal qualification decisions |
+| `qualification` | Proposed Domain capability owning independent qualification schemes, multi-pathway award eligibility, issuer/centre/delegation governance, authoritative qualification award decisions, appeals, withdrawal and teach-out; not credential issuance |
 | `course` | Structured learning offering and outcomes |
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
@@ -257,3 +259,12 @@ This is a **cross-capability design topic**, **not a newly catalogued stateful c
 ### Localisation candidate rename (17 November 2026)
 
 **Canonical name:** `localisation`. The former `translate` entry was an empty candidate and its directory is removed, not retained as an alias. All active references should use `localisation`. [Capability record](capabilities/localisation/capability-record.md) documents the conceptual scope and ten proposed public contract surfaces. Internationalisation remains a cross-cutting architecture requirement; translation is a function within Localisation. Publisher, Product/Marketplace, Configuration/Profile, Clock and presentation retain their authoritative boundaries. This is a non-normative working catalogue update; the governing `architecture-rules` catalogue requires its own approved PR.
+
+
+### Time & Attendance — conceptual Domain candidate (17 November 2026)
+
+| Candidate | Status | Proposed responsibility and exclusions |
+|---|---|---|
+| `time-attendance` | **Owner-approved conceptual boundary** under Employment EMP-03; detailed review pending | Actual time/attendance observations, timesheets, breaks, corrections, evidence and approval states across permitted employment and non-employment participation. Employment owns contracted hours/terms, prospective Workforce Scheduling owns rosters, Payroll calculates remuneration, Project/Task owns activity allocations and platform `scheduler` owns background job triggers. No implementation repository, public contract or accepted governing classification is implied. |
+
+See [Time & Attendance ownership proposal](../proposals/time-attendance-ownership.md) and [Employment record](capabilities/employment/capability-record.md). The [Time & Attendance pro-forma record](capabilities/time-attendance/capability-record.md) has been created for a future dedicated conceptual review; this does not constitute a completed contract. This working catalogue change does not amend `architecture-rules`.

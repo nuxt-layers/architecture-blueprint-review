@@ -90,3 +90,26 @@ Legal Compliance qualifies site/service/jurisdiction-specific participation, har
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Legal Compliance supplies jurisdiction/time-qualified mandatory constraints and holds. Configuration may store bounded approved choices but cannot independently interpret legal requirements or treat unknown obligations as permissive. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security consumes qualified jurisdiction/service classification, retention/transfer constraints and applicable duties, not generic assumed UK OSA universality. It produces detector evidence and uncertainty, not statutory judgments. Legal Compliance supplies scoped requirements and holds; domain owners independently enforce publication/removal and Moderation manages review cases.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed legal_compliance review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Legal Compliance determines applicable education/children's protection, data protection, accessibility, licensing, retention, accreditation and hold constraints per jurisdiction/effective date. Course enforces publication, import/export and withdrawal gates but does not certify legal validity, accredited course standing or learner qualifications. Unknown mandatory legal restrictions block relevant actions rather than defaulting to approval.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed legal_compliance review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-10 agreed principle:** Legal Compliance qualifies jurisdiction-specific recognition, licensed award authority, authorised delegation, validity windows, provenance and mandatory restrictions. An organisation's platform role or an Integrations claim is not external power to grant a qualification. **COURSE-11 agreed:** safeguard minors/vulnerable learners, review/publication controls, retention, holds, credit recognition and version migration must meet applicable effective law and organisational policy. Do not assert a universal statutory retention schedule or automatic accreditation.
+
+## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Legal Compliance supplies applicable jurisdiction/qualification/accreditation, safeguarding, data rights, retention and withdrawal requirements; Qualification owns application of qualification scheme, issuer delegation, evidence and award lifecycle rules. An accreditor remains authority for actual recognition and an external awarding organisation for its own award decisions; do not hard-code universal legal validity or retention periods. No change to previously approved legal_compliance ownership.
+
+
+## Credentials CRED-17/CRED-18 reciprocal policy and standards note (18 November 2026)
+
+**Status: CRED-18 conceptual policy framework resolved for owner architectural sign-off (18 November 2026, PR #62); no country-law compliance asserted.** Legal Compliance supplies an authoritative dated applicability decision by issuer/tenant, claim/scheme, jurisdiction(s), regulated activity, audience, effective time and source authority; plus binding disclosure/recognition, guardian, retention, appeals, transfers and policy conflict rules. Credentials enforces the decision for issue/verify/revoke/replace/rights action, publishes qualified applied-policy outcome and accurate historical/current status; absence, conflict or stale mandatory rule holds affected action, not permissive default. Legal Compliance owns legal interpretation and per-jurisdiction policy maintenance; Credentials never overrides statutory floors. Specific UK/EU or other legal schedules require legal evidence and review before regulated deployment. See [resolution](../../../reviews/credentials-standards-jurisdiction-resolution.md).

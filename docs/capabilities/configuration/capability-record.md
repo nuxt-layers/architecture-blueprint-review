@@ -242,3 +242,17 @@ Configuration provides versioned scoped discussion settings such as target class
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Configuration owns setting scope, approval, persistence and policy semantics. Editor's generic formatted-field UI may be reused for authorised Configuration fields, without assuming domain state or grants.
+
+## Content Security — reciprocal interface (17 November 2026)
+
+**Status:** Proposed in [Content Security PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55); concurrent configuration draft review is provisional and must be reconciled before integration. See [Content Security record](../content_security/capability-record.md).
+
+Configuration owns approved, scoped versioned scanner-profile preferences and provider budget settings within non-overridable security/legal floors; Content Security validates supported checks and executes assessments, while source owners enforce publication holds. Effective values, version, expiry and unavailable/invalid handling must be surfaced; Configuration must not become an arbitrary scanning policy interpreter.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed configuration review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Configuration resolves approved, scoped course authoring, catalogue visibility, review, language, provider and effective-policy selections with provenance. Course owns enforcement and meaning of its own domain rules, and statutory/security minima remain non-overridable. Provisional PR #53 may affect shared presentation and precedence contracts; reconcile before merge.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-11 agreed:** Configuration resolves organisation-approved options for reviews, safeguarding, delivery, migration and retention with precedence; Legal Compliance and Privacy supply non-overridable restrictions. Course, Assessment and Credentials enforce their own rules. Accreditation and delegated awarding authority are externally evidenced facts, not configuration preferences. This note does not complete the separate configuration review.

@@ -149,3 +149,17 @@ Comments Engine owns origin-Node comment/revision visibility and withdrawal even
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration may supply registered, scoped federation selections; Federation owns peer trust, exchange/reconciliation and withdrawal. Source domains and Authorisation govern actual disclosure. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+A Hub/Node may request authorised technical assessment of externally supplied material or links, but remote scan claims are untrusted until provenance and scope validated. Content Security supplies detection evidence only; origin Node controls original publication while receiving Hub controls own listing/index restrictions and withdrawal reconciliation. Do not indiscriminately share private bytes with foreign scanners.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may expose authorised, attributed, versioned catalogue descriptors and withdrawal facts for optional federation. Federation owns transport, peer subscriptions and reconciliation, not curriculum source authority or enrolment; remote copies can be stale and must respect disclosure. This does not complete federation's own review.
+
+## Assessment cross-institution evidence transfer — 18 November 2026
+
+**Status: Assessment ASMT-14 owner-approved conceptual relationship; Federation contract detail provisional.** [Assessment](../assessment/capability-record.md): Federation may coordinate authenticated, permissioned, purpose-restricted record exchange between installations, preserving origin, source revision, disclosure rights and withdrawal/recheck. Federation transports and validates peer exchange; it neither confers trust in an examination issuer nor determines assessment admissibility. Verification evaluates source/issuer proof and scoped trust; receiving Assessment decides evidence acceptance, Training/Qualification decide dependent outcomes. Hub or peer trust is not transitive, and no blanket transfer of scripts, learner identities or accommodations is permitted.

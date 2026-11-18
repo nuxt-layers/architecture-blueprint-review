@@ -73,3 +73,26 @@ Publisher and other registered target owners retain eligibility/visibility, owne
 **Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed publisher review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Content Editor consumes Publisher's published type/schema, authorised admin reads, previews, history, backlinks and revision-conditioned commands. Publisher remains fully headless and exclusively owns document/version/approval/publication/retention decisions and committed outbox events; the editor is optional, not a Publisher runtime requirement. Network uncertainty is reconciled against Publisher's authoritative state, not UI optimism.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Publisher requests revision-bound technical checks for registered documents before the exposure decisions its policy requires; Content Security returns scoped detection evidence, coverage and unknown/stale states. Publisher owns actual publish/hold/unpublish and reconciles address/feed/cache exposure; Content Editor presents status through Publisher/public contracts, not detector tables.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** the separate `document` capability candidate is retired. Publisher remains authoritative for its registered document types, revisions, approvals, publication, addresses, feed and withdrawal lifecycle. Source-specific business records remain with their domain owners; Publisher does not automatically acquire invoice, employment or other domain master records. No second document master, service or event stream is required. Historical analysis: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed publisher review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course owns course curriculum structure, prerequisite and learning outcome definitions and versioned reference mappings; Publisher owns authored document versions, approval/publication and source materials. Course may reference Publisher material by immutable source/revision; a Publisher publication is not by itself Course publication, and source withdrawal must be propagated safely without rewriting historical Course meaning.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10/11 agreed:** a course syllabus or certificate PDF is a Publisher document, not proof that a qualification award was authorised. Course owns curriculum, Assessment owns marks, Training owns achievement, Credentials owns credential status, and the qualified awarding authority owns formal award decisions. Curriculum migration and withdrawal preserve lawful historical references. This note does not complete the separate publisher review.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Publisher may produce versioned certificate documents or presentation using a permitted Credentials public view model, but owns only its own rendered document lifecycle. It cannot issue the underlying credential, award a qualification, revoke a credential or certify live proof status. Corrections/revocations trigger controlled rendering/withdrawal or status updates through explicit public contract and reconciliation; a cached PDF remains an artifact, not a status authority.

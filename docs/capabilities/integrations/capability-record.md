@@ -97,3 +97,30 @@ Proposed Verification capability consumes national ID, age/KYB, document-proofin
 **Owner-approved CFG-08 (Option B):** versioned setting declarations, staged activation and explicit migration/rollback protect provider selection revisions; Integrations remains responsible for provider availability, connection credentials, transition and reconciliation. A settings migration cannot silently activate an unverified provider.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Integrations may adapt remote LMS course catalogues into provenance-marked Course draft imports and controlled exports; Course owns any locally accepted definition. Provider claims do not establish enrolment, completion, course accreditation or publication. This note does not complete the separate integrations review.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed integrations review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-10 agreed principle:** provider-specific accreditor/awarding-body registers, recognition status, issuer/delegate mandates, qualification codes and credential status/award responses are obtained through authenticated, provenance-rich Integrations connectors. They must expose origin, effective dates, verification time, stale/unknown/revoked status and reconciliation; cannot silently transform remote assertions into Course, Assessment or qualification authority. Course can retain safe verified-as-of recognition references; actual award/credential lifecycle belongs to a separately reviewed authority boundary.
+
+## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Qualification owns qualification-specific authority/recognition and award-decision semantics, while Integrations owns provider-specific accreditation and awarding-body API adapters, authenticated registry evidence, delegated mandate lookups, external award responses and status callbacks. Source authority, scope, effective time, last verification, expiry and unknown/conflict status accompany claims; external connectors never grant local legal powers or overwrite qualification awards silently. No change to previously approved integrations ownership.
+
+## Assessment external examination provider interface — 18 November 2026
+
+**Status: Assessment ASMT-13/14 owner-approved conceptual relationship; provider connector implementation not asserted.** [Assessment](../assessment/capability-record.md): Integrations authenticates and transports external assessment evidence, provider status, callbacks, capability discovery, source identifiers, checkpoints, retries and uncertain results. Verification evaluates issuer/source trust within scoped claim, jurisdiction and effective-time requirements. Assessment decides locally whether the externally reported mark/evidence is admissible, preserving historical source snapshots and qualified freshness; source connectivity or signed messages alone never create grading, qualification or credential authority. Provider timeout remains unknown; correction/revocation requires explicit reconciliation. No cyclic package dependency.
+
+
+## Qualification independent conceptual review — reciprocal interface (18 November 2026)
+
+**Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Qualification relies on provider-neutral interfaces for trusted recognition/approved-centre/delegation evidence, external award decisions, correlation-aware submissions and verifiable callbacks. Integrations owns connector mechanics and provider authentication, not the meaning or authority of qualification decisions. Preserve source/observed/effective times, uncertainty and idempotent reconciliation; provider outage is not withdrawal of recognition. This note does not complete this adjacent capability's independent review or assert an implemented contract.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Integrations supplies provider-neutral connectivity/transport to issuer mandates, remote issuance/signers, credential registries and status services. Provider requests/callbacks carry correlation/idempotency, source attribution, authenticity and effective/freshness context. Credentials retains issuance, representation and credential-status decisions; external award and registry authorities retain their actual source standing. Transport success is not an issued credential; outage is not revocation; reconcile duplicates and uncertain outcomes.

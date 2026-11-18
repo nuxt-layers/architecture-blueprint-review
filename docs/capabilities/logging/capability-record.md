@@ -104,3 +104,23 @@ Comments Engine offers structured diagnostic codes, safety-assessment failures, 
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 Only privacy-minimised error codes, timings and correlations belong in technical logs; no raw drafts, secret fields or content. Source owners remain authoritative for business records.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security supplies redacted diagnostic failure, latency, correlation and provider error information without copying risky raw content, secret/hash datasets or private reporter identities. Logging owns operational logs, not independent audit proof or scanning status authority.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed logging review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course emits structured, redacted operational diagnostics for validation, provider outages, revision conflicts and publication failures with correlation IDs. Logging owns technical diagnostics/sinks; Course owns domain history and Audit owns evidential custody. Do not record learner rosters, private draft contents or credentials in technical logs.
+
+## Training reciprocal Logging interface — 18 November 2026
+
+**Status: TRAIN-07/08 owner-approved; Logging independently remains a proposed/incomplete contract.** [Training's Audit/Logging public-contract boundary](../training/capability-record.md#train-0708-approval-and-explicit-auditlogging-public-contract-boundary-18-november-2026): Training emits only typed, bounded, sanitised operational diagnostics for training-input validation, duplicate submissions, provider/verification timeouts, reconciliation, retry/outbox failures, lag, denied operations and technical errors. Permitted payload: error/operation code, severity, timing, safe provider class, opaque correlation and minimal tenant scope. Never ingest raw assessments, learner transcripts, personal evaluator remarks, sensitive data or credentials by default. Logging owns sink routing/retention and may report accepted/dropped/rejected/unknown/sink unavailable where its future public contract supports that. Logging has **no** right to modify Training findings and its acknowledgement never replaces Audit evidence receipt or proves a completed learner outcome. Logging outages and Audit-capture failures are independently reportable; no mandatory bidirectional direct imports.
+
+
+
+## Reciprocal conceptual contract — Credentials (18 November 2026)
+
+**Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials supplies sanitised structured operation/provider failures, status-check timeout, retry/idempotency, outbox lag, key or mandate verification error, correlation and safe tenant context through a public diagnostic sink. Logging returns bounded acceptance/failure/health where exposed; it owns diagnostics/sinks/retention, never credential issuance, authoritative proof status or Audit evidence. Keep signed tokens, keys, claimant details, secret provider responses and raw credentials out of routine logs. Optional logging outage must not fabricate issuance, remove mandatory Audit coverage or block otherwise valid business operations. A full Logging public CONTRACT.md remains to be designed/verified.
