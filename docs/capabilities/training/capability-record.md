@@ -204,6 +204,15 @@ Training uses explicitly authorised tenant/resource contexts; tenant hierarchy a
 
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Training owns independently verified attendance, competencies, completion, qualifications and evidence; Enrolment owns admission and participation status. Training may consume effective enrolment as prerequisite context and supply verified prior-learning/completion facts to Enrolment. Neither event automatically reassigns the other's domain status absent explicit course/programme rules. This is not Training review approval or a verified implementation.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) supplies versioned training session/occurrence, planned/actual status, cancellation and venue references. Training owns verification/acceptance of learner participation observations, achieved competencies and completions; event conclusion/check-in is not proof of learning achievement. Corrected sessions prompt Training-owned re-evaluation without Events editing evidence. No published interface verified.
+
+
+## Approved Events / Attendance distinction — 18 November 2026
+
+**Events EVT-15 owner-approved:** Events provides only authorised activity/occurrence/schedule/revision references, not an attendee or attendance register. A separate [Attendance candidate (draft PR #79)](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79) is proposed to own generic participation and presence; Training's existing owner-approved specialist learning evidence/competence authority is **not silently transferred**. Any reuse is through public versioned, provenance-rich and optional contracts. The existing [Time & Attendance owner-approved boundary](../time-attendance/capability-record.md) likewise remains independent.
+
 ## Attendance capability candidate — evidence boundary (18 November 2026)
 
 **Status: pending explicit reconciliation; existing TRAIN-01–08 remain owner-approved.** [Attendance](../attendance/capability-record.md) is proposed as a generic source of activity presence observations and verification, independent of educational context. Training's earlier owner-accepted responsibility for verified *learning participation and attendance* cannot be transferred silently: Training remains authority for whether evidence satisfies educational standards, learning engagement, competence and completion. A future approved public interface might consume Attendance's verified presence source with revision, provenance, corrections and unknown/absence semantics; Training independently judges its relevance and may retain its own specialist verified educational evidence. No duplicate general presence ledger, no mandated Attendance dependency and no assumed approved modification to Training.
