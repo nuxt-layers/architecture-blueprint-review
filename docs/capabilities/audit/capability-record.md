@@ -564,3 +564,9 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation emits scoped security and governance evidence for peer verification, policy decisions, subscriptions, publication/disclosure, quarantine, withdrawals, replay/invalid payload incidents and administrative overrides. Audit owns durable accountable records and retention/integrity; Federation owns its factual peer/sync state. Record source, tenant, actor/peer, policy/version, correlation, status and evidence pointer with minimisation; do not copy private payloads into audit indiscriminately. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
