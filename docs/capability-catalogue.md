@@ -79,7 +79,7 @@ The optional **Trustpilot adapter** belongs under `integrations` (conceptually `
 
 An organisational archetype MAY describe metadata schemas, positions, requested role profiles, typed reporting relationships and capability configuration. It MUST NOT become a second Identity group hierarchy, directly grant access, assert asset permissions, or absorb independent domain lifecycles. Permission profiles are requests interpreted under existing Authorisation and domain policies. Reporting relationships are not access-control inheritance.
 
-`organisation`, `business`, `company`, `club`, `committee`, `department` and `office` are **organisational archetypes or application compositions by default**, not seven independent capability candidates. They describe a group's purpose, type, configuration or presentation through published contracts; they never duplicate Identity's groups, membership or hierarchy. A separate domain is justified only by demonstrably independent durable records, governance rules and lifecycle, such as legal-entity filings, formal committee decisions or facility management. Such domain ownership requires its own review rather than following automatically from an organisational label.
+`organisation`, `business`, `company`, `club`, `committee` and `office` are **organisational archetypes or application compositions by default**, not independent capability candidates. Departments likewise use Identity groups and existing configuration rather than a separate capability. They describe a group's purpose, type, configuration or presentation through published contracts; they never duplicate Identity's groups, membership or hierarchy. A separate domain is justified only by demonstrably independent durable records, governance rules and lifecycle, such as legal-entity filings, formal committee decisions or facility management. Such domain ownership requires its own review rather than following automatically from an organisational label.
 
 ### Relationship vocabulary
 
@@ -153,7 +153,6 @@ The following are **types and compositions**, not independent capability candida
 | `company` | Organisation type with legal-entity references; statutory registration, officers or filings may warrant a separately reviewed domain |
 | `club` | Group type for a club with selected activity capabilities; paid scheme rights and subscriptions are not Identity membership |
 | `committee` | Group type and meeting composition; formal votes, resolutions and minutes may warrant their own independently governed lifecycle |
-| `department` | Organisational unit type, potentially expressed through Identity's existing single-parent group hierarchy; reporting does not grant access |
 | `office` | Organisational location/unit type; physical facilities, leases and managed assets belong to independently justified domain owners |
 | `workshop` | Event/Course composition or archetype using existing activity contracts; not a separate capability absent a justified independent lifecycle |
 
