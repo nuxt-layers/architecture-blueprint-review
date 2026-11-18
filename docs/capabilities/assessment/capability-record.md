@@ -97,3 +97,8 @@ Candidate assessment types, marking modes, rubric versions, moderation/appeal ro
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Qualification owns qualification eligibility/award adjudication and qualification-level award appeals; Assessment owns assessment instruments, attempts, marks, moderation, reassessment and assessment-level appeals. Grade changes supply source evidence for a separately authorised award review; they must not automatically produce or revoke a qualification or credential. No change to previously approved assessment ownership.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Assessment owns result, moderation and assessment appeal source facts; Qualification owns formal award decision and evidence combination. Credentials may reference scoped result evidence only as prescribed by an authoritative claim-decision contract. Raw passes/grades never directly authorise recognised qualification issuance; an assessment correction must be evaluated by award owner and then propagated into issued credential status via explicit public interfaces.
