@@ -39,3 +39,13 @@
 - Confirm independent contractual consumer and domain workflow acceptances and obtain explicit owner approval before protected squash-only merge.
 
 **Judgement:** Suitable for owner conceptual review; **not cleared for merge** until current GitHub mergeability/checks and updated governing/parallel architecture are verified, owner decisions resolved, and explicit approval received.
+
+## Final pre-merge validation — 18 November 2026
+
+Owner has approved QUAL-06, QUAL-07 and QUAL-08; QUAL-09 accepted as a framework with individual jurisdiction-specific rules, comparability decisions, awarding mandates and appeals/teach-out arrangements deliberately requiring later source-specific approval. This is sufficient to merge the **conceptual blueprint**, not to operate regulated awarding.
+
+Latest verified governing `master`: `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017 and ADR-0018 Accepted). Latest verified blueprint `master`: `ac1125a7ba4ea15d6b963aebf07d83cd8cd701b9` (same as opening). On final inspection, branch comparison returned **ahead 15, behind 0** with 12 files: main record, nine bounded adjacent records, and two reviews. GitHub reports PR #65 **open, draft, mergeable true** with base `ac1125a7ba4ea15d6b963aebf07d83cd8cd701b9`, head `1cadce0b57d1939100dd5b00773d643aa2a5a37b`. No reviews, GitHub status checks or PR-triggered workflow runs were reported for that head; **absence of reported checks is not a green CI run**. No local tests were executed (per instruction).
+
+Technical/architectural review: no changed files deleted; only intended Qualification and reciprocal capability records changed, plus review evidence. Catalogue/register already locate `qualification`; paths and relative links follow their actual directories. No implementing APIs or compliance claimed; provider-neutral trust chain and privacy-scoped employment assessment do not transfer awarding, generic verification, job or employment authority. No direct private-code dependency or mandated circular import is introduced. Open concurrent PRs (#60 Enrolment, #62 Credentials, #63 Training, #64 Assessment, #57 Department) remain provisional and have not changed `master`; bounded notes must be reconciled on their own merges. No conceptual contradiction with currently accepted governing ADRs identified. Future live contracts require independently assessed jurisdiction/issuer requirements and appropriate CI/consumer acceptance.
+
+This report records the pre-merge evidence only. Recheck exact head/base, mergeable status and checks immediately before an owner-approved protected squash merge. The owner's instruction to 'proceed' is treated as approval to merge the documented conceptual review if repository protections permit it.
