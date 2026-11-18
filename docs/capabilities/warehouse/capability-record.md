@@ -43,3 +43,8 @@
 - **Related capability notes:** [inventory](../inventory/capability-record.md), [logistics](../logistics/capability-record.md), [product](../product/capability-record.md), [asset](../asset/capability-record.md), [accounting](../accounting/capability-record.md).
 - **Open architectural questions:** 3PL contracts, storage rate ownership, WIP/production operations and allocation of storage expenses to inventory versus period cost.
 - **Review gate:** At this capability's alphabetical turn, verify current organisation repositories and the public root `CONTRACT.md` if present; reconcile authority and evidence, then define its own conceptual record. Keep other domains' internal implementation out of scope.
+
+
+## Reciprocal interface — Inventory conceptual review (18 November 2026)
+
+**Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Warehouse owns receive/pick/pack/put-away/stocktake handling and physical work evidence; Inventory validates and commits authoritative receipts, issues, transfers, holds, lot/serial quantities and variances. A warehouse work-completed event is not itself stock or accounting completion. Unavailable or contradictory Inventory confirmation leaves the work in an explicit exception/pending state. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.
