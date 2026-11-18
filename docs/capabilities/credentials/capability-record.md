@@ -258,3 +258,17 @@ Adopt recognised international or jurisdiction-specific standards **where approp
 **Public outbound policy contract:** authorised decision receipt with applied source/edition/effective time and allow/hold/deny/unknown; minimised proof/status/as-of response; attributable rights/retention/disclosure actions, committed status events and source revision references. All persistent issued records and historical status remain Credentials-owned; Qualification remains qualification-award source and Audit owns received evidential custody.
 
 **Status and standards:** W3C VC 2.0 is recommended portable model, not the private schema. Profile registry controls signing, issuance/presentation protocols, sector profiles, revocation lists, holder binding, key governance and offline freshness; none grants an issuer legal authority. Final CRED-17 profile approval and interoperability evidence remain outstanding.
+
+
+## Reciprocal Assessment conceptual interface — 18 November 2026 (draft PR #64)
+
+**Status: Proposed, not an independently approved credentials contract.** [Assessment conceptual review](../assessment/capability-record.md): Credentials must not interpret an Assessment pass as a formal qualification award. Assessment results can be a separately approved credential claim source only with issuer authority, scoped consent/disclosure, versioned provenance and a permitted claim type; Credentials owns issuance, current validity, replacement and revocation. Qualification remains the award decision owner. Parallel Credentials PR #62 is provisional. Conceptual cooperation does not require cyclic package imports; all protected reads and commands require public contracts, purpose/tenant permission and explicit unknown/failure handling. Preserve the credentials owner's existing decisions.
+
+
+## Qualification independent conceptual review — reciprocal interface (18 November 2026)
+
+**Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Qualification owns formal local award decisions made within evidenced mandates and verified references to external awarding-body decisions. Credentials consumes Qualification's award ID, source issuer and authority, qualification revision, subject, decision status/effective date and corrections; Credentials alone owns credential issuance, presentation, verification, replacement, expiry and credential revocation. A credential cannot create awarding authority and a failure to issue must not roll back the underlying formal award. Reconcile status via scoped queries and committed outbox events rather than shared persistence. This note does not complete this adjacent capability's independent review or assert an implemented contract.
+
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed credentials review.** Credentials may consume appropriately final Training evidence only where a separately authorised issuer and supported claim type permit issuance; Training completion neither authorises qualification award nor issues a credential. Credentials independently controls issuance/status. PR #62 is provisional. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
