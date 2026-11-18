@@ -193,3 +193,9 @@ Training uses explicitly authorised tenant/resource contexts; tenant hierarchy a
 ## Reciprocal Assessment conceptual interface — 18 November 2026 (draft PR #64)
 
 **Status: Assessment's reciprocal relationship recorded; Training TRAIN-01–08 are owner-approved.** [Assessment conceptual review](../assessment/capability-record.md): Assessment supplies attributable result revisions, finality/release status and assessment-level appeal, correction and invalidation notifications. Training independently owns verified competence and completion; it must re-evaluate downstream claims on material assessment changes without modifying Assessment grades. A grade alone is not completed training. Training PR #63 has reconciled this reciprocal relationship. Conceptual cooperation does not require cyclic package imports; all protected reads and commands require public contracts, purpose/tenant permission and explicit unknown/failure handling. Preserve the training owner's existing decisions.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Training owns attendance, participation, competency and completion facts. Qualification decides formal qualification awards; Credentials consumes only recognised authoritative award decisions or an independently authorised non-qualification achievement decision. Completion certificates may represent permitted Training achievements but cannot silently claim qualification recognition. Source corrections and subsequent credential status changes remain separate attributable transitions.

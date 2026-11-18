@@ -256,3 +256,9 @@ Assessment does **not** own Course outcomes/completion rules; admission, individ
 ## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
 
 **Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed assessment review.** Assessment supplies versioned result/finality, correction and appeal states; Training independently maps permitted final assessment evidence to competency and completion, with historical source revisions. Training never changes marks. Changed marks prompt new Training review, not automatic awards. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Assessment owns result, moderation and assessment appeal source facts; Qualification owns formal award decision and evidence combination. Credentials may reference scoped result evidence only as prescribed by an authoritative claim-decision contract. Raw passes/grades never directly authorise recognised qualification issuance; an assessment correction must be evaluated by award owner and then propagated into issued credential status via explicit public interfaces.

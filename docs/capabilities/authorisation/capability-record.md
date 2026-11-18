@@ -425,3 +425,8 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Authorisation owns server-side platform permissions and caller-assurance checks for qualification scheme changes, delegate administration, award case approval, appeal and withdrawal. Qualification independently checks the legally/contractually recognised awarding mandate and qualifications scope; a platform role, token or approval does not grant external powers. No change to previously approved authorisation ownership.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Authorisation supplies server-side tenant/issuer/subject/resource access decisions for issue/view/verify/revoke/replace and step-up where required. Credentials additionally enforces claim-source decision authority, issuer delegation, mandate status, profile and lawful disclosure. No IAM grant makes an award or confers external issuing rights. Denial/unknown fails closed.

@@ -118,3 +118,9 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Qualification independent conceptual review — reciprocal interface (18 November 2026)
 
 **Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Qualification relies on provider-neutral interfaces for trusted recognition/approved-centre/delegation evidence, external award decisions, correlation-aware submissions and verifiable callbacks. Integrations owns connector mechanics and provider authentication, not the meaning or authority of qualification decisions. Preserve source/observed/effective times, uncertainty and idempotent reconciliation; provider outage is not withdrawal of recognition. This note does not complete this adjacent capability's independent review or assert an implemented contract.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Integrations supplies provider-neutral connectivity/transport to issuer mandates, remote issuance/signers, credential registries and status services. Provider requests/callbacks carry correlation/idempotency, source attribution, authenticity and effective/freshness context. Credentials retains issuance, representation and credential-status decisions; external award and registry authorities retain their actual source standing. Transport success is not an issued credential; outage is not revocation; reconcile duplicates and uncertain outcomes.

@@ -284,3 +284,9 @@ All commands must validate identity/assurance, relying-party rights, per-resourc
 ## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
 
 **Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed qualification review.** Qualification consumes minimum necessary Training competencies/completion and provenance for independently authorised scheme eligibility/award decisions; Training cannot award or revoke qualifications. Changed Training evidence prompts Qualification re-evaluation, not automatic revocation. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 owner-approved ownership unchanged.** Qualification supplies versioned authoritative individual qualification-award decisions, award/appeal/withdrawal state and verified issuer/delegation scope through a public provenance-rich contract. Credentials owns issued representation, issuance transaction, proof and credential-specific suspend/revoke/replace/status, consumes source changes with idempotent reconciliation, and returns bounded receipt/status where required. Qualification must not import Credentials internals or infer that successful award implies delivered credential. A stale external source does not confer award authority; a later credential correction does not change Qualification's underlying award.

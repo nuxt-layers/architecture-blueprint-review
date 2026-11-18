@@ -130,3 +130,14 @@ Verification owns this qualified evidence/issuer trust determination, not Assess
 ## Qualification trust and employment interoperability — reciprocal proposal (18 November 2026)
 
 **Status: QUAL-06–08 owner-agreed; QUAL-09 accepted in principle, details proposed in [Qualification PR #65](../qualification/capability-record.md).** Verification owns generic source/issuer attestation verification requests, trust methods, source validity, revocation freshness and privacy-preserving proof disclosure. Qualification consumes those source-qualified findings to interpret awarding-body recognition, scheme scope, delegated award power and individual award significance, retaining its own domain judgement and verified source references. An authentic signed certificate is not automatically a recognised qualification, licence to practise or proof of employer-specific eligibility. Qualification supplies its formal award decisions as source facts; Verification must not make awards. Avoid double-ownership of general trust registries or mutual imports. This note does not assert a published API or independent approval for verification.
+
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); Verification's approved principles remain intact.** Credentials owns locally issued credential/proof and authoritative credential-status registry. Verification independently evaluates externally presented claims, issuer/key/trust policy and relying-party scope; it may consume Credentials' published minimised status/proof contract. Do not build a duplicate credential issuance registry or a bidirectional package dependency. Signature verified does not establish a current award or credential status; unknown/stale status remains qualified. Cross-tenant enumeration and verifier tracking are disallowed by default.
+
+
+## Credentials CRED-17/CRED-18 reciprocal policy and standards note (18 November 2026)
+
+**Status: CRED-17 technical profile recommendations, 18 November 2026, PR #62; not an implemented API or universal standard mandate.** Credentials proposes W3C VC 2.0 portable model, selected JOSE/COSE or Data Integrity security profile, OpenID4VCI/VP 1.0 when wallet-supported, status list 1.0 where appropriate and qualified offline checks. Verification assesses independently presented proofs, issuer/trust roots, scope and revocation/status freshness through published Credential proof/status ports; do not create bidirectional package imports or treat a valid signature as sufficient authorisation or current award. Country/sector trust is independently assessed at the relying party. See [CRED-17 review](../../../reviews/credentials-standards-jurisdiction-resolution.md).
