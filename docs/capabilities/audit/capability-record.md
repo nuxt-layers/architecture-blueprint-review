@@ -549,3 +549,8 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## COURSE-12 — Qualification reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual boundary, not an implemented public contract or a completed audit review.** [Qualification](../qualification/capability-record.md): Qualification supplies minimised, committed provenance-rich evidence for scheme versions, recognition/delegation checks, award adjudication, appeal, correction, withdrawal/reinstatement and teach-out. Audit owns evidential acceptance and custody, not qualification or awarding authority; retention/disclosure must respect privacy and legal holds.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
