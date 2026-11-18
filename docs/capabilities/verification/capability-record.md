@@ -115,3 +115,8 @@ Choose exact verification proofing/age data custodian and data controller relati
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved interface direction:** Verification may validate issuer/centre identity, representation and mandate evidence only within its independently accepted scope; Qualification determines qualification-specific award authority/rule applicability and remains owner of local award decisions. Verification does not become an awarding organisation, create official recognition or replace external regulatory sources. No change to previously approved verification ownership.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); Verification's approved principles remain intact.** Credentials owns locally issued credential/proof and authoritative credential-status registry. Verification independently evaluates externally presented claims, issuer/key/trust policy and relying-party scope; it may consume Credentials' published minimised status/proof contract. Do not build a duplicate credential issuance registry or a bidirectional package dependency. Signature verified does not establish a current award or credential status; unknown/stale status remains qualified. Cross-tenant enumeration and verifier tracking are disallowed by default.
