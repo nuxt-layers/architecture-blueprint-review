@@ -137,6 +137,25 @@ Apply OWASP ASVS 5 L2 baseline and L3 controls where security critical; WCAG 2.2
 
 ---
 
+## Approved IAM suite façade and presentation decision — 18 November 2026
+
+**Owner-approved conceptual direction (PR #73):** `iam-integration` is the IAM **composition, façade and coordination layer** between the host and four distinct IAM members: Identity, Authentication, Authorisation and Profile. `configuration` is a cooperating source of approved host/tenant settings, **not a fifth data-owning IAM member**. The integration publishes one documented host entry point and shared IAM service ports, member adapters and cross-member orchestration, but is **not** an obligatory network API gateway through which every operation must pass. Hosts and peers may use individual members' authorised public contracts directly; no bypass of server-side security or member policy is implied. IAM Integration must not duplicate the members' state, roles, credentials, profiles, or decisions.
+
+### Approved presentation split
+Two **separate optional presentation contributions** are conceptually approved:
+
+1. **IAM Suite Dashboard:** the primary `/iam` overview reachable from a single host-owned **Identity & Access Management** (or **IAM**) sidebar entry. It provides an authorised orientation and coherent navigation to **Identity** (people/groups/tenants/memberships), **Authentication** (sign-in/MFA/sessions), **Authorisation** (roles/grants/permissions), **Profile** (personal information/disclosure/rights) and contextual **Configuration** settings. Each member retains its own screens, actions and authoritative service/data. IAM Integration should only offer public composition/view contracts and reusable overview/navigation components: **no duplicate group editors, permission engines, credential screens or personal-data forms**. The host's overview must distinguish personal/self-service and privileged administration paths; navigation visibility is not access permission.
+2. **IAM System Health:** a distinct, privileged area for integration and reconciliation operators, linked from the dashboard only when authorised; expose member connection/contract readiness, partial provisioning, delayed revocation, failed outbox delivery, pending recovery/approvals, source-linked audit evidence, idempotent reconciliation and diagnostics. **Do not make technical health the default IAM dashboard**. Show accurate `complete`, `pending`, `partial`, `restricted`, `unknown` status based on source confirmations rather than inventing global atomic success. Reconciliation actions are server-authorised, with risk-specific step-up and independent approval.
+
+### Host presentation contract and routes
+Use [`nuxt-layers-test/application-test-template`](https://github.com/nuxt-layers-test/application-test-template/blob/master/README.md) as the representative shell: homepage `/`, host test dashboard `/admin`, responsive collapsible sidebar, top bar, Theme Manager entry `/theme-manager`. A derived IAM test application can add one **IAM** sidebar entry, optional `/admin` card and configured `/iam` overview; member-owned pages remain linked via public routes. Optional host-configurable `/iam/system-health`, `/iam/operations`, `/iam/operations/:id`, `/iam/reconciliation` consume IAM Integration public status/recovery services. These are **proposed illustrative paths**, not published implemented routes. The host owns actual routes, naming, navigation and branding, and may disable/relocate components. A composable package may contribute presentation only through documented optional public exports, not private package imports.
+
+**Headless parity:** `presentation:false` means no suite pages/components, without disabling APIs, orchestration, lifecycle or member screens; `pages.enabled:false` permits host-placed reusable components. All privileged screens recheck trusted actor/tenant/resource and necessary assurance server-side. Privacy-scoped disclosure, redaction/no-existence leakage, keyboard accessibility, WCAG 2.2 AA, responsive/mobile, locale/i18n and Theme Manager semantic tokens apply. Do not expose health diagnostics, credentials, raw tokens or cross-tenant directories through the normal dashboard.
+
+### Consequences and acceptance
+**IAMINT-04 is now RESOLVED / owner-approved:** ship an optional reusable suite dashboard *and* separate optional privileged system-health presentation, with host-owned navigation and member-owned detailed screens. Whether the implementation uses one package export or separately loadable presentation modules remains an implementation detail under the ADR-0012 host composition budget. Acceptance must verify both presentation-disabled/headless mode and member screens, user versus operator access, route overrides, configuration contextual links, no duplicated records, real operation-status provenance, accessible sidebar/mobile interactions and use of Theme Manager. No current implementation or tested UI is asserted.
+
+
 ## Preserved pre-existing reciprocal notes (15 November 2026)
 
 ## Cross-capability note — Authentication suite choreography (15 November 2026)
