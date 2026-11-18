@@ -564,3 +564,8 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** The Infrastructure [conceptual public surfaces](../../../reviews/infrastructure-conceptual-architecture.md) emit attributable, replay-safe sensitive provider/deployment/backup/restore/time-source control transitions and independent evidence references to Audit without owning Audit's accepted evidence or silently equating provider acknowledgements with verified outcomes. Critical capture failure invokes governed refusal/hold; required evidence and interface remain open INF-03/04.
