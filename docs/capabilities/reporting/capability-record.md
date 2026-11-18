@@ -108,3 +108,7 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 ## Cross-capability note — Gaming conceptual review (18 November 2026)
 
 **Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) supplies authorised game instances, participants, provisional/final/corrected results and rankings with ruleset, competition scope, effective revision, coverage and privacy restrictions. Reporting may own cross-game aggregates and derivative reports but never edits official scores, standings or source records. On corrections, invalidate/recompute with replay-safe handling; protect small-cohort and child-identity inference.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
