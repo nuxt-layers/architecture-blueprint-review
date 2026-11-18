@@ -1,12 +1,12 @@
 # Help — Capability Conceptual Record
 
-**Status:** Proposed architectural classification and conceptual contract; **owner approval outstanding** (18 November 2026). No dedicated implementation, runtime, root `CONTRACT.md` or acceptance test is verified. This record is **not** a Publisher contract amendment or accepted governing decision.
+**Status:** HELP-01–HELP-04 **owner-approved conceptual direction** (18 November 2026); detailed contract and options remain blueprint proposals, not verified implementation. No dedicated implementation, runtime, root `CONTRACT.md` or acceptance test is verified. This record is **not** a Publisher contract amendment or accepted governing decision.
 
 **Exact directory:** `help`. **Review:** [opening baseline](../../../reviews/help-review-baseline.md), [draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72). Governing `architecture-rules/master` opening SHA `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; blueprint opening SHA `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
 
 ## Purpose and classification
 
-Offer a consistent, accessible, version-aware Help Centre and optional contextual assistance on fields, actions, errors, pages and workflows of composed applications. **Proposed classification: Presentation plus an optional, narrowly scoped platform mapping/resolution service, not a second publishing domain.** A distinct package/service is justified only if the reusable governed help-context registry, compatibility rules and version resolution have independent cross-application lifecycle needs; otherwise a host composition with Publisher and Search is sufficient. This classification remains an owner decision (HELP-01).
+Offer a consistent, accessible, version-aware Help Centre and optional contextual assistance on fields, actions, errors, pages and workflows of composed applications. **Proposed classification: Presentation plus an optional, narrowly scoped platform mapping/resolution service, not a second publishing domain.** A distinct package/service is justified only if the reusable governed help-context registry, compatibility rules and version resolution have independent cross-application lifecycle needs; otherwise a host composition with Publisher and Search is sufficient. This conditional classification is approved conceptually under HELP-01; the independent service/repository remains subject to evidence.
 
 ### Authority and exclusions
 
@@ -108,10 +108,80 @@ Server-side authorisation governs every restricted query/change and Publisher co
 
 - **Established:** Publisher `master` root `CONTRACT.md` publishes versioned document types, safe rendered documents, audience checks and headless access; Content Editor is its designated generic UI. Architecture Rules Capability Standard classifies presentation separately and requires one-way public contracts, runtime validation, separable UI and no duplicate ownership. Accepted ADR-0017/0018 status reconciled on governing `master`; no extra powers inferred.
 - **Existing agreed blueprint direction:** Help aims for a version-aware Help Centre and contextual controls; this 16 November candidate record was not owner approval of a standalone service.
-- **HELP-01 — owner decision OPEN:** Adopt **presentation/composition by default**; allow a narrowly scoped, independently owned platform context-mapping service only when a governed reusable mapping lifecycle is demonstrated. Do not create a `nuxt-layers/help` repository or duplicate Publisher based solely on the name.
-- **HELP-02 — owner decision OPEN:** Use explicit versioned context descriptors and stable keys in each owning capability's public documentation, not guessed implementation internals. Select governed mapping registry versus host-declared mappings at actual deployment/design time.
-- **HELP-03 — owner decision OPEN:** Publisher owns Help documents; Content Editor generic authoring; Search discovery; Help only context resolution/UI, with optional reference registry.
-- **HELP-04 — owner decision OPEN:** Adopt security/failure semantics, optional accessible contextual controls and headless-first contract described above, subject to owner approval.
+- **HELP-01 — OWNER APPROVED (18 November 2026):** Adopt **presentation/composition by default**; allow a narrowly scoped, independently owned platform context-mapping service only when a governed reusable mapping lifecycle is demonstrated. Do not create a `nuxt-layers/help` repository or duplicate Publisher based solely on the name.
+- **HELP-02 — OWNER APPROVED (18 November 2026):** Use explicit versioned context descriptors and stable keys in each owning capability's public documentation, not guessed implementation internals. Select governed mapping registry versus host-declared mappings at actual deployment/design time.
+- **HELP-03 — OWNER APPROVED (18 November 2026):** Publisher owns Help documents; Content Editor generic authoring; Search discovery; Help only context resolution/UI, with optional reference registry.
+- **HELP-04 — OWNER APPROVED (18 November 2026):** Adopt security/failure semantics, optional accessible contextual controls and headless-first contract described above, subject to owner approval.
 - **Technical investigations:** whether any current host manifests expose usable versioned context descriptors; Publisher document-type `help-article` schema, published search contract, stable deep-link/version semantics, source metadata compatibility, minimum composition under ADR-0012 and cache invalidation details.
 - **Implementation alignment:** No verified Help implementation/root `CONTRACT.md` (`nuxt-layers/help` fetch 404); Search root `CONTRACT.md` not retrievable in this review; Publisher contract reviewed from `master`, without claiming tested operation. Published capability contracts, packages, screens and CI must be independently proven later.
-- **Acceptance/sign-off:** Proposed, not conceptually accepted. This draft PR requires user decision and pre-merge technical plus architectural consistency check against latest `master`, CI/branch protection and explicit merge approval.
+- **Acceptance/sign-off:** HELP-01–04 conceptual direction approved; subsequent elaborations and package choices remain proposed. PR remains draft and requires final consistency checks, CI/branch protection and explicit merge approval.
+
+## Approved-direction elaboration — published contracts, standards, libraries and GUI (18 November 2026)
+
+**Approval:** Owner expressly approved HELP-01–HELP-04. The additional details in this section are **recommended for review**, not new automatic approvals or published implementation APIs. Baselines rechecked: governing `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; blueprint `master` `02b2302e90e94680928abb9ac5553e81c9e67a53`. This branch was six commits behind new `master` at inspection; reconciliation is mandatory before any merge.
+
+### Human-readable consumer contract: who provides what
+
+- **Ask Help for a topic:** Host submits a documented context key (for example `inventory.item.quantity`), installed source/version, locale and authenticated scope. Help resolves a compatible, authorised Publisher topic and returns its safe reference, match quality, effective version/locale and publication freshness, or an explicit unavailable/non-disclosing result. A context lookup is not an access grant.
+- **Browse Help:** Host asks for permitted categories, article references, breadcrumbs, languages and versions. Help assembles a view from Publisher and optional Search/Metadata; it cannot create/approve content.
+- **Maintain mappings (optional governed registry):** Authorised operator submits a source-owned stable descriptor, Publisher document reference, scope/version range, expected mapping revision and idempotency key. Help validates and returns committed mapping revision or a conflict/refusal; emits a source-owned mapping event only after persistence. Without a registry, equivalent mappings belong to host configuration and there is no Help-owned persistence/event.
+- **Author help articles:** Authorised editor uses Publisher's registered document type and Content Editor's generic UI; the Publisher contract, not Help, returns article revision, preview, publication and lifecycle status.
+- **Observe quality:** Help exposes aggregated mapping coverage, broken/stale references, unavailable languages and reconciliation status. Reporting may request scoped, minimised projections; neither Help nor Reporting should silently record individual help-reading trails.
+
+**Dependency direction and degraded modes:** Publisher's published-content and access contracts are essential to Publisher-backed help; host caller/version and permitted context are essential for restricted help. Search, Metadata, Localisation, configuration-driven appearance and Reporting are optional for basic exact resolution. A disabled Search means no full-text results but direct topics still work. A disabled mapping registry means host-declared mapping only. If Publisher status/permissions are unknown, protected content is unavailable. Help must never reverse-call Publisher from a required Publisher dependency or read private stores.
+
+### Logging / Audit / Reporting reciprocal public interfaces
+
+| Partner owner | Help sends through partner's proposed public intake | Partner returns or makes available | Exclusions |
+|---|---|---|---|
+| [Logging](../logging/capability-record.md) | Severity-coded mapping resolution failure, stale reference, dependency outage, invalid descriptor and latency/correlation values; redacted tenant/subject and no raw query/article bodies | Accepted/dropped/failed diagnostic status and correlation for operational troubleshooting, where supported | Log delivery is not a business action, proof of publication or Audit evidence |
+| [Audit](../audit/capability-record.md) | Classified producer-authenticated event for mapping create/change/withdrawal, privileged overrides or sensitive administrative actions with trusted actor, tenant, action/outcome, mapping revisions, source ID, event ID, occurrence time and correlation | Evidential intake accepted/pending/rejected/unknown reference, authorised verification/review result | Source owns mapping change; Audit owns custody and verification. No duplicate Publisher publication audit and no wholesale raw logs |
+| [Reporting](../reporting/capability-record.md) | Authorised aggregate counts: documented/unmapped contexts, outdated/incompatible topics, broken links, missing locale variants, reconciliation health; scoped period and provenance/freshness | Authorised report definition/execution/result, aggregation/disclosure safeguards, status, freshness and lineage | Reporting is not the mapping source or a source-document owner; small-cohort disclosure and raw personal clickstream disallowed by default |
+
+An operational logging outage must not alter a valid help lookup. Significant accepted mapping changes must have a reliable Audit evidence hand-off/reconciliation policy; a queued Audit submission is not an accepted evidential record. Reporting failure cannot stop core Help. For a presentation-only deployment, source owners and host own their own audited administrative changes, and there are no Help-owned domain events.
+
+### Standards and established patterns to reuse
+
+| Standard | Value to Help | Architectural qualification |
+|---|---|---|
+| [W3C WCAG 2.2](https://www.w3.org/TR/WCAG22/) AA and [WAI-ARIA APG](https://www.w3.org/WAI/ARIA/apg/) | Keyboard, focus, labels, disclosure, popover/dialog semantics, screen reader support | Use appropriate dialog for interactive help; avoid an interactive tooltip antipattern |
+| [IETF BCP 47 / RFC 5646](https://datatracker.ietf.org/doc/rfc5646/) with Unicode CLDR / ECMA-402 | Language tags, effective/fallback locale, RTL/layout and formatting | Keep preference and translation ownership with existing capabilities |
+| [JSON Schema 2020-12](https://json-schema.org/draft/2020-12) | Versioned validation of public help-context descriptors and mapping declarations | Do not impose an undocumented universal ecosystem manifest |
+| [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) | Reuse compatibility ranges where source packages actually follow SemVer | Documentation/content revision and installed application version are separate dimensions |
+| [OASIS DITA 1.3](https://www.oasis-open.org/2016/02/01/members-approve-dita-1-3-as-oasis-standard-for-authoring-and-publishing/) | Established topic modularity, reuse, indirect topic keys, navigation and conditional variants | Study as a design reference; do not require DITA XML or install a second content system |
+| OWASP ASVS 5.0 + existing platform privacy and retention rules | Tenant isolation, authorisation, input validation, safe output and caches | No standards statement by itself proves deployment compliance |
+
+Proposed help-content metadata should make context keys and audience visible without leaking sensitive configuration, and may link to schema.org `TechArticle` or `HowTo` only when the Publisher/SEO owners choose appropriate structured data. Do not reinvent route/URL ownership.
+
+### Commercially permissive OSS selection, not a mandatory dependency list
+
+Candidate packages with public permissive licence evidence (licence, maintainership, dependency tree and API must be checked/pinned at implementation selection):
+
+| Candidate | Licence | Role and decision |
+|---|---|---|
+| [Ajv](https://github.com/ajv-validator/ajv) | MIT | JSON Schema validation for stable context metadata when JSON Schema is adopted; use existing platform runtime validation otherwise |
+| [@floating-ui/vue](https://github.com/floating-ui/floating-ui) | MIT | Optional accessible placement of help popovers/side panels; does **not** supply dialog keyboard semantics by itself |
+| [unified](https://github.com/unifiedjs/unified) / [remark](https://github.com/remarkjs/remark) | MIT | Documentation processing/checking tooling only if needed for metadata import; do not bypass Publisher safe-tree rendering |
+| [MiniSearch](https://github.com/lucaong/minisearch) | MIT | Small local/offline authorised index **only when Search owner selects it**; maintenance cadence should be reassessed |
+| [FlexSearch](https://github.com/nextapps-de/flexsearch) | Apache-2.0 | Alternative embedded search engine for Search owner, not a second Help index; check locale/tokenisation requirements |
+| [ofetch](https://github.com/unjs/ofetch) | MIT | Optional request client if built-in Nuxt/Nitro facilities do not suffice |
+| [Nuxt UI](https://github.com/nuxt/ui) | MIT | Optional presentation components only if interoperable with existing `ui` and Theme Manager; avoid parallel theming/component systems |
+
+**Prefer existing Nuxt, shared UI, Publisher and Search functionality before any added package.** All packages are candidates, not dependencies or validated runtime versions. No closed-core, hosted-mandatory or freemium product is required. Recheck SPDX/NOTICE and transitive licences, provenance, vulnerability status and maintenance before adoption; permissive source licence alone does not ensure suitable maintenance or no operational lock-in.
+
+### Specific host GUI layout and routes
+
+The actual [application-test-template](https://github.com/nuxt-layers-test/application-test-template) currently exposes a shared shell: `/` home; `/admin` dashboard; `/theme-manager` for a capability; collapsible responsive sidebar, top bar Appearance control and authentication-status placeholder. Its `nuxt.config.ts` currently composes Theme Manager in `test` mode, explicitly **not** safe for public deployment. No new Help host route is claimed implemented.
+
+Proposed host-owned navigation when Help is selected:
+
+1. **Sidebar Help → `/help`**: Help dashboard with search, suggested topics, capability/category tiles, current version/language display, last-used context only if deliberately kept in non-sensitive session state; no behavioural tracking by default.
+2. **Help Centre → `/help/topics` / `/help/topics/:topic`**: browse/search, results and safe Publisher article rendering with breadcrumbs, compatible version and locale/fallback banner; canonical Publisher address handling, not duplicate document ownership.
+3. **Context controls on source screens**: labelled Help button adjacent to permitted inputs, operation/error guidance, optionally opens dismissible side panel with topic summary and link to full article. Restore focus and preserve unsaved forms. A text label must remain available; no hover-only functionality.
+4. **Admin dashboard → `/admin/help`**: coverage by capability/version/locale and broken mapping alerts, with separate authorised mapping registry screens `/admin/help/mappings` and `/admin/help/mappings/:id` only if registry is deployed.
+5. **Author help article**: `/admin/content-editor` (illustrative host route) filtered to Publisher's registered Help document type; no duplicate Help editor. History/publication action belongs to Publisher via Content Editor.
+6. **Operations/reporting**: limited links from admin Help dashboard to owned Audit, Logging and Reporting screens; host navigation/access boundaries remain in force.
+
+A small application can show only `/help` and contextual links; mappings may be static host declarations. An enterprise host may show the authorised coverage/mapping administration. Headless consumers may omit every screen, reading the public resolution contract only. All presentation remains reusable, themed, responsive, internationalised and WCAG 2.2 AA.
+
+**GUI acceptance:** sidebar links only when Help is selected; 404/disabled state when not; user and administrator see different authorised navigation; keyboard/help panel focus and close operate properly; theme and locale changes do not invalidate document authority; offline Search preserves contextual access; Publisher/permission outages fail closed; wrong-tenant, wrong-version and withdrawn documentation never display; no deployment of unauthenticated Theme Manager test mode.
