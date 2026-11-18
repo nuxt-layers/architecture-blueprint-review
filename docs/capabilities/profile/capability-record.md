@@ -53,3 +53,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Employment reciprocal conceptual interface — 17 November 2026
 
 **Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not a completed Profile review.** Profile owns general personal/contact data and individual preference/rights interfaces. Employment owns employer-scoped engagement terms, assessments and confidential personnel evidence; it may consume purpose-approved Profile data by reference and return qualified, restricted data-subject access/correction/erasure dispositions without copying all personnel records into Profile. Employment records may require separately justified retention or legal holds. An employer's membership or administrative role does not grant access to all worker details. See [Employment record](../employment/capability-record.md).
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Profile remains authoritative for personal data, purpose-specific disclosure and personal-data request/erasure lifecycle. IAM Integration supplies verified Identity references and rights-request coordination over public owner parts; it consumes qualified export, correction, disclosure, anonymisation and legal-hold dispositions without duplicating personal data or claiming all source records erased. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
