@@ -256,3 +256,9 @@ Configuration owns approved, scoped versioned scanner-profile preferences and pr
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-11 agreed:** Configuration resolves organisation-approved options for reviews, safeguarding, delivery, migration and retention with precedence; Legal Compliance and Privacy supply non-overridable restrictions. Course, Assessment and Credentials enforce their own rules. Accreditation and delegated awarding authority are externally evidenced facts, not configuration preferences. This note does not complete the separate configuration review.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Configuration supplies scoped, versioned enabled-role and operator preference values; Federation owns active peer/subscription/acknowledgement state. Configuration selections never authorise publication or grant remote access; source-owner visibility, Authorisation and law govern effective disclosure. Public directional ports, explicit absence modes and acyclic package dependencies apply.
