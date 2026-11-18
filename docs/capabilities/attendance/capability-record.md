@@ -175,9 +175,9 @@ The optional **Attendance** sidebar dashboard serves a headless-equivalent scope
 
 **Use cases:** anonymous four-seat booking does not identify four people; organiser may invite named attendees later through lawful contact channels. A guest joining three activities obtains independently scoped access for each; same contact address does not prove shared identity. Guardian access requires verified representation, not a free-text parent label. Where email is unavailable, only policy-approved alternative or assisted access is permitted. Later full-account linking must verify control of relevant participant claim and the destination principal, preserve original provenance and never expose other organisations' records. Withdrawal revokes future access but does not silently delete lawful history. Guest views, as available through the host, use Events/Course/Booking/Enrolment public APIs for their own details; Attendance never copies course material, payments, grades or provider secrets.
 
-### Guest access-history authority — proposed ATT-10 for separate owner consideration
+### ATT-10 — owner-approved distributed guest-access history authority (18 November 2026)
 
-**Recommended boundary, not yet independently approved:** distribute history by its authoritative meaning rather than creating one guest-history master.
+**Owner-approved conceptual decision:** distribute history by its authoritative meaning rather than creating one guest-history master. This approves ownership and historical integrity, not implementation readiness or any specific retention duration.
 
 | History class | Owner / public output | Non-ownership and retention |
 |---|---|---|
