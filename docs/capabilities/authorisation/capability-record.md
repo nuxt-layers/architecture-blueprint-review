@@ -430,3 +430,7 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Authorisation supplies server-side tenant/issuer/subject/resource access decisions for issue/view/verify/revoke/replace and step-up where required. Credentials additionally enforces claim-source decision authority, issuer delegation, mandate status, profile and lawful disclosure. No IAM grant makes an award or confers external issuing rights. Denial/unknown fails closed.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) requires current server-side resource-scope access decisions for organising, joining, playing, adjudicating, correcting, viewing and exporting, with assurance appropriate to the action. Authorisation decides access, Gaming independently enforces game rules and state transitions. Competition rank, paid admission, tenant parentage and group membership confer no inherent administration grant.
