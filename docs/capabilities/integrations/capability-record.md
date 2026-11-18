@@ -109,3 +109,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Qualification owns qualification-specific authority/recognition and award-decision semantics, while Integrations owns provider-specific accreditation and awarding-body API adapters, authenticated registry evidence, delegated mandate lookups, external award responses and status callbacks. Source authority, scope, effective time, last verification, expiry and unknown/conflict status accompany claims; external connectors never grant local legal powers or overwrite qualification awards silently. No change to previously approved integrations ownership.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Integrations supplies provider-neutral connectivity/transport to issuer mandates, remote issuance/signers, credential registries and status services. Provider requests/callbacks carry correlation/idempotency, source attribution, authenticity and effective/freshness context. Credentials retains issuance, representation and credential-status decisions; external award and registry authorities retain their actual source standing. Transport success is not an issued credential; outage is not revocation; reconcile duplicates and uncertain outcomes.
