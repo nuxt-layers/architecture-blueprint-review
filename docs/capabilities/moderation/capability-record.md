@@ -81,3 +81,9 @@ Content Security owns qualified detection evidence, revisions and incomplete/unk
 ## Reciprocal conceptual note — Course (17 November 2026)
 
 **Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may submit user-facing learning material reports for moderation. Moderation owns policy enforcement decisions and appeals where applicable; Course owns course withdrawal/access transitions and version history. Neither capability awards learner grades. This does not complete moderation's own review.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Federation submits locally admissible provenance and suspicious remote transmissions for review; Moderation owns cases, adjudication and appeal where installed. Federation controls local peer refusal/quarantine and transmission; Search controls index application; originating domains control source publication. A local defederation is not origin deletion. Public directional ports, explicit absence modes and acyclic package dependencies apply.
