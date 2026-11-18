@@ -203,6 +203,10 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 
 **Status: Proposed, pending owner approval; not a completed content_editor review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course requires a structured curriculum editor (outcome builder, unit/prerequisite graph, revision comparison, publication state and content reference selection) via the Course public conceptual contract. Generic Content Editor may present declared course field/action descriptors, but does not own Course state or infer domain rules from arbitrary rich text. Coordinate with provisional PR #54 without treating that PR as accepted.
 
+## Gallery reciprocal presentation interface — 18 November 2026 (proposed; PR #70)
+
+[Gallery](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) offers a type-specific ordered-media field/editor contribution for Publisher-registered album and featured-photo types, plus an album viewer/lightbox and optional submission experience. **Content Editor** retains generic Publisher document administration, schema-driven form, review/history and publication screens. Neither duplicates Publisher's authoritative lifecycle nor owns moderation case decisions. Review intake for member submissions must be wired to an actually published source-owned contract; the legacy Gallery design's `publisher.<type>.moderate` permission is not evidenced by Publisher's current root `CONTRACT.md`. GUI routes and sidebar integration remain host-controlled.
+
 
 ## Reciprocal conceptual note — Help review (18 November 2026)
 

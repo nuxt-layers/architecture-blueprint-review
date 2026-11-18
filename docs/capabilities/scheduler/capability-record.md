@@ -63,3 +63,7 @@
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** Scheduler runs idempotent time-triggered work, not education sessions (Events), learner cohorts (Enrolment) or assessment marks. Scheduled Course publication/withdrawal must revalidate current permissions and safeguards; late jobs cannot reauthorise an invalid curriculum. This note does not complete the separate scheduler review.
+
+## Events interface reciprocity — 18 November 2026
+
+**Events EVT-09/14 (18 November 2026; proposed interface clarification):** Events owns activity schedule, occurrence state, recurrence meaning and effective changes. Scheduler receives explicit, idempotent due-work requests with event/occurrence reference, expected Events revision, due time and policy; returns schedule acceptance, execution attempt, actual time, failure/delay and retry context. Only Events may authorise and commit its event transition after checking the current revision. Late, repeated or cancelled Scheduler jobs never override source event state. Scheduler is not a calendar/event or attendance owner. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).

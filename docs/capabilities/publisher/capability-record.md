@@ -97,6 +97,24 @@ Publisher requests revision-bound technical checks for registered documents befo
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Publisher may produce versioned certificate documents or presentation using a permitted Credentials public view model, but owns only its own rendered document lifecycle. It cannot issue the underlying credential, award a qualification, revoke a credential or certify live proof status. Corrections/revocations trigger controlled rendering/withdrawal or status updates through explicit public contract and reconciliation; a cached PDF remains an artifact, not a status authority.
 
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** Publisher keeps authoritative approved revisions, publication/withdrawal, visibility and document lifecycle. The Export Library renders a permitted revision's safe rich-text tree into file bytes/stream; Publisher or the calling host owns any stored downloadable copy, source disclosure recheck, retention and invalidation. There is no restored generic Document capability and no Export-owned Publisher master. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Publisher may provide explicitly approved, versioned, public collection projections and durable publication/update/withdrawal facts to Federation. Publisher remains the publication and visibility authority; Federation owns peer subscriptions, deliveries, remote acknowledgements and reconciliation, without editing source documents. No implicit publication to a Hub and no private-state replication. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+## Gallery reciprocal interface — 18 November 2026 (proposed; PR #70)
+
+[Gallery's conceptual public surfaces](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) remain **presentation only**. Publisher owns host-registered `album`, `members-album` and `featured-photo` document type records, order/captions/credits, revisions, audience constraints, publishing/scheduling, addresses and source outbox. Gallery consumes only authorised public published/admin reads and version-conditioned commands through host composition; Media remains authoritative for asset eligibility. **Contract gap:** current root `CONTRACT.md` documents `view-draft/edit/publish/delete` but not the historical Gallery `moderate` action, nor a proven member-submission workflow. Do not infer these from the earlier design; source-authorised intake/review and private-document access require contract verification/reconciliation. This note is not approval of a Publisher implementation change.
+
 
 ## Reciprocal conceptual note — Help review (18 November 2026)
 

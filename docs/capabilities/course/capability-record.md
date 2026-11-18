@@ -249,3 +249,16 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 ## Cross-capability review note — Enrolment (owner-accepted conceptual)
 
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Course owns published offering/cohort identity, admission parameters, revisions, learning outcomes and any Course-owned seat supply. Enrolment consumes these as versioned facts and owns individual application/admission/withdrawal status, supplying authorised roster/participation evidence back. When Booking or Course owns seats, Enrolment must use its checked capacity contract and cannot create a competing pool. This note is not Course review approval or an implemented contract.
+
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; proposed, Course COURSE-09 already agreed):** [Events](../events/capability-record.md) owns teaching session occurrence/time/location/status and event programme, while Course owns curricula/offering learning requirements. Course supplies programme and revision references; Events supplies timetable/session change and cancellation facts; self-paced learning does not require Events. Course may not rewrite a cancelled session or infer learner attendance. No verified published integration.
+
+## Revised Events boundary and decision gates — 18 November 2026
+
+**18 November Events boundary — EVT-01–10/12–15 owner-approved, implementation outstanding:** [EVT-02 and decision criteria](../../../reviews/events-refined-boundary-and-decisions.md) distinguish Course-owned versioned curriculum/learning intention from an optionally linked Events-owned scheduled occurrence. Self-paced courses require no Events. A Course offering/run definition is provisionally recommended to Course, individual cohort membership remains Enrolment, but any run/cohort ownership issue is outside the Events review. Previously owner-agreed COURSE-09 educational session ownership is preserved pending **explicit reconciliation**, not silently reversed. Course is not a subclass of Events; no duplicate session timetable or programme source.
+
+
+## Events owner decision clarification — 18 November 2026
+
+**EVT-01/02 owner-approved:** Events is a separate generic activity/schedule Domain capability, and the other domain can optionally associate its own records through public references without transferring ownership. **EVT-11 was explicitly not approved and is removed from the Events review.** Any educational offering/cohort ownership is handled in its independent capability review, not by Events. This does not change existing owner-approved Course or Enrolment authority.

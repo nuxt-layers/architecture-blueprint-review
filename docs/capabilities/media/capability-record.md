@@ -44,3 +44,7 @@ Media remains authoritative for uploads, image/file versions, variants and visib
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course references versioned safe learning assets; Media owns asset metadata, quarantine, derivative lifecycle, Storage owns bytes. Course honours safety and access gates before exposure. This note does not complete the separate media review.
+
+## Gallery reciprocal interface — 18 November 2026 (proposed; PR #70)
+
+[Gallery's conceptual presentation contract](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) consumes Media's current authorised variant metadata, alt text, safe thumbnail/lightbox delivery, asset picker/upload and original-download entitlement decisions; it holds no image bytes or authoritative asset state. Media must independently enforce member-only access, quarantine, removal and revocation for original and every derivative, URL, cache and CDN exposure; Gallery's visible button or Publisher publication does not grant access. Gallery's member submission intent is not a Media acceptance receipt. **Evidence gap:** Media's root `CONTRACT.md` was not retrieved; exact private delivery, picker and original-download public interfaces remain unverified. Existing online-safety and Content Editor findings are preserved.
