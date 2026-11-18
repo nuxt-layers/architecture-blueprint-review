@@ -42,3 +42,8 @@
 ### Asset conceptual-review cross-reference (14 November 2026)
 
 **Proposed:** [Asset](../asset/capability-record.md) records the identity and operational lifecycle of a particular managed physical unit, including third-party-owned leased or loaned equipment. Product retains saleable item/model/variant definitions and commercial descriptions; neither Product nor Asset alone determines stock balances or financial recognition. A product reference does not imply title or custody. Preserve the pending Product conceptual review.
+
+
+## Reciprocal interface — Inventory conceptual review (18 November 2026)
+
+**Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Product supplies versioned physical item definitions, units, lot/serial tracking and virtual-bundle versus stocked-kit/BOM classifications. Inventory independently owns resulting stock identities, movements, lot/serial positions and quantity commitments. A virtual bundle cannot create additional stock; a physical conversion consumes components and creates traceable output. Production work-order authority remains open (INV-02). See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.

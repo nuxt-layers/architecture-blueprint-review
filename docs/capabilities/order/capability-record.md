@@ -52,3 +52,8 @@
 Own purchase acceptance and amendments for paid tenant creation and additional capabilities, seats and storage, consuming verified scoped quote and payer authority; do not assert payment/entitlement/provisioning success.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+
+## Reciprocal interface — Inventory conceptual review (18 November 2026)
+
+**Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Order sends versioned sale/purchase quantity commitments, cancellations, returns and fulfilment references; Inventory returns revision-scoped checked stock reservation, release, issue and shortage/uncertainty outcomes. Order owns commercial obligation and acceptance, never an independently maintained stock-availability counter. An Inventory hold alone does not mean the order was accepted. Cross-owner partial completion requires traceable compensation. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.

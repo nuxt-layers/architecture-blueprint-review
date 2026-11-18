@@ -142,6 +142,23 @@ Verification owns this qualified evidence/issuer trust determination, not Assess
 
 **Status: CRED-17 technical profile recommendations, 18 November 2026, PR #62; not an implemented API or universal standard mandate.** Credentials proposes W3C VC 2.0 portable model, selected JOSE/COSE or Data Integrity security profile, OpenID4VCI/VP 1.0 when wallet-supported, status list 1.0 where appropriate and qualified offline checks. Verification assesses independently presented proofs, issuer/trust roots, scope and revocation/status freshness through published Credential proof/status ports; do not create bidirectional package imports or treat a valid signature as sufficient authorisation or current award. Country/sector trust is independently assessed at the relying party. See [CRED-17 review](../../../reviews/credentials-standards-jurisdiction-resolution.md).
 
+## Attendance ATT-11 — standards reference for guest/guardian assurance (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** [NIST SP 800-63A-4](https://csrc.nist.gov/pubs/sp/800/63/A/4/final) as guidance for identity-proofing evidence and assurance where a guest claim actually needs real-world attribution; [NIST SP 800-63C-4](https://csrc.nist.gov/pubs/sp/800/63/C/4/final) when federated assertions are used. Verification may substantiate identity/age/representation attributes and their provenance/expiry, but a successful check does not itself authenticate a session, authorise event access or confer enrolment/guardian legal standing. Attendance consumes bounded verification status through a public port; proofing must be proportionate to risk and no full proofing is mandatory for ordinary low-risk invitations.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation transports provenance, issuer/endpoint proof references, scope, audience, validity times, proof status and revocation observations; Verification evaluates specific trust evidence/credential claims where its public contract applies. Federation's local acceptance is not independent certification of organisation identity, age, issuer standing or content truth. Trust is never transitive between Hubs or Node peers. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+
+## Identity reciprocal conceptual interface — 18 November 2026
+
+**Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; no implemented verified-owner port claimed.** Verification may provide provenance, issuer/status/subject-binding and age/corporate representation claims. Identity owns resulting local principal and digital tenant owner lifecycle, not civil identity or legal controller adjudication. A valid document/claim alone never creates principal standing, direct membership, tenant authority or legal right; stale/disputed claims hold sensitive owner transfer and recovery pending independently qualified legal review. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-inbound-interfaces).
+
 ## Integrations reciprocal conceptual interface — 18 November 2026
 
 **Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Verification adjudicates external evidence admissibility, trust, claim qualification and freshness under permitted jurisdiction/purpose. Integrations only verifies connector/callback authenticity and transports attributed provider assertions with effective/source/observed time, revocation/staleness and unknown/conflict states. A connected national-ID, age/KYB or issuer provider never automatically verifies a person or grants domain eligibility. See [Integrations conceptual record](../integrations/capability-record.md#idealised-public-outbound-contract), PR #76; no provider selected or implementation asserted.

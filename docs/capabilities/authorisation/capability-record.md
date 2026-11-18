@@ -431,6 +431,50 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Authorisation supplies server-side tenant/issuer/subject/resource access decisions for issue/view/verify/revoke/replace and step-up where required. Credentials additionally enforces claim-source decision authority, issuer delegation, mandate status, profile and lawful disclosure. No IAM grant makes an award or confers external issuing rights. Denial/unknown fails closed.
 
+
+## Attendance ATT-09 — resource-scoped guest decisions (owner-approved Attendance requirement, 18 November 2026)
+
+[Attendance guest access contract](../attendance/capability-record.md#att-09--owner-approved-secure-accountless-participant-access-18-november-2026): an Authentication-verified guest session plus Attendance eligibility reference are **inputs**, not permissions. Authorisation independently evaluates current tenant, activity/occurrence resource, permitted guest actions, policy version, assurance, purpose, expiry, source revocation and guardian/representation where needed. Unknown/stale entitlement or invalid scope denies protected access without leaking resource existence; source invalidation forces re-evaluation, not indefinite token-authority. Attendance remains participant/RSVP/presence owner, Events/Course/Booking/Enrolment retain protected source details, and Authorisation must not duplicate attendance/booking records. **Owner-approved ATT-10 history boundary (18 November 2026):** Authorisation owns permission/grant and policy-decision metadata; Audit owns significant accountable decision evidence and custody; neither is a general browsing-history service. No existing Authorisation published API change is asserted.
+
+## Attendance ATT-11 — standards reference for guest resource access (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** governing [OWASP ASVS 5.0](https://asvs.owasp.org/) resource-level access-control verification and risk-aligned [NIST SP 800-63-4](https://csrc.nist.gov/pubs/sp/800/63/4/final) authentication assurance context; use relevant NIST SP 800-53 access-control controls as **reference**, not a blanket government certification. Guest claim and Authentication assurance are inputs to the server-side decision, not self-authorising bearer access. Evaluate scope, action, tenant, effective source/guardian status, policy revision, expiry and revocation on protected requests. Authorisation retains grants/decision context, Audit retains significant evidence; no participant roster or booking ownership transfers.
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** the accepted governing catalogue defines Export as a stateless rich-text-to-file Library, not a bulk-data authorisation service. Authorisation supplies trustworthy scope/action/bulk/recipient decisions to the source-owning or Reporting workflow; the workflow rechecks dataset and retained-file disclosure and records outcomes. Export only converts an already authorised safe tree; do not use rendering success or a signed download URL as an access grant. This qualifies, but does not erase, the 15 November reciprocal note. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 remain open, not owner-approved.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation needs server-side resource- and tenant-scoped decisions for peer administration, publication, retrieval and subscription; it supplies operation, resource, audience, assurance and policy context through an explicit public port. A trusted peer, signature, Hub subscription or verified issuer is never an access grant. Missing/unknown mandatory decisions fail closed; repeated delivery cannot bypass decisions. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) requires current server-side resource-scope access decisions for organising, joining, playing, adjudicating, correcting, viewing and exporting, with assurance appropriate to the action. Authorisation decides access, Gaming independently enforces game rules and state transitions. Competition rank, paid admission, tenant parentage and group membership confer no inherent administration grant.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Authorisation remains authoritative for permission definitions, roles/grants, approvals and resource-aware access decisions. IAM Integration supplies verified Authentication caller and Identity directory/governance ports, and consumes decisions, approval qualifications, role-change outcomes and revocation status; never equates membership with permission or silently relaxes assurance. Strong/bounded consistency and recovery from outbox lag need verified integration acceptance. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
+
+
+## Identity reciprocal conceptual interface — 18 November 2026
+
+**Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; not an implemented interface.** Identity owns tenant isolation boundary/tree, digital tenant owner state, groups and direct membership/standing; Authorisation owns resource-specific access decisions, roles/grants and independently scoped delegations. Consume strong revision/freshness-qualified Identity facts and invalidate derived grants on source revocation; tenant/group parenthood, digital owner, legal title and payer alone do not confer read or administrative rights. Unknown/stale standing fails closed on sensitive access; preserve independently authorised grants. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-outbound-interfaces).
+
 ## Integrations user-scoped discovery/use — 18 November 2026
 
 **Status: approved Integrations conceptual decision, not independent authorisation implementation acceptance.** **INT-07–09 owner-approved, including per-user visibility/use.** Integrations consumes the current tenant/organisation, caller/assurance and Authorisation's resource- and action-specific `decide(caller, action, resource)` for plugin discovery, plugin management, connection read/change and operation-specific execution; organisation-wide plugin activation is not blanket permission for members. The organisation owner may see/use Weather and Banking if allowed, while a lowest-trust user may see/use Weather only. Denied plugins/remote accounts are omitted from public read models where existence is confidential, and server checks every protected action independently of sidebar visibility. Authorisation owns grants/denials/revocation; Integrations owns registry/connection and policy-filtered public projections; domain owners still validate business acts. See [Integrations approved decisions](../integrations/capability-record.md#int-07-09-approved-governance-and-user-specific-entitlement--18-november-2026), PR #76. This is conceptual reciprocity, not a verified current published API.

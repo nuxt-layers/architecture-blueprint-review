@@ -219,3 +219,54 @@ The empty `docs/capabilities/translate/` directory has been removed in the worki
 | `time-attendance` | **Domain candidate** | **Owner-approved conceptual separation** in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59); detailed capability review and implementation unverified | Actual attendance, timesheets, breaks, approved time evidence and corrections; distinct from Employment contractual hours, planned Workforce Scheduling, Payroll pay calculation and platform Scheduler's timed triggers |
 
 [Conceptual ownership note](../proposals/time-attendance-ownership.md) · [Capability pro-forma](capabilities/time-attendance/capability-record.md). No implementation/package/operational status is asserted. A dedicated future review must establish independently usable input/output contracts, privacy controls, GUI and package classification before creating a new implementation repository.
+
+## Events — owner-approved conceptual boundary (18 November 2026)
+
+| `events` | **Domain candidate** | **Conceptual EVT-01–10 and EVT-12–15 owner-approved**; [record](capabilities/events/capability-record.md), [PR #67](https://github.com/nuxt-layers/architecture-blueprint-review/pull/67). No verified implementation `CONTRACT.md`, CI, deployment or screens | Independent events, optional series/occurrences/programmes, schedule, restrictions, publication and lifecycle; does **not** own reservation ledger or attendance/people list |
+
+**EVT-11 excluded.** Event attendee/RSVP/presence functions move under approved EVT-15 to separately reviewed [Attendance candidate PR #79](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79), **not** an implied current implemented dependency. The independent owner-approved `time-attendance` boundary remains unchanged; Training/Booking/Enrolment own their existing specialist decisions. [Decisions](../reviews/events-refined-boundary-and-decisions.md) · [public contract and handovers](../reviews/events-contract-attendance-and-handover.md). `event_bus` is consolidated into Message Queue on master.
+
+## Attendance generic participant and presence candidate — 18 November 2026
+
+**New candidate `attendance`:** [conceptual record](capabilities/attendance/capability-record.md) — generic activity-scoped participant register, invitations/RSVP, check-in/out observations and validated attendance with corrections, provenance and owner outbox. Works without mandatory Events, Booking, Enrolment or Training. Explicitly **not** a universal Identity/Profile person master, admission authority or Booking capacity ledger. Previously owner-approved Booking/Enrolment/Training boundaries remain unchanged pending any later explicit transfer. Proposed one-roster/reference interfaces and pros/cons documented in the record; detailed ATT-01–08 not yet independently approved. Events EVT-15 is **owner-approved and merged in PR #67**; Attendance's detailed ATT-01–08 remain independently proposed. No runtime package or published `CONTRACT.md` asserted.
+
+## Export evidence and boundary clarification (18 November 2026; draft PR #68)
+
+The catalogue's `export` **Established** entry means the architectural library vocabulary/classification is established, **not** that a deployable API or runtime is verified. The `nuxt-layers/export` repository exists at `c75367e66c2d228a4d98193e7307335e6682a678` and contains only `.gitignore`, `LICENSE`, `README.md` (`# export`) on that baseline; no root `CONTRACT.md` or independent acceptance is available. The [Export conceptual review](capabilities/export/capability-record.md) proposes a stateless renderer boundary and flags durable bulk-export orchestration ownership as **open** (EXP-01/09). These proposals do not modify the governing catalogue or claim implemented functions.
+
+## Export owner decision update (18 November 2026; draft PR #68)
+
+The project owner approved the strict renderer Library boundary and commercially permissive, self-hostable, replaceable engines, while preserving optional-format and technical validation gates. EXP-01/09 are resolved conceptually; EXP-07 investigation and EXP-08 implementation alignment are still incomplete. No current root `CONTRACT.md`, delivered API, tested PDF/A/UA compliance, or independent consumer evidence is asserted. [Export record](capabilities/export/capability-record.md).
+
+## Gaming — conceptual review evidence (18 November 2026; draft PR #71)
+
+| Field | Recorded evidence |
+|---|---|
+| Classification | Proposed Domain candidate; independent gaming authority conditional on justified reusable lifecycle |
+| Working record | [Gaming conceptual record](capabilities/gaming/capability-record.md) |
+| Governing baseline | `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017/0018 accepted) |
+| Blueprint opening baseline | `architecture-blueprint-review/master` `a4e40a5cd82a2f79e8edd872af55c22d472b61cb` |
+| Root implementation contract | Not retrievable; `nuxt-layers/gaming` returned 404 during access check; existence/availability not established |
+| Public interfaces | Proposed commands for rules, instances, play, adjudication; queries for authorised game state and rankings; source-owned result/outbox events, subject to owner approval |
+| Presentation | Proposed optional dashboard/play/organiser/referee interface and headless mode |
+| Operational and acceptance evidence | Not verified; no implementation tests executed |
+| Decision status | GAM-01–08 open owner decisions; GAM-09 technical investigation; GAM-10 implementation alignment; GAM-11 acceptance pending |
+| Merge status | Draft PR only, explicit owner approval required |
+
+This evidence supplement does **not** promote the existing candidate to Established, installed, operational, compliant or authorised status.
+
+**Gaming correction — 18 November 2026 (draft PR #71):** The earlier entry in this register describing Gaming as a broad Domain game-engine/official-result authority is superseded. Current owner-described intention: portal for independently composed game layers with catalogue, launch routes and common score acceptance/leaderboards. **Proposed classification:** Platform with optional Presentation; each game owns its gameplay/rules/original scores. Detailed GAM-02–08 require approval, no implementation or root contract verified. See [Gaming record](capabilities/gaming/capability-record.md).
+
+
+
+## IAM Integration conceptual review alignment — 18 November 2026
+
+**Status: Proposed, non-normative; [draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73), awaiting owner decisions.** The existing established `iam-integration` Foundation (IAM) entry remains a no-domain-data suite composition component under accepted ADR-0005/ADR-0012. The conceptual [IAM Integration record](capabilities/iam_integration/capability-record.md) proposes one-call public caller/decision/tasks composition, public member adapters, coordinated operation receipts, revocation safety, headless services and optional operator presentation. No implementation or operational status is asserted. Durable checkpoint ownership, measured revocation bound and suite GUI packaging remain open; the legacy published target `CONTRACT.md` requires alignment. Preserve independent Identity, Authentication, Authorisation and Profile authority.
+
+
+### Infrastructure conceptual classification review (18 November 2026)
+
+**Proposed, not approved or implemented.** The [infrastructure review](../reviews/infrastructure-conceptual-architecture.md) recommends retaining `infrastructure` as a **Foundation operational responsibility**, usually realised in trusted **host/deployment composition** rather than a mandatory separately installed Nuxt Layer or business-state-owning capability. Host/operator owns privileged resource/UTC-source application and recovery; provider evidence is qualified, not automatically verified. Clock, Configuration, Storage, Site Hosting, IAM, capability persistence, Temporal gateway and operational evidence owners retain their published responsibilities. An optional reusable headless control/status contract and operator-only dashboard require separate justification. The catalogue's prior *Foundation candidate / under consideration* status remains in force pending INF-01–05 owner decisions and separate normative adoption. Never infer an implemented public `CONTRACT.md` from this proposal.
+
+
+**Owner-approved INF-01 refinement (18 November 2026):** `infrastructure` primarily defines the canonical hosting and deployment build standard, Docker/Compose configurations and server setup/upgrade/verification/recovery scripts. Optional headless operational status/control interfaces and operator screens complement—not replace—this responsibility. Retain Foundation responsibility with implementation kind **infrastructure blueprint / host-operated deployment composition**, not mandatory independent Nuxt Layer. The [conceptual review](../reviews/infrastructure-conceptual-architecture.md#owner-clarification--authoritative-hosting-environment-definition-18-november-2026-supersedes-narrower-wording-above) documents both. Working register remains non-normative; production acceptance is not claimed.
