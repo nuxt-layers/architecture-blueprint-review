@@ -89,3 +89,8 @@ Precedence: binding law/court/regulator requirements and mandatory protective co
 - ICO purpose limits: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/purpose-limitation/
 - ICO transfers: https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/international-transfers/a-guide-to-international-transfers/what-are-our-other-key-uk-gdpr-obligations-in-the-context-of-international-transfers/
 - EU amendment: https://eur-lex.europa.eu/eli/reg/2024/1183/oj
+
+
+## Final owner decision — 18 November 2026
+
+**Approved:** CRED-17A–H exactly as the standards-profile architecture above; CRED-18 approved and **closed at conceptual architecture level**. Earlier 'owner confirmation pending' labels in the historical decision matrix are superseded. Selected exact key algorithms/crypto suites and interop test evidence remain implementation acceptance, not a new conceptual decision. Per-jurisdiction legal mapping, schedules, scheme-specific conformance and regulatory certification remain mandatory documented deployment prerequisites, not a claim of existing compliance.
