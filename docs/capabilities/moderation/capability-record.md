@@ -85,3 +85,7 @@ Content Security owns qualified detection evidence, revisions and incomplete/unk
 ## Cross-capability note — Gaming conceptual review (18 November 2026)
 
 **Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) supplies game source references, permitted conduct/anti-cheat evidence and own restriction/enforcement receipts. Moderation retains cross-domain reports/cases/adjudication/appeal coordination; Gaming independently validates and executes match restrictions, disqualifications or scoring corrections under game rules and due process. Detection flags are not final guilt findings. No cross-tenant disclosure or verified adapter is implied.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
