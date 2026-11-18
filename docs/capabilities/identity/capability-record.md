@@ -85,3 +85,9 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Cross-capability review note — Enrolment (owner-accepted conceptual)
 
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Identity supplies stable learner/guardian/representative identity references and independently verified authority where supported; Enrolment owns educational admission state, not Identity group membership, tenant hierarchy, guardian relationship or permission. Host-composed scoped authorised lookups must avoid student-data duplication or implied cross-tenant access. Guardian proof and eligibility remain conditional, provenance-bearing. This note is non-normative and cannot claim new Identity published APIs.
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation may refer to Identity-owned local tenant, group, principal or service identity references for peer administration, but remote network identities are evidence and do not create Identity principals, group memberships or cross-tenant rights. Trust/endpoint status belongs to Federation; request-time permissions belong to Authorisation. Cross-node identity mapping requires separately governed proof and consent. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
