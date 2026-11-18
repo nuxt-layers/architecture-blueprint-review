@@ -564,3 +564,7 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** a sensitive/bulk export's source-owning or Reporting workflow submits risk-based attributed decision, attempted/successful disclosure, recipient, scope and revocation evidence through Audit's published public contract; Audit owns evidence custody, not source facts or rendering. Stateless Export returns technical outcome and sanitised correlation only. Do not conflate a completed render with completed disclosure or proof of lawful transfer. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
