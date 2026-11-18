@@ -227,6 +227,19 @@ The following notes entered blueprint `master` from parallel Course, Qualificati
 
 **Reconciliation:** accepted conceptual interfaces remain non-normative and must be compared with concurrently reviewed Course/Training and current accepted governing `master` before merge. A conceptual review does not establish legal compliance, release readiness or production compatibility.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; proposed):** [Events](../events/capability-record.md) provides authoritative educational session/occurrence identities, schedule, location and changed/cancelled revisions. Enrolment owns applications, learner/cohort standing and allocations; it independently decides the effects of schedule changes and may coordinate Booking where seat commitments exist. Events must not infer learner acceptance or allocate enrolment seats; no direct package dependency/public API verified.
+
+## Revised Events boundary and decision gates — 18 November 2026
+
+**18 November Events refinement — PROPOSED, does not reopen ENR-01–07:** [Events/education decisions](../../../reviews/events-refined-boundary-and-decisions.md) preserve Enrolment authority for individual learner applications, cohort placement, standing and permitted capacity allocation. An Events occurrence is not a Course run/cohort; a self-paced offering may have none. **EVT-11 is excluded from Events; educational run/cohort ownership remains with the relevant independent reviews. Booking/other designated pool owner remains sole allocator; events cannot grant admission.
+
+
+## Events owner decision clarification — 18 November 2026
+
+**EVT-01/02 owner-approved:** Events is a separate generic activity/schedule Domain capability, and the other domain can optionally associate its own records through public references without transferring ownership. **EVT-11 was explicitly not approved and is removed from the Events review.** Any educational offering/cohort ownership is handled in its independent capability review, not by Events. This does not change existing owner-approved Course or Enrolment authority.
+
 ## Attendance capability candidate — participant record relationship (18 November 2026)
 
 **Status: proposed boundary adjustment; ENR-01–07 remain owner-approved and unchanged.** [Attendance candidate](../attendance/capability-record.md) may be the shared generic owner of the **activity-scoped expected participant and attendance record**, not a universal person master or source of learner admission. Enrolment still owns learner/applicant identity references, guardian/representative decision evidence, offer and admission, cohort placement, learner standing, withdrawal, seat commitment where expressly delegated, and their historical records. Enrolment does not need a second editable attendance roster, but must remain independently functional for unscheduled activities and in Attendance's absence.
