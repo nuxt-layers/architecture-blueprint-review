@@ -74,3 +74,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Reciprocal conceptual note — IAM Integration (18 November 2026)
 
 **Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Profile remains authoritative for personal data, purpose-specific disclosure and personal-data request/erasure lifecycle. IAM Integration supplies verified Identity references and rights-request coordination over public owner parts; it consumes qualified export, correction, disclosure, anonymisation and legal-hold dispositions without duplicating personal data or claiming all source records erased. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
+
+
+## Identity reciprocal conceptual interface — 18 November 2026
+
+**Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; no new published API.** Identity provides stable opaque local principal references and purpose-scoped standing/closure notifications; Profile retains all person/contact/display data and user rights in its own lifecycle. Identity directory queries must not copy Profile attributes, and Profile visibility must independently enforce context/disclosure constraints. Unknown identifier or unqualified cross-tenant request is not permission to disclose. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-outbound-interfaces).
