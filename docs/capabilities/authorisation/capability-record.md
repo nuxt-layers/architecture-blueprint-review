@@ -430,3 +430,7 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Authorisation supplies server-side tenant/issuer/subject/resource access decisions for issue/view/verify/revoke/replace and step-up where required. Credentials additionally enforces claim-source decision authority, issuer delegation, mandate status, profile and lawful disclosure. No IAM grant makes an award or confers external issuing rights. Denial/unknown fails closed.
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** the accepted governing catalogue defines Export as a stateless rich-text-to-file Library, not a bulk-data authorisation service. Authorisation supplies trustworthy scope/action/bulk/recipient decisions to the source-owning or Reporting workflow; the workflow rechecks dataset and retained-file disclosure and records outcomes. Export only converts an already authorised safe tree; do not use rendering success or a signed download URL as an access grant. This qualifies, but does not erase, the 15 November reciprocal note. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 remain open, not owner-approved.**
