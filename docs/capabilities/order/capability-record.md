@@ -67,3 +67,7 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
 
 **Approved Inventory-side conceptual requirement:** Stock availability and fulfilment must account for items in raw stores, manufacturing WIP, outsourced coating, packing, finished stock, quarantine and pending movements. Order may request future delivery/production but cannot reserve WIP as finished saleable stock without the declared eligibility policy and Inventory's actual atomic commitment. An as-of shop-floor scan is not proof of order fulfilment. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
+
+## Cross-capability note — Invoice conceptual public contract (18 November 2026)
+
+**Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) may use versioned Order terms/acceptance/fulfilment as source evidence, returning issued/correction references via public events. Orders do not automatically authorise invoice issue; standalone invoices and supplier bills need no Order. Never let historical Order changes mutate issued document snapshots.
