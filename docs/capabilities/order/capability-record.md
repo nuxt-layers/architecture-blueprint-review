@@ -57,3 +57,13 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Reciprocal interface — Inventory conceptual review (18 November 2026)
 
 **Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Order sends versioned sale/purchase quantity commitments, cancellations, returns and fulfilment references; Inventory returns revision-scoped checked stock reservation, release, issue and shortage/uncertainty outcomes. Order owns commercial obligation and acceptance, never an independently maintained stock-availability counter. An Inventory hold alone does not mean the order was accepted. Cross-owner partial completion requires traceable compensation. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.
+
+
+## Inventory reassessment reciprocal proposal — 18 November 2026 (PR #81)
+
+**Status: proposed, not approved or implemented.** Order owns commercial purchase/sale commitments, customer/supplier obligations and cancellation/return facts. The **proposed** Inventory contract returns checked, versioned, idempotent reservation/issue/release and shortage/unknown outcomes; snapshot availability is not a guarantee. Order must not infer a seller's title from Inventory custody or a fulfilled sale from a committed stock movement. No duplicate availability ledger. See the [Inventory reassessment contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md) and [Inventory record](../inventory/capability-record.md#renewed-conceptual-design-challenge--18-november-2026-draft-pr-81). This note preserves earlier approvals in this capability and does not complete its independent review.
+
+
+### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
+
+**Approved Inventory-side conceptual requirement:** Stock availability and fulfilment must account for items in raw stores, manufacturing WIP, outsourced coating, packing, finished stock, quarantine and pending movements. Order may request future delivery/production but cannot reserve WIP as finished saleable stock without the declared eligibility policy and Inventory's actual atomic commitment. An as-of shop-floor scan is not proof of order fulfilment. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
