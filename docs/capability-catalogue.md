@@ -166,6 +166,7 @@ The following are **types and compositions**, not independent capability candida
 | `events` | Planned participant activities and event lifecycle; not background scheduled tasks |
 | `assessment` | Proposed Domain capability: reusable assessment instruments, learner attempts, marking, moderation, appeals and authoritative individual results; Course owns requirements, Training owns verified achievement |
 | `credentials` | Proposed Domain capability: authorised issuance, verification, correction, replacement, expiry, suspension and revocation of credentials; the awarding authority retains formal qualification decisions |
+| `qualification` | Proposed Domain capability owning independent qualification schemes, multi-pathway award eligibility, issuer/centre/delegation governance, authoritative qualification award decisions, appeals, withdrawal and teach-out; not credential issuance |
 | `course` | Structured learning offering and outcomes |
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
