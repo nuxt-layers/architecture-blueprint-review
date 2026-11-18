@@ -202,3 +202,10 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 ## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
 
 **Status: Proposed, pending owner approval; not a completed content_editor review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course requires a structured curriculum editor (outcome builder, unit/prerequisite graph, revision comparison, publication state and content reference selection) via the Course public conceptual contract. Generic Content Editor may present declared course field/action descriptors, but does not own Course state or infer domain rules from arbitrary rich text. Coordinate with provisional PR #54 without treating that PR as accepted.
+
+
+## Reciprocal conceptual note — Help review (18 November 2026)
+
+**Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
+
+Help authors and editors use Content Editor's generic Publisher-backed document-type editing, version history, preview and publication workflows; the proposed Help mapping/coverage screens are separate narrow reference-administration presentation, not another text editor. Content Editor does not own contextual mappings or publication state.
