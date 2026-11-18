@@ -199,3 +199,7 @@ Training uses explicitly authorised tenant/resource contexts; tenant hierarchy a
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Training owns attendance, participation, competency and completion facts. Qualification decides formal qualification awards; Credentials consumes only recognised authoritative award decisions or an independently authorised non-qualification achievement decision. Completion certificates may represent permitted Training achievements but cannot silently claim qualification recognition. Source corrections and subsequent credential status changes remain separate attributable transitions.
+
+## Cross-capability review note — Enrolment (owner-accepted conceptual)
+
+**Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Training owns independently verified attendance, competencies, completion, qualifications and evidence; Enrolment owns admission and participation status. Training may consume effective enrolment as prerequisite context and supply verified prior-learning/completion facts to Enrolment. Neither event automatically reassigns the other's domain status absent explicit course/programme rules. This is not Training review approval or a verified implementation.

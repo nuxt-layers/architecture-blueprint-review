@@ -245,3 +245,7 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 ## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
 
 **Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed course review.** Training consumes immutable curriculum/criteria versions and returns independently verified learner achievement/completion; cannot change Course learning outcomes. Course revision/withdrawal needs explicit version-specific migration impact, never silent rewriting. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
+
+## Cross-capability review note — Enrolment (owner-accepted conceptual)
+
+**Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Course owns published offering/cohort identity, admission parameters, revisions, learning outcomes and any Course-owned seat supply. Enrolment consumes these as versioned facts and owns individual application/admission/withdrawal status, supplying authorised roster/participation evidence back. When Booking or Course owns seats, Enrolment must use its checked capacity contract and cannot create a competing pool. This note is not Course review approval or an implemented contract.
