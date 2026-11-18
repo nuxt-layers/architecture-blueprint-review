@@ -564,3 +564,8 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Audit independently owns accountable evidence custody/completeness, not IAM source state. IAM Integration proposes minimised correlated stage receipts for provisioning, recovery, suspension, revocation, privileged access and data-subject coordination; the suite distinguishes requested/accepted/applied/unknown from Audit custody acknowledgements. No synchronous circular package dependency or substitution of event delivery for audit acceptance. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
