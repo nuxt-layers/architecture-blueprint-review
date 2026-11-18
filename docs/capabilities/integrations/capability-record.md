@@ -124,3 +124,9 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Integrations supplies provider-neutral connectivity/transport to issuer mandates, remote issuance/signers, credential registries and status services. Provider requests/callbacks carry correlation/idempotency, source attribution, authenticity and effective/freshness context. Credentials retains issuance, representation and credential-status decisions; external award and registry authorities retain their actual source standing. Transport success is not an issued credential; outage is not revocation; reconcile duplicates and uncertain outcomes.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Integrations may supply replaceable external protocol/provider adapters through public ports; Federation retains participation, provenance, subscription, delivery and reconciliation authority. Third-party transport acknowledgement is neither local source completion nor trusted remote standing. Unsupported provider yields explicit degraded status. Public directional ports, explicit absence modes and acyclic package dependencies apply.
