@@ -236,3 +236,5 @@ The empty `docs/capabilities/translate/` directory has been removed in the worki
 | Merge status | Draft PR only, explicit owner approval required |
 
 This evidence supplement does **not** promote the existing candidate to Established, installed, operational, compliant or authorised status.
+
+**Gaming correction — 18 November 2026 (draft PR #71):** The earlier entry in this register describing Gaming as a broad Domain game-engine/official-result authority is superseded. Current owner-described intention: portal for independently composed game layers with catalogue, launch routes and common score acceptance/leaderboards. **Proposed classification:** Platform with optional Presentation; each game owns its gameplay/rules/original scores. Detailed GAM-02–08 require approval, no implementation or root contract verified. See [Gaming record](capabilities/gaming/capability-record.md).
