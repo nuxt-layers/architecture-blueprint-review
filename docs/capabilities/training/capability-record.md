@@ -31,3 +31,8 @@
 ## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Training owns participation, verified competencies and programme completion, with source-effective versions and evidence. Qualification consumes those facts (alongside Assessment, other courses and prior learning) to determine authorised qualification awards; Training completion is not by itself an external qualification. A Qualification award may occur without a course or Training involvement. No change to previously approved training ownership.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Training owns attendance, participation, competency and completion facts. Qualification decides formal qualification awards; Credentials consumes only recognised authoritative award decisions or an independently authorised non-qualification achievement decision. Completion certificates may represent permitted Training achievements but cannot silently claim qualification recognition. Source corrections and subsequent credential status changes remain separate attributable transitions.
