@@ -32,3 +32,7 @@
 Own verified payment-provider authorisation/capture/refund/unknown outcome, never trust checkout success redirect. Return attributable evidence to Order/Subscription/host onboarding; repeated callbacks require idempotency and read-back.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+## Cross-capability note — Invoice conceptual public contract (18 November 2026)
+
+**Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) supplies authorised document and amount-due context; Payment Gateway owns provider initiation, capture, refund and settlement evidence. Invoice displays only a provenance-tagged derived allocation status; capture, refunds and ledger posting are not inferred from invoice issue.
