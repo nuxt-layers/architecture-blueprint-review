@@ -85,3 +85,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Cross-capability review note — Enrolment (owner-accepted conceptual)
 
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Identity supplies stable learner/guardian/representative identity references and independently verified authority where supported; Enrolment owns educational admission state, not Identity group membership, tenant hierarchy, guardian relationship or permission. Host-composed scoped authorised lookups must avoid student-data duplication or implied cross-tenant access. Guardian proof and eligibility remain conditional, provenance-bearing. This note is non-normative and cannot claim new Identity published APIs.
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Identity remains authoritative for opaque identifiers, group/tenant/membership lifecycle, owner governance, pending changes and source outbox. IAM Integration consumes only its public directory, lifecycle, governance and outbox surfaces; it supplies verified Authentication-subject and Authorisation-decision adapters, status/reconciliation and coordinated calls. Revocation and tenant restriction must remain safe under delivery delay; this note does not introduce an Identity dependency on the integration package. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
