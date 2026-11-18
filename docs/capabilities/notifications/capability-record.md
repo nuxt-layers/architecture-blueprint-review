@@ -51,6 +51,11 @@ Supply scoped notices for invitations, proposed/approved ownership transfer, dis
 
 Comments Engine may produce author/reply/mention, moderation decision and appeal disposition notice intents containing only authorised recipient references, bounded status/message keys and minimal comment links. Notifications owns channel choice, delivery and provider status; delivery does not prove comment publication, enforcement or receipt by a person. Suppress disclosure of hidden content, reporter identity and child-sensitive evidence.
 
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration supplies minimally scoped change-requested, decided and activated facts; Notifications owns authorised recipient delivery, templates and channel execution. Notification success never proves approval or activation. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Course emits safe publication/review/withdrawal facts; Notifications owns delivery and retry. Dispatch cannot approve publication, grant enrolment or prove a learner received the message. This note does not complete the separate notifications review.

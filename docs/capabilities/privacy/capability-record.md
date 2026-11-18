@@ -63,6 +63,23 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 
 **17 November 2026 agreed Comments Engine refinement:** Private comment audiences cannot exceed parent resource permissions; no public index, federation, cache or unrestricted notices. Author editing, departure and erasure rights must normally produce actual deletion or lawful anonymisation, with restricted time-limited evidence only where an identified legitimate legal/complaint purpose requires it. Preserve independent rights of other reply authors and acknowledge downstream-copy/back-up erasure limitations without claiming more deletion than verified.
 
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Privacy owns rights/consent and retention constraints. Configuration applies them to its own change history, authorised export/disposal and disclosure; no alternative personal Profile record may emerge. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); no claim of implementation or approval. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Protected previews, unsaved form state, telemetry and temporary buffers require purpose limitation and prevention of unintended disclosure. No durable browser draft store presumed; Privacy determines applicable consent/retention duties.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Content Security's inspection of user-provided content must use a justified purpose, minimised ephemeral references, gated sensitive evidence and controlled retention/transfer; provider use cannot assume consent or lawful access, especially for private/E2EE material. Privacy owns consent/retention/rights constraints and Content Security implements them over its own job/evidence records; source owner handles content erasure.
+
 ## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
 
 **Status: Proposed, pending owner approval; not a completed privacy review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course defines learning offerings, not named learner transcripts; enrolment/achievement personal records remain with Enrolment/Training. Privacy supplies effective minimisation, permitted disclosure, retention/erasure and vulnerable-learner policy. Course must protect course-admin authorship/provenance and avoid personal roster disclosure in catalogue, exports, events and logs; legal holds and historical references require explicit coordination.

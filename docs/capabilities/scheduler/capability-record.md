@@ -44,6 +44,18 @@
 
 **Owner-approved CLK-03/CLK-04 direction; Scheduler design still incomplete.** [Clock final completeness review](../clock/capability-record.md#final-completeness-review--eight-concerns-resolved-17-november-2026) distinguishes UTC wall-clock deadlines from monotonic duration measurement. Scheduler consumes trusted host time and separately qualified source assurance for applicable operations; it does not assume time readings cannot step forward/backwards, or that a scheduled trigger fires exactly once. On host adjustment, outage, leap-policy change or tzdb revision, Scheduler must reconcile missed, late and duplicate attempts; originating domain handlers own idempotency, actual eligibility and authoritative outcomes. Calendar/zone conversion stays with Clock; no new Clock implementation API is claimed. This supersedes the earlier reciprocal Clock note's **proposed, not yet owner-approved** wording for Clock ownership, but does not approve Scheduler implementation.
 
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Scheduler invokes due Configuration tasks; Configuration alone determines eligibility, idempotency, activation, expiry, retention and outbox transitions. Missed jobs remain explicitly pending/overdue. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
+
+## Employment workforce-time boundary — 17 November 2026
+
+**Status: Proposed reciprocal clarification arising from owner-approved EMP-03 in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59); Scheduler's own review is not complete.** This `scheduler` is an infrastructure/platform timed-work facility for registered background triggers, execution attempts, retries and failure handling. It does **not** own planned staff shifts, rosters, attendance, time cards, legal working-time compliance or payroll hours. Employment owns contractual working patterns and entitlement; the separate, owner-approved conceptual Domain candidate `time-attendance` owns actual clock/timesheet evidence; neither Employment nor Scheduler owns that source. Workforce Scheduling, if independently justified, would own planned shifts; Scheduler may invoke timed reminders or reconciliation only through domain public commands. A scheduled tick is not proof that a person worked. See [Employment conceptual contract](../employment/capability-record.md).
+
+
+**Employment EMP-03 owner-approved refinement:** The previously proposed nested Employment Time & Attendance approach has been superseded by the independently owned conceptual [Time & Attendance Domain candidate](../../../proposals/time-attendance-ownership.md). The existing `scheduler` remains infrastructure timing only. This does not assert that a workforce-rostering or time-attendance implementation exists.
+
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Scheduler may invoke Course's idempotent timed publication/retirement commands; Scheduler owns timing/retry, Course owns transitions and authorisation. Late or duplicate jobs cannot grant access. This note does not complete the separate scheduler review.

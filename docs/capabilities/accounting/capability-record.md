@@ -529,3 +529,21 @@ Review and approve the **dual-mode accounting authority model** and the scope of
 Own host-operator commercial financial postings distinct from tenant's own business books; tenant ancestry and digital owner do not automatically establish payer or ledger scope.
 
 References: [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md). Conceptual relationship, not mandatory package dependency.
+
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed for [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53), not an implemented contract.** See [Configuration conceptual public inputs](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration owns approved schema-registered selections and provenance; Accounting owns financial policy meaning, posting, reporting entity scope and migrations. An accounting entity is not automatically a Configuration scope. Use public host-composed ports/events only; preserve all prior decisions and dependency acyclicity.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-06 (Option C):** resource/entity-specific setting contexts may be proposed through registered, domain-approved public contracts. Accounting owns accounting-entity identity, accounting policy meaning, applicability, historical transactions and migration behaviour; Configuration would own approved selection values/version/provenance only. No accounting entity silently becomes a tenant/group or gains inherited policy from tenant parentage.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Employment reciprocal conceptual interface — 17 November 2026
+
+**Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not a new accepted Accounting contract.** Employment owns effective employer/worker engagement and approved pay-basis facts, not payroll deductions, net pay or ledger entries. Payroll (subject to separate capability classification) should convert legally qualified pay inputs into scoped payroll results; Accounting accepts only permitted financial and labour-allocation facts with attributable source/period and never obtains unrestricted employee files. Contractor service obligations and supplier invoices may come from other domain owners, not automatically Employment. Unknown payroll or legal-entity authority holds posting rather than generating speculative salary amounts. See [Employment public contract](../employment/capability-record.md#idealised-public-outbound-contract).

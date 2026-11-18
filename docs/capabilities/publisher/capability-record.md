@@ -68,6 +68,22 @@ Publisher retains document publication eligibility and enforcement; may need a l
 
 Publisher and other registered target owners retain eligibility/visibility, owner revision and publication decisions. Comments Engine owns reply/thread records and comment-local enforcement. A host-wired target eligibility/withdrawal contract should supply trusted tenant/target/revision and change signals; Comments Engine checks them before posting, restricts inaccessible targets and returns withdrawal/reconciliation receipts. No mutual package imports, source database reads or assumption that a deleted document automatically erases lawfully retained comment evidence.
 
+## Reciprocal conceptual note — Content Editor review (17 November 2026)
+
+**Status:** Proposed contract alignment in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not a completed publisher review, normative rule or implementation change. See [Content Editor conceptual boundary](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
+
+Content Editor consumes Publisher's published type/schema, authorised admin reads, previews, history, backlinks and revision-conditioned commands. Publisher remains fully headless and exclusively owns document/version/approval/publication/retention decisions and committed outbox events; the editor is optional, not a Publisher runtime requirement. Network uncertainty is reconciled against Publisher's authoritative state, not UI optimism.
+
+## Content Security — reciprocal conceptual interface (17 November 2026)
+
+**Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
+
+Publisher requests revision-bound technical checks for registered documents before the exposure decisions its policy requires; Content Security returns scoped detection evidence, coverage and unknown/stale states. Publisher owns actual publish/hold/unpublish and reconciles address/feed/cache exposure; Content Editor presents status through Publisher/public contracts, not detector tables.
+
+## Reciprocal decision — redundant Document capability retired (17 November 2026)
+
+**Owner-approved resolution, 17 November 2026:** the separate `document` capability candidate is retired. Publisher remains authoritative for its registered document types, revisions, approvals, publication, addresses, feed and withdrawal lifecycle. Source-specific business records remain with their domain owners; Publisher does not automatically acquire invoice, employment or other domain master records. No second document master, service or event stream is required. Historical analysis: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
+
 ## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
 
 **Status: Proposed, pending owner approval; not a completed publisher review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course owns course curriculum structure, prerequisite and learning outcome definitions and versioned reference mappings; Publisher owns authored document versions, approval/publication and source materials. Course may reference Publisher material by immutable source/revision; a Publisher publication is not by itself Course publication, and source withdrawal must be propagated safely without rewriting historical Course meaning.

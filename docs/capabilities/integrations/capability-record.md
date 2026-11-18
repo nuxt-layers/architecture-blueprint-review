@@ -84,6 +84,20 @@ External proofing, age-assurance and merchant-verification adapters should be pr
 
 Proposed Verification capability consumes national ID, age/KYB, document-proofing or credential issuers through provider-neutral Integrations/host adapters where contract-appropriate. Integrations owns transport and connection lifecycle, never the attested truth or local eligibility; country-specific APIs need lawful provider access, data-residency and usage-right checks.
 
+
+## Configuration reciprocal interface — 17 November 2026
+
+**Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Integrations owns connections, provider authentication, credentials, status and synchronisation; Configuration may expose authorised provider selection references. Selected does not mean connected, deployed or enabled. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
+
+
+## Configuration decision reconciliation — CFG-05–08 (17 November 2026)
+
+**Status: Owner-approved conceptual decisions in [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53); not an implemented or newly accepted governing contract.** See [Configuration decision register](../configuration/capability-record.md#decision-register-evidence-and-sign-off).
+
+**Owner-approved CFG-08 (Option B):** versioned setting declarations, staged activation and explicit migration/rollback protect provider selection revisions; Integrations remains responsible for provider availability, connection credentials, transition and reconciliation. A settings migration cannot silently activate an unverified provider.
+
+Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
 ## Reciprocal conceptual note — Course learning offering (17 November 2026)
 
 **Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Integrations may adapt remote LMS course catalogues into provenance-marked Course draft imports and controlled exports; Course owns any locally accepted definition. Provider claims do not establish enrolment, completion, course accreditation or publication. This note does not complete the separate integrations review.
