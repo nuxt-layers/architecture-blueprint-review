@@ -96,3 +96,10 @@ Publisher requests revision-bound technical checks for registered documents befo
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Publisher may produce versioned certificate documents or presentation using a permitted Credentials public view model, but owns only its own rendered document lifecycle. It cannot issue the underlying credential, award a qualification, revoke a credential or certify live proof status. Corrections/revocations trigger controlled rendering/withdrawal or status updates through explicit public contract and reconciliation; a cached PDF remains an artifact, not a status authority.
+
+
+## Reciprocal conceptual note — Help review (18 November 2026)
+
+**Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
+
+Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.
