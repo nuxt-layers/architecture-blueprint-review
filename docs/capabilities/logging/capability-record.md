@@ -124,3 +124,8 @@ Content Security supplies redacted diagnostic failure, latency, correlation and 
 ## Reciprocal conceptual contract — Credentials (18 November 2026)
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials supplies sanitised structured operation/provider failures, status-check timeout, retry/idempotency, outbox lag, key or mandate verification error, correlation and safe tenant context through a public diagnostic sink. Logging returns bounded acceptance/failure/health where exposed; it owns diagnostics/sinks/retention, never credential issuance, authoritative proof status or Audit evidence. Keep signed tokens, keys, claimant details, secret provider responses and raw credentials out of routine logs. Optional logging outage must not fabricate issuance, remove mandatory Audit coverage or block otherwise valid business operations. A full Logging public CONTRACT.md remains to be designed/verified.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure's [proposed interface](../../../reviews/infrastructure-conceptual-architecture.md) supplies sanitised incident/operation correlation and diagnostics; Logging owns technical sinks and structured logs, not security approval, secrets, independent Audit acceptance or authoritative provider completion. Failure remains explicit; proposed only.
