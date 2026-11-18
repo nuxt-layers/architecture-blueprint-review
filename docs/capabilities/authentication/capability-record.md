@@ -319,3 +319,8 @@ Comments Engine must consume trusted session/subject assurance and recency where
 ## Configuration reciprocal interface — 17 November 2026
 
 **Status: Proposed, non-normative, pending Configuration PR #53 approval.** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Authentication owns assurance, recency, MFA and sessions. Configuration may supply approved bounded policy selections, but never weakens mandatory floors or decides how existing sessions are handled; high-risk settings changes require independent effective assurance checks. Cooperate via public host-composed ports/events; no mandatory new package import or cyclic dependency. Preserve existing owner approvals.
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Authentication remains authoritative for credentials, verified sessions/assurance, reauthentication and session revocation. IAM Integration consumes its trusted principal, recency, phishing resistance, recovery and revocation outcomes; it supplies Identity provisioning/service-governance/hold adapters through public contracts. The proposed common caller interface must preserve risk, assurance and session continuity; legacy best-effort delivery requires alignment with source-owned durable events. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
