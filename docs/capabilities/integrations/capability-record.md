@@ -393,3 +393,14 @@ Existing independently approved decisions are preserved; this note resolves Conf
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
 
 Integrations may supply replaceable external protocol/provider adapters through public ports; Federation retains participation, provenance, subscription, delivery and reconciliation authority. Third-party transport acknowledgement is neither local source completion nor trusted remote standing. Unsupported provider yields explicit degraded status. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
+
+
+## Inventory reassessment reciprocal proposal — 18 November 2026 (PR #81)
+
+**Status: proposed, not approved or implemented.** Integrations supplies provider-neutral connections, source mapping, signed/evidenced remote observations and synchronisation status. The **proposed** revised Inventory boundary distinguishes marketplace stock mirrors, 3PL custody observations and an optional explicitly selected external-authoritative stock master. No automatic takeover, provider-presence authority inference or simultaneous dual writers; scoped cut-over, fencing and reconciliation are required if that future mode is selected. Integrations does not own stock balances. See the [Inventory reassessment contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md) and [Inventory record](../inventory/capability-record.md#renewed-conceptual-design-challenge--18-november-2026-draft-pr-81). This note preserves earlier approvals in this capability and does not complete its independent review.
+
+
+### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
+
+**Approved Inventory-side conceptual requirement:** Provider-neutral barcode scanners, labels, optional MES/ERP/3PL and subcontractor coating connections can supply attributed stock observations, mapping and sync health. Inventory validates scans and maintains its chosen authoritative stock account; a scan, offline cache or plugin installation cannot grant access or promote an external system to stock master. External authority mode requires explicit account-level governance and cut-over. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
