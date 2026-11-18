@@ -2,9 +2,9 @@
 
 **Capability:** `attendance` (new generic Domain capability candidate).
 **Classification:** Domain candidate, distinct from Events, Booking, Enrolment, Identity/Profile and Training; no standalone runtime repository or independently released API established.
-**Status:** creation and dedicated conceptual review requested by owner 18 November 2026; **ownership model and any amendment to pre-approved peers pending explicit approval**. [Baseline](../../../reviews/attendance-review-baseline.md) · [Review PR #79](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79).
+**Status:** creation and dedicated conceptual review requested by owner 18 November 2026; **detailed Attendance ownership proposals pending explicit approval; Events EVT-15 delegation already owner-approved and merged**. [Baseline](../../../reviews/attendance-review-baseline.md) · [Review PR #79](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79).
 **Governing:** `nuxt-layers/architecture-rules/master@0725f314abc9ad13f1a65247f54a7ff80772f0b2`, accepted capability standards/ADRs including ADR-0012 and ADR-0016. **Opening blueprint:** `5b6f67be3263586ffea5156f7b23135373ccd734`.
-**Evidence:** User identified fragmentation and proposed a single participant/attendance responsibility across the ecosystem. Previous Events EVT-07 permitted lightweight invitation/RSVP in that capability; **amending the owner of those interactions requires an explicit Events decision**, not inferred approval. Booking BK-01–05 and Enrolment ENR-01–07 remain owner-accepted; Training still owns verified learning-participation evidence. Neither source-boundary approval nor implementation is overridden by creating this candidate.
+**Evidence:** User identified fragmentation and proposed a single participant/attendance responsibility across the ecosystem. Events EVT-15 **was owner-approved and merged in PR #67**: participant/attendee register, invitations/RSVP, check-ins, verification and corrections belong to the Attendance interface when composed, and Events remains independent without it. EVT-07 invitation/RSVP functional availability is preserved through optional Attendance composition. Booking BK-01–05 and Enrolment ENR-01–07 remain owner-accepted; Training still owns verified learning-participation evidence. Neither source-boundary approval nor implementation is overridden by creating this candidate.
 
 ## Purpose
 
@@ -65,7 +65,7 @@ All protected commands require server authorisation, caller/assurance, tenant sc
 
 | Capability | Attendance consumes | Attendance supplies | Boundary |
 |---|---|---|---|
-| **Events (optional)** | Event/occurrence ID, schedule, start/end, cancellation/status, event restrictions and revisions | Expected participant count and authorised roster; invitation/response and attendance finding; source-owned change notification | Events never owns a duplicate participant roster or verification ledger; no Events mandatory dependency |
+| **Events (optional; EVT-15 approved)** | Event/occurrence ID, schedule, start/end, cancellation/status, event restrictions and revisions | Expected participant count and authorised roster; invitation/response and attendance finding; source-owned change notification | Events EVT-15 approved delegation; Events never owns a duplicate participant roster or verification ledger; no Events mandatory dependency |
 | **Booking (optional)** | Verified party/reservation entitlement, beneficiary reference, capacity authority and confirmation/cancellation version | Participant-to-reservation reference, response/check-in and presence evidence with authority/coverage | Booking retains original booking parties, commitments, amendments, payment and eligibility decisions |
 | **Enrolment (optional)** | Effective admission/learner standing, cohort or activity association, authorised guardian scope and source version | Participating learner reference and attendance observation/finding where permitted | Enrolment keeps formal learner decision, not an independent editable attendee list |
 | **Training (optional)** | Any Training-owned learning-activity reference and evidence rules requiring presence provenance | Source-attributed attendance observations/findings, corrections and recheck notice | Training continues independently to judge learning outcomes; **its pre-existing verified learning attendance ownership needs explicit reconciliation** |
@@ -102,7 +102,59 @@ Attendance can supply standalone organiser attendee/attendance register, invitat
 - **ATT-04:** Attendance verification/correction lifecycle, provisional/unknown and no false absence. **Proposed.**
 - **ATT-05:** Conditional Booking/Enrolment cooperation and no duplicate seat/admission ledger. **Proposed.**
 - **ATT-06:** Integrations, security, privacy, Audit/Logging/Reporting and optional GUI. **Proposed.**
-- **ATT-07:** Reconcile Training verified learning attendance authority before any transfer of responsibility. **Open.**
+- **ATT-07:** Reconcile Training verified learning attendance authority before any transfer of responsibility. **Open owner decision; no transfer inferred.**
 - **ATT-08:** Exact public root `CONTRACT.md`, schema/port/security/error definitions and independent CI consumer proof when implementation exists. **Future implementation gate.**
 
-No existing capability implementation or agreed Booking/Enrolment/Training authority is revised simply by publishing this proposal. Events EVT-15 remains an independent review decision to confirm removal of its attendee ownership after this boundary is approved.
+No existing capability implementation or agreed Booking/Enrolment/Training authority is revised simply by publishing this proposal. Events EVT-15 **is already owner-approved and merged in Events PR #67**. This establishes Events' exclusion of attendee authority, but does not itself approve Attendance ATT-01–08 or override Training TRAIN-01.
+
+## 18 November 2026 — latest-master reconciliation and strengthened contract
+
+**Verified current baselines:** governing `architecture-rules/master@0725f314abc9ad13f1a65247f54a7ff80772f0b2`; blueprint `master@7edabf7ae8b44e2c3b2242be7689ea0c471bcb90` (Events PR #67 merged after this branch began). **EVT-15 is owner-approved**, while Attendance ATT-01–08 remain separately proposed/open. Events' participant tab is a host-composed view of Attendance, never a parallel writable Events roster.
+
+### Source-authority resolution: observations versus educational adjudication
+
+**Recommended ATT-07 reconciliation (owner approval still required):** Attendance owns *generic* activity participation and factual presence observations, source verifications and corrections; Training owns *educational* interpretation of presence against Course requirements, verified **learning-participation evidence** as a training-domain determination, competency and programme completion. A Training determination may cite immutable Attendance observation/finding IDs, revisions, attestors and coverage; that does **not** allow Attendance to issue a learning achievement. Where Training collects specialist instructor evidence without Attendance, its native learner-evidence lifecycle continues (TRAIN-01/04) and must not become a duplicate generic event attendee register. A training session may be rostered in Attendance while its course participation and requirements remain independently determined in Training. When Attendance is absent, Training's previously approved independent native evidence/verification continues; when Training is absent, Attendance can verify general presence without inventing learning evidence. Training's published authority must be reconciled separately and its prior approval preserved.
+
+**Roster/entitlement invariants:** participant intent, registration, reservation and effective admission are four distinct assertions; none alone proves another. A reservation count is not a roster of identified humans. A guardian's legal relationship or permission must come from the qualified source, not an Attendance guest flag. Multi-activity references may point to one opaque subject but retain independent purpose, authority, tenant and lifecycle.
+
+### Public contract precision and recovery semantics
+
+| Interface family | Required inbound facts and trust | Authoritative outbound result / uncertain state |
+|---|---|---|
+| Participant association and invitation | Typed activity owner/id/revision, purpose and tenant, subject or consented pseudonymous guest, initiator permission, delivery/response correlation | Stable activity-participant ID, invitation intent/RSVP state/version, linked source assertions; no capacity or admission guarantee; unknown identity remains unresolved |
+| Observation capture and checking | Valid actor/attestor role and assurance, instant/interval with IANA zone and disambiguation, observation method, source/evidence ID, expected revision and idempotency key | Recorded observation and its *own* validation/verification state; duplicate gives prior logical result; conflicting evidence quarantined/disputed; no automatic absence |
+| Attendance adjudication/correction | Applicable effective attendance rules, coverage, attestation, underlying observation versions, authorised reviewer and reason; any mandatory domain-specific source decision is checked separately | Revisioned generic attendance finding with `observed/verified/disputed/unknown`, coverage and as-of; successor record retains provenance and a supersession link; cannot decide qualification, wages, booking entitlement or Training achievement |
+| Roster and interval queries | Authorised tenant, activity, occurrence/segment, permitted purpose, scope, as-of time and pagination | Minimised redacted snapshot, explicit confidence/freshness/coverage and opaque references; unauthorised/mismatched scope returns no disclosure |
+| Source/provider reconciliation | Trusted Integrations origin, mapping, source revision, confidence and allowed delegation, replays/cursor | Accepted, duplicate, pending, quarantined or conflict result; provider timeout means unknown and reconciliation required, never verified by default |
+| Outbox and downstream consumption | Committed source revision, source-event ID, schema version, tenant, type, effective/recorded time, permitted consumer purpose | At-least-once-safe notification and consumer read-back; notifications are *facts*, never automatic commands or permissions; Audit custody, Logging delivery and Attendance decision remain separate statuses |
+
+Command acceptance **does not** imply final verification, delivery or peer-side completion. Denials must not leak existence across tenants. Every consequential correction records the predecessor, actor or approved deterministic rule, authority, reason class and decision time. Missing required validation returns `rejected`, `pending` or `unknown` with recoverable explanation, never success-by-default. Outbox publication must be transactionally coupled to Attendance-owned committed state under accepted ADR-0012, with replay-safe consumers and no promise of exactly-once distributed delivery. Do not define a mandatory universal envelope or private datastore coupling.
+
+### Conceptual acceptance matrix (design criteria, not tests run)
+
+| Scenario / input | Expected result | Domain authority |
+|---|---|---|
+| Free event with invitation and RSVP, no Booking | Roster and response recorded; no seat allocation or guaranteed admission | Attendance; Events owns schedule |
+| Four-seat anonymous booking | Booking remains valid as reservation party of four; zero verified named attendees until associated | Booking, then Attendance |
+| Enrolment to course without session | Enrolment standing exists independently; no invented Attendance presence | Enrolment |
+| Training instructor verifies lesson outcome with optional Attendance absent | Training native evidence can be verified under its policy; no mandatory Attendance runtime | Training |
+| Event is rescheduled/cancelled with active registrations | Events revision becomes authoritative; Attendance flags affected invitations/observations for version-aware reassessment, never silently deletes historical presence | Events schedule; Attendance records |
+| Supervisor submits duplicate or conflicting check-in | Idempotent replay reuses result; contradiction awaits authorised review, preserves both observations | Attendance |
+| Offline mobile device submits delayed interval across DST | Preserve measured instant, claimed local wall time/zone, source uncertainty and ingestion time; do not manufacture continuous duration | Clock semantics; Attendance evidence |
+| No observations but incomplete capture | Unknown, not absent; denominators and coverage exposed | Attendance |
+| Invalid guardian permission, revoked actor or cross-tenant export | Deny and minimise disclosure, appropriate evidence recorded, no implicit participant access | Identity/Authorisation/qualified guardian source |
+| Provider goes offline then returns inconsistent historical data | Pending/unknown, quarantined conflict and versioned operator reconciliation; no automatic proof of presence | Integrations transports; Attendance decides |
+| Verification correction after Training consumed old evidence | Attendance publishes successor/correction; Training re-evaluates its own derived learning participation, never direct mutation of Training's ledger | Attendance; Training |
+| Audit down, Logging up (and reverse) | Separately reflect evidence custody and diagnostics; mandatory risk-based evidence capture fails closed or uses expressly approved recoverable pending state | Attendance/Audit/Logging |
+| Request to certify room occupancy, allocate seat, pay wages or award a qualification | Unsupported or directed to correct public owner; no false side effect | Venue/Booking/Time & Attendance/Qualification |
+
+### GUI and host composition acceptance
+
+The optional **Attendance** sidebar dashboard serves a headless-equivalent scoped organiser register, invitation/RSVP queue, accessible check-in/out controls, uncertain/late-provider observation queue, evidence verification, corrections/disputes, authorised exports and privacy-aware aggregates. A learner or participant sees only permitted personal invitations/responses and attendance history. Event-specific **Attendees** views use the same Attendance public contract, with activity/occurrence identifiers from Events and no shadow tables. Distinguish provisional versus verified, absent versus unknown, as-of coverage, source revisions and denied/unsupported actions using text as well as accessible status cues; keyboard-only workflows, WCAG 2.2 AA, BCP 47 locale formatting, Theme Manager tokens and responsive layouts are required. Host owns navigation and optional composition; Attendance owns domain-state changes.
+
+### Remaining gates
+
+- **ATT-01–06:** proposed conceptual ownership and service contract awaiting owner sign-off; new candidate requested, not an implementation.
+- **ATT-07:** owner decision on exact Training-vs-Attendance learning participation authority, preserving owner-approved TRAIN-01/04 and independently operable Training.
+- **ATT-08:** future root `CONTRACT.md`, IAM/permission matrix, durable outbox/schema, provider contract and independent consumer acceptance; no target implementation repository or published runtime contract verified.
+- **Current-master consistency:** Events EVT-15 approved and merged; independent optional Events/Attendance composition remains acyclic conceptually. Protected merge requires explicit owner approval, checks and updated branch reconciliation. No implementation tests or builds run.
