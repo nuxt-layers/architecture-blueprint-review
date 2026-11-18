@@ -41,3 +41,8 @@
 **Technical/dependency challenge:** Credentials/Verification remain distinct for primary issued registry vs third-party presentation trust; Qualification retains award authority; status lists are projections of Credentials' own committed state; Legal Compliance and Privacy provide applicable policy with qualified unknown and effective version. Logging technical, Audit evidential and Reporting analytic contracts remain separate. No new policy or crypto capability required. No implementation files or local tests changed/run.
 
 **Pre-merge status:** Not ready: branch still behind and diverged, must reconcile every modified reciprocal record, recheck accepted ADRs, protected master, GitHub mergeability and CI against latest master, then obtain explicit owner approval for merge. This checkpoint provides a design review, not a check pass.
+
+
+## Owner-approved closeout direction — 18 November 2026
+
+The owner explicitly approved CRED-17A–H and CRED-18 and authorised the protected squash merge **if** current-master reconciled technical, architectural, branch-policy and CI checks are satisfactory. The originally noted proposals have now been accepted at conceptual level. The branch began behind master when newer Assessment/Qualification/Training records landed; preserve those full source records and add the Credentials-specific reciprocal notes. Do not infer successful integration from a clean file-level append; verify the resulting head against newest master and branch checks.
