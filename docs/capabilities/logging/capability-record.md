@@ -164,3 +164,8 @@ Help sends redacted diagnostic codes, mapping/Publisher failures, latency and pe
 ## Identity reciprocal input/output — 18 November 2026
 
 **Status: recommended Identity reciprocal elaboration, 18 November 2026, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74); not a verified Logging API.** Identity emits minimised structured diagnostics for principal/tenant/group operation failure, directory latency/staleness, approval and provider refusal categories, outbox/maintenance backlog and correlation, without secrets, raw invitation tokens or legal evidence. Logging owns sink routing, redaction, retention and delivery state, not Identity's committed state or Audit evidence. An optional logging sink failure does not prove or undo a source mutation and cannot grant access. See [Identity extended review](../identity/capability-record.md#extended-review--published-interfaces-observability-standards-library-suitability-and-gui-18-november-2026).
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure's [proposed interface](../../../reviews/infrastructure-conceptual-architecture.md) supplies sanitised incident/operation correlation and diagnostics; Logging owns technical sinks and structured logs, not security approval, secrets, independent Audit acceptance or authoritative provider completion. Failure remains explicit; proposed only.

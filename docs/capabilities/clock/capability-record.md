@@ -269,3 +269,13 @@ The regional classifications offered by the NTP Pool Project are **geographical*
 **Owner-approved CFG-07 (Option A) for Configuration's boundary:** Infrastructure is authoritative for NTP/NTS source choices and their application/verification. Clock retains injected trusted time, temporal validation and display semantics. Prior optional Configuration-managed NTP selection remains a historical proposal, *not* the selected architecture; the already approved invariant separating UTC authority and time-zone preferences remains in force.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure's [conceptual contract](../../../reviews/infrastructure-conceptual-architecture.md) supplies host-qualified `UtcSynchronisationStatus` (source/policy revision, authentication, offset/uncertainty, freshness, holdover and compatibility), not an NTP service inside Clock. Existing Clock `now()`, IANA zone semantics and previously owner-approved UTC invariants are unchanged. The interface and packaging remain INF-01/03/05 owner decisions; no implementation inferred.
+
+
+## Infrastructure INF-05 owner-approved reciprocal clarification — 18 November 2026
+
+The [Infrastructure approval and GUI review](../../../reviews/infrastructure-approved-contract-standards-gui.md) confirms Infrastructure/host owns verified UTC time-source/NTP/NTS operations, quality, fallback and recovery. Infrastructure/host **reuses Clock's published temporal interpretation/format interfaces where applicable** for dates, instants and operator display, without demanding a direct package dependency or giving Clock ownership of the operating-system synchroniser. Clock continues to consume a synchronous host-supplied `now()` instant and does not perform NTP requests. Source-quality evidence stays with Infrastructure and Observability. This preserves CLK-03/04 and CFG-07; no contract implementation change is asserted.

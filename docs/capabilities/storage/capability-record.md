@@ -48,3 +48,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Approved Export boundary — reconciliation (18 November 2026)
 
 **Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual contract](../../../reviews/infrastructure-conceptual-architecture.md) provides trusted S3/provider deployment, credentials and resource readiness while Storage's published contract continues to own consumer-facing object operations and each consumer retains file access decisions. Postgres, Temporal and infrastructure backups are not reclassified as Storage objects; no automatic tenant bucket allocation or quota enforcement is inferred. Proposed only.

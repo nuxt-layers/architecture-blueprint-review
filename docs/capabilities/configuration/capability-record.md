@@ -266,3 +266,13 @@ Configuration owns approved, scoped versioned scanner-profile preferences and pr
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
 
 Configuration supplies scoped, versioned enabled-role and operator preference values; Federation owns active peer/subscription/acknowledgement state. Configuration selections never authorise publication or grant remote access; source-owner visibility, Authorisation and law govern effective disclosure. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual control boundary](../../../reviews/infrastructure-conceptual-architecture.md) consumes allowed versioned deployment settings but retains the exclusive privileged authority to select, apply and verify approved NTP/NTS sources (previously owner-approved CFG-07). A Configuration value never grants operational privilege or overrides source trust, hard security floors or recovery constraints. `OperationalChangeResult` reports applied versus requested revision; contract pending INF-01/03/05.
+
+
+## Infrastructure INF-05 approval — 18 November 2026
+
+The [Infrastructure owner-approved clarification](../../../reviews/infrastructure-approved-contract-standards-gui.md) confirms previously agreed CFG-07: privileged NTP/NTS source selection, OS application, trust checking and recovery belong to Infrastructure/host, not Configuration tenant/user settings. Infrastructure may use Clock's public temporal operations for timestamp interpretation/presentation; Clock does not select upstream sources. No Configuration-owned NTP policy is created by this conceptual sign-off.
