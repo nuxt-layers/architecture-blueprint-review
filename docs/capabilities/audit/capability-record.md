@@ -564,3 +564,11 @@ Content Security supplies minimised attributable request, completion, detector/p
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Credentials supplies attributable, minimised committed issuance, suspension, revocation, replacement, verification access and compromised-issuer evidence via a capability-owned durable outbox; Audit accepts evidence/chain-of-custody under its own contract and is not credential or award source of truth. Correlation/revision/effective times and source provenance matter; sensitive claim and subject data must not be indiscriminately copied.
+
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) owns event publication/cancellation, programme/session changes, privileged operation outcomes and source outbox assertions. Audit owns provenance-checked intake, integrity custody, review and lawful retention of minimised attributable evidence, not Events business status. Outbox/transport acknowledgement is not Audit acceptance. Audit scope depends on approved event-risk classification.
+
+## Events interface reciprocity — 18 November 2026
+
+**Events approval and attendance boundary (18 November 2026):** [Events](../events/capability-record.md) owns event actions, source revisions and its durable outbox; Audit receives minimised producer-verified evidence for publication, change, cancellation, sensitive participant/attendance operations (if EVT-15 approved), security-relevant denial and privileged export. Audit returns evidence receipt and governed integrity/completeness status, not Events action success. Identity/contact details should be minimised and protected; the exact accepted event family awaits public contract. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
