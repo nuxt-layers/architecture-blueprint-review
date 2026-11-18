@@ -139,7 +139,7 @@ Optional GUI: event list/calendar, event/series editor, occurrence/programme edi
 - **EVT-09 — OWNER APPROVED:** documented Location/venue, Booking and Scheduler public-contract responsibilities; independent implementation verification deferred.
 - **EVT-10 — OWNER APPROVED:** independently meaningful idealised public input/output specification and contract requirements recorded. Published implementation root `CONTRACT.md` and independent consumer acceptance not verified.
 - **EVT-11 — excluded** (not approved; belongs to another review if relevant).
-- **EVT-12 — OWNER APPROVED:** no duplicate capacity ledger, preserve owner-approved Booking authority; confirm decision before merge.
+- **EVT-12 — OWNER APPROVED:** no duplicate capacity ledger; preserve previously approved Booking authority and explicit one-owner-per-pool arbitration.
 - **EVT-13 — owner-approved** minimal event/series/occurrence/session hierarchy.
 - **EVT-14 — OWNER APPROVED:** explicit event-source versus independent peer change, acknowledgement and reconciliation handover.
 - **EVT-15 — OWNER APPROVED:** Events delegates participant/attendee register, invitations/RSVP, check-ins, attendance verification and corrections to independent [Attendance candidate draft PR #79](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79), retaining optional GUI and contract association. The Attendance contract itself remains a separate unmerged candidate; no required dependency is introduced.
