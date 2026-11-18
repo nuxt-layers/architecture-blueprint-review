@@ -70,3 +70,7 @@ Privacy provides purpose/consent/retention and data-rights constraints; Comments
 ## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
 
 **Status: Owner-agreed boundaries, no independently completed privacy review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-11 agreed:** Course preserves only purpose-appropriate curriculum/version history and limited approval metadata; personal enrolments, assessment submissions/results and achievement records stay with Enrolment, Assessment and Training. Privacy supplies minimisation, child/vulnerable-learner safeguards, effective retention/erasure restrictions and rights handling. Legal holds and necessary proof of historical qualification must be reconciled with applicable lawful basis, not used to retain all learner data indiscriminately.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed privacy review.** [Qualification](../qualification/capability-record.md): Qualification owns minimised applicant award cases and evidence references, not raw Course/Assessment/Training learner data. Privacy supplies lawful collection, disclosure, rights, retention and safeguarding policy; Qualification enforces relevant restrictions and keeps only lawfully necessary history for award provenance.
