@@ -223,3 +223,7 @@ The empty `docs/capabilities/translate/` directory has been removed in the worki
 ## Export evidence and boundary clarification (18 November 2026; draft PR #68)
 
 The catalogue's `export` **Established** entry means the architectural library vocabulary/classification is established, **not** that a deployable API or runtime is verified. The `nuxt-layers/export` repository exists at `c75367e66c2d228a4d98193e7307335e6682a678` and contains only `.gitignore`, `LICENSE`, `README.md` (`# export`) on that baseline; no root `CONTRACT.md` or independent acceptance is available. The [Export conceptual review](capabilities/export/capability-record.md) proposes a stateless renderer boundary and flags durable bulk-export orchestration ownership as **open** (EXP-01/09). These proposals do not modify the governing catalogue or claim implemented functions.
+
+## Export owner decision update (18 November 2026; draft PR #68)
+
+The project owner approved the strict renderer Library boundary and commercially permissive, self-hostable, replaceable engines, while preserving optional-format and technical validation gates. EXP-01/09 are resolved conceptually; EXP-07 investigation and EXP-08 implementation alignment are still incomplete. No current root `CONTRACT.md`, delivered API, tested PDF/A/UA compliance, or independent consumer evidence is asserted. [Export record](capabilities/export/capability-record.md).
