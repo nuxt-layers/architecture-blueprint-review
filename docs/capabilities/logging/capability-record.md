@@ -124,3 +124,9 @@ Content Security supplies redacted diagnostic failure, latency, correlation and 
 ## Reciprocal conceptual contract — Credentials (18 November 2026)
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials supplies sanitised structured operation/provider failures, status-check timeout, retry/idempotency, outbox lag, key or mandate verification error, correlation and safe tenant context through a public diagnostic sink. Logging returns bounded acceptance/failure/health where exposed; it owns diagnostics/sinks/retention, never credential issuance, authoritative proof status or Audit evidence. Keep signed tokens, keys, claimant details, secret provider responses and raw credentials out of routine logs. Optional logging outage must not fabricate issuance, remove mandatory Audit coverage or block otherwise valid business operations. A full Logging public CONTRACT.md remains to be designed/verified.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Federation supplies sanitised technical diagnostics for protocol negotiation, denied fetches, retry, replay and reconciliation with scoped correlation IDs. Logging owns logs, not authoritative exchange state or Audit evidence. Exclude source private payloads, keys and tokens; technical log outages cannot convert indeterminate delivery to success. Public directional ports, explicit absence modes and acyclic package dependencies apply.
