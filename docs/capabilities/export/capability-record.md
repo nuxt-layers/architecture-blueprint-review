@@ -1,6 +1,6 @@
 # Export — capability conceptual record
 
-**Status:** Owner-approved conceptual direction (18 November 2026; confirmation of standards, provider-neutral libraries, GUI and strict Library boundary). Technical investigation and independent implementation acceptance remain outstanding. No implementation or complete conceptual sign-off is asserted. No install/configured/operational/enabled/authorised status is verified. Governing classification remains **Library**; this record does not amend the accepted catalogue. Review: [draft PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68). Baselines: governing `0725f314abc9ad13f1a65247f54a7ff80772f0b2`, blueprint `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
+**Status:** **Conceptual specification ACCEPTED by project owner** (18 November 2026), including EXP-01–EXP-09, idealised public contract, responsibilities, standards, permissive library policy, reciprocal relationships and GUI allocation. This is **not** published implementation approval, conformant format certification, CI acceptance or merge authorisation. EXP-07 technical investigation and EXP-08 implementation alignment remain outstanding. No install/configured/operational/enabled/authorised status is verified. Governing classification remains **Library**; this record does not amend the accepted catalogue. Review: [draft PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68). Baselines: governing `0725f314abc9ad13f1a65247f54a7ff80772f0b2`, blueprint `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`.
 
 ## Capability Name
 `export` (actual directory `docs/capabilities/export`).
@@ -87,7 +87,7 @@ Baseline: accepted ADR-0001/0002/0006/0008/0009/0011/0012/0014/0015/0016/0017/00
 
 Access-controlled navigation must never imply permissions. Responsive, keyboard-operable, accessible status/labels, themed controls, clear error recovery and internationalised copy are required. Screen designs consume published public interfaces only. A library must be useable with **no GUI**, no browser and no Nuxt application.
 
-## Conceptual acceptance scenarios (proposed; not executed)
+## Conceptual acceptance scenarios (accepted criteria; not executed)
 
 | Input/scenario | Expected output and failure | Authoritative owner |
 |---|---|---|
@@ -147,9 +147,13 @@ The owner initially approved EXP-02–EXP-08 and left EXP-01/09 open; **later on
 3. **Who supplies what:** Publisher/source domains supply already approved view models and revision attribution, Reporting supplies approved report representations, Rich Text defines safe content; host supplies safe asset/font and backend ports when used. Renderer returns only output and safe technical results. Authorisation, Privacy, Legal Compliance are applied by the requesting workflow; Storage owns saved bytes; source/Reporting owner manages file references, recipients, retention and disclosure; Logging consumes scrubbed conversion telemetry, Audit consumes attributable high-risk disclosure evidence submitted by workflow, Reporting consumes files/status while retaining all report-data authority.
 4. **Failure semantics:** a conversion completion does not imply file delivery; a valid tree does not confer permission; a stale/unknown permission, source revision, format capability or remote backend result must not be silently treated as success; no guarantee of exactly-once external delivery.
 
+## Conceptual acceptance and completeness disposition — 18 November 2026
+
+**Decision: ACCEPTED for the blueprint conceptual review.** The owner reviewed and accepted all standards/library/format-neutrality recommendations and the complete conceptual scope of EXP-01–EXP-09; the full input/output meaning, command/query behaviour, non-domain-event reasoning, failure and recovery semantics, authoritative allocation, cross-capability reciprocal notes and host-owned presentation/test-dashboard pattern are recorded above. In particular, EXP-01 and EXP-09 select the headless rendering Library boundary and supersede older job/recipient/storage ownership assertions in historical notes; their retention below is evidence of original proposals, not current authority. This acceptance is architectural sign-off only; it is not an assertion of operational, implemented, security-tested, legally compliant or standards-conformant software. CSV/XLSX, ODT and ZIP remain conditional format additions with independently agreed contracts and evidence, not automatic public interfaces. Technical work under EXP-07 and independent acceptance under EXP-08 are deliberately deferred to implementation. This PR must still pass latest-master technical/architectural checks and receive **separate explicit approval for the protected squash merge**.
+
 ## Deferred and sign-off
 
-Public `CONTRACT.md`, implementation/format and accessibility conformance, licence/security testing, acceptance evidence and provider checks are **not done**. The conceptual direction **EXP-01–EXP-09 is owner-approved as bounded above**; EXP-07 technical investigation and EXP-08 future implementation alignment remain incomplete. Final approval of this PR's squash merge has **not** been given. Before merge, perform technical Git reconciliation, latest accepted governing/blueprint status, pending parallel PR compatibility and full cross-capability review; merge requires separate explicit approval.
+Public `CONTRACT.md`, implementation/format and accessibility conformance, licence/security testing, acceptance evidence and provider checks are **not done**. The conceptual direction **EXP-01–EXP-09 is owner-approved as bounded above**; EXP-07 technical investigation and EXP-08 future implementation alignment remain incomplete. **Conceptual acceptance has been granted; final approval of this PR's squash merge has not been given.** Before merge, perform technical Git reconciliation, latest accepted governing/blueprint status, pending parallel PR compatibility and full cross-capability review; merge requires separate explicit approval.
 
 ---
 
