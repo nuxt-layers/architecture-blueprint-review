@@ -1,24 +1,145 @@
-# **Capability Record**
+# Integrations — Capability Conceptual Record
 
-## Capability Name:
+**Status:** Proposed independent conceptual review, 18 November 2026; owner sign-off pending; non-normative. **Classification:** established **Platform** responsibility; proposed framework-independent service with provider-specific connector adapters and optional separable Nuxt administration UI. **Opening authority:** `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; **opening blueprint:** `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`. **Review:** [draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76). **Implementation evidence:** [nuxt-layers/integrations](https://github.com/nuxt-layers/integrations) exists on `master`, but its README is only `# integrations` and root `CONTRACT.md` is absent at review; **no public runtime contract, implemented connector, test or operational readiness is verified**.
 
-## Status: (Available, Installed, Configured, Operational, Enabled, Authorised and Proposed).
+## Purpose and classification gate
 
-## Purpose
+Integrations is the provider-neutral **external application connection and exchange coordinator**: register available adapters, govern scoped connections and remote grants, adapt provider operations to declared provider-neutral consumer interfaces, transport authenticated calls and callbacks, track technical synchronisation/checkpoints, and expose evidence, observability and uncertain outcomes. This is independently meaningful platform operational state and lifecycle, not merely a collection of SDKs. **Retain** the Platform capability; represent individual vendor adapters as optional connectors behind its ports, not independent domain owners or mandatory Nuxt Layers. A framework-independent core with optional Nuxt presentation is preferable to mandatory framework coupling; no separate deployment is required by this review. The host selects and supplies infrastructure and keys under accepted ADR-0012's one-call/50-line composition budget, without writing provider-specific relays.
 
-## Classification
+The governing catalogue names Google Docs, Microsoft 365 and social feeds as examples, **not supported implementations**. Domain-specific external integrations (accounting, banking, commerce, LMS, CRM, government registries, assessment, credentials, identity proofing) use the same transport discipline but keep domain policy with the respective owner. Integrations and `iam-integration` are separate: the latter composes IAM members, not arbitrary SaaS connections. Infrastructure integrations such as Temporal Gateway remain distinct infrastructure integration libraries under ADR-0015.
 
-## Dependencies
+## Authority, minimum owned state, exclusions
 
-## Optional integrations
+| Integrations owns (only when justified) | Excluded authority |
+|---|---|
+| Adapter registration and declared provider operation catalogue: versions, scopes, schema, provider terms, residency and limitations; adapter health and compatibility | Domain service definitions, statutory legal interpretation and guarantee of third-party availability |
+| Tenant- and purpose-scoped connection records, remote account binding, consent/approval references, credential **references**, authorised status, revocation/expiry and reconnection lifecycle | Identity's tenants/groups; Authentication sessions; Authorisation access decisions; Profile personal facts; secret values belong in host secret management/vault |
+| Versioned mapping configurations, technical sync cursors, remote identifiers, callback deduplication and reconciliation queues | Canonical invoices, accounts, orders, bookings, stock, contacts, content, courses, assessments, credentials or authoritative remote facts |
+| Technical attempts, remote acknowledgements, delivery receipts, provider capability snapshots, uncertainty, failure/recovery transitions and minimum operational history | Workflow approval decisions, Audit independent compliance evidence, Logging general log lifecycle, Message Queue's message delivery responsibility |
+| Own state-change events and durable outbox when it changes its authoritative connection/sync state | Domain outcome events; a provider webhook is evidence, **not** a locally committed domain outcome |
 
-## Version
+**Minimum persistence:** scoped connection/remote-account metadata and grant state, encrypted or secret-store credential references (not secrets), adapter versions, operation/mapping versions, checkpoint and deduplication/reconciliation state, technical attempts/uncertainty and owned outbox. Stateless operations need not write unnecessary records; technical caches are bounded and non-authoritative. Retention/deletion/hold rules apply. Do not centralise domain records or create an undifferentiated copy of provider data.
 
-## Availability
+## Native services and lifecycle
 
-## Capabilities offered
+1. **Discover/approve adapters:** publish declared provider, operation, scope, schema/version, allowed territories, rate/cost, verification status, security requirements and feature limits. Default unregistered or incompatible operations to unsupported.
+2. **Provision connection:** authorised tenant/purpose requests an approved adapter and remote account; obtain explicit remote consent/authentication where needed; bind opaque secret reference; verify credentials/scopes and record approval evidence. States: `requested → authorisation-pending → verifying → active`, or `rejected/failed`. `active → degraded/reauthorisation-required/suspended → active` on validated recovery; `active → revoking → revoked` on withdrawal. Failed revocation remains `revocation-uncertain`; do not claim remote grant removed.
+3. **Execute remote operation:** consumer supplies domain-authorised intent and expected mapping/capability; validate scope, entitlement, local access, provider limits, idempotency and data minimisation; return `not-submitted`, `submitted/accepted-for-processing`, `remote-confirmed`, `remote-rejected`, `unsupported` or `outcome-unknown` with provider-specific evidence. A transport 2xx is not a completed business act.
+4. **Receive callbacks and synchronise:** authenticate signature/key, audience, nonce/replay and tenant/account correlation; quarantine ambiguous or invalid sources; record stable provider delivery ID; transform into evidence for domain adjudication through a public port/event. Support incremental/full sync only where provider supports it, respecting source revision and rate limits.
+5. **Reconcile/recover:** stale tokens, schema drift, provider outages, partial batches, rate limiting and ambiguous timeouts enter explicit degraded/unknown state and retry or manual review; no automatic authority switching, duplicate side effect or destructive remote write on uncertainty. Pause and reconcile before cutover. Credential compromise triggers revocation/rotation and Audit notification via authorised channels.
+6. **Decommission:** stop new requests, drain/cancel bounded work where safe, revoke credentials/remote subscriptions where supported, apply retention and legal holds, close mappings and expose evidenced final state. No provider-supported revocation means explicitly limited conclusion.
 
-## Configuration
+No outside provider is essential to the **core service**. Individual adapter usage is conditional; a given domain feature can require a specifically validated connector and must fail closed when absent.
+
+## Idealised public inbound contract
+
+Each item describes a conceptual public port, not a committed API signature.
+
+| Source → input | Authority and validation | Absent/stale/invalid semantics |
+|---|---|---|
+| Host/operator → approved adapter registration, deployment/secret-store references, allowed processing geography, network policy | Host approves deployment and stores secrets; Integrations validates provider metadata, adapter authenticity/version and accessible secret reference | Missing adapter/secret → unavailable; incompatible revision → unsupported; never expose secrets |
+| Configuration → approved tenant/service provider-selection reference, mapping/feature option revision | Configuration owns setting value and precedence; Integrations validates scope/approval against live connection and declared adapter capabilities | Selection without active compatible connection → not-ready, not silently enabled |
+| Identity/Authentication/Authorisation → tenant/subject binding, assurance, `decide(caller,action,resource)` | IAM owns identity/session and decision; validate resource, tenant, purpose and fresh approval server-side for every protected operation | Missing/denied/indeterminate → fail closed; remote authentication is not local permission |
+| Domain owner → connector intent (operation, source record reference/revision, domain-owned authorisation evidence, scope, required outcome, mapping version, idempotency/correlation) | Domain owns transaction semantics; Integrations validates operation/scope, request shape, freshness and side-effect safety | Stale revision/unsupported scope → reject; timeout after dispatch → outcome unknown, require reconciliation |
+| External provider → authenticated responses, webhooks, grant assertions, remote revision, receipts and error metadata | Provider is source of its assertions only; Integrations verifies authenticity, tenant binding, anti-replay and expected protocol | Unverifiable → quarantine; delayed/conflicting → stale/conflict status, never domain overwrite |
+| Verification/Legal Compliance/Privacy → required trust/processing restrictions and lawful purpose constraints | Specialist owns assessment of evidence and governing constraint; Integrations enforces supplied effective restriction | Unknown mandatory legal/trust condition → no disclosure or regulated operation |
+| Scheduler/Workflow/Message Queue → invocation, approved orchestration state and delivery notices | These owners control timing/approval orchestration/message transport, not provider/domain truth | Retry only within idempotency, retention and back-off policy; no completion inferred from delivery |
+| Clock → current time and deadline/timezone interpretation | Clock owns temporal semantics | Unreliable/unknown expiry → block freshness-dependent action |
+
+Every input distinguishes asserted source facts, caller command, effective policy and provider evidence; conditional ports must describe an explicit no-provider mode. Contract consumers never need private tables or vendor SDK types.
+
+## Idealised public outbound contract
+
+| Output → authorised consumers | Meaning and guarantee | Status/provenance/disclosure |
+|---|---|---|
+| Adapter discovery and support matrix → host, Configuration, domains, admin UI | Supported-by-adapter operations, permission scope, schema/version, geographical limits and checks; **not** provider availability promise | Source, checked-at, expiry, version, unsupported/unknown; tenant-filtered |
+| Connection status and grant capability → domain, operator, Audit | Locally validated connection lifecycle, remote grant evidence and effective scoped readiness; **not** domain authorisation | Tenant/account, purpose, grant/secret-reference version, expiry/last-check, degraded/revocation uncertainty; never credentials |
+| Remote operation result/receipt → requesting domain, Workflow | Submission and verified remote response, or explicit unknown; only domain can conclude business success and emit its outcome | Correlation, idempotency, attempt/provider ID, request/mapping versions, observed/effective time, remote acknowledgment type |
+| Provider assertion/changed-record envelope → source-owning domain, Verification, allowed consumers | Authenticated, minimised, provenance-rich external claim; authenticity is not truth or suitability | Provider, remote account/ref/revision, audience, source/effective/received times, validation and freshness; scope-filtered |
+| Sync/checkpoint/reconciliation read model → operator, domain, Observability | Progress, partial failures, drift, cursor/checkpoint and unresolved conflicts; not a complete authoritative domain dataset | Completeness, as-of, mapping/version, outstanding uncertainty and retryability |
+| Owned connection/sync lifecycle event → Audit, subscribed consumers via outbox/Message Queue | Event after committed Integrations-owned state change; duplicate and out-of-order delivery possible | Event ID, tenant, version, source, correlation and minimal payload; subscribers re-query authoritative state |
+| Sanitised operational diagnostics → Logging/Observability/Reporting | Technical metrics, rate/cost and error status, never domain financial truth or secrets | Redaction, tenant limits, retention and provenance |
+| Controlled export of connection/mapping metadata → authorised admin/Export | Non-secret portable configuration and provider references; not usable tokens or domain-owned data | Version, ownership, redaction and explicit import compatibility |
+
+## Commands, queries, events and shared invariants
+
+**Commands:** `registerAdapter`, `requestConnection`, `completeGrant`, `verifyConnection`, `rotateCredentialReference`, `suspend/revokeConnection`, `configureMapping`, `submitProviderOperation`, `reconcileAttempt`, `start/pause/resumeSync`, `decommissionConnection`. Names are illustrative business interfaces. Enforce per-operation permissions, state transitions, expected versions, idempotency and explicit accepted-versus-completed results; asynchronous workflows expose recovery handles. Unsafe or unsupported operations are rejected, never guessed.
+
+**Queries:** `listCompatibleAdapters`, `getConnectionStatus`, `getOperationCapabilities`, `getAttempt/Receipt`, `getSyncStatus`, `listReconciliationItems`, `getMappingVersion`. Authorised tenancy/purpose, bounded freshness, completeness and provenance are part of every query; avoid unrestricted tenant-wide provider data reads.
+
+**Events (only committed owner facts):** `ConnectionActivated`, `ConnectionDegraded`, `GrantRevocationRequested/Confirmed/Uncertain`, `MappingActivated`, `SyncCheckpointAdvanced`, `ProviderAttemptReconciliationRequired`, `ConnectionDecommissioned`. Provider-domain facts are conveyed as qualified evidence and not mislabeled domain lifecycle events. Own transactional outbox under ADR-0012; Message Queue transports it. At-least-once/replay tolerant; no exactly-once distributed-delivery claim.
+
+**Context/invariants:** tenant and authorised resource; subject/assurance/access decision; purpose and permitted disclosure; adapter/provider/remote-account identity; request/source revision, mapping and policy versions; correlation/idempotency; source/observed/effective/checkpoint times with Clock semantics; provider evidence and verified versus self-reported status; attempted, accepted, completed and unknown states. No universal request DTO is mandated. Tenant boundaries are checked at ingress, egress, credentials, callbacks and data stores. Rejected/unknown status cannot silently become success; cached provider claims cannot become new domain records until adopted by the domain owner. Remote provider authority is never silently promoted to local authority; migration requires approved selection, reconciled checkpoint and explicit cutover.
+
+## Cross-capability relationships — directional public-contract cooperation
+
+| Capability | Input to Integrations / output from Integrations | Ownership, absence and dependency |
+|---|---|---|
+| Configuration | Effective provider selection, declaration revision → connection readiness/capability facts | Configuration owns settings; Integrations owns connection lifecycle; host-composed public ports avoid direct mutual imports |
+| Identity, Authentication, Authorisation, Profile | Tenant/caller/assurance/decision and permitted disclosure → scoped status/evidence | IAM/Profile retain authority; required protected-operation checks fail closed |
+| Verification, Legal Compliance, Privacy | Evidence trust and lawful constraints → attributed provider evidence, retention/process trace | Specialist adjudicates trust/legal constraints; unresolved mandatory constraints fail closed |
+| Accounting, Billing, Invoice, Booking, Order, Inventory, Asset, Product, CRM | Authorised domain intent/records → provider result, mapped evidence, checkpoints | Each domain owns its data, status, external-primary selection and cutover; optional per adapter |
+| Course, Assessment, Qualification, Credentials | Approved external LMS, examination, registry and issuer requests → qualified source evidence and callbacks | Domain retains learning, marking, recognition and award meaning; absence means unavailable integration, not false outcome |
+| Publisher, Reviews, Notifications, Search, Localisation, Moderation | Scoped publish/import/scan/send/query intent → third-party transport/evidence | Owner retains content, review, dispatch, search, translation or moderation decisions |
+| Federation | Approved peer-facing adapter requirements → transport/capability status | Federation owns peer/subscription/disclosure and cross-node reconciliation; Integrations does not substitute for federation protocol or peer trust |
+| Workflow, Scheduler, Message Queue, Clock | Approval process, scheduling, transport, temporal service → status/receipts/committed events | Public ports/host wiring and owner-originating outboxes; no cycles or hidden package imports |
+| Audit, Logging, Observability, Reporting | Governed evidence capture and diagnostics → minimal events/metrics/receipts | Independent audit evidence, operational logs, monitoring and reporting owned elsewhere |
+| Infrastructure/host secret manager | Secret reference, networking, compute and persistence → health/readiness | Host/Infrastructure controls deployment and vault; Integrations owns its business-operational connection state |
+
+A reference in this table is **logical cooperation**, not a mandatory compile-time import. Any eventual dependencies (including Nuxt `extends`) must be declared and jointly acyclic under ADR-0016. Domain-to-Integrations service consumption with callback ports supplied at composition is preferred to bidirectional package dependencies.
+
+## Configuration, legal, security and privacy
+
+Tenant/organisation administrators may request integration configuration only within Authorisation and approved policy; elevated assurance and dual approval may be necessary for financial write access, remote account transfers, secret rotation and destructive bulk sync. Host secret management stores tokens, private keys and client secrets; no token in generic configuration, events, logs or exports. OAuth/OIDC scopes, CSRF/state, webhook signatures, replay protection, egress allowlists/SSRF defence, token audience, rotation, least privilege, secret encryption, sandbox/prod separation, provider package supply chain, quotas/rate-limit circuit breakers and incident revocation must be addressed in detailed design. Treat external payloads as untrusted (input/schema validation, content sanitisation), and verify provider terms, processor/subprocessor status, lawful basis, international transfers, data residence, minimisation, retention, deletion and government-sector access restrictions via Privacy/Legal Compliance. No vendor or statutory compliance approval is inferred by a technically valid connection. Baseline OWASP ASVS 5 L2, L3 where security-critical, and WCAG 2.2 AA for UI.
+
+## Conceptual presentation / GUI
+
+**Headless core mandatory; optional admin/operator presentation justified.** The host owns routes, sidebar/Capabilities navigation and branding; optional Integrations dashboard is shown only if enabled. Use Theme Manager semantic tokens, accessible keyboard focus, WCAG 2.2 AA, responsive layout, i18n and accessible screen-reader status messages.
+
+- **Connection dashboard/list:** tenant-filtered provider cards, connection status, last verification, purpose, capabilities, expiry, cost/rate and known limitations; clearly separate selected, configured, connected, authorised and operational.
+- **Add/authorise connection:** provider discovery, lawful-use/terms and scope notice, consent/assurance, secure provider redirect/return, remote-account selection, test connection and explicit activation.
+- **Connection details:** permitted operations, scopes, masked credentials, mapping revisions, owner-linked external identifiers, health/limits, recent sync receipts, revoke/renew/pause actions with confirmation and reauthentication for sensitive changes.
+- **Mapping and sync workspace:** dry-run previews, source-to-domain mapping proposals for domain-owner approval, checkpoints, reconciliation queue, uncertain attempts, retries with side-effect warning, audit trail and changeover workflow.
+- **Operator view:** degraded/expired/unsupported states, provider outage, webhook trust failures, quarantine/replay review and redacted diagnostics; no disclosure of another tenant's provider accounts.
+
+When presentation is disabled, all legitimate functions remain available to authorised server consumers through the documented headless contract. No automatic global menu registry or testing app change is implied.
+
+## Conceptual contract acceptance scenarios (not executable tests)
+
+| Input | Expected behaviour/output | Final authority |
+|---|---|---|
+| Host registers vetted adapter without a tenant connection | Discovery shows adapter available but connection not ready | Integrations |
+| Approved tenant grant, verified scopes and approved selection | Connection activated with versioned scope/expiry/provenance | Integrations for connection; Configuration for selection |
+| Accounting submits posting to external provider | Recorded remote request/receipt or unknown; local ledger not mutated by Integrations | Accounting |
+| Invalid/foreign-tenant callback, or insufficient caller assurance | Quarantine/deny, no disclosure or domain mutation; diagnostic evidence | IAM decision; Integrations quarantine |
+| Duplicate webhook or same idempotency key | Single logical technical attempt/checkpoint; replay-safe notifications, not duplicate side effects | Integrations |
+| Request times out after remote submission | Explicit outcome-unknown, reconciliation needed, no automatic fallback | Integrations; domain adjudicates |
+| Provider schema changes or token expires | Mark unsupported/degraded, pause unsafe operations, renew/reconcile before resuming | Integrations |
+| External provider is disconnected during pending Booking action | Record uncertain/cutover-incomplete; do not rebook natively or claim cancellation | Booking |
+| Course remote completion claim arrives | Qualified provider evidence only; Course/Assessment decide local admissibility | Course/Assessment |
+| Admin requests revocation; provider unavailable | Local operations disabled; remote revocation remains uncertain, visible for follow-up | Integrations |
+| Consent withdrawn or retention deadline reached | Stop prohibited disclosure; retain only lawfully required minimal evidence | Privacy/Legal Compliance constraints; Integrations enforcement |
+| No configured provider or presentation | Headless service remains available; provider-dependent operation is explicitly unavailable | Integrations |
+
+## Review findings, decisions and acceptance status
+
+**Established:** Platform classification and provider-adapter responsibility in governing catalogue; ADR-0012, ADR-0016 and Capability Standard obligations. Existing conceptual owner approvals in the historical notes below remain intact (e.g. BIL-05, ORG-01–08, CFG-08, COURSE-10/12, ASMT-13/14, VER-01–12), each limited to its stated scope.
+
+**Proposed for owner approval (new, not pre-approved):**
+- **INT-01:** Retain a provider-neutral Platform capability with independently owned connection/grant, technical mapping/checkpoint and uncertainty lifecycle; vendor adapters remain conditional connector packages.
+- **INT-02:** Keep provider authentication/transport and technical evidence separate from domain business authority, regulatory adjudication and IAM access decisions.
+- **INT-03:** Require explicit tenant/purpose/provider-scope selection, qualified capability discovery and verified connection activation; no automatic fallback or dual authoritative writes.
+- **INT-04:** Adopt the inbound/outbound conceptual contract, explicit submission-versus-completion and unknown outcome semantics with replay-safe reconciliation.
+- **INT-05:** Require secure callback/consent/credential-reference lifecycle, provenance, retention and narrowly scoped disclosure.
+- **INT-06:** Support headless operation and optional separable administration/reconciliation GUI using host navigation and Theme Manager.
+
+**Open owner decisions:** **INT-07** whether connector enablement needs a separately governed, organisation-wide approval/attestation workflow above domain authorisation; **INT-08** how domain owners designate external-primary versus native-primary operation and approve cutover in a common reference contract without centralising domain policy; **INT-09** whether high-risk regulated providers require mandatory two-person approval and provider-specific certification gate (Legal Compliance to determine applicable floor).
+
+**Technical investigations (not owner-choice substitutes):** versioned adapter manifest/schema and signature model, OAuth/token broker versus host vault responsibilities, retry/backoff and replay windows, safe callback identity binding, signed grant evidence, provider API deprecation monitoring, operational SLOs, payload minimisation and cost reporting. Set standards through evidence and accepted policy rather than inventing guarantees.
+
+**Implementation alignment:** root `CONTRACT.md` absent; publish an independently usable consumer contract, explicit port dependencies, error codes, status/versioning and operational limits; test host composition budget through CI/user-owned work, not this review. No currently verified implementation/contract. **No conceptual sign-off, legal certification or runtime acceptance asserted.**
+
+## Historical reciprocal notes (preserved verbatim)
 
 ## Review notes — contacts, financial providers and ownership (14 November 2026)
 
