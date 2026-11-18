@@ -338,3 +338,7 @@ Customer self-service and operator administration are separate permission/audien
 **Owner-approved CFG-06/08 (Options C/B):** Booking owns stable resource identity, existence/retirement, availability and the domain meaning of its policy. Configuration may govern approved values only for explicitly registered resource contexts; versioned declarations and effective intervals preserve the rule under which existing bookings were accepted. A room rename/reuse or new cancellation schema never silently changes past commitments.
 
 Existing independently approved decisions are preserved; this note resolves Configuration's selected boundary rather than retroactively approving all prior proposals.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed booking review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-09 agreed:** Bookings, where used for teaching spaces or sessions, owns reservations and resource commitments, not curriculum, cohorts or learner admission. Return authoritative reservation/availability and stale/unknown states to the composed enrolment decision. Distinguish physical room limits, permitted instructional group size and admitted learner places; no duplicated authoritative free-place counter.

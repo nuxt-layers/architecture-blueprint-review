@@ -413,3 +413,15 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 ## Employment reciprocal conceptual interface — 17 November 2026
 
 **Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not an implemented Authorisation interface.** Employment supplies a time-bounded, source-qualified standing signal for a specific worker engagement; Authorisation decides actions on individual personnel records, terms, rosters and management operations using actor/resource/employer/tenant context, revocation, assurance and field/purpose constraints. Employment status does not itself grant Identity membership, platform access or payroll visibility; stale or ambiguous standing cannot be used to permit sensitive actions. See [Employment conceptual record](../employment/capability-record.md).
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed authorisation review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course operations, preview, catalogue disclosure, revision publication, import/export and withdrawal require server-side, resource-aware decisions bound to trusted tenant/caller and appropriate assurance. Authorisation owns the decision model; Course owns its state transitions and no learner admission/completion. Unknown/denied access fails closed without cross-tenant existence disclosure.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed authorisation review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-10/11 agreed principles:** Authorisation controls platform permissions, assessor/reviewer/publisher access and step-up/separation-of-duties where required; it cannot itself establish statutory accreditation or legal entitlement to award a qualification. Any external awarding delegation also requires independently sourced mandate/scope/status evidence, which domain logic enforces. Protect course version migration and assessment grade/appeal transitions as separately permissioned operations.
+
+## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Authorisation owns server-side platform permissions and caller-assurance checks for qualification scheme changes, delegate administration, award case approval, appeal and withdrawal. Qualification independently checks the legally/contractually recognised awarding mandate and qualifications scope; a platform role, token or approval does not grant external powers. No change to previously approved authorisation ownership.

@@ -79,3 +79,15 @@ Protected previews, unsaved form state, telemetry and temporary buffers require 
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 Content Security's inspection of user-provided content must use a justified purpose, minimised ephemeral references, gated sensitive evidence and controlled retention/transfer; provider use cannot assume consent or lawful access, especially for private/E2EE material. Privacy owns consent/retention/rights constraints and Content Security implements them over its own job/evidence records; source owner handles content erasure.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed privacy review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course defines learning offerings, not named learner transcripts; enrolment/achievement personal records remain with Enrolment/Training. Privacy supplies effective minimisation, permitted disclosure, retention/erasure and vulnerable-learner policy. Course must protect course-admin authorship/provenance and avoid personal roster disclosure in catalogue, exports, events and logs; legal holds and historical references require explicit coordination.
+
+## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
+
+**Status: Owner-agreed boundaries, no independently completed privacy review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-11 agreed:** Course preserves only purpose-appropriate curriculum/version history and limited approval metadata; personal enrolments, assessment submissions/results and achievement records stay with Enrolment, Assessment and Training. Privacy supplies minimisation, child/vulnerable-learner safeguards, effective retention/erasure restrictions and rights handling. Legal holds and necessary proof of historical qualification must be reconciled with applicable lawful basis, not used to retain all learner data indiscriminately.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed privacy review.** [Qualification](../qualification/capability-record.md): Qualification owns minimised applicant award cases and evidence references, not raw Course/Assessment/Training learner data. Privacy supplies lawful collection, disclosure, rights, retention and safeguarding policy; Qualification enforces relevant restrictions and keeps only lawfully necessary history for award provenance.

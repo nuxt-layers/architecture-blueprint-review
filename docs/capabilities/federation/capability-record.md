@@ -155,3 +155,7 @@ Comments Engine owns origin-Node comment/revision visibility and withdrawal even
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 A Hub/Node may request authorised technical assessment of externally supplied material or links, but remote scan claims are untrusted until provenance and scope validated. Content Security supplies detection evidence only; origin Node controls original publication while receiving Hub controls own listing/index restrictions and withdrawal reconciliation. Do not indiscriminately share private bytes with foreign scanners.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may expose authorised, attributed, versioned catalogue descriptors and withdrawal facts for optional federation. Federation owns transport, peer subscriptions and reconciliation, not curriculum source authority or enrolment; remote copies can be stale and must respect disclosure. This does not complete federation's own review.

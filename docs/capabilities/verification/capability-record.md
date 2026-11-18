@@ -107,3 +107,11 @@ Optional verification dashboard: methods/providers, pending/expiring/revoked cla
 ## Open decisions and disposition
 
 Choose exact verification proofing/age data custodian and data controller relationships; credential/status standard profile; issuer accreditation and trust governance; provider/legal category; permitted evidence reuse; offline validity/short-lived token design; revocation service guarantees; legal source of mandates; localisation and safeguarding; appeal independence; integration fees; and formal classification relative to IAM. VER-01–VER-12 are **approved conceptual principles**, not an implementation mandate. Next step: independent detailed capability review and, if warranted, governing ADR proposal.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10 proposed cooperation:** Verification may validate purpose-specific issuer, accreditor, delegate and credential evidence only within its approved remit; it cannot create academic recognition, grant a qualification or reown Assessment marks. Credentials must preserve source authority, effective scope, provenance, freshness and revocation/unknown states. This note does not complete the separate verification review.
+
+## COURSE-12 — Qualification authority reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved interface direction:** Verification may validate issuer/centre identity, representation and mandate evidence only within its independently accepted scope; Qualification determines qualification-specific award authority/rule applicability and remains owner of local award decisions. Verification does not become an awarding organisation, create official recognition or replace external regulatory sources. No change to previously approved verification ownership.

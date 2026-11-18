@@ -537,3 +537,15 @@ Content Editor publishes no authoritative document/business audit event. Publish
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 Content Security supplies minimised attributable request, completion, detector/policy version, reassessment/override and evidence disclosure events. Audit independently retains trustworthy receipts/integrity and completeness; technical scan evidence is neither legal guilt nor an Audit custody substitute. Avoid copying raw harmful images/text into routine audit records.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed audit review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course can supply committed publication, major revision, approval reference, withdrawal, privileged edit and denied-access/security events with tenant/course/revision, authorised actor and safe provenance. Audit owns evidential acceptance/custody, not the curriculum, and its receipt status is not publication success. Keep learner identities and sensitive teaching materials out of generic audit payloads.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10/11 agreed:** capture source-provenanced recognition, issuer/delegate checks, credential issue/correction/revocation, course approval/withdrawal, assessment moderation and curriculum migration with effective and verified-as-of status. Audit owns accepted evidence, not the underlying qualification award. Retention and sensitive learner disclosure are policy-bound. This note does not complete the separate audit review.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed audit review.** [Qualification](../qualification/capability-record.md): Qualification supplies minimised, committed provenance-rich evidence for scheme versions, recognition/delegation checks, award adjudication, appeal, correction, withdrawal/reinstatement and teach-out. Audit owns evidential acceptance and custody, not qualification or awarding authority; retention/disclosure must respect privacy and legal holds.

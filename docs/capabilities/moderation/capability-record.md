@@ -77,3 +77,7 @@ Comments Engine remains source-of-truth for comment revisions, thread structure,
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 Content Security owns qualified detection evidence, revisions and incomplete/unknown results; Moderation owns cross-domain reports, adjudication, appeal and case decisions. Moderation may request a scoped re-assessment or receive an indicator/evidence reference but cannot rewrite the historical verdict. Source owner alone performs and confirms holds/releases.
+
+## Reciprocal conceptual note — Course (17 November 2026)
+
+**Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may submit user-facing learning material reports for moderation. Moderation owns policy enforcement decisions and appeals where applicable; Course owns course withdrawal/access transitions and version history. Neither capability awards learner grades. This does not complete moderation's own review.

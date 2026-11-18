@@ -110,3 +110,7 @@ Only privacy-minimised error codes, timings and correlations belong in technical
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 Content Security supplies redacted diagnostic failure, latency, correlation and provider error information without copying risky raw content, secret/hash datasets or private reporter identities. Logging owns operational logs, not independent audit proof or scanning status authority.
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed logging review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course emits structured, redacted operational diagnostics for validation, provider outages, revision conflicts and publication failures with correlation IDs. Logging owns technical diagnostics/sinks; Course owns domain history and Audit owns evidential custody. Do not record learner rosters, private draft contents or credentials in technical logs.

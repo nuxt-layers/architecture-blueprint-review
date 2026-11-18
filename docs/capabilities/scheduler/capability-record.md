@@ -55,3 +55,11 @@
 
 
 **Employment EMP-03 owner-approved refinement:** The previously proposed nested Employment Time & Attendance approach has been superseded by the independently owned conceptual [Time & Attendance Domain candidate](../../../proposals/time-attendance-ownership.md). The existing `scheduler` remains infrastructure timing only. This does not assert that a workforce-rostering or time-attendance implementation exists.
+
+## Reciprocal conceptual note — Course learning offering (17 November 2026)
+
+**Status: Proposed, not approved or implemented.** [Course conceptual review](../course/capability-record.md), draft PR #56: Scheduler may invoke Course's idempotent timed publication/retirement commands; Scheduler owns timing/retry, Course owns transitions and authorisation. Late or duplicate jobs cannot grant access. This note does not complete the separate scheduler review.
+
+## Course / Assessment / Credentials reciprocal note (17 November 2026)
+
+**Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-09/11 agreed:** Scheduler runs idempotent time-triggered work, not education sessions (Events), learner cohorts (Enrolment) or assessment marks. Scheduled Course publication/withdrawal must revalidate current permissions and safeguards; late jobs cannot reauthorise an invalid curriculum. This note does not complete the separate scheduler review.

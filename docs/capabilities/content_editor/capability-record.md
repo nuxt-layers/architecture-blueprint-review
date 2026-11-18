@@ -198,3 +198,7 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
 **Owner-approved resolution, 17 November 2026:** `document` is retired as a standalone capability. Content Editor continues to own only the generic editorial presentation of Publisher-registered types and no document domain authority. No separate Document management GUI is proposed. The superseded conditional review is retained at [Document history](../../../reviews/document-directory-removal-2026-11-17.md).
+
+## Reciprocal conceptual note — Course curriculum and learning outcomes (17 November 2026)
+
+**Status: Proposed, pending owner approval; not a completed content_editor review or implementation contract.** [Course conceptual review](../course/capability-record.md) (draft PR #56): Course requires a structured curriculum editor (outcome builder, unit/prerequisite graph, revision comparison, publication state and content reference selection) via the Course public conceptual contract. Generic Content Editor may present declared course field/action descriptors, but does not own Course state or infer domain rules from arbitrary rich text. Coordinate with provisional PR #54 without treating that PR as accepted.
