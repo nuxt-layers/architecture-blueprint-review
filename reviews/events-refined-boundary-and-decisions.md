@@ -1,6 +1,6 @@
 # Events — approved boundary and remaining decisions
 
-**Status (18 November 2026): EVT-01–08 and EVT-13 owner-approved in principle.** EVT-11 not approved/excluded; EVT-09/10 require specific interface work; EVT-12/14 under review; EVT-15 newly proposed (attendee/attendance). See [latest contract and handover details](events-contract-attendance-and-handover.md). This is a blueprint record, not an implementation contract. [Events record](../docs/capabilities/events/capability-record.md) · [Draft PR #67](https://github.com/nuxt-layers/architecture-blueprint-review/pull/67).
+**Status (18 November 2026): EVT-01–10 and EVT-12–15 owner-approved conceptually; EVT-11 excluded.** Events input/output, Location/Booking/Scheduler and Integrations interfaces, Booking capacity authority, explicit peer reconciliation and attendee separation are agreed; implementation verification and the separate Attendance candidate review remain outstanding. See [approved handover details](events-contract-attendance-and-handover.md). This is a blueprint record, not an implementation contract. [Events record](../docs/capabilities/events/capability-record.md) · [Draft PR #67](https://github.com/nuxt-layers/architecture-blueprint-review/pull/67).
 
 **Governing:** `architecture-rules/master@0725f314abc9ad13f1a65247f54a7ff80772f0b2`; blueprint opening `a4e40a5cd82a2f79e8edd872af55c22d472b61cb`; current subsequent baseline `5b6f67be3263586ffea5156f7b23135373ccd734`. Follow accepted ADR-0012 and ADR-0016; no direct private coupling or duplicate authority.
 
