@@ -36,3 +36,7 @@
 ## Qualification independent conceptual review — reciprocal interface (18 November 2026)
 
 **Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Enrolment owns learner admission, cohort allocation and applicable Course revision. Qualification consumes those references only when the qualification pathway requires them; permitted RPL, direct assessment or external-award routes need not have enrolment. Qualification never assigns places or determines admission. Enrolment never independently confers qualification eligibility or an award. This note does not complete this adjacent capability's independent review or assert an implemented contract.
+
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed enrolment review.** Enrolment supplies active learner standing, cohort and frozen Course reference for enrolment-controlled programmes; Training supplies verified participation and completion findings but never controls admission/waitlists. Independent approved prior-learning training need not require Enrolment. PR #60 is provisional and must be reconciled. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.

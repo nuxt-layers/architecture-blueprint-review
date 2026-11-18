@@ -55,3 +55,7 @@ To be determined: authorised per-organisation/engagement approval policies, sour
 - The full conceptual review must follow [review-protocol.md](../../review-protocol.md) in its own dedicated branch and draft PR, and update reciprocal records and the catalogue/register as warranted.
 
 **Sign-off:** Independently owned Domain boundary agreed; **detailed review, contract, GUI and packaging pending**. No implementation, no local tests, no merge or change to `architecture-rules` authorised by this pro-forma.
+
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed time-attendance review.** Training owns attendance at learning activities and verified training progress; Time & Attendance owns actual work-time intervals/breaks/payable-time evidence. Mapping one interval to training does not automatically prove working hours or vice versa; separate consent/authorisation and revision reconciliation apply. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
