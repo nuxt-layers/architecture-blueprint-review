@@ -104,3 +104,10 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 ## Reciprocal conceptual contract — Credentials (18 November 2026)
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials publishes authorised tenant/issuer/time-scoped issued credential, expiry, suspension, revocation, replacement, issuance backlog and verification-outcome source facts via scoped reads plus committed status events, including source revision, effective/as-of times, coverage and staleness. Reporting owns report definitions, aggregations, snapshots, exports, delivery and refresh lifecycle; returns report reference/status, completeness, lineage and disclosure controls. Distinguish qualification awards (Qualification-owned) from issued credentials (Credentials-owned); do not double-count corrections/replacements or convert partial coverage into valid totals. Recheck saved-report disclosure and small-cohort privacy independently. Reporting outage must not block issuance; no private tables or claimed implemented adapter.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Help may publish public-contract, permission-scoped coverage/freshness views: documented versus mapped contexts, outdated or broken topics, locale gaps and safe aggregate operations. Reporting owns report definition, execution, snapshots, derived measures, suppression and disclosure enforcement, not source mappings or documents. Raw queries, identified reading histories and small-cohort inferences are excluded by default; absence of Reporting never blocks Help.
