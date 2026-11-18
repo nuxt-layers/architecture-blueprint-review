@@ -280,3 +280,7 @@ All commands must validate identity/assurance, relying-party rights, per-resourc
 - False or unverified external claim → return `unknown/inconclusive` with reason and resolution route, not presumed fraudulent.
 - Corrected award after employment starts → limited recheck notification, not automatic termination or employment suspension.
 - Appeals, recognised prior learning or teach-out crossing rule revisions → preserve as-of authority and case-specific approved transition.
+
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed qualification review.** Qualification consumes minimum necessary Training competencies/completion and provenance for independently authorised scheme eligibility/award decisions; Training cannot award or revoke qualifications. Changed Training evidence prompts Qualification re-evaluation, not automatic revocation. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
