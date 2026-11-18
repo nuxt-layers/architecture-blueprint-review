@@ -45,3 +45,10 @@
 **Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
 
 Search receives only Federation-validated, locally admitted, provenance-bearing public descriptors plus revision/expiry/withdrawal notifications, via published ingestion ports. Search alone owns derived index application, ranking, result visibility and staleness display. A result does not confer source authority, current availability or resource access; unknown source/withdrawal status is labelled and reconciled. Hub discovery is a host composition, not a Federation query engine. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+
+## Reciprocal conceptual note — Help review (18 November 2026)
+
+**Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
+
+The Help Centre may consume Search's authorised indexing/query/relevance for Publisher-owned Help articles. Search must respect tenant/document visibility and stale/withdrawn documents; Help must revalidate source visibility before display. Search is optional: exact context resolution and Publisher-backed bounded navigation must remain usable without it. No generic Help-owned search index.

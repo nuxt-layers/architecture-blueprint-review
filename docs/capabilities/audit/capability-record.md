@@ -596,3 +596,10 @@ Content Security supplies minimised attributable request, completion, detector/p
 **Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
 
 Federation emits scoped security and governance evidence for peer verification, policy decisions, subscriptions, publication/disclosure, quarantine, withdrawals, replay/invalid payload incidents and administrative overrides. Audit owns durable accountable records and retention/integrity; Federation owns its factual peer/sync state. Record source, tenant, actor/peer, policy/version, correlation, status and evidence pointer with minimisation; do not copy private payloads into audit indiscriminately. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Conditional Help-owned mapping create/update/withdrawal actions and sensitive privileged administration produce classified, provenance-rich audit submissions with scoped identity, source event/operation ID, mapping revision, actor/tenant, outcome and correlation. Audit alone owns acceptance, custody, integrity and review receipts. Publisher retains its own publication events; a mere Help lookup is not normally audit-worthy. If Help is presentation-only, host and other source owners audit their own actions.

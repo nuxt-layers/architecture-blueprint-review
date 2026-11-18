@@ -206,3 +206,10 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 ## Gallery reciprocal presentation interface — 18 November 2026 (proposed; PR #70)
 
 [Gallery](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) offers a type-specific ordered-media field/editor contribution for Publisher-registered album and featured-photo types, plus an album viewer/lightbox and optional submission experience. **Content Editor** retains generic Publisher document administration, schema-driven form, review/history and publication screens. Neither duplicates Publisher's authoritative lifecycle nor owns moderation case decisions. Review intake for member submissions must be wired to an actually published source-owned contract; the legacy Gallery design's `publisher.<type>.moderate` permission is not evidenced by Publisher's current root `CONTRACT.md`. GUI routes and sidebar integration remain host-controlled.
+
+
+## Reciprocal conceptual note — Help review (18 November 2026)
+
+**Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
+
+Help authors and editors use Content Editor's generic Publisher-backed document-type editing, version history, preview and publication workflows; the proposed Help mapping/coverage screens are separate narrow reference-administration presentation, not another text editor. Content Editor does not own contextual mappings or publication state.

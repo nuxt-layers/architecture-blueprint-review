@@ -114,3 +114,10 @@ Publisher may provide explicitly approved, versioned, public collection projecti
 ## Gallery reciprocal interface — 18 November 2026 (proposed; PR #70)
 
 [Gallery's conceptual public surfaces](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) remain **presentation only**. Publisher owns host-registered `album`, `members-album` and `featured-photo` document type records, order/captions/credits, revisions, audience constraints, publishing/scheduling, addresses and source outbox. Gallery consumes only authorised public published/admin reads and version-conditioned commands through host composition; Media remains authoritative for asset eligibility. **Contract gap:** current root `CONTRACT.md` documents `view-draft/edit/publish/delete` but not the historical Gallery `moderate` action, nor a proven member-submission workflow. Do not infer these from the earlier design; source-authorised intake/review and private-document access require contract verification/reconciliation. This note is not approval of a Publisher implementation change.
+
+
+## Reciprocal conceptual note — Help review (18 November 2026)
+
+**Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
+
+Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.

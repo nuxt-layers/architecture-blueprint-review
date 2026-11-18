@@ -126,3 +126,10 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
 
 Reporting consumes authorised Federation participation, delivery, freshness, rejection and withdrawal read models/events, with source/peer scopes and incomplete/unknown counts. Reporting owns aggregates only and must never infer verified deliveries from attempts or mutate underlying exchange state. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Help may publish public-contract, permission-scoped coverage/freshness views: documented versus mapped contexts, outdated or broken topics, locale gaps and safe aggregate operations. Reporting owns report definition, execution, snapshots, derived measures, suppression and disclosure enforcement, not source mappings or documents. Raw queries, identified reading histories and small-cohort inferences are excluded by default; absence of Reporting never blocks Help.

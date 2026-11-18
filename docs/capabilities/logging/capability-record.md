@@ -146,3 +146,10 @@ Content Security supplies redacted diagnostic failure, latency, correlation and 
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
 
 Federation supplies sanitised technical diagnostics for protocol negotiation, denied fetches, retry, replay and reconciliation with scoped correlation IDs. Logging owns logs, not authoritative exchange state or Audit evidence. Exclude source private payloads, keys and tokens; technical log outages cannot convert indeterminate delivery to success. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Help sends redacted diagnostic codes, mapping/Publisher failures, latency and permitted correlation IDs through Logging's public intake. Logging owns sinks and diagnostic retention, not help mappings or authoritative Audit evidence. Avoid raw searches, page bodies, secret context, full URLs and unnecessary subject identifiers. Logging outages must not make an otherwise valid Help lookup fail.
