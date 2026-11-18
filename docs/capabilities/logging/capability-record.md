@@ -124,3 +124,10 @@ Content Security supplies redacted diagnostic failure, latency, correlation and 
 ## Reciprocal conceptual contract — Credentials (18 November 2026)
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials supplies sanitised structured operation/provider failures, status-check timeout, retry/idempotency, outbox lag, key or mandate verification error, correlation and safe tenant context through a public diagnostic sink. Logging returns bounded acceptance/failure/health where exposed; it owns diagnostics/sinks/retention, never credential issuance, authoritative proof status or Audit evidence. Keep signed tokens, keys, claimant details, secret provider responses and raw credentials out of routine logs. Optional logging outage must not fabricate issuance, remove mandatory Audit coverage or block otherwise valid business operations. A full Logging public CONTRACT.md remains to be designed/verified.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Help sends redacted diagnostic codes, mapping/Publisher failures, latency and permitted correlation IDs through Logging's public intake. Logging owns sinks and diagnostic retention, not help mappings or authoritative Audit evidence. Avoid raw searches, page bodies, secret context, full URLs and unnecessary subject identifiers. Logging outages must not make an otherwise valid Help lookup fail.
