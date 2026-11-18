@@ -120,3 +120,9 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 ## Approved Export boundary — reconciliation (18 November 2026)
 
 **Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Reporting consumes authorised Federation participation, delivery, freshness, rejection and withdrawal read models/events, with source/peer scopes and incomplete/unknown counts. Reporting owns aggregates only and must never infer verified deliveries from attempts or mutate underlying exchange state. Public directional ports, explicit absence modes and acyclic package dependencies apply.

@@ -128,3 +128,9 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Events interface reciprocity — 18 November 2026
 
 **Events EVT-08 (owner-approved, 18 November 2026):** [Events](../events/capability-record.md) must expose a provider-neutral public contract to Integrations: authorised event/occurrence snapshots, change/withdrawal requests, local/external stable ID mappings, authority scope and version; receive verified proposed external changes, provider version, delivery status, retry checkpoint and conflict evidence. Integrations owns connector credentials, webhook verification, provider-specific schemas, transport, provider recovery and connection lifecycle, never Events programme or status. A provider acknowledgement cannot commit an Events change. See [contract and reconciliation details](../../../reviews/events-contract-attendance-and-handover.md). This is conceptual, not a verified published API.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Integrations may supply replaceable external protocol/provider adapters through public ports; Federation retains participation, provenance, subscription, delivery and reconciliation authority. Third-party transport acknowledgement is neither local source completion nor trusted remote standing. Unsupported provider yields explicit degraded status. Public directional ports, explicit absence modes and acyclic package dependencies apply.
