@@ -256,3 +256,8 @@ Configuration owns approved, scoped versioned scanner-profile preferences and pr
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-11 agreed:** Configuration resolves organisation-approved options for reviews, safeguarding, delivery, migration and retention with precedence; Legal Compliance and Privacy supply non-overridable restrictions. Course, Assessment and Credentials enforce their own rules. Accreditation and delegated awarding authority are externally evidenced facts, not configuration preferences. This note does not complete the separate configuration review.
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual control boundary](../../../reviews/infrastructure-conceptual-architecture.md) consumes allowed versioned deployment settings but retains the exclusive privileged authority to select, apply and verify approved NTP/NTS sources (previously owner-approved CFG-07). A Configuration value never grants operational privilege or overrides source trust, hard security floors or recovery constraints. `OperationalChangeResult` reports applied versus requested revision; contract pending INF-01/03/05.
