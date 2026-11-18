@@ -96,3 +96,7 @@ Publisher requests revision-bound technical checks for registered documents befo
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Publisher may produce versioned certificate documents or presentation using a permitted Credentials public view model, but owns only its own rendered document lifecycle. It cannot issue the underlying credential, award a qualification, revoke a credential or certify live proof status. Corrections/revocations trigger controlled rendering/withdrawal or status updates through explicit public contract and reconciliation; a cached PDF remains an artifact, not a status authority.
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** Publisher keeps authoritative approved revisions, publication/withdrawal, visibility and document lifecycle. The Export Library renders a permitted revision's safe rich-text tree into file bytes/stream; Publisher or the calling host owns any stored downloadable copy, source disclosure recheck, retention and invalidation. There is no restored generic Document capability and no Export-owned Publisher master. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
