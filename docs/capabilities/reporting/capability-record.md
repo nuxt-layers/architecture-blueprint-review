@@ -105,6 +105,22 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials publishes authorised tenant/issuer/time-scoped issued credential, expiry, suspension, revocation, replacement, issuance backlog and verification-outcome source facts via scoped reads plus committed status events, including source revision, effective/as-of times, coverage and staleness. Reporting owns report definitions, aggregations, snapshots, exports, delivery and refresh lifecycle; returns report reference/status, completeness, lineage and disclosure controls. Distinguish qualification awards (Qualification-owned) from issued credentials (Credentials-owned); do not double-count corrections/replacements or convert partial coverage into valid totals. Recheck saved-report disclosure and small-cohort privacy independently. Reporting outage must not block issuance; no private tables or claimed implemented adapter.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) supplies authorised versioned event/session read models, schedule and cancellation state and privacy-limited source change events. Reporting owns report definitions, aggregation and exports; any joined participation, reservation or learning metrics require respective Booking/Enrolment/Training authorities and disclosure checks. Event creation is not proof of attendance or bookings.
+
+## Events interface reciprocity — 18 November 2026
+
+**Events approval and attendance boundary (18 November 2026):** [Events](../events/capability-record.md) supplies versioned, authorised event/occurrence programme/status, change/cancellation timelines and event-specific restrictions; *if EVT-15 is approved*, purpose-limited attendee and observed attendance counts with confidence, coverage and redaction. Reporting owns definitions, aggregation, reports, delivery and freshness; it must not infer attendance from RSVP or Booking alone, leak a participant roster through small-group statistics, or modify Events facts. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** Reporting owns report-specific dataset/snapshot, job state, generated artefact reference, retention and authorised distribution; the governing Export Library only converts a caller-approved safe rich-text tree to PDF/DOCX-format bytes/stream and diagnostics. Reporting must retain source lineage, completeness, disclosure controls, recipient checks, revocation and recovery. Rendering completion is not report-delivery completion. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
 ## Federation — reciprocal conceptual note (18 November 2026)
 
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).

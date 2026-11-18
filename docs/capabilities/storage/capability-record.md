@@ -40,3 +40,11 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
 **Owner-approved resolution, 17 November 2026:** no standalone Document capability will duplicate records or custody. Storage continues to own provider-neutral file bytes, not the business meaning or legal retention decisions for files owned by Publisher or domain capabilities. These owners must enforce authorisation and applicable holds before disclosure/disposal. Historical proposed custody design: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** Export Library yields file bytes/stream and optional digest only; it does not own object keys, signed URLs, retention or stored artefacts. A caller or Reporting-owned workflow uses Storage's public service for generated files and remains accountable for artefact metadata, tenant boundaries, authorisation and revocation. Storage owns bytes, not content or business disclosure decisions. No direct Export dependency on Storage is mandatory. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.

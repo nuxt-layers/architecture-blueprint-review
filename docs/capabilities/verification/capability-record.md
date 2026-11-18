@@ -142,6 +142,12 @@ Verification owns this qualified evidence/issuer trust determination, not Assess
 
 **Status: CRED-17 technical profile recommendations, 18 November 2026, PR #62; not an implemented API or universal standard mandate.** Credentials proposes W3C VC 2.0 portable model, selected JOSE/COSE or Data Integrity security profile, OpenID4VCI/VP 1.0 when wallet-supported, status list 1.0 where appropriate and qualified offline checks. Verification assesses independently presented proofs, issuer/trust roots, scope and revocation/status freshness through published Credential proof/status ports; do not create bidirectional package imports or treat a valid signature as sufficient authorisation or current award. Country/sector trust is independently assessed at the relying party. See [CRED-17 review](../../../reviews/credentials-standards-jurisdiction-resolution.md).
 
+## Attendance ATT-11 — standards reference for guest/guardian assurance (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** [NIST SP 800-63A-4](https://csrc.nist.gov/pubs/sp/800/63/A/4/final) as guidance for identity-proofing evidence and assurance where a guest claim actually needs real-world attribution; [NIST SP 800-63C-4](https://csrc.nist.gov/pubs/sp/800/63/C/4/final) when federated assertions are used. Verification may substantiate identity/age/representation attributes and their provenance/expiry, but a successful check does not itself authenticate a session, authorise event access or confer enrolment/guardian legal standing. Attendance consumes bounded verification status through a public port; proofing must be proportionate to risk and no full proofing is mandatory for ordinary low-risk invitations.
+
 ## Federation — reciprocal conceptual contract (18 November 2026)
 
 **Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).

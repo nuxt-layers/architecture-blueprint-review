@@ -125,6 +125,10 @@ Existing independently approved decisions are preserved; this note resolves Conf
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Integrations supplies provider-neutral connectivity/transport to issuer mandates, remote issuance/signers, credential registries and status services. Provider requests/callbacks carry correlation/idempotency, source attribution, authenticity and effective/freshness context. Credentials retains issuance, representation and credential-status decisions; external award and registry authorities retain their actual source standing. Transport success is not an issued credential; outage is not revocation; reconcile duplicates and uncertain outcomes.
 
+## Events interface reciprocity — 18 November 2026
+
+**Events EVT-08 (owner-approved, 18 November 2026):** [Events](../events/capability-record.md) must expose a provider-neutral public contract to Integrations: authorised event/occurrence snapshots, change/withdrawal requests, local/external stable ID mappings, authority scope and version; receive verified proposed external changes, provider version, delivery status, retry checkpoint and conflict evidence. Integrations owns connector credentials, webhook verification, provider-specific schemas, transport, provider recovery and connection lifecycle, never Events programme or status. A provider acknowledgement cannot commit an Events change. See [contract and reconciliation details](../../../reviews/events-contract-attendance-and-handover.md). This is conceptual, not a verified published API.
+
 ## Federation — reciprocal conceptual note (18 November 2026)
 
 **Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
