@@ -44,3 +44,13 @@
 ## Reciprocal interface — Inventory conceptual review (18 November 2026)
 
 **Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Logistics provides versioned dispatch, carrier handoff, delivery, return and loss evidence; Inventory alone validates and commits stock in-transit, issue, receipt and exception states. Shipment/delivery completion does not itself assert legal title transfer, a stock movement or an accounting entry. A delayed or disputed handoff remains traceable pending reconciliation. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.
+
+
+## Inventory reassessment reciprocal proposal — 18 November 2026 (PR #81)
+
+**Status: proposed, not approved or implemented.** Logistics owns shipment, carrier handoff, tracked delivery, return and custody evidence. The **proposed** Inventory revision distinguishes source-account issue, in-transit, recipient receipt, discrepancies and cross-account pending transitions. Carrier proof is evidence, not independently an Inventory stock movement, legal title transfer or Accounting posting. Record partial delivery and disputed custody with provenance. See the [Inventory reassessment contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md) and [Inventory record](../inventory/capability-record.md#renewed-conceptual-design-challenge--18-november-2026-draft-pr-81). This note preserves earlier approvals in this capability and does not complete its independent review.
+
+
+### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
+
+**Approved Inventory-side conceptual requirement:** Shop-floor transfers to external coating/finishing or outside processing record dispatch, in-transit, contractor custody and verified receipt separately. Logistics provides carrier evidence; external subcontractor processing evidence must not silently transfer legal title or change the canonical stock master. Inventory retains batch/lot genealogy, material quantity and pending/disputed handover until acknowledged. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
