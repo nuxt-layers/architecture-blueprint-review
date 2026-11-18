@@ -40,3 +40,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Reciprocal decision — redundant Document capability retired (17 November 2026)
 
 **Owner-approved resolution, 17 November 2026:** no standalone Document capability will duplicate records or custody. Storage continues to own provider-neutral file bytes, not the business meaning or legal retention decisions for files owned by Publisher or domain capabilities. These owners must enforce authorisation and applicable holds before disclosure/disposal. Historical proposed custody design: [Document](../../../reviews/document-directory-removal-2026-11-17.md).
+
+
+## Infrastructure reciprocal interface — 18 November 2026
+
+**Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual contract](../../../reviews/infrastructure-conceptual-architecture.md) provides trusted S3/provider deployment, credentials and resource readiness while Storage's published contract continues to own consumer-facing object operations and each consumer retains file access decisions. Postgres, Temporal and infrastructure backups are not reclassified as Storage objects; no automatic tenant bucket allocation or quota enforcement is inferred. Proposed only.
