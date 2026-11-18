@@ -30,3 +30,11 @@
 4. Only CI or user runs tests/builds. **No local tests/builds were run.** No implementation repository edited. No merge attempted.
 
 **Provisional verdict:** conceptual documentation is internally coherent *subject to owner decision on Export's boundary*. Git compare is currently non-divergent and raw GitHub reports clean, but this is not final merge permission or technical acceptance.
+
+## Additional consistency checkpoint — 18 November 2026 (after approved research)
+
+**Owner-approved:** EXP-01–EXP-09 conceptual direction, including retention of the governed stateless rendering Library, source-domain/Reporting-owned durable workflow, conditional tabular interfaces and permissively licensed replaceable engines. EXP-07 conformance research and EXP-08 implementation alignment remain incomplete. The approved GUI allocation is contextual production actions plus optional host-owned local test harness; the actual reference test template's `README.md`, `app/app.vue`, `app/pages/admin.vue`, `nuxt.config.ts`, and Theme Manager's current root `CONTRACT.md` were read. The latter explicitly documents an unresolved public-composition blocker; do not promise a tested Export host API.
+
+**Latest base review:** governing `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`; blueprint `master` **advanced** to `07596bff0f770e98526a485c652ebe5fbf6af3ea`. Comparison from the initial blueprint baseline now includes 4 merged commits (notably Events/Attendance and event_bus); several added notes affect `audit`, `authorisation`, `logging`, `privacy`, `reporting`, the shared catalogue and register. The Export review branch is **diverged (27 ahead, 4 behind)**; concurrent documents were deliberately not overwritten or deleted. New reciprocal append-only changes must be reconciled with the latest master preserving both approved lines of work before merge. A raw GitHub PR reading temporarily reported `mergeable: null`, `mergeable_state: unknown` while GitHub recalculated; no clean mergeability or CI passing assertion is made.
+
+**Further check needed before merge:** integrate latest base safely, verify exact changed paths, links, new merged notes and potential conflicts and run GitHub checks; perform final protected squash validation only after explicit merge approval. No tests, implementation edits or merge actions performed here.
