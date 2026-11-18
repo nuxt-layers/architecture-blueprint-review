@@ -262,3 +262,7 @@ Assessment does **not** own Course outcomes/completion rules; admission, individ
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Assessment owns result, moderation and assessment appeal source facts; Qualification owns formal award decision and evidence combination. Credentials may reference scoped result evidence only as prescribed by an authoritative claim-decision contract. Raw passes/grades never directly authorise recognised qualification issuance; an assessment correction must be evaluated by award owner and then propagated into issued credential status via explicit public interfaces.
+
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) owns supervised assessment session timing/venue and cancellation/amendment history when a scheduled activity is involved. Assessment owns instruments, candidate attempts, marking and results, and independently decides consequences of timetable disruption. Events does not validate answers or award marks; neither module reads private stores.
