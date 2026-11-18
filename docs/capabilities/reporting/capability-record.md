@@ -105,6 +105,54 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials publishes authorised tenant/issuer/time-scoped issued credential, expiry, suspension, revocation, replacement, issuance backlog and verification-outcome source facts via scoped reads plus committed status events, including source revision, effective/as-of times, coverage and staleness. Reporting owns report definitions, aggregations, snapshots, exports, delivery and refresh lifecycle; returns report reference/status, completeness, lineage and disclosure controls. Distinguish qualification awards (Qualification-owned) from issued credentials (Credentials-owned); do not double-count corrections/replacements or convert partial coverage into valid totals. Recheck saved-report disclosure and small-cohort privacy independently. Reporting outage must not block issuance; no private tables or claimed implemented adapter.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; implementation unverified):** [Events](../events/capability-record.md) supplies authorised versioned event/session read models, schedule and cancellation state and privacy-limited source change events. Reporting owns report definitions, aggregation and exports; any joined participation, reservation or learning metrics require respective Booking/Enrolment/Training authorities and disclosure checks. Event creation is not proof of attendance or bookings.
+
+## Events interface reciprocity — 18 November 2026
+
+**Events approval and attendance boundary (18 November 2026):** [Events](../events/capability-record.md) supplies versioned, authorised event/occurrence programme/status, change/cancellation timelines and event-specific restrictions; *if EVT-15 is approved*, purpose-limited attendee and observed attendance counts with confidence, coverage and redaction. Reporting owns definitions, aggregation, reports, delivery and freshness; it must not infer attendance from RSVP or Booking alone, leak a participant roster through small-group statistics, or modify Events facts. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
+
+## Reciprocal conceptual note — Export renderer boundary (18 November 2026)
+
+**Proposed Export review PR #68 (18 November 2026):** Reporting owns report-specific dataset/snapshot, job state, generated artefact reference, retention and authorised distribution; the governing Export Library only converts a caller-approved safe rich-text tree to PDF/DOCX-format bytes/stream and diagnostics. Reporting must retain source lineage, completeness, disclosure controls, recipient checks, revocation and recovery. Rendering completion is not report-delivery completion. See [Export conceptual contract](../export/capability-record.md). **EXP-01/09 open.**
+
+## Approved Export boundary — reconciliation (18 November 2026)
+
+**Owner-approved conceptual direction in [Export PR #68](https://github.com/nuxt-layers/architecture-blueprint-review/pull/68):** Export is a headless, stateless `rich-text` rendering **Library** providing format discovery, conversion, output bytes/stream, metadata and typed technical outcomes. Any preceding proposed Export-owned durable jobs, data extraction, saved artefacts, recipients, delivery or revocation language in this record is **superseded as an Export ownership assignment**. The initiating source domain or Reporting owns its authorised export workflow and job/file reference; Authorisation supplies permission decisions, Storage stores bytes, Audit retains risk-based evidence and Logging receives scrubbed technical diagnostics according to their boundaries. CSV/XLSX are conditional on a separately approved validated tabular contract. This is not a claim of implemented interoperation, not an approval to change accepted governing rules, and not a merge authorisation.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Reporting consumes authorised Federation participation, delivery, freshness, rejection and withdrawal read models/events, with source/peer scopes and incomplete/unknown counts. Reporting owns aggregates only and must never infer verified deliveries from attempts or mutate underlying exchange state. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
+
+## Reciprocal conceptual note — Help capability (18 November 2026)
+
+**Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
+
+Help may publish public-contract, permission-scoped coverage/freshness views: documented versus mapped contexts, outdated or broken topics, locale gaps and safe aggregate operations. Reporting owns report definition, execution, snapshots, derived measures, suppression and disclosure enforcement, not source mappings or documents. Raw queries, identified reading histories and small-cohort inferences are excluded by default; absence of Reporting never blocks Help.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) supplies authorised game instances, participants, provisional/final/corrected results and rankings with ruleset, competition scope, effective revision, coverage and privacy restrictions. Reporting may own cross-game aggregates and derivative reports but never edits official scores, standings or source records. On corrections, invalidate/recompute with replay-safe handling; protect small-cohort and child-identity inference.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
+## Reciprocal conceptual interface — IAM Integration (18 November 2026)
+
+**Status: Owner-approved conceptual direction in IAM Integration review PR #73; not a verified Reporting implementation contract.** IAM Integration can expose authorised tenant-scoped operation-stage, revocation/reconciliation, readiness and approval-processing summaries with per-member source status/provenance. Reporting consumes these via published authorised query/read-model interfaces and owns report definitions, aggregations and exports; each query, filter, snapshot and export must independently respect current IAM access and Privacy limits. Reporting never reowns identities, sessions, role changes or Profile data, and correlation/aggregate values cannot bypass small-cohort disclosure restrictions. See [IAM Integration idealised public contract](../iam_integration/capability-record.md). Do not add a direct package dependency on IAM Integration merely for these event/read-model relationships.
+
+
+## Identity reciprocal input/output — 18 November 2026
+
+**Status: recommended Identity reciprocal elaboration, 18 November 2026, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74); not a verified Reporting connector.** Identity offers authorised, minimal and revision/freshness-qualified principal, tenant, group, direct membership, invitation and digital governance status and lifecycle events. Reporting owns report templates, execution, derived aggregates, snapshots, lineage, distribution and scoped export; it may return execution/freshness/disclosure outcomes but cannot mutate Identity or become its directory. Ensure cross-tenant and small-cohort non-inference, reauthorisation of saved exports after revocation, and clear unknown/stale coverage. Reporting absence must not disable Identity's native directory. See [Identity extended review](../identity/capability-record.md#extended-review--published-interfaces-observability-standards-library-suitability-and-gui-18-november-2026).
+
 
 ## Infrastructure reciprocal reporting relationship — 18 November 2026 (owner-approved Infrastructure direction; Reporting review remains independent)
 

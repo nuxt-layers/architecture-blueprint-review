@@ -257,6 +257,16 @@ Configuration owns approved, scoped versioned scanner-profile preferences and pr
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-11 agreed:** Configuration resolves organisation-approved options for reviews, safeguarding, delivery, migration and retention with precedence; Legal Compliance and Privacy supply non-overridable restrictions. Course, Assessment and Credentials enforce their own rules. Accreditation and delegated awarding authority are externally evidenced facts, not configuration preferences. This note does not complete the separate configuration review.
 
+## Events interface reciprocity — 18 November 2026
+
+**Events EVT-03–08 approved conceptual scope (18 November 2026):** [Events](../events/capability-record.md) consumes effective/versioned event policies for disclosure, invite/RSVP handling, recurrence restrictions, provider selection, retention and approvals; applies own invariants under server authorisation. Configuration owns declaration/value/precedence and change history, not Event records or policy bypass. Attendee register/check-in specifics remain open as EVT-15. [Public contract](../../../reviews/events-contract-attendance-and-handover.md).
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Configuration supplies scoped, versioned enabled-role and operator preference values; Federation owns active peer/subscription/acknowledgement state. Configuration selections never authorise publication or grant remote access; source-owner visibility, Authorisation and law govern effective disclosure. Public directional ports, explicit absence modes and acyclic package dependencies apply.
+
 
 ## Infrastructure reciprocal interface — 18 November 2026
 

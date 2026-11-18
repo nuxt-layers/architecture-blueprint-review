@@ -53,3 +53,29 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Employment reciprocal conceptual interface — 17 November 2026
 
 **Status: Proposed in [Employment PR #59](https://github.com/nuxt-layers/architecture-blueprint-review/pull/59), not a completed Profile review.** Profile owns general personal/contact data and individual preference/rights interfaces. Employment owns employer-scoped engagement terms, assessments and confidential personnel evidence; it may consume purpose-approved Profile data by reference and return qualified, restricted data-subject access/correction/erasure dispositions without copying all personnel records into Profile. Employment records may require separately justified retention or legal holds. An employer's membership or administrative role does not grant access to all worker details. See [Employment record](../employment/capability-record.md).
+
+
+## Attendance ATT-09 — guest privacy and contact-data boundary (18 November 2026)
+
+**Owner-approved accountless-access requirement, proposed public-port alignment:** [Attendance](../attendance/capability-record.md#att-09--owner-approved-secure-accountless-participant-access-18-november-2026) has an activity participant reference, not an implicit full Profile or verified person. Profile remains personal-data authority **where a supported guest/subject contract exists**; otherwise the host must designate a separate purpose-limited, tenant-isolated contact-data authority, with no duplicate unrestricted Profile store. Attendance requests approved contact/delivery references, not arbitrary replicated personal details. Data-subject access, correction, erasure/restriction and legal hold coordinate with each source owner; guest-session expiry does not delete lawful attendance facts. **Owner-approved ATT-10 (18 November 2026)** keeps data access/retention histories source-owned, with Audit custody of minimised accountable evidence. No new Profile implementation capability is claimed.
+
+## Attendance ATT-11 — standards reference for guest personal information (18 November 2026)
+
+**Status:** Standards applicability note proposed in Attendance PR #79 (18 November 2026); ATT-09/ATT-10 are owner-approved, but ATT-11 standards mapping is not separately approved. References are design guidance unless an accepted governing rule or applicable law already makes a control mandatory. No implementation, certification or new dependency implied.
+
+**Apply:** [ISO/IEC 27701:2025](https://www.iso.org/standard/27701) and applicable [UK GDPR / ICO storage-limitation guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/a-guide-to-the-data-protection-principles/storage-limitation/) to minimal guest contact data, permitted purpose, visibility, subject rights, retention and secure removal. Profile supplies personal attributes only where its public subject contract permits; otherwise use a specifically designated purpose-limited contact-data owner. Attendance records must not silently become a second person master; Accountless participant access does not compel a permanent Profile. Historical records and data-rights decisions remain separately owned under ATT-10.
+
+## Gaming public handles — reciprocal conceptual note (18 November 2026)
+
+**Status: Owner requirement; detailed design proposed, no implemented API.** [Gaming](../gaming/capability-record.md#26-public-gaming-handle--new-owner-requirement-detailed-policy-proposed) will own a public, non-personally-identifying *pseudonymous gaming handle*, its visibility and the stable game-player reference used for Gaming scores. Profile retains ordinary personal information, privacy-sensitive attributes and its established rights/disclosure contract; Gaming must not expose Profile or Identity account identifiers in public leaderboards. A securely authorised private linkage and applicable privacy/rights workflows are required; public display names do not imply a verified real-world identity. Renames/withdrawal must propagate to derived projections. This does not complete the Profile review.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Profile remains authoritative for personal data, purpose-specific disclosure and personal-data request/erasure lifecycle. IAM Integration supplies verified Identity references and rights-request coordination over public owner parts; it consumes qualified export, correction, disclosure, anonymisation and legal-hold dispositions without duplicating personal data or claiming all source records erased. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).
+
+
+## Identity reciprocal conceptual interface — 18 November 2026
+
+**Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; no new published API.** Identity provides stable opaque local principal references and purpose-scoped standing/closure notifications; Profile retains all person/contact/display data and user rights in its own lifecycle. Identity directory queries must not copy Profile attributes, and Profile visibility must independently enforce context/disclosure constraints. Unknown identifier or unqualified cross-tenant request is not permission to disclose. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-outbound-interfaces).
