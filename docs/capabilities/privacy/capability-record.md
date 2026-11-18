@@ -91,3 +91,8 @@ Content Security's inspection of user-provided content must use a justified purp
 ## COURSE-12 — Qualification reciprocal note (18 November 2026)
 
 **Status: Owner-approved conceptual boundary, not an implemented public contract or a completed privacy review.** [Qualification](../qualification/capability-record.md): Qualification owns minimised applicant award cases and evidence references, not raw Course/Assessment/Training learner data. Privacy supplies lawful collection, disclosure, rights, retention and safeguarding policy; Qualification enforces relevant restrictions and keeps only lawfully necessary history for award provenance.
+
+
+## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
+
+**Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Privacy supplies policy for lawful basis, purpose, consent where required, minimised verifier disclosure, retention and rights; Credentials enforces policy for holder/issuer/verifier access and records status/proof disclosure without creating a public learner registry. Historical evidence and removal requests must be reconciled with statutory holds; minors and verifier correlation require explicit assessment.
