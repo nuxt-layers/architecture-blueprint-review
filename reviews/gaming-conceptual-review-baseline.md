@@ -24,3 +24,7 @@ Exact separation between game definitions and game runtime; competitive rankings
 **Concurrent reviews:** Events review PR #67 is open and may alter the same `docs/capabilities/events/capability-record.md`. Federation PR #69, Gallery PR #70, Export PR #68 and event-bus PR #66 also coexist; no unmerged proposal is treated as accepted authority. The reciprocal Events note is intentionally bounded; preserve both lines of work on later reconciliation. Shared catalogue/register edits may also intersect other open reviews. Re-fetch current master/PR changes and perform an actual mergeability/CI review after owner decisions and again immediately before any approved squash merge.
 
 **Document integrity:** The target directory uses `gaming` exactly. Existing pro-forma sections are retained and populated, plus source/consumer link references. No deliberate deletions of another capability's content. These checks are review evidence only; link validation, CI and protected branch checks remain unverified.
+
+## Approved decisions and reconciliation (18 November 2026)
+
+Owner approved all Section 2 requirements including runtime-loaded isolated game plugins and public pseudonymous handles, and explicitly authorised squash merge following technical/architectural reconciliation. Latest governing `master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2`, latest blueprint `master` `4adac0379d4df132c034688a35e5fbbd81548d46`. Preserve concurrent accepted content in reciprocal records. No implementation changes or local tests.

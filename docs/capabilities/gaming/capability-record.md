@@ -206,6 +206,12 @@ Accessibility: all portal screens keyboard/assistive-technology accessible; each
 
 **Approval discipline:** Do not interpret acceptance of unrelated Section 2 issues as approval to deploy remotely executable plugins, relaxation of validation, or acceptance of one specific handle uniqueness/rename policy. Owner decisions on these detailed approaches remain open; existing draft PR is not cleared for merge.
 
+## Final owner approvals — 18 November 2026
+
+**Owner-approved Section 2:** 2.1 ownership separation; 2.2 game registration; 2.3 runtime-loaded sandboxed plugin games with versioned messaging/trust/revocation/rollback; 2.4 score integrity; 2.5 per-game ranking; 2.6 user-created pseudonymous public gaming handles with stable private linkage and suitable privacy/rename/child safeguards; 2.7 security/fairness; 2.8 accessibility/performance; 2.9 lifecycle/historical scores; 2.10 permissively licensed, non-lock-in software.
+
+**GAM-01–08:** Owner-approved conceptual direction as refined by the plugin and handle sections, superseding earlier open/proposed statuses for those directions. Gaming is a shared Platform candidate with optional Presentation; individual games own gameplay and original scores; Gaming owns registration, accepted-score publication and per-game leaderboards. GAM-09–10 remain implementation investigations; conceptual approval does not confer operational readiness or adopted governing catalogue status. The owner also explicitly approved squash merging after reconciliation and required checks.
+
 ## Deferred work and sign-off
 
 **Detailed conceptual design awaiting owner sign-off.** This working document does not certify code, legal compliance or tested interfaces. A later actual Gaming `CONTRACT.md` must be independently usable under ADR-0012 and align with accepted game interfaces. Recheck live governance and blueprint master, overlapping PRs, PR mergeability and checks before any explicitly authorised squash merge.

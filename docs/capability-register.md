@@ -220,6 +220,24 @@ The empty `docs/capabilities/translate/` directory has been removed in the worki
 
 [Conceptual ownership note](../proposals/time-attendance-ownership.md) · [Capability pro-forma](capabilities/time-attendance/capability-record.md). No implementation/package/operational status is asserted. A dedicated future review must establish independently usable input/output contracts, privacy controls, GUI and package classification before creating a new implementation repository.
 
+## Events — owner-approved conceptual boundary (18 November 2026)
+
+| `events` | **Domain candidate** | **Conceptual EVT-01–10 and EVT-12–15 owner-approved**; [record](capabilities/events/capability-record.md), [PR #67](https://github.com/nuxt-layers/architecture-blueprint-review/pull/67). No verified implementation `CONTRACT.md`, CI, deployment or screens | Independent events, optional series/occurrences/programmes, schedule, restrictions, publication and lifecycle; does **not** own reservation ledger or attendance/people list |
+
+**EVT-11 excluded.** Event attendee/RSVP/presence functions move under approved EVT-15 to separately reviewed [Attendance candidate PR #79](https://github.com/nuxt-layers/architecture-blueprint-review/pull/79), **not** an implied current implemented dependency. The independent owner-approved `time-attendance` boundary remains unchanged; Training/Booking/Enrolment own their existing specialist decisions. [Decisions](../reviews/events-refined-boundary-and-decisions.md) · [public contract and handovers](../reviews/events-contract-attendance-and-handover.md). `event_bus` is consolidated into Message Queue on master.
+
+## Attendance generic participant and presence candidate — 18 November 2026
+
+**New candidate `attendance`:** [conceptual record](capabilities/attendance/capability-record.md) — generic activity-scoped participant register, invitations/RSVP, check-in/out observations and validated attendance with corrections, provenance and owner outbox. Works without mandatory Events, Booking, Enrolment or Training. Explicitly **not** a universal Identity/Profile person master, admission authority or Booking capacity ledger. Previously owner-approved Booking/Enrolment/Training boundaries remain unchanged pending any later explicit transfer. Proposed one-roster/reference interfaces and pros/cons documented in the record; detailed ATT-01–08 not yet independently approved. Events EVT-15 is **owner-approved and merged in PR #67**; Attendance's detailed ATT-01–08 remain independently proposed. No runtime package or published `CONTRACT.md` asserted.
+
+## Export evidence and boundary clarification (18 November 2026; draft PR #68)
+
+The catalogue's `export` **Established** entry means the architectural library vocabulary/classification is established, **not** that a deployable API or runtime is verified. The `nuxt-layers/export` repository exists at `c75367e66c2d228a4d98193e7307335e6682a678` and contains only `.gitignore`, `LICENSE`, `README.md` (`# export`) on that baseline; no root `CONTRACT.md` or independent acceptance is available. The [Export conceptual review](capabilities/export/capability-record.md) proposes a stateless renderer boundary and flags durable bulk-export orchestration ownership as **open** (EXP-01/09). These proposals do not modify the governing catalogue or claim implemented functions.
+
+## Export owner decision update (18 November 2026; draft PR #68)
+
+The project owner approved the strict renderer Library boundary and commercially permissive, self-hostable, replaceable engines, while preserving optional-format and technical validation gates. EXP-01/09 are resolved conceptually; EXP-07 investigation and EXP-08 implementation alignment are still incomplete. No current root `CONTRACT.md`, delivered API, tested PDF/A/UA compliance, or independent consumer evidence is asserted. [Export record](capabilities/export/capability-record.md).
+
 ## Gaming — conceptual review evidence (18 November 2026; draft PR #71)
 
 | Field | Recorded evidence |
