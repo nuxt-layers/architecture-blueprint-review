@@ -52,3 +52,7 @@ Coordinate high-risk approvals, succession/recovery, policy activation, paid onb
 ## Course COURSE-08–11 approved conceptual reciprocity (17 November 2026)
 
 **Status: Owner-agreed boundaries, no independently completed workflow review or implemented API.** [Course](../course/capability-record.md) and [Assessment candidate](../assessment/capability-record.md): **COURSE-11 agreed:** Workflow coordinates configured course review, sign-off, migration and qualification review *processes*, not Course publication state or awards. Course validates approval evidence and commits its own publication transition after Authorisation and required legal/content-safety gates. The approval workflow cannot create external award authority.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed workflow review.** [Qualification](../qualification/capability-record.md): Workflow coordinates qualification scheme reviews, delegations, individual award-case approvals, appeals and teach-out steps, but Qualification owns authoritative outcome/award state after validating current rules, issuer powers and permissions. A completed approval task neither issues a credential nor creates external award authority.
