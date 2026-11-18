@@ -528,3 +528,7 @@ Comments Engine is authoritative for comment creation/edit/deletion, visibility,
 ## Course / Assessment / Credentials reciprocal note (17 November 2026)
 
 **Status: Course boundaries owner-agreed, Credentials and Assessment detailed designs provisional.** [Course](../course/capability-record.md), [Assessment](../assessment/capability-record.md), [Credentials](../credentials/capability-record.md): **COURSE-10/11 agreed:** capture source-provenanced recognition, issuer/delegate checks, credential issue/correction/revocation, course approval/withdrawal, assessment moderation and curriculum migration with effective and verified-as-of status. Audit owns accepted evidence, not the underlying qualification award. Retention and sensitive learner disclosure are policy-bound. This note does not complete the separate audit review.
+
+## COURSE-12 — Qualification reciprocal note (18 November 2026)
+
+**Status: Owner-approved conceptual boundary, not an implemented public contract or a completed audit review.** [Qualification](../qualification/capability-record.md): Qualification supplies minimised, committed provenance-rich evidence for scheme versions, recognition/delegation checks, award adjudication, appeal, correction, withdrawal/reinstatement and teach-out. Audit owns evidential acceptance and custody, not qualification or awarding authority; retention/disclosure must respect privacy and legal holds.
