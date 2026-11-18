@@ -85,3 +85,7 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Cross-capability review note — Enrolment (owner-accepted conceptual)
 
 **Enrolment reciprocal interface (owner-accepted; 18 November 2026; [Enrolment review PR #60](https://github.com/nuxt-layers/architecture-blueprint-review/pull/60)).** Identity supplies stable learner/guardian/representative identity references and independently verified authority where supported; Enrolment owns educational admission state, not Identity group membership, tenant hierarchy, guardian relationship or permission. Host-composed scoped authorised lookups must avoid student-data duplication or implied cross-tenant access. Guardian proof and eligibility remain conditional, provenance-bearing. This note is non-normative and cannot claim new Identity published APIs.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) consumes Identity-owned principal, tenant/group and membership references through authorised public contracts; Gaming owns only game-specific participant entries and result state. Identity's tenant/group hierarchy is not a gaming bracket, and parent tenants gain no automatic visibility or administrative access to child games (ADR-0017). Game registration must not create or rewrite an Identity membership.
