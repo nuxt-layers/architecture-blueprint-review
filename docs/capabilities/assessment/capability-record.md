@@ -262,3 +262,7 @@ Assessment does **not** own Course outcomes/completion rules; admission, individ
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 retained.** Assessment owns result, moderation and assessment appeal source facts; Qualification owns formal award decision and evidence combination. Credentials may reference scoped result evidence only as prescribed by an authoritative claim-decision contract. Raw passes/grades never directly authorise recognised qualification issuance; an assessment correction must be evaluated by award owner and then propagated into issued credential status via explicit public interfaces.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) can supply signed/provenance-rich ruleset, attempt, result and adjudication evidence to an authorised Assessment consumer. Assessment alone decides educational assessment instruments, marks, appeals and achievement in its scope; game points, ranks or a tournament win do not automatically equal academic credit. Consumer rechecks learner/context consent and accepted result revision. This is reciprocal conceptual design only.
