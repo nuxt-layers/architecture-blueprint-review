@@ -141,3 +141,9 @@ Verification owns this qualified evidence/issuer trust determination, not Assess
 ## Credentials CRED-17/CRED-18 reciprocal policy and standards note (18 November 2026)
 
 **Status: CRED-17 technical profile recommendations, 18 November 2026, PR #62; not an implemented API or universal standard mandate.** Credentials proposes W3C VC 2.0 portable model, selected JOSE/COSE or Data Integrity security profile, OpenID4VCI/VP 1.0 when wallet-supported, status list 1.0 where appropriate and qualified offline checks. Verification assesses independently presented proofs, issuer/trust roots, scope and revocation/status freshness through published Credential proof/status ports; do not create bidirectional package imports or treat a valid signature as sufficient authorisation or current award. Country/sector trust is independently assessed at the relying party. See [CRED-17 review](../../../reviews/credentials-standards-jurisdiction-resolution.md).
+
+## Federation — reciprocal conceptual contract (18 November 2026)
+
+**Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
+
+Federation transports provenance, issuer/endpoint proof references, scope, audience, validity times, proof status and revocation observations; Verification evaluates specific trust evidence/credential claims where its public contract applies. Federation's local acceptance is not independent certification of organisation identity, age, issuer standing or content truth. Trust is never transitive between Hubs or Node peers. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
