@@ -33,6 +33,13 @@
 
 **Status: Proposed, non-normative, pending [Configuration PR #53](https://github.com/nuxt-layers/architecture-blueprint-review/pull/53).** [Configuration conceptual contract](../configuration/capability-record.md#idealised-public-inbound-interfaces). Configuration owns committed change events and its durable outbox; Message Queue owns transport/retry/replay. Consumers may receive duplicates and must query authorised current values rather than treating events as access grants. Public host-composed ports/events only; no direct package dependency or replacement of existing decisions is implied.
 
+## Reciprocal note — Events conceptual review (18 November 2026)
+
+**Events review reciprocal (18 November 2026; EVT-01–10/12–15 owner-approved; event_bus consolidated into Message Queue in master):** [Events](../events/capability-record.md) is the Domain source for calendar/programme activities and owns committed event/session state and its outbox. Message Queue transports Events' minimally scoped committed-change messages; may expose retries/acks/backlog, not schedule/attendance/booking authority. Consumer deduplication and staleness reconciliation required. Avoid treating scheduled activities as transport messages or adding a cyclic direct import.
+
+## Revised Events boundary and decision gates — 18 November 2026
+
+**18 November Events generic-domain boundary — owner-approved, post-event_bus consolidation:** [Events boundary and decisions](../../../reviews/events-refined-boundary-and-decisions.md) identifies `events` as organised activities and scheduled occurrences; `message_queue` carries committed source-owned domain-change messages, with replay/dedup/transport status, not the activity lifecycle or participant commitments. The separate `event_bus` record was removed from master and must not be reintroduced by PR #67. Events retains its authoritative outbox and no implicit transport dependency.
 
 ## Reciprocal classification note — Event Bus consolidation (18 November 2026)
 
