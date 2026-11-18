@@ -28,3 +28,16 @@
 - **Acceptance:** Conceptual scenario set covers legitimate issue, invalid source, isolation, replay, source correction, delivery failure, offline proof freshness, key compromise, status invalidation and headless GUI equivalence. No executable acceptance evidence claimed.
 
 **Assessment:** Suitable for owner review as a **draft conceptual proposal**, not ready for merge until substantive open decisions and concurrent PR interfaces are reconciled, then final latest-master technical and architectural check, branch protection/CI and explicit approval.
+
+
+## Follow-up CRED-17/CRED-18 consistency checkpoint (18 November 2026)
+
+**Latest read-only baseline:** governing `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017/0018 status reconciliation now accepted); blueprint `architecture-blueprint-review/master` `85db338a5bcc829a2bb236a83b43ed2292c66626`. Different from opening. On comparison before this note: branch ahead 21/behind 3, diverged; subsequent documentation commits do not constitute a Git merge or complete reconciliation.
+
+**Conceptual review:** CRED-17 profiles evaluated against current authoritative W3C, OpenID, 1EdTech, UK and EU materials in [CRED-17/18 resolution](credentials-standards-jurisdiction-resolution.md). W3C VC 2.0 remains adopted as recommended *portable* baseline, W3C VC 2.1/status-list 1.1 drafts not automatically elevated. CRED-17A–H remain engineering decisions needing owner selection or approved technical evidence; no certification assertion. CRED-18 policy framework is complete at conceptual boundary, and its closure is recommended: legal/policy owners supply dated jurisdiction and scheme decisions, while deployment-specific legal reviews remain enforceable prerequisites. No global retention rule or universal legality claim.
+
+**Parallel work:** #63 Training, #64 Assessment and #65 Qualification have now contributed to current master and its Credentials reciprocal record. Their three newly present dated reciprocal notes were copied additively into the PR #62 Credentials record, retaining prior accepted and proposed statuses; no conflict was silently suppressed. New master revisions still affect additional shared reciprocal files, so a full branch integration/compare is required before merge. Active #60 Enrolment and #57 Department remain separate and provisional.
+
+**Technical/dependency challenge:** Credentials/Verification remain distinct for primary issued registry vs third-party presentation trust; Qualification retains award authority; status lists are projections of Credentials' own committed state; Legal Compliance and Privacy provide applicable policy with qualified unknown and effective version. Logging technical, Audit evidential and Reporting analytic contracts remain separate. No new policy or crypto capability required. No implementation files or local tests changed/run.
+
+**Pre-merge status:** Not ready: branch still behind and diverged, must reconcile every modified reciprocal record, recheck accepted ADRs, protected master, GitHub mergeability and CI against latest master, then obtain explicit owner approval for merge. This checkpoint provides a design review, not a check pass.
