@@ -603,3 +603,9 @@ Federation emits scoped security and governance evidence for peer verification, 
 **Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
 
 Conditional Help-owned mapping create/update/withdrawal actions and sensitive privileged administration produce classified, provenance-rich audit submissions with scoped identity, source event/operation ID, mapping revision, actor/tenant, outcome and correlation. Audit alone owns acceptance, custody, integrity and review receipts. Publisher retains its own publication events; a mere Help lookup is not normally audit-worthy. If Help is presentation-only, host and other source owners audit their own actions.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Audit independently owns accountable evidence custody/completeness, not IAM source state. IAM Integration proposes minimised correlated stage receipts for provisioning, recovery, suspension, revocation, privileged access and data-subject coordination; the suite distinguishes requested/accepted/applied/unknown from Audit custody acknowledgements. No synchronous circular package dependency or substitution of event delivery for audit acceptance. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).

@@ -153,3 +153,9 @@ Federation supplies sanitised technical diagnostics for protocol negotiation, de
 **Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
 
 Help sends redacted diagnostic codes, mapping/Publisher failures, latency and permitted correlation IDs through Logging's public intake. Logging owns sinks and diagnostic retention, not help mappings or authoritative Audit evidence. Avoid raw searches, page bodies, secret context, full URLs and unnecessary subject identifiers. Logging outages must not make an otherwise valid Help lookup fail.
+
+
+
+## Reciprocal conceptual interface — IAM Integration (18 November 2026)
+
+**Status: Owner-approved conceptual direction in IAM Integration review PR #73; not a verified Logging implementation contract.** IAM Integration supplies minimised, structured diagnostics for suite composition failures, member port outages, retry/reconciliation stages, unavailable access decisions and correlation identifiers. Logging receives these only through its published input port and owns diagnostic sink, access, retention and search; it may return diagnostic references or controlled delivery status. Authentication tokens, credentials and private Profile data are excluded. Logging must not be represented as Audit custody or as the original IAM decision. See [IAM Integration idealised public contract](../iam_integration/capability-record.md). Do not add a direct package dependency on IAM Integration merely for these event/read-model relationships.

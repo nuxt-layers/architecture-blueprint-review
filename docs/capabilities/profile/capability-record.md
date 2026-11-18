@@ -68,3 +68,9 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Gaming public handles — reciprocal conceptual note (18 November 2026)
 
 **Status: Owner requirement; detailed design proposed, no implemented API.** [Gaming](../gaming/capability-record.md#26-public-gaming-handle--new-owner-requirement-detailed-policy-proposed) will own a public, non-personally-identifying *pseudonymous gaming handle*, its visibility and the stable game-player reference used for Gaming scores. Profile retains ordinary personal information, privacy-sensitive attributes and its established rights/disclosure contract; Gaming must not expose Profile or Identity account identifiers in public leaderboards. A securely authorised private linkage and applicable privacy/rights workflows are required; public display names do not imply a verified real-world identity. Renames/withdrawal must propagate to derived projections. This does not complete the Profile review.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Profile remains authoritative for personal data, purpose-specific disclosure and personal-data request/erasure lifecycle. IAM Integration supplies verified Identity references and rights-request coordination over public owner parts; it consumes qualified export, correction, disclosure, anonymisation and legal-hold dispositions without duplicating personal data or claiming all source records erased. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).

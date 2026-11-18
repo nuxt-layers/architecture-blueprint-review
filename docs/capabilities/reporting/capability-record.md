@@ -141,3 +141,9 @@ Help may publish public-contract, permission-scoped coverage/freshness views: do
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
+## Reciprocal conceptual interface — IAM Integration (18 November 2026)
+
+**Status: Owner-approved conceptual direction in IAM Integration review PR #73; not a verified Reporting implementation contract.** IAM Integration can expose authorised tenant-scoped operation-stage, revocation/reconciliation, readiness and approval-processing summaries with per-member source status/provenance. Reporting consumes these via published authorised query/read-model interfaces and owns report definitions, aggregations and exports; each query, filter, snapshot and export must independently respect current IAM access and Privacy limits. Reporting never reowns identities, sessions, role changes or Profile data, and correlation/aggregate values cannot bypass small-cohort disclosure restrictions. See [IAM Integration idealised public contract](../iam_integration/capability-record.md). Do not add a direct package dependency on IAM Integration merely for these event/read-model relationships.

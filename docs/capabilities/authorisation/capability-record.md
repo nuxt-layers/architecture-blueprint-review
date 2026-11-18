@@ -463,3 +463,9 @@ Federation needs server-side resource- and tenant-scoped decisions for peer admi
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Authorisation remains authoritative for permission definitions, roles/grants, approvals and resource-aware access decisions. IAM Integration supplies verified Authentication caller and Identity directory/governance ports, and consumes decisions, approval qualifications, role-change outcomes and revocation status; never equates membership with permission or silently relaxes assurance. Strong/bounded consistency and recovery from outbox lag need verified integration acceptance. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).

@@ -110,3 +110,9 @@ Federation may refer to Identity-owned local tenant, group, principal or service
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+
+## Reciprocal conceptual note — IAM Integration (18 November 2026)
+
+**Status: Proposed under [IAM Integration draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73); not a new published implementation contract or owner approval.** Identity remains authoritative for opaque identifiers, group/tenant/membership lifecycle, owner governance, pending changes and source outbox. IAM Integration consumes only its public directory, lifecycle, governance and outbox surfaces; it supplies verified Authentication-subject and Authorisation-decision adapters, status/reconciliation and coordinated calls. Revocation and tenant restriction must remain safe under delivery delay; this note does not introduce an Identity dependency on the integration package. See [IAM Integration conceptual public contract](../iam_integration/capability-record.md).

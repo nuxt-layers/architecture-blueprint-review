@@ -256,3 +256,9 @@ The project owner approved the strict renderer Library boundary and commercially
 This evidence supplement does **not** promote the existing candidate to Established, installed, operational, compliant or authorised status.
 
 **Gaming correction — 18 November 2026 (draft PR #71):** The earlier entry in this register describing Gaming as a broad Domain game-engine/official-result authority is superseded. Current owner-described intention: portal for independently composed game layers with catalogue, launch routes and common score acceptance/leaderboards. **Proposed classification:** Platform with optional Presentation; each game owns its gameplay/rules/original scores. Detailed GAM-02–08 require approval, no implementation or root contract verified. See [Gaming record](capabilities/gaming/capability-record.md).
+
+
+
+## IAM Integration conceptual review alignment — 18 November 2026
+
+**Status: Proposed, non-normative; [draft PR #73](https://github.com/nuxt-layers/architecture-blueprint-review/pull/73), awaiting owner decisions.** The existing established `iam-integration` Foundation (IAM) entry remains a no-domain-data suite composition component under accepted ADR-0005/ADR-0012. The conceptual [IAM Integration record](capabilities/iam_integration/capability-record.md) proposes one-call public caller/decision/tasks composition, public member adapters, coordinated operation receipts, revocation safety, headless services and optional operator presentation. No implementation or operational status is asserted. Durable checkpoint ownership, measured revocation bound and suite GUI packaging remain open; the legacy published target `CONTRACT.md` requires alignment. Preserve independent Identity, Authentication, Authorisation and Profile authority.
