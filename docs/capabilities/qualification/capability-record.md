@@ -113,6 +113,11 @@ Possible jurisdiction/scheme selection, issuer/centre roles and approval routing
 
 **Sign-off:** Creation and ownership direction approved as COURSE-12; **the independent Qualification capability review, detailed public contract and implementation acceptance remain pending**. No implementation repository change or local tests are authorised.
 
+## Reciprocal Assessment conceptual interface — 18 November 2026 (draft PR #64)
+
+**Status: Proposed, not an independently approved qualification contract.** [Assessment conceptual review](../assessment/capability-record.md): Assessment supplies source-owned attempt/result evidence and subsequent revisions, voids and appeals; Qualification alone adjudicates qualification eligibility, formal awards, their authority and qualification-level appeals. Assessment-grade correction is a review trigger rather than automatic award issue, withdrawal or credential revocation. Conceptual cooperation does not require cyclic package imports; all protected reads and commands require public contracts, purpose/tenant permission and explicit unknown/failure handling. Preserve the qualification owner's existing decisions.
+
+
 ## Independent conceptual review — Qualification (18 November 2026)
 
 **Status:** Proposed conceptual specification for owner review, grounded in owner-agreed COURSE-12; not an implemented API, accepted contract or verification of external awarding powers. Opening governing SHA `2b5c0628e88b9698c9ad6ad57cc5315c8f879953`, blueprint SHA `ac1125a7ba4ea15d6b963aebf07d83cd8cd701b9`. [Review baseline](../../../reviews/qualification-review-baseline.md). Related draft PRs #60, #62, #63 and #64 are provisional.

@@ -32,6 +32,11 @@
 
 **Status: Owner-approved conceptual responsibility; detailed Qualification review and implementation pending.** [Qualification candidate](../qualification/capability-record.md): **COURSE-12 owner-approved:** Training owns participation, verified competencies and programme completion, with source-effective versions and evidence. Qualification consumes those facts (alongside Assessment, other courses and prior learning) to determine authorised qualification awards; Training completion is not by itself an external qualification. A Qualification award may occur without a course or Training involvement. No change to previously approved training ownership.
 
+## Reciprocal Assessment conceptual interface — 18 November 2026 (draft PR #64)
+
+**Status: Proposed, not an independently approved training contract.** [Assessment conceptual review](../assessment/capability-record.md): Assessment supplies attributable result revisions, finality/release status and assessment-level appeal, correction and invalidation notifications. Training independently owns verified competence and completion; it must re-evaluate downstream claims on material assessment changes without modifying Assessment grades. A grade alone is not completed training. Parallel Training PR #63 is provisional and requires reconciliation. Conceptual cooperation does not require cyclic package imports; all protected reads and commands require public contracts, purpose/tenant permission and explicit unknown/failure handling. Preserve the training owner's existing decisions.
+
+
 ## Qualification independent conceptual review — reciprocal interface (18 November 2026)
 
 **Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Training owns actual participation, verified achieved competencies and programme completion. Qualification maps source-attributed Training evidence to a qualification rule revision and makes separate eligibility/formal award decisions only where empowered. Completion is not a qualification; direct assessment or prior learning can qualify without Training where scheme permits. Training may display authoritative Qualification award status but cannot mutate it. This note does not complete this adjacent capability's independent review or assert an implemented contract.

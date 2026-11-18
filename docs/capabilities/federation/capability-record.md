@@ -159,3 +159,7 @@ A Hub/Node may request authorised technical assessment of externally supplied ma
 ## Reciprocal conceptual note — Course (17 November 2026)
 
 **Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course may expose authorised, attributed, versioned catalogue descriptors and withdrawal facts for optional federation. Federation owns transport, peer subscriptions and reconciliation, not curriculum source authority or enrolment; remote copies can be stale and must respect disclosure. This does not complete federation's own review.
+
+## Assessment cross-institution evidence transfer — 18 November 2026
+
+**Status: Assessment ASMT-14 owner-approved conceptual relationship; Federation contract detail provisional.** [Assessment](../assessment/capability-record.md): Federation may coordinate authenticated, permissioned, purpose-restricted record exchange between installations, preserving origin, source revision, disclosure rights and withdrawal/recheck. Federation transports and validates peer exchange; it neither confers trust in an examination issuer nor determines assessment admissibility. Verification evaluates source/issuer proof and scoped trust; receiving Assessment decides evidence acceptance, Training/Qualification decide dependent outcomes. Hub or peer trust is not transitive, and no blanket transfer of scripts, learner identities or accommodations is permitted.

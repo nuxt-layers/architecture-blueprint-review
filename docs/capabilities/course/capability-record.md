@@ -233,6 +233,11 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 
 **Approval scope:** Approves architectural ownership and a candidate pro-forma, **not** complete Qualification conceptual sign-off, API/package, independent repository, implementation or regulatory compliance. All shared contracts remain conceptual pending dedicated review. This resolves the earlier qualification-domain deferral; COURSE-10's authority provenance and credential separation continue to apply.
 
+## Reciprocal Assessment conceptual interface — 18 November 2026 (draft PR #64)
+
+**Status: Proposed, not an independently approved course contract.** [Assessment conceptual review](../assessment/capability-record.md): Course supplies immutable course requirements and outcomes, including required assessment conditions; Assessment owns reusable assessment definitions, rubric versions and individual attempts/grades. Course must never interpret a raw mark as course completion and must preserve revision matching. An unavailable Course revision blocks claims of course alignment, but not an independently authorised standalone assessment. Conceptual cooperation does not require cyclic package imports; all protected reads and commands require public contracts, purpose/tenant permission and explicit unknown/failure handling. Preserve the course owner's existing decisions.
+
+
 ## Qualification independent conceptual review — reciprocal interface (18 November 2026)
 
 **Status: proposed detailed contract under [Qualification review](../qualification/capability-record.md), PR #65; COURSE-12 ownership remains owner-agreed.** Course retains curriculum and immutable learning-outcome/course-revision authority; Qualification independently owns qualification scheme requirements, approved course-to-credit equivalence and cross-pathway award eligibility. Course's catalogue/accreditation reference is not external recognition or an individual award. Qualification may reference a frozen Course revision without importing its internals; Course need not depend on Qualification for native teaching definitions. Source mismatch/retired revisions remain explicit and historic records intact. This note does not complete this adjacent capability's independent review or assert an implemented contract.
