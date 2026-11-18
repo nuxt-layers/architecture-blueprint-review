@@ -380,3 +380,13 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Reciprocal interface — Inventory conceptual review (18 November 2026)
 
 **Owner-approved Inventory conceptual reciprocity (18 November 2026; PR #77):** Booking may request quantity-backed stock holds/releases with booking reference and expiry policy; Inventory alone confirms reservation quantities, scarcity and consumption. Booking retains time/resource booking lifecycle. Compounded confirmation failures remain explicitly pending with compensation and idempotency; no duplicate stock counter is permitted. This note preserves Booking's previously approved scope. See [Inventory's proposed public contract](../inventory/capability-record.md#dedicated-inventory-conceptual-review--18-november-2026). This approves Inventory's conceptual interface only, not a neighbouring capability's unreviewed functionality or an implemented API.
+
+
+## Inventory reassessment reciprocal proposal — 18 November 2026 (PR #81)
+
+**Status: proposed, not approved or implemented.** Booking retains its approved authority for time/resource capacity, reservation party, cancellation and entitlement. The **proposed** Inventory contract alone arbitrates reservations of physical stock units (including consumables) and returns expiry, committed/unknown/refused and compensation status. A booking with multiple commitments remains pending until Inventory and other owners confirm; no stock counter inferred from attendance or seat allocations. See the [Inventory reassessment contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md) and [Inventory record](../inventory/capability-record.md#renewed-conceptual-design-challenge--18-november-2026-draft-pr-81). This note preserves earlier approvals in this capability and does not complete its independent review.
+
+
+### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
+
+**Approved Inventory-side conceptual requirement:** A Booking or resource reservation that requires physical consumables or finished items must receive Inventory's own atomic stock commitments. Physical material in WIP, external coating or under quality hold is not automatically usable; Booking owns time/resource capacity only. Scanner location evidence cannot commit stock on behalf of Booking. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
