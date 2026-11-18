@@ -104,3 +104,9 @@ Reporting may consume authorised minimised aggregates of Content Security scan c
 ## Reciprocal conceptual contract — Credentials (18 November 2026)
 
 **Status: CRED-01–16 owner-approved conceptual boundary; CRED-17 framework selection pending (18 November 2026, PR #62).** Credentials publishes authorised tenant/issuer/time-scoped issued credential, expiry, suspension, revocation, replacement, issuance backlog and verification-outcome source facts via scoped reads plus committed status events, including source revision, effective/as-of times, coverage and staleness. Reporting owns report definitions, aggregations, snapshots, exports, delivery and refresh lifecycle; returns report reference/status, completeness, lineage and disclosure controls. Distinguish qualification awards (Qualification-owned) from issued credentials (Credentials-owned); do not double-count corrections/replacements or convert partial coverage into valid totals. Recheck saved-report disclosure and small-cohort privacy independently. Reporting outage must not block issuance; no private tables or claimed implemented adapter.
+
+## Federation — reciprocal conceptual note (18 November 2026)
+
+**Status:** Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69), not a published implementation contract or completed independent review. See [Federation conceptual contract](../federation/capability-record.md).
+
+Reporting consumes authorised Federation participation, delivery, freshness, rejection and withdrawal read models/events, with source/peer scopes and incomplete/unknown counts. Reporting owns aggregates only and must never infer verified deliveries from attempts or mutate underlying exchange state. Public directional ports, explicit absence modes and acyclic package dependencies apply.
