@@ -102,3 +102,11 @@ Existing independently approved decisions are preserved; this note resolves Conf
 **Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
 
 Federation may refer to Identity-owned local tenant, group, principal or service identity references for peer administration, but remote network identities are evidence and do not create Identity principals, group memberships or cross-tenant rights. Trust/endpoint status belongs to Federation; request-time permissions belong to Authorisation. Cross-node identity mapping requires separately governed proof and consent. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) consumes Identity-owned principal, tenant/group and membership references through authorised public contracts; Gaming owns only game-specific participant entries and result state. Identity's tenant/group hierarchy is not a gaming bracket, and parent tenants gain no automatic visibility or administrative access to child games (ADR-0017). Game registration must not create or rewrite an Identity membership.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.

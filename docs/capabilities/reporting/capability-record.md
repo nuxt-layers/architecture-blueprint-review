@@ -133,3 +133,11 @@ Reporting consumes authorised Federation participation, delivery, freshness, rej
 **Status:** HELP-01–04 owner-approved conceptual direction; this specific intake/GUI elaboration is proposed in [Help PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72), not an implemented adapter or replacement for this capability's future full review. [Help public contract](../help/capability-record.md#approved-direction-elaboration--published-contracts-standards-libraries-and-gui-18-november-2026).
 
 Help may publish public-contract, permission-scoped coverage/freshness views: documented versus mapped contexts, outdated or broken topics, locale gaps and safe aggregate operations. Reporting owns report definition, execution, snapshots, derived measures, suppression and disclosure enforcement, not source mappings or documents. Raw queries, identified reading histories and small-cohort inferences are excluded by default; absence of Reporting never blocks Help.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed, not owner-approved):** [Gaming](../gaming/capability-record.md) supplies authorised game instances, participants, provisional/final/corrected results and rankings with ruleset, competition scope, effective revision, coverage and privacy restrictions. Reporting may own cross-game aggregates and derivative reports but never edits official scores, standings or source records. On corrections, invalidate/recompute with replay-safe handling; protect small-cohort and child-identity inference.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.

@@ -455,3 +455,11 @@ Content Editor shows the source-owner-advertised permitted actions and step-up p
 **Status: Proposed in [Federation draft PR #69](https://github.com/nuxt-layers/architecture-blueprint-review/pull/69); not an approved implementation API, and does not complete this capability's independent review.** [Federation public contract](../federation/capability-record.md#independent-review-contract-completeness-and-authority-18-november-2026).
 
 Federation needs server-side resource- and tenant-scoped decisions for peer administration, publication, retrieval and subscription; it supplies operation, resource, audience, assurance and policy context through an explicit public port. A trusted peer, signature, Hub subscription or verified issuer is never an access grant. Missing/unknown mandatory decisions fail closed; repeated delivery cannot bypass decisions. All cooperation is via public, directional host-composed contracts with scoped failure/absence semantics; preserve existing approvals and avoid package dependency cycles.
+
+## Cross-capability note — Gaming conceptual review (18 November 2026)
+
+**Gaming (18 November 2026; proposed reciprocal note):** [Gaming](../gaming/capability-record.md) requires current server-side resource-scope access decisions for organising, joining, playing, adjudicating, correcting, viewing and exporting, with assurance appropriate to the action. Authorisation decides access, Gaming independently enforces game rules and state transitions. Competition rank, paid admission, tenant parentage and group membership confer no inherent administration grant.
+
+### Gaming portal scope correction — 18 November 2026
+
+**Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.

@@ -237,3 +237,22 @@ The catalogue's `export` **Established** entry means the architectural library v
 ## Export owner decision update (18 November 2026; draft PR #68)
 
 The project owner approved the strict renderer Library boundary and commercially permissive, self-hostable, replaceable engines, while preserving optional-format and technical validation gates. EXP-01/09 are resolved conceptually; EXP-07 investigation and EXP-08 implementation alignment are still incomplete. No current root `CONTRACT.md`, delivered API, tested PDF/A/UA compliance, or independent consumer evidence is asserted. [Export record](capabilities/export/capability-record.md).
+
+## Gaming — conceptual review evidence (18 November 2026; draft PR #71)
+
+| Field | Recorded evidence |
+|---|---|
+| Classification | Proposed Domain candidate; independent gaming authority conditional on justified reusable lifecycle |
+| Working record | [Gaming conceptual record](capabilities/gaming/capability-record.md) |
+| Governing baseline | `architecture-rules/master` `0725f314abc9ad13f1a65247f54a7ff80772f0b2` (ADR-0017/0018 accepted) |
+| Blueprint opening baseline | `architecture-blueprint-review/master` `a4e40a5cd82a2f79e8edd872af55c22d472b61cb` |
+| Root implementation contract | Not retrievable; `nuxt-layers/gaming` returned 404 during access check; existence/availability not established |
+| Public interfaces | Proposed commands for rules, instances, play, adjudication; queries for authorised game state and rankings; source-owned result/outbox events, subject to owner approval |
+| Presentation | Proposed optional dashboard/play/organiser/referee interface and headless mode |
+| Operational and acceptance evidence | Not verified; no implementation tests executed |
+| Decision status | GAM-01–08 open owner decisions; GAM-09 technical investigation; GAM-10 implementation alignment; GAM-11 acceptance pending |
+| Merge status | Draft PR only, explicit owner approval required |
+
+This evidence supplement does **not** promote the existing candidate to Established, installed, operational, compliant or authorised status.
+
+**Gaming correction — 18 November 2026 (draft PR #71):** The earlier entry in this register describing Gaming as a broad Domain game-engine/official-result authority is superseded. Current owner-described intention: portal for independently composed game layers with catalogue, launch routes and common score acceptance/leaderboards. **Proposed classification:** Platform with optional Presentation; each game owns its gameplay/rules/original scores. Detailed GAM-02–08 require approval, no implementation or root contract verified. See [Gaming record](capabilities/gaming/capability-record.md).
