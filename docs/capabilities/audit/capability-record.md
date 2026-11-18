@@ -550,6 +550,16 @@ Content Security supplies minimised attributable request, completion, detector/p
 
 **Status: Owner-approved conceptual boundary, not an implemented public contract or a completed audit review.** [Qualification](../qualification/capability-record.md): Qualification supplies minimised, committed provenance-rich evidence for scheme versions, recognition/delegation checks, award adjudication, appeal, correction, withdrawal/reinstatement and teach-out. Audit owns evidential acceptance and custody, not qualification or awarding authority; retention/disclosure must respect privacy and legal holds.
 
+## Training TRAIN-01–08 reciprocal proposal (18 November 2026)
+
+**Status: TRAIN-01–08 owner-approved in [Training conceptual review](../training/capability-record.md), PR #63; proposed public contract, not an implemented interface or completed audit review.** Training offers minimised attributable evidence of observations, reviewer decisions, completion and later corrections to Audit; Audit accepts/custodies evidence but does not decide learner competence or completion. All exchanges are public-contract scoped, tenant-authorised and provenance/version aware; avoid directed dependency cycles and treat unknown/stale external assertions explicitly.
+
+
+## Training reciprocal Audit interface — 18 November 2026
+
+**Status: TRAIN-07/08 owner-approved; detailed Audit intake contract conceptual, no implemented interface asserted.** [Training's Audit/Logging public-contract boundary](../training/capability-record.md#train-0708-approval-and-explicit-auditlogging-public-contract-boundary-18-november-2026): Training supplies versioned and minimised accountable assertions of learning-attendance verification, competency and completion decisions, disputed findings, authorised deterministic/human corrections, privileged evidence access and protected action outcomes. It supplies trusted tenant/subject/resource scope, actor/decision authority, correlation, source-event and revision, source/effective/recorded times, outcome and sensitivity/retention class; source committed events use a Training-owned durable outbox. Audit validates producer/evidence definition and returns distinct accepted/pending/rejected/unknown receipt and evidence reference; authorised integrity/completeness queries may return verified/failed/incomplete/unknown and disclosure scope. An Audit receipt never certifies learner competence, and transport acknowledgements cannot masquerade as Audit custody. High-risk required capture needs an explicit fail-closed/pending recovery policy; no Training private records are reowned by Audit. Technical diagnostics flow separately to Logging. Avoid cyclic package dependencies through host-provided public ports.
+
+
 
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
