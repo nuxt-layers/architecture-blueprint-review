@@ -261,3 +261,8 @@ Configuration owns approved, scoped versioned scanner-profile preferences and pr
 ## Infrastructure reciprocal interface — 18 November 2026
 
 **Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual control boundary](../../../reviews/infrastructure-conceptual-architecture.md) consumes allowed versioned deployment settings but retains the exclusive privileged authority to select, apply and verify approved NTP/NTS sources (previously owner-approved CFG-07). A Configuration value never grants operational privilege or overrides source trust, hard security floors or recovery constraints. `OperationalChangeResult` reports applied versus requested revision; contract pending INF-01/03/05.
+
+
+## Infrastructure INF-05 approval — 18 November 2026
+
+The [Infrastructure owner-approved clarification](../../../reviews/infrastructure-approved-contract-standards-gui.md) confirms previously agreed CFG-07: privileged NTP/NTS source selection, OS application, trust checking and recovery belong to Infrastructure/host, not Configuration tenant/user settings. Infrastructure may use Clock's public temporal operations for timestamp interpretation/presentation; Clock does not select upstream sources. No Configuration-owned NTP policy is created by this conceptual sign-off.
