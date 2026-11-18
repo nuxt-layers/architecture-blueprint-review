@@ -263,6 +263,18 @@ A **versioned, declarative plugin descriptor** (schema defined through documente
 
 **Implementation follow-up, not a conceptual blocker:** settle concrete permission taxonomy and delegated admin semantics against actual Authorisation/Identity published contracts, cache invalidation and expiry, trusted callable discovery query, outbox/denial evidence, UI route guards and test fixtures. The conceptual distinction between global plugin trust, tenant enabling and **per-person discover/use** is approved.
 
+## System-wide mandatory server-side authorisation — owner confirmation (18 November 2026)
+
+**Status: owner-confirmed system-wide requirement; already established by the governing [Architecture](https://github.com/nuxt-layers/architecture-rules/blob/master/docs/architecture.md) invariant "Access is decided on the server. Client-side checks are for the experience only", and by normative contract/security obligations.** This review records the mandate explicitly for Integrations; it does not create a new governing ADR or replace Authorisation.
+
+Every protected read, query, command, write, export, administrative operation, plugin invocation, asynchronous/background action and disclosure must validate the relevant trusted caller/service principal, tenant/organisation context, requested action, target resource, applicable policy and current Authorisation decision **at the trusted server/enforcement boundary** before executing or returning protected information. Missing, denied, expired, ambiguous or unavailable decisions **fail closed**. Actions performed by scheduled jobs or external callbacks use their independently authorised trusted service/event context, not an impersonated browser user or a webhook's bare assertion. Domain capabilities enforce their own invariants as well.
+
+Client-side filtering, hidden navigation, disabled controls and route middleware serve usability and minimise exposure but **never replace server checks**. A valid request URL, enabled plugin, connected external account, tenant membership, role label, payment entitlement or trusted provider response alone confers no access. Both read paths and mutations require checks; secure server-side query scoping and response filtering prevent ID enumeration, cross-tenant access and aggregate leakage. Cached authorisation information cannot override revocation or defined freshness limits. Audit risk-selected denials/privileged changes without leaking secrets; Logging receives sanitised failures.
+
+**Scenario:** organisation owner may see/use Weather and Banking only with actual action-specific rights; lower-permission user sees/use Weather only. Calling Banking's API directly, guessing connection IDs, querying provider statuses, invoking plugin RPC or triggering an async job must still be denied and must not reveal restricted banking information. If the policy service is unreachable, Banking access is refused rather than silently allowed. User interface changes alone are never proof of enforcement.
+
+**Acceptance:** attempt each protected endpoint/command directly without UI, with denied/missing/revoked/foreign-tenant credentials, and through queued/plugin pathways; verify denial before data access or side effect. Verify permitted users succeed only within granted operation/resource scope, and no unauthorised data appears through search, reports, caches or error messages. These are future CI/user-driven tests, not locally executed tests in this conceptual review.
+
 ## Historical reciprocal notes (preserved verbatim)
 
 ## Review notes — contacts, financial providers and ownership (14 November 2026)
