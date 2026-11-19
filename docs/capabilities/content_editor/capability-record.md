@@ -213,3 +213,10 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Help authors and editors use Content Editor's generic Publisher-backed document-type editing, version history, preview and publication workflows; the proposed Help mapping/coverage screens are separate narrow reference-administration presentation, not another text editor. Content Editor does not own contextual mappings or publication state.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Content Editor may offer optional taxonomy/category selectors backed by Metadata public term and assignment queries. It renders authorised choices and submits user intent to the authoritative owner; it owns neither term vocabularies nor assignments and must not bypass Publisher's server-side revision or permission checks. Missing Metadata disables only contextual selection. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.
