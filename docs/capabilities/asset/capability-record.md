@@ -329,3 +329,8 @@ Related candidate records: [Accounting](../accounting/capability-record.md), [In
 ### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
 
 **Approved Inventory-side conceptual requirement:** Cutters/inserts, gauges, machining equipment and reusable tools are not automatically ordinary consumable stock. Inventory handles consumable/spare part quantity receipt, issue, return and write-off; Asset governs independently managed reusable tooling/machinery stewardship, maintenance and assignment. A stock-to-Asset conversion needs explicit accepted handover; neither a scan nor a machining job creates Asset ownership. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
+
+
+## Location conceptual interface — 19 November 2026 (draft PR #87)
+
+**Status: proposed Location-side reciprocity; not independently approved or implemented.** Asset owns placement, assignment, title, custody and stewardship decisions; Location proposes stable versioned physical place IDs, address/geometry, hierarchical descriptions, uncertainty and historical references. A place correction does not move an asset or establish land title. Changes should prompt Asset to reconcile relevant placements only after its own validation. See [Location's proposed conceptual public contract](../location/capability-record.md). This note does not change prior approved decisions or finish this capability's own review.
