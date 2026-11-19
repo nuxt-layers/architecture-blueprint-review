@@ -63,3 +63,8 @@
 ### Inventory operator usability and correction reciprocity — 18 November 2026 (PR #81)
 
 **Inventory owner-approved RINV-09–12; RINV-13 proposed, not separately approved:** Inventory's operator-adoption design proposes a scan-first, task-led screen for receiving, put-away, raw store checkout, machining-stage check-in/out, coating handover, packing and finished-goods receipt. Warehouse/Production still owns jobs, station/machine operation, approved workflow and quality decisions; Inventory owns validated stock transitions and last-confirmed position. Present one clear next step, expected station, quantity/unit and confirmed vs queued status; provide accessible manual recovery. Supervisors handle discrepancies/overrides; no scanning of a barcode alone authorises a quantity change. See [Inventory operator adoption contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#approved-final-traceability-refinements-and-operator-adoption-design--18-november-2026). This does not revise independent approvals or claim an implemented UI.
+
+
+## Location conceptual interface — 19 November 2026 (draft PR #87)
+
+**Status: proposed Location-side reciprocity; not independently approved or implemented.** Warehouse retains operational site/bin layout, put-away rules, storage occupancy/capacity and physical movement authority. Location proposes public, versioned building/site/room place references and geometry/precision where needed; it does not own warehouse bins as inventory authority. A changed/unknown geocode cannot change Warehouse stock or safe storage decisions. See [Location's proposed conceptual public contract](../location/capability-record.md). This note does not change prior approved decisions or finish this capability's own review.
