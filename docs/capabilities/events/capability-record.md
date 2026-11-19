@@ -157,3 +157,8 @@ Optional GUI: event list/calendar, event/series editor, occurrence/programme edi
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+## Location conceptual interface — 19 November 2026 (draft PR #87)
+
+**Status: proposed Location-side reciprocity; not independently approved or implemented.** Events remains owner of scheduled occurrences, venue assignment and event-specific restrictions. Location proposes stable, versioned place/address/geometry references, provenance and precision, with explicit unknown/stale results. Neither Location nor Events may convert the place match into verified fire safety, accessibility certification or physical occupancy; require the actual venue/Asset authority. Supersession prompts Events to re-evaluate references, not silently reschedule events. See [Location's proposed conceptual public contract](../location/capability-record.md). This note does not change prior approved decisions or finish this capability's own review.
