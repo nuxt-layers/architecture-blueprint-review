@@ -52,3 +52,10 @@ Search receives only Federation-validated, locally admitted, provenance-bearing 
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 The Help Centre may consume Search's authorised indexing/query/relevance for Publisher-owned Help articles. Search must respect tenant/document visibility and stale/withdrawn documents; Help must revalidate source visibility before display. Search is optional: exact context resolution and Publisher-backed bounded navigation must remain usable without it. No generic Help-owned search index.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Search may index permitted public Metadata term labels and resource assignments as derived facets, with source owner visibility rechecked. Metadata owns vocabulary/assignment truth, Publisher or domain owners own resource visibility; Search owns only replaceable indexes and must invalidate stale/private facets after source or assignment changes. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.

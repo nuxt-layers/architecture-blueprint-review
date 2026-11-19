@@ -104,3 +104,10 @@ Canonical **candidate name is `localisation`**. The empty `translate` candidate 
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 The editor requires translated message keys, accessible bidirectional forms and locale-sensitive presentation; Localisation owns translation process, source domain retains content authority.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Metadata owns stable term identifiers, reference labels and classification relationships; Localisation may supply translated term labels and review status via public interfaces. A translated display string is not a new term or an authorised assignment; absent translation uses a declared source-locale fallback without cross-tenant leakage. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.

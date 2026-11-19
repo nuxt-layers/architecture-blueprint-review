@@ -40,7 +40,7 @@ This document is the **populated working register**, distinct from its design sp
 | `content-security` | Platform | Established | Scanning what people submit for dangerous content, links and abuse, on top of each layer's own input checks |
 | `notifications` | Platform | Established | Telling people something needs them, through their chosen channels; providers' keys come from the host's secret management |
 | `comments-engine` | Platform | Established | Comments on content and their moderation |
-| `metadata` | Platform | Established | Tags, categories, taxonomies and ontologies attached to content |
+| `metadata` | Platform | Established catalogue responsibility; proposed conceptual contract (PR #95), implementation unverified | Versioned vocabularies, tags, classifications and resource assignments; source owners retain resource lifecycle/visibility, and metadata ontology reasoning remains an open scope choice |
 | `localisation` | Platform candidate | Proposed conceptual review | Language/locale adaptation, translation workflow, glossary, quality and provider-neutral translation; Publisher/domain owners retain their published data and business rules |
 | `seo` | Platform | Established | Redirects, sitemaps and search-engine metadata, driven by Publisher's address events |
 | `site-hosting` | Platform | Established | Where each site is served: custom domains, proving their ownership, and finding the site for a request's address; certificates and deployment stay with the host's proxy and provider (ADR-0014) |
