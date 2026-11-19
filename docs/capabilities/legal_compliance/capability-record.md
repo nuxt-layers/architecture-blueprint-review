@@ -129,3 +129,7 @@ Content Security consumes qualified jurisdiction/service classification, retenti
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Legal Compliance qualifies dated service/jurisdiction/audience-specific online safety, disclosure, legal hold, retention and reporting obligations. Moderation applies that qualified context to case decisions and produces an approved minimal filing handoff only; statutory filing authority remains a separately identified open decision. Missing mandatory legal evidence fails safely; installing Moderation is not compliance.
+
+## Reciprocal boundary — Moderation dedicated review (19 November 2026, PR #96)
+
+**Proposed; non-normative, no implemented port asserted.** Legal Compliance qualifies dated jurisdiction/service/audience-specific duties, reporting thresholds, retention and disclosure constraints. Moderation consumes these for cases and produces approved minimal handoffs, not asserted successful statutory filings. Applicability uncertainty never becomes compliance. See [Moderation conceptual contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Public host-assembled contracts must remain acyclic, scoped and permission-checked.
