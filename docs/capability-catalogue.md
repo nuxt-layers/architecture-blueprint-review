@@ -43,7 +43,7 @@
 | `content-security` | Platform | Scanning what people submit for dangerous content, links and abuse, on top of each layer's own input checks |
 | `notifications` | Platform | Telling people something needs them, through their chosen channels; providers' keys come from the host's secret management |
 | `comments-engine` | Platform | Comments on content and their moderation |
-| `metadata` | Platform | Tags, categories, taxonomies and ontologies attached to content |
+| `metadata` | Platform | Tags, categories, versioned taxonomies and typed semantic links/assignments attached to source-owned resources; separate conceptual review [PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95) proposes bounded authority, optional GUI and public contracts, with advanced ontology reasoning unapproved |
 | `localisation` | Platform | Language and locale adaptation of content and application text, including translation workflow, terminology, quality review and provider-neutral translation; authoritative source publication and domain formatting remain with owning capabilities |
 | `seo` | Platform | Redirects, sitemaps and search-engine metadata, driven by Publisher's address events |
 | `site-hosting` | Platform | Where each site is served: custom domains, proving their ownership, and finding the site for a request's address; certificates and deployment stay with the host's proxy and provider (ADR-0014) |
