@@ -203,3 +203,7 @@ The **UK Online Safety Act applies by qualified service/feature and risk classif
 **Status:** Proposed in [Content Security draft PR #55](https://github.com/nuxt-layers/architecture-blueprint-review/pull/55), not an accepted implementation contract. See [Content Security conceptual record](../content_security/capability-record.md).
 
 For each submitted/edited comment, Comments Engine supplies a tenant-bound text/link snapshot and exact revision under lawful, purpose-scoped inspection; Content Security supplies technical check results with provider/check-set versions, expiry and explicit unknown/unsupported. Comments Engine owns pending/hold/visible state and must invalidate prior assessments on material edits. A scan outcome never authorises publication.
+
+## Reciprocal boundary — Moderation dedicated review (19 November 2026, PR #96)
+
+**Proposed; non-normative, no implemented port asserted.** Comments Engine retains the authoritative comment/revision/visibility and source-local emergency restrictions. Moderation owns cross-domain reports, decisions and appeals; independent comment-owner acceptance, completion, refusal and unknown enforcement receipts remain separate from case decisions. See [Moderation conceptual contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Public host-assembled contracts must remain acyclic, scoped and permission-checked.
