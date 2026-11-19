@@ -180,3 +180,8 @@ Help may publish public-contract, permission-scoped coverage/freshness views: do
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual design approved, INV-01–06 closed (18 November 2026); Reporting's full review and implementation remain unverified. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) supplies authorised tenant/legal-entity/party-scoped invoice and credit status, issuance periods, currency/tax breakdowns, correction lineage, source revision, payment allocation projection with freshness/uncertainty, provider-confirmation exceptions and completeness/checkpoints. Reporting owns definition, derived results, distribution/export and cross-source comparisons with Accounting, Billing and Payment Gateway; it cannot claim posting, payment or tax recognition on Invoice's behalf. Recheck source permissions and disclosure of aggregates, snapshots and exports, including revoked access and tenant isolation; missing provider evidence must remain unknown, never treated as zero.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics provides authorised revisioned shipment, on-time/exception, qualified delivery and freight evidence read models for reporting; Reporting owns report definitions/aggregates, does not mutate Logistics shipments or reclassify financial facts. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.
