@@ -596,3 +596,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); INV-01–06 approved and closed, implementation not verified.** [Invoice](../invoice/capability-record.md) consumes Billing's BIL-01–06 approved finalised charge/adjustment evidence and returns idempotent authoritative issued/rejected/credit-document references. The charge decision remains Billing's; a handoff/accepted request is not issued invoice. Event-based return avoids a cycle; preserve Billing's previous approved choices.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics supplies measured transport and exceptional fee evidence, quotations, carrier claims and source references; Billing determines authorised customer-billable charges and periods. Storage occupancy facts originate with Warehouse; commercial transport detention evidence may originate with Logistics. Customer fee ≠ carrier cost; preserve reconciliation and do not auto-issue invoices. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.

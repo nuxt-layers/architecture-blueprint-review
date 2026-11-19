@@ -71,3 +71,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) may use versioned Order terms/acceptance/fulfilment as source evidence, returning issued/correction references via public events. Orders do not automatically authorise invoice issue; standalone invoices and supplier bills need no Order. Never let historical Order changes mutate issued document snapshots.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Order owns customer/supplier commitments and fulfilment acceptance, while Logistics owns shipment execution, carrier tender/handoff, transport exceptions, return conveyance and qualified proof. A delivered tracking checkpoint must not automatically close an Order or prove goods accepted. Orders supply versioned dispatch/cancel/return intent; Logistics supplies status, proof, exception and quote/actual freight evidence; each owner commits its own lifecycle. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.

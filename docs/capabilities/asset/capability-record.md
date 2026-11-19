@@ -329,3 +329,8 @@ Related candidate records: [Accounting](../accounting/capability-record.md), [In
 ### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
 
 **Approved Inventory-side conceptual requirement:** Cutters/inserts, gauges, machining equipment and reusable tools are not automatically ordinary consumable stock. Inventory handles consumable/spare part quantity receipt, issue, return and write-off; Asset governs independently managed reusable tooling/machinery stewardship, maintenance and assignment. A stock-to-Asset conversion needs explicit accepted handover; neither a scan nor a machining job creates Asset ownership. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics may request availability/assignment of fleet or equipment and produce utilisation/handoff evidence; Asset owns vehicle/equipment identity, stewardship, maintenance, custody and valuation references. Shipment completion does not transfer Asset ownership or automatically book an asset. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.
