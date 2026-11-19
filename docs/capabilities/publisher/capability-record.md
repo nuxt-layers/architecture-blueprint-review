@@ -121,3 +121,10 @@ Publisher may provide explicitly approved, versioned, public collection projecti
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Publisher retains resource version, authorisation of source transitions, publication, visibility and withdrawal; Metadata may own separate versioned taxonomy terms and assignments to Publisher resource references through a host-wired public interface. Publisher must not accept a term assignment as publishing approval; Metadata must not expose assignments for unpublished/withdrawn resources without source visibility checks. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.
