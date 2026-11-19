@@ -32,3 +32,8 @@
 Own versioned feature, tier, seat, storage and renewal entitlements for service-consuming tenants; not memberships, payments or technical provision. Bill-to party may differ from tenant. Publish explicit pending/effective/expired states for scoped activation.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+
+## Reciprocal conceptual interface — Membership (19 November 2026; draft PR #93)
+
+**Status: proposed, not owner-approved or implemented; this does not complete the subscription review.** [Membership](../membership/capability-record.md) is a candidate *scheme participation* domain distinct from Identity group membership, Subscription plan entitlements, commercial settlement and application access. Subscription owns its separate subscription plan, renewal and entitlement state; Membership owns admission, scheme terms and participation/benefit qualifications. Either may supply versioned public facts to the other as needed, never duplicate term authority or equate a scheme renewal request with subscription activation. Consume only published public interfaces; no direct package dependency is inferred. Missing, stale, contradictory or unauthorised evidence must not be promoted into confirmed outcomes.
