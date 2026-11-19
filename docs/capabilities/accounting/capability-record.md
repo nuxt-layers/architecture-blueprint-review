@@ -570,3 +570,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) supplies immutable issued/received invoice and correction evidence to Accounting for independently authorised ledger postings; Accounting remains authoritative for books, tax recognition and financial reconciliation. Verified posting/settlement evidence may feed Invoice's derived document allocation status without granting it ledger authority; handle unknown provider outcomes and duplicate event delivery.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics is proposed to supply versioned, source-qualified inbound/outbound transport quote, actual carrier/3PL bill, demurrage, insurance, customs and claims evidence with amount, currency, service, party, period and source references. Accounting alone decides landed cost eligibility, allocation, recognition, payable/receivable, journal entries and period. A logistics verification is not a recognised expense or stock valuation, and carrier quote, customer charge and actual cost remain separate. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.
