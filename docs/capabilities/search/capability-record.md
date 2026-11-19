@@ -52,3 +52,7 @@ Search receives only Federation-validated, locally admitted, provenance-bearing 
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 The Help Centre may consume Search's authorised indexing/query/relevance for Publisher-owned Help articles. Search must respect tenant/document visibility and stale/withdrawn documents; Help must revalidate source visibility before display. Search is optional: exact context resolution and Publisher-backed bounded navigation must remain usable without it. No generic Help-owned search index.
+
+## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
+
+**Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Search owns derived indexes and actual suppression/removal status. Moderation may request local index restriction for a qualified Hub case through host-composed ports; Search independently validates scope and returns accepted/completed/failed/unknown receipts. Index removal is not origin deletion or proof of all remote purges.
