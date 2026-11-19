@@ -270,3 +270,11 @@ This evidence supplement does **not** promote the existing candidate to Establis
 
 
 **Owner-approved INF-01 refinement (18 November 2026):** `infrastructure` primarily defines the canonical hosting and deployment build standard, Docker/Compose configurations and server setup/upgrade/verification/recovery scripts. Optional headless operational status/control interfaces and operator screens complement—not replace—this responsibility. Retain Foundation responsibility with implementation kind **infrastructure blueprint / host-operated deployment composition**, not mandatory independent Nuxt Layer. The [conceptual review](../reviews/infrastructure-conceptual-architecture.md#owner-clarification--authoritative-hosting-environment-definition-18-november-2026-supersedes-narrower-wording-above) documents both. Working register remains non-normative; production acceptance is not claimed.
+
+### Marketplace review evidence — proposed (19 November 2026)
+
+| Entry | Classification | Review evidence and status | Boundary |
+|---|---|---|---|
+| `marketplace` | **Domain candidate**, unchanged | [Proposed conceptual review](capabilities/marketplace/capability-record.md#marketplace-conceptual-review--19-november-2026), [draft PR #91](https://github.com/nuxt-layers/architecture-blueprint-review/pull/91); MKT-01–MKT-10 not approved; implementation/operational status unverified | Multi-seller venue, participation, publication, agreement and attributable commission evidence; not Product, Order, Billing, payments, accounting, identity, moderation or provider connection ownership |
+
+This review does not change installed/configured/operational/enabled/authorised state; no target root `CONTRACT.md` was verified.
