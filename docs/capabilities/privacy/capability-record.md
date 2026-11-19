@@ -119,3 +119,8 @@ Content Security's inspection of user-provided content must use a justified purp
 ## Gaming handles and live plugins — reciprocal conceptual note (18 November 2026)
 
 **Status: Owner requirement; detailed design proposed, no published adapter.** [Gaming](../gaming/capability-record.md#owner-decisions--section-2-clarified-18-november-2026) proposes public pseudonymous handles and dynamically loaded game plugins. Privacy supplies the applicable consent, minimisation, disclosure and retention constraints; Gaming enforces its own public leaderboard/handle rules. A public handle can remain personal data when linkable to an account or identifiable through gameplay history. Live plugins must receive no unrestricted Profile/Identity data, authentication tokens or other player records and must disclose permitted data uses. Child safeguards, withdrawal, handle rename and historic scoreboard visibility require explicit policy. This does not complete the Privacy review.
+
+
+## Notifications reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Notifications draft PR #97](https://github.com/nuxt-layers/architecture-blueprint-review/pull/97), not owner-approved or implemented.** Optional notification channel consent/opt-outs, purpose classification, retention/erasure constraints and applicable lawful grounds remain Privacy-owned evidence. Notifications enforces them at routing and before deferred sensitive sends and owns only decision snapshots; mandatory statutory exceptions require qualified Legal Compliance input. Unknown consent/grounds do not become implied permission. This bounded reciprocal note preserves the independent privacy review and creates no direct package import.
