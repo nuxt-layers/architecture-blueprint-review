@@ -123,3 +123,7 @@ Content Security's inspection of user-provided content must use a justified purp
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Privacy supplies lawful purpose, evidence processing, minimisation, child/reporter protection, retention, erasure and disclosure constraints for cases and appeals. Moderation returns classified case reference, permissioned data-subject disposition and evidence-preservation exceptions; no unrestricted reporter identity/illegal imagery copy or claim that third-party backups were erased.
+
+## Reciprocal boundary — Moderation dedicated review (19 November 2026, PR #96)
+
+**Proposed; non-normative, no implemented port asserted.** Privacy owns lawful processing, purpose/consent where applicable, rights, retention and disclosure constraints. Moderation applies minimisation to reporter/evidence identities, supplies scoped correction/erasure/hold receipts, and does not copy unrestricted source evidence. See [Moderation conceptual contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Public host-assembled contracts must remain acyclic, scoped and permission-checked.
