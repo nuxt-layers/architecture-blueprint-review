@@ -216,3 +216,5 @@ Editor displays source-owned pending, unavailable, quarantine and held safety re
 ## Reciprocal conceptual note — Course (17 November 2026)
 
 **Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course submission and linked learning content must meet required Content Security checks before public exposure; Course owns curriculum publication, Content Security owns scanning verdicts. Failed/unknown required verdicts block exposure; concurrent Content Security PR #55 remains provisional. This does not complete content_security's own review.
+
+**Marketplace reciprocal — proposed, 19 November 2026:** [Marketplace review](../marketplace/capability-record.md#marketplace-conceptual-review--19-november-2026) submits scoped listing text/images/links and receives source/verdict version, validity and reason to inform publication holds. Content Security owns safety detection/verdict; Marketplace enforces its own listing/seller state; Moderation owns user reports and cases. Risk-mandated missing/unknown verdict never silently approves publication. **Proposed only.**
