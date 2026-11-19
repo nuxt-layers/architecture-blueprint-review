@@ -68,3 +68,7 @@ Comments Engine may produce author/reply/mention, moderation decision and appeal
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Notifications delivers opted/required issuance, expiry, revoked, replaced and status-action notices from committed Credentials events with authorised recipient context and minimised details. Delivery failures retry independently; neither successful email nor failed delivery determines whether credential issuance committed.
+
+## Moderation dedicated review — reciprocal interface (19 November 2026, draft PR #96)
+
+**Proposed, no published implementation contract.** Moderation supplies privacy-limited recipient intent, safe reason/message key and status updates. Notifications owns channel delivery outcome but no moderation decision, resource enforcement or verified notice receipt. See [Moderation's conceptual inbound/outbound contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Interoperability uses public versioned host-composed ports without private-schema coupling.
