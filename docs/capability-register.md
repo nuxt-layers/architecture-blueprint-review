@@ -57,6 +57,7 @@ This document is the **populated working register**, distinct from its design sp
 | Name | Classification | Catalogue status | Responsibility / exclusion |
 |---|---|---|---|
 | `architecture-rules` | Architecture governance (not a runtime layer) | Governance | Governs ADRs, normative standards and this catalogue; owns no application runtime data |
+| `mailer` | Platform transport candidate | Proposed conceptual review — not implemented/approved | Technical outbound mail dispatch, attempt/reconciliation evidence and optional transport administration; no recipient preference, business notice or human delivery authority. [Review](capabilities/mailer/capability-record.md) |
 | `infrastructure` | Foundation candidate | Under consideration | Host/backend/deployment setup and operational configuration; infrastructure resources and domain data remain with the appropriate hosts/providers |
 | `reviews` | Platform candidate | Under consideration | Customer ratings, testimonials, verified purchase/service evidence, moderation, merchant replies and trustworthy reputation aggregates; transaction and identity facts remain owned by source capabilities |
 | `template-engine` | Library candidate | Under consideration | Secure deterministic template parsing, data binding and content rendering; no template persistence, document lifecycle, arbitrary code execution or business-data lookups |
