@@ -104,3 +104,7 @@ Canonical **candidate name is `localisation`**. The empty `translate` candidate 
 **Status:** Proposed in [Content Editor draft PR #54](https://github.com/nuxt-layers/architecture-blueprint-review/pull/54); not implemented or approved. [Conceptual interface](../content_editor/capability-record.md#dedicated-conceptual-review--content-editor-17-november-2026).
 
 The editor requires translated message keys, accessible bidirectional forms and locale-sensitive presentation; Localisation owns translation process, source domain retains content authority.
+
+## Cross-capability note — Mailer conceptual interface (19 November 2026)
+
+**Status: proposed; [Mailer PR #90](https://github.com/nuxt-layers/architecture-blueprint-review/pull/90), not owner-approved or an implemented contract.** [Mailer conceptual record](../mailer/capability-record.md): Proposed Mailer transports only approved content with declared locale/template version; Localisation may supply qualified language/translation results, while the source/template owner approves meaning and Clock handles temporal formatting. Mailer must not silently machine-translate legal/security-critical messages or overwrite their authoritative content. Concurrent Localisation PR is provisional.
