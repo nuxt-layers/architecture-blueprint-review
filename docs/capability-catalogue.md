@@ -169,7 +169,7 @@ The following are **types and compositions**, not independent capability candida
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
 | `gaming` | Game-specific state, rankings and participation; separate from generic Identity accounts |
-| `job` | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
+| `job` | **Proposed Domain candidate:** versioned employment positions, authorised openings and vacancy publication status (JOB-01–09, [draft review](capabilities/job/capability-record.md)); applicant recruitment/selection and Employment engagements remain separate; background execution belongs to Scheduler. Owner decision on scope/packaging remains open |
 
 ### Commerce and operations domain candidates
 
