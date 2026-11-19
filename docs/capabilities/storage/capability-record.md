@@ -53,3 +53,10 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Infrastructure reciprocal interface — 18 November 2026
 
 **Proposed reciprocal review — 18 November 2026:** Infrastructure [conceptual contract](../../../reviews/infrastructure-conceptual-architecture.md) provides trusted S3/provider deployment, credentials and resource readiness while Storage's published contract continues to own consumer-facing object operations and each consumer retains file access decisions. Postgres, Temporal and infrastructure backups are not reclassified as Storage objects; no automatic tenant bucket allocation or quota enforcement is inferred. Proposed only.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the storage public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Media is the authoritative owner of image asset records, processing and visibility, and consumes Storage's ADR-0012 Files port for staging, byte operations, signed delivery, revocation and usage. Storage retains bucket/provider/byte lifecycle; a signed byte address never grants Media publication eligibility. A private original or quarantined/removed variant must remain inaccessible notwithstanding byte-store capability. Reconcile idempotent claim, orphan cleanup, deletion, CDN purge, tenant/group scoping, measured usage and backup/erasure replay through published interfaces. Required port absence fails closed.

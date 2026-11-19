@@ -213,3 +213,10 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Help authors and editors use Content Editor's generic Publisher-backed document-type editing, version history, preview and publication workflows; the proposed Help mapping/coverage screens are separate narrow reference-administration presentation, not another text editor. Content Editor does not own contextual mappings or publication state.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the content_editor public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+The editor is presentation only: use Media's authorised upload/claim/picker, asset descriptor and variants, alt/decorative and credit interface, with explicit pending, quarantined, unavailable or removed display. No file bytes, Media state, safety or permission decisions are owned by Content Editor. Saving a Publisher document is not a Media release decision and a valid editor preview does not authorise public resolution.

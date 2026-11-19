@@ -233,3 +233,10 @@ The dashboard must not reimplement Content Editor's full editing or Moderation c
 - **GAL-13 — Library selection proposed:** PhotoSwipe first; VueUse/Embla/SortableJS or Nuxt UI only where needed, compatible and validated. MIT licences verified on upstream listings; no sole vendor dependency. Licence and security recheck at selection.
 - **GAL-14 — GUI design proposed:** one host sidebar Gallery entry/dashboard, accessible public browsing and viewer, featured widget, editor deep-link, optional contribution/status UI. Do not create a duplicate administrative case/workspace.
 - **Remaining technical contract gap:** Publisher's documented permissions lack old `moderate`; Media lacks an available independently inspectable root `CONTRACT.md`; private access and source-owned member contribution flows must be proven. No Gallery package/runtime acceptance is asserted.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the gallery public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Gallery is presentation over Publisher types and consumes Media-authorised descriptors, delivery, member-only variants, original-download eligibility and revoked states. Album selection never confers access; Media enforces each object and derivative, including short-lived/cached delivery, and Publisher owns albums/publication. Show accessible alt/credit and clear held/removed placeholders. Original download is separately privileged and never implied by membership alone.

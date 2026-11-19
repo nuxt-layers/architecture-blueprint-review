@@ -303,3 +303,8 @@ See [Time & Attendance ownership proposal](../proposals/time-attendance-ownershi
 
 
 **Owner-approved INF-01 clarification (18 November 2026):** Infrastructure's **primary** responsibility is the authoritative Nuxt Layers hosting-environment definition and reproducible Docker/Compose, server installation, upgrade, verification and recovery tooling. The previously described headless operational controls, readiness/UTC status and privileged dashboard are **additive optional operating interfaces**, not a substitute for deployment definitions. The appropriate form is a Foundation **infrastructure blueprint and host-operation composition**, not a compulsory Nuxt capability. See [revised review](../reviews/infrastructure-conceptual-architecture.md#owner-clarification--authoritative-hosting-environment-definition-18-november-2026-supersedes-narrower-wording-above). Governing catalogue adoption and implementation acceptance remain separate.
+
+
+### Media dedicated conceptual review (19 November 2026)
+
+The existing Platform ownership of images is retained without changing governing authority. [Media's proposed dedicated review](capabilities/media/capability-record.md#dedicated-conceptual-review--media-19-november-2026) documents image lifecycle, sanitised variants and private originals, idealised input/output surfaces, content safety, independent enforcement, storage/Publisher boundaries, a separable GUI and open MEDIA-01–MEDIA-08 decisions. **Non-normative, not owner-approved or implemented**; related reciprocal records remain provisional.
