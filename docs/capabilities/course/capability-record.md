@@ -262,3 +262,10 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 ## Events owner decision clarification — 18 November 2026
 
 **EVT-01/02 owner-approved:** Events is a separate generic activity/schedule Domain capability, and the other domain can optionally associate its own records through public references without transferring ownership. **EVT-11 was explicitly not approved and is removed from the Events review.** Any educational offering/cohort ownership is handled in its independent capability review, not by Events. This does not change existing owner-approved Course or Enrolment authority.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Course owns curriculum, module/prerequisite and learning outcome meaning; Metadata can supply optional controlled taxonomy terms or cross-resource assignment links. A shared term never changes an approved Course revision, awards an outcome or determines eligibility. Term retirement and source Course withdrawal must preserve qualified historical references. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.
