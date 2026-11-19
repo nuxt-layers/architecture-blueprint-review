@@ -67,3 +67,8 @@
 ## Events interface reciprocity — 18 November 2026
 
 **Events EVT-09/14 (18 November 2026; proposed interface clarification):** Events owns activity schedule, occurrence state, recurrence meaning and effective changes. Scheduler receives explicit, idempotent due-work requests with event/occurrence reference, expected Events revision, due time and policy; returns schedule acceptance, execution attempt, actual time, failure/delay and retry context. Only Events may authorise and commit its event transition after checking the current revision. Late, repeated or cancelled Scheduler jobs never override source event state. Scheduler is not a calendar/event or attendance owner. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
+
+
+## Job expiry/advertising timing reciprocal proposal — 19 November 2026 (draft PR #84)
+
+**Status: Proposed in [Job review](../job/capability-record.md), not an approved Scheduler interface.** Scheduler may trigger idempotent Job opening-expiry, listing withdrawal reminder and reconciliation commands with expected revision, scheduled/actual time and correlation key. Scheduler owns attempts/retries only; Job owns opening/advertisement lifecycle, current eligibility and authorised domain transition. Late, repeated or absent triggers never extend an expired opening or prove remote advert withdrawal; Clock governs effective time and source-adjustment interpretation. This does not create a background-job role for the Job Domain capability.
