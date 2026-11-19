@@ -48,3 +48,10 @@ Media remains authoritative for uploads, image/file versions, variants and visib
 ## Gallery reciprocal interface — 18 November 2026 (proposed; PR #70)
 
 [Gallery's conceptual presentation contract](../gallery/capability-record.md#dedicated-conceptual-review--gallery-18-november-2026) consumes Media's current authorised variant metadata, alt text, safe thumbnail/lightbox delivery, asset picker/upload and original-download entitlement decisions; it holds no image bytes or authoritative asset state. Media must independently enforce member-only access, quarantine, removal and revocation for original and every derivative, URL, cache and CDN exposure; Gallery's visible button or Publisher publication does not grant access. Gallery's member submission intent is not a Media acceptance receipt. **Evidence gap:** Media's root `CONTRACT.md` was not retrieved; exact private delivery, picker and original-download public interfaces remain unverified. Existing online-safety and Content Editor findings are preserved.
+
+
+## Reciprocal conceptual note — Metadata review (19 November 2026)
+
+**Status: Proposed in [Metadata draft PR #95](https://github.com/nuxt-layers/architecture-blueprint-review/pull/95), not an approved implementation contract or completed review of this adjacent capability.** [Metadata conceptual contract](../metadata/capability-record.md#dedicated-conceptual-review--metadata-19-november-2026).
+
+Media owns media-asset identity, descriptive media fields and file lifecycle; optional shared vocabulary/assignments are Metadata-owned and source-scoped. Tags cannot reveal unavailable media or override Media's ownership, permissions, safety holds or source removal; the generic taxonomy interface is not a replacement for asset alt text. Conceptual cooperation is optional and host-wired through public contracts; avoid circular required package dependencies.
