@@ -32,3 +32,8 @@
 Own verifiable tier/tariff quotes, optional coupon pricing/eligibility and price-effective periods; promotion lifecycle ownership remains to examine. Failed or repeated payment cannot silently redeem coupon twice.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+
+## Reciprocal conceptual interface — Membership (19 November 2026; draft PR #93)
+
+**Status: proposed, not owner-approved or implemented; this does not complete the pricing review.** [Membership](../membership/capability-record.md) is a candidate *scheme participation* domain distinct from Identity group membership, Subscription plan entitlements, commercial settlement and application access. Pricing retains tariffs, discounts and final quote/price semantics. Membership may supply qualified scheme benefit/level evidence at effective time, but it never sets or claims the final price. Consume only published public interfaces; no direct package dependency is inferred. Missing, stale, contradictory or unauthorised evidence must not be promoted into confirmed outcomes.
