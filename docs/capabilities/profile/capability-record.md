@@ -79,3 +79,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Identity reciprocal conceptual interface — 18 November 2026
 
 **Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; no new published API.** Identity provides stable opaque local principal references and purpose-scoped standing/closure notifications; Profile retains all person/contact/display data and user rights in its own lifecycle. Identity directory queries must not copy Profile attributes, and Profile visibility must independently enforce context/disclosure constraints. Unknown identifier or unqualified cross-tenant request is not permission to disclose. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-outbound-interfaces).
+
+
+## Location conceptual interface — 19 November 2026 (draft PR #87)
+
+**Status: proposed Location-side reciprocity; not independently approved or implemented.** Profile retains personal residential/contact addresses, disclosure choices and person-controlled correction/erasure. Location proposes optional purpose-bound address/spatial resolution, and must not copy, publish, globally index or infer a person's precise residence as a shared canonical place. Profile authorises any submitted data and applies Privacy/Legal Compliance constraints; Location returns only scoped minimal results. See [Location's proposed conceptual public contract](../location/capability-record.md). This note does not change prior approved decisions or finish this capability's own review.
