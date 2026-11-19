@@ -56,3 +56,7 @@ The Help Centre may consume Search's authorised indexing/query/relevance for Pub
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Search owns derived indexes and actual suppression/removal status. Moderation may request local index restriction for a qualified Hub case through host-composed ports; Search independently validates scope and returns accepted/completed/failed/unknown receipts. Index removal is not origin deletion or proof of all remote purges.
+
+## Moderation dedicated review — reciprocal interface (19 November 2026, draft PR #96)
+
+**Proposed, no published implementation contract.** Search owns derived index changes and freshness. Moderation may request scoped Hub-local suppression, but Search must validate and receipt actual index enforcement. This is not deletion at origin or confirmation of every remote cache. See [Moderation's conceptual inbound/outbound contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Interoperability uses public versioned host-composed ports without private-schema coupling.
