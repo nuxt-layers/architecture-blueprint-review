@@ -408,3 +408,13 @@ Integrations may supply replaceable external protocol/provider adapters through 
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); reconciled with merged Integrations PR #76; implementation not verified.** [Invoice](../invoice/capability-record.md) owns document authority, issuer selection, idempotent issuance, confirmed versus unknown provider status, reconciliation and cut-over policy; Integrations supplies approved connector capabilities, authentication/mapping/transport/read-back and checkpoint evidence. A transport success never proves issuance; no native failover after ambiguous remote result. Both conceptual boundaries are owner-approved; no implemented integration is asserted.
+
+
+## Message Queue reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Message Queue draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94), not an approved API or implemented integration.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026) retains transport-only authority: originating capabilities own committed events and durable outboxes; Message Queue owns scoped subscriptions, transport custody, attempts, redrive/dead-letter and qualified acknowledgements. **Integrations owns external provider connections, consent, webhook validation, mappings and checkpoints; MQ handles only authorised local message transport and qualified receipt. Provider callbacks are not automatically committed source-domain events and cannot grant permissions.** No mutual direct package import is implied. Existing approved decisions remain unchanged; detailed MQ-01–10 decisions are not owner-approved.
+
+
+## Message Queue reciprocal review — 19 November 2026
+
+**Proposed in [draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94); not an implemented or approved public API.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026): Integrations owns provider connection, webhook validation, mapping and remote checkpoints; MQ carries qualified local messages/receipts, not external business success or provider trust. Source capabilities own durable outboxes and event meaning; MQ owns scoped routing, custody, attempts, retry, dead-letter and replay. Duplicates, unknown receipts and scoped authorisation require public directional host-composed ports without cyclic imports. Preserve existing approvals.

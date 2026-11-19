@@ -192,3 +192,13 @@ Help sends redacted diagnostic codes, mapping/Publisher failures, latency and pe
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual design approved, INV-01–06 closed (18 November 2026); Logging's full contract is still unverified. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) publishes minimised diagnostics for issue validation, number conflicts, provider timeout/unknown outcome, replay rejection and outbox/delivery errors with opaque correlation. Logging owns sinks, severity and delivery, never invoice records, source outbox or Audit proof. Full financial documents, personal/tax/bank details and provider secrets must be excluded. Logging absence never means an invoice was not issued; preserve business/audit resilience separately.
+
+
+## Message Queue reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Message Queue draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94), not an approved API or implemented integration.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026) retains transport-only authority: originating capabilities own committed events and durable outboxes; Message Queue owns scoped subscriptions, transport custody, attempts, redrive/dead-letter and qualified acknowledgements. **Logging owns redacted structured diagnostic collection; MQ supplies correlation-linked delivery/retry/provider failures without raw event payloads or secrets. Logging success does not certify transport or domain completion.** No mutual direct package import is implied. Existing approved decisions remain unchanged; detailed MQ-01–10 decisions are not owner-approved.
+
+
+## Message Queue reciprocal review — 19 November 2026
+
+**Proposed in [draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94); not an implemented or approved public API.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026): Logging owns sanitised operational log sinks, never delivery source state or Audit custody; MQ emits redacted correlation, retry and provider diagnostics without raw payloads/secrets. Source capabilities own durable outboxes and event meaning; MQ owns scoped routing, custody, attempts, retry, dead-letter and replay. Duplicates, unknown receipts and scoped authorisation require public directional host-composed ports without cyclic imports. Preserve existing approvals.

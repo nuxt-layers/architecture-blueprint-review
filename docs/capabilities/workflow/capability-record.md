@@ -71,3 +71,13 @@ Content Editor may show Publisher-bound review/approval states and invoke permit
 ## Integrations reciprocal conceptual interface — 18 November 2026
 
 **Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Workflow governs human approval and review routes; Integrations exposes requests for grant activation, high-risk scopes, mapping changes, cutover and reconciliation where applicable, but remains owner of its connection lifecycle and does not infer approval from a successful provider callback. Domain owners determine transaction authority and regulatory specialist determines mandatory sign-off floors. See [Integrations conceptual contract](../integrations/capability-record.md#native-services-and-lifecycle), PR #76; proposed, non-normative.
+
+
+## Message Queue reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Message Queue draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94), not an approved API or implemented integration.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026) retains transport-only authority: originating capabilities own committed events and durable outboxes; Message Queue owns scoped subscriptions, transport custody, attempts, redrive/dead-letter and qualified acknowledgements. **Workflow owns approvals, orchestration progress and participant decisions; event receipt can trigger a reassessment but MQ acknowledgement cannot authorise or complete workflow steps. MQ privileged replay may require an independent Workflow approval.** No mutual direct package import is implied. Existing approved decisions remain unchanged; detailed MQ-01–10 decisions are not owner-approved.
+
+
+## Message Queue reciprocal review — 19 November 2026
+
+**Proposed in [draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94); not an implemented or approved public API.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026): Workflow owns approvals, coordination and execution progress; an MQ delivery receipt never approves or completes a workflow. Protected MQ replay may require separately authorised Workflow approval. Source capabilities own durable outboxes and event meaning; MQ owns scoped routing, custody, attempts, retry, dead-letter and replay. Duplicates, unknown receipts and scoped authorisation must be handled through public directional host-composed ports without cyclic imports. Preserve previous approvals.

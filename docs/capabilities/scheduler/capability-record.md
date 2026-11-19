@@ -67,3 +67,13 @@
 ## Events interface reciprocity — 18 November 2026
 
 **Events EVT-09/14 (18 November 2026; proposed interface clarification):** Events owns activity schedule, occurrence state, recurrence meaning and effective changes. Scheduler receives explicit, idempotent due-work requests with event/occurrence reference, expected Events revision, due time and policy; returns schedule acceptance, execution attempt, actual time, failure/delay and retry context. Only Events may authorise and commit its event transition after checking the current revision. Late, repeated or cancelled Scheduler jobs never override source event state. Scheduler is not a calendar/event or attendance owner. [Contract detail](../../../reviews/events-contract-attendance-and-handover.md).
+
+
+## Message Queue reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Message Queue draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94), not an approved API or implemented integration.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026) retains transport-only authority: originating capabilities own committed events and durable outboxes; Message Queue owns scoped subscriptions, transport custody, attempts, redrive/dead-letter and qualified acknowledgements. **Scheduler owns due-time work and execution triggers; MQ delivery/retries are not Scheduler jobs. Any Scheduler source event follows its own outbox and never gives MQ authority to execute scheduled work.** No mutual direct package import is implied. Existing approved decisions remain unchanged; detailed MQ-01–10 decisions are not owner-approved.
+
+
+## Message Queue reciprocal review — 19 November 2026
+
+**Proposed in [draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94); not an implemented or approved public API.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026): Scheduler owns due-time execution; Queue retries and transport are not scheduled jobs. MQ can convey Scheduler's source-owned outbox changes, but never invokes work or alters the schedule outcome. Source capabilities own durable outboxes and event meaning; MQ owns scoped routing, custody, attempts, retry, dead-letter and replay. Duplicates, unknown receipts and scoped authorisation must be handled through public directional host-composed ports without cyclic imports. Preserve previous approvals.
