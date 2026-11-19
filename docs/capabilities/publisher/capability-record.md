@@ -121,3 +121,10 @@ Publisher may provide explicitly approved, versioned, public collection projecti
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the publisher public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Publisher retains authoritative document versions, publication state and backlinks; Media owns image ID/revision, alt/decorative, sanitised variants, safety eligibility and revocation. Publisher's published optional `assets.resolve({ siteId, assetIds })` is consumer evidence, not proof of a Media implementation. The host-composed Media resolver must return only audience-authorised deliverable assets or unavailable/tombstone outcomes; private, held or removed images cannot be exposed by a previously published document. Deletion preflight requires reliable Publisher backlink facts; if unavailable, voluntary removal is not assumed safe. Avoid a direct runtime dependency cycle.
