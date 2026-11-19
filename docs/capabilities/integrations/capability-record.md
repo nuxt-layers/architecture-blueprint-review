@@ -408,3 +408,8 @@ Integrations may supply replaceable external protocol/provider adapters through 
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); reconciled with merged Integrations PR #76; implementation not verified.** [Invoice](../invoice/capability-record.md) owns document authority, issuer selection, idempotent issuance, confirmed versus unknown provider status, reconciliation and cut-over policy; Integrations supplies approved connector capabilities, authentication/mapping/transport/read-back and checkpoint evidence. A transport success never proves issuance; no native failover after ambiguous remote result. Both conceptual boundaries are owner-approved; no implemented integration is asserted.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics owns carrier intent, shipment state and business interpretation of tracking/cost evidence; Integrations owns remote adapter execution, authentication/webhooks/provider mappings and sync transport. Signed remote observations, retry/replay, cancellation uncertainty, provider withdrawal and idempotency must be reconciled through public contracts; a webhook alone cannot confer delivery authority. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.
