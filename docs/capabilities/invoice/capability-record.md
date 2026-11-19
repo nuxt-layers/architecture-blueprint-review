@@ -278,3 +278,8 @@ Read-only reference: [`nuxt-layers-test/application-test-template`](https://gith
 3. **Implementation and independent acceptance:** provider conformance and migration/recovery, transactional numbering/idempotency/outbox, canonical document integrity, privacy/audit/financial checks, GUI/headless/minimal-host compatibility, independent CI and operational evidence. Tests are performed by the user/CI, not this review.
 
 **PR gate:** preserve all changes in draft PR #78. Reconcile current governing/blueprint master and other active reviews; run the mandatory pre-merge architectural/technical status review and obtain explicit approval before any protected-branch squash merge.
+
+
+## Reciprocal interface — Logistics conceptual review (19 November 2026, draft PR #89)
+
+**Proposed; not owner-approved or implemented.** Logistics can provide cited freight, delivery and return service evidence for invoice line substantiation, but Invoice controls invoice issuance, numbering, adjustment and settlement state. Carrier invoice evidence does not itself create a supplier payable or customer receivable; Accounting decides recognition. See [Logistics proposed public contract](../logistics/capability-record.md#dedicated-logistics-conceptual-review--19-november-2026-draft-pr-89). No approval or completion of this capability's independent review is implied.
