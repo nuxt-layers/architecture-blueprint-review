@@ -270,3 +270,12 @@ This evidence supplement does **not** promote the existing candidate to Establis
 
 
 **Owner-approved INF-01 refinement (18 November 2026):** `infrastructure` primarily defines the canonical hosting and deployment build standard, Docker/Compose configurations and server setup/upgrade/verification/recovery scripts. Optional headless operational status/control interfaces and operator screens complement—not replace—this responsibility. Retain Foundation responsibility with implementation kind **infrastructure blueprint / host-operated deployment composition**, not mandatory independent Nuxt Layer. The [conceptual review](../reviews/infrastructure-conceptual-architecture.md#owner-clarification--authoritative-hosting-environment-definition-18-november-2026-supersedes-narrower-wording-above) documents both. Working register remains non-normative; production acceptance is not claimed.
+
+
+## Message Queue independent review evidence — 19 November 2026
+
+| Entry | Classification / review | Evidence and boundary |
+|---|---|---|
+| `message-queue` (directory `message_queue`) | Governing **Platform**; detailed conceptual proposal [PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94), **not owner-approved** | `nuxt-layers/message-queue` README contains only the project title and root `CONTRACT.md` was not retrievable on 19 November 2026. Published ports, deployment, tests and operational readiness **unverified**. Source domains own committed event meaning and durable outboxes; MQ proposed custody, scoped delivery/subscriptions, retries, dead letters, replay and operator-facing status; optional GUI, no standalone Event Bus. |
+
+Do not use conceptual acceptance scenarios as evidence of installed, configured, operational, enabled or authorised software. The opening governing and blueprint SHAs are in [review baseline](../reviews/message_queue-review-baseline.md).
