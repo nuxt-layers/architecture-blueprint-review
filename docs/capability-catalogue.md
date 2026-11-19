@@ -64,6 +64,7 @@ The entries below describe additional bounded responsibilities without implying 
 | Entry | Intended class | Scope and boundary |
 |---|---|---|
 | `architecture-rules` | Architecture governance (not a runtime layer) | Governs ADRs, normative standards and this catalogue; owns no application runtime data |
+| `mailer` | Platform transport candidate | Proposed headless, tenant-isolated transactional email dispatch and technical delivery evidence through replaceable SMTP/API providers; Notifications owns notice orchestration, source domains own message purpose, and human receipt is never guaranteed. [Conceptual review](capabilities/mailer/capability-record.md) |
 | `infrastructure` | Foundation candidate | Host/backend/deployment setup and operational configuration; infrastructure resources and domain data remain with the appropriate hosts/providers |
 | `reviews` | Platform candidate | Customer ratings, testimonials, verified purchase/service evidence, moderation, merchant replies and trustworthy reputation aggregates; transaction and identity facts remain owned by source capabilities |
 | `template-engine` | Library candidate | Secure deterministic template parsing, data binding and content rendering; no template persistence, document lifecycle, arbitrary code execution or business-data lookups |
