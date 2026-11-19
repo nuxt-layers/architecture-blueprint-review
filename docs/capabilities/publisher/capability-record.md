@@ -121,3 +121,7 @@ Publisher may provide explicitly approved, versioned, public collection projecti
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.
+
+## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
+
+**Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Publisher retains document versions, publication and emergency holds, independently checks scoped Moderation action intents against current target revision and returns separate acceptance/completion/refusal/unknown receipts. Moderation owns cases and appeals; source-origin outbox events are Publisher-owned.
