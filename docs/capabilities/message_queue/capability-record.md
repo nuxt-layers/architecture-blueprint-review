@@ -54,3 +54,8 @@ Federation owns committed peer/subscription/delivery/checkpoint state and its du
 ## Integrations reciprocal conceptual interface — 18 November 2026
 
 **Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Integrations owns its committed connection/grant/mapping/checkpoint transitions and associated durable outbox; Message Queue only transports owner-originating events and may report delivery attempts. Provider webhooks and provider operation receipts are untrusted/qualified external evidence, not source-of-truth domain events. At-least-once/replay and out-of-order handling require consumer deduplication, and delivery success is not remote business completion. See [Integrations conceptual contract](../integrations/capability-record.md#commands-queries-events-and-shared-invariants), PR #76; proposed, not implemented.
+
+
+## Notifications reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Notifications draft PR #97](https://github.com/nuxt-layers/architecture-blueprint-review/pull/97), not owner-approved or implemented.** Notifications owns its committed notice state, attempts and durable outbox; Message Queue transports Notification-owned lifecycle facts with duplicates/replay and does not own notices, recipient choices or channel provider deliveries. Transport acknowledgement is not provider hand-off or human receipt. Reconcile with parallel Message Queue draft PR #94. This bounded reciprocal note preserves the independent message_queue review and creates no direct package import.
