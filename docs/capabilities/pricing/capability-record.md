@@ -32,3 +32,5 @@
 Own verifiable tier/tariff quotes, optional coupon pricing/eligibility and price-effective periods; promotion lifecycle ownership remains to examine. Failed or repeated payment cannot silently redeem coupon twice.
 
 See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commercial onboarding](../../proposals/commercial-onboarding-and-entitlements.md), [policy](../../proposals/policy-and-governance-boundaries.md), [recovery](../../reviews/organisational-ownership-and-recovery.md) for conceptual inbound/outbound authority, absence, failures and acceptance. No package dependencies inferred.
+
+**Marketplace reciprocal — proposed, 19 November 2026:** [Marketplace review](../marketplace/capability-record.md#marketplace-conceptual-review--19-november-2026) uses authorised, effective price/quote/currency and discount evidence to display listing terms. Pricing owns prices/rounding/discount validity, Marketplace owns market listing and agreement/commission basis, Billing owns actual assessed charges. Invalid or stale price prevents a definitive price claim. **Proposed only.**

@@ -36,3 +36,5 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) supplies authorised document and amount-due context; Payment Gateway owns provider initiation, capture, refund and settlement evidence. Invoice displays only a provenance-tagged derived allocation status; capture, refunds and ledger posting are not inferred from invoice issue.
+
+**Marketplace reciprocal — proposed, 19 November 2026:** [Marketplace review](../marketplace/capability-record.md#marketplace-conceptual-review--19-november-2026) provides seller-participation, agreement and Order-line attribution references when payment splitting/payout is a supported separately authorised financial workflow. Payment Gateway alone coordinates payment authorisation/capture/refund/provider results; neither marketplace listing nor commission eligibility instructs release/escrow or proves settlement. Unknown provider results require reconciliation. **Proposed only.**
