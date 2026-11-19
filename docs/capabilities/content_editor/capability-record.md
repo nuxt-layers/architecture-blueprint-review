@@ -213,3 +213,8 @@ Content Editor is a presentation consumer, not an assessment or publication owne
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Help authors and editors use Content Editor's generic Publisher-backed document-type editing, version history, preview and publication workflows; the proposed Help mapping/coverage screens are separate narrow reference-administration presentation, not another text editor. Content Editor does not own contextual mappings or publication state.
+
+
+## Localisation reciprocal conceptual interface — 19 November 2026
+
+**Status: Proposed in [Localisation draft PR #86](https://github.com/nuxt-layers/architecture-blueprint-review/pull/86); not independently approved or implemented.** Content Editor remains the generic, Publisher-backed editing and publication presentation. It may offer contextual translate/request/status/compare/quality actions consuming Localisation's authorised public contract, while source text and publishing continue through Publisher. It must visually distinguish unreviewed machine candidate, qualified reviewed candidate and Publisher-published variant; bilingual RTL/keyboard/screen-reader handling applies. Do not create a second content master or mandatory Localisation UI dependency. See [Localisation's proposed public contract](../localisation/capability-record.md#dedicated-conceptual-review--19-november-2026-draft-pr-86). This note creates no private import or mutual package dependency and preserves this capability's prior decisions.
