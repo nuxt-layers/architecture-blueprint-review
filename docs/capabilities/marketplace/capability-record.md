@@ -48,3 +48,7 @@ Merchant proofing/representation can be provided by Verification's purpose-limit
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Marketplace retains seller/listing eligibility, participation and source-specific restriction decisions. It supplies scoped source evidence and per-target actual enforcement receipts to Moderation; a case finding cannot independently suspend a seller or alter commercial/settlement outcomes. Fraud and verification evidence retain their specialist authority.
+
+## Moderation dedicated review — reciprocal interface (19 November 2026, draft PR #96)
+
+**Proposed, no published implementation contract.** Marketplace owns seller/listing participation, business eligibility and local enforcement. Moderation coordinates reports and decisions but may only request changes against explicit seller/listing revisions; commercial remedies and verified execution remain Marketplace-owned. See [Moderation's conceptual inbound/outbound contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Interoperability uses public versioned host-composed ports without private-schema coupling.
