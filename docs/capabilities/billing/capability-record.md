@@ -596,3 +596,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); INV-01–06 approved and closed, implementation not verified.** [Invoice](../invoice/capability-record.md) consumes Billing's BIL-01–06 approved finalised charge/adjustment evidence and returns idempotent authoritative issued/rejected/credit-document references. The charge decision remains Billing's; a handoff/accepted request is not issued invoice. Event-based return avoids a cycle; preserve Billing's previous approved choices.
+
+
+## Reciprocal conceptual interface — Membership (19 November 2026; draft PR #93)
+
+**Status: proposed, not owner-approved or implemented; this does not complete the billing review.** [Membership](../membership/capability-record.md) is a candidate *scheme participation* domain distinct from Identity group membership, Subscription plan entitlements, commercial settlement and application access. Billing owns charge assessment, recurring monetary periods and financial proration; Membership supplies scheme dues/term requests and consumes confirmed charge status without inferring settlement. Billing must not independently activate scheme participation. Consume only published public interfaces; no direct package dependency is inferred. Missing, stale, contradictory or unauthorised evidence must not be promoted into confirmed outcomes.
