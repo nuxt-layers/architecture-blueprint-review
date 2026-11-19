@@ -119,3 +119,10 @@ Content Security's inspection of user-provided content must use a justified purp
 ## Gaming handles and live plugins — reciprocal conceptual note (18 November 2026)
 
 **Status: Owner requirement; detailed design proposed, no published adapter.** [Gaming](../gaming/capability-record.md#owner-decisions--section-2-clarified-18-november-2026) proposes public pseudonymous handles and dynamically loaded game plugins. Privacy supplies the applicable consent, minimisation, disclosure and retention constraints; Gaming enforces its own public leaderboard/handle rules. A public handle can remain personal data when linkable to an account or identifiable through gameplay history. Live plugins must receive no unrestricted Profile/Identity data, authentication tokens or other player records and must disclose permitted data uses. Child safeguards, withdrawal, handle rename and historic scoreboard visibility require explicit policy. This does not complete the Privacy review.
+
+
+## Logging dedicated-review reciprocal note — 19 November 2026
+
+**Status: Proposed, non-normative; pending owner approval of LOG-01–LOG-08.** See [Logging conceptual public contract](../logging/capability-record.md#dedicated-logging-conceptual-review--19-november-2026).
+
+**Proposed Logging PR #88 relationship:** Privacy supplies qualified purpose, collection/retention, rights, erasure and disclosure constraints and their effective scope/version; Logging applies and reports bounded execution results, known gaps and uncertainty for its own records/sinks/backups. The presence of telemetry is not a consent exemption. Logging may not keep raw sensitive content or route to third parties without applicable approval; Privacy does not take over Logging's technical sink lifecycle.

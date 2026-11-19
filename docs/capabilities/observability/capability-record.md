@@ -55,3 +55,10 @@
 ## Infrastructure reciprocal interface — 18 November 2026
 
 **Proposed reciprocal review — 18 November 2026:** Infrastructure's [conceptual host status contract](../../../reviews/infrastructure-conceptual-architecture.md) supplies qualified resource readiness, provider health, UTC synchronisation quality and failure/recovery observations, with evidence age, source and explicit unknown/degraded semantics. Observability owns telemetry, metrics, alerts and historical presentation, not infrastructure control or provider truth. Pending INF-01/03/05; no Observability implementation is asserted.
+
+
+## Logging dedicated-review reciprocal note — 19 November 2026
+
+**Status: Proposed, non-normative; pending owner approval of LOG-01–LOG-08.** See [Logging conceptual public contract](../logging/capability-record.md#dedicated-logging-conceptual-review--19-november-2026).
+
+**Proposed Logging PR #88 relationship:** Logging exposes bounded safe sink availability, accepted-versus-delivered status, backlog, loss/drop/retry, policy quality and correlated diagnostic references through public scoped status. Observability owns alerting, metric/tracing histories and health presentation, not log record custody. An alert or green chart is not an Audit receipt or proof of complete diagnostics. Exchange through host-composed ports/events without cyclic package imports.

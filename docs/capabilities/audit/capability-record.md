@@ -646,3 +646,10 @@ Conditional Help-owned mapping create/update/withdrawal actions and sensitive pr
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual recommendation approved in principle 18 November 2026; no implemented Audit adapter is claimed. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) supplies risk-classified committed issue/receipt/credit/correction, high-risk access/export, provider cut-over, financial approval and privileged override events with producer, source event/sequence, decision/outcome, tenant/legal entity and document reference through its owned durable outbox. Audit supplies acceptance/integrity/completeness/review status and governed evidence access; its receipt is evidence intake, **not** legal issue or domain action success. Audit does not duplicate document content, Invoice number authority or mutable Invoice domain history. Replays and gaps must be explicit.
+
+
+## Logging dedicated-review reciprocal note — 19 November 2026
+
+**Status: Proposed, non-normative; pending owner approval of LOG-01–LOG-08.** See [Logging conceptual public contract](../logging/capability-record.md#dedicated-logging-conceptual-review--19-november-2026).
+
+**Proposed Logging PR #88 relationship:** Logging owns validated/sanitised technical diagnostic intake, bounded sinks, retention and delivery/health outcomes, not accountable evidence. Audit retains source-verified evidential intake, integrity, completeness and disclosure. Audit may emit minimal typed diagnostics to a host-composed Logging port, and Logging's critical administrative changes may produce independent eligible Audit events via a producer-owned durable outbox; no mutual implementation imports, bulk raw-log promotion, or implied Audit custody from log delivery. A dual outage must show independent unknown/gap states.

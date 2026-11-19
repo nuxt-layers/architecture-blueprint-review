@@ -341,3 +341,10 @@ Comments Engine must consume trusted session/subject assurance and recency where
 ## Identity reciprocal conceptual interface — 18 November 2026
 
 **Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; not a published API.** Identity owns source-of-truth opaque principal standing, tenant/group/membership facts and state changes; Authentication owns session, sign-in eligibility, credential and assurance operations. Consume strong freshness-qualified Identity standing for sensitive access and versioned Identity outbox transitions for revocation with independently measured bound, safe retries/reconciliation and fail-closed unknown status. Authentication's credential-recovery event can put Identity governance changes on hold, not rewrite Identity owner facts. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-inbound-interfaces).
+
+
+## Logging dedicated-review reciprocal note — 19 November 2026
+
+**Status: Proposed, non-normative; pending owner approval of LOG-01–LOG-08.** See [Logging conceptual public contract](../logging/capability-record.md#dedicated-logging-conceptual-review--19-november-2026).
+
+**Proposed Logging PR #88 relationship:** Authentication supplies only typed sanitised failures, dependency outages, throttling and minimal correlation via an optional server-side Logging port; never credentials, sessions, passkeys or bearer material. Logging returns intake/delivery status, not sign-in outcome or accountable Audit receipt. Authentication's security-event facts and mandated durable outbox remain separate; Logging outages do not weaken Authentication's access controls.
