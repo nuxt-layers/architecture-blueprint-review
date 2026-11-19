@@ -52,3 +52,7 @@ Media remains authoritative for uploads, image/file versions, variants and visib
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Media retains image asset, metadata, group visibility and native emergency safeguards. It supplies revision/availability and permitted evidence references and independently handles scoped Moderation hold/removal/reinstatement intents with explicit receipts. A case decision is not proof of physical object deletion or CDN/cache propagation.
+
+## Moderation dedicated review — reciprocal interface (19 November 2026, draft PR #96)
+
+**Proposed, no published implementation contract.** Media owns images, asset visibility and immediate safety restrictions. It exposes only authorised source evidence/revisions to Moderation and separately acknowledges and completes scoped holds and restores; deleting original bytes or derived copies cannot be inferred from case closure. See [Moderation's conceptual inbound/outbound contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Interoperability uses public versioned host-composed ports without private-schema coupling.
