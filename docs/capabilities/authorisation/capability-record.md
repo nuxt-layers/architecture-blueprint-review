@@ -478,3 +478,10 @@ Federation needs server-side resource- and tenant-scoped decisions for peer admi
 ## Integrations user-scoped discovery/use — 18 November 2026
 
 **Status: approved Integrations conceptual decision, not independent authorisation implementation acceptance.** **INT-07–09 owner-approved, including per-user visibility/use.** Integrations consumes the current tenant/organisation, caller/assurance and Authorisation's resource- and action-specific `decide(caller, action, resource)` for plugin discovery, plugin management, connection read/change and operation-specific execution; organisation-wide plugin activation is not blanket permission for members. The organisation owner may see/use Weather and Banking if allowed, while a lowest-trust user may see/use Weather only. Denied plugins/remote accounts are omitted from public read models where existence is confidential, and server checks every protected action independently of sidebar visibility. Authorisation owns grants/denials/revocation; Integrations owns registry/connection and policy-filtered public projections; domain owners still validate business acts. See [Integrations approved decisions](../integrations/capability-record.md#int-07-09-approved-governance-and-user-specific-entitlement--18-november-2026), PR #76. This is conceptual reciprocity, not a verified current published API.
+
+
+## Logging dedicated-review reciprocal note — 19 November 2026
+
+**Status: Proposed, non-normative; pending owner approval of LOG-01–LOG-08.** See [Logging conceptual public contract](../logging/capability-record.md#dedicated-logging-conceptual-review--19-november-2026).
+
+**Proposed Logging PR #88 relationship:** Authorisation supplies safe decision-failure/dependency latency and error-category signals without raw policy predicates or secrets. Logging owns sanitised diagnostic delivery, not permissions, authoritative denial decisions or Audit evidence. Protected Logging reads/exports/configuration must itself be authorised server-side; unknown authorisation fails closed, with no parent-tenant implicit access. Use host-composed contracts rather than mutual imports.
