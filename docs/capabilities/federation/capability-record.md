@@ -344,3 +344,7 @@ All findings in this section are agreed conceptual recommendations where express
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Federation supplies verified peer/collection provenance, trust/withdrawal status and locally admissible signals to Moderation. Moderation may coordinate a Hub-local case, but Federation owns peer exchange/quarantine and origin Node retains its records. Index suppression and origin deletion differ; no global shared-abuse verdict or implicit cross-tenant access.
+
+## Reciprocal boundary — Moderation dedicated review (19 November 2026, PR #96)
+
+**Proposed; non-normative, no implemented port asserted.** Federation owns peer subscription, trust/exchange and quarantine, supplying provenance-bound signals to Moderation. Moderation can adjudicate a Hub-local case but cannot remove the origin Node record; Search performs independent derived-index restriction, with scoped receipts. See [Moderation conceptual contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Public host-assembled contracts must remain acyclic, scoped and permission-checked.
