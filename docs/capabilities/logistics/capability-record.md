@@ -54,3 +54,8 @@
 ### Inventory manufacturing traceability — owner-approved conceptual reciprocity (18 November 2026; PR #81)
 
 **Approved Inventory-side conceptual requirement:** Shop-floor transfers to external coating/finishing or outside processing record dispatch, in-transit, contractor custody and verified receipt separately. Logistics provides carrier evidence; external subcontractor processing evidence must not silently transfer legal title or change the canonical stock master. Inventory retains batch/lot genealogy, material quantity and pending/disputed handover until acknowledged. This note approves the **Inventory-side requirement only**, does not change this capability's independent approval status or claim a running integration. See [shop-floor flow and public contract](../../../reviews/inventory-conceptual-reassessment-2026-11-18.md#owner-decisions-and-manufacturing-material-flow-refinement--18-november-2026).
+
+
+## Location conceptual interface — 19 November 2026 (draft PR #87)
+
+**Status: proposed Location-side reciprocity; not independently approved or implemented.** Logistics owns transport plan, shipment/delivery status, carrier proof and route execution. Location proposes normalised address/place IDs, geocoding candidates with confidence, precision, stale/source status and authorised place changes. Location must not claim delivery feasibility or routing/ETA correctness; Logistics validates its own delivery outcome and handles ambiguous/failed address evidence. See [Location's proposed conceptual public contract](../location/capability-record.md). This note does not change prior approved decisions or finish this capability's own review.
