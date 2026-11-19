@@ -95,3 +95,10 @@ Federation submits locally admissible provenance and suspicious remote transmiss
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the moderation public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Media is responsible for enforcing own asset holds, removal, reinstatement and purge; proposed Moderation owns cross-domain report cases, decisions and appeals, not stored image bytes or Media asset state. A verified case decision is an input to a revision-scoped Media enforcement command, yielding an execution receipt that may report incomplete cache/CDN purging. Emergency hold semantics and appeal re-release require explicit risk and rights checks. Moderation remains provisional; do not duplicate its case state inside Media.
