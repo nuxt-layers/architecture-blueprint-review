@@ -279,3 +279,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Infrastructure INF-05 owner-approved reciprocal clarification — 18 November 2026
 
 The [Infrastructure approval and GUI review](../../../reviews/infrastructure-approved-contract-standards-gui.md) confirms Infrastructure/host owns verified UTC time-source/NTP/NTS operations, quality, fallback and recovery. Infrastructure/host **reuses Clock's published temporal interpretation/format interfaces where applicable** for dates, instants and operator display, without demanding a direct package dependency or giving Clock ownership of the operating-system synchroniser. Clock continues to consume a synchronous host-supplied `now()` instant and does not perform NTP requests. Source-quality evidence stays with Infrastructure and Observability. This preserves CLK-03/04 and CFG-07; no contract implementation change is asserted.
+
+
+## Message Queue reciprocal review — 19 November 2026
+
+**Proposed in [draft PR #94](https://github.com/nuxt-layers/architecture-blueprint-review/pull/94); not an implemented or approved public API.** [Message Queue conceptual contract](../message_queue/capability-record.md#independent-message-queue-conceptual-review--19-november-2026): Clock provides trusted time interpretation for expiry, leases, retry and operator display; MQ owns transport deadlines, not time synchronisation. Untrusted producer wall clock cannot determine security retention. Source capabilities retain event meaning and durable outbox ownership; MQ only owns scoped custody, attempts, routing, retry, dead-letter and replay. Directed public host-composed interfaces avoid import cycles and false completion claims. Preserve earlier decisions.
