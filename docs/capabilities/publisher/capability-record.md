@@ -125,3 +125,7 @@ Publisher remains the sole owner of Help article/document content, revision, app
 ## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
 
 **Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Publisher retains document versions, publication and emergency holds, independently checks scoped Moderation action intents against current target revision and returns separate acceptance/completion/refusal/unknown receipts. Moderation owns cases and appeals; source-origin outbox events are Publisher-owned.
+
+## Moderation dedicated review — reciprocal interface (19 November 2026, draft PR #96)
+
+**Proposed, no published implementation contract.** Publisher owns document version, publication status, local emergency holds and actual restriction/reinstatement. Moderation sends case-linked exact-revision action intents; Publisher independently validates and returns separate accepted, completed, refused or unknown receipts. See [Moderation's conceptual inbound/outbound contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Interoperability uses public versioned host-composed ports without private-schema coupling.
