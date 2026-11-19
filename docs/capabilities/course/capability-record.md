@@ -262,3 +262,10 @@ The owner explicitly requested creation of [`credentials`](../credentials/capabi
 ## Events owner decision clarification — 18 November 2026
 
 **EVT-01/02 owner-approved:** Events is a separate generic activity/schedule Domain capability, and the other domain can optionally associate its own records through public references without transferring ownership. **EVT-11 was explicitly not approved and is removed from the Events review.** Any educational offering/cohort ownership is handled in its independent capability review, not by Events. This does not change existing owner-approved Course or Enrolment authority.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the course public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Course may reference only revision-specific, audience-authorised Media educational image variants. Media owns alt/credit, scan/hold and derivative lifecycle; Course owns course enrolment and publication decisions. Missing or revoked Media resolution cannot silently expose a private original or bypass learner permissions; Course should show an accessible unavailable state and consume revocation notices.
