@@ -180,3 +180,8 @@ Help may publish public-contract, permission-scoped coverage/freshness views: do
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual design approved, INV-01–06 closed (18 November 2026); Reporting's full review and implementation remain unverified. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) supplies authorised tenant/legal-entity/party-scoped invoice and credit status, issuance periods, currency/tax breakdowns, correction lineage, source revision, payment allocation projection with freshness/uncertainty, provider-confirmation exceptions and completeness/checkpoints. Reporting owns definition, derived results, distribution/export and cross-source comparisons with Accounting, Billing and Payment Gateway; it cannot claim posting, payment or tax recognition on Invoice's behalf. Recheck source permissions and disclosure of aggregates, snapshots and exports, including revoked access and tenant isolation; missing provider evidence must remain unknown, never treated as zero.
+
+
+## Job vacancy/headcount reporting reciprocal proposal — 19 November 2026 (draft PR #84)
+
+**Status: Proposed in [Job review](../job/capability-record.md).** Reporting may consume purpose- and tenant-authorised Job position/opening revisions, permitted vacancy counts and publication statuses. Employment, not Job, remains source of actual engagement/occupancy; any fill ratio/available-seat report must carry source, completeness, as-of time and uncertainty, and must not equate absent Employment data with zero employees. Reporting owns report assembly, not underlying post, engagement or candidate records. No unrestricted sensitive personnel export is implied.
