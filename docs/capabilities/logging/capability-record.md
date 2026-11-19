@@ -192,3 +192,7 @@ Help sends redacted diagnostic codes, mapping/Publisher failures, latency and pe
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual design approved, INV-01–06 closed (18 November 2026); Logging's full contract is still unverified. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) publishes minimised diagnostics for issue validation, number conflicts, provider timeout/unknown outcome, replay rejection and outbox/delivery errors with opaque correlation. Logging owns sinks, severity and delivery, never invoice records, source outbox or Audit proof. Full financial documents, personal/tax/bank details and provider secrets must be excluded. Logging absence never means an invoice was not issued; preserve business/audit resilience separately.
+
+## Cross-capability note — Mailer conceptual interface (19 November 2026)
+
+**Status: proposed; [Mailer PR #90](https://github.com/nuxt-layers/architecture-blueprint-review/pull/90), not owner-approved or an implemented contract.** [Mailer conceptual record](../mailer/capability-record.md): Proposed Mailer sends structured sanitised diagnostics for provider timeouts, throttling, retries, callback verification failure and latency, with correlation/dispatch references but without message contents, secrets or unnecessary recipient addresses. Logging owns diagnostic records, not Mailer's authoritative attempt state; Audit owns accountability and Observability owns health metrics. Concurrent Logging PR remains provisional.

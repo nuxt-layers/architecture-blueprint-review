@@ -68,3 +68,7 @@ Comments Engine may produce author/reply/mention, moderation decision and appeal
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Notifications delivers opted/required issuance, expiry, revoked, replaced and status-action notices from committed Credentials events with authorised recipient context and minimised details. Delivery failures retry independently; neither successful email nor failed delivery determines whether credential issuance committed.
+
+## Cross-capability note — Mailer conceptual interface (19 November 2026)
+
+**Status: proposed; [Mailer PR #90](https://github.com/nuxt-layers/architecture-blueprint-review/pull/90), not owner-approved or an implemented contract.** [Mailer conceptual record](../mailer/capability-record.md): Notifications retains authorised recipient selection, preference/channel orchestration, notice purpose and lifecycle. Proposed Mailer public contract accepts approved minimised email-channel dispatch intent with tenant, source/purpose revision, sender/recipient, approved content and idempotency; returns dispatch ID, provider acceptance/rejection/unknown, later authenticated bounce/delivery claims and failure evidence. Provider acceptance is not a person being notified. Mailer transport failure does not reverse source-domain commitments. No implemented API is asserted.
