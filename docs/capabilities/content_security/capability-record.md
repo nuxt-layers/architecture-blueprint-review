@@ -216,3 +216,10 @@ Editor displays source-owned pending, unavailable, quarantine and held safety re
 ## Reciprocal conceptual note — Course (17 November 2026)
 
 **Status: Proposed, pending owner approval.** [Course review](../course/capability-record.md), draft PR #56: Course submission and linked learning content must meet required Content Security checks before public exposure; Course owns curriculum publication, Content Security owns scanning verdicts. Failed/unknown required verdicts block exposure; concurrent Content Security PR #55 remains provisional. This does not complete content_security's own review.
+
+
+## Media reciprocal conceptual interface — 19 November 2026 (proposed; PR #92)
+
+**Status:** Provisional Media review, not approved as the content_security public implementation contract. See [Media dedicated conceptual review](../media/capability-record.md#dedicated-conceptual-review--media-19-november-2026).
+
+Media supplies scoped image digest/revision/scan handles and owns actual quarantine, sanitisation and deliverability. Content Security provides detection verdicts and provenance only for the exact revision and relevant policy. Incomplete/expired/mismatched detection cannot authorise publishable variants; scan service failure leaves a hold, not an automatic release. Media returns enforcement/eligibility status through its own contract. No private storage access or domain takedown ownership transfers to Content Security.
