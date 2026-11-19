@@ -44,3 +44,7 @@ Marketplace owns seller-participation/merchant eligibility, listing permissions,
 **Conceptual only:** VER-01–VER-12 approved in [Verification's record](../verification/capability-record.md); see [jurisdiction comparison](../../../reviews/verification-international-jurisdictions.md). No new implementation, published API or governing ADR.
 
 Merchant proofing/representation can be provided by Verification's purpose-limited qualified assertions, but Marketplace retains seller eligibility, trade restrictions, reviews and commercial outcomes. Identity-proofed sellers can still be fraudulent, and representation mandates may expire independently. KYB provider status, cost, revocation and local legal scope remain explicit.
+
+## Moderation dedicated review — reciprocal conceptual boundary (19 November 2026, draft PR #96)
+
+**Status: Proposed, not an accepted public implementation contract.** See [Moderation's dedicated idealised input/output contract](../moderation/capability-record.md#dedicated-conceptual-review--19-november-2026-pr-96). Marketplace retains seller/listing eligibility, participation and source-specific restriction decisions. It supplies scoped source evidence and per-target actual enforcement receipts to Moderation; a case finding cannot independently suspend a seller or alter commercial/settlement outcomes. Fraud and verification evidence retain their specialist authority.
