@@ -137,7 +137,7 @@ Challenge missing responsibilities, ownership conflicts, duplicated state, nativ
 
 ## Phase 8 — Documentation update and decision discipline
 
-Update `docs/capabilities/[ACTUAL_DIRECTORY]/capability-record.md`, retaining the existing pro-forma and prior accepted content. Include:
+Update `docs/capabilities/[ACTUAL_DIRECTORY]/capability-record.md` as a **single coherent, current specification** under the governing Capability Standard's canonical documentation requirement. Integrate the substance and status of previously accepted decisions, relevant cross-capability relationships, examples and use cases into their proper sections. **Remove obsolete, superseded, contradictory, redundant and irrelevant material**, including unneeded pro-forma headings and historical appendices. Git history and decision records preserve evolution; they do not require carrying historical drafts in the live specification. Do not silently override authoritative approved decisions or erase an active parallel review's unmerged work; resolve conflicts transparently and reconcile shared files. Include:
 
 1. Capability identity, classification, status and cited evidence.
 2. Purpose and independent justification.
