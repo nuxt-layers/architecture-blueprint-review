@@ -570,3 +570,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) supplies immutable issued/received invoice and correction evidence to Accounting for independently authorised ledger postings; Accounting remains authoritative for books, tax recognition and financial reconciliation. Verified posting/settlement evidence may feed Invoice's derived document allocation status without granting it ledger authority; handle unknown provider outcomes and duplicate event delivery.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Recruitment may request evidence of funding, capped opening capacity and approval validity; Accounting/Finance retains actual budget, spending and ledger authority. Recruitment owns approval of its requisition only after independently authorised mandate evidence, and never infers financial permission from Job or an approval task. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
