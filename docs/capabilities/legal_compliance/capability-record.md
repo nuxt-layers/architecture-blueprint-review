@@ -385,3 +385,65 @@ Typical sequence: Legal Compliance creates `under_review` case → native workli
 - **LC-07:** Legal qualification and Privacy rights/retention outcomes require narrow reciprocal decisions and case-by-case exception evidence.
 
 **Open to owner resolution:** scope of jurisdictions/services supported at launch; who may act as legally qualified reviewer and how verification is maintained; mandatory review/dual-control thresholds; whether a named legal-entity authority requires a future capability; which statutory obligation/filing cases are initially supported; duration and precedence rules for conflicting holds/rights. None is answered by a generic transport queue.
+
+## Declarative variables, flags and automation execution — 20 November 2026
+
+**Status: proposed LC-08 detailed design; awaiting owner approval, no implemented public contract.** This builds on the [user-driven use cases](#user-driven-operation-and-human-approval-worklists--20-november-2026). Existing ADR-0018 grants Legal Compliance legal applicability/constraint authority, not Configuration/domain state ownership.
+
+### Information categories, ownership and trust
+
+| Category | Meaning / example | Source and safeguards |
+|---|---|---|
+| Trusted context | `tenant.id`, caller assurance, request time, resource | Host/IAM/Clock trusted context; browser cannot nominate another tenant to obtain access |
+| Source fact | `service.category`, `entity.registered_country`, `activity.starts_at` | Owning domain, Identity/Configuration or separately evidenced legal-entity authority; source revision/validity required |
+| Declaration | `audience.includes_children`, intended jurisdiction | User assertion through Configuration or source domain, tagged `asserted` rather than automatically `verified` |
+| Qualified legal knowledge | source, approved rule, applicability predicates, legal effective interval | Legal Compliance-owned reviewed version; cannot be changed by a tenant feature flag |
+| Derived assessment | applicable/not-applicable/unresolved/unsupported, rule version and coverage | Legal Compliance computes from validated fact snapshot and effective approved rules |
+| Operational fulfilment | `age_assurance.completed`, `hold.applied`, `filing.accepted` | Verification, record owner, regulator/filing owner respectively; Legal Compliance may reference evidence, not reown state |
+| Work orchestration | review task state, scheduled due trigger, event transport | Workflow, Scheduler, Message Queue; none owns legal verdict |
+
+**Variables are typed and registered** with stable semantic identifier, allowed values/units, source owner, purpose, scope, privacy classification, trust grade, freshness/TTL, canonical time, version, validation, missing-data handling, and whether user-editable. A Boolean is never a sufficient encoding for legal applicability. Use `applicable | not_applicable | unresolved | unsupported` and separate source knowledge/approval/enforcement status; `false` is not inferred from missing evidence. Flags may be derived *from* qualified outcomes by the consuming domain, but cannot replace the source decision.
+
+### Exact conceptual load/evaluate/commit procedure
+
+1. **Trigger:** synchronous authorised command/query, source-owned committed outbox event, schedule trigger or authorised human reassessment. Every trigger has source/event ID, correlation, subject/resource, change version and effective time; do not trust browser-supplied tenant identifiers or outbox delivery as authorisation.
+2. **Scope/authorise:** server resolves caller, tenant and resource, permission and risk/assurance. Legal Compliance checks declared decision purpose and authorised supported jurisdictions/services.
+3. **Select rules:** choose reviewed, active legal-rule versions by jurisdiction, territorial reach, regulated activity/entity/audience and legal-effective/as-of time. Distinguish `knownAt` from `legallyEffectiveAt`; do not apply today's law silently to a historic decision.
+4. **Plan dependencies:** extract the referenced variable keys from selected rules' validated expression trees/decision tables; deduplicate fetches, and use stable public contracts and composition-supplied fact-resolver ports. Do not query another capability's tables.
+5. **Load fact snapshot:** gather narrow authoritative facts plus source owner, revision/ETag, observation time, expiry, provenance and verification state. User settings are validated assertions; checked source facts and independent legal authority take precedence in their defined scopes. Prefer snapshot/revision consistency or re-read critical facts if they changed during evaluation.
+6. **Normalise and validate:** schema check, canonical identifiers, known jurisdiction codes, units and Clock time zones, source/tenant binding, type, expiry, contradictory evidence and sensitive-data minimisation. Missing, invalid, stale, conflicted or unsupported critical fact is a typed `unresolved` outcome, never default `false`.
+7. **Evaluate deterministically:** use a restricted typed operator set (equality, set membership, comparison, logical all/any/not, range/date operations) with documented null/unknown handling; no `eval`, arbitrary JavaScript, network access or externally authored side-effect code. Evaluate **all** applicable rules and combine mandatory conditions without permitting a weaker tenant rule to override statutory/security floors. Conflicts escalate rather than assume priority.
+8. **Return result:** `decisionId` (when persisted), tenant/resource scope, fact snapshot digest/references, applicable rule IDs/versions, per-jurisdiction coverage, as-of/knowledge dates, required/forbidden/conditional operations, obligations/hold instructions, unresolved reasons, freshness/review deadline and privacy-limited explanation. A read-only query need not generate a new durable record for every attempt.
+9. **Commit consequential state:** for approval/hold/obligation/important assessed action, use capability-owned persistence and atomic outbox writes to record idempotent decision/result with optimistic concurrency over source/rule revisions. Accept pending/committed/failed/unknown separately. New fact/rule revision makes prior prospective assessment stale for affected activity rather than rewriting historic evidence.
+10. **Act and reconcile:** domain owner enforces, Workflow routes human reviews, Scheduler runs due tasks, Message Queue transports committed events, Notifications alerts and Audit independently accepts evidence. Record source-domain acceptance/completion receipts; message delivery does not imply actual application or regulator confirmation.
+
+### Rules representation and versioned lifecycle
+
+Prefer **schema-validated declarative rule/decision table**, with `ruleId`, `version`, `status`, `sourceCitation`, `sourceEffectiveInterval`, `qualificationVersion`, `jurisdictions`, `activityPredicates`, `requiredVariableKeys`, `typedConditions`, `outcomes`, `reviewerProvenance`, `approvedAt` and `supportedCoverage`. Expressions may select facts and generate qualified requirements, but have no arbitrary scripting, network or domain-write privileges. A qualified reviewer approves legal meaning, not merely JSON syntax. Parse/schema/type checks, impossible-branch and contradiction checks, sample scenarios and independent approval precede activation. Rule versions are immutable once effective; supersede by new versions with future/retroactive date semantics recorded. Unverified external law feeds create *candidates* only.
+
+Do **not** represent an obligatory legal requirement as a tenant-editable Boolean: `legal.safeguard.enabled=false` cannot waive a statute. Domain-owned operational flags like `age_assurance.completed` require the domain's verified evidence and cannot be asserted by Legal Compliance alone.
+
+### Loading modes and refresh/invalidation
+
+- **Immediate synchronous query** for legally gated transactions: resolve bounded authoritative facts and qualified rules within explicit latency/timeout budgets; if critical data cannot be established, return scoped `unresolved` and hold only the affected unsafe operation.
+- **Event-driven:** a source's committed fact/policy/hold change invalidates affected cached decisions by declared variable dependency and version; MQ delivers at-least-once, so handlers deduplicate, tolerate out-of-order events, re-fetch authoritative facts, and preserve independent source history.
+- **Scheduled:** Scheduler invokes review/expiry/obligation checks at Clock-qualified dates and time zones; apply idempotency and overdue recovery. A missed timer is not a waiver.
+- **Manual review:** privileged authorised correction or legal source update enters Legal Compliance worklist, optionally Workflow routing; revalidate against latest evidence/version before legal commit.
+- **Recovery:** durable per-scope requalification/checkpoint and eventual reconciliation discover missed/replayed events and stale owner-enforcement receipts; no full tenant scans for every insignificant change. Legal Compliance owns assessment index/cache invalidation semantics where needed, not general Caching/MQ infrastructure.
+
+**Caching:** cache only approved immutable rule bundles and sufficiently bounded derived assessments by tenant/activity/jurisdiction/fact versions/rule versions/time slice; respect retention/Privacy. For high-risk checks, revalidate freshness at commit; stale cache never proves permissibility. Optional cache provider does not change legal authority.
+
+### Automation safety, testable conceptual scenarios
+
+- Same `requestId` + same facts/rule versions retries → same committed state without duplicate holds/reviews; changed content with same idempotency key → conflict.
+- Partial fact-provider outage → typed unresolved result; unrelated low-risk operations remain functional.
+- Tenant switches a feature off → domain functionality changes; legal duty does not magically disappear if underlying regulated activity persists.
+- Contradictory two-country rule outcomes → jurisdiction-specific requirements plus review/hold for affected act, not automatic choice of weaker obligation.
+- Law amended retroactively → preserve past provenance and distinguish present-day legal re-evaluation from what was known at the original time.
+- MQ event replay → re-fetch current authoritative revision and avoid duplicated review cases.
+- Hold notification delivered but source owner preservation fails → hold effective, preservation incomplete, urgent remediation not fabricated success.
+- No Workflow → native legal review state remains usable; no Message Queue → local legal decisions remain correct but required downstream enforcement cannot be considered confirmed.
+
+### Decision recommendation
+
+**LC-08 — Deterministic, event-driven legal applicability automation (proposed):** Define typed/provenance-scoped variables and trusted source resolvers, restricted qualified declarative rules, explicit four-state applicability, versioned decision snapshots and dependency-triggered requalification. Automate safe routine qualification, monitoring and receipt reconciliation while retaining human legal interpretation/approval and domain-owned enforcement; reuse Scheduler, Workflow, MQ and Notifications instead of creating duplicated engines. Subject to owner approval and future root CONTRACT.md/acceptance evidence.
