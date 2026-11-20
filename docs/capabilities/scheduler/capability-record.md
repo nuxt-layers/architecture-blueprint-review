@@ -72,3 +72,7 @@
 ## Job expiry/advertising timing reciprocal proposal — 19 November 2026 (draft PR #84)
 
 **Status: Proposed in [Job review](../job/capability-record.md), not an approved Scheduler interface.** Scheduler may trigger idempotent Job opening-expiry, listing withdrawal reminder and reconciliation commands with expected revision, scheduled/actual time and correlation key. Scheduler owns attempts/retries only; Job owns opening/advertisement lifecycle, current eligibility and authorised domain transition. Late, repeated or absent triggers never extend an expired opening or prove remote advert withdrawal; Clock governs effective time and source-adjustment interpretation. This does not create a background-job role for the Job Domain capability.
+
+## Job / Recruitment boundary supersession — 20 November 2026
+
+**Updated reciprocal JOB-01–09 authority (20 November 2026):** Previously proposed Scheduler-triggered Job **opening expiry, listing withdrawal or vacancy reconciliation** is **not a Job service** under approved position-only scope. Future Recruitment may request timed vacancy/listing maintenance with its own current authorisation, expected revision and idempotent domain handler. Scheduler owns trigger attempts/retries, never vacancy or hiring outcomes. Job may optionally request only position-definition maintenance if justified. [Job](../job/capability-record.md) · [Recruitment proforma](../recruitment/capability-record.md).
