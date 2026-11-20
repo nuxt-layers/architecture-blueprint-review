@@ -193,3 +193,8 @@ Help may publish public-contract, permission-scoped coverage/freshness views: do
 ## Job position-only reciprocal interface — 20 November 2026
 
 **Status: Conceptual, following owner-approved JOB-01–09, not an existing adapter.** **Job reciprocal public data clarification:** Job provides only authorised position descriptions, categories, grades where disclosed, effective revisions and status/history; Reporting owns report definitions, snapshots, aggregates and permitted exports. Recruitment is the proposed vacancy/application source; Employment is the actual workforce/assignment source. Reports must not count positions as open vacancies or incumbents. Preserve source revision, as-of time, missing-data and disclosure limits. [Plain-English contract review](../../../reviews/job-public-contract-standards-and-gui.md); no published Reporting root contract was verified.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies scoped, versioned vacancy/application/decision measures and corrections; Reporting owns aggregates, not underlying hiring determinations; apply small-cohort privacy safeguards. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
