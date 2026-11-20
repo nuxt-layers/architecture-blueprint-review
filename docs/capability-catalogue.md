@@ -171,7 +171,9 @@ The following are **types and compositions**, not independent capability candida
 | `gaming` | Game-specific state, rankings and participation; separate from generic Identity accounts |
 | `job` | **Owner-approved conceptual Domain boundary (JOB-01–09):** versioned employment **position definitions only**; no vacancy, advertising, applicant or engagement authority. Independent packaging and governing adoption outstanding. [Job review](capabilities/job/capability-record.md) |
 
-**Recruitment classification seed (20 November 2026):** Owner favours **Option A**, a separate `recruitment` Domain candidate, with **proposed ownership** of authorised vacancy/requisition lifecycle, advertising intent and candidate selection. Detailed vacancy authority, staffing/funding approval, application/offer lifecycle and native public contracts require its own review. Process/Workflow/Task orchestrate work without owning applicant records; Employment owns actual engagements. [Recruitment proforma](capabilities/recruitment/capability-record.md).\n\n### Commerce and operations domain candidates
+| `recruitment` | **Proposed separate Domain candidate (owner-favoured Option A):** vacancy/requisition, advertising intent and selection lifecycle; detailed approval, funding, offer and applicant contract require independent review. Process/Workflow/Task do not own applicant state; Employment owns engagements. [Recruitment proforma](capabilities/recruitment/capability-record.md) |
+
+### Commerce and operations domain candidates
 
 | Candidate | Potential bounded responsibility / exclusion |
 |---|---|
