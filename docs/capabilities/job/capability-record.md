@@ -6,6 +6,9 @@
 **Version / Availability:** Conceptual version unspecified; no accessible `nuxt-layers/job/CONTRACT.md` verified.  
 **Opening evidence:** Governing `architecture-rules@b920ce0d8b361de000a6739a16123dbdc56df7a7`, blueprint `architecture-blueprint-review@6dac83a03da8704f7945ee1bc894f2248300445a`; [review PR #84](https://github.com/nuxt-layers/architecture-blueprint-review/pull/84), [baseline](../../../reviews/job-review-baseline.md). The governing catalogue still labels job ambiguous until separate governance adoption.
 
+
+**Companion plain-English review:** [Published interface expectations, cooperating capabilities, Logging/Audit/Reporting, standards, permissive libraries and representative GUI](../../../reviews/job-public-contract-standards-and-gui.md). It is conceptual, not a verified implementation `CONTRACT.md`.
+
 ## Purpose, ownership and exclusions
 
 Job owns a trustworthy, organisation-controlled, versioned **catalogue of position/post definitions**: stable position reference, owner/tenant, title and code, purpose/duties, job family, grade/classification and validated compensation-band *reference* where applicable, skills, essential/desirable qualification criteria and alternatives, work-mode/location references, validity, approvals, corrections and lifecycle provenance. Position records describe a type of work and its conditions; they do not themselves authorise staffing, recruitment or expenditure. An organisation may reuse one position definition for many openings or engagements.
