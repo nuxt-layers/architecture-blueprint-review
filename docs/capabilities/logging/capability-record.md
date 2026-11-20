@@ -196,3 +196,8 @@ Help sends redacted diagnostic codes, mapping/Publisher failures, latency and pe
 ## Job position-only reciprocal interface — 20 November 2026
 
 **Status: Conceptual, following owner-approved JOB-01–09, not an existing adapter.** **Job reciprocal conceptual input:** Job's position domain would send bounded, sanitised technical diagnostics (validation/revision conflict, operation failure, storage/outbox health and safe correlation IDs) through Logging's published port. Logging would own diagnostic sink/retention and may return delivery/health status, not position results or durable Audit evidence. No full position descriptions, confidential grade data or unneeded personal identifiers in logs. Job business operation remains owned by Job even when optional logging is unavailable. [Plain-English contract review](../../../reviews/job-public-contract-standards-and-gui.md); no published Logging root contract was verified.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies redacted diagnostics and correlation/health data; Logging must not collect CVs, protected characteristics or confidential assessments in routine logs. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
