@@ -413,3 +413,8 @@ Integrations may supply replaceable external protocol/provider adapters through 
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Recruitment requests provider-neutral ATS/job-board actions and consumes signed, provenance-qualified remote receipts through Integrations. Integrations transports and reconciles provider calls; it does not own hiring decisions. External ATS primary-authority selection, migration/withdrawal and uncertain outcomes remain a Recruitment owner decision. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment sends job-board/ATS intents and receives provenance-qualified provider receipts; Integrations owns transport, not hiring decisions or candidate cases. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
