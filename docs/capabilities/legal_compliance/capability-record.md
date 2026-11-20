@@ -125,3 +125,8 @@ Content Security consumes qualified jurisdiction/service classification, retenti
 ## Integrations reciprocal conceptual interface — 18 November 2026
 
 **Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Legal Compliance determines applicable obligations and restrictions; Integrations enforces supplied constraints for external transfers, processor/residency rules, regulator/government portal submissions and retention. Authenticated transport/acknowledgement is not regulatory acceptance, and missing mandatory jurisdictional permission fails closed. Qualification of lawful basis, provider certification and high-risk approval remains a specialist/owner decision (INT-09). See [Integrations conceptual contract](../integrations/capability-record.md#configuration-legal-security-and-privacy), PR #76, proposed only.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment requires applicable jurisdiction/effective-time hiring duties, anti-discrimination and protected-data safeguards, agency/background-check and automated decision limits, retention and legal holds. Legal Compliance owns applicability and statutory constraints; Recruitment owns authorised case decisions and enforcement of applicable rules, and must not treat unknown legal prerequisites as permission. Cooperation uses public contracts rather than private state. [Recruitment record](../recruitment/capability-record.md).
