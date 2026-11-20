@@ -70,3 +70,13 @@ Accepted ADRs and governing platform requirements take precedence within this bl
 5. Require a traceability matrix from each accepted standard/regulatory control → Recruitment/public port owner → configuration/guard → evidence → conceptual acceptance scenario; avoid burdening native recruitment with optional provider or AI infrastructure.
 
 **Next stage after specification sign-off:** separately research permissive-licence OSS packages/versions, dependency graph and maintenance/security/licence provenance, rather than choosing packages before domain boundaries stabilise.
+
+## Supplementary standards and legal controls identified during review
+
+- **[ISO 30400:2022](https://www.iso.org/standard/78044.html) HR vocabulary:** Align definitions in the public conceptual contract, without changing governing catalogue names or making ISO terminology a persistence schema.
+- **[SIOP/APA Principles for the Validation and Use of Personnel Selection Procedures, fifth edition (2018)](https://www.apa.org/ed/accreditation/personnel-selection-procedures.pdf):** Strong professional reference for relevance/validity, reliability and fair interpretation of structured interviews, tests and scoring. Use for evidence of method suitability, qualified use and reevaluation. Complement ISO 10667; not a legal certification.
+- **[EU Directive 2023/970](https://eur-lex.europa.eu/eli/dir/2023/970/oj/eng) on pay transparency:** For employers subject to implementing national law, support accessible early pay/pay-range disclosure, gender-neutral job adverts and a rule disallowing salary-history questions. Jurisdiction, national transposition/effective dates and employee thresholds need Legal Compliance verification; do not treat a directive as identical nationwide runtime rules.
+- **[EU GDPR Article 22](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32016R0679)** remains distinct from amended UK UK-GDPR automated decision rules. Store jurisdiction/authority and rule version per decision; do not use a single global `automated_decision_allowed` flag.
+- **[NIST SP 800-218 SSDF](https://csrc.nist.gov/pubs/sp/800/218/final):** Supporting secure software delivery guidance for the later implementation and dependency review, not a recruitment-owned business process.
+
+**Priority refinement:** include an explicit vacancy pay-disclosure source/approval field, a validation/relevance evidence reference for every scored assessment, and a legal-jurisdiction-specific automated-decision policy outcome in the next accepted domain contract revision.
