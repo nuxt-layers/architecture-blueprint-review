@@ -121,3 +121,8 @@ Publisher may provide explicitly approved, versioned, public collection projecti
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 Publisher remains the sole owner of Help article/document content, revision, approval, publication, withdrawal, canonical addresses and authoritative safe renderings. Proposed Help contextual resolution consumes only authorised public Publisher references and reconciles withdrawn or stale material; it never publishes or holds a second content master. The host may register a Help document type and use generic Content Editor. No dependency from Publisher back to Help is required.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Recruitment authors approved vacancy advert intent and permitted disclosure; Publisher alone owns document versions, approval and actual publication surfaces under its contract. Recruitment's per-channel requested/acknowledged/confirmed/unknown/withdrawn status cannot equate external board transport ACK with published state. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
