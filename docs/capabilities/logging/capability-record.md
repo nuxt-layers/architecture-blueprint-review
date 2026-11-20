@@ -192,3 +192,8 @@ Help sends redacted diagnostic codes, mapping/Publisher failures, latency and pe
 ## Invoice reciprocal public interface — 18 November 2026
 
 **Status:** Invoice conceptual design approved, INV-01–06 closed (18 November 2026); Logging's full contract is still unverified. [Invoice](../invoice/capability-record.md#reciprocal-contract-with-logging-audit-and-reporting) publishes minimised diagnostics for issue validation, number conflicts, provider timeout/unknown outcome, replay rejection and outbox/delivery errors with opaque correlation. Logging owns sinks, severity and delivery, never invoice records, source outbox or Audit proof. Full financial documents, personal/tax/bank details and provider secrets must be excluded. Logging absence never means an invoice was not issued; preserve business/audit resilience separately.
+
+
+## Location reciprocity — 20 November 2026 (proposed; pending owner approval)
+
+[Location conceptual public contract](../location/capability-record.md) proposes versioned, tenant-authorised place references, geometry, accuracy, provenance and lifecycle queries/events, with no implied resource rights. **Logging** remains authoritative for its own domain decisions and records; any placement, routing, eligibility, attendance, report, evidential or diagnostic conclusion must use Logging's own published contract and its actual authoritative sources, not treat proximity or a coordinate as proof. Logging receives redacted technical errors, provider failures and correlation IDs; it is not the authoritative record of place mutations, precise personal coordinates or access decisions. No direct private schema access or implied hard package dependency. This note does not complete or approve the independent Logging review.
