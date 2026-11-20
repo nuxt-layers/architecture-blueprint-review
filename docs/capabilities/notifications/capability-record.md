@@ -68,3 +68,8 @@ Comments Engine may produce author/reply/mention, moderation decision and appeal
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)).** Notifications delivers opted/required issuance, expiry, revoked, replaced and status-action notices from committed Credentials events with authorised recipient context and minimised details. Delivery failures retry independently; neither successful email nor failed delivery determines whether credential issuance committed.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies minimised permitted candidate notice intent; Notifications owns delivery outcomes, not offer acceptance or selection. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
