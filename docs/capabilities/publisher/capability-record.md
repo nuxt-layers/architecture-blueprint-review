@@ -125,9 +125,4 @@ Publisher remains the sole owner of Help article/document content, revision, app
 
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
-**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Recruitment authors approved vacancy advert intent and permitted disclosure; Publisher alone owns document versions, approval and actual publication surfaces under its contract. Recruitment's per-channel requested/acknowledged/confirmed/unknown/withdrawn status cannot equate external board transport ACK with published state. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
-
-
-## Recruitment reciprocal contract proposal — 20 November 2026
-
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment owns approved vacancy disclosure intent; Publisher owns document versions and publication. Provider transport ACK is not confirmed publication. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
