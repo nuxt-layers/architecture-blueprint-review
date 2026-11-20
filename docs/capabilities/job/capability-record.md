@@ -107,3 +107,8 @@ Configuration owns scoped position taxonomies/templates/default approval setting
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Job supplies a permitted frozen position definition/requirements and position revision; Recruitment owns requisition/opening, campaign, application, selection and pre-engagement handover status. Recruitment may operate without Job, and a vacancy never becomes a Job `filled` field. Position changes require explicit applicant/campaign review, not hidden mutation. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Job owns permitted frozen position revisions; Recruitment owns requisitions, openings, adverts, applications and selection, with explicit review on Job changes. Neither depends on the other for native operation. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
