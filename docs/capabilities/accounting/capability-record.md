@@ -574,9 +574,4 @@ Existing independently approved decisions are preserved; this note resolves Conf
 
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
-**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99); not owner-approved or an implemented interface.** Recruitment may request evidence of funding, capped opening capacity and approval validity; Accounting/Finance retains actual budget, spending and ledger authority. Recruitment owns approval of its requisition only after independently authorised mandate evidence, and never infers financial permission from Job or an approval task. Conceptual cooperation is through published contracts and host-supplied ports, not a new package import or a change to this capability's approved decisions. [Recruitment record](../recruitment/capability-record.md).
-
-
-## Recruitment reciprocal contract proposal — 20 November 2026
-
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment consumes authoritative funding/capacity approval references; Accounting retains budgets and ledger authority. Recruitment records approved requisitions only within independently verified permission. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
