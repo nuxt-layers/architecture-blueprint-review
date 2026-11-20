@@ -1,6 +1,6 @@
 # Recruitment — standards and compliance design assessment (20 November 2026)
 
-**Status:** Research-backed design recommendations for owner discussion, **not** owner-approved additions to REC-01–REC-15, normative governance amendment, legal opinion, formal ISO certification or operational acceptance. [Recruitment domain record](../docs/capabilities/recruitment/capability-record.md) | [Draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99).
+**Status:** Standards assessment supporting the **owner-approved conceptual STD-A through STD-F requirements** (accepted 20 November 2026); individual external standards, their editions and adoption tiers remain subject to applicability assessment. No normative governing amendment, legal opinion, ISO certification or operational acceptance is asserted. [Recruitment domain record](../docs/capabilities/recruitment/capability-record.md) | [Draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99).
 
 ## Scope and normative hierarchy
 
@@ -61,7 +61,7 @@ Accepted ADRs and governing platform requirements take precedence within this bl
 
 **Acceptance dimensions:** native no-provider operation; no unapproved opening; accessible alternative candidate intake; stale/contradictory permissions/qualification denial or review; UK legal-policy effective-date transitions; no cross-employer applicant leakage; per-channel uncertain publication; offer handover timeout/retry; retention/hold collision; discriminatory ranking challenge; restricted data exports; versioned API compatibility, idempotent replay and source-outbox duplicate handling.
 
-## Further owner decisions before accepting standards-derived specification
+## Further standards adoption and detailed design considerations
 
 1. Adopt ISO 30405:2023 and ISO 10667-1/-2:2020 as core recruitment/assessment design references, keeping formal certification out of scope.
 2. Require **jurisdiction-aware compliance profiles** across employers, agencies, roles, stages and effective dates, rather than embedding UK rules globally.
@@ -69,7 +69,7 @@ Accepted ADRs and governing platform requirements take precedence within this bl
 4. Adopt HR Open Standards/schema.org as **adapter/mapping profiles**, never canonical Recruitment storage models.
 5. Require a traceability matrix from each accepted standard/regulatory control → Recruitment/public port owner → configuration/guard → evidence → conceptual acceptance scenario; avoid burdening native recruitment with optional provider or AI infrastructure.
 
-**Next stage after specification sign-off:** separately research permissive-licence OSS packages/versions, dependency graph and maintenance/security/licence provenance, rather than choosing packages before domain boundaries stabilise.
+**Next stage after fuller specification sign-off:** separately research permissive-licence OSS packages/versions, dependency graph and maintenance/security/licence provenance, rather than choosing packages before domain boundaries stabilise.
 
 ## Supplementary standards and legal controls identified during review
 
