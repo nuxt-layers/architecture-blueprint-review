@@ -2,7 +2,7 @@
 
 **Capability:** `recruitment` — independent **Domain candidate**, owner-approved conceptual specification (REC-01–REC-15, STD-A–STD-F; 20 November 2026). **Implementation status:** No verified separate `nuxt-layers/recruitment` repository, root `CONTRACT.md`, installation, configuration, operational runtime, deployment or CI acceptance. Conceptual acceptance is not certification or release approval.
 
-**Authority:** Governing `architecture-rules/master@b920ce0d8b361de000a6739a16123dbdc56df7a7` and blueprint opening `master@d39df23e087cd0510c82ba2cea78996c7624850f`; later revisions require reconciliation. [Opening baseline](../../../reviews/recruitment-conceptual-opening-baseline.md). [Standards assessment](../../../reviews/recruitment-standards-assessment.md), [control-to-contract traceability](../../../reviews/recruitment-control-traceability.md), [acceptance and consistency review](../../../reviews/recruitment-acceptance-and-consistency-review.md), [review PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99).
+**Authority:** Governing `architecture-rules/master@d7f7c2ee051244b8c81325f5ff1267568d99aab1` (includes canonical capability documentation requirement, accepted in #40). Blueprint opening/current checked `master@d39df23e087cd0510c82ba2cea78996c7624850f`. Opening governing revision was `b920ce0d8b361de000a6739a16123dbdc56df7a7`; the new governing requirement was reconciled on 21 November 2026. [Opening baseline](../../../reviews/recruitment-conceptual-opening-baseline.md). [Standards assessment](../../../reviews/recruitment-standards-assessment.md), [control-to-contract traceability](../../../reviews/recruitment-control-traceability.md), [acceptance and consistency review](../../../reviews/recruitment-acceptance-and-consistency-review.md), [review PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99).
 
 **Approved boundary:** Recruitment owns approved **recruitment-specific** requisitions/openings, campaigns, application cases, selection and appeal, pre-engagement offer negotiation/acceptance evidence and Employment handover/reconciliation. Job owns position definitions; Finance/establishment authorities own budget and staffing capacity; Employment owns definitive agreement, engagement and occupancy. Native/manual operation, optional external ATS authority explicitly scoped per fact, restricted cross-employer disclosure and governed assistive automation are required conceptual modes. No mandatory new capability/package, universal personnel dossier or unapproved vacancy is inferred.
 
@@ -20,7 +20,7 @@ Provide a coherent, employer- and jurisdiction-scoped recruitment function from 
 
 **Approved 20 November 2026:** REC-01–REC-15 (with REC-11 recruitment opening only, REC-12 Recruitment offer/Employment agreement, REC-13 scoped external ATS authority, REC-14 purpose-limited sharing, REC-15 jurisdiction-gated assistive automation), plus STD-A–STD-F. Their full normative-for-this-blueprint conceptual meaning is recorded in the sections below. Conditional external law, voluntary design guides and provider formats do not become blanket mandatory law or certified compliance.
 
-**Conceptual completion:** core ownership and interfaces reviewed against current governing/blueprint baseline, and cross-capability relationships and acceptance scenarios checked. See the companion 38-control traceability and 25-scenario acceptance documents. **Do not interpret conceptual completion as implementation completion or merge approval.**
+**Conceptual completion:** core ownership, interfaces, effective normative governing revisions and cross-capability relationships/acceptance scenarios checked. See the companion 38-control traceability and 25-scenario acceptance documents. **Do not interpret conceptual completion as implementation completion or merge approval.**
 
 ### Independently meaningful responsibility, records and exclusions
 
@@ -140,12 +140,10 @@ Support **headless only** host integration: every screen calls the conceptual pu
 - **Technical investigation:** discover any independent `recruitment` implementation/contract in future, actual workforce-establishment authority, external ATS SDK limits, data minimisation threat model, and alignment with active adjacent PRs; do not invent APIs or accepted commitments.
 - **Implementation alignment and acceptance:** a future independent, self-contained root `CONTRACT.md`, published versioned ports, declared directed dependencies, capability-owned persistence/outbox, one-call host composition budget, storage register, accessibility/security/privacy evidence, native/optional-provider demonstrations and CI must be assessed independently. No implementation edits or local tests in this PR.
 
-**Owner approval — 20 November 2026:** The owner explicitly approved **REC-01 through REC-15** in the Recruitment conceptual review conversation. This approves their conceptual directions and the recommended resolutions of REC-11–15, including Recruitment-only opening ownership, Recruitment offer lifecycle versus Employment agreements, explicitly scoped external-ATS authority, purpose-limited candidate reuse, and risk-/jurisdiction-governed assistive automation. Detailed applicable standards, regulatory mappings, concrete contract semantics and implementation acceptance remain separate work. This approval is **not approval to merge**, and no implementation readiness or legal certification is asserted.
-
 
 ## Standards-driven operational design — STD-A through STD-F (approved 20 November 2026)
 
-**Decision status:** The owner explicitly accepted **six additional design areas A–F** on 20 November 2026, supplementing approved REC-01–REC-15. The responsibilities and acceptance obligations below are now **agreed conceptual requirements**. External statutes apply only when Legal Compliance determines their jurisdiction, activity and effective-date applicability; voluntary standards remain design references, not certifications. [Detailed standards assessment](../../../reviews/recruitment-standards-assessment.md) remains the supporting analysis. The proposed five-tier standards adoption classification in that assessment is guidance and does not silently become normative platform policy.
+**Scope:** These six requirements operationalise the approved Recruitment contract. Applicable legislation is evaluated by Legal Compliance for jurisdiction, activity and effective date; voluntary design standards are not certifications. See the [standards assessment](../../../reviews/recruitment-standards-assessment.md) for supporting source mapping.
 
 ### STD-A — Jurisdiction-aware policy resolution (approved)
 
@@ -199,7 +197,7 @@ Support **headless only** host integration: every screen calls the conceptual pu
 | STD-E interoperability | HR Open Standards, schema.org/JobPosting, OpenAPI/JSON Schema as selected | Integrations/Publisher ↔ R-IN-07, R-OUT-02/R-OUT-09 | Validated mapping version, channel receipt provenance, explicit unknown/replay |
 | STD-F control-to-evidence mapping | Capability Standard, ADR-0012, ISO 37301, ISO/IEC 25010 | Recruitment owner and affected reciprocal capability owners | Recorded requirement/authority/version/evidence/acceptance linkage |
 
-**Status boundary:** STD-A through STD-F are **owner-approved conceptual requirements**. The standards assessment remains subject to edition/application checking, and the proposed five-tier standards adoption classification is guidance pending separate approval. No implementation-library selection, code edits, tests/builds, certification or PR merge is authorised by this approval.
+**Boundary:** The five-tier external-standards classification is supporting guidance, not a governing platform amendment. This document does not claim implementation, legal certification or merge approval.
 
 
 ## Consolidated handover, completeness and evidence status — 21 November 2026
