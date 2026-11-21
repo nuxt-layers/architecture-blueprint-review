@@ -43,7 +43,7 @@ Recruitment **owns**: requisition case and explicit approved opening allocation 
 - **Offer:** drafted → authorised → presented → candidate accepted/declined/expired/withdrawn; contingencies pending/satisfied/failed/unknown; handover requested → Employment acknowledged/rejected/unknown → engagement confirmed, where independently evidenced. Do not infer right-to-work or joining from acceptance.
 - **Failures:** duplicate submissions return the original result when key and intent match; contradictory replay rejects; concurrent revisions conflict; source truth disagreement records a disputed state and reconciliation action; timeouts mark unknown/pending, never success; privileged overrides retain reason, approval and audit reference.
 
-### Proposed idealised inbound public contract
+### Owner-approved idealised inbound public contract
 
 | Surface and sources | Business input, owner and validation | Absence/failure semantics |
 |---|---|---|
@@ -60,7 +60,7 @@ Recruitment **owns**: requisition case and explicit approved opening allocation 
 
 All inbound operations distinguish submitted facts from verified source evidence and actual delegated decisions. Data from another tenant, employer or agency require separately authorised inter-party scope; an employer-specific recruiting mandate is not universal agency authority.
 
-### Proposed outbound public contract
+### Owner-approved idealised outbound public contract
 
 | Surface and authorised consumers | Recruitment-owned output; permitted interpretation and limits |
 |---|---|
@@ -132,7 +132,7 @@ Support **headless only** host integration: every screen calls the conceptual pu
 | ATS reports success after timeout without verifiable remote ID | Reconcile source evidence before confirming remote publication or handover | External provider for remote fact; Recruitment local status |
 | Applicant tries to authorise funds or edit signed Employment contract | Unsupported/denied; no surrogate action through recruitment | Finance/Employment |
 
-### Decision register, challenge and next gate
+### Approved decisions, challenge and next gate
 
 - **Established:** accepted governing ADR/public-contract and security principles; verified merged Job JOB-01–09 conceptual direction, including Job position-only boundary. This does **not** establish a Recruitment implementation.
 - **Owner-approved 20 November 2026:** **REC-01** separate Recruitment Domain owning recruitment cases, approved openings and selection; **REC-02** requisition/opening/campaign/application distinct objects; **REC-03** native/manual and speculative intake with lawful controls; **REC-04** candidate-specific evidence and case isolation; **REC-05** selection versus offer versus Employment engagement separation; **REC-06** provider-neutral multichannel publication and uncertain receipts; **REC-07** public command/query/outbox contract and explicit incomplete/unknown semantics; **REC-08** restricted privacy/legal/appeal and hiring fairness; **REC-09** reciprocal cross-capability boundaries including Logging/Audit/Reporting; **REC-10** dashboard/candidate portal/headless presentation contract.
