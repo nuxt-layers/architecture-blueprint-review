@@ -44,6 +44,8 @@ The operating principle is: **a reviewed legal interpretation is reusable; its a
 
 **Boundary requirement:** An authorised operation may still be legally prohibited; a legally permitted operation may still be unauthorised. Domain owners independently verify both, enforce any mandatory relevant restriction and return actual completion or failure evidence. Neither holds nor regulatory uncertainty automatically grant unrestricted platform operator access.
 
+## 2. Canonical conceptual information model
+
 ### Approved LEA-01 — verified legal entities and control
 
 **Authority chain:** the originating official register, company instrument or independently competent legal authority owns the real-world fact; `verification` owns qualified attestation, provider/issuer trust, source-binding, freshness, revocation and disclosure for organisation and representative claims; `identity` owns local principals, tenants, human digital owners and memberships; `authorisation` owns permissions and digital change approval; **Legal Compliance qualifies the legal consequences**, statutory restrictions and necessary holds. Nothing in a local principal, parent tenant, verified company officer, beneficial owner, email domain or paid subscription independently establishes a mandate to control a tenant.
@@ -52,7 +54,6 @@ The operating principle is: **a reviewed legal interpretation is reusable; its a
 
 **Governance change procedure:** (1) requester declares the intended company/tenant action and presents evidence; (2) Verification validates authenticity/current claim status and identifies gaps; (3) Legal Compliance qualifies the legally relevant authority/restrictions and any dispute/hold; (4) Identity and Authorisation separately confirm human digital control, permissions, independent review and last-owner protection; (5) the owning IAM operation commits or refuses the change; (6) Audit receives evidence and invalidation events trigger reassessment. Conflict, stale authority, missing instrument or provider outage returns `unresolved` for the sensitive action, with protected recovery/appeal. It does not silently transfer control or make Legal Compliance a company register. Create a new legal-entity capability only following a separately justified independent source-of-truth/lifecycle review.
 
-## 2. Canonical conceptual information model
 
 | Object | Mandatory conceptual attributes | Authority and lifecycle |
 |---|---|---|
@@ -83,6 +84,8 @@ The operating principle is: **a reviewed legal interpretation is reusable; its a
 
 Every status-bearing read identifies scope, source/version, freshness/coverage, conclusion limitations and allowed next action. Account for appeals, qualified overrides permitted by law, correction, revocation and incompatible jurisdictions without a single global override flag.
 
+## 3. Variables, flags and decision rules (LC-08 / LC-10)
+
 ### Approved RULE-01 — restricted portable decision language and compatibility
 
 **Default model:** a versioned, documented, typed, side-effect-free JSON expression/decision-table profile, **informed by DMN 1.6 concepts**, with no claim of complete DMN or FEEL conformance. Inputs are schema-validated catalogue variables with source, scope, trust, effective time and revision. Supported initial *conceptual* operations are `eq`, `ne`, `in`, `notIn`, `lt`, `lte`, `gt`, `gte`, `between`, `all`, `any`, `not`, and explicit date/time interval checks; types include Boolean, string, finite decimal/number, enumerations, date/time and lists of supported primitive values. No arbitrary functions, network, I/O, code evaluation, hidden current-time access or mutable global state.
@@ -93,7 +96,6 @@ Every status-bearing read identifies scope, source/version, freshness/coverage, 
 
 **Conformance and migration procedure:** schema/type/semantic validation → compile/check decision graph, conflicting rows and dependency references → representative golden-case results including unknowns, dates, overlapping obligations and historical rules → competent legal approval of meaning → immutable version activation with effective-time boundaries → bounded requalification of affected subjects. Retain previous interpreter/bundle versions or deterministic historical artefacts for authorised as-of replay. Unknown language/feature versions fail with `unsupported_rule_language` rather than executing permissively. Optional DMN XML/FEEL or OSCAL exchange must declare an exact supported subset and versions; no automatic lossless import/export promise.
 
-## 3. Variables, flags and decision rules (LC-08 / LC-10)
 
 **Typed variable catalogue** records stable key, type/allowed values, units, source of truth, tenant/resource scope, purpose, sensitivity, valid/fresh period, revision, provenance, validation, permitted asserted versus verified value, fallback and legal relevance. Examples:
 - `tenant.id`: Identity/host-trusted isolation context; never browser authority.
@@ -194,6 +196,8 @@ All outputs include stable versioning and reason/message keys, tenant/purpose di
 
 **Dependency rule:** these are conceptual public information-flow edges, not reciprocal direct package imports. Hosts resolve directional ports to avoid cyclic dependencies. Only required verified infrastructure and authority ports fail closed; optional services have specified degraded/manual modes. In a modular monolith, logical separation suffices; a remote legal database, notification service or legal feed is not compulsory.
 
+## 9. Enterprise compliance-management operation (LC-09 / LC-11 / LC-12)
+
 ### Approved REV-01 — reviewer competence and sign-off controls
 
 **Independent checks:** Authorisation establishes that the caller may use a review action; Verification or accepted evidence establishes professional credentials/organisation claims where necessary; Legal Compliance determines whether that person's competence, jurisdiction, subject specialism, mandate and independence meet **this particular legal review requirement**. A Workflow task marked completed is not a legal decision.
@@ -204,7 +208,6 @@ All outputs include stable versioning and reason/message keys, tenant/purpose di
 
 **Commit validation:** re-read case, rule and evidence revisions; check caller and independent approver are different where required, competence/current delegation/assurance, conflicts, statutory mandatory steps and recorded rationale; refuse stale approval, self-approval, expired or revoked mandate. Record approved/refused/awaiting-evidence with attributable evidence and qualified scope; Workflow may route, but Legal Compliance commits; Audit preserves independent review evidence. An unavailable professional register/provider produces explicitly pending/indeterminate proof, not silently qualified approval.
 
-## 9. Enterprise compliance-management operation (LC-09 / LC-11 / LC-12)
 
 Use **ISO 37301:2021** as the principal CMS design reference, not an assertion of certification. Model a lifecycle: **identify legal context and obligations → qualify and assign responsibility → map controls → implement via domains → monitor outcomes and evidence → assess effectiveness → correct/improve → requalify changes**. Each organisation can see its scoped responsibilities and control coverage while legal interpretation versions may be shared where licensed and qualified.
 
@@ -213,6 +216,8 @@ Use **ISO 37302:2025** to assess whether controls operate effectively. Distingui
 Use **ISO 31000:2018** for risk-based worklist prioritisation, likelihood/consequence and proportionate assurance. Legal significance overrides any user-tuned risk score. Use **ISO 19011:2026** to inform competence, independence, audit programme and evidence-based assessment; Audit retains evidence ownership, and professional legal interpretation remains with competent reviewers. Periodic management review and operational corrective actions are real lifecycle steps, not generic “approved” flags.
 
 **Evidence lineage and records:** use W3C PROV-O concepts (source entity, evaluating activity, responsible agent) and **ISO 15489-1:2016** records principles for attributable creation, preservation, confidentiality, lawful disposal, supersession, historical reconstruction and controlled evidence access. No automatic RDF/triple store or immutable-forever policy; preservation restrictions remain lawfully bounded.
+
+## 10. Security, privacy, regulatory and standards mapping
 
 ### Approved COV-01 — supported jurisdiction and activity coverage
 
@@ -224,7 +229,6 @@ Use **ISO 31000:2018** for risk-based worklist prioritisation, likelihood/conseq
 
 **Coverage activation procedure:** identify exact applicable regulator/source and constituent jurisdiction, assess legislation/current amendments/commencement, establish regulated activity and exclusions, independently qualify interpretation and competence, validate restricted rule semantics/golden scenarios, approve version, activate effective schedule, publish explicit coverage entry and consumer conditions, schedule periodic review and source-change invalidation, and reconcile domain enforcement. A new market or activity outside the profile is returned as `unsupported` or `unresolved` and routed to legal review only for the affected legally gated operation. The project can close its *conceptual* review without predetermining every licensed source, professional reviewer or date of future deployment readiness.
 
-## 10. Security, privacy, regulatory and standards mapping
 
 | Reference | Design use | Status/limitations |
 |---|---|---|
