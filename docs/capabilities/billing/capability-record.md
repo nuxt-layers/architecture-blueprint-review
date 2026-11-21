@@ -596,3 +596,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); INV-01–06 approved and closed, implementation not verified.** [Invoice](../invoice/capability-record.md) consumes Billing's BIL-01–06 approved finalised charge/adjustment evidence and returns idempotent authoritative issued/rejected/credit-document references. The charge decision remains Billing's; a handoff/accepted request is not issued invoice. Event-based return avoids a cycle; preserve Billing's previous approved choices.
+
+
+## Notifications reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Notifications draft PR #97](https://github.com/nuxt-layers/architecture-blueprint-review/pull/97), not owner-approved or implemented.** Billing remains charge/exception authority and sends deduplicable committed versioned notice intents; Notifications returns accepted/held/suppressed and qualified delivery status, never settlement, lawful service or charge rollback. Required billing notices remain observable pending on provider failure, with rules qualified by Legal Compliance. Proposed Notifications contract: [record](../notifications/capability-record.md). This bounded reciprocal note preserves the independent billing review and creates no direct package import.

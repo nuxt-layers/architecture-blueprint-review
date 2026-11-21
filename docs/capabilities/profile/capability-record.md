@@ -79,3 +79,8 @@ Existing independently approved decisions are preserved; this note resolves Conf
 ## Identity reciprocal conceptual interface — 18 November 2026
 
 **Status: proposed Identity alignment, [draft PR #74](https://github.com/nuxt-layers/architecture-blueprint-review/pull/74), 18 November 2026; no new published API.** Identity provides stable opaque local principal references and purpose-scoped standing/closure notifications; Profile retains all person/contact/display data and user rights in its own lifecycle. Identity directory queries must not copy Profile attributes, and Profile visibility must independently enforce context/disclosure constraints. Unknown identifier or unqualified cross-tenant request is not permission to disclose. See [Identity conceptual contract](../identity/capability-record.md#idealised-public-outbound-interfaces).
+
+
+## Notifications reciprocal conceptual interface — 19 November 2026
+
+**Status: proposed in [Notifications draft PR #97](https://github.com/nuxt-layers/architecture-blueprint-review/pull/97), not owner-approved or implemented.** Profile remains authoritative for personal contact details and authorised disclosure (and any explicitly Profile-owned channel preferences). Notifications resolves verified destination at permitted delivery time and retains minimised attempt evidence, not a second address book. Revoked contact/recipient permissions suppress or hold, never fallback to stale copied addresses. This bounded reciprocal note preserves the independent profile review and creates no direct package import.
