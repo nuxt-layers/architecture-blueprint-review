@@ -290,3 +290,17 @@ All commands must validate identity/assurance, relying-party rights, per-resourc
 ## Reciprocal conceptual note — Credentials lifecycle and public contract (18 November 2026)
 
 **Status: proposed Credentials review alignment (18 November 2026; [PR #62](https://github.com/nuxt-layers/architecture-blueprint-review/pull/62)); COURSE-12 owner-approved ownership unchanged.** Qualification supplies versioned authoritative individual qualification-award decisions, award/appeal/withdrawal state and verified issuer/delegation scope through a public provenance-rich contract. Credentials owns issued representation, issuance transaction, proof and credential-specific suspend/revoke/replace/status, consumes source changes with idempotent reconciliation, and returns bounded receipt/status where required. Qualification must not import Credentials internals or infer that successful award implies delivered credential. A stale external source does not confer award authority; a later credential correction does not change Qualification's underlying award.
+
+
+## Job qualification requirements reciprocal proposal — 19 November 2026 (draft PR #84)
+
+**Status: Proposed Job interface; preserves owner-agreed QUAL-06–08 and QUAL-09 principle, without claiming implementation.** [Job review](../job/capability-record.md) allocates versioned essential/desirable professional/educational requirements and accepted alternatives to the post/opening definition. Qualification may assess source-qualified qualification evidence against that frozen requirement revision, reporting provenance, effective recognition scope and inconclusive or conflicting status, but never makes the employment, hiring, regulated-practice or right-to-work decision. Missing evidence is inconclusive, not automatic refusal; scope and privacy constraints restrict subject-linked comparisons. No private store exchange or cyclical imports.
+
+## Job / Recruitment boundary supersession — 20 November 2026
+
+**Updated reciprocal JOB-01–09 authority (20 November 2026):** Owner-approved Job remains the source of **versioned role requirements/alternatives only**. Applicant-specific comparisons, assessment of qualifications for an application, selection and offer are outside Job and provisionally belong to proposed Recruitment, using Qualification's source-qualified comparison/recognition output. Job does not verify a person's awards or create vacancies; Qualification remains authoritative for schemes/awards, not hiring. Earlier vacancy-owning Job wording is superseded as a proposal, not as an approved Qualification decision. [Job](../job/capability-record.md) · [Recruitment](../recruitment/capability-record.md).
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment reads authoritative, scoped award/equivalence status and provenance; Qualification owns awards and disputes. Corrections require new review, not silent hiring record rewrites. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

@@ -52,3 +52,8 @@ Search receives only Federation-validated, locally admitted, provenance-bearing 
 **Status:** Proposed in [Help draft PR #72](https://github.com/nuxt-layers/architecture-blueprint-review/pull/72); not approved, implemented or an amendment to published `CONTRACT.md`. See [Help conceptual contract](../help/capability-record.md).
 
 The Help Centre may consume Search's authorised indexing/query/relevance for Publisher-owned Help articles. Search must respect tenant/document visibility and stale/withdrawn documents; Help must revalidate source visibility before display. Search is optional: exact context resolution and Publisher-backed bounded navigation must remain usable without it. No generic Help-owned search index.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment provides approved redacted vacancy projections and withdrawal/version updates; Search owns derived indices, not vacancy authority. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

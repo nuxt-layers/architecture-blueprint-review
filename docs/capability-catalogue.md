@@ -169,7 +169,8 @@ The following are **types and compositions**, not independent capability candida
 | `enrolment` | Course/learner participation and allocation |
 | `training` | Verified training participation, competencies and completion records |
 | `gaming` | Game-specific state, rankings and participation; separate from generic Identity accounts |
-| `job` | Ambiguous: employment role/post is possible domain; background execution job belongs to Scheduler |
+| `job` | **Owner-approved conceptual Domain boundary (JOB-01–09):** versioned employment **position definitions only**; no vacancy, advertising, applicant or engagement authority. Independent packaging and governing adoption outstanding. [Job review](capabilities/job/capability-record.md) |
+| `recruitment` | **Owner-approved conceptual Domain candidate (REC-01–15, STD-A–F):** recruitment-specific authorised requisitions/openings, adverts, candidate applications/evidence, selection/appeals, pre-engagement offer acceptance and Employment handover; Job owns positions, Finance/establishment own funding/capacity, Employment owns agreement/engagement. Optional external ATS/AI subject to scoped authority and legal-policy guards; conceptual contract complete, no verified implementation or published API. [Recruitment specification](capabilities/recruitment/capability-record.md) |
 
 ### Commerce and operations domain candidates
 
@@ -307,7 +308,7 @@ See [Time & Attendance ownership proposal](../proposals/time-attendance-ownershi
 
 ## Legal Compliance dedicated conceptual review — 19 November 2026
 
-**Proposed, non-normative, pending owner approval (draft [PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85)).** Preserve established Foundation classification and governing ownership. The [dedicated `legal_compliance` record](capabilities/legal_compliance/capability-record.md#legal-compliance--dedicated-conceptual-review-19-november-2026) defines qualified jurisdiction/service/time-specific source and legal-obligation lifecycle; scoped legal holds; idealised applicability, hold, obligation and evidence input/output contracts; separate domain enforcement, Privacy, Authorisation and Audit authority; optional restricted GUI and headless operation. Implementation repository exists but root `CONTRACT.md` is absent on inspected `master`; none of these proposed interfaces is certified implemented. LC-01–LC-07 are recommendations, not approved architectural decisions. Changes to governing catalogue require separate authority.
+**Conceptual design owner-approved; implementation unverified (draft [PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85)).** Preserve established Foundation classification and governing ownership. The [dedicated `legal_compliance` record](capabilities/legal_compliance/capability-record.md) defines qualified jurisdiction/service/time-specific source and legal-obligation lifecycle; scoped legal holds; idealised applicability, hold, obligation and evidence input/output contracts; separate domain enforcement, Privacy, Authorisation and Audit authority; optional restricted GUI and headless operation. Implementation repository exists but root `CONTRACT.md` is absent on inspected `master`; none of these proposed interfaces is certified implemented. LC-01–LC-07 are recommendations, not approved architectural decisions. Changes to governing catalogue require separate authority.
 
 
 ## Legal Compliance comprehensive standards-informed proposal — 20 November 2026
