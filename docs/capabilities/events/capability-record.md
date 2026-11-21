@@ -157,3 +157,8 @@ Optional GUI: event list/calendar, event/series editor, occurrence/programme edi
 ### Gaming portal scope correction — 18 November 2026
 
 **Gaming scope clarification (18 November 2026, owner-provided; detailed decisions proposed):** [Gaming](../gaming/capability-record.md) is a shared game catalogue, launch portal and accepted-score/leaderboard owner, **not** a generic game engine. Independently composed game layers own their own gameplay, session/move/physics state, game rules and original results. Earlier gaming reciprocal wording implying that Gaming owns gameplay, game rounds, adjudication of moves or original raw results is superseded. This owner-supplied distinction takes precedence within this working review; no implementation or published game contract is asserted.
+
+
+## Reciprocal conceptual interface — Membership (19 November 2026; draft PR #93)
+
+**Status: proposed, not owner-approved or implemented; this does not complete the events review.** [Membership](../membership/capability-record.md) is a candidate *scheme participation* domain distinct from Identity group membership, Subscription plan entitlements, commercial settlement and application access. Events owns actual activity scheduling/attendance/participation records; Membership may supply scheme benefit qualification and receive verified attendance evidence. Membership status does not reserve capacity or prove event attendance. Consume only published public interfaces; no direct package dependency is inferred. Missing, stale, contradictory or unauthorised evidence must not be promoted into confirmed outcomes.

@@ -71,3 +71,8 @@ See [tenancy](../../proposals/organisational-tenancy-and-governance.md), [commer
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026), implementation not verified.** [Invoice](../invoice/capability-record.md) may use versioned Order terms/acceptance/fulfilment as source evidence, returning issued/correction references via public events. Orders do not automatically authorise invoice issue; standalone invoices and supplier bills need no Order. Never let historical Order changes mutate issued document snapshots.
+
+
+## Reciprocal conceptual interface — Membership (19 November 2026; draft PR #93)
+
+**Status: proposed, not owner-approved or implemented; this does not complete the order review.** [Membership](../membership/capability-record.md) is a candidate *scheme participation* domain distinct from Identity group membership, Subscription plan entitlements, commercial settlement and application access. Order owns accepted commercial purchases and change/cancellation; Membership supplies scheme-specific admission or benefit qualification and reads verified purchase facts where relevant. A purchase or paid scheme status does not automatically create an Order or group membership. Consume only published public interfaces; no direct package dependency is inferred. Missing, stale, contradictory or unauthorised evidence must not be promoted into confirmed outcomes.
