@@ -2,11 +2,11 @@
 
 **Canonical capability:** `legal-compliance` (Foundation in governing catalogue)  
 **Blueprint directory:** `docs/capabilities/legal_compliance/` (actual path; do not rename)  
-**Conceptual revision:** 20 November 2026 — comprehensive proposed specification, **not yet owner-approved**  
+**Conceptual revision:** 21 November 2026 — LC-01–LC-13 approved by capability owner; four operating-boundary decisions remain under exploration  
 **Review:** [draft PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85)  
 **Authority:** Accepted ADRs and normative standards in [architecture-rules](https://github.com/nuxt-layers/architecture-rules); this blueprint is non-normative.  
 **Opening governing baseline:** `b920ce0d8b361de000a6739a16123dbdc56df7a7`; **opening blueprint baseline:** `6dac83a03da8704f7945ee1bc894f2248300445a`. Blueprint subsequently advanced to `d39df23e087cd0510c82ba2cea78996c7624850f`; final reconciliation remains required.  
-**Evidence classification:** Governing responsibility **established**; LC-01–LC-13 **proposed for owner review**, including LC-08 from the prior exploratory design. Previously approved neighbouring principles are reflected only where relevant to the current interaction contracts; their source records and Git history retain their original decision evidence.
+**Evidence classification:** Governing responsibility **established**; LC-01–LC-13 **owner-approved for the conceptual specification** (21 November 2026); the separate legal-entity authority, launch coverage, reviewer qualification and rules-interoperability boundary choices remain open and require explicit resolution. Previously approved neighbouring principles are reflected only where relevant to the current interaction contracts; their source records and Git history retain their original decision evidence.
 
 > **Implementation evidence and limits:** `nuxt-layers/legal-compliance` exists, but its inspected `master` README is only a heading and a root `CONTRACT.md` was not found. The services, schemas, ports and screens described below are an **idealised conceptual contract**, not verified implemented APIs, regulated-service coverage, legal advice, legal certification or evidence of passing acceptance tests.
 
@@ -305,21 +305,23 @@ No local tests/builds were run. These are contract acceptance scenarios requirin
 
 ## 14. Decision register and unresolved work
 
-| ID | Proposed decision, preserved for owner approval | Approval |
+| ID | Approved conceptual decision | Status |
 |---|---|---|
-| LC-01 | Qualified versioned source, interpretation, coverage and organisation-specific applicability with explicit unknowns | Proposed |
-| LC-02 | Legal Compliance owns narrow legally authorised holds; source-domain owns actual preservation, release and deletion results | Proposed |
-| LC-03 | Stable qualified applicability/obligation/control/receipt public contract; affected unsafe operations fail safely | Proposed |
-| LC-04 | Native approved local rule corpus and manual review; external legal providers optional evidence feeds | Proposed |
-| LC-05 | Separable role-aware GUI and **Legal Review Worklist**, not a technical message queue; headless parity | Proposed |
-| LC-06 | Legal-person/control adjudication remains a separately justified boundary and verified evidence source, not silently reowned | Open boundary within proposal |
-| LC-07 | Legal hold/statutory constraints reconcile with Privacy rights and domain preservation without duplicating Privacy authority | Proposed |
-| LC-08 | Typed evidence variables, restricted deterministic policy evaluation and automatic reassessment, caching, replay-safe recovery | Proposed |
-| LC-09 | ISO 37301-inspired obligation/control/evidence/improvement lifecycle and ISO 37302 effectiveness assessment | Proposed |
-| LC-10 | DMN 1.6-aligned restricted decision tables/semantics, without requiring full DMN implementation | Proposed |
-| LC-11 | W3C PROV-O/ISO 15489-aligned source → interpretation → applicability → control → evidence traceability | Proposed |
-| LC-12 | ISO 31000 risk-based prioritisation; ISO 19011-informed independent review, competent approval and measured control assurance | Proposed |
-| LC-13 | Security/privacy/records/continuity control mapping and optional OSCAL/GRC exchange; do not claim certification | Proposed |
+| LC-01 | Qualified versioned source, interpretation, coverage and organisation-specific applicability with explicit unknowns | **Approved — 21 November 2026** |
+| LC-02 | Legal Compliance owns narrow legally authorised holds; source-domain owns actual preservation, release and deletion results | **Approved — 21 November 2026** |
+| LC-03 | Stable qualified applicability/obligation/control/receipt public contract; affected unsafe operations fail safely | **Approved — 21 November 2026** |
+| LC-04 | Native approved local rule corpus and manual review; external legal providers optional evidence feeds | **Approved — 21 November 2026** |
+| LC-05 | Separable role-aware GUI and **Legal Review Worklist**, not a technical message queue; headless parity | **Approved — 21 November 2026** |
+| LC-06 | Legal-person/control adjudication remains a separately justified boundary and verified evidence source, not silently reowned | **Approved principle; implementation authority boundary remains open** |
+| LC-07 | Legal hold/statutory constraints reconcile with Privacy rights and domain preservation without duplicating Privacy authority | **Approved — 21 November 2026** |
+| LC-08 | Typed evidence variables, restricted deterministic policy evaluation and automatic reassessment, caching, replay-safe recovery | **Approved — 21 November 2026** |
+| LC-09 | ISO 37301-inspired obligation/control/evidence/improvement lifecycle and ISO 37302 effectiveness assessment | **Approved — 21 November 2026** |
+| LC-10 | DMN 1.6-aligned restricted decision tables/semantics, without requiring full DMN implementation | **Approved — 21 November 2026** |
+| LC-11 | W3C PROV-O/ISO 15489-aligned source → interpretation → applicability → control → evidence traceability | **Approved — 21 November 2026** |
+| LC-12 | ISO 31000 risk-based prioritisation; ISO 19011-informed independent review, competent approval and measured control assurance | **Approved — 21 November 2026** |
+| LC-13 | Security/privacy/records/continuity control mapping and optional OSCAL/GRC exchange; do not claim certification | **Approved — 21 November 2026** |
+
+**LC-01–LC-13 approval:** All thirteen conceptual decisions were explicitly approved by the capability owner on 21 November 2026. The unresolved items below are *further specification choices*, not a withdrawal of that approval.
 
 **Needs owner decisions:** supported jurisdictions/activities at launch; legal-source rights, curation responsibility and qualified reviewer accreditation; professional counsel evidence confidentiality and appeal; minimum coverage needed before regulated operation; formal legal-entity ownership authority; mandatory review and dual-control thresholds; controlled rule language subset and compatibility policy; filing-specific statutory decision responsibility; retention/hold review law; regulator evidence/acceptance semantics; any full DMN/OSCAL interoperability obligation; relationship of risk scoring and mandatory approval. No blanket international legal validity or universal retention schedule is assumed.
 
@@ -329,3 +331,17 @@ No local tests/builds were run. These are contract acceptance scenarios requirin
 
 ---
 
+
+
+## 15. Open operating-boundary resolutions — 21 November 2026
+
+**Status:** LC-01–LC-13 approved. The following are design recommendations for discussion, **not yet additional owner-approved decisions**. They should be resolved and incorporated into sections 1–14 without leaving an obsolete second specification.
+
+| Candidate | Proposed approach | Remaining owner choice |
+|---|---|---|
+| LEA-01 — Legal entity/control evidence | Reuse Verification for qualified attributes/representation attestations, independent register/instrument evidence as origin; Identity/Authorisation govern tenant and grants; Legal Compliance qualifies legal consequences | Whether/when a separately authoritative organisational-entity lifecycle is required |
+| COV-01 — Supported legal coverage | UK-first scoped example (England/Wales, Scotland, Northern Ireland differentiated where law varies), plus explicit matrix by jurisdiction, regulated activity, law/source and assurance; unsupported is not clearance | Confirm first legally reviewed activity/jurisdiction set and named responsible source-review owners |
+| REV-01 — Qualified reviewer policy | Explicit per-jurisdiction competence register, accredited/professional status where required, delegated scope/expiry, separation of request/review/approval, risk-based independent review thresholds; legal decisions revalidate at commit | Approver role/competence requirements, mandatory second-review categories and governance owner |
+| RULE-01 — Decision language and compatibility | Small deterministic typed, side-effect-free JSON/table profile with stable semantic version, rule-bundle and decision contract versions; DMN 1.6 conceptual alignment only, no blanket conformant runtime claim | Exact supported operators/hit policy, timezone/unknown semantics, optional DMN interchange compatibility and migration policy |
+
+Do not mark these candidates approved solely because LC-01–LC-13 were approved; all remain pending explicit resolution. Legal and regulatory source scope must be qualified independently of platform architecture.
