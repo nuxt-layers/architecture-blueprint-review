@@ -102,3 +102,8 @@ Configuration owns scoped position taxonomies/templates/default approval setting
 6. Formalise provider-neutral independent public input/output contracts, configuration, permissions, event/outbox and GUI before any Recruitment implementation.
 
 **Sign-off:** JOB-01–JOB-09 conceptual directions approved by owner; the conceptual **Recruitment** classification direction is favoured but its detailed vacancy/recruitment design and package/implementation acceptance are pending. Conceptual review approved for merge by the owner on 20 November 2026, subject to the required current-master architectural/Git and branch-policy checks. Implementation, Recruitment's independent contract and runtime acceptance remain deferred.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Job owns permitted frozen position revisions; Recruitment owns requisitions, openings, adverts, applications and selection, with explicit review on Job changes. Neither depends on the other for native operation. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

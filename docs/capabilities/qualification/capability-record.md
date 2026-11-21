@@ -299,3 +299,8 @@ All commands must validate identity/assurance, relying-party rights, per-resourc
 ## Job / Recruitment boundary supersession — 20 November 2026
 
 **Updated reciprocal JOB-01–09 authority (20 November 2026):** Owner-approved Job remains the source of **versioned role requirements/alternatives only**. Applicant-specific comparisons, assessment of qualifications for an application, selection and offer are outside Job and provisionally belong to proposed Recruitment, using Qualification's source-qualified comparison/recognition output. Job does not verify a person's awards or create vacancies; Qualification remains authoritative for schemes/awards, not hiring. Earlier vacancy-owning Job wording is superseded as a proposal, not as an approved Qualification decision. [Job](../job/capability-record.md) · [Recruitment](../recruitment/capability-record.md).
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment reads authoritative, scoped award/equivalence status and provenance; Qualification owns awards and disputes. Corrections require new review, not silent hiring record rewrites. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

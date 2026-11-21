@@ -129,7 +129,7 @@ This entry records review-approved conceptual documentation, not adopted governi
 | `training` | Domain candidate | Candidate | Verified training participation, competencies and completion records |
 | `gaming` | Domain candidate | Candidate | Game-specific state, rankings and participation; separate from generic Identity accounts |
 | `job` | Domain candidate | JOB-01–09 conceptual boundary owner-approved; implementation outstanding | **Position definitions only**; Recruitment candidate proposed for vacancies and selection; Employment owns engagement/occupancy; Scheduler owns execution jobs ([JOB-01–09](capabilities/job/capability-record.md)) |
-| `recruitment` | Domain candidate | Proforma created; owner favours separate Domain, detailed review pending | **Proposed** authoritative vacancy/requisition, advertising and candidate/application/selection lifecycle; Process/Workflow execution does not own candidate decisions; Employment retains engagements ([proforma](capabilities/recruitment/capability-record.md)) |
+| `recruitment` | Domain candidate | **Conceptual specification owner-approved (REC-01–15, STD-A–F); implementation/CI outstanding**, PR #99 open draft | Owns recruitment-specific authorised requisitions/openings, advertising intent, candidate/application/selection, appeals and pre-employment offer/handover records; Job owns position, Employment owns engagement, Finance owns budget; conditional jurisdiction policies and provider-neutral integrations ([canonical record](capabilities/recruitment/capability-record.md), [traceability](../reviews/recruitment-control-traceability.md), [acceptance](../reviews/recruitment-acceptance-and-consistency-review.md)) |
 
 ### Commerce and operations domain candidates
 

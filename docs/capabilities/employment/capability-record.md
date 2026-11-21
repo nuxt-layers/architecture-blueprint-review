@@ -190,3 +190,8 @@ Forms should use semantic native controls where appropriate, accessible validati
 ## Job / Recruitment boundary supersession — 20 November 2026
 
 **Updated reciprocal JOB-01–09 authority (20 November 2026):** The owner approved a **position-only Job** scope and favours a separate Recruitment Domain. Prior proposed Job vacancy/seat, publication, opening or derived occupancy authority in this record is **superseded as a Job allocation**. Job supplies versioned position references; Employment remains authoritative for actual contractual engagements, effective assignments and occupancy, and may supply scoped dated evidence to proposed Recruitment vacancy reconciliation. Recruitment, not Job, is the **proposed** owner of requisitions, vacancy lifecycle, advertising and applicant selection; precise vacancy funding and offer handover require Recruitment's dedicated review. No Employment engagement may be inferred from either a position or selection. [Job decision record](../job/capability-record.md) · [Recruitment proforma](../recruitment/capability-record.md).
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment offers purpose-limited accepted-offer and idempotent handover evidence; Employment independently owns contracts, engagements, assignments and actual occupancy. Unknown handover never becomes active engagement. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

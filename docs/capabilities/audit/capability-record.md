@@ -650,3 +650,8 @@ Conditional Help-owned mapping create/update/withdrawal actions and sensitive pr
 ## Job position-only reciprocal interface — 20 November 2026
 
 **Status: Conceptual, following owner-approved JOB-01–09, not an existing adapter.** **Job reciprocal conceptual input:** Job's committed position revisions and significant approvals/retirements, privileged exports and risk-selected denied actions may supply typed, minimised, producer-authenticated evidence assertions to Audit with action/actor/tenant/source-event ID, revision, outcome and effective time. Audit alone owns evidential receipt/integrity/review/retention, not Job's authoritative position. An Audit receipt must not create/approve a position; backlog or uncertain capture is surfaced and handled under risk policy, never confused with Logging success. [Plain-English contract review](../../../reviews/job-public-contract-standards-and-gui.md); no published Audit root contract was verified.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies attributable approval, sensitive access, decision, appeal and override evidence. Audit owns immutable evidence, not recruitment case truth. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

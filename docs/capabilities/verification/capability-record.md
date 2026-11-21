@@ -162,3 +162,8 @@ Federation transports provenance, issuer/endpoint proof references, scope, audie
 ## Integrations reciprocal conceptual interface — 18 November 2026
 
 **Status: Proposed in [Integrations draft PR #76](https://github.com/nuxt-layers/architecture-blueprint-review/pull/76); not approved as a new decision or implemented.** Verification adjudicates external evidence admissibility, trust, claim qualification and freshness under permitted jurisdiction/purpose. Integrations only verifies connector/callback authenticity and transports attributed provider assertions with effective/source/observed time, revocation/staleness and unknown/conflict states. A connected national-ID, age/KYB or issuer provider never automatically verifies a person or grants domain eligibility. See [Integrations conceptual record](../integrations/capability-record.md#idealised-public-outbound-contract), PR #76; no provider selected or implementation asserted.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment consumes scoped, freshness-qualified trust attestations; Verification owns claim validation and revocation, not candidate suitability or hiring outcomes. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).

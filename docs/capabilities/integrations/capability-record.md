@@ -408,3 +408,8 @@ Integrations may supply replaceable external protocol/provider adapters through 
 ## Cross-capability note — Invoice conceptual public contract (18 November 2026)
 
 **Owner-approved Invoice conceptual review (18 November 2026); reconciled with merged Integrations PR #76; implementation not verified.** [Invoice](../invoice/capability-record.md) owns document authority, issuer selection, idempotent issuance, confirmed versus unknown provider status, reconciliation and cut-over policy; Integrations supplies approved connector capabilities, authentication/mapping/transport/read-back and checkpoint evidence. A transport success never proves issuance; no native failover after ambiguous remote result. Both conceptual boundaries are owner-approved; no implemented integration is asserted.
+
+
+## Recruitment reciprocal contract proposal — 20 November 2026
+
+**Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment sends job-board/ATS intents and receives provenance-qualified provider receipts; Integrations owns transport, not hiring decisions or candidate cases. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
