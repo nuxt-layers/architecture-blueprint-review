@@ -124,3 +124,13 @@ Content Security's inspection of user-provided content must use a justified purp
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment applies purpose, consent where applicable, retention/erasure and holds to candidates; Privacy owns cross-capability policy/rights obligations. No automatic cross-employer dossier pooling. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
+
+
+## Legal Compliance reciprocal conceptual contract — 19 November 2026 (draft PR #85)
+
+**Status: Legal Compliance conceptual decisions owner-approved; no implemented or published interface verified.** [Legal Compliance dedicated conceptual contract](../legal_compliance/capability-record.md) specifies scoped, time/version/source-qualified legal applicability, mandatory restrictions, holds, deadlines and uncertainty. **privacy** supplies only authoritative, minimally necessary resource/service/activity/tenant context and completion/refusal evidence through documented public contracts; Legal Compliance does not take ownership of privacy's records, business decisions or enforcement. Statutory interpretation is not personal Authorisation, Privacy's specialist consent/rights rules, or proof of regulator acceptance. Missing or conflicting mandatory legal qualification holds only the affected unsafe action; authorised source owners report applied decision version and partial/failed enforcement. Cross-capability cooperation is host-composed, not an implicit direct package dependency. Existing neighbouring decisions and active PR proposals retain their own status.
+
+
+## Legal Compliance standards-informed rights/holds reconciliation — 20 November 2026
+
+**Approved conceptual boundary in [PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85).** [Legal Compliance's consolidated source/interpretation/hold/control contract](../legal_compliance/capability-record.md) supplies narrow dated legal requirements and hold exceptions, with ISO/IEC 27701:2025, ISO 15489 and PROV-O as design references rather than certifications. Privacy retains lawful-purpose, consent, individual-rights and specialist retention policy. Data-owning capabilities enforce deletion/restriction/preservation and return verifiable partial or complete receipts. Neither absence of evidence nor an expired worklist task automatically waives statutory duties; ordinary rights actions must continue for unrelated data.

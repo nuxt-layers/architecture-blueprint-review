@@ -655,3 +655,13 @@ Conditional Help-owned mapping create/update/withdrawal actions and sensitive pr
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies attributable approval, sensitive access, decision, appeal and override evidence. Audit owns immutable evidence, not recruitment case truth. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
+
+
+## Legal Compliance reciprocal conceptual contract — 19 November 2026 (draft PR #85)
+
+**Status: approved conceptual Legal Compliance boundary; no implemented interface verified.** [Legal Compliance dedicated conceptual contract](../legal_compliance/capability-record.md) specifies scoped, time/version/source-qualified legal applicability, mandatory restrictions, holds, deadlines and uncertainty. **audit** supplies only authoritative, minimally necessary resource/service/activity/tenant context and completion/refusal evidence through documented public contracts; Legal Compliance does not take ownership of audit's records, business decisions or enforcement. Statutory interpretation is not personal Authorisation, Privacy's specialist consent/rights rules, or proof of regulator acceptance. Missing or conflicting mandatory legal qualification holds only the affected unsafe action; authorised source owners report applied decision version and partial/failed enforcement. Cross-capability cooperation is host-composed, not an implicit direct package dependency. Existing neighbouring decisions and active PR proposals retain their own status.
+
+
+## Legal Compliance canonical obligation/control/evidence mapping — 20 November 2026
+
+**Approved conceptual boundary, draft [Legal Compliance PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85).** [Consolidated Legal Compliance contract](../legal_compliance/capability-record.md) defines qualified legal-source → interpretation → applicability → obligation → required control → source-domain evidence → monitoring/corrective-reassessment references, with ISO 37301/37302 and W3C PROV-O/ISO 15489 design guidance. Audit preserves accountable independent evidence, its custody/integrity, and permitted review; Legal Compliance owns legal meaning/requirements and minimal evidence references; domain owners own actual controls/outcomes. Logging/Reporting remain separate. No general compliance certification or implemented evidence API is asserted.

@@ -198,3 +198,13 @@ Help may publish public-contract, permission-scoped coverage/freshness views: do
 ## Recruitment reciprocal contract proposal — 20 November 2026
 
 **Status: Proposed in [Recruitment draft PR #99](https://github.com/nuxt-layers/architecture-blueprint-review/pull/99), not owner-approved or implemented.** Recruitment supplies scoped, versioned vacancy/application/decision measures and corrections; Reporting owns aggregates, not underlying hiring determinations; apply small-cohort privacy safeguards. Cooperation uses published contracts/host ports, without private state or mandatory cyclic imports. [Recruitment record](../recruitment/capability-record.md).
+
+
+## Legal Compliance reciprocal conceptual contract — 19 November 2026 (draft PR #85)
+
+**Status: Legal Compliance conceptual decisions owner-approved; no implemented or published interface verified.** [Legal Compliance dedicated conceptual contract](../legal_compliance/capability-record.md) specifies scoped, time/version/source-qualified legal applicability, mandatory restrictions, holds, deadlines and uncertainty. **reporting** supplies only authoritative, minimally necessary resource/service/activity/tenant context and completion/refusal evidence through documented public contracts; Legal Compliance does not take ownership of reporting's records, business decisions or enforcement. Statutory interpretation is not personal Authorisation, Privacy's specialist consent/rights rules, or proof of regulator acceptance. Missing or conflicting mandatory legal qualification holds only the affected unsafe action; authorised source owners report applied decision version and partial/failed enforcement. Cross-capability cooperation is host-composed, not an implicit direct package dependency. Existing neighbouring decisions and active PR proposals retain their own status.
+
+
+## Legal Compliance control effectiveness reporting — 20 November 2026
+
+**Approved conceptual reciprocity under draft [PR #85](https://github.com/nuxt-layers/architecture-blueprint-review/pull/85), not implemented.** [Legal Compliance canonical contract](../legal_compliance/capability-record.md) offers authorised obligation-to-control mappings, qualified applicability/coverage, receipt/exception status, effectiveness criteria and provenance/known-at dates, informed by ISO 37301/37302. Reporting owns derived dashboards, report definitions/aggregates/exports, and must distinguish requirement known, control implemented, evidence received, control effective, corrective action verified and legal support unknown. No global `compliant` flag, reporting-owned legal interpretation, or regulator acceptance inferred from transport.
