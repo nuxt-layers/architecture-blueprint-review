@@ -4,7 +4,7 @@
 
 ## Latest authoritative baseline and parallel work
 
-- Governing `architecture-rules/master@b920ce0d8b361de000a6739a16123dbdc56df7a7`, accepted ADR/public-contract hierarchy governs. Blueprint `master@d39df23e087cd0510c82ba2cea78996c7624850f`; these remained unchanged at baseline recheck on 21 November.
+- Governing `architecture-rules/master@d7f7c2ee051244b8c81325f5ff1267568d99aab1` (canonical capability specification requirement accepted in governing PR #40; the initial baseline was `b920ce0d8b361de000a6739a16123dbdc56df7a7`), accepted ADR/public-contract hierarchy governs. Blueprint `master@d39df23e087cd0510c82ba2cea78996c7624850f`; blueprint remained unchanged at the latest check on 21 November; governing advanced by the accepted documentation-only rule.
 - Accepted Job JOB-01–09 (merged #84), REC-01–15 and STD-A–F owner-approved; detailed external legal applicability and implementation remain unverified.
 - Active provisional nearby PRs at the review include #85 Legal Compliance, #88 Logging, #90 Mailer, #94 Message Queue, #97 Notifications, #98 Location, and #100 review protocol; none is treated as accepted authority. PR #100 proposes canonical-document consolidation and must be reconciled on merge if it changes protocol.
 - Provider-neutral, one-directional public contracts, capability-owned outbox, no implicit event-to-access authority, no shared internal persistence, modular-monolith default, headless plus optional GUI, OWASP ASVS and WCAG 2.2 AA remain unchanged. No implementation repository or published root Recruitment CONTRACT.md was verified; no local tests or builds were run.
@@ -74,3 +74,8 @@ All **38** T-controls and **25** S-scenarios have at least one cross-reference; 
 **Future change triggers:** merge of governing standards, proposal #100's canonical-protocol wording, affected neighbouring draft contracts, new jurisdictions and external-ATS/AI modes, or unexpected source-of-truth conflict. Such changes require fresh architecture reconciliation, not silent global specification edits.
 
 **Pre-merge gate:** Recheck latest governing and blueprint `master`, changed-file scope, link targets, branch conflict status, protected branch checks, CI and neighbour merges, and obtain explicit owner merge approval. No merge is authorised by this review.
+
+
+## Governing-master advancement reconciliation — 21 November 2026
+
+Governing `master` advanced from `b920ce0d` to `d7f7c2ee` through accepted PR #40 modifying **only `docs/capability-standard.md`**: capability records must present one coherent current specification, integrating approved decisions and relevant use cases, with redundant superseded history left to Git/decision records. Recruitment's inherited pro-forma and contradictory “awaiting approval” introductory material have been removed; the approved boundary, native operations, interfaces, dependencies, security, GUI, decision register and STD-A–F live in its canonical record. Source/history references remain linked from the record, and the two review companions carry detailed traceability and independent conceptual acceptance evidence. No new runtime requirement or ownership contradiction was introduced by the accepted governing change. Blueprint PR #100 proposes corresponding protocol wording and remains provisional; its possible later merge triggers another reconciliation. This reconciliation is limited to recorded source evidence, not a claim that implementation is now certified or PR #99 has passed branch protection/CI.
